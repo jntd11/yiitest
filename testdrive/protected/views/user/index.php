@@ -2,8 +2,13 @@
 /* @var $this UserController */
 /* @var $dataProvider CActiveDataProvider */
 $cs=Yii::app()->clientScript;
-$cs->registerCoreScript('jquery.ui');
-
+//$cs->registerCoreScript('jquery.ui');
+$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+$cs->registerCssFile(
+		$cs->getCoreScriptUrl().
+		'/jui/css/base/jquery-ui-1.10.2.custom.css'
+);
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 $this->breadcrumbs=array(
 	'Users',
 );
@@ -20,5 +25,4 @@ $this->menu=array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>
-
 
