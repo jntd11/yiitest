@@ -28,11 +28,11 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','test'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','test'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -101,9 +101,6 @@ class UserController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
-		$this->render('test',array(
-			'model'=>$model,
-		));
 	}
 
 	/**
@@ -146,6 +143,31 @@ class UserController extends Controller
 		));
 	}
 
+	/**
+	 * Manages all models.
+	 */
+	public function actionTest()
+	{
+		$req = new CHttpRequest();
+		$date = $req->getParam("d");
+		if($date == "") 
+			$date = date("m/d/y");
+		$step = $req->getParam("s");
+		switch($step) {
+		 case 'N':
+			$date = date("m/d/Y",strtotime($date) + (1*24*60*60));
+			break;
+		 case 'P':
+			$date = date("m/d/Y",strtotime($date) - (1*24*60*60));
+			break;
+		 case 'T':
+		 	$date = date("m/d/Y");
+		 	break;
+		}
+		$session = new CHttpSession();
+		$session->open();
+		echo $session['date'] = $date;
+	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

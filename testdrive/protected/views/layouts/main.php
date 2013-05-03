@@ -17,6 +17,9 @@
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 <?php
+$session = new CHttpSession();
+$session->open();
+$currdate = $session['date'];
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery');
 $cs->registerCoreScript('jquery-ui-1.10.2.custom');
@@ -24,7 +27,7 @@ $cs->registerCssFile(
 		$cs->getCoreScriptUrl().
 		'/jui/css/base/jquery-ui-1.10.2.custom.css'
 );
-$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js')
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 ?>
 </head>
 
@@ -44,15 +47,29 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js')
 			$this->widget('zii.widgets.CMenu',array(
 			'activeCssClass'=>'active',
 			'activateParents'=>true,
+			'id'=>'menu',
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				//array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Users', 'url'=>array('/user'), 'items'=>array(
+				array('label'=>'Users', 'url'=>array('/user'), 'itemOptions'=>array('id'=>'users'), 'linkOptions'=>array('id'=>'userlink', 'accesskey'=>'u'), 'items'=>array(
 						array('label'=>'Create User', 'url'=>array('create')),
 						array('label'=>'Manage User', 'url'=>array('admin'))
 						)),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Maintenance', 'itemOptions'=>array('id'=>'Maintenance'), 'linkOptions'=>array('accesskey'=>'m'), 'url'=>array('/user'), 'items'=>array(
+							array('label'=>'Ear Tag Maintenance', 'url'=>array('create')),
+							array('label'=>'Breeding Record Maintenance', 'url'=>array('admin')),
+							array('label'=>'Farrowing/Litter Maintenance', 'url'=>array('admin')),
+				)),
+				array('label'=>'Entry', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'e'), 'url'=>array('/user'), 'items'=>array(
+							array('label'=>'Create User', 'url'=>array('create')),
+							array('label'=>'Manage User', 'url'=>array('admin'))
+				)),
+				array('label'=>'Reports', 'itemOptions'=>array('id'=>'reports'), 'url'=>array('/user'), 'linkOptions'=>array('accesskey'=>'r'), 'items'=>array(
+							array('label'=>'Create User', 'url'=>array('create')),
+							array('label'=>'Manage User', 'url'=>array('admin'))
+				)),
+				array('label'=>'Login', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 		</div>
@@ -68,7 +85,8 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js')
 	<div class="clear"></div>
 
 	<div id="footer">
-		<div id="dialog"><p>Date: <input type="text" id="datepicker" />&nbsp;</p>
+		<div id="dialog"><p>Date: <input type="text" id="datepicker" />&nbsp;</p></div>
+		<div id="currdate"><?php echo $currdate; ?></div>
 	</div><!-- footer -->
 
 </div><!-- page -->

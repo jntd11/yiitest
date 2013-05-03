@@ -246,3 +246,7 @@ div.search-form
 #menu-top ul li ul li.active a,
 #menu-top ul li ul li a:hover { background-color:#F2FDFF;}
 #menu-top ul li ul li{clear: left;}
+
+#menu-top li a::first-letter{
+	text-decoration: underline;   
+}

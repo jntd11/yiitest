@@ -1198,3 +1198,354 @@ Stack trace:
 REQUEST_URI=/yii/yii/testdrive/index.php?r=user
 in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\UserController.php (128)
 in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php (13)
+2013/05/03 05:41:15 [error] [php] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3307:3306) (C:\wamp\www\yii\yii\framework\db\CDbConnection.php:423)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\wamp\www\yii\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive()
+#2 C:\wamp\www\yii\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(438): CWebApplication->getComponent()
+#4 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(623): CWebApplication->getDb()
+#5 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(2309): User->getDbConnection()
+#6 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct()
+#7 C:\wamp\www\yii\yii\framework\web\CActiveDataProvider.php(74): model()
+#8 C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php(128): CActiveDataProvider->__construct()
+#9 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): UserController->actionIndex()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#15 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#18 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): UserController->run()
+#19 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php (128)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/05/03 09:12:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "test".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('test')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('test')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/test')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user/test
+---
+2013/05/03 09:12:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "test".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('test')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('test')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/test')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user/test
+---
+2013/05/03 09:14:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "test".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('test')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('test')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/test')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user/test
+---
+2013/05/03 09:15:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "test".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('test')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('test')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/test')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user/test
+---
+2013/05/03 09:16:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "test".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('test')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('test')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/test')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user/test
+---
+2013/05/03 09:18:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "test".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('test')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('test')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/test')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user/test
+---
+2013/05/03 09:18:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "test".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('test')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('test')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/test')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user/test
+---
+2013/05/03 09:45:49 [error] [exception.CException] exception 'CException' with message 'CHttpRequest and its behaviors do not have a method or closure named "getRequest".' in C:\wamp\www\yii\yii\framework\base\CComponent.php:265
+Stack trace:
+#0 C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php(152): CComponent->__call('getRequest', Array)
+#1 C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php(152): CHttpRequest->getRequest()
+#2 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): UserController->actionTest()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('test')
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/test')
+#13 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user/test&aaaa=1
+---
+2013/05/03 09:48:11 [error] [exception.CException] exception 'CException' with message 'CHttpRequest and its behaviors do not have a method or closure named "getGet".' in C:\wamp\www\yii\yii\framework\base\CComponent.php:265
+Stack trace:
+#0 C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php(152): CComponent->__call('getGet', Array)
+#1 C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php(152): CHttpRequest->getGet('aaaa')
+#2 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): UserController->actionTest()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('test')
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/test')
+#13 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user/test&aaaa=1
+---
+2013/05/03 11:15:28 [error] [php] Invalid argument supplied for foreach() (C:\wamp\www\yii\yii\framework\zii\widgets\CMenu.php:260)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CBaseController.php(147): CMenu->init()
+#1 C:\wamp\www\yii\yii\framework\web\CBaseController.php(172): UserController->createWidget()
+#2 C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php(74): UserController->widget()
+#3 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require()
+#4 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#5 C:\wamp\www\yii\yii\framework\web\widgets\CContentDecorator.php(76): UserController->renderFile()
+#6 C:\wamp\www\yii\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#7 C:\wamp\www\yii\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 C:\wamp\www\yii\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#9 C:\wamp\www\yii\yii\framework\web\CBaseController.php(300): UserController->endWidget()
+#10 C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column2.php(22): UserController->endContent()
+#11 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require()
+#12 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(784): UserController->renderFile()
+#14 C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php(128): UserController->render()
+#15 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): UserController->actionIndex()
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#18 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#20 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#21 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#22 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\wamp\www\yii\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#24 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): UserController->run()
+#25 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (74)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column2.php (22)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php (128)
+2013/05/03 11:58:30 [error] [php] Invalid argument supplied for foreach() (C:\wamp\www\yii\yii\framework\zii\widgets\CMenu.php:260)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CBaseController.php(147): CMenu->init()
+#1 C:\wamp\www\yii\yii\framework\web\CBaseController.php(172): UserController->createWidget()
+#2 C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php(74): UserController->widget()
+#3 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require()
+#4 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#5 C:\wamp\www\yii\yii\framework\web\widgets\CContentDecorator.php(76): UserController->renderFile()
+#6 C:\wamp\www\yii\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#7 C:\wamp\www\yii\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 C:\wamp\www\yii\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#9 C:\wamp\www\yii\yii\framework\web\CBaseController.php(300): UserController->endWidget()
+#10 C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column2.php(22): UserController->endContent()
+#11 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require()
+#12 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(784): UserController->renderFile()
+#14 C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php(128): UserController->render()
+#15 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): UserController->actionIndex()
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#18 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#20 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#21 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#22 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\wamp\www\yii\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#24 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): UserController->run()
+#25 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (74)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column2.php (22)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php (128)
+2013/05/03 12:02:01 [error] [php] Invalid argument supplied for foreach() (C:\wamp\www\yii\yii\framework\zii\widgets\CMenu.php:260)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CBaseController.php(147): CMenu->init()
+#1 C:\wamp\www\yii\yii\framework\web\CBaseController.php(172): UserController->createWidget()
+#2 C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php(74): UserController->widget()
+#3 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require()
+#4 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#5 C:\wamp\www\yii\yii\framework\web\widgets\CContentDecorator.php(76): UserController->renderFile()
+#6 C:\wamp\www\yii\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#7 C:\wamp\www\yii\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 C:\wamp\www\yii\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#9 C:\wamp\www\yii\yii\framework\web\CBaseController.php(300): UserController->endWidget()
+#10 C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column2.php(22): UserController->endContent()
+#11 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require()
+#12 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(784): UserController->renderFile()
+#14 C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php(128): UserController->render()
+#15 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): UserController->actionIndex()
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#18 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#20 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#21 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#22 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\wamp\www\yii\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#24 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): UserController->run()
+#25 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (74)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column2.php (22)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php (128)
+2013/05/03 13:00:43 [error] [php] strtotime() expects at least 1 parameter, 0 given (C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php:157)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): UserController->run()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user/test&d=05%2F24%2F2013&s=N
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php (157)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/05/03 13:01:20 [error] [php] strtotime() expects at least 1 parameter, 0 given (C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php:157)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): UserController->run()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=user/test&d=05%2F24%2F2013&s=N
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\UserController.php (157)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/05/03 13:10:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('create')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/create')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=site/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=site/index
+---
+2013/05/03 13:10:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('create')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/create')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=site/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=site/create
+---
+2013/05/03 13:10:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('create')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/create')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=site/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=site/create
+---
+2013/05/03 13:10:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('admin')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/admin')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=site/admin
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php
+---
+2013/05/03 13:10:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('create')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/create')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=site/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=site/admin
+---
+2013/05/03 13:10:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('admin')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/admin')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=site/admin
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=site/create
+---
+2013/05/03 13:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('create')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/create')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=site/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=site/admin
+---
