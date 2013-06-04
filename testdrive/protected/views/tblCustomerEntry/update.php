@@ -1,6 +1,6 @@
 <?php
 /* @var $this TblCustomerEntryController */
-/* @var $model tblCustomerEntry */
+/* @var $model TblCustomerEntry */
 
 $this->breadcrumbs=array(
 	'Tbl Customer Entries'=>array('index'),
@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List tblCustomerEntry', 'url'=>array('index')),
-	array('label'=>'Create tblCustomerEntry', 'url'=>array('create')),
-	array('label'=>'View tblCustomerEntry', 'url'=>array('view', 'id'=>$model->customer_entry_id)),
-	array('label'=>'Manage tblCustomerEntry', 'url'=>array('admin')),
+	array('label'=>'List TblCustomerEntry', 'url'=>array('index')),
+	array('label'=>'Create TblCustomerEntry', 'url'=>array('create')),
+	array('label'=>'View TblCustomerEntry', 'url'=>array('view', 'id'=>$model->customer_entry_id)),
+	array('label'=>'Manage TblCustomerEntry', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update tblCustomerEntry <?php echo $model->customer_entry_id; ?></h1>
+<h1>Update TblCustomerEntry <?php echo $model->customer_entry_id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

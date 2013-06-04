@@ -1,6 +1,6 @@
 <?php
 /* @var $this TblCustomerEntryController */
-/* @var $model tblCustomerEntry */
+/* @var $model TblCustomerEntry */
 
 $this->breadcrumbs=array(
 	'Tbl Customer Entries'=>array('index'),
@@ -8,21 +8,21 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List tblCustomerEntry', 'url'=>array('index')),
-	array('label'=>'Create tblCustomerEntry', 'url'=>array('create')),
-	array('label'=>'Update tblCustomerEntry', 'url'=>array('update', 'id'=>$model->customer_entry_id)),
-	array('label'=>'Delete tblCustomerEntry', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->customer_entry_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage tblCustomerEntry', 'url'=>array('admin')),
+	array('label'=>'List TblCustomerEntry', 'url'=>array('index')),
+	array('label'=>'Create TblCustomerEntry', 'url'=>array('create')),
+	array('label'=>'Update TblCustomerEntry', 'url'=>array('update', 'id'=>$model->customer_entry_id)),
+	array('label'=>'Delete TblCustomerEntry', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->customer_entry_id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage TblCustomerEntry', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View tblCustomerEntry #<?php echo $model->customer_entry_id; ?></h1>
+<h1>View TblCustomerEntry #<?php echo $model->customer_entry_id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'customer_entry_id',
-		'code',
+		'company_name',
 		'first_name',
 		'last_name',
 		'address1',
@@ -38,7 +38,28 @@ $this->menu=array(
 		'country',
 		'contact',
 		'county',
-		'company_name',
+		'notes',
+		'cc_brand',
+		'cc_number',
+		'cc_expiration',
+		'cc_name',
+		'ship_company_name',
+		'ship_name',
+		'ship_address1',
+		'ship_address2',
+		'ship_city',
+		'ship_state',
+		'ship_country',
+		'ship_zip',
+		'ship_contact',
+		'ship_area',
+		'ship_phone',
+		'att_sale',
+		'mailing_code',
+		'last_invoice',
+		'last_letter_sent',
+		'entry_date',
+		'herdmark',
 		'total_sows',
 		'total_boars',
 		'facility',

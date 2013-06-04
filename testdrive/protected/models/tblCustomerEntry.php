@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'tbl_customer_entry':
  * @property integer $customer_entry_id
- * @property string $code
+ * @property string $company_name
  * @property string $first_name
  * @property string $last_name
  * @property string $address1
@@ -21,7 +21,28 @@
  * @property string $country
  * @property string $contact
  * @property string $county
- * @property string $company_name
+ * @property string $notes
+ * @property string $cc_brand
+ * @property integer $cc_number
+ * @property string $cc_expiration
+ * @property string $cc_name
+ * @property string $ship_company_name
+ * @property string $ship_name
+ * @property string $ship_address1
+ * @property string $ship_address2
+ * @property string $ship_city
+ * @property string $ship_state
+ * @property string $ship_country
+ * @property integer $ship_zip
+ * @property string $ship_contact
+ * @property string $ship_area
+ * @property string $ship_phone
+ * @property string $att_sale
+ * @property string $mailing_code
+ * @property integer $last_invoice
+ * @property string $last_letter_sent
+ * @property string $entry_date
+ * @property string $herdmark
  * @property integer $total_sows
  * @property integer $total_boars
  * @property string $facility
@@ -38,12 +59,12 @@
  * @property string $notes4
  * @property string $modified_date
  */
-class tblCustomerEntry extends CActiveRecord
+class TblCustomerEntry extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return tblCustomerEntry the static model class
+	 * @return TblCustomerEntry the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -66,16 +87,19 @@ class tblCustomerEntry extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('code, first_name, last_name, address1, address2, city, zip, phone_home, phone_business, phone_cell, phone_other1, phone_other2, state, country, contact, county, company_name, total_sows, total_boars, facility, sows, boars, frequency, system, feeder, finish, rep_glits, notes1, notes2, notes3, notes4, modified_date', 'required'),
-			array('zip, total_sows, total_boars, sows, boars', 'numerical', 'integerOnly'=>true),
-			array('code, first_name, last_name, address1, address2', 'length', 'max'=>255),
-			array('city, phone_home, phone_business, phone_cell, phone_other1, phone_other2, contact, county, company_name, facility, frequency, rep_glits', 'length', 'max'=>50),
+			array('company_name, first_name, last_name, address1, address2, city, zip, phone_home, phone_business, phone_cell, phone_other1, phone_other2, state, country, contact, county, notes, cc_brand, cc_number, cc_expiration, cc_name, ship_company_name, ship_name, ship_address1, ship_address2, ship_city, ship_state, ship_country, ship_zip, ship_contact, ship_area, ship_phone, att_sale, last_invoice, last_letter_sent, entry_date, total_sows, total_boars, facility, sows, boars, frequency, system, feeder, finish, rep_glits, notes1, notes2, notes3, notes4, modified_date', 'required'),
+			array('zip, cc_number, ship_zip, last_invoice, total_sows, total_boars, sows, boars', 'numerical', 'integerOnly'=>true),
+			array('company_name, first_name, last_name, address1, address2', 'length', 'max'=>255),
+			array('city, phone_home, phone_business, phone_cell, phone_other1, phone_other2, contact, county, cc_brand, cc_name, ship_company_name, ship_name, ship_city, ship_country, ship_contact, ship_area, mailing_code, herdmark, facility, frequency, rep_glits', 'length', 'max'=>50),
 			array('state', 'length', 'max'=>30),
-			array('country', 'length', 'max'=>20),
+			array('country, ship_phone', 'length', 'max'=>20),
+			array('cc_expiration', 'length', 'max'=>6),
+			array('ship_address1, ship_address2', 'length', 'max'=>100),
+			array('ship_state', 'length', 'max'=>10),
 			array('system, feeder, finish', 'length', 'max'=>40),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('customer_entry_id, code, first_name, last_name, address1, address2, city, zip, phone_home, phone_business, phone_cell, phone_other1, phone_other2, state, country, contact, county, company_name, total_sows, total_boars, facility, sows, boars, frequency, system, feeder, finish, rep_glits, notes1, notes2, notes3, notes4, modified_date', 'safe', 'on'=>'search'),
+			array('customer_entry_id, company_name, first_name, last_name, address1, address2, city, zip, phone_home, phone_business, phone_cell, phone_other1, phone_other2, state, country, contact, county, notes, cc_brand, cc_number, cc_expiration, cc_name, ship_company_name, ship_name, ship_address1, ship_address2, ship_city, ship_state, ship_country, ship_zip, ship_contact, ship_area, ship_phone, att_sale, mailing_code, last_invoice, last_letter_sent, entry_date, herdmark, total_sows, total_boars, facility, sows, boars, frequency, system, feeder, finish, rep_glits, notes1, notes2, notes3, notes4, modified_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -97,7 +121,7 @@ class tblCustomerEntry extends CActiveRecord
 	{
 		return array(
 			'customer_entry_id' => 'Customer Entry',
-			'code' => 'Code',
+			'company_name' => 'Company Name',
 			'first_name' => 'First Name',
 			'last_name' => 'Last Name',
 			'address1' => 'Address1',
@@ -113,7 +137,28 @@ class tblCustomerEntry extends CActiveRecord
 			'country' => 'Country',
 			'contact' => 'Contact',
 			'county' => 'County',
-			'company_name' => 'Company Name',
+			'notes' => 'Notes',
+			'cc_brand' => 'Cc Brand',
+			'cc_number' => 'Cc Number',
+			'cc_expiration' => 'Cc Expiration',
+			'cc_name' => 'Cc Name',
+			'ship_company_name' => 'Ship Company Name',
+			'ship_name' => 'Ship Name',
+			'ship_address1' => 'Ship Address1',
+			'ship_address2' => 'Ship Address2',
+			'ship_city' => 'Ship City',
+			'ship_state' => 'Ship State',
+			'ship_country' => 'Ship Country',
+			'ship_zip' => 'Ship Zip',
+			'ship_contact' => 'Ship Contact',
+			'ship_area' => 'Ship Area',
+			'ship_phone' => 'Ship Phone',
+			'att_sale' => 'Att Sale',
+			'mailing_code' => 'Mailing Code',
+			'last_invoice' => 'Last Invoice',
+			'last_letter_sent' => 'Last Letter Sent',
+			'entry_date' => 'Entry Date',
+			'herdmark' => 'Herdmark',
 			'total_sows' => 'Total Sows',
 			'total_boars' => 'Total Boars',
 			'facility' => 'Facility',
@@ -144,7 +189,7 @@ class tblCustomerEntry extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('customer_entry_id',$this->customer_entry_id);
-		$criteria->compare('code',$this->code,true);
+		$criteria->compare('company_name',$this->company_name,true);
 		$criteria->compare('first_name',$this->first_name,true);
 		$criteria->compare('last_name',$this->last_name,true);
 		$criteria->compare('address1',$this->address1,true);
@@ -160,7 +205,28 @@ class tblCustomerEntry extends CActiveRecord
 		$criteria->compare('country',$this->country,true);
 		$criteria->compare('contact',$this->contact,true);
 		$criteria->compare('county',$this->county,true);
-		$criteria->compare('company_name',$this->company_name,true);
+		$criteria->compare('notes',$this->notes,true);
+		$criteria->compare('cc_brand',$this->cc_brand,true);
+		$criteria->compare('cc_number',$this->cc_number);
+		$criteria->compare('cc_expiration',$this->cc_expiration,true);
+		$criteria->compare('cc_name',$this->cc_name,true);
+		$criteria->compare('ship_company_name',$this->ship_company_name,true);
+		$criteria->compare('ship_name',$this->ship_name,true);
+		$criteria->compare('ship_address1',$this->ship_address1,true);
+		$criteria->compare('ship_address2',$this->ship_address2,true);
+		$criteria->compare('ship_city',$this->ship_city,true);
+		$criteria->compare('ship_state',$this->ship_state,true);
+		$criteria->compare('ship_country',$this->ship_country,true);
+		$criteria->compare('ship_zip',$this->ship_zip);
+		$criteria->compare('ship_contact',$this->ship_contact,true);
+		$criteria->compare('ship_area',$this->ship_area,true);
+		$criteria->compare('ship_phone',$this->ship_phone,true);
+		$criteria->compare('att_sale',$this->att_sale,true);
+		$criteria->compare('mailing_code',$this->mailing_code,true);
+		$criteria->compare('last_invoice',$this->last_invoice);
+		$criteria->compare('last_letter_sent',$this->last_letter_sent,true);
+		$criteria->compare('entry_date',$this->entry_date,true);
+		$criteria->compare('herdmark',$this->herdmark,true);
 		$criteria->compare('total_sows',$this->total_sows);
 		$criteria->compare('total_boars',$this->total_boars);
 		$criteria->compare('facility',$this->facility,true);

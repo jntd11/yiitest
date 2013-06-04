@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create tblCustomerEntry', 'url'=>array('create')),
-	array('label'=>'Manage tblCustomerEntry', 'url'=>array('admin')),
+	array('label'=>'Create TblCustomerEntry', 'url'=>array('create')),
+	array('label'=>'Manage TblCustomerEntry', 'url'=>array('admin')),
 );
 ?>
 

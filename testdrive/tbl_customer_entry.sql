@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 30, 2013 at 12:26 PM
+-- Generation Time: Jun 04, 2013 at 08:46 AM
 -- Server version: 5.5.23
 -- PHP Version: 5.3.10
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `tbl_customer_entry` (
   `customer_entry_id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(255) COLLATE utf16_bin NOT NULL,
+  `company_name` varchar(255) COLLATE utf16_bin NOT NULL,
   `first_name` varchar(255) COLLATE utf16_bin NOT NULL,
   `last_name` varchar(255) COLLATE utf16_bin NOT NULL,
   `address1` varchar(255) COLLATE utf16_bin NOT NULL,
@@ -44,7 +44,28 @@ CREATE TABLE IF NOT EXISTS `tbl_customer_entry` (
   `country` varchar(20) COLLATE utf16_bin NOT NULL,
   `contact` varchar(50) COLLATE utf16_bin NOT NULL,
   `county` varchar(50) COLLATE utf16_bin NOT NULL,
-  `company_name` varchar(50) COLLATE utf16_bin NOT NULL,
+  `notes` text COLLATE utf16_bin NOT NULL,
+  `cc_brand` varchar(50) COLLATE utf16_bin NOT NULL,
+  `cc_number` int(11) NOT NULL,
+  `cc_expiration` varchar(6) COLLATE utf16_bin NOT NULL,
+  `cc_name` varchar(50) COLLATE utf16_bin NOT NULL,
+  `ship_company_name` varchar(50) COLLATE utf16_bin NOT NULL,
+  `ship_name` varchar(50) COLLATE utf16_bin NOT NULL,
+  `ship_address1` varchar(100) COLLATE utf16_bin NOT NULL,
+  `ship_address2` varchar(100) COLLATE utf16_bin NOT NULL,
+  `ship_city` varchar(50) COLLATE utf16_bin NOT NULL,
+  `ship_state` varchar(10) COLLATE utf16_bin NOT NULL,
+  `ship_country` varchar(50) COLLATE utf16_bin NOT NULL,
+  `ship_zip` int(11) NOT NULL,
+  `ship_contact` varchar(50) COLLATE utf16_bin NOT NULL,
+  `ship_area` varchar(50) COLLATE utf16_bin NOT NULL,
+  `ship_phone` varchar(20) COLLATE utf16_bin NOT NULL,
+  `att_sale` datetime NOT NULL,
+  `mailing_code` varchar(50) COLLATE utf16_bin DEFAULT NULL,
+  `last_invoice` int(11) NOT NULL,
+  `last_letter_sent` datetime NOT NULL,
+  `entry_date` datetime NOT NULL,
+  `herdmark` varchar(50) COLLATE utf16_bin DEFAULT NULL,
   `total_sows` int(11) NOT NULL,
   `total_boars` int(11) NOT NULL,
   `facility` varchar(50) COLLATE utf16_bin NOT NULL,

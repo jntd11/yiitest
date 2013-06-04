@@ -1,6 +1,6 @@
 <?php
 /* @var $this TblCustomerEntryController */
-/* @var $model tblCustomerEntry */
+/* @var $model TblCustomerEntry */
 /* @var $form CActiveForm */
 ?>
 
@@ -17,8 +17,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'code'); ?>
-		<?php echo $form->textField($model,'code',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'company_name'); ?>
+		<?php echo $form->textField($model,'company_name',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
@@ -97,8 +97,113 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'company_name'); ?>
-		<?php echo $form->textField($model,'company_name',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->label($model,'notes'); ?>
+		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'cc_brand'); ?>
+		<?php echo $form->textField($model,'cc_brand',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'cc_number'); ?>
+		<?php echo $form->textField($model,'cc_number'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'cc_expiration'); ?>
+		<?php echo $form->textField($model,'cc_expiration',array('size'=>6,'maxlength'=>6)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'cc_name'); ?>
+		<?php echo $form->textField($model,'cc_name',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ship_company_name'); ?>
+		<?php echo $form->textField($model,'ship_company_name',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ship_name'); ?>
+		<?php echo $form->textField($model,'ship_name',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ship_address1'); ?>
+		<?php echo $form->textField($model,'ship_address1',array('size'=>60,'maxlength'=>100)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ship_address2'); ?>
+		<?php echo $form->textField($model,'ship_address2',array('size'=>60,'maxlength'=>100)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ship_city'); ?>
+		<?php echo $form->textField($model,'ship_city',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ship_state'); ?>
+		<?php echo $form->textField($model,'ship_state',array('size'=>10,'maxlength'=>10)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ship_country'); ?>
+		<?php echo $form->textField($model,'ship_country',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ship_zip'); ?>
+		<?php echo $form->textField($model,'ship_zip'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ship_contact'); ?>
+		<?php echo $form->textField($model,'ship_contact',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ship_area'); ?>
+		<?php echo $form->textField($model,'ship_area',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'ship_phone'); ?>
+		<?php echo $form->textField($model,'ship_phone',array('size'=>20,'maxlength'=>20)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'att_sale'); ?>
+		<?php echo $form->textField($model,'att_sale'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'mailing_code'); ?>
+		<?php echo $form->textField($model,'mailing_code',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'last_invoice'); ?>
+		<?php echo $form->textField($model,'last_invoice'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'last_letter_sent'); ?>
+		<?php echo $form->textField($model,'last_letter_sent'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'entry_date'); ?>
+		<?php echo $form->textField($model,'entry_date'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'herdmark'); ?>
+		<?php echo $form->textField($model,'herdmark',array('size'=>50,'maxlength'=>50)); ?>
 	</div>
 
 	<div class="row">

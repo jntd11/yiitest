@@ -63,7 +63,8 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Automatic Chores Table', 'url'=>array('admin')),
 							array('label'=>'Change Hog Number', 'url'=>array('admin')),
 				)),
-				array('label'=>'Entry', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'e'), 'url'=>array('/user'), 'items'=>array(
+				array('label'=>'Customer Entry', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblCustomerEntry')),
+				array('label'=>'Entry', 'itemOptions'=>array('id'=>'customerentry'), 'linkOptions'=>array('accesskey'=>'e'), 'url'=>array('/user'), 'items'=>array(
 							array('label'=>'Create User', 'url'=>array('create')),
 							array('label'=>'Manage User', 'url'=>array('admin'))
 				)),

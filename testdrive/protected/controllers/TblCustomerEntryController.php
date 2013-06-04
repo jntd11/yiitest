@@ -62,14 +62,14 @@ class TblCustomerEntryController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new tblCustomerEntry;
+		$model=new TblCustomerEntry;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['tblCustomerEntry']))
+		if(isset($_POST['TblCustomerEntry']))
 		{
-			$model->attributes=$_POST['tblCustomerEntry'];
+			$model->attributes=$_POST['TblCustomerEntry'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->customer_entry_id));
 		}
@@ -91,9 +91,9 @@ class TblCustomerEntryController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['tblCustomerEntry']))
+		if(isset($_POST['TblCustomerEntry']))
 		{
-			$model->attributes=$_POST['tblCustomerEntry'];
+			$model->attributes=$_POST['TblCustomerEntry'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->customer_entry_id));
 		}
@@ -122,7 +122,7 @@ class TblCustomerEntryController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('tblCustomerEntry');
+		$dataProvider=new CActiveDataProvider('TblCustomerEntry');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class TblCustomerEntryController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new tblCustomerEntry('search');
+		$model=new TblCustomerEntry('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['tblCustomerEntry']))
-			$model->attributes=$_GET['tblCustomerEntry'];
+		if(isset($_GET['TblCustomerEntry']))
+			$model->attributes=$_GET['TblCustomerEntry'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +147,12 @@ class TblCustomerEntryController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return tblCustomerEntry the loaded model
+	 * @return TblCustomerEntry the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=tblCustomerEntry::model()->findByPk($id);
+		$model=TblCustomerEntry::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,7 +160,7 @@ class TblCustomerEntryController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param tblCustomerEntry $model the model to be validated
+	 * @param TblCustomerEntry $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
