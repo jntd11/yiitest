@@ -328,8 +328,17 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'modified_date'); ?>
-		<?php echo $form->textField($model,'modified_date'); ?>
+		<?php //echo $form->labelEx($model,'modified_date'); ?>
+		<?php //echo $form->textField($model,'modified_date');
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+				'model' => $model,
+				'attribute' => 'modified_date',
+				'htmlOptions' => array(
+						'size' => '10',         // textField size
+						'maxlength' => '10',    // textField maxlength
+				),
+		));
+		?>
 		<?php echo $form->error($model,'modified_date'); ?>
 	</div>
 
