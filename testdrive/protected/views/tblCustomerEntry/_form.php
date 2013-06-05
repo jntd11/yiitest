@@ -2,6 +2,7 @@
 /* @var $this TblCustomerEntryController */
 /* @var $model TblCustomerEntry */
 /* @var $form CActiveForm */
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/customer.js');
 ?>
 
 <div class="form">
@@ -116,100 +117,116 @@
 		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'notes'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'cc_brand'); ?>
-		<?php echo $form->textField($model,'cc_brand',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'cc_brand'); ?>
+	<div class="row"><?php echo CHtml::button('Credit Card Information',array('id'=>"creditbutton")); ?></div>
+	<div id="creditinfo" style="display: none;">
+		<div class="row">
+			<?php echo $form->labelEx($model,'cc_brand'); ?>
+			<?php echo $form->textField($model,'cc_brand',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->error($model,'cc_brand'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'cc_number'); ?>
+			<?php echo $form->textField($model,'cc_number'); ?>
+			<?php echo $form->error($model,'cc_number'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'cc_expiration'); ?>
+			<?php echo $form->textField($model,'cc_expiration',array('size'=>6,'maxlength'=>6)); ?>
+			<?php echo $form->error($model,'cc_expiration'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'cc_name'); ?>
+			<?php echo $form->textField($model,'cc_name',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->error($model,'cc_name'); ?>
+		</div>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'cc_number'); ?>
-		<?php echo $form->textField($model,'cc_number'); ?>
-		<?php echo $form->error($model,'cc_number'); ?>
+	<div class="row"><?php echo CHtml::button('Shipping Information',array('id'=>"shipbutton")); ?></div>
+	<div id="shipinfo" style="display: none;">	
+		<div class="row">
+			<?php echo $form->labelEx($model,'ship_company_name'); ?>
+			<?php echo $form->textField($model,'ship_company_name',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->error($model,'ship_company_name'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'ship_name'); ?>
+			<?php echo $form->textField($model,'ship_name',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->error($model,'ship_name'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'ship_address1'); ?>
+			<?php echo $form->textField($model,'ship_address1',array('size'=>60,'maxlength'=>100)); ?>
+			<?php echo $form->error($model,'ship_address1'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'ship_address2'); ?>
+			<?php echo $form->textField($model,'ship_address2',array('size'=>60,'maxlength'=>100)); ?>
+			<?php echo $form->error($model,'ship_address2'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'ship_city'); ?>
+			<?php echo $form->textField($model,'ship_city',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->error($model,'ship_city'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'ship_state'); ?>
+			<?php echo $form->textField($model,'ship_state',array('size'=>10,'maxlength'=>10)); ?>
+			<?php echo $form->error($model,'ship_state'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'ship_country'); ?>
+			<?php echo $form->textField($model,'ship_country',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->error($model,'ship_country'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'ship_zip'); ?>
+			<?php echo $form->textField($model,'ship_zip'); ?>
+			<?php echo $form->error($model,'ship_zip'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'ship_contact'); ?>
+			<?php echo $form->textField($model,'ship_contact',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->error($model,'ship_contact'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'ship_area'); ?>
+			<?php echo $form->textField($model,'ship_area',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->error($model,'ship_area'); ?>
+		</div>
+	
+		<div class="row">
+			<?php echo $form->labelEx($model,'ship_phone'); ?>
+			<?php echo $form->textField($model,'ship_phone',array('size'=>20,'maxlength'=>20)); ?>
+			<?php echo $form->error($model,'ship_phone'); ?>
+		</div>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'cc_expiration'); ?>
-		<?php echo $form->textField($model,'cc_expiration',array('size'=>6,'maxlength'=>6)); ?>
-		<?php echo $form->error($model,'cc_expiration'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'cc_name'); ?>
-		<?php echo $form->textField($model,'cc_name',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'cc_name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ship_company_name'); ?>
-		<?php echo $form->textField($model,'ship_company_name',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'ship_company_name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ship_name'); ?>
-		<?php echo $form->textField($model,'ship_name',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'ship_name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ship_address1'); ?>
-		<?php echo $form->textField($model,'ship_address1',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'ship_address1'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ship_address2'); ?>
-		<?php echo $form->textField($model,'ship_address2',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'ship_address2'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ship_city'); ?>
-		<?php echo $form->textField($model,'ship_city',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'ship_city'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ship_state'); ?>
-		<?php echo $form->textField($model,'ship_state',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'ship_state'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ship_country'); ?>
-		<?php echo $form->textField($model,'ship_country',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'ship_country'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ship_zip'); ?>
-		<?php echo $form->textField($model,'ship_zip'); ?>
-		<?php echo $form->error($model,'ship_zip'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ship_contact'); ?>
-		<?php echo $form->textField($model,'ship_contact',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'ship_contact'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ship_area'); ?>
-		<?php echo $form->textField($model,'ship_area',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'ship_area'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'ship_phone'); ?>
-		<?php echo $form->textField($model,'ship_phone',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'ship_phone'); ?>
-	</div>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'att_sale'); ?>
-		<?php echo $form->textField($model,'att_sale'); ?>
+		<?php 
+		//echo $form->textField($model,'att_sale'); 
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+				'model' => $model,
+				'attribute' => 'att_sale',
+				'options' =>array(
+							'dateFormat'=>'yy-mm-dd',
+						),
+				'htmlOptions' => array(
+						'size' => '20',         // textField size
+						'maxlength' => '20',    // textField maxlength
+				),
+		));
+		?>
 		<?php echo $form->error($model,'att_sale'); ?>
 	</div>
 
@@ -227,13 +244,38 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'last_letter_sent'); ?>
-		<?php echo $form->textField($model,'last_letter_sent'); ?>
+		<?php //echo $form->textField($model,'last_letter_sent'); 
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+				'model' => $model,
+				'attribute' => 'last_letter_sent',
+				'options' =>array(
+						'dateFormat'=>'yy-mm-dd',
+				),
+				
+				'htmlOptions' => array(
+						'size' => '10',         // textField size
+						'maxlength' => '20',    // textField maxlength
+				),
+		));
+		?>
 		<?php echo $form->error($model,'last_letter_sent'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'entry_date'); ?>
-		<?php echo $form->textField($model,'entry_date'); ?>
+		<?php //echo $form->textField($model,'entry_date'); 
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+				'model' => $model,
+				'attribute' => 'entry_date',
+				'options' =>array(
+							'dateFormat'=>'yy-mm-dd',
+						),
+				'htmlOptions' => array(
+						'size' => '10',         // textField size
+						'maxlength' => '20',    // textField maxlength
+				),
+		));
+		?>
 		<?php echo $form->error($model,'entry_date'); ?>
 	</div>
 
@@ -329,17 +371,8 @@
 
 	<div class="row">
 		<?php //echo $form->labelEx($model,'modified_date'); ?>
-		<?php //echo $form->textField($model,'modified_date');
-		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-				'model' => $model,
-				'attribute' => 'modified_date',
-				'htmlOptions' => array(
-						'size' => '10',         // textField size
-						'maxlength' => '10',    // textField maxlength
-				),
-		));
-		?>
-		<?php echo $form->error($model,'modified_date'); ?>
+		<?php //echo $form->textField($model,'modified_date');?>
+		<?php //echo $form->error($model,'modified_date'); ?>
 	</div>
 
 	<div class="row buttons">

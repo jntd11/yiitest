@@ -1684,3 +1684,253 @@ Stack trace:
 REQUEST_URI=/yii/yii/testdrive/index.php?r=site/create
 HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php
 ---
+2013/06/05 05:27:50 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 05:28:23 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 05:28:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'TblCustomerEntry[att_sale]' for column 'att_sale' at row 1. The SQL statement executed was: INSERT INTO `tbl_customer_entry` (`company_name`, `first_name`, `last_name`, `address1`, `address2`, `city`, `zip`, `phone_home`, `phone_business`, `phone_cell`, `phone_other1`, `phone_other2`, `state`, `country`, `contact`, `county`, `notes`, `cc_brand`, `cc_number`, `cc_expiration`, `cc_name`, `ship_company_name`, `ship_name`, `ship_address1`, `ship_address2`, `ship_city`, `ship_state`, `ship_country`, `ship_zip`, `ship_contact`, `ship_area`, `ship_phone`, `att_sale`, `mailing_code`, `last_invoice`, `last_letter_sent`, `entry_date`, `herdmark`, `total_sows`, `total_boars`, `facility`, `sows`, `boars`, `frequency`, `system`, `feeder`, `finish`, `rep_glits`, `notes1`, `notes2`, `notes3`, `notes4`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28, :yp29, :yp30, :yp31, :yp32, :yp33, :yp34, :yp35, :yp36, :yp37, :yp38, :yp39, :yp40, :yp41, :yp42, :yp43, :yp44, :yp45, :yp46, :yp47, :yp48, :yp49, :yp50, :yp51).
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (73)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 05:28:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'TblCustomerEntry[att_sale]' for column 'att_sale' at row 1. The SQL statement executed was: INSERT INTO `tbl_customer_entry` (`company_name`, `first_name`, `last_name`, `address1`, `address2`, `city`, `zip`, `phone_home`, `phone_business`, `phone_cell`, `phone_other1`, `phone_other2`, `state`, `country`, `contact`, `county`, `notes`, `cc_brand`, `cc_number`, `cc_expiration`, `cc_name`, `ship_company_name`, `ship_name`, `ship_address1`, `ship_address2`, `ship_city`, `ship_state`, `ship_country`, `ship_zip`, `ship_contact`, `ship_area`, `ship_phone`, `att_sale`, `mailing_code`, `last_invoice`, `last_letter_sent`, `entry_date`, `herdmark`, `total_sows`, `total_boars`, `facility`, `sows`, `boars`, `frequency`, `system`, `feeder`, `finish`, `rep_glits`, `notes1`, `notes2`, `notes3`, `notes4`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28, :yp29, :yp30, :yp31, :yp32, :yp33, :yp34, :yp35, :yp36, :yp37, :yp38, :yp39, :yp40, :yp41, :yp42, :yp43, :yp44, :yp45, :yp46, :yp47, :yp48, :yp49, :yp50, :yp51)' in C:\wamp\www\yii\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(73): CActiveRecord->save()
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblCustomerEntryController->actionCreate()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+---
+2013/06/05 05:28:36 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 05:31:58 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 05:41:07 [error] [exception.CException] exception 'CException' with message 'TblCustomerEntry has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\wamp\www\yii\yii\framework\base\CModel.php:288
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\wamp\www\yii\yii\framework\base\CModel.php(303): CModel->getValidators('company_name')
+#2 C:\wamp\www\yii\yii\framework\web\helpers\CHtml.php(1237): CModel->isAttributeRequired('company_name')
+#3 C:\wamp\www\yii\yii\framework\web\widgets\CActiveForm.php(562): CHtml::activeLabelEx(Object(TblCustomerEntry), 'company_name', Array)
+#4 C:\wamp\www\yii\yii\testdrive\protected\views\tblCustomerEntry\_form.php(19): CActiveForm->labelEx(Object(TblCustomerEntry), 'company_name')
+#5 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#6 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#8 C:\wamp\www\yii\yii\testdrive\protected\views\tblCustomerEntry\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#10 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(79): CController->render('create', Array)
+#14 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblCustomerEntryController->actionCreate()
+#15 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#25 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#26 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+---
+2013/06/05 05:42:54 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 05:43:28 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 05:43:38 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 05:43:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'TblCustome' for column 'att_sale' at row 1. The SQL statement executed was: INSERT INTO `tbl_customer_entry` (`company_name`, `first_name`, `last_name`, `address1`, `address2`, `city`, `zip`, `phone_home`, `phone_business`, `phone_cell`, `phone_other1`, `phone_other2`, `state`, `country`, `contact`, `county`, `notes`, `cc_brand`, `cc_number`, `cc_expiration`, `cc_name`, `ship_company_name`, `ship_name`, `ship_address1`, `ship_address2`, `ship_city`, `ship_state`, `ship_country`, `ship_zip`, `ship_contact`, `ship_area`, `ship_phone`, `att_sale`, `mailing_code`, `last_invoice`, `last_letter_sent`, `entry_date`, `herdmark`, `total_sows`, `total_boars`, `facility`, `sows`, `boars`, `frequency`, `system`, `feeder`, `finish`, `rep_glits`, `notes1`, `notes2`, `notes3`, `notes4`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28, :yp29, :yp30, :yp31, :yp32, :yp33, :yp34, :yp35, :yp36, :yp37, :yp38, :yp39, :yp40, :yp41, :yp42, :yp43, :yp44, :yp45, :yp46, :yp47, :yp48, :yp49, :yp50, :yp51).
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (73)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 05:43:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: 'TblCustome' for column 'att_sale' at row 1. The SQL statement executed was: INSERT INTO `tbl_customer_entry` (`company_name`, `first_name`, `last_name`, `address1`, `address2`, `city`, `zip`, `phone_home`, `phone_business`, `phone_cell`, `phone_other1`, `phone_other2`, `state`, `country`, `contact`, `county`, `notes`, `cc_brand`, `cc_number`, `cc_expiration`, `cc_name`, `ship_company_name`, `ship_name`, `ship_address1`, `ship_address2`, `ship_city`, `ship_state`, `ship_country`, `ship_zip`, `ship_contact`, `ship_area`, `ship_phone`, `att_sale`, `mailing_code`, `last_invoice`, `last_letter_sent`, `entry_date`, `herdmark`, `total_sows`, `total_boars`, `facility`, `sows`, `boars`, `frequency`, `system`, `feeder`, `finish`, `rep_glits`, `notes1`, `notes2`, `notes3`, `notes4`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28, :yp29, :yp30, :yp31, :yp32, :yp33, :yp34, :yp35, :yp36, :yp37, :yp38, :yp39, :yp40, :yp41, :yp42, :yp43, :yp44, :yp45, :yp46, :yp47, :yp48, :yp49, :yp50, :yp51)' in C:\wamp\www\yii\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(73): CActiveRecord->save()
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblCustomerEntryController->actionCreate()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+---
+2013/06/05 06:14:12 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 06:15:23 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 06:15:43 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 06:15:43 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '06/05/2013' for column 'att_sale' at row 1. The SQL statement executed was: INSERT INTO `tbl_customer_entry` (`company_name`, `first_name`, `last_name`, `address1`, `address2`, `city`, `zip`, `phone_home`, `phone_business`, `phone_cell`, `phone_other1`, `phone_other2`, `state`, `country`, `contact`, `county`, `notes`, `cc_brand`, `cc_number`, `cc_expiration`, `cc_name`, `ship_company_name`, `ship_name`, `ship_address1`, `ship_address2`, `ship_city`, `ship_state`, `ship_country`, `ship_zip`, `ship_contact`, `ship_area`, `ship_phone`, `att_sale`, `mailing_code`, `last_invoice`, `last_letter_sent`, `entry_date`, `herdmark`, `total_sows`, `total_boars`, `facility`, `sows`, `boars`, `frequency`, `system`, `feeder`, `finish`, `rep_glits`, `notes1`, `notes2`, `notes3`, `notes4`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28, :yp29, :yp30, :yp31, :yp32, :yp33, :yp34, :yp35, :yp36, :yp37, :yp38, :yp39, :yp40, :yp41, :yp42, :yp43, :yp44, :yp45, :yp46, :yp47, :yp48, :yp49, :yp50, :yp51).
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (73)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 06:15:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '06/05/2013' for column 'att_sale' at row 1. The SQL statement executed was: INSERT INTO `tbl_customer_entry` (`company_name`, `first_name`, `last_name`, `address1`, `address2`, `city`, `zip`, `phone_home`, `phone_business`, `phone_cell`, `phone_other1`, `phone_other2`, `state`, `country`, `contact`, `county`, `notes`, `cc_brand`, `cc_number`, `cc_expiration`, `cc_name`, `ship_company_name`, `ship_name`, `ship_address1`, `ship_address2`, `ship_city`, `ship_state`, `ship_country`, `ship_zip`, `ship_contact`, `ship_area`, `ship_phone`, `att_sale`, `mailing_code`, `last_invoice`, `last_letter_sent`, `entry_date`, `herdmark`, `total_sows`, `total_boars`, `facility`, `sows`, `boars`, `frequency`, `system`, `feeder`, `finish`, `rep_glits`, `notes1`, `notes2`, `notes3`, `notes4`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28, :yp29, :yp30, :yp31, :yp32, :yp33, :yp34, :yp35, :yp36, :yp37, :yp38, :yp39, :yp40, :yp41, :yp42, :yp43, :yp44, :yp45, :yp46, :yp47, :yp48, :yp49, :yp50, :yp51)' in C:\wamp\www\yii\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(73): CActiveRecord->save()
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblCustomerEntryController->actionCreate()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+---
+2013/06/05 06:51:53 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 06:51:53 [error] [exception.CException] exception 'CException' with message 'TblCustomerEntry and its behaviors do not have a method or closure named "attributes".' in C:\wamp\www\yii\yii\framework\base\CComponent.php:265
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(225): CComponent->__call('attributes', Array)
+#1 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(73): CActiveRecord->__call('attributes', Array)
+#2 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(73): TblCustomerEntry->attributes('att_sale')
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblCustomerEntryController->actionCreate()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+---
+2013/06/05 06:54:01 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 06:54:01 [error] [php] date() expects parameter 2 to be long, array given (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php:73)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (73)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 06:55:04 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 06:55:04 [error] [php] A non well formed numeric value encountered (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php:73)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (73)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 06:55:27 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 06:55:41 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 06:56:32 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:02:49 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:03:42 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:03:53 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:04:00 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:04:30 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:05:04 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:05:14 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:05:44 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:05:49 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:06:02 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:06:33 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:06:38 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/05 07:07:03 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)

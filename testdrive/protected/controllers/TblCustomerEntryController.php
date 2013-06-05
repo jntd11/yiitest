@@ -70,6 +70,7 @@ class TblCustomerEntryController extends Controller
 		if(isset($_POST['TblCustomerEntry']))
 		{
 			$model->attributes=$_POST['TblCustomerEntry'];
+			//$model->att_sale = date("Y-m-d H:i:s",strtotime($model->getAttribute('att_sale')));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->customer_entry_id));
 		}
