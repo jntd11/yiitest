@@ -55,13 +55,21 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
+			'connectionString' => 'mysql:host=localhost:3307;dbname=testdrive',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'root',
 			'charset' => 'utf8',
 		),
-		
+		/** server
+		'db'=>array(
+			'connectionString' => 'mysql:host=mysql51-015.wc2.dfw1.stabletransit.com;dbname=512368_pigs',
+			'emulatePrepare' => true,
+			'username' => '512368_pigs',
+			'password' => '098765Po',
+			'charset' => 'utf8',
+		),
+		**/
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',

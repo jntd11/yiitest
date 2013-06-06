@@ -44,7 +44,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'id'=>'tbl-customer-entry-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-	'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
+	'afterAjaxUpdate'=>'function(id, data){alert(data)}',
 	'columns'=>array(
 		'company_name',
 		'first_name',

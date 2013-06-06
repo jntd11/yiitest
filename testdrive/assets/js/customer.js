@@ -5,6 +5,10 @@ $(document).ready(function(){
 	$("#shipbutton").bind('click',function(){
 		$("#shipinfo").toggle();
 	});	
+	autoSuggestSearch();
+});
+
+function autoSuggestSearch(){
 	$("#tbl-customer-entry-grid [name='TblCustomerEntry[first_name]']").autocomplete({
 		      source: 'index.php?r=tblCustomerEntry/autocompleteFirstName'
 	});
@@ -29,4 +33,4 @@ $(document).ready(function(){
 	$("#tbl-customer-entry-grid [name='TblCustomerEntry[phone_other2]']").autocomplete({
 		  source: 'index.php?r=tblCustomerEntry/autocompletePhoneOther2'
 	});
-});
+}
