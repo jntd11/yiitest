@@ -28,7 +28,9 @@ class TblCustomerEntryController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','autocompleteTest'),
+				'actions'=>array('index','view',
+					'autocompleteFirstName','autocompleteLastName','autocompleteCompanyName',
+					'autocompletePhoneHome','autocompletePhoneBusiness','autocompletePhoneCell','autocompletePhoneOther1','autocompletePhoneOther2'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -143,7 +145,7 @@ class TblCustomerEntryController extends Controller
 			'model'=>$model,
 		));
 	}
-	public function actionAutocompleteTest() {
+	public function actionAutocompleteFirstName() {
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
@@ -155,7 +157,90 @@ class TblCustomerEntryController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-	
+	public function actionAutocompleteLastName() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT last_name FROM tbl_customer_entry WHERE last_name LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompleteCompanyName() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT company_name FROM tbl_customer_entry WHERE company_name LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompletePhoneHome() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT phone_home FROM tbl_customer_entry WHERE phone_home LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}	
+	public function actionAutocompletePhoneBusiness() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT  phone_business FROM tbl_customer_entry WHERE  	phone_business LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}		
+	public function actionAutocompletePhoneCell() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT phone_cell FROM tbl_customer_entry WHERE  phone_cell LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompletePhoneOther1() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT phone_other1 FROM tbl_customer_entry WHERE  phone_other1 LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}	
+	public function actionAutocompletePhoneOther2() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT phone_other2 FROM tbl_customer_entry WHERE  phone_other2 LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}	
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
