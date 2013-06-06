@@ -1934,3 +1934,157 @@ in C:\wamp\www\yii\yii\testdrive\index.php (13)
 2013/06/05 07:07:03 [warning] [application] Failed to set unsafe attribute "modified_date" of "TblCustomerEntry".
 in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (72)
 in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/06 06:54:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "autocompleteTest?term=a".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('autocompleteTes...')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('autocompleteTes...')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/autocompleteTest?term=a
+---
+2013/06/06 06:54:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "autocompleteTest?term=a".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('autocompleteTes...')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('autocompleteTes...')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/autocompleteTest?term=a
+---
+2013/06/06 06:55:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\yii\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('autocompleteTes...')
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/autocompleteTest
+---
+2013/06/06 06:55:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\yii\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('autocompleteTes...')
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/autocompleteTest
+---
+2013/06/06 06:57:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "autocompleteTest?term=a".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('autocompleteTes...')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('autocompleteTes...')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/autocompleteTest?term=a
+---
+2013/06/06 07:01:24 [error] [php] Use of undefined constant jai - assumed 'jai' (C:\wamp\www\yii\yii\framework\base\CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#1 C:\wamp\www\yii\yii\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#2 C:\wamp\www\yii\yii\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#3 C:\wamp\www\yii\yii\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#4 C:\wamp\www\yii\yii\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 C:\wamp\www\yii\yii\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#7 C:\wamp\www\yii\yii\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#8 C:\wamp\www\yii\yii\framework\web\CBaseController.php(173): CGridView->run()
+#9 C:\wamp\www\yii\yii\testdrive\protected\views\tblCustomerEntry\admin.php(123): TblCustomerEntryController->widget()
+#10 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require()
+#11 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): TblCustomerEntryController->renderInternal()
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(869): TblCustomerEntryController->renderFile()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(782): TblCustomerEntryController->renderPartial()
+#14 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(144): TblCustomerEntryController->render()
+#15 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblCustomerEntryController->actionAdmin()
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#18 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#20 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#21 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#22 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#24 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#25 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/admin
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblCustomerEntry\admin.php (123)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (144)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/06 09:28:38 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (C:\wamp\www\yii\yii\framework\web\helpers\CHtml.php:98)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\helpers\CHtml.php(171): renderAttributes()
+#1 C:\wamp\www\yii\yii\framework\zii\widgets\CBaseListView.php(126): openTag()
+#2 C:\wamp\www\yii\yii\framework\web\CBaseController.php(173): CGridView->run()
+#3 C:\wamp\www\yii\yii\testdrive\protected\views\tblCustomerEntry\admin.php(108): TblCustomerEntryController->widget()
+#4 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require()
+#5 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): TblCustomerEntryController->renderInternal()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(869): TblCustomerEntryController->renderFile()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(782): TblCustomerEntryController->renderPartial()
+#8 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(144): TblCustomerEntryController->render()
+#9 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblCustomerEntryController->actionAdmin()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#15 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#18 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#19 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/admin
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblCustomerEntry\admin.php (108)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (144)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/06/06 09:31:44 [error] [exception.CException] exception 'CException' with message 'Property "CDataColumn.htmloptions" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\YiiBase.php(220): CComponent->__set('htmloptions', Array)
+#1 C:\wamp\www\yii\yii\framework\zii\widgets\grid\CGridView.php(363): YiiBase::createComponent(Array, Object(CGridView))
+#2 C:\wamp\www\yii\yii\framework\zii\widgets\grid\CGridView.php(334): CGridView->initColumns()
+#3 C:\wamp\www\yii\yii\framework\web\CBaseController.php(147): CGridView->init()
+#4 C:\wamp\www\yii\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#5 C:\wamp\www\yii\yii\testdrive\protected\views\tblCustomerEntry\admin.php(107): CBaseController->widget('zii.widgets.gri...', Array)
+#6 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#7 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(144): CController->render('admin', Array)
+#11 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblCustomerEntryController->actionAdmin()
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#22 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#23 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/admin
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblCustomerEntry/update&id=2
+---

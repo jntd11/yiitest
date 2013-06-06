@@ -33,7 +33,6 @@ $(document).ready(function(){
 		$("#dialog").remove();
 	}
 	$(document).keydown(function(event) {
-
 		  switch(event.which) {
 		  	case 187:
 				$.ajax({
@@ -65,6 +64,8 @@ $(document).ready(function(){
 		  var msg = "Handler for .keypress() called " + event.which + " time(s).";
 		  console.log(msg);
 	});
+	//$("input").unbind('keydown');
+	//$('input').keydown(function(event) {console.log("india"); event.stopPropagation(); event.preventDefault();});
 });
 
 

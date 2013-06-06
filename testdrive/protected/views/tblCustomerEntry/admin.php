@@ -1,7 +1,7 @@
 <?php
 /* @var $this TblCustomerEntryController */
 /* @var $model TblCustomerEntry */
-
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/customer.js');
 $this->breadcrumbs=array(
 	'Tbl Customer Entries'=>array('index'),
 	'Manage',
