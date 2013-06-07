@@ -51,13 +51,22 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 		<?php echo $form->textField($model,'city',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'city'); ?>
 	</div>
-
+	<div class="row">
+		<?php echo $form->labelEx($model,'state'); ?>
+		<?php echo $form->textField($model,'state',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->error($model,'state'); ?>
+	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'zip'); ?>
 		<?php echo $form->textField($model,'zip'); ?>
 		<?php echo $form->error($model,'zip'); ?>
 	</div>
-
+	<div class="row">
+		<?php echo $form->labelEx($model,'contact'); ?>
+		<?php echo $form->textField($model,'contact',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->error($model,'contact'); ?>
+	</div>
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'phone_home'); ?>
 		<?php echo $form->textField($model,'phone_home',array('size'=>50,'maxlength'=>50)); ?>
@@ -88,11 +97,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 		<?php echo $form->error($model,'phone_other2'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'state'); ?>
-		<?php echo $form->textField($model,'state',array('size'=>30,'maxlength'=>30)); ?>
-		<?php echo $form->error($model,'state'); ?>
-	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'country'); ?>
@@ -100,11 +105,6 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'contact'); ?>
-		<?php echo $form->textField($model,'contact',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'contact'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'county'); ?>

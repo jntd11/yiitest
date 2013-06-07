@@ -87,7 +87,7 @@ class TblCustomerEntry extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('company_name, first_name, last_name, address1, address2, city, zip, phone_home, phone_business, phone_cell, phone_other1, phone_other2, state, country, contact, county, notes, cc_brand, cc_number, cc_expiration, cc_name, ship_company_name, ship_name, ship_address1, ship_address2, ship_city, ship_state, ship_country, ship_zip, ship_contact, ship_area, ship_phone, att_sale, last_invoice, last_letter_sent, entry_date, total_sows, total_boars, facility, sows, boars, frequency, system, feeder, finish, rep_glits, notes1, notes2, notes3, notes4', 'required'),
+			//array('company_name, first_name, last_name, address1, address2, city, zip, phone_home, phone_business, phone_cell, phone_other1, phone_other2, state, country, contact, county, notes, cc_brand, cc_number, cc_expiration, cc_name, ship_company_name, ship_name, ship_address1, ship_address2, ship_city, ship_state, ship_country, ship_zip, ship_contact, ship_area, ship_phone, att_sale, last_invoice, last_letter_sent, entry_date, total_sows, total_boars, facility, sows, boars, frequency, system, feeder, finish, rep_glits, notes1, notes2, notes3, notes4', 'required'),
 			array('zip, cc_number, ship_zip, last_invoice, total_sows, total_boars, sows, boars', 'numerical', 'integerOnly'=>true),
 			array('entry_date, att_sale, last_letter_sent','date','format'=>'yyyy-mm-dd'),
 			array('company_name, first_name, last_name, address1, address2', 'length', 'max'=>255),
