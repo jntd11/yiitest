@@ -32,35 +32,76 @@ $(document).ready(function(){
 	}else{
 		$("#dialog").remove();
 	}
+	var arr = [ "TblCustomerEntry_last_letter_sent", "TblCustomerEntry_entry_date", "TblCustomerEntry_att_sale", "John" ];
 	$(document).keydown(function(event) {
-		  switch(event.which) {
-		  	case 187:
-				$.ajax({
-					url: encodeURI('index.php?r=user/test'),
-					type: "GET",
-					data: {d:$("#currdate").html(),s:'N'}
-				}).done(function(data){
+		  var activeId = this.activeElement.id;
+		  console.log(activeId);
+		  if($.inArray(activeId,arr) > -1){
+			switch(event.which) {
+				case 187:
+				case 61:
+					$.ajax({
+						url: encodeURI('index.php?r=user/test'),
+						type: "GET",
+						data: {d:$("#"+activeId).val(),s:'N'}
+					}).done(function(data){
+						$("#"+activeId).val(data);
+					});
+					break;
+				case 189:
+				case 173:
+					$.ajax({
+						url: encodeURI('index.php?r=user/test'),
+						type: "GET",
+						data: {d:$("#"+activeId).val(),s:'P'}
+					}).done(function(data){
+							$("#"+activeId).val(data);
+					});
+					break;
+				case 84:
+
+					$.ajax({
+						url: encodeURI('index.php?r=user/test'),
+						type: "GET",
+						data: {d:$("#"+activeId).val(),s:'T'}
+					}).done(function(data){
+							$("#"+activeId).val(data);
+					});
+					break;		  
+				}
+		  }else{
+			  switch(event.which) {
+				case 187:
+				case 61:
+					$.ajax({
+						url: encodeURI('index.php?r=user/test'),
+						type: "GET",
+						data: {d:$("#currdate").html(),s:'N'}
+					}).done(function(data){
 						$("#currdate").html(data);
-				});
-		  		break;
-		  	case 189:
-				$.ajax({
-					url: encodeURI('index.php?r=user/test'),
-					type: "GET",
-					data: {d:$("#currdate").html(),s:'P'}
-				}).done(function(data){
-						$("#currdate").html(data);
-				});
-		  		break;
-		  	case 84:
-				$.ajax({
-					url: encodeURI('index.php?r=user/test'),
-					type: "GET",
-					data: {d:$("#currdate").html(),s:'T'}
-				}).done(function(data){
-						$("#currdate").html(data);
-				});
-		  		break;		  }
+					});
+					break;
+				case 189:
+				case 173:
+					$.ajax({
+						url: encodeURI('index.php?r=user/test'),
+						type: "GET",
+						data: {d:$("#currdate").html(),s:'P'}
+					}).done(function(data){
+							$("#currdate").html(data);
+					});
+					break;
+				case 84:
+					$.ajax({
+						url: encodeURI('index.php?r=user/test'),
+						type: "GET",
+						data: {d:$("#currdate").html(),s:'T'}
+					}).done(function(data){
+							$("#currdate").html(data);
+					});
+					break;		  
+				}
+		  }
 		  var msg = "Handler for .keypress() called " + event.which + " time(s).";
 		  console.log(msg);
 	});

@@ -6,6 +6,8 @@ $(document).ready(function(){
 		$("#shipinfo").toggle();
 	});	
 	autoSuggestSearch();
+	if($("#TblCustomerEntry_last_letter_sent").val() == "")
+		$("#TblCustomerEntry_last_letter_sent").val($("#currdate").html());
 });
 
 function autoSuggestSearch(){
