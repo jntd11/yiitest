@@ -166,7 +166,8 @@ class UserController extends Controller
 		}
 		$session = new CHttpSession();
 		$session->open();
-		echo $session['date'] = $date;
+		echo Yii::app()->request->cookies['date'] = new CHttpCookie('date',$date,array('expire'=>time()+(365*24*60*60)));
+		//$session['date'] = $date;
 	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

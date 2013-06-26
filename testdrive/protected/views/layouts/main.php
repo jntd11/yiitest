@@ -19,7 +19,9 @@
 <?php
 $session = new CHttpSession();
 $session->open();
-$currdate = $session['date'];
+
+//$currdate = $session['date'];
+$currdate = Yii::app()->request->cookies['date'];
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery');
 $cs->registerCoreScript('jquery-ui-1.10.2.custom');

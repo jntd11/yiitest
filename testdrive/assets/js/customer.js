@@ -4,6 +4,20 @@ $(document).ready(function(){
 	});
 	$("#shipbutton").bind('click',function(){
 		$("#shipinfo").toggle();
+		var prefix = "TblCustomerEntry_"; 
+		$("#"+prefix+"ship_company_name").val($("#"+prefix+"company_name").val());
+		$("#"+prefix+"ship_name").val($("#"+prefix+"first_name").val()+" "+$("#"+prefix+"last_name").val());
+		$("#"+prefix+"ship_address1").val($("#"+prefix+"address1").val());
+		$("#"+prefix+"ship_address2").val($("#"+prefix+"address2").val());
+		$("#"+prefix+"ship_city").val($("#"+prefix+"city").val());
+		$("#"+prefix+"ship_state").val($("#"+prefix+"state").val());
+		$("#"+prefix+"ship_zip").val($("#"+prefix+"zip").val());
+		$("#"+prefix+"ship_country").val($("#"+prefix+"country").val());
+		$("#"+prefix+"ship_contact").val($("#"+prefix+"contact").val());
+		$("#"+prefix+"ship_phone").val($("#"+prefix+"phone_home").val());
+		$("#"+prefix+"ship_area").val($("#"+prefix+"county").val());
+		$("#"+prefix+"ship_company_name").focus();
+		
 	});	
 	autoSuggestSearch();
 	if($("#TblCustomerEntry_last_letter_sent").val() == "")

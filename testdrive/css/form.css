@@ -60,10 +60,27 @@ div.form label
 	display: inline-block;
 	min-width: 130px;
 }
+form#tbl-customer-entry-form label{
+	font-weight: bold;
+	font-size: 0.9em;
+	display: inline-block;
+	min-width: 130px;
+	text-align: right;
+}
+#label_TblCustomerEntry_notes {
+	vertical-align: top;
+}
+#label_suggest_program{
+	vertical-align: top;
+	}
 
 div.form .row
 {
 	margin: 5px 0;
+}
+form#tbl-customer-entry-form .row
+{
+	margin: 0px 0;
 }
 
 div.form .hint

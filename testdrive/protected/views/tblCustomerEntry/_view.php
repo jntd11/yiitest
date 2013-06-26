@@ -2,7 +2,6 @@
 /* @var $this TblCustomerEntryController */
 /* @var $data TblCustomerEntry */
 ?>
-
 <div class="view">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('customer_entry_id')); ?>:</b>
