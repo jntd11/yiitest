@@ -92,6 +92,7 @@ class TblCustomerEntry extends CActiveRecord
 			array('entry_date, att_sale, last_letter_sent','date','format'=>'yyyy-mm-dd'),
 			array('company_name, first_name, last_name, address1, address2', 'length', 'max'=>255),
 			array('city, phone_home, phone_business, phone_cell, phone_other1, phone_other2, contact, county, cc_brand, cc_name, ship_company_name, ship_name, ship_city, ship_country, ship_contact, ship_area, mailing_code, herdmark, facility, frequency, rep_glits', 'length', 'max'=>50),
+			array('rep_glits', 'length', 'max'=>60),
 			array('state', 'length', 'max'=>30),
 			array('country, ship_phone', 'length', 'max'=>20),
 			array('cc_expiration', 'length', 'max'=>6),
@@ -125,24 +126,24 @@ class TblCustomerEntry extends CActiveRecord
 			'company_name' => 'Company Name',
 			'first_name' => 'First Name',
 			'last_name' => 'Last Name',
-			'address1' => 'Address ',
-			'address2' => 'Address ',
+			'address1' => 'Address 1',
+			'address2' => 'Address 2',
 			'city' => 'City',
 			'zip' => 'Zipcode',
-			'phone_home' => 'Phone Home',
-			'phone_business' => 'Phone Business',
-			'phone_cell' => 'Phone Cell',
-			'phone_other1' => 'Phone Others',
-			'phone_other2' => 'Phone Others',
+			'phone_home' => 'Home Phone',
+			'phone_business' => 'Business Phone',
+			'phone_cell' => 'Cell Phone',
+			'phone_other1' => 'Phone Other1',
+			'phone_other2' => 'Phone Other2',
 			'state' => 'State',
 			'country' => 'Country',
 			'contact' => 'Contact',
-			'county' => 'County',
+			'county' => 'County/Area',
 			'notes' => 'Notes',
 			'cc_brand' => 'Credit Card Brand',
 			'cc_number' => 'Credit Card Number',
 			'cc_expiration' => 'Credit Card Expiration',
-			'cc_name' => 'Credit Card Name',
+			'cc_name' => 'Name on Card',
 			'ship_company_name' => 'Company Name',
 			'ship_name' => 'Name',
 			'ship_address1' => 'Address1',
@@ -152,7 +153,7 @@ class TblCustomerEntry extends CActiveRecord
 			'ship_country' => 'Country',
 			'ship_zip' => 'Zip',
 			'ship_contact' => 'Contact',
-			'ship_area' => 'Area',
+			'ship_area' => 'County/Area',
 			'ship_phone' => 'Phone',
 			'att_sale' => 'Att Sale',
 			'mailing_code' => 'Mailing Code',
@@ -163,8 +164,8 @@ class TblCustomerEntry extends CActiveRecord
 			'total_sows' => 'Total Sows',
 			'total_boars' => 'Total Boars',
 			'facility' => 'Facility',
-			'sows' => 'Sows',
-			'boars' => 'Boars',
+			'sows' => 'Sows/Brdg',
+			'boars' => 'Boars/Brdg',
 			'frequency' => 'Frequency',
 			'system' => 'System',
 			'feeder' => 'Feeder',
@@ -197,7 +198,8 @@ class TblCustomerEntry extends CActiveRecord
 		$criteria->compare('address2',$this->address2,true);
 		$criteria->compare('city',$this->city,true);
 		$criteria->compare('zip',$this->zip);
-		$criteria->compare('phone_home',$this->phone_home,true);
+		$criteria->compare('CONCAT(phone_home, \' \', phone_business, \' \', phone_cell, \' \', phone_other1, \' \', phone_other2)',$this->phone_home,true);
+		//$criteria->compare('phone_home',$this->phone_home,true);
 		$criteria->compare('phone_business',$this->phone_business,true);
 		$criteria->compare('phone_cell',$this->phone_cell,true);
 		$criteria->compare('phone_other1',$this->phone_other1,true);

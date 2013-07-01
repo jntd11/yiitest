@@ -50,10 +50,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'first_name',
 		'last_name',
 		'phone_home',
-		'phone_business',
-		'phone_cell',
-		'phone_other1',
-		'phone_other2',
+		array('name'=>'phone_business','value'=>'$data->phone_business','filter'=>false),
+		array('name'=>'phone_cell','value'=>'$data->phone_cell','filter'=>false),
+		array('name'=>'phone_other1','value'=>'$data->phone_other1','filter'=>false),
+		array('name'=>'phone_other2','value'=>'$data->phone_other2','filter'=>false),
 		/*
 		'address1',
 		'address2',
@@ -103,10 +103,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		*/
 		array(
 			'class'=>'CButtonColumn',
-			'template' => '{view}{update}
-			
-			
-			',
+			'template' => '{update}',
 		),
 	),
 )); ?>

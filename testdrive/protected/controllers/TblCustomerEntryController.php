@@ -185,7 +185,11 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT phone_home FROM tbl_customer_entry WHERE phone_home LIKE :username";
+			$qtxt ="SELECT phone_home FROM tbl_customer_entry WHERE phone_home LIKE :username 
+				UNION SELECT phone_business FROM tbl_customer_entry WHERE phone_business LIKE :username 
+				UNION SELECT phone_cell FROM tbl_customer_entry WHERE phone_cell LIKE :username
+				UNION SELECT phone_other1 FROM tbl_customer_entry WHERE phone_other1 LIKE :username 
+				UNION SELECT phone_other2 FROM tbl_customer_entry WHERE phone_other2 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -197,7 +201,7 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT  phone_business FROM tbl_customer_entry WHERE  	phone_business LIKE :username";
+			$qtxt ="SELECT  phone_business FROM tbl_customer_entry WHERE phone_business LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
