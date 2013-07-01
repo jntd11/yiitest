@@ -353,9 +353,6 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 	</div>
 	    </td>
     </tr>
-	<tr><td colspan="2">	<div class="row"><?php echo CHtml::button('Credit Card Information',array('id'=>"creditbutton")); ?></div></td></tr>
-    </table>
-    <table id="creditinfo" style="display: none;">
     <tr>
     <td>
 			<div class="row">
@@ -389,9 +386,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 		</div>
     </td>
     </tr>
-    </table>
-	<div class="row"><?php echo CHtml::button('Shipping Information - same as above',array('id'=>"shipbutton")); ?></div>
-	<table id="shipinfo" style="display: none;">
+    <tr><td colspan="2"><?php echo CHtml::button('Shipping Information - same as above',array('id'=>"shipbutton")); ?></td></tr>
     <tr>
     <td>	
 		<div class="row">

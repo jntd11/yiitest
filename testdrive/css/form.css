@@ -80,7 +80,7 @@ div.form .row
 }
 form#tbl-customer-entry-form .row
 {
-	margin: 0px 0;
+	margin: -8px 0;
 }
 
 div.form .hint

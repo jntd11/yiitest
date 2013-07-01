@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Tbl Customer Entries',
+	'Customers',
 );
 
 $this->menu=array(
-	array('label'=>'Create TblCustomerEntry', 'url'=>array('create')),
-	array('label'=>'Manage TblCustomerEntry', 'url'=>array('admin')),
+	array('label'=>'Create Customers', 'url'=>array('create')),
+	array('label'=>'search Customers', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Tbl Customer Entries</h1>
+<h1>Customers</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

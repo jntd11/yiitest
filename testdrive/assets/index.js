@@ -2,6 +2,12 @@ $(document).ready(function(){
 	$( "#datepicker" ).datepicker({
       changeMonth: true,
       changeYear: true,
+//	  onClose: function(dateText, inst){
+//		  if(dateText == ""){
+//			  alert("Please Select a Date");
+//			  
+//		  }
+//	  },
 	  onSelect: function(dateText, inst){
 					$.ajax({
 						url: encodeURI('index.php?r=user/test'),
@@ -24,7 +30,10 @@ $(document).ready(function(){
 				{
 					text: "Ok",
 					click: function() {
-						$( this ).dialog( "close" );
+						if($("#datepicker").val() == "") 
+							alert("Enter Valid Date");
+						else
+							$( this ).dialog( "close" );
 					}
 				}
 			]

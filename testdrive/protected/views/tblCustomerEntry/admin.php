@@ -3,13 +3,13 @@
 /* @var $model TblCustomerEntry */
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/customer.js');
 $this->breadcrumbs=array(
-	'Tbl Customer Entries'=>array('index'),
-	'Manage',
+	'Customers'=>array('index'),
+	'search',
 );
 
 $this->menu=array(
-	array('label'=>'List TblCustomerEntry', 'url'=>array('index')),
-	array('label'=>'Create TblCustomerEntry', 'url'=>array('create')),
+	array('label'=>'List Customers', 'url'=>array('index')),
+	array('label'=>'Create Customers', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Tbl Customer Entries</h1>
+<h1>search Customers</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -103,6 +103,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		*/
 		array(
 			'class'=>'CButtonColumn',
+			'template' => '{view}{update}
+			
+			
+			',
 		),
 	),
 )); ?>

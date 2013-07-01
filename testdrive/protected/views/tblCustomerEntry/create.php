@@ -3,16 +3,16 @@
 /* @var $model TblCustomerEntry */
 
 $this->breadcrumbs=array(
-	'Tbl Customer Entries'=>array('index'),
+	'Customers'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List TblCustomerEntry', 'url'=>array('index')),
-	array('label'=>'Manage TblCustomerEntry', 'url'=>array('admin')),
+	array('label'=>'List Customers', 'url'=>array('index')),
+	array('label'=>'search Customers', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create TblCustomerEntry</h1>
+<h1>Create Customers</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

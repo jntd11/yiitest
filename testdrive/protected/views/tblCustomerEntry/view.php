@@ -3,20 +3,20 @@
 /* @var $model TblCustomerEntry */
 
 $this->breadcrumbs=array(
-	'Tbl Customer Entries'=>array('index'),
+	'Customers'=>array('index'),
 	$model->customer_entry_id,
 );
 
 $this->menu=array(
-	array('label'=>'List TblCustomerEntry', 'url'=>array('index')),
-	array('label'=>'Create TblCustomerEntry', 'url'=>array('create')),
-	array('label'=>'Update TblCustomerEntry', 'url'=>array('update', 'id'=>$model->customer_entry_id)),
-	array('label'=>'Delete TblCustomerEntry', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->customer_entry_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage TblCustomerEntry', 'url'=>array('admin')),
+	array('label'=>'List Customers', 'url'=>array('index')),
+	array('label'=>'Create Customers', 'url'=>array('create')),
+	array('label'=>'Update Customers', 'url'=>array('update', 'id'=>$model->customer_entry_id)),
+	array('label'=>'Delete Customers', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->customer_entry_id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'search Customers', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View TblCustomerEntry #<?php echo $model->customer_entry_id; ?></h1>
+<h1>View Customer #<?php echo $model->customer_entry_id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
