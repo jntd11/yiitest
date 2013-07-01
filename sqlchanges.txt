@@ -1,0 +1,2 @@
+1/07/2013
+ALTER TABLE `tbl_customer_entry` CHANGE `rep_glits` `rep_glits` VARCHAR( 60 ) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL 
