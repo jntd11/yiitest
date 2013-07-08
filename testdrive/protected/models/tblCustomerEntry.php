@@ -91,7 +91,7 @@ class TblCustomerEntry extends CActiveRecord
 			array('zip, cc_number, ship_zip, last_invoice, total_sows, total_boars, sows, boars', 'numerical', 'integerOnly'=>true),
 			array('entry_date, att_sale, last_letter_sent','date','format'=>'yyyy-mm-dd'),
 			array('company_name, first_name, last_name, address1, address2', 'length', 'max'=>255),
-			array('city, phone_home, phone_business, phone_cell, phone_other1, phone_other2, contact, county, cc_brand, cc_name, ship_company_name, ship_name, ship_city, ship_country, ship_contact, ship_area, mailing_code, herdmark, facility, frequency, rep_glits', 'length', 'max'=>50),
+			array('city, phone_home, phone_business, phone_cell, phone_other1, phone_other2, contact, county, cc_brand, cc_name, ship_company_name, ship_name, ship_city, ship_country, ship_contact, ship_area, mailing_code, herdmark, facility, frequency', 'length', 'max'=>50),
 			array('rep_glits', 'length', 'max'=>60),
 			array('state', 'length', 'max'=>30),
 			array('country, ship_phone', 'length', 'max'=>20),

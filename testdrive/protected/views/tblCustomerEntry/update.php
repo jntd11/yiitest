@@ -12,7 +12,7 @@ $this->menu=array(
 	array('label'=>'List Customers', 'url'=>array('index')),
 	array('label'=>'Create Customers', 'url'=>array('create')),
 	//array('label'=>'View Customers', 'url'=>array('view', 'id'=>$model->customer_entry_id)),
-	array('label'=>'search Customers', 'url'=>array('admin')),
+	array('label'=>'Search Customers', 'url'=>array('admin')),
 );
 ?>
 

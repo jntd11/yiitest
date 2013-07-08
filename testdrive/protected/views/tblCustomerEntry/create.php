@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Customers', 'url'=>array('index')),
-	array('label'=>'search Customers', 'url'=>array('admin')),
+	array('label'=>'Search Customers', 'url'=>array('admin')),
 );
 ?>
 

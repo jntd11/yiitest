@@ -3316,3 +3316,63 @@ Stack trace:
 REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry%2Fadmin&TblCustomerEntry%5Bcompany_name%5D=&TblCustomerEntry%5Bfirst_name%5D=&TblCustomerEntry%5Blast_name%5D=&TblCustomerEntry%5Bphone_home%5D=777777&TblCustomerEntry_page=1&ajax=tbl-customer-entry-grid
 HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblCustomerEntry/admin
 ---
+2013/07/03 07:00:14 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:00:14 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:02:43 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:02:43 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:19:59 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:19:59 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:20:16 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:20:16 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:20:26 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:20:26 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:22:53 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:22:53 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:24:59 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:24:59 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:25:33 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:25:33 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:25:52 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:25:52 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:26:48 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/03 07:26:48 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (99)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)

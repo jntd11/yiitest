@@ -4,7 +4,7 @@
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/customer.js');
 $this->breadcrumbs=array(
 	'Customers'=>array('index'),
-	'search',
+	'Search',
 );
 
 $this->menu=array(
@@ -45,6 +45,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
+	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
 		'company_name',
 		'first_name',

@@ -26,38 +26,75 @@ $(document).ready(function(){
 		   $("#tbl-customer-entry-form").data("changed",true);
 	});
 
+	$("#tbl-customer-entry-form :input[type=submit]").click(function() {
+		   $("#tbl-customer-entry-form").data("changed",false);
+	});
+
 	window.onbeforeunload = iamexiting;
 	function iamexiting(e) {
 		if($("#tbl-customer-entry-form").data("changed")) {
 			   return 'You have unsaved changes. Do you want to continue';
 			   // submit the form
 		}
+		return;
 	}
 });
 
 function autoSuggestSearch(){
 	$("#tbl-customer-entry-grid [name='TblCustomerEntry[first_name]']").autocomplete({
-		      source: 'index.php?r=tblCustomerEntry/autocompleteFirstName'
+		    source: 'index.php?r=tblCustomerEntry/autocompleteFirstName',
+		    select: function( event, ui ) {
+		    	var data = this.name+"="+ui.item.value;
+		    	$('#tbl-customer-entry-grid').yiiGridView('update', {data: data});
+		    }
 	});
 	$("#tbl-customer-entry-grid [name='TblCustomerEntry[last_name]']").autocomplete({
-	    	  source: 'index.php?r=tblCustomerEntry/autocompleteLastName'
+	    	  source: 'index.php?r=tblCustomerEntry/autocompleteLastName',
+	  		    select: function( event, ui ) {
+			    	var data = this.name+"="+ui.item.value;
+			    	$('#tbl-customer-entry-grid').yiiGridView('update', {data: data});
+			    }
 	});
 	$("#tbl-customer-entry-grid [name='TblCustomerEntry[company_name]']").autocomplete({
-		  source: 'index.php?r=tblCustomerEntry/autocompleteCompanyName'
+		  source: 'index.php?r=tblCustomerEntry/autocompleteCompanyName',
+		    select: function( event, ui ) {
+		    	var data = this.name+"="+ui.item.value;
+		    	$('#tbl-customer-entry-grid').yiiGridView('update', {data: data});
+		    }
 	});
 	$("#tbl-customer-entry-grid [name='TblCustomerEntry[phone_home]']").autocomplete({
-		  source: 'index.php?r=tblCustomerEntry/autocompletePhoneHome'
+		  source: 'index.php?r=tblCustomerEntry/autocompletePhoneHome',
+			    select: function( event, ui ) {
+			    	var data = this.name+"="+ui.item.value;
+			    	$('#tbl-customer-entry-grid').yiiGridView('update', {data: data});
+			    }
 	});
 	$("#tbl-customer-entry-grid [name='TblCustomerEntry[phone_business]']").autocomplete({
-		  source: 'index.php?r=tblCustomerEntry/autocompletePhoneBusiness'
+		  source: 'index.php?r=tblCustomerEntry/autocompletePhoneBusiness',
+			    select: function( event, ui ) {
+			    	var data = this.name+"="+ui.item.value;
+			    	$('#tbl-customer-entry-grid').yiiGridView('update', {data: data});
+			    }
 	});
 	$("#tbl-customer-entry-grid [name='TblCustomerEntry[phone_cell]']").autocomplete({
-		  source: 'index.php?r=tblCustomerEntry/autocompletePhoneCell'
+		  source: 'index.php?r=tblCustomerEntry/autocompletePhoneCell',
+			    select: function( event, ui ) {
+			    	var data = this.name+"="+ui.item.value;
+			    	$('#tbl-customer-entry-grid').yiiGridView('update', {data: data});
+			    }
 	});
 	$("#tbl-customer-entry-grid [name='TblCustomerEntry[phone_other1]']").autocomplete({
-		  source: 'index.php?r=tblCustomerEntry/autocompletePhoneOther1'
+		  source: 'index.php?r=tblCustomerEntry/autocompletePhoneOther1',
+			    select: function( event, ui ) {
+			    	var data = this.name+"="+ui.item.value;
+			    	$('#tbl-customer-entry-grid').yiiGridView('update', {data: data});
+			    }
 	});
 	$("#tbl-customer-entry-grid [name='TblCustomerEntry[phone_other2]']").autocomplete({
-		  source: 'index.php?r=tblCustomerEntry/autocompletePhoneOther2'
+		  source: 'index.php?r=tblCustomerEntry/autocompletePhoneOther2',
+			    select: function( event, ui ) {
+			    	var data = this.name+"="+ui.item.value;
+			    	$('#tbl-customer-entry-grid').yiiGridView('update', {data: data});
+			    }
 	});
 }

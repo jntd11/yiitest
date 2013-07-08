@@ -12,7 +12,7 @@ $this->menu=array(
 	array('label'=>'Create Customers', 'url'=>array('create')),
 	array('label'=>'Update Customers', 'url'=>array('update', 'id'=>$model->customer_entry_id)),
 	array('label'=>'Delete Customers', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->customer_entry_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'search Customers', 'url'=>array('admin')),
+	array('label'=>'Search Customers', 'url'=>array('admin')),
 );
 ?>
 

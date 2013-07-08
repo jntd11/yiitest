@@ -338,7 +338,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'rep_glits'); ?>
-		<?php echo $form->textField($model,'rep_glits',array('size'=>60,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'rep_glits',array('size'=>60,'maxlength'=>60)); ?>
 		<?php echo $form->error($model,'rep_glits'); ?>
 	</div>
     </td>
