@@ -17,13 +17,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'mailing_code_label'); ?>
-		<?php echo $form->textField($model,'mailing_code_label',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'mailing_code_label',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'mailing_code_label'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'mailing_code_desc'); ?>
-		<?php echo $form->textArea($model,'mailing_code_desc',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textField($model,'mailing_code_desc',array('size'=>100,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'mailing_code_desc'); ?>
 	</div>
 

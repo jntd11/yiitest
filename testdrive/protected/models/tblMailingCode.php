@@ -61,9 +61,9 @@ class tblMailingCode extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'mailing_code_id' => 'Mailing Code',
-			'mailing_code_label' => 'Mailing Code Label',
-			'mailing_code_desc' => 'Mailing Code Desc',
+			'mailing_code_id' => 'Number',
+			'mailing_code_label' => 'Code',
+			'mailing_code_desc' => 'Description',
 		);
 	}
 
@@ -86,4 +86,5 @@ class tblMailingCode extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
 }

@@ -28,11 +28,11 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','test'),
+				'actions'=>array('index','view','test','ActivityDate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','test'),
+				'actions'=>array('create','update','test','ActivityDate'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -168,6 +168,17 @@ class UserController extends Controller
 		$session->open();
 		echo Yii::app()->request->cookies['date'] = new CHttpCookie('date',$date,array('expire'=>time()+(365*24*60*60)));
 		//$session['date'] = $date;
+	}
+	
+	/**
+	 * Manages all models.
+	 */
+	public function actionActivityDate()
+	{
+		$dataProvider=new CActiveDataProvider('User');
+		$this->render('activitydate',array(
+				'dataProvider'=>$dataProvider,
+		));
 	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

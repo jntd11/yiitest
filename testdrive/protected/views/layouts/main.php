@@ -24,7 +24,7 @@ $session->open();
 $currdate = Yii::app()->request->cookies['date'];
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery');
-$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+//$cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs->registerCssFile(
 		$cs->getCoreScriptUrl().
 		'/jui/css/base/jquery-ui-1.10.2.custom.css'
@@ -64,12 +64,20 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Automatic Chores Maintenance', 'url'=>array('admin')),
 							array('label'=>'Automatic Chores Table', 'url'=>array('admin')),
 							array('label'=>'Change Hog Number', 'url'=>array('admin')),
+							array('label'=>'Mailing Code', 'url'=>array('/tblMailingCode')),
+							array('label'=>'Activity date', 'url'=>array('user/activitydate')),
 				)),
-				array('label'=>'Customer Entry', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblCustomerEntry')),
+				array('label'=>'Customer',
+					  'url'=>array(''),
+					  'items'=>array(
+					  			array('label'=>'Customer Entry', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblCustomerEntry'))
+					  	)
+				),
 				array('label'=>'Entry', 'itemOptions'=>array('id'=>'customerentry'), 'linkOptions'=>array('accesskey'=>'e'), 'url'=>array('/user'), 'items'=>array(
 							array('label'=>'Create User', 'url'=>array('create')),
 							array('label'=>'Manage User', 'url'=>array('admin'))
 				)),
+					
 				array('label'=>'Reports', 'itemOptions'=>array('id'=>'reports'), 'url'=>array('/user'), 'linkOptions'=>array('accesskey'=>'r'), 'items'=>array(
 							array('label'=>'Create User', 'url'=>array('create')),
 							array('label'=>'Manage User', 'url'=>array('admin'))
@@ -92,7 +100,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 	<div id="footer">
 		<div id="dialog"><p>Date: <input type="text" id="datepicker" />&nbsp;</p></div>
-		<div id="currdate"><?php echo $currdate; ?></div>
+		<div id="currdate">Activity date: <?php echo $currdate; ?></div>
 	</div><!-- footer -->
 
 </div><!-- page -->

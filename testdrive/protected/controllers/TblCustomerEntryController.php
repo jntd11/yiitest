@@ -30,7 +30,7 @@ class TblCustomerEntryController extends Controller
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view',
 					'autocompleteFirstName','autocompleteLastName','autocompleteCompanyName',
-					'autocompletePhoneHome','autocompletePhoneBusiness','autocompletePhoneCell','autocompletePhoneOther1','autocompletePhoneOther2'),
+					'autocompletePhoneHome','autocompletePhoneBusiness','autocompletePhoneCell','autocompletePhoneOther1','autocompletePhoneOther2','autocompleteMailingCode'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -246,7 +246,22 @@ class TblCustomerEntryController extends Controller
 		}
 		echo CJSON::encode($res);
 		Yii::app()->end();
-	}	
+	}
+
+	public function actionAutocompleteMailingCode() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc) FROM tbl_mailing_code WHERE  mailing_code_label LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		$res[] = "New";
+		echo CJSON::encode($res);
+		Yii::app()->end();
+		
+	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

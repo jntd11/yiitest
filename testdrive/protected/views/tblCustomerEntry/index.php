@@ -2,6 +2,8 @@
 /* @var $this TblCustomerEntryController */
 /* @var $dataProvider CActiveDataProvider */
 
+$cs=Yii::app()->clientScript;
+$cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->breadcrumbs=array(
 	'Customers',
 );

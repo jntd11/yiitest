@@ -48,6 +48,7 @@ function autoSuggestSearch(){
 		    	$('#tbl-customer-entry-grid').yiiGridView('update', {data: data});
 		    }
 	});
+	
 	$("#tbl-customer-entry-grid [name='TblCustomerEntry[last_name]']").autocomplete({
 	    	  source: 'index.php?r=tblCustomerEntry/autocompleteLastName',
 	  		    select: function( event, ui ) {
@@ -96,5 +97,18 @@ function autoSuggestSearch(){
 			    	var data = this.name+"="+ui.item.value;
 			    	$('#tbl-customer-entry-grid').yiiGridView('update', {data: data});
 			    }
+	});
+	
+	$("#tbl-customer-entry-form [name='TblCustomerEntry[mailing_code]']").autocomplete({
+	    source: 'index.php?r=tblCustomerEntry/autocompleteMailingCode',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	if(ui.item.value == "New"){
+	    		location.href = 'index.php?r=tblMailingCode/create';
+	    	}
+	    	var val = ui.item.value;
+	    	var valArray = val.split("-");
+	    	ui.item.value = valArray[0];
+	    }
 	});
 }

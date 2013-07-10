@@ -1,15 +1,16 @@
 <?php
 /* @var $this TblMailingCodeController */
 /* @var $model tblMailingCode */
-
+$cs=Yii::app()->clientScript;
+$cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->breadcrumbs=array(
 	'Tbl Mailing Codes'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List tblMailingCode', 'url'=>array('index')),
-	array('label'=>'Create tblMailingCode', 'url'=>array('create')),
+	array('label'=>'List Mailing Code', 'url'=>array('index')),
+	array('label'=>'Create Mailing Code', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Tbl Mailing Codes</h1>
+<h1>Manage Mailing Codes</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

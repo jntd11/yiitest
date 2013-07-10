@@ -20,7 +20,7 @@ $(document).ready(function(){
 
 		  	    }
     });
-	if($("#currdate").html() == "") {
+	if($("#currdate").html() == "" || $("#activitypage").val() == 1) {
 		$("#dialog").dialog({
 			autoOpen: true,
 			width: 400,
@@ -116,6 +116,28 @@ $(document).ready(function(){
 	});
 	//$("input").unbind('keydown');
 	//$('input').keydown(function(event) {console.log("india"); event.stopPropagation(); event.preventDefault();});
+	$("#submitactivitydate").bind('click',function(){
+		location.reload();
+	});
 });
 
-
+function openDialog(){
+	$("#currdate").html("");
+	$("#dialog").dialog({
+		autoOpen: true,
+		width: 400,
+		modal: true,
+		closeOnEscape: false,
+		buttons: [
+			{
+				text: "Ok",
+				click: function() {
+					if($("#datepicker").val() == "") 
+						alert("Enter Valid Date");
+					else
+						$( this ).dialog( "close" );
+				}
+			}
+		]
+	});
+}

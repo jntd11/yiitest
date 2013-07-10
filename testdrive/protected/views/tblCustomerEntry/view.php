@@ -2,6 +2,7 @@
 /* @var $this TblCustomerEntryController */
 /* @var $model TblCustomerEntry */
 
+
 $this->breadcrumbs=array(
 	'Customers'=>array('index'),
 	$model->customer_entry_id,
