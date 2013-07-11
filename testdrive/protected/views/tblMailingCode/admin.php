@@ -51,6 +51,13 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'mailing_code_desc',
 		array(
 			'class'=>'CButtonColumn',
+			'afterDelete'=>'function(link,success,data){ if(success) $("#statusMsg").html(data); }',
 		),
 	),
 )); ?>
+<div id="statusMsg"></div>
+<?php if(Yii::app()->user->hasFlash('error')):?>
+        <div class="errorMessage">
+            <?php echo Yii::app()->user->getFlash('error'); ?>
+        </div>
+<?php endif; ?>

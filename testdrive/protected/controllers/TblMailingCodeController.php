@@ -86,6 +86,7 @@ class TblMailingCodeController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -110,11 +111,18 @@ class TblMailingCodeController extends Controller
 	public function actionDelete($id)
 	{
 		$model = $this->loadModel($id);
-		$customers =TblCustomerEntry::model()->find('mailing_code=',array($model->mailing_code_label));
-		if($customers === null)
+		$customers =TblCustomerEntry::model()->find('mailing_code="'.$model->getAttribute('mailing_code_label').'"');
+		if($customers === null){
 			$this->loadModel($id)->delete();
-		else 
-			$this->render('error', "Delete Code");
+			 Yii::app()->user->setFlash('deleteStatus','Deleted Successfully');
+			 echo "<div class='flash-success'>Deleted Successfully</div>";
+		}
+		else {
+			 $firstname = $customers->getAttribute("first_name");
+			 $lastname  = $customers->getAttribute("first_name");
+			 Yii::app()->user->setFlash('deleteStatus','This code cannot be deleted because it is being used by: '.$firstname.' '.$lastname.'.');
+			 echo "<div class='flash-success'>This code cannot be deleted because it is being used by: ".$firstname." ".$lastname.".</div>";
+		}
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -125,6 +133,7 @@ class TblMailingCodeController extends Controller
 	 */
 	public function actionIndex()
 	{
+
 		$dataProvider=new CActiveDataProvider('tblMailingCode');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
