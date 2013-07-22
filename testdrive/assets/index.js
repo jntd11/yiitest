@@ -141,3 +141,16 @@ function openDialog(){
 		]
 	});
 }
+function openDialogMailing(){
+	$("#mailingcodedialog").dialog({
+		autoOpen: true,
+		width: 600,
+		modal: true,
+		closeOnEscape: true,
+		buttons: [
+			{
+				text: "Cancel",
+			}
+		]
+	});
+}

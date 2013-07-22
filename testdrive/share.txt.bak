@@ -1,0 +1,237 @@
+1) To install the plugin, move www/analytics.js to your project's www folder and include a reference to it in your html file after cordova.js.
+
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="analytics.js"></script>
+
+2) Create a directory within your project called src/com/phonegap/plugins/analytics and copy src/com/phonegap/plugins/analytics/GoogleAnalyticsTracker.java into it.
+
+3) Add the following activity to your AndroidManifest.xml file, inside the <application> tag if it isn't already there.
+
+
+    <activity android:name="com.phonegap.DroidGap" android:label="@string/app_name">
+
+      <intent-filter>
+
+      </intent-filter>
+
+    </activity>
+
+4) Download GoogleAnalytics library (tested with v2.0 Beta 4; Use the version from this repo if needed) and copy lib/libGoogleAnalyticsV2.jar into the libs directory within your project. You may also need to right click on this file in eclipse and add the jar to the build path.
+
+5) In your res/xml/config.xml file add the following line:
+
+<plugin name="GoogleAnalyticsTracker" value="com.phonegap.plugins.analytics.GoogleAnalyticsTracker" />
+
+http%3A%2F%2Fwww.w3schools.com%2Fmy%20test.asp%3Fname%3Dst%C3%A5le%26car%3Dsaab%40 
+
+ http%3A%2F%2F192.168.1.6%3A8080%2FEasyMedAPI%2Fauth%3Femail%3Dj%40j.com%26password%3D123456%26format%3Djson 
+
+
+
+https://github.com/moodle/moodle/commit/29a4621e47dc8523620a9d70d4a34d988990c5d4
+
+online2.improvegroup.com.au
+Username: root
+Password: M@csBlowG0@ts
+https://github.com/moodle/moodle/commit/29a4621e47dc8523620a9d70d4a34d988990c5d4
+
+Table of Contents for Internal Documentation
+
+
+1.	Processes
+a.	Collecting Requirements
+b.	Release Process
+c.	Tickets Handling
+d.	
+2.	Domains
+a.	Database (snapshot of relationship between tables by Senthil)
+b.	Interface Specification
+i.	EasyMedAPI
+ii.	Webservices
+iii.	HL7
+c.	Configuration
+i.	Account Extensions 
+ii.	META and Account Rights
+d.	Mobile Apps
+e.	Messenger
+f.	PHP application structure
+g.	Java application structure
+h.	HL7
+i.	HIPAA
+j.	Cognos
+k.	Message Broker (Siva made documentation how to run MB without  interface etc like Deamon.. put it here)
+l.	Splunk
+m.	Audit and Traceability (Select * from audit table by Senthil.. Get help from Poo)
+n.	…
+
+3.	Functionalities
+a.	Login, logout, ping
+b.	Visit scheduling
+c.	CCR / Medical Record
+d.	…
+
+4.	Product Versions
+a.	Release Synopsis
+b.	Test Plans
+c.	SCRs & Implementation plans
+d.	Misc Presentations
+
+
+mindpowercoach.com/test_environment
+
+You can work right now my email is Edgar.payaslyan@gmail.com
+Plesk control Panel: https://yoursitepros.com:8443 (has access to the mysql db)
+login:       info@ajemco.com
+pass:        ajem123
+[11:28:38 AM] edgar payaslyan: ftp: ftp.ajemco.com 
+login:       ajemco.com
+pass:        ajem123
+[11:28:38 AM] edgar payaslyan: http://ajemco.com/administrator
+user: admin
+pass: ajemco7878
+
+You can work right now my email is Edgar.payaslyan@gmail.com
+
+http://www.yootheme.com/zoo/documentation/advanced/how-to-use-the-csv-importer
+http://www.yootheme.com/zoo/documentation?view=docs
+http://web-harvest.sourceforge.net/download.php
+
+http://www.wyndhamcollection.com/Bathroom-Vanities/
+
+URL: s01.lms.ac:2082
+username:fl03805
+password:fujidai1965
+***************
+***************
+New Server C-Panel Information:
+
+URL: https://server46.instantssl.co.jp:2083/
+username: fl03805
+password: fujiest1965
+************************************************
+SSL: 　https://server46.instantssl.co.jp:2083/
+Same username and password, I think.
+
+The department Moodle URL is: www.flang-fjunv.com
+　DNS Primary　：　ns46.joesdns.net
+　DNS Secondary　：　ns2.joesdns.net
+)!kU%-=6%@*Q
+
+
+$CFG->dbtype    = 'mysqli';
+$CFG->dblibrary = 'native';
+$CFG->dbhost    = 'localhost';
+$CFG->dbname    = 'fl03805_mdle1';
+$CFG->dbuser    = 'fl03805_mdle1';
+$CFG->dbpass    = 'rHblw6THEnmY';
+$CFG->prefix    = 'mdl_';
+
+
+Username: admin
+PW: fujidai1
+www.flang-fjunv.com
+
+-revalidate
+
+$ git clone git://git.moodle.org/moodle.git                       (1)
+$ cd moodle
+$ git branch -a                                                   (2)
+$ git branch --track MOODLE_23_STABLE origin/MOODLE_23_STABLE      (3)
+$ git checkout MOODLE_23_STABLE                                    (4)
+
+780fb52c10c4b9ce50c4/zxc)(*123
+
+
+Jai,
+Great start on the PIGSAPP!
+
+Project B. Setup Customer Entry (F6 - 11.CUSTOMER ENTRY from PIGS).
+
+    1. We need to change Customer Code to Search. We will eliminate Customer Code.
+
+        a. This is where we will put to use the research you did earlier.
+
+        b. In this Search field we want to be able to start typing (either Last Name, First Name, Company or Phone #) and the dropdown will show immediately the names (or phone #) that start with what is typed. (You will need to include all 5 nonblank phone #'s in the search index.)
+
+        c. Down & Up arrow to highlight then Enter to select or left click to select from list shown and then display all the Customer fields.
+
+        d. Pressing Tab in the Search field will clear the Search field and start taking the new Company Name, etc.
+
+    2. We need to take a separate First Name and Last Name. I will split these out during the upload of Customer data from the current PIGS program.
+
+    3. We need to expand the number of phone fields to 5. The titles will be: Home, Business, Cell, Other 1, Other 2. These phone fields need to be large enough to take at least 30 additional characters after the number. This allows for short comments to identify the number for example: "218-732-1234 Lloyd's cell"
+
+    4. The field titles need to be change from all caps to up-low. Example: COMPANY NAME => Company Name. Also, the numbers at the beginning of each field title should be eliminated.
+
+    5. We need to have just one Customer database per login.
+
+    6. When you call up a customer in the old PIGS (you can use F10 to show the next customer when on the CODE or bottom option line) you will notice there are several "bottom option functions".
+
+        a. F3=DEL We need to be able to Delete this customer.
+
+        b. F4=SLD HOGS Skip for now - this will be added in a later project.
+
+        c. F5=SCRN 2 This shows 14 additional fields to take information on. All these additional fields need to be added to the main Customer Entry screen. The 4 SUGGESTED PROGRAM lines needs to be a free format box (like Notes) showing first 4 lines but allowing unlimited lines (30 if unlimited not possible).
+
+        d. SF6=ENVELOPE Skip for now - this will be part of the later project.
+
+        e. F6=MOVE is no longer needed.
+
+        f. F7=LTR SNT This automatically fills in the current Activity date into the LAST LETTER SENT field. Here is where if the User is positioned on this field that a "t" (or T) would fill in the current activity date and the + would add 1 day to the date shown and - would subtract 1 from the date shown (but NOT change the PIGSAPP Current Activity date selected at login).
+
+        g. F8=NOTES Need to show the first 10 lines of notes on main screen and allow for unlimited free format entry (if unlimited is not possible then at least 30 lines. The function key options on this box will not be needed.
+
+        h. SF4=CC This is Shift-F4 and shows the Credit Card info for this customer. This needs to be on the main screen also.
+
+        i. SF5=ST This is Shift-F5 and contains the Ship To fields.
+This needs to be on the main screen also. Note that we need 2 buttons, one to set Ship To fields to Customer fields and the other to Clear Ship To Fields.
+
+        j. DIRECTIONS/COMMENTS will be eliminated - I will incorporate any data from here into Notes.
+
+The layout of the main Customer Entry screen should be in this order:
+1. lines 1-11.
+2. Notes
+3. Credit Card info
+4. Ship To fields
+5. lines 12-22
+6. Additional fields (from line c above)
+
+Date fields: 14, 20, 21, 22
+Numeric fields (whole number no decimals): 15, 16, 17, 18
+
+Fields 12, 13, 15, 16, 17, 18 should be eliminated.
+
+Line 22 date should be automatically filled in with the current Activity date when this customer is originally entered and only changed after that by the user.
+
+Date fields need to have the t/+/- options when the cursor is positioned on that field. Also, put a small calendar icon next to each date field to click on for the date picker.
+
+I will need to import data from current users of PIGS so I will need to know how to access the Customer Database that you set up to import a text (CSV) file into.
+
+I have following doubts.
+
+    5. We need to have just one Customer database per login.
+    Can you explain this? We hope to have many, maybe hundreds of subscribers that will use this software. Each subscriber will have his own unique Customer database per login (as well as other information that must be kept separate by login).
+
+   We can't keep "function keys" on Web/browser. So you have acess it using mouse Sorry, I did not make it clear that the function keys would be replaced by buttons. I was showing the function keys as a reference to what is available now and will either be eliminated, dealt with later or needs to have the same functionality with a button or whatever.
+
+  I will need to import data from current users of PIGS so I will need to know how to access the Customer Database that you set up to import a text (CSV) file into.
+
+   Do you want to move from existing table to new one (the one we do now)? Not sure, may be we need write to script to that as sometime fields and order will change..... Currently the Customer Database (of about a dozen or so users of PIGS) is in an ISAM COBOL database. I will need to write a utility to export that data to a CSV file so that the data can then be imported into the Customer database you construct for the PIGSAPP application. Right now in the Auction program in phpmyadmin I have the feature to Import data from a CSV file into a table. I will need something similar that I can use to import the data and also construct (or rebuild) any index tables.
+Hi,
+Small doubt here.
+1-11
+12. Notes
+13-16 CC info (4)
+17-27 Shipping fields (11)
+
+Then you said 12-22. It has 12-24. Just 23. Also u have said (Numeric fields (whole number no decimals): 15, 16, 17, 18) and Fields 12, 13, 15, 16, 17, 18 should be eliminated. Just eleminate Fields 12, 13, 15, 16, 17, 18.
+
+That means only 14,19,20,21,22 and 23 (6 fields) to be added on this form? Yes, but field numbers not needed on new form as mouse click or tab will get you to that field.
+Does 23-34 not needed? 23 is needed. 30-34 is item j below which is incorporated in to item g below (Notes).
+
+05/06/2013
+a. F3=DEL We need to be able to Delete this customer. - Delete available
+
+

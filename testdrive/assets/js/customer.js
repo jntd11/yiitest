@@ -104,7 +104,8 @@ function autoSuggestSearch(){
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
 	    	if(ui.item.value == "New"){
-	    		location.href = 'index.php?r=tblMailingCode/create';
+	    		openDialogMailing();
+	    		//location.href = 'index.php?r=tblMailingCode/create';
 	    	}
 	    	var val = ui.item.value;
 	    	var valArray = val.split("-");
