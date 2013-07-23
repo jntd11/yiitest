@@ -147,10 +147,5 @@ function openDialogMailing(){
 		width: 600,
 		modal: true,
 		closeOnEscape: true,
-		buttons: [
-			{
-				text: "Cancel",
-			}
-		]
 	});
 }

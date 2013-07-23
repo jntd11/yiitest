@@ -36,7 +36,7 @@ $this->menu=array(
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'mailing_code_desc'); ?>
-		<?php echo $form->textField($model,'mailing_code_desc',array('size'=>70,'maxlength'=>70)); ?>
+		<?php echo $form->textField($model,'mailing_code_desc',array('size'=>60,'maxlength'=>60)); ?>
 		<?php echo $form->error($model,'mailing_code_desc'); ?>
 	</div>
 

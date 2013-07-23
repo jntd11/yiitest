@@ -29,7 +29,11 @@ $(document).ready(function(){
 	$("#tbl-customer-entry-form :input[type=submit]").click(function() {
 		   $("#tbl-customer-entry-form").data("changed",false);
 	});
-
+	
+	$("#tbl-mailing-code-form :input[type=submit]").click(function() {
+		$("#tbl-mailing-code-form").data("changed",false);
+	}); 
+	
 	window.onbeforeunload = iamexiting;
 	function iamexiting(e) {
 		if($("#tbl-customer-entry-form").data("changed")) {
@@ -103,7 +107,7 @@ function autoSuggestSearch(){
 	    source: 'index.php?r=tblCustomerEntry/autocompleteMailingCode',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
-	    	if(ui.item.value == "New"){
+	    	if(ui.item.value == "<New>"){
 	    		openDialogMailing();
 	    		//location.href = 'index.php?r=tblMailingCode/create';
 	    	}

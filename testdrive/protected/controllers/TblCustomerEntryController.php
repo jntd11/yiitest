@@ -77,6 +77,22 @@ class TblCustomerEntryController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->customer_entry_id));
 		}
+		
+		
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+		
+		if(isset($_POST['tblMailingCode']))
+		{
+			$model=new tblMailingCode;
+			$model->attributes=$_POST['tblMailingCode'];
+			$model->save();
+			$code = $model->mailing_code_label;
+			$model=new TblCustomerEntry;
+			$model->mailing_code = $code;
+			//if($model->save())
+				//$this->redirect(array('view','id'=>$model->mailing_code_id));
+		}
 
 		$this->render('create',array(
 			'model'=>$model,
@@ -258,7 +274,7 @@ class TblCustomerEntryController extends Controller
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 		}
-		$res[] = "New";
+		$res[] = "<New>";
 		echo CJSON::encode($res);
 		Yii::app()->end();
 		
