@@ -31,6 +31,7 @@ $(document).ready(function(){
 	});
 	
 	$("#tbl-mailing-code-form :input[type=submit]").click(function() {
+		$("#tbl-customer-entry-form").data("changed",false);
 		$("#tbl-mailing-code-form").data("changed",false);
 	}); 
 	
@@ -108,12 +109,34 @@ function autoSuggestSearch(){
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
 	    	if(ui.item.value == "<New>"){
+	    		ui.item.value = "";
+	    		this.value = this.value.replace(/\<n*e*w*>*/,"");
+	    		var terms = split(this.value);
+		    	// remove the current input
 	    		openDialogMailing();
 	    		//location.href = 'index.php?r=tblMailingCode/create';
+	    	}else{
+	    		var terms = split( this.value );
+		    	// remove the current input
+		        terms.pop();
+		    	var val = ui.item.value;
+		    	var valArray = val.split("-");
+		    	//ui.item.value = valArray[0];
+		    	terms.push( valArray[0] );
+		    	//terms.push( val );
+		          // add placeholder to get the comma-and-space at the end
 	    	}
-	    	var val = ui.item.value;
-	    	var valArray = val.split("-");
-	    	ui.item.value = valArray[0];
+	        terms.push( "" );
+	        this.value = terms.join( "" );	    	
+	        return false;
 	    }
 	});
+}
+function split( val ) {
+    //return val.split( /,\s*/ );
+	return val.split("");
+ }
+
+function caps(element){
+	element.value = element.value.toUpperCase();
 }

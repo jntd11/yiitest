@@ -15,7 +15,20 @@ $this->menu=array(
 
 <h1>Mailing Codes</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
+<?php
+/*$this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
-)); ?>
+));
+*/ 
+ $this->widget('zii.widgets.grid.CGridView', array(
+ 		'id'=>'tbl-customer-entry-grid',
+ 		'selectableRows'=>1,
+ 		'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
+ 		'dataProvider'=>$dataProvider,
+ 		'columns'=>array(
+ 				'mailing_code_label',
+ 				'mailing_code_desc',
+ 		),
+ ));
+ ?>

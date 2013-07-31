@@ -35,7 +35,7 @@ class tblMailingCode extends CActiveRecord
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
-		return array(
+		return array( 
 			array('mailing_code_label, mailing_code_desc', 'required'),
 			array('mailing_code_label', 'length', 'max'=>50),
 			// The following rule is used by search().

@@ -100,7 +100,7 @@ class TblCustomerEntry extends CActiveRecord
 			array('ship_address1, ship_address2', 'length', 'max'=>100),
 			array('ship_state', 'length', 'max'=>10),
 			array('system, feeder, finish', 'length', 'max'=>40),
-			array('language','in','range'=>array('en','fr','zn'),'allowEmpty'=>false),
+			//array('language','in','range'=>array('en','fr','zn'),'allowEmpty'=>false),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('company_name, first_name, last_name, phone_home, phone_business, phone_cell, phone_other1, phone_other2, address1, address2, city, zip,  state, country, contact, county, notes, cc_brand, cc_number, cc_expiration, cc_name, ship_company_name, ship_name, ship_address1, ship_address2, ship_city, ship_state, ship_country, ship_zip, ship_contact, ship_area, ship_phone, att_sale, mailing_code, last_invoice, last_letter_sent, entry_date, herdmark, total_sows, total_boars, facility, sows, boars, frequency, system, feeder, finish, rep_glits, notes1, notes2, notes3, notes4, modified_date', 'safe', 'on'=>'search'),
@@ -158,7 +158,7 @@ class TblCustomerEntry extends CActiveRecord
 			'ship_area' => 'County/Area',
 			'ship_phone' => 'Phone',
 			'att_sale' => 'Att Sale',
-			'mailing_code' => 'Mailing Code',
+			'mailing_code' => 'Mailing Codes',
 			'last_invoice' => 'Last Invoice #',
 			'last_letter_sent' => 'Last Letter Sent',
 			'entry_date' => 'Entry Date',

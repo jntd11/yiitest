@@ -30,18 +30,22 @@ $this->menu=array(
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'mailing_code_label'); ?>
-		<?php echo $form->textField($model,'mailing_code_label',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->textField($model,'mailing_code_label',array('size'=>10,'maxlength'=>10, 'id'=>'mailing_code_label','onkeyup'=>'caps(this)') ); ?>
 		<?php echo $form->error($model,'mailing_code_label'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'mailing_code_desc'); ?>
-		<?php echo $form->textField($model,'mailing_code_desc',array('size'=>60,'maxlength'=>60)); ?>
+		<?php echo $form->textField($model,'mailing_code_desc',array('size'=>60,'maxlength'=>60,'id'=>'mailing_code_desc')); ?>
 		<?php echo $form->error($model,'mailing_code_desc'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	    <?php echo CHtml::ajaxSubmitButton("Create",  '', 
+	    	 array('success' => 'function(data) { $("#mailingcodedialog").dialog("close");
+	    	 		if(data == 1) { alert("Mailing Code Already Exists"); return;}
+	    	 		$("#TblCustomerEntry_mailing_code").val($("#TblCustomerEntry_mailing_code").val()+$("#mailing_code_label").val());}')); ?>
+		<?php //echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

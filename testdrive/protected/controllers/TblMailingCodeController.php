@@ -111,7 +111,7 @@ class TblMailingCodeController extends Controller
 	public function actionDelete($id)
 	{
 		$model = $this->loadModel($id);
-		$customers =TblCustomerEntry::model()->find('mailing_code="'.$model->getAttribute('mailing_code_label').'"');
+		$customers =TblCustomerEntry::model()->find('mailing_code like "%'.$model->getAttribute('mailing_code_label').',%"');
 		if($customers === null){
 			$this->loadModel($id)->delete();
 			 Yii::app()->user->setFlash('deleteStatus','Deleted Successfully');

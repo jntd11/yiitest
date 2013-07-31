@@ -5425,3 +5425,414 @@ Stack trace:
 REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
 HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
 ---
+2013/07/24 12:58:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('create')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/create')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=site/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/
+---
+2013/07/24 12:58:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('admin')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/admin')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=site/admin
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=site/create
+---
+2013/07/24 12:59:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('admin')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/admin')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=site/admin
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=site/create
+---
+2013/07/24 13:07:18 [error] [php] Trying to get property of non-object (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php:304)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/update&id=
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (304)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (109)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/24 13:07:29 [error] [php] Trying to get property of non-object (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php:303)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/update&id=
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (303)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (109)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/24 13:10:46 [error] [php] Trying to get property of non-object (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php:303)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/view&id=96
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (303)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (57)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/24 13:10:48 [error] [php] Trying to get property of non-object (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php:303)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/view&id=96
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (303)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (57)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/24 13:11:08 [error] [php] Trying to get property of non-object (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php:303)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/view&id=97
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (303)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (57)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 09:27:15 [error] [php] Function split() is deprecated (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php:280)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/autocompleteMailingCode&term=a
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (280)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 09:27:55 [error] [php] Function split() is deprecated (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php:280)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/autocompleteMailingCode&term=a
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (280)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 09:30:35 [error] [php] preg_split() [<a href='function.preg-split'>function.preg-split</a>]: Unknown modifier '\' (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php:280)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/autocompleteMailingCode&term=a
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (280)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:16:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "action".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('action')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('action')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/action
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+---
+2013/07/26 10:17:52 [error] [php] Missing argument 2 for CHtml::ajaxSubmitButton(), called in C:\wamp\www\yii\yii\testdrive\protected\views\tblCustomerEntry\create.php on line 46 and defined (C:\wamp\www\yii\yii\framework\web\helpers\CHtml.php:1056)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): TblCustomerEntryController->renderInternal()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(869): TblCustomerEntryController->renderFile()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(782): TblCustomerEntryController->renderPartial()
+#3 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(98): TblCustomerEntryController->render()
+#4 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblCustomerEntryController->actionCreate()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#10 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#14 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblCustomerEntry\create.php (46)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (98)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:32:43 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (C:\wamp\www\yii\yii\framework\web\helpers\CHtml.php:98)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\helpers\CHtml.php(153): renderAttributes()
+#1 C:\wamp\www\yii\yii\framework\web\helpers\CHtml.php(1983): tag()
+#2 C:\wamp\www\yii\yii\framework\web\helpers\CHtml.php(1257): activeInputField()
+#3 C:\wamp\www\yii\yii\framework\web\widgets\CActiveForm.php(657): activeTextField()
+#4 C:\wamp\www\yii\yii\testdrive\protected\views\tblCustomerEntry\create.php(33): CActiveForm->textField()
+#5 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require()
+#6 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): TblCustomerEntryController->renderInternal()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(869): TblCustomerEntryController->renderFile()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(782): TblCustomerEntryController->renderPartial()
+#9 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(98): TblCustomerEntryController->render()
+#10 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblCustomerEntryController->actionCreate()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#13 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#16 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#19 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#20 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/create
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblCustomerEntry\create.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (98)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:53:07 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:53:07 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:53:07 [error] [exception.CException] exception 'CException' with message 'Property "TblCustomerEntry.language" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('language')
+#1 C:\wamp\www\yii\yii\framework\validators\CRangeValidator.php(49): CActiveRecord->__get('language')
+#2 C:\wamp\www\yii\yii\framework\validators\CValidator.php(213): CRangeValidator->validateAttribute(Object(TblCustomerEntry), 'language')
+#3 C:\wamp\www\yii\yii\framework\base\CModel.php(159): CValidator->validate(Object(TblCustomerEntry), NULL)
+#4 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(794): CModel->validate(NULL)
+#5 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(117): CActiveRecord->save()
+#6 [internal function]: TblCustomerEntryController->actionUpdate('2')
+#7 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TblCustomerEntryController), Array)
+#8 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TblCustomerEntryController), Object(ReflectionMethod), Array)
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#18 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#19 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#20 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/update/id/2
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblCustomerEntry/update/id/2
+---
+2013/07/26 10:53:48 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:53:48 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:53:48 [error] [exception.CException] exception 'CException' with message 'Property "TblCustomerEntry.language" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('language')
+#1 C:\wamp\www\yii\yii\framework\validators\CRangeValidator.php(49): CActiveRecord->__get('language')
+#2 C:\wamp\www\yii\yii\framework\validators\CValidator.php(213): CRangeValidator->validateAttribute(Object(TblCustomerEntry), 'language')
+#3 C:\wamp\www\yii\yii\framework\base\CModel.php(159): CValidator->validate(Object(TblCustomerEntry), NULL)
+#4 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(794): CModel->validate(NULL)
+#5 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(117): CActiveRecord->save()
+#6 [internal function]: TblCustomerEntryController->actionUpdate('2')
+#7 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TblCustomerEntryController), Array)
+#8 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TblCustomerEntryController), Object(ReflectionMethod), Array)
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#18 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#19 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#20 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/update/id/2
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblCustomerEntry/update/id/2
+---
+2013/07/26 10:54:39 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:54:39 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:54:39 [error] [exception.CException] exception 'CException' with message 'Property "TblCustomerEntry.language" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('language')
+#1 C:\wamp\www\yii\yii\framework\validators\CRangeValidator.php(49): CActiveRecord->__get('language')
+#2 C:\wamp\www\yii\yii\framework\validators\CValidator.php(213): CRangeValidator->validateAttribute(Object(TblCustomerEntry), 'language')
+#3 C:\wamp\www\yii\yii\framework\base\CModel.php(159): CValidator->validate(Object(TblCustomerEntry), NULL)
+#4 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(794): CModel->validate(NULL)
+#5 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php(117): CActiveRecord->save()
+#6 [internal function]: TblCustomerEntryController->actionUpdate('2')
+#7 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TblCustomerEntryController), Array)
+#8 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TblCustomerEntryController), Object(ReflectionMethod), Array)
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#18 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblCustomerEntr...')
+#19 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#20 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/update/id/2
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblCustomerEntry/update/id/2
+---
+2013/07/26 10:57:03 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:57:03 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:57:20 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:57:20 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:59:50 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"D",% LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `tbl_customer_entry` `t` WHERE mailing_code like %"D",% LIMIT 1.
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblMailingCodeController.php (114)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 10:59:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"D",% LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `tbl_customer_entry` `t` WHERE mailing_code like %"D",% LIMIT 1' in C:\wamp\www\yii\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\CDbCommand.php(414): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(1297): CDbCommand->queryRow()
+#2 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(1402): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblMailingCodeController.php(114): CActiveRecord->find('mailing_code li...')
+#4 [internal function]: TblMailingCodeController->actionDelete('111')
+#5 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TblMailingCodeController), Array)
+#6 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TblMailingCodeController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(1116): CFilterChain->run()
+#10 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#11 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#19 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblMailingCode/...')
+#20 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblMailingCode%2Fdelete&id=111&ajax=tbl-mailing-code-grid
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblMailingCode/admin
+---
+2013/07/26 11:50:53 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/26 11:50:53 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (116)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/07/31 10:23:33 [error] [php] Undefined variable: last (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php:286)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblCustomerEntryController->runAction()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblCustomerEntryController->filterAccessControl()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblCustomerEntryController->runActionWithFilters()
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblCustomerEntryController->run()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/autocompleteMailingCode&term=a
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (286)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)

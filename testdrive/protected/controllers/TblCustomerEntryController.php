@@ -86,17 +86,20 @@ class TblCustomerEntryController extends Controller
 		{
 			$model=new tblMailingCode;
 			$model->attributes=$_POST['tblMailingCode'];
-			$model->save();
-			$code = $model->mailing_code_label;
-			$model=new TblCustomerEntry;
-			$model->mailing_code = $code;
+			$results = $this->getMailingCode($model->mailing_code_label);
+			if($results == 0) {
+				$model->save();
+				$code = $model->mailing_code_label;
+				$model=new TblCustomerEntry;
+				$model->mailing_code = $code;
+			}
 			//if($model->save())
 				//$this->redirect(array('view','id'=>$model->mailing_code_id));
+		}else{
+			$this->render('create',array(
+				'model'=>$model,
+			));
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
 	}
 
 	/**
@@ -107,7 +110,7 @@ class TblCustomerEntryController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$oldid = $id;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -119,10 +122,22 @@ class TblCustomerEntryController extends Controller
 				//$this->redirect(array('view','id'=>$model->customer_entry_id));
 			}
 		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		if(isset($_POST['tblMailingCode']))
+		{
+			$model=new tblMailingCode;
+			$model->attributes=$_POST['tblMailingCode'];
+			$results = $this->getMailingCode($model->mailing_code_label);
+			if($results == 0) {
+				$model->save();
+				$code = $model->mailing_code_label;
+				$model=$this->loadModel($oldid);
+				$model->mailing_code = $code;
+			}
+		}else{
+			$this->render('update',array(
+				'model'=>$model,
+			));
+		}
 	}
 
 	/**
@@ -268,16 +283,33 @@ class TblCustomerEntryController extends Controller
 	public function actionAutocompleteMailingCode() {
 		$res =array();
 		if (isset($_GET['term'])) {
+			//$term = preg_split("/ |\,| \,/",$_GET['term']);
+			//$last = $term[count($term) - 1];
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc) FROM tbl_mailing_code WHERE  mailing_code_label LIKE :username";
+			//$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc) FROM tbl_mailing_code WHERE  mailing_code_label LIKE :username";
+			$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc) FROM tbl_mailing_code";
 			$command =Yii::app()->db->createCommand($qtxt);
-			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			//$command->bindValue(":username", '%'.$last.'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 		}
 		$res[] = "<New>";
 		echo CJSON::encode($res);
 		Yii::app()->end();
 		
+	}
+	public function getMailingCode($term=NULL) {
+		$res =array();
+		if (isset($term)) {
+			$qtxt ="SELECT mailing_code_label FROM tbl_mailing_code WHERE  mailing_code_label LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		if(count($res) > 0)
+			echo 1;
+		else 
+			echo 0;
+		Yii::app()->end();
 	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
