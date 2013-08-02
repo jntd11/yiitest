@@ -44,10 +44,10 @@ $this->menu=array(
 	
 	<div class="row buttons">
 		<?php echo CHtml::ajaxSubmitButton("Create",  '', array('success' => 'function(data) { 
-				$("#mailingcodedialog").dialog("close"); 
 				if(data == 1) { alert("Mailing Code Already Exists"); return;}
+				$("#mailingcodedialog").dialog("close"); 
 				$("#TblCustomerEntry_mailing_code").val($("#TblCustomerEntry_mailing_code").val()+$("#mailing_code_label").val());}')); ?>
-		<?php //echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::button('Cancel',array('onclick'=>'$("#mailingcodedialog").dialog("close")')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

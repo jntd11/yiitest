@@ -149,3 +149,6 @@ function openDialogMailing(){
 		closeOnEscape: true,
 	});
 }
+function caps(element){
+	element.value = element.value.toUpperCase();
+}

@@ -136,7 +136,3 @@ function split( val ) {
     //return val.split( /,\s*/ );
 	return val.split("");
  }
-
-function caps(element){
-	element.value = element.value.toUpperCase();
-}

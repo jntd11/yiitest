@@ -87,7 +87,9 @@ class TblCustomerEntryController extends Controller
 			$model=new tblMailingCode;
 			$model->attributes=$_POST['tblMailingCode'];
 			$results = $this->getMailingCode($model->mailing_code_label);
+			//echo $results;
 			if($results == 0) {
+				//print_r($model);
 				$model->save();
 				$code = $model->mailing_code_label;
 				$model=new TblCustomerEntry;
@@ -287,7 +289,7 @@ class TblCustomerEntryController extends Controller
 			//$last = $term[count($term) - 1];
 			// http://www.yiiframework.com/doc/guide/database.dao
 			//$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc) FROM tbl_mailing_code WHERE  mailing_code_label LIKE :username";
-			$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc) FROM tbl_mailing_code";
+			$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc) FROM tbl_mailing_code order by mailing_code_label";
 			$command =Yii::app()->db->createCommand($qtxt);
 			//$command->bindValue(":username", '%'.$last.'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -309,7 +311,6 @@ class TblCustomerEntryController extends Controller
 			echo 1;
 		else 
 			echo 0;
-		Yii::app()->end();
 	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

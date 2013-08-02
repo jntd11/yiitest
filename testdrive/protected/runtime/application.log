@@ -5836,3 +5836,143 @@ Stack trace:
 REQUEST_URI=/yii/yii/testdrive/index.php?r=tblCustomerEntry/autocompleteMailingCode&term=a
 in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (286)
 in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/08/01 07:13:36 [error] [php] include(TblCustomerEntryController.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\wamp\www\yii\yii\framework\YiiBase.php:421)
+Stack trace:
+#0 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblMailingCodeController.php(73): spl_autoload_call()
+#1 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblMailingCodeController->actionCreate()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblMailingCodeController->runAction()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblMailingCodeController->filterAccessControl()
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblMailingCodeController->runActionWithFilters()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblMailingCodeController->run()
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\yii\testdrive\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblMailingCode/create
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblMailingCodeController.php (73)
+in C:\wamp\www\yii\yii\testdrive\index.php (13)
+2013/08/01 08:42:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('create')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/create')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=site/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/
+---
+2013/08/02 08:50:15 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.sort" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('sort', 'mailing_code_la...')
+#1 C:\wamp\www\yii\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(TblMailingCodeController), 'zii.widgets.gri...', Array)
+#2 C:\wamp\www\yii\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 C:\wamp\www\yii\yii\testdrive\protected\views\tblMailingCode\admin.php(58): CBaseController->widget('zii.widgets.gri...', Array)
+#4 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#5 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblMailingCodeController.php(176): CController->render('admin', Array)
+#9 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblMailingCodeController->actionAdmin()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblMailingCode/...')
+#20 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblMailingCode/admin
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblMailingCode/index
+---
+2013/08/02 08:50:25 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.sort" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('sort', Array)
+#1 C:\wamp\www\yii\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(TblMailingCodeController), 'zii.widgets.gri...', Array)
+#2 C:\wamp\www\yii\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 C:\wamp\www\yii\yii\testdrive\protected\views\tblMailingCode\admin.php(58): CBaseController->widget('zii.widgets.gri...', Array)
+#4 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#5 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblMailingCodeController.php(176): CController->render('admin', Array)
+#9 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblMailingCodeController->actionAdmin()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblMailingCode/...')
+#20 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblMailingCode/admin
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblMailingCode/index
+---
+2013/08/02 09:03:21 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.defaultOrder" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('defaultOrder', 'mailing_code_la...')
+#1 C:\wamp\www\yii\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(TblMailingCodeController), 'zii.widgets.gri...', Array)
+#2 C:\wamp\www\yii\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 C:\wamp\www\yii\yii\testdrive\protected\views\tblMailingCode\admin.php(58): CBaseController->widget('zii.widgets.gri...', Array)
+#4 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#5 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblMailingCodeController.php(176): CController->render('admin', Array)
+#9 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblMailingCodeController->actionAdmin()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblMailingCode/...')
+#20 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblMailingCode/admin
+---
+2013/08/02 09:20:06 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.sort" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('sort', Array)
+#1 C:\wamp\www\yii\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(TblMailingCodeController), 'zii.widgets.gri...', Array)
+#2 C:\wamp\www\yii\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 C:\wamp\www\yii\yii\testdrive\protected\views\tblMailingCode\admin.php(58): CBaseController->widget('zii.widgets.gri...', Array)
+#4 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#5 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblMailingCodeController.php(176): CController->render('admin', Array)
+#9 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblMailingCodeController->actionAdmin()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblMailingCode/...')
+#20 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\wamp\www\yii\yii\testdrive\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblMailingCode/admin
+---

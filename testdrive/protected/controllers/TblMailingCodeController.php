@@ -70,14 +70,35 @@ class TblMailingCodeController extends Controller
 		if(isset($_POST['tblMailingCode']))
 		{
 			$model->attributes=$_POST['tblMailingCode'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->mailing_code_id));
+			$results = $this->getMailingCode($model->mailing_code_label);
+			if($results == '0') {
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->mailing_code_id));
+			}else{
+				Yii::app()->user->setFlash('deleteStatus','Not Created, Mailing Code Already Exists');
+				echo "<div class='flash-success'>Not Created, Mailing Code Already Exists</div>";
+			}
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
+
+	public function getMailingCode($term=NULL) {
+		$res =array();
+		if (isset($term)) {
+			$qtxt ="SELECT mailing_code_label FROM tbl_mailing_code WHERE  mailing_code_label LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		if(count($res) > 0)
+			return 1;
+		else
+			return 0;
+	}
+	
 
 	/**
 	 * Updates a particular model.
@@ -134,7 +155,9 @@ class TblMailingCodeController extends Controller
 	public function actionIndex()
 	{
 
-		$dataProvider=new CActiveDataProvider('tblMailingCode');
+		$dataProvider=new CActiveDataProvider('tblMailingCode',
+					array('sort'=>array('defaultOrder'=>'mailing_code_label ASC'))
+		);
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

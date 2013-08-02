@@ -153,7 +153,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 	<td>
 		<div class="row">
 		<?php echo $form->labelEx($model,'mailing_code'); ?>
-		<?php echo $form->textField($model,'mailing_code',array('size'=>20,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'mailing_code',array('size'=>20,'maxlength'=>50,'onkeyup'=>'caps(this)')); ?>
 		<?php echo $form->error($model,'mailing_code'); ?>
 	</div>
 	
@@ -486,7 +486,8 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 	</table>
 	<div>&nbsp;</div>
 	<div class="row">
-			<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblCustomerEntry/index"')); ?>
 	</div>
 <?php $this->endWidget(); ?>
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
