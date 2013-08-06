@@ -14,12 +14,26 @@ $this->menu=array(
 	//array('label'=>'View Customers', 'url'=>array('view', 'id'=>$model->customer_entry_id)),
 	array('label'=>'Search Customers', 'url'=>array('admin')),
 );
+$cs=Yii::app()->clientScript;
+$cs->registerCssFile(
+		Yii::app()->baseUrl.
+		'/css/splitmenubuttons.css'
+);
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/splitmenubuttons.js');
 ?>
+<script>
 
+jQuery(function(){ // on document load
+	$('a[data-showmenu]').splitmenubuttonMenu() // Add split button menu to links with "data-showmenu" attr
+})
+
+</script>
 <h1>Update Customer <?php echo $model->customer_entry_id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
-<?php $model=new tblMailingCode; ?>
+<?php $model=new tblMailingCode; 
+$mc = $this->getMailingCodes();
+?>
 <div class="form" id="mailingcodedialog" style="display: none">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'tbl-mailing-code-form',
@@ -50,5 +64,12 @@ $this->menu=array(
 		<?php echo CHtml::button('Cancel',array('onclick'=>'$("#mailingcodedialog").dialog("close")')); ?>
 	</div>
 
-<?php $this->endWidget(); ?>
+<?php $this->endWidget(); 
+echo '<ul id="dropmenu1" class="splitdropdown">';
+foreach($mc as $key=>$val){
+	echo "<li><a href='javascript: void(0)' onClick='fillCode($(this).html())'>".$val."</a></li>";
+}
+echo "<li><a href='javascript: void(0)' onClick='fillCode($(this).html())'>&lt;New&gt;</a></li>";
+echo '</ul>';
+?>
 </div>

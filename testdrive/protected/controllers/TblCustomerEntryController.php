@@ -312,6 +312,14 @@ class TblCustomerEntryController extends Controller
 		else 
 			echo 0;
 	}
+
+	public function getMailingCodes($term=NULL) {
+		$res =array();
+		$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM tbl_mailing_code";
+		$command =Yii::app()->db->createCommand($qtxt);
+		$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+		return $res = $command->queryColumn();
+	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

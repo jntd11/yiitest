@@ -13,6 +13,10 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
+	<div class="row">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblCustomerEntry/index"')); ?>
+	</div>	
 	<table>
 	<tr >
 	<td colspan="2">
@@ -154,6 +158,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 		<div class="row">
 		<?php echo $form->labelEx($model,'mailing_code'); ?>
 		<?php echo $form->textField($model,'mailing_code',array('size'=>20,'maxlength'=>50,'onkeyup'=>'caps(this)')); ?>
+		<a href="#" class="splitmenubutton" data-showmenu="dropmenu1" data-splitmenu="false">Code</a>
 		<?php echo $form->error($model,'mailing_code'); ?>
 	</div>
 	
@@ -491,5 +496,4 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 	</div>
 <?php $this->endWidget(); ?>
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 </div><!-- form -->

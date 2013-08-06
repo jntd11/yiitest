@@ -136,3 +136,12 @@ function split( val ) {
     //return val.split( /,\s*/ );
 	return val.split("");
  }
+
+function fillCode(val){
+	if(val == '&lt;New&gt;') 
+		openDialogMailing();
+	else {
+		var valArray = val.split("-");
+		$("#tbl-customer-entry-form [name='TblCustomerEntry[mailing_code]']").val($("#tbl-customer-entry-form [name='TblCustomerEntry[mailing_code]']").val()+valArray[0]);
+	}
+}
