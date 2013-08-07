@@ -315,7 +315,7 @@ class TblCustomerEntryController extends Controller
 
 	public function getMailingCodes($term=NULL) {
 		$res =array();
-		$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM tbl_mailing_code";
+		$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM tbl_mailing_code order by mailing_code_label asc";
 		$command =Yii::app()->db->createCommand($qtxt);
 		$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
 		return $res = $command->queryColumn();

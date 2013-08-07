@@ -84,7 +84,7 @@ width: 160px; /*width of menu (not including side paddings)*/
 color: black;
 background: white;
 text-decoration: none;
-padding: 8px 4px;
+padding: 2px 4px;
 }
 
 * html ul.splitdropdown li{ /*IE6 CSS hack*/

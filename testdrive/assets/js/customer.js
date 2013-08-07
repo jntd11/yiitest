@@ -104,13 +104,14 @@ function autoSuggestSearch(){
 			    }
 	});
 	
-	$("#tbl-customer-entry-form [name='TblCustomerEntry[mailing_code]']").autocomplete({
+	/*
+	 * $("#tbl-customer-entry-form [name='TblCustomerEntry[mailing_code]']").autocomplete({
 	    source: 'index.php?r=tblCustomerEntry/autocompleteMailingCode',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
 	    	if(ui.item.value == "<New>"){
 	    		ui.item.value = "";
-	    		this.value = this.value.replace(/\<n*e*w*>*/,"");
+	    		this.value = this.value.replace(/\<n*e*w*>*\/,"");
 	    		var terms = split(this.value);
 		    	// remove the current input
 	    		openDialogMailing();
@@ -130,7 +131,7 @@ function autoSuggestSearch(){
 	        this.value = terms.join( "" );	    	
 	        return false;
 	    }
-	});
+	});*/
 }
 function split( val ) {
     //return val.split( /,\s*/ );
@@ -138,10 +139,14 @@ function split( val ) {
  }
 
 function fillCode(val){
-	if(val == '&lt;New&gt;') 
+	if(val == '&lt;New&gt;'){ 
 		openDialogMailing();
-	else {
+	}else {
 		var valArray = val.split("-");
 		$("#tbl-customer-entry-form [name='TblCustomerEntry[mailing_code]']").val($("#tbl-customer-entry-form [name='TblCustomerEntry[mailing_code]']").val()+valArray[0]);
 	}
+}
+
+function successPopup(data){
+	$("#dropmenu1").append("<li><a href='javascript: void(0)' onClick='fillCode($(this).html())'>"+$("#mailing_code_label").val()+"-"+$("#mailing_code_desc").val()+"</a></li>");
 }
