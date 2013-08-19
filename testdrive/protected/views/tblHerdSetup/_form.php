@@ -3,7 +3,6 @@
 /* @var $model TblHerdSetup */
 /* @var $form CActiveForm */
 ?>
-
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -95,7 +94,7 @@
 	</tr>
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'home_country'); ?>
-		<?php echo $form->textField($model,'home_country',array('size'=>1,'maxlength'=>1)); ?>
+		<?php echo $form->textField($model,'home_country',array('size'=>1,'maxlength'=>1,'title'=>'C-Canada, M-Mexico, U-USA')); ?>
 		<?php echo $form->error($model,'home_country'); ?>
 	</div></td>
 	<td><div class="row">
@@ -106,7 +105,7 @@
 	</tr>
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'breed'); ?>
-		<?php echo $form->textField($model,'breed',array('size'=>1,'maxlength'=>1)); ?>
+		<?php echo $form->textField($model,'breed',array('size'=>1,'maxlength'=>1,'title'=>'For Example. D-Duroc, H-Hampshire, Y-Yorkshire, etc')); ?>
 		<?php echo $form->error($model,'breed'); ?>
 	</div></td>
 	<td><div class="row">
@@ -117,7 +116,7 @@
 	</tr>
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'is_weight'); ?>
-		<?php echo $form->textField($model,'is_weight',array('size'=>0,'maxlength'=>0)); ?>
+		<?php echo $form->textField($model,'is_weight',array('size'=>1,'maxlength'=>1,'title'=>'Y-Take Litter Birth Weight, N-Not Take Birth Weight')); ?>
 		<?php echo $form->error($model,'is_weight'); ?>
 	</div></td>
 	<td><div class="row">

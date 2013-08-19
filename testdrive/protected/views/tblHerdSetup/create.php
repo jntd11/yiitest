@@ -11,8 +11,9 @@ $this->menu=array(
 	array('label'=>'List TblHerdSetup', 'url'=>array('index')),
 	array('label'=>'Manage TblHerdSetup', 'url'=>array('admin')),
 );
+$cs=Yii::app()->clientScript;
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/herdsetup.js');
 ?>
-
 <h1>Create TblHerdSetup</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
