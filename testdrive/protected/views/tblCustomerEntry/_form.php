@@ -484,7 +484,6 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 			<?php echo $form->textField($model,'ship_area',array('size'=>20,'maxlength'=>50)); ?>
 			<?php echo $form->error($model,'ship_area'); ?>
 		</div>
-	
 	</div>
     </td>
     </tr>

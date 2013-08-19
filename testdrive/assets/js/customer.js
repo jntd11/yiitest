@@ -22,7 +22,7 @@ $(document).ready(function(){
 	autoSuggestSearch();
 	if($("#TblCustomerEntry_last_letter_sent").val() == "")
 		$("#TblCustomerEntry_last_letter_sent").val($("#currdate").html());
-	$("#tbl-customer-entry-form :input").change(function() {
+	$("#tbl-customer-entry-form :input[type!='submit']").change(function() {
 		   $("#tbl-customer-entry-form").data("changed",true);
 	});
 
