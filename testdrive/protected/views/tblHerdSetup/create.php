@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 	'Tbl Herd Setups'=>array('index'),
 	'Create',
 );
-
+Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->menu=array(
 	array('label'=>'List TblHerdSetup', 'url'=>array('index')),
 	array('label'=>'Manage TblHerdSetup', 'url'=>array('admin')),

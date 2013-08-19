@@ -2,6 +2,8 @@
 /* @var $this TblHerdSetupController */
 /* @var $model TblHerdSetup */
 
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/customer.js');
+Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->breadcrumbs=array(
 	'Tbl Herd Setups'=>array('index'),
 	'Manage',

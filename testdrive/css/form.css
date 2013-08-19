@@ -78,7 +78,7 @@ div.form .row
 {
 	margin: 5px 0;
 }
-form#tbl-customer-entry-form .row
+form#tbl-customer-entry-form .row, form#tbl-herd-setup-form .row
 {
 	margin: -8px 0;
 }
