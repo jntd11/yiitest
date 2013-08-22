@@ -60,13 +60,14 @@ div.form label
 	display: inline-block;
 	min-width: 130px;
 }
-form#tbl-customer-entry-form label{
+form#tbl-herd-setup-form label, form#tbl-customer-entry-form label{
 	font-weight: bold;
 	font-size: 0.9em;
 	display: inline-block;
 	min-width: 130px;
 	text-align: right;
 }
+
 #label_TblCustomerEntry_notes {
 	vertical-align: top;
 }

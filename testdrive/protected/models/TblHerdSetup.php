@@ -68,7 +68,7 @@ class TblHerdSetup extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('farm_herd, breeder_name, farm_name, address1, address2, city, state, zip, phone, breeder_number, breeder_herd_mark, home_country, breed, is_weight, breeder_no, weighted, is_hog_tag, hog_numbering, passover_days, due_days, take_boars_gilts, take_sow_scores, spring_start, spring_end, spring_letter, fall_start, fall_end, fall_letter, shift_year, take_weaned_date, take_deffects, prev_herd_mark, fax, date_modified', 'required'),
+			array('farm_herd, breeder_name, farm_name, address1, address2, city, state, zip, phone, breeder_number, breeder_herd_mark, home_country, breed, is_weight, breeder_no, weighted, is_hog_tag, hog_numbering, passover_days, due_days, take_boars_gilts, take_sow_scores, spring_start, spring_end, spring_letter, fall_start, fall_end, fall_letter, shift_year, take_weaned_date, take_deffects, prev_herd_mark, fax', 'required'),
 			array('zip, breeder_number, passover_days, due_days, spring_start, spring_end, fall_start, fall_end', 'numerical', 'integerOnly'=>true),
 			array('farm_herd', 'length', 'max'=>2),
 			array('breeder_name, farm_name, city, state', 'length', 'max'=>50),
@@ -101,11 +101,11 @@ class TblHerdSetup extends CActiveRecord
 	{
 		return array(
 			'herd_id' => 'Herd',
-			'farm_herd' => 'Farm Herd',
+			'farm_herd' => 'Farm & Herd',
 			'breeder_name' => 'Breeder Name',
 			'farm_name' => 'Farm Name',
-			'address1' => 'Address1',
-			'address2' => 'Address2',
+			'address1' => 'Address',
+			'address2' => 'Address',
 			'city' => 'City',
 			'state' => 'State',
 			'zip' => 'Zip',
@@ -113,15 +113,15 @@ class TblHerdSetup extends CActiveRecord
 			'breeder_number' => 'Breeder Number',
 			'breeder_herd_mark' => 'Breeder Herd Mark',
 			'home_country' => 'Home Country',
-			'breed' => 'Breed',
-			'is_weight' => 'Is Weight',
-			'breeder_no' => 'Breeder No',
-			'weighted' => 'Weighted',
-			'is_hog_tag' => 'Is Hog Tag',
+			'breed' => 'Breed 1st Letter',
+			'is_weight' => 'Take Birth Wgt',
+			'breeder_no' => 'Boar # Or Name',
+			'weighted' => 'Weighted Date/Age',
+			'is_hog_tag' => 'H=Hog, T=Tag',
 			'hog_numbering' => 'Hog Numbering',
 			'passover_days' => 'Passover Days',
 			'due_days' => 'Due Days',
-			'take_boars_gilts' => 'Take Boars Gilts',
+			'take_boars_gilts' => 'Take #Boars/Gilts',
 			'take_sow_scores' => 'Take Sow Scores',
 			'spring_start' => 'Spring Start',
 			'spring_end' => 'Spring End',
@@ -133,7 +133,7 @@ class TblHerdSetup extends CActiveRecord
 			'take_weaned_date' => 'Take Weaned Date',
 			'take_deffects' => 'Take Deffects',
 			'prev_herd_mark' => 'Prev Herd Mark',
-			'fax' => 'Fax',
+			'fax' => 'Fax #',
 			'date_modified' => 'Date Modified',
 		);
 	}

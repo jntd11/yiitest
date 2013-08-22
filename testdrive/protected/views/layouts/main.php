@@ -58,6 +58,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 						array('label'=>'Manage User', 'url'=>array('admin'))
 						)),
 				array('label'=>'Maintenance', 'itemOptions'=>array('id'=>'Maintenance'), 'linkOptions'=>array('accesskey'=>'m'), 'url'=>array('/user'), 'items'=>array(
+							array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup')),
 							array('label'=>'Ear Tag Maintenance', 'url'=>array('create')),
 							array('label'=>'Breeding Record Maintenance', 'url'=>array('admin')),
 							array('label'=>'Farrowing/Litter Maintenance', 'url'=>array('admin')),
@@ -69,8 +70,8 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 				)),
 				array('label'=>'Entry', 
 						'itemOptions'=>array('id'=>'customerentry'), 'linkOptions'=>array('accesskey'=>'e'), 'url'=>array(''), 'items'=>array(
-								array('label'=>'Customer', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblCustomerEntry')),
-								array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup'))
+								array('label'=>'Customer', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblCustomerEntry'))
+								
 				)),
 					
 				array('label'=>'Reports', 'itemOptions'=>array('id'=>'reports'), 'url'=>array('/user'), 'linkOptions'=>array('accesskey'=>'r'), 'items'=>array(

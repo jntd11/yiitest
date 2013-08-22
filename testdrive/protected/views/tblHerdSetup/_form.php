@@ -16,64 +16,64 @@
 	<table>
 <tr><td width="50%"><div class="row">
 		<?php echo $form->labelEx($model,'farm_herd'); ?>
-		<?php echo $form->textField($model,'farm_herd',array('size'=>2,'id'=>'herd','maxlength'=>2,'onkeyup'=>'caps(this)',onBlur=>'checkData(this,1)')); ?>
+		<?php echo $form->textField($model,'farm_herd',array('size'=>2,'id'=>'herd','maxlength'=>2,'onkeyup'=>'caps(this)','onBlur'=>'checkData(this,1)')); ?>
 		<?php echo $form->error($model,'farm_herd'); ?>
 		</div>
 	</td>
 	<td width="50%">&nbsp;</td></tr>
 <tr><td colspan="2"><div class="row">
 		<?php echo $form->labelEx($model,'breeder_name'); ?>
-		<?php echo $form->textField($model,'breeder_name',array('size'=>50,'maxlength'=>50,'id'=>'herd1')); ?>
+		<?php echo $form->textField($model,'breeder_name',array('size'=>30,'maxlength'=>30,'id'=>'herd1')); ?>
 		<?php echo $form->error($model,'breeder_name'); ?>
 	</div></td>
 	</tr>
 <tr><td colspan="2"><div class="row">
 		<?php echo $form->labelEx($model,'farm_name'); ?>
-		<?php echo $form->textField($model,'farm_name',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'farm_name',array('size'=>30,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'farm_name'); ?>
 	</div></td></tr>
 <tr><td colspan="2"><div class="row">
 		<?php echo $form->labelEx($model,'address1'); ?>
-		<?php echo $form-> textField($model,'address1',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form-> textField($model,'address1',array('size'=>30,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'address1'); ?>
 	</div></td>
 	</tr>
 <tr><td colspan="2"><div class="row">
 		<?php echo $form->labelEx($model,'address2'); ?>
-		<?php echo $form->textField($model,'address2',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model,'address2',array('size'=>30,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'address2'); ?>
 	</div></td>
 	</tr>
 <tr><td colspan="2"><div class="row">
 		<?php echo $form->labelEx($model,'city'); ?>
-		<?php echo $form->textField($model,'city',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'city',array('size'=>30,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'city'); ?>
 	</div></td>
 	</tr>
 <tr><td colspan="2"><div class="row">
 		<?php echo $form->labelEx($model,'state'); ?>
-		<?php echo $form->textField($model,'state',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'state',array('size'=>3,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'state'); ?>
 	</div></td>
 	</tr>
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'zip'); ?>
-		<?php echo $form->textField($model,'zip'); ?>
+		<?php echo $form->textField($model,'zip',array('size'=>15,'maxlength'=>15)); ?>
 		<?php echo $form->error($model,'zip'); ?>
 	</div></td><td>&nbsp;</td></tr>
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'phone'); ?>
-		<?php echo $form->textField($model,'phone',array('size'=>25,'maxlength'=>25)); ?>
+		<?php echo $form->textField($model,'phone',array('size'=>15,'maxlength'=>25)); ?>
 		<?php echo $form->error($model,'phone'); ?>
 	</div></td><td>&nbsp;</td></tr>
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'fax'); ?>
-		<?php echo $form->textField($model,'fax',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->textField($model,'fax',array('size'=>15,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'fax'); ?>
 	</div></td><td>&nbsp;</td></tr>	
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'breeder_number'); ?>
-		<?php echo $form->textField($model,'breeder_number'); ?>
+		<?php echo $form->textField($model,'breeder_number',array('size'=>15,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'breeder_number'); ?>
 	</div></td><td><div class="row">
 		<?php echo $form->labelEx($model,'take_sow_scores'); ?>
@@ -83,12 +83,12 @@
 </tr>
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'breeder_herd_mark'); ?>
-		<?php echo $form->textField($model,'breeder_herd_mark',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->textField($model,'breeder_herd_mark',array('size'=>5,'maxlength'=>5)); ?>
 		<?php echo $form->error($model,'breeder_herd_mark'); ?>
 	</div></td>
 	<td><div class="row">
 		<?php echo $form->labelEx($model,'spring_start'); ?>
-		<?php echo $form->textField($model,'spring_start',array('title'=>'Beginning Month for spring farrowing, F4=The Way It used to be')); ?>
+		<?php echo $form->textField($model,'spring_start',array('size'=>2,'maxlength'=>2),array('title'=>'Beginning Month for spring farrowing, F4=The Way It used to be')); ?>
 		<?php echo $form->error($model,'spring_start'); ?>
 	</div></td>
 	</tr>
@@ -99,13 +99,13 @@
 	</div></td>
 	<td><div class="row">
 		<?php echo $form->labelEx($model,'spring_end'); ?>
-		<?php echo $form->textField($model,'spring_end',array('title'=>'Ending Month for spring farrowing, F4=The Way It used to be')); ?>
+		<?php echo $form->textField($model,'spring_end',array('size'=>2,'maxlength'=>2),array('title'=>'Ending Month for spring farrowing, F4=The Way It used to be')); ?>
 		<?php echo $form->error($model,'spring_end'); ?>
 	</div></td>
 	</tr>
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'breed'); ?>
-		<?php echo $form->textField($model,'breed',array('size'=>1,'maxlength'=>1,'title'=>'For Example. D-Duroc, H-Hampshire, Y-Yorkshire, etc')); ?>
+		<?php echo $form->textField($model,'breed',array('size'=>1,'maxlength'=>1,'id'=>'breed','title'=>'For Example. D-Duroc, H-Hampshire, Y-Yorkshire, etc','onkeyup'=>'caps(this)','onBlur'=>'checkData(this,2)')); ?>
 		<?php echo $form->error($model,'breed'); ?>
 	</div></td>
 	<td><div class="row">
@@ -121,7 +121,7 @@
 	</div></td>
 	<td><div class="row">
 		<?php echo $form->labelEx($model,'fall_start'); ?>
-		<?php echo $form->textField($model,'fall_start',array('title'=>'Beginning Month for Fall farrowing, F4=The Way It used to be')); ?>
+		<?php echo $form->textField($model,'fall_start',array('size'=>2,'maxlength'=>2),array('title'=>'Beginning Month for Fall farrowing, F4=The Way It used to be')); ?>
 		<?php echo $form->error($model,'fall_start'); ?>
 	</div></td>
 	</tr>
@@ -132,7 +132,7 @@
 	</div></td>
 	<td><div class="row">
 		<?php echo $form->labelEx($model,'fall_end'); ?>
-		<?php echo $form->textField($model,'fall_end',array('title'=>'Ending Month for fall farrowing, F4=The Way It used to be')); ?>
+		<?php echo $form->textField($model,'fall_end',array('size'=>2,'maxlength'=>2),array('title'=>'Ending Month for fall farrowing, F4=The Way It used to be')); ?>
 		<?php echo $form->error($model,'fall_end'); ?>
 	</div></td>
 	</tr>
@@ -165,24 +165,24 @@
 	</div></td>
 	<td><div class="row">
 		<?php echo $form->labelEx($model,'take_weaned_date'); ?>
-		<?php echo $form->textField($model,'take_weaned_date',array('size'=>0,'maxlength'=>0,'title'=>'T=Take Weaned Date In letters weaned & weighed, S-Set weaned date to weighed date')); ?>
+		<?php echo $form->dropDownList($model,'take_weaned_date',array('T'=>'T','S'=>'S'),array('size'=>0,'maxlength'=>0,'title'=>'T=Take Weaned Date In letters weaned & weighed, S-Set weaned date to weighed date')); ?>
 		<?php echo $form->error($model,'take_weaned_date'); ?>
 	</div></td>
 	</tr>
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'passover_days'); ?>
-		<?php echo $form->textField($model,'passover_days'); ?>
+		<?php echo $form->textField($model,'passover_days',array('size'=>3,'maxlength'=>3,'onBlur'=>'checkData(this,3)')); ?>
 		<?php echo $form->error($model,'passover_days'); ?>
 	</div></td>
 	<td><div class="row">
 		<?php echo $form->labelEx($model,'take_deffects'); ?>
-		<?php echo $form->textField($model,'take_deffects',array('size'=>0,'maxlength'=>0,'title'=>'Y-Take Defects, N-Not take Defects')); ?>
+		<?php echo $form->dropDownList($model,'take_deffects',array('Y'=>'Y','N'=>'N'),array('size'=>0,'maxlength'=>0,'title'=>'Y-Take Defects, N-Not take Defects')); ?>
 		<?php echo $form->error($model,'take_deffects'); ?>
 	</div></td>
 	</tr>
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'due_days'); ?>
-		<?php echo $form->textField($model,'due_days'); ?>
+		<?php echo $form->textField($model,'due_days',array('size'=>3,'maxlength'=>3,'onBlur'=>'checkData(this,3)')); ?>
 		<?php echo $form->error($model,'due_days'); ?>
 	</div></td>
 	<td><div class="row">
@@ -196,17 +196,6 @@
 		<?php echo $form->dropDownList($model,'take_boars_gilts',array('Y'=>'Y','N'=>'N'),array('size'=>0,'maxlength'=>0,'title'=>'Y=Take # Boars & Gilts Born at farrowing N=Not Take #\'s')); ?>
 		<?php echo $form->error($model,'take_boars_gilts'); ?>
 	</div></td><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
 </table>
 	
 
