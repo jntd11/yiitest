@@ -70,8 +70,10 @@ class TblHerdSetupController extends Controller
 		if(isset($_POST['TblHerdSetup']))
 		{
 			$model->attributes=$_POST['TblHerdSetup'];
-			if($model->save())
+			if($model->save()) {
+				Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$model->getAttribute("farm_herd"),array('expire'=>time()+(365*24*60*60)));
 				$this->redirect(array('view','id'=>$model->herd_id));
+			}
 		}
 
 		$this->render('create',array(

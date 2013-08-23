@@ -22,6 +22,7 @@ $session->open();
 
 //$currdate = $session['date'];
 $currdate = Yii::app()->request->cookies['date'];
+$farmHerd = Yii::app()->request->cookies['farm_herd'];
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery');
 //$cs->registerCoreScript('jquery-ui-1.10.2.custom');
@@ -96,7 +97,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 	<div id="footer">
 		<div id="dialog"><p>Date: <input type="text" id="datepicker" />&nbsp;</p></div>
-		<div id="currdate">Activity date: <?php echo $currdate; ?></div>
+		<div><b>Activity date:</b> <span id="currdate"><?php echo $currdate; ?></span> <b>Farm & herd:</b> <span id="farmherd"><?php echo $farmHerd; ?></span></div>
 	</div><!-- footer -->
 
 </div><!-- page -->

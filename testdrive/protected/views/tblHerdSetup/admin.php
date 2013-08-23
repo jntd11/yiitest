@@ -10,8 +10,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List TblHerdSetup', 'url'=>array('index')),
-	array('label'=>'Create TblHerdSetup', 'url'=>array('create')),
+	array('label'=>'List Herd & Farm', 'url'=>array('index')),
+	array('label'=>'Create Herd & Farm', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

@@ -3,19 +3,20 @@
 /* @var $model TblHerdSetup */
 
 $this->breadcrumbs=array(
-	'Tbl Herd Setups'=>array('index'),
+	'Herd & Farm Setup'=>array('index'),
 	$model->herd_id=>array('view','id'=>$model->herd_id),
 	'Update',
 );
-
+Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->menu=array(
-	array('label'=>'List TblHerdSetup', 'url'=>array('index')),
-	array('label'=>'Create TblHerdSetup', 'url'=>array('create')),
-	array('label'=>'View TblHerdSetup', 'url'=>array('view', 'id'=>$model->herd_id)),
-	array('label'=>'Manage TblHerdSetup', 'url'=>array('admin')),
+	array('label'=>'List Herd & Farm', 'url'=>array('index')),
+	array('label'=>'Create Herd & Farm', 'url'=>array('create')),
+	array('label'=>'View Herd & Farm', 'url'=>array('view', 'id'=>$model->herd_id)),
+	array('label'=>'Manage Herd & Farm', 'url'=>array('admin')),
 );
+Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$model->getAttribute("farm_herd"),array('expire'=>time()+(365*24*60*60)));
 ?>
 
-<h1>Update TblHerdSetup <?php echo $model->herd_id; ?></h1>
+<h1>Update Herd & Farm <?php echo $model->herd_id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

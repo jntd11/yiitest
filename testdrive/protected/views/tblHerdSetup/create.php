@@ -8,12 +8,12 @@ $this->breadcrumbs=array(
 );
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->menu=array(
-	array('label'=>'List TblHerdSetup', 'url'=>array('index')),
-	array('label'=>'Manage TblHerdSetup', 'url'=>array('admin')),
+	array('label'=>'List Herd & Farm', 'url'=>array('index')),
+	array('label'=>'Manage Herd & Farm', 'url'=>array('admin')),
 );
 $cs=Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/herdsetup.js');
 ?>
-<h1>Create TblHerdSetup</h1>
+<h1>Create Herd & Farm</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
