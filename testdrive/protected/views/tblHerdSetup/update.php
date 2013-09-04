@@ -15,6 +15,8 @@ $this->menu=array(
 	array('label'=>'Manage Herd & Farm', 'url'=>array('admin')),
 );
 Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$model->getAttribute("farm_herd"),array('expire'=>time()+(365*24*60*60)));
+$cs=Yii::app()->clientScript;
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/herdsetup.js');
 ?>
 
 <h1>Update Herd & Farm <?php echo $model->herd_id; ?></h1>
