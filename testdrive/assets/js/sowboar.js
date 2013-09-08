@@ -15,16 +15,19 @@ $( "<div>" )
 });
 });
 
-function checkData(element,type){
+function checkData(element,type,extra,extra1){
 	if(type == 1){
 		var val = element.value;
-		var patt = /^[0-9][A-Z]$/
+		var patt1 = '/^'+extra+'[a-z]+ [0-9]{1,2}[ SFsf][0-9]{1,3}[\-\.][0-9]{1,2}$/i';
+		patt = eval(patt1);
 		if(!patt.test(val)){
 			alert("Farm Herd - Not in valid format");
-			$("#herd").val("");
+			$("#earnotch").val(extra+extra1);
+			$("#earnotch").focus();
+			return;
 		}
-		$("#herd").focus();
-		
+		val = val.replace(".","-");
+		$("#earnotch").val(val);
 	}else if(type == 2){
 		var val = element.value;
 		var patt = /^[A-Z]$/
@@ -43,4 +46,5 @@ function checkData(element,type){
 		}
 		$(element).focus();
 	}
+	
 }

@@ -1,6 +1,6 @@
 <?php
 
-class TblHerdSetupController extends Controller
+class SowBoarController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,19 +62,36 @@ class TblHerdSetupController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new TblHerdSetup;
+		$model=new SowBoar;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['TblHerdSetup']))
+		if(isset($_POST['SowBoar']))
 		{
-			$model->attributes=$_POST['TblHerdSetup'];
-			if($model->save()) {
-				Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$model->getAttribute("farm_herd"),array('expire'=>time()+(365*24*60*60)));
-				Yii::app()->request->cookies['breeder_herd_mark'] = new CHttpCookie('breeder_herd_mark',$model->getAttribute("breeder_herd_mark"),array('expire'=>time()+(365*24*60*60)));
-				$this->redirect(array('view','id'=>$model->herd_id));
+			$model->attributes=$_POST['SowBoar'];
+			$ear_notch_array =  preg_split("/ /", $model->ear_notch);
+			$curr_year = date("y");
+			$year = $ear_notch_array[2];
+			$length = strlen($year);
+			if($year < $curr_year){
+				$rem = $curr_year%10;
+				$quo = floor($curr_year/10);
+				if($length == 1){ 
+				  if($rem <= $year)
+					$ear_notch_array[2] = "20".$quo.$year;
+				  else
+				  	$ear_notch_array[2] = "20".($quo-1).$year;
+				}else{
+					$ear_notch_array[2] = "20".$year;
+				}
+			}else{
+				$ear_notch_array[2] = "19".$year;
 			}
+			//print_r($ear_notch_array);
+			//exit;
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->sow_boar_id));
 		}
 
 		$this->render('create',array(
@@ -94,11 +111,11 @@ class TblHerdSetupController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['TblHerdSetup']))
+		if(isset($_POST['SowBoar']))
 		{
-			$model->attributes=$_POST['TblHerdSetup'];
+			$model->attributes=$_POST['SowBoar'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->herd_id));
+				$this->redirect(array('view','id'=>$model->sow_boar_id));
 		}
 
 		$this->render('update',array(
@@ -125,7 +142,7 @@ class TblHerdSetupController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('TblHerdSetup');
+		$dataProvider=new CActiveDataProvider('SowBoar');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -136,10 +153,10 @@ class TblHerdSetupController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new TblHerdSetup('search');
+		$model=new SowBoar('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['TblHerdSetup']))
-			$model->attributes=$_GET['TblHerdSetup'];
+		if(isset($_GET['SowBoar']))
+			$model->attributes=$_GET['SowBoar'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -150,12 +167,12 @@ class TblHerdSetupController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return TblHerdSetup the loaded model
+	 * @return SowBoar the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=TblHerdSetup::model()->findByPk($id);
+		$model=SowBoar::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -163,11 +180,11 @@ class TblHerdSetupController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param TblHerdSetup $model the model to be validated
+	 * @param SowBoar $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='tbl-herd-setup-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='sow-boar-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
