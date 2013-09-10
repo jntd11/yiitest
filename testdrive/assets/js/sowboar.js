@@ -36,40 +36,60 @@ function checkData(element,type,extra,extra1){
 		}
 		val = val.replace(".","-");
 		$("#earnotch").val(val);
-	}else if(type == 2){
-		var val = element.value;
-		var patt = /^[A-Z]$/
-		if(!patt.test(val)){
-			alert("Not in valid format - Should be letter");
-			$("#breed").val("");
-		}
-		$("#breed").focus();
-		
-	}else if(type == 3){
-		var val = element.value;
-		var patt = /^[0-9]+$/
-		if(!patt.test(val)){
-			alert("Not in valid format - Should be Numbers");
-			$(element).val("");
-		}
-		$(element).focus();
 	}
 }
 function searchSireDam(txtObj,type){
 	var search = txtObj.value;
-	$.ajax({
-		url: encodeURI('index.php?r=sowboar/search'),
-		type: "GET",
-		data: {s:search}
-	}).done(function(data){
-		var obj = $.parseJSON(data);
-		$("#"+type).html(obj);
-	});
+	if(search != "") {
+		$.ajax({
+			url: encodeURI('index.php?r=sowboar/search'),
+			type: "GET",
+			data: {s:search}
+		}).done(function(data){
+			var obj = $.parseJSON(data);
+			$("#"+type).html(obj);
+		});
+	}
 }
 function gerSireDam(type){
 	if(type == 1){
-		window.location="index.php?r=sowboar/siredam&val="+$("#sire_notch").val();
+		var search = $("#sire_notch").val();
 	}else if(type == 2){
-		window.location="index.php?r=sowboar/siredam&val="+$("#dam_notch").val();
+		var search = $("#dam_notch").val();
+	}
+	if(search != "") {
+		$.ajax({
+			url: encodeURI('index.php?r=sowboar/search'),
+			type: "GET",
+			data: {s:search}
+		}).done(function(data){
+			var obj = $.parseJSON(data);
+			if(obj != "") {
+				if(type == 1){
+					window.location="index.php?r=sowboar/siredam&val="+$("#sire_notch").val();
+				}else if(type == 2){
+					window.location="index.php?r=sowboar/siredam&val="+$("#dam_notch").val();
+				}
+			}
+		});
 	}
 }
+$(document).ready(function(){
+	$("#sow-boar-form :input[type!='submit']").change(function() {
+		   $("#sow-boar-form").data("changed",true);
+	});
+
+	$("#sow-boar-form :input[type=submit]").click(function() {
+		   $("#sow-boar-form").data("changed",false);
+	});
+	
+	
+	window.onbeforeunload = iamexiting;
+	function iamexiting(e) {
+		if($("#sow-boar-form").data("changed")) {
+			   return 'You have unsaved changes. Do you want to continue';
+			   // submit the form
+		}
+		return;
+	}
+});

@@ -98,7 +98,7 @@ class TblHerdSetupController extends Controller
 		{
 			$model->attributes=$_POST['TblHerdSetup'];
 			if($model->save())
-				$this->redirect(array('index','id'=>$model->herd_id));
+				$this->redirect(array('view','id'=>$model->herd_id));
 		}
 
 		$this->render('update',array(

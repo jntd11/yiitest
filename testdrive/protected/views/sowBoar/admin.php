@@ -16,8 +16,8 @@ $cs->registerCssFile(
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 $this->menu=array(
-	array('label'=>'List SowBoar', 'url'=>array('index')),
-	array('label'=>'Create SowBoar', 'url'=>array('create')),
+	array('label'=>'List Sow Boar', 'url'=>array('index')),
+	array('label'=>'Create Sow Boar', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -55,7 +55,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'ear_notch',
 		'sow_boar_name',
-		'sow_boar_id',
 		'registeration_no',
 		'born',
 		'no_pigs',

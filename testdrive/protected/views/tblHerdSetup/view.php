@@ -3,20 +3,20 @@
 /* @var $model TblHerdSetup */
 
 $this->breadcrumbs=array(
-	'Herd & Farm Setup'=>array('index'),
+	'Farm & Herd Setup'=>array('index'),
 	$model->herd_id,
 );
 
 $this->menu=array(
-	array('label'=>'List Herd & Farm', 'url'=>array('index')),
-	array('label'=>'Create Herd & Farm', 'url'=>array('create')),
-	array('label'=>'Update Herd & Farm', 'url'=>array('update', 'id'=>$model->herd_id)),
-	array('label'=>'Delete Herd & Farm', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->herd_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Herd & Farm', 'url'=>array('admin')),
+	array('label'=>'List Farm & Herd', 'url'=>array('index')),
+	array('label'=>'Create Farm & Herd', 'url'=>array('create')),
+	array('label'=>'Update Farm & Herd', 'url'=>array('update', 'id'=>$model->herd_id)),
+	array('label'=>'Delete Farm & Herd', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->herd_id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Farm & Herd', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Herd & Farm #<?php echo $model->herd_id; ?></h1>
+<h1>View Farm & Herd #<?php echo $model->herd_id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

@@ -72,7 +72,7 @@ class SowBoarController extends Controller
 			$model->attributes=$_POST['SowBoar'];
 		 	$model->ear_notch = $this->calculateYear($model->ear_notch);
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->sow_boar_id));
+				$this->redirect(array('index','id'=>$model->sow_boar_id));
 		}
 
 		$this->render('create',array(
@@ -86,12 +86,15 @@ class SowBoarController extends Controller
 		$res =array();
 		$req = new CHttpRequest();
 		$search = $req->getParam("s");
+		$search = $this->calculateYear($search);
 		if (isset($search) && $search != "") {
 			$qtxt ="SELECT sow_boar_name FROM sow_boar WHERE ear_notch LIKE :search";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":search", '%'.$search.'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
-		}
+		}else
+			$res ="";
+		
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
@@ -111,7 +114,7 @@ class SowBoarController extends Controller
 		{
 			$model->attributes=$_POST['SowBoar'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->sow_boar_id));
+				$this->redirect(array('update','id'=>$model->sow_boar_id));
 		}
 
 		$this->render('update',array(
@@ -188,7 +191,7 @@ class SowBoarController extends Controller
 	}
 	
 	public function actionSiredam($val){
-		
+		$val = $this->calculateYear($val);
 		$data=SowBoar::model()->find("ear_notch='".$val."'");
 		//print_r($data);
 		$this->render('update',array(
@@ -201,10 +204,10 @@ class SowBoarController extends Controller
 			$curr_year = date("y");
 			$year = $ear_notch_array[2];
 			$length = strlen($year);
-			if($year < $curr_year){
+			if($year <= $curr_year){
 				$rem = $curr_year%10;
 				$quo = floor($curr_year/10);
-				if($length == 1){ 
+				if($length == 1){
 				  if($rem <= $year)
 					$ear_notch_array[2] = "20".$quo.$year;
 				  else

@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List SowBoar', 'url'=>array('index')),
-	array('label'=>'Manage SowBoar', 'url'=>array('admin')),
+	array('label'=>'List Sow Boar', 'url'=>array('index')),
+	array('label'=>'Manage Sow Boar', 'url'=>array('admin')),
 );
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs=Yii::app()->clientScript;

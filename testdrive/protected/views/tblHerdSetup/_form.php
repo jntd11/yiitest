@@ -154,7 +154,7 @@
 	</div></td>
 	<td><div class="row">
 		<?php echo $form->labelEx($model,'shift_year'); ?>
-		<?php echo $form->textField($model,'shift_year',array('size'=>1,'tabindex'=>30,'maxlength'=>1,'title'=>'Shift Year if season jumps year boundary, L-Leave Year as is, F4=The old way')); ?>
+		<?php echo $form->dropDownList($model,'shift_year',array('S'=>'S','L'=>'L'),array('size'=>1,'tabindex'=>30,'maxlength'=>1,'title'=>'Shift Year if season jumps year boundary, L-Leave Year as is, F4=The old way')); ?>
 		<?php echo $form->error($model,'shift_year'); ?>
 	</div></td>
 	</tr>
@@ -201,8 +201,8 @@
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('tabindex'=>40)); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblHerdSetup/index"')); ?>
 	</div>
-
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

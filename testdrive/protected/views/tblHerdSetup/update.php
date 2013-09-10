@@ -3,16 +3,16 @@
 /* @var $model TblHerdSetup */
 
 $this->breadcrumbs=array(
-	'Herd & Farm Setup'=>array('index'),
+	'Farm & Herd Setup'=>array('index'),
 	$model->herd_id=>array('view','id'=>$model->herd_id),
 	'Update',
 );
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->menu=array(
-	array('label'=>'List Herd & Farm', 'url'=>array('index')),
-	array('label'=>'Create Herd & Farm', 'url'=>array('create')),
-	array('label'=>'View Herd & Farm', 'url'=>array('view', 'id'=>$model->herd_id)),
-	array('label'=>'Manage Herd & Farm', 'url'=>array('admin')),
+	array('label'=>'List Farm & Herd', 'url'=>array('index')),
+	array('label'=>'Create Farm & Herd', 'url'=>array('create')),
+	//array('label'=>'View Farm & Herd', 'url'=>array('view', 'id'=>$model->herd_id)),
+	array('label'=>'Manage Farm & Herd', 'url'=>array('admin')),
 );
 echo "JAI".$model->getAttribute("breeder_herd_mark");
 Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$model->getAttribute("farm_herd"),array('expire'=>time()+(365*24*60*60)));

@@ -119,9 +119,6 @@ class TblCustomerEntryController extends Controller
 		if(isset($_POST['TblCustomerEntry']))
 		{
 			$model->attributes=$_POST['TblCustomerEntry'];
-			$model->attributes=$_POST['TblCustomerEntry'];
-			$model->notes = $_POST['TblCustomerEntry']['notes'];
-			$model->notes1 = $_POST['TblCustomerEntry']['notes1'];
 			if($model->save()){
 				$this->redirect(array('update','id'=>$model->customer_entry_id));
 				//$this->redirect(array('view','id'=>$model->customer_entry_id));

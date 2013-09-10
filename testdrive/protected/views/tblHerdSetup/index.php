@@ -9,8 +9,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Herd & Farm', 'url'=>array('create')),
-	array('label'=>'Manage Herd & Farm', 'url'=>array('admin')),
+	array('label'=>'Create Farm & Herd', 'url'=>array('create')),
+	array('label'=>'Manage Farm & Herd', 'url'=>array('admin')),
 );
 ?>
 

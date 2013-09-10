@@ -5,13 +5,13 @@
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/customer.js');
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->breadcrumbs=array(
-	'Tbl Herd Setups'=>array('index'),
+	'Farm & Herd'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Herd & Farm', 'url'=>array('index')),
-	array('label'=>'Create Herd & Farm', 'url'=>array('create')),
+	array('label'=>'List Farm & Herd', 'url'=>array('index')),
+	array('label'=>'Create Farm & Herd', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
