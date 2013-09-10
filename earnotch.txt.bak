@@ -17,3 +17,4 @@ days		Days to 000		int
 EBV					float
 sire_initials	Sire Reg Initials	v(2)
 comments	Comments		text
+

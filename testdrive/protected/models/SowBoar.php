@@ -54,16 +54,25 @@ class SowBoar extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ear_notch, sow_boar_name, registeration_no, born, no_pigs, weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, offspring_name, back_fat, loinneye, days, EBV, sire_initials, comments, date_modified', 'required'),
+			array('ear_notch, sow_boar_name, registeration_no, born, no_pigs, weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, offspring_name, back_fat, loinneye, days, EBV, comments', 'required'),
 			array('no_pigs, weight_21, last_parity, days', 'numerical', 'integerOnly'=>true),
 			array('back_fat, loinneye, EBV', 'numerical'),
 			array('ear_notch, registeration_no, sire_notch, dam_notch, bred_date, sold_mmddyy, reason_sold, offspring_name', 'length', 'max'=>20),
 			array('sow_boar_name', 'length', 'max'=>30),
 			array('sire_initials', 'length', 'max'=>2),
+			array('ear_notch','validateEarNotch'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('ear_notch, sow_boar_name, sow_boar_id, registeration_no, born, no_pigs, weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, offspring_name, back_fat, loinneye, days, EBV, sire_initials, comments, date_modified', 'safe', 'on'=>'search'),
 		);
+	}
+	
+	public function validateEarNotch($attribute,$params)
+	{
+		$farmHerd = Yii::app()->request->cookies['farm_herd']." ";
+	    $pattern = '/^'.$farmHerd.'[a-z]+ [0-9]+[ SFsf][0-9]+[\-\.][0-9]+$/i';
+	    if(!preg_match_all($pattern, $this->$attribute,$matches))
+	      $this->addError($attribute, 'Sow/Boar Ear Notch is not in correct format!');
 	}
 
 	/**
@@ -83,25 +92,25 @@ class SowBoar extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ear_notch' => 'Ear Notch',
-			'sow_boar_name' => 'Sow Boar Name',
+			'ear_notch' => 'Sow/Boar Ear Notch',
+			'sow_boar_name' => 'Sow/Boar Name',
 			'sow_boar_id' => 'Sow Boar',
-			'registeration_no' => 'Registeration No',
-			'born' => 'Born',
-			'no_pigs' => 'No Pigs',
-			'weight_21' => 'Weight 21',
-			'sire_notch' => 'Sire Notch',
-			'dam_notch' => 'Dam Notch',
-			'bred_date' => 'Bred Date',
+			'registeration_no' => 'Registeration #',
+			'born' => 'Born MMDDYY',
+			'no_pigs' => '# Pigs In Litter',
+			'weight_21' => '21 Days Weight',
+			'sire_notch' => 'Sire Ear Notch',
+			'dam_notch' => 'Dam Ear Notch',
+			'bred_date' => 'Bred MMDDYY/Boar',
 			'last_parity' => 'Last Parity',
-			'sold_mmddyy' => 'Sold Mmddyy',
+			'sold_mmddyy' => 'Sold MMDDYY',
 			'reason_sold' => 'Reason Sold',
 			'offspring_name' => 'Offspring Name',
 			'back_fat' => 'Back Fat',
 			'loinneye' => 'Loinneye',
-			'days' => 'Days',
-			'EBV' => 'Ebv',
-			'sire_initials' => 'Sire Initials',
+			'days' => 'Days to 230',
+			'EBV' => 'EBV',
+			'sire_initials' => 'Sire Reg Initials',
 			'comments' => 'Comments',
 			'date_modified' => 'Date Modified',
 		);
@@ -117,7 +126,6 @@ class SowBoar extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
 		$criteria->compare('ear_notch',$this->ear_notch,true);
 		$criteria->compare('sow_boar_name',$this->sow_boar_name,true);
 		$criteria->compare('sow_boar_id',$this->sow_boar_id);

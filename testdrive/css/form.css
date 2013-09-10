@@ -60,7 +60,7 @@ div.form label
 	display: inline-block;
 	min-width: 130px;
 }
-form#tbl-herd-setup-form label, form#tbl-customer-entry-form label{
+form#tbl-herd-setup-form label, form#tbl-customer-entry-form label, form#sow-boar-form label{
 	font-weight: bold;
 	font-size: 0.9em;
 	display: inline-block;
@@ -79,7 +79,7 @@ div.form .row
 {
 	margin: 5px 0;
 }
-form#tbl-customer-entry-form .row, form#tbl-herd-setup-form .row
+form#tbl-customer-entry-form .row, form#tbl-herd-setup-form .row, form#sow-boar-form  .row
 {
 	margin: -8px 0;
 }

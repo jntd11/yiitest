@@ -28,7 +28,7 @@ class SowBoarController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','search','Siredam'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -70,26 +70,7 @@ class SowBoarController extends Controller
 		if(isset($_POST['SowBoar']))
 		{
 			$model->attributes=$_POST['SowBoar'];
-			$ear_notch_array =  preg_split("/ /", $model->ear_notch);
-			$curr_year = date("y");
-			$year = $ear_notch_array[2];
-			$length = strlen($year);
-			if($year < $curr_year){
-				$rem = $curr_year%10;
-				$quo = floor($curr_year/10);
-				if($length == 1){ 
-				  if($rem <= $year)
-					$ear_notch_array[2] = "20".$quo.$year;
-				  else
-				  	$ear_notch_array[2] = "20".($quo-1).$year;
-				}else{
-					$ear_notch_array[2] = "20".$year;
-				}
-			}else{
-				$ear_notch_array[2] = "19".$year;
-			}
-			//print_r($ear_notch_array);
-			//exit;
+		 	$model->ear_notch = $this->calculateYear($model->ear_notch);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->sow_boar_id));
 		}
@@ -99,6 +80,21 @@ class SowBoarController extends Controller
 		));
 	}
 
+	public function actionSearch(){
+		$model=new SowBoar;
+		$criteria=new CDbCriteria;
+		$res =array();
+		$req = new CHttpRequest();
+		$search = $req->getParam("s");
+		if (isset($search) && $search != "") {
+			$qtxt ="SELECT sow_boar_name FROM sow_boar WHERE ear_notch LIKE :search";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":search", '%'.$search.'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -189,5 +185,36 @@ class SowBoarController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionSiredam($val){
+		
+		$data=SowBoar::model()->find("ear_notch='".$val."'");
+		//print_r($data);
+		$this->render('update',array(
+			'model'=>$this->loadModel($data->sow_boar_id),
+		));
+	}
+	
+	public function calculateYear($date){
+			$ear_notch_array =  preg_split("/ /", $date);
+			$curr_year = date("y");
+			$year = $ear_notch_array[2];
+			$length = strlen($year);
+			if($year < $curr_year){
+				$rem = $curr_year%10;
+				$quo = floor($curr_year/10);
+				if($length == 1){ 
+				  if($rem <= $year)
+					$ear_notch_array[2] = "20".$quo.$year;
+				  else
+				  	$ear_notch_array[2] = "20".($quo-1).$year;
+				}else{
+					$ear_notch_array[2] = "20".$year;
+				}
+			}else{
+				$ear_notch_array[2] = "19".$year;
+			}
+		return implode($ear_notch_array, " ");
 	}
 }
