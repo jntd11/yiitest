@@ -10,4 +10,6 @@ defined('YII_DEBUG') or define('YII_DEBUG',true);
 defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 require_once($yii);
+
 Yii::createWebApplication($config)->run();
+Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');

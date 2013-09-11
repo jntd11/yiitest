@@ -189,4 +189,5 @@ class TblHerdSetup extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
 }

@@ -2,8 +2,8 @@
 /* @var $this SowBoarController */
 /* @var $model SowBoar */
 /* @var $form CActiveForm */
-$farmHerd = Yii::app()->request->cookies['farm_herd']." ";
-$herdmark = Yii::app()->request->cookies['breeder_herd_mark']." ";
+$farmHerd = Yii::app()->request->cookies['farm_herd'];
+$herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 ?>
 
 <div class="form">
@@ -19,11 +19,14 @@ $herdmark = Yii::app()->request->cookies['breeder_herd_mark']." ";
 <table>
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'ear_notch'); ?>
-		
-		<?php if($model->isNewRecord)
-				echo $form->textField($model,'ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$farmHerd.$herdmark,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1));
-			  else 
-			  	echo $form->textField($model,'ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1));
+		<?php 
+			 if(count($model->errors)){
+			 	echo $form->textField($model,'ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1));
+			  }else if($model->isNewRecord) {
+				echo $form->textField($model,'ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$farmHerd." ".$herdmark,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1));
+			  }else{ 
+			  	echo $form->textField($model,'ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2)','id'=>'earnotch','tabindex'=>1));
+			  }
 			  ?>
 		<?php echo $form->error($model,'ear_notch'); ?>
 	</div></td><td>&nbsp;</td></tr>
@@ -124,7 +127,7 @@ $herdmark = Yii::app()->request->cookies['breeder_herd_mark']." ";
 </table>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=sowboar/index"')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelSow()')); ?>
 		<?php if($model->isNewRecord) echo CHtml::Button('Sire',array('onClick'=>'gerSireDam(1)')); ?>
 		<?php if($model->isNewRecord) echo CHtml::Button('Dam',array('onClick'=>'gerSireDam(2)')); ?>
 	</div>

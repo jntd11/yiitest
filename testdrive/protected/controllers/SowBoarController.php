@@ -106,7 +106,10 @@ class SowBoarController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		
+		$ear_notch_array =  preg_split("/ /", $model->ear_notch);
+		$ear_notch_array[2] = preg_replace("/[0-9][0-9]([0-9][0-9])/", "$1", $ear_notch_array[2]);
+		$model->ear_notch = implode(" ", $ear_notch_array);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

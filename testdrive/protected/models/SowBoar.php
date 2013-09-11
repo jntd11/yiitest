@@ -54,7 +54,7 @@ class SowBoar extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ear_notch, sow_boar_name, registeration_no, born, no_pigs, weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, offspring_name, back_fat, loinneye, days, EBV, comments', 'required'),
+			array('ear_notch, sow_boar_name', 'required'),
 			array('no_pigs, weight_21, last_parity, days', 'numerical', 'integerOnly'=>true),
 			array('back_fat, loinneye, EBV', 'numerical'),
 			array('ear_notch, registeration_no, sire_notch, dam_notch, bred_date, sold_mmddyy, reason_sold, offspring_name', 'length', 'max'=>20),
@@ -69,10 +69,15 @@ class SowBoar extends CActiveRecord
 	
 	public function validateEarNotch($attribute,$params)
 	{
-		$farmHerd = Yii::app()->request->cookies['farm_herd']." ";
-	    $pattern = '/^'.$farmHerd.'[a-z]+ [0-9]+[ SFsf][0-9]+[\-\.][0-9]+$/i';
-	    if(!preg_match_all($pattern, $this->$attribute,$matches))
-	      $this->addError($attribute, 'Sow/Boar Ear Notch is not in correct format!');
+		//$farmHerd = Yii::app()->request->cookies['farm_herd']." ";
+	    $pattern = '/^([0-9][A-Z]) [a-z]+ [0-9]+[ SFsf][0-9]+[-.][0-9]+$/i';
+	    $herds = $this->getHerd();
+	    if(!preg_match($pattern, $this->$attribute,$matches)){
+	       $this->addError($attribute, 'Sow/Boar Ear Notch is not in correct format!');
+	    }
+	    if(!in_array($matches[1], $herds)){
+	    	$this->addError($attribute, 'This is not a valid Farm & Herd');
+	    }
 	}
 
 	/**
@@ -152,4 +157,11 @@ class SowBoar extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function getHerd(){
+		$qu = "select farm_herd from tbl_herd_setup";
+		$cmd = YII::app()->db->createCommand($qu);
+		return $res = $cmd->queryColumn();
+	}
+	
 }
