@@ -86,11 +86,13 @@ class SowBoarController extends Controller
 		$res =array();
 		$req = new CHttpRequest();
 		$search = $req->getParam("s");
+		$search = str_replace(".", "-", $search);
 		$search = $this->calculateYear($search);
 		if (isset($search) && $search != "") {
 			$qtxt ="SELECT sow_boar_name FROM sow_boar WHERE ear_notch LIKE :search";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":search", '%'.$search.'%', PDO::PARAM_STR);
+			
 			$res =$command->queryColumn();
 		}else
 			$res ="";
@@ -205,22 +207,24 @@ class SowBoarController extends Controller
 	public function calculateYear($date){
 			$ear_notch_array =  preg_split("/ /", $date);
 			$curr_year = date("y");
-			$year = $ear_notch_array[2];
+			$year = floor($ear_notch_array[2]);
 			$length = strlen($year);
 			if($year <= $curr_year){
 				$rem = $curr_year%10;
 				$quo = floor($curr_year/10);
 				if($length == 1){
-				  if($rem <= $year)
-					$ear_notch_array[2] = "20".$quo.$year;
+				  if($rem < $year)
+					$ear_notch_array[2] = "20".($quo-1).$year;
 				  else
-				  	$ear_notch_array[2] = "20".($quo-1).$year;
+				  	$ear_notch_array[2] = "20".($quo).$year;
 				}else{
 					$ear_notch_array[2] = "20".$year;
 				}
 			}else{
 				$ear_notch_array[2] = "19".$year;
+				
 			}
+			//echo implode($ear_notch_array, " ");			exit;
 		return implode($ear_notch_array, " ");
 	}
 }

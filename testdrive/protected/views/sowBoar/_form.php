@@ -128,8 +128,8 @@ $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelSow()')); ?>
-		<?php if($model->isNewRecord) echo CHtml::Button('Sire',array('onClick'=>'gerSireDam(1)')); ?>
-		<?php if($model->isNewRecord) echo CHtml::Button('Dam',array('onClick'=>'gerSireDam(2)')); ?>
+		<?php echo CHtml::Button('Sire',array('onClick'=>'gerSireDam(1)')); ?>
+		<?php echo CHtml::Button('Dam',array('onClick'=>'gerSireDam(2)')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
