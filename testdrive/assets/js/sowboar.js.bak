@@ -51,7 +51,6 @@ function checkData(element,type,extra,extra1){
 function searchSireDam(txtObj,type){
 	var search = txtObj.value;
 	if(search != "") {
-		search = search.replace(".","-");
 		$.ajax({
 			url: encodeURI('index.php?r=sowBoar/search'),
 			type: "GET",
@@ -68,9 +67,7 @@ function gerSireDam(type){
 	}else if(type == 2){
 		var search = $("#dam_notch").val();
 	}
-	
 	if(search != "") {
-		search = search.replace(".","-");
 		$.ajax({
 			url: encodeURI('index.php?r=sowBoar/search'),
 			type: "GET",
@@ -111,8 +108,4 @@ function cancelSow(){
 	$("#earnotch").val("");
 	$("#SowBoar_sow_boar_name").focus();
 	window.location="index.php?r=sowBoar/index";
-}
-
-function setDefault(val,obj){
-	obj.value = val;
 }

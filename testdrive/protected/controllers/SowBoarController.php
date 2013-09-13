@@ -70,7 +70,8 @@ class SowBoarController extends Controller
 		if(isset($_POST['SowBoar']))
 		{
 			$model->attributes=$_POST['SowBoar'];
-		 	$model->ear_notch = $this->calculateYear($model->ear_notch);
+			if($model->ear_notch != "")
+		 		$model->ear_notch = $this->calculateYear($model->ear_notch);
 			if($model->save())
 				$this->redirect(array('index','id'=>$model->sow_boar_id));
 		}
@@ -196,6 +197,7 @@ class SowBoarController extends Controller
 	}
 	
 	public function actionSiredam($val){
+		$val = str_replace(".","-",$val);
 		$val = $this->calculateYear($val);
 		$data=SowBoar::model()->find("ear_notch='".$val."'");
 		//print_r($data);
@@ -207,7 +209,9 @@ class SowBoarController extends Controller
 	public function calculateYear($date){
 			$ear_notch_array =  preg_split("/ /", $date);
 			$curr_year = date("y");
-			$year = floor($ear_notch_array[2]);
+			if(!isset($ear_notch_array[2]))
+				return $date;
+			$year = $ear_notch_array[2];
 			$length = strlen($year);
 			if($year <= $curr_year){
 				$rem = $curr_year%10;

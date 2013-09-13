@@ -63,13 +63,21 @@ $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'sire_notch'); ?>
-		<?php echo $form->textField($model,'sire_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'searchSireDam(this,\'sirename\')','id'=>'sire_notch','tabindex'=>7)); ?>
+		<?php if($model->isNewRecord)
+				echo $form->textField($model,'sire_notch',array('size'=>20,'onFocus'=>'setDefault("'.$farmHerd.' '.$herdmark.'",this);','maxlength'=>20,'onBlur'=>'searchSireDam(this,\'sirename\')','id'=>'sire_notch','tabindex'=>7));
+		      else
+		      	echo $form->textField($model,'sire_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'searchSireDam(this,\'sirename\')','id'=>'sire_notch','tabindex'=>7));
+		?>
 		<?php echo $form->error($model,'sire_notch'); ?>
 	</div></td><td id="sirename" style="color: red; "></td></tr>
 
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'dam_notch'); ?>
-		<?php echo $form->textField($model,'dam_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'searchSireDam(this,\'damname\')','id'=>'dam_notch','tabindex'=>8)); ?>
+		<?php if($model->isNewRecord)
+				echo $form->textField($model,'dam_notch',array('size'=>20,'onFocus'=>'setDefault("'.$farmHerd.' '.$herdmark.'",this);','maxlength'=>20,'onBlur'=>'searchSireDam(this,\'damname\')','id'=>'dam_notch','tabindex'=>8));
+			  else
+			  	echo $form->textField($model,'dam_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'searchSireDam(this,\'damname\')','id'=>'dam_notch','tabindex'=>8));
+		?>
 		<?php echo $form->error($model,'dam_notch'); ?>
 	</div></td><td id="damname" style="color: red; "></td></tr>
 
