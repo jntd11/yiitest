@@ -14,11 +14,11 @@ $( "<div>" )
 }
 });
 });
-
+var oldval;
 function checkData(element,type,extra,extra1){
 	if(type == 1){
 		var val = element.value;
-		if(val == "")
+		if(val == "" || extra+" "+extra1 == val)
 			return;
 		var patt1 = /^[0-9][A-Z] [a-z]+ [0-9]{1,2}[ SFsf][0-9]{1,3}[\-\.][0-9]{1,2}$/gi;
 		var patt2 = /[\-\.]/gi;
@@ -49,16 +49,18 @@ function checkData(element,type,extra,extra1){
 	}
 }
 function searchSireDam(txtObj,type){
-	var search = txtObj.value;
-	if(search != "") {
-		search = search.replace(".","-");
+	var search1 = txtObj;
+	if(search1 != "") {
+		var search1 = search1.replace(/\./,"-");
 		$.ajax({
 			url: encodeURI('index.php?r=sowBoar/search'),
 			type: "GET",
-			data: {s:search}
+			data: {s:search1}
 		}).done(function(data){
-			var obj = $.parseJSON(data);
-			$("#"+type).html(obj);
+			if(data != "[]"){
+				var obj = $.parseJSON(data);
+				$("#"+type).html(obj);
+			}
 		});
 	}
 }
@@ -105,6 +107,10 @@ $(document).ready(function(){
 		}
 		return;
 	}
+	if($("#sire_notch").val() != "") 
+		searchSireDam($('#sire_notch').val(),'sirename');
+	if($("#dam_notch").val() != "") 
+		searchSireDam($("#dam_notch").val(),'damname');
 });
 
 function cancelSow(){
@@ -114,5 +120,6 @@ function cancelSow(){
 }
 
 function setDefault(val,obj){
-	obj.value = val;
+	if(obj.value == "")
+		obj.value = val;
 }

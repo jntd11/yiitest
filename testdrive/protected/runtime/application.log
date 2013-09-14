@@ -8204,3 +8204,83 @@ Stack trace:
 REQUEST_URI=/yii/yii/testdrive/index.php?r=sowBoar/siredam&val=1A%20aa%209%201.2
 in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (200)
 in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/09/13 20:46:29 [error] [php] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\CDbConnection.php:423)
+Stack trace:
+#0 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive()
+#2 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\base\CApplication.php(438): CWebApplication->getComponent()
+#4 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\ar\CActiveRecord.php(623): CWebApplication->getDb()
+#5 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\ar\CActiveRecord.php(2309): SowBoar->getDbConnection()
+#6 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct()
+#7 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CActiveDataProvider.php(74): model()
+#8 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php(150): CActiveDataProvider->__construct()
+#9 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\actions\CInlineAction.php(49): SowBoarController->actionIndex()
+#10 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\filters\CFilterChain.php(133): SowBoarController->runAction()
+#12 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\filters\CInlineFilter.php(58): SowBoarController->filterAccessControl()
+#15 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CController.php(265): SowBoarController->runActionWithFilters()
+#18 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CWebApplication.php(282): SowBoarController->run()
+#19 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=sowBoar
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php (150)
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php (14)
+2013/09/13 22:26:57 [error] [php] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\CDbConnection.php:423)
+Stack trace:
+#0 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive()
+#2 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\base\CApplication.php(438): CWebApplication->getComponent()
+#4 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\ar\CActiveRecord.php(623): CWebApplication->getDb()
+#5 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\ar\CActiveRecord.php(2309): SowBoar->getDbConnection()
+#6 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct()
+#7 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CActiveDataProvider.php(74): model()
+#8 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php(150): CActiveDataProvider->__construct()
+#9 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\actions\CInlineAction.php(49): SowBoarController->actionIndex()
+#10 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\filters\CFilterChain.php(133): SowBoarController->runAction()
+#12 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\filters\CInlineFilter.php(58): SowBoarController->filterAccessControl()
+#15 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CController.php(265): SowBoarController->runActionWithFilters()
+#18 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CWebApplication.php(282): SowBoarController->run()
+#19 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=sowBoar
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php (150)
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php (14)
+2013/09/14 11:16:07 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php (72)
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php (14)
+2013/09/14 11:16:07 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php (72)
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php (14)
+2013/09/14 13:43:16 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php (72)
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php (14)
+2013/09/14 13:43:16 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php (72)
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php (14)
+2013/09/14 13:43:27 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php (72)
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php (14)
+2013/09/14 13:43:27 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php (72)
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php (14)
+2013/09/14 13:48:47 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php (72)
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php (14)
+2013/09/14 13:48:47 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\protected\controllers\SowBoarController.php (72)
+in E:\Program Files\Apache Software Foundation\Apache2.2\htdocs\yii\yii\testdrive\index.php (14)

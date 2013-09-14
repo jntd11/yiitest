@@ -92,7 +92,7 @@ class SowBoarController extends Controller
 		if (isset($search) && $search != "") {
 			$qtxt ="SELECT sow_boar_name FROM sow_boar WHERE ear_notch LIKE :search";
 			$command =Yii::app()->db->createCommand($qtxt);
-			$command->bindValue(":search", '%'.$search.'%', PDO::PARAM_STR);
+			$command->bindValue(":search", $search, PDO::PARAM_STR);
 			
 			$res =$command->queryColumn();
 		}else
@@ -119,6 +119,8 @@ class SowBoarController extends Controller
 		if(isset($_POST['SowBoar']))
 		{
 			$model->attributes=$_POST['SowBoar'];
+			if($model->ear_notch != "")
+		 		$model->ear_notch = $this->calculateYear($model->ear_notch);
 			if($model->save())
 				$this->redirect(array('update','id'=>$model->sow_boar_id));
 		}
@@ -206,13 +208,27 @@ class SowBoarController extends Controller
 		));
 	}
 	
-	public function calculateYear($date){
+	public function calculateYear($date,$type=1){
 			$ear_notch_array =  preg_split("/ /", $date);
 			$curr_year = date("y");
 			if(!isset($ear_notch_array[2]))
 				return $date;
 			$year = $ear_notch_array[2];
 			$length = strlen($year);
+			if($length > 2)
+				return $date;
+			if($type == 2){
+				if($year+10 < $curr_year){
+					if($year <= $curr_year)
+						$ear_notch_array[2] = "20".$ear_notch_array[2];
+					else
+						$ear_notch_array[2] = "19".$ear_notch_array[2];
+				}else{
+					
+				}
+				
+				return implode($ear_notch_array, " ");
+			}
 			if($year <= $curr_year){
 				$rem = $curr_year%10;
 				$quo = floor($curr_year/10);

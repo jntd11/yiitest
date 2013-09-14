@@ -12,17 +12,18 @@ $this->menu=array(
 	array('label'=>'Create Sow Boar', 'url'=>array('create')),
 	array('label'=>'Manage Sow Boar', 'url'=>array('admin')),
 );
+
 ?>
 
 <h1>Sow Boars</h1>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php  $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'sow-boar-grid',
 	'selectableRows'=>1,
 	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'dataProvider'=>$dataProvider,
 	'columns'=>array(
-		'ear_notch',
+		array('name'=>'ear_notch','value'=>'$this->grid->controller->calculateYear($data->ear_notch,2)'),
 		'sow_boar_name',
 		'registeration_no',
 		'born',

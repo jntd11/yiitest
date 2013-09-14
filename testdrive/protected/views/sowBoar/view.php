@@ -6,7 +6,6 @@ $this->breadcrumbs=array(
 	'Sow Boars'=>array('index'),
 	$model->sow_boar_id,
 );
-
 $this->menu=array(
 	array('label'=>'List SowBoar', 'url'=>array('index')),
 	array('label'=>'Create SowBoar', 'url'=>array('create')),
