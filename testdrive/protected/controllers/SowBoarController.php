@@ -28,7 +28,7 @@ class SowBoarController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','search','Siredam'),
+				'actions'=>array('index','view','search','Siredam','AutocompleteEarNotch','AutocompleteName','AutocompleteRegister','AutocompleteBorn','AutocompletePigs'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -72,8 +72,9 @@ class SowBoarController extends Controller
 			$model->attributes=$_POST['SowBoar'];
 			if($model->ear_notch != "")
 		 		$model->ear_notch = $this->calculateYear($model->ear_notch);
-			if($model->save())
-				$this->redirect(array('index','id'=>$model->sow_boar_id));
+		 	$model->save();
+			//if($model->save())
+				//$this->redirect(array('index','id'=>$model->sow_boar_id));
 		}
 
 		$this->render('create',array(
@@ -121,8 +122,14 @@ class SowBoarController extends Controller
 			$model->attributes=$_POST['SowBoar'];
 			if($model->ear_notch != "")
 		 		$model->ear_notch = $this->calculateYear($model->ear_notch);
-			if($model->save())
+		 		
+		 	$model->sire_notch = str_replace(".", "-", $model->sire_notch);
+		 	$model->dam_notch = str_replace(".", "-", $model->dam_notch);
+		 	 
+			if($model->save()){
 				$this->redirect(array('update','id'=>$model->sow_boar_id));
+				echo "Saved";
+			}
 		}
 
 		$this->render('update',array(
@@ -202,10 +209,10 @@ class SowBoarController extends Controller
 		$val = str_replace(".","-",$val);
 		$val = $this->calculateYear($val);
 		$data=SowBoar::model()->find("ear_notch='".$val."'");
-		//print_r($data);
-		$this->render('update',array(
+		header("Location: index.php?r=sowBoar/update&id=".$data->sow_boar_id);
+		/*$this->render('update',array(
 			'model'=>$this->loadModel($data->sow_boar_id),
-		));
+		));*/
 	}
 	
 	public function calculateYear($date,$type=1){
@@ -215,20 +222,21 @@ class SowBoarController extends Controller
 				return $date;
 			$year = $ear_notch_array[2];
 			$length = strlen($year);
-			if($length > 2)
-				return $date;
+			if($length > 2){
+				$ear_notch_array[2] = preg_replace("/[0-9][0-9]([0-9][0-9])/", "$1", $ear_notch_array[2]);
+				$year = $ear_notch_array[2];
+				$length = strlen($year);
+				//return $date;
+			}
 			if($type == 2){
-				if($year+10 < $curr_year){
-					if($year <= $curr_year)
-						$ear_notch_array[2] = "20".$ear_notch_array[2];
-					else
-						$ear_notch_array[2] = "19".$ear_notch_array[2];
-				}else{
-					
+				if($year+10 >= $curr_year && $year < $curr_year){
+					$ear_notch_array[2] = $ear_notch_array[2] % 10; 
+				}else if($length < 2){
+					$ear_notch_array[2] = "0".$ear_notch_array[2];
 				}
-				
 				return implode($ear_notch_array, " ");
 			}
+			//echo "$year <= $curr_year";
 			if($year <= $curr_year){
 				$rem = $curr_year%10;
 				$quo = floor($curr_year/10);
@@ -242,9 +250,70 @@ class SowBoarController extends Controller
 				}
 			}else{
 				$ear_notch_array[2] = "19".$year;
-				
 			}
+			
 			//echo implode($ear_notch_array, " ");			exit;
 		return implode($ear_notch_array, " ");
+	}
+	
+	public function actionAutocompleteEarNotch() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			 $qtxt ="SELECT ear_notch FROM  sow_boar WHERE ear_notch LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompleteName() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			 $qtxt ="SELECT sow_boar_name FROM  sow_boar WHERE sow_boar_name LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompleteRegister() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			 $qtxt ="SELECT registeration_no FROM  sow_boar WHERE registeration_no LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompleteBorn() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			 $qtxt ="SELECT born FROM  sow_boar WHERE born LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompletePigs() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			 $qtxt ="SELECT no_pigs FROM  sow_boar WHERE no_pigs LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
 	}
 }

@@ -3,8 +3,8 @@
 /* @var $model SowBoar */
 
 $this->breadcrumbs=array(
-	'Sow Boars'=>array('index'),
-	'Manage',
+	'Sows/Boars'=>array('index'),
+	'Search',
 );
 $cs=Yii::app()->clientScript;
 //$cs->registerCoreScript('jquery.ui');
@@ -14,10 +14,11 @@ $cs->registerCssFile(
 		'/jui/css/base/jquery-ui-1.10.2.custom.css'
 );
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowboar.js');
 
 $this->menu=array(
-	array('label'=>'List Sow Boar', 'url'=>array('index')),
-	array('label'=>'Create Sow Boar', 'url'=>array('create')),
+	array('label'=>'List Sows/Boars', 'url'=>array('index')),
+	array('label'=>'Create Sows/Boars', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -34,7 +35,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Sow Boars</h1>
+<h1>Search Sows/Boars</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -52,6 +53,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'id'=>'sow-boar-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	 'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
+	 'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
 		array('name'=>'ear_notch','value'=>'$this->grid->controller->calculateYear($data->ear_notch,2)'),
 		'sow_boar_name',
@@ -77,6 +80,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		*/
 		array(
 			'class'=>'CButtonColumn',
+			'template' => '{update}',
 		),
 	),
 )); ?>

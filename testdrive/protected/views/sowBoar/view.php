@@ -3,19 +3,19 @@
 /* @var $model SowBoar */
 
 $this->breadcrumbs=array(
-	'Sow Boars'=>array('index'),
+	'Sows/Boars'=>array('index'),
 	$model->sow_boar_id,
 );
 $this->menu=array(
-	array('label'=>'List SowBoar', 'url'=>array('index')),
-	array('label'=>'Create SowBoar', 'url'=>array('create')),
-	array('label'=>'Update SowBoar', 'url'=>array('update', 'id'=>$model->sow_boar_id)),
-	array('label'=>'Delete SowBoar', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->sow_boar_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage SowBoar', 'url'=>array('admin')),
+	array('label'=>'List Sows/Boars', 'url'=>array('index')),
+	array('label'=>'Create Sows/Boars', 'url'=>array('create')),
+	array('label'=>'Update Sows/Boars', 'url'=>array('update', 'id'=>$model->sow_boar_id)),
+	array('label'=>'Delete Sows/Boars', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->sow_boar_id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Search Sows/Boars', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View SowBoar #<?php echo $model->sow_boar_id; ?></h1>
+<h1>View Sows/Boars #<?php echo $model->sow_boar_id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

@@ -71,8 +71,8 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 				)),
 				array('label'=>'Entry', 
 						'itemOptions'=>array('id'=>'customerentry'), 'linkOptions'=>array('accesskey'=>'e'), 'url'=>array(''), 'items'=>array(
-								array('label'=>'Customer', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblCustomerEntry')),
-								array('label'=>'Sow/Boar', 'itemOptions'=>array('id'=>'sowboar'), 'linkOptions'=>array('accesskey'=>'s'), 'url'=>array('/sowBoar'))
+								array('label'=>'Customer', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblCustomerEntry/admin')),
+								array('label'=>'Sow/Boar', 'itemOptions'=>array('id'=>'sowboar'), 'linkOptions'=>array('accesskey'=>'s'), 'url'=>array('/sowBoar/admin'))
 				)),
 					
 				array('label'=>'Reports', 'itemOptions'=>array('id'=>'reports'), 'url'=>array('/user'), 'linkOptions'=>array('accesskey'=>'r'), 'items'=>array(

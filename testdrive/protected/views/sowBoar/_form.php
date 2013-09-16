@@ -6,6 +6,7 @@ $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 if($herdmark != "")
 	$herdmark = $herdmark." ";
+	
 $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 ?>
 

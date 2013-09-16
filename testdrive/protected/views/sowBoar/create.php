@@ -3,13 +3,13 @@
 /* @var $model SowBoar */
 
 $this->breadcrumbs=array(
-	'Sow Boars'=>array('index'),
+	'Sows/Boars'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List Sow Boar', 'url'=>array('index')),
-	array('label'=>'Manage Sow Boar', 'url'=>array('admin')),
+	array('label'=>'List Sows/Boars', 'url'=>array('index')),
+	array('label'=>'Search Sows/Boars', 'url'=>array('admin')),
 );
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs=Yii::app()->clientScript;
@@ -17,6 +17,6 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowboar.js');
 
 ?>
 
-<h1>Create SowBoar</h1>
+<h1>Create Sows/Boars</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

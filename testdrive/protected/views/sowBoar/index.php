@@ -5,17 +5,17 @@
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->breadcrumbs=array(
-	'Sow Boars',
+	'Sows/Boars',
 );
 
 $this->menu=array(
-	array('label'=>'Create Sow Boar', 'url'=>array('create')),
-	array('label'=>'Manage Sow Boar', 'url'=>array('admin')),
+	array('label'=>'Create Sows/Boars', 'url'=>array('create')),
+	array('label'=>'Search Sows/Boars', 'url'=>array('admin')),
 );
 
 ?>
 
-<h1>Sow Boars</h1>
+<h1>List Sows/Boars</h1>
 
 <?php  $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'sow-boar-grid',

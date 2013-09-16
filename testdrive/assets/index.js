@@ -44,7 +44,6 @@ $(document).ready(function(){
 	var arr = [ "TblCustomerEntry_last_letter_sent", "TblCustomerEntry_entry_date", "TblCustomerEntry_att_sale", "John" ];
 	$(document).keydown(function(event) {
 		  var activeId = this.activeElement.id;
-		  console.log(activeId);
 		  if($.inArray(activeId,arr) > -1){
 			switch(event.which) {
 				case 187:
@@ -112,7 +111,6 @@ $(document).ready(function(){
 				}
 		  }
 		  var msg = "Handler for .keypress() called " + event.which + " time(s).";
-		  console.log(msg);
 	});
 	//$("input").unbind('keydown');
 	//$('input').keydown(function(event) {console.log("india"); event.stopPropagation(); event.preventDefault();});
