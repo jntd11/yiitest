@@ -14,7 +14,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Customers</h1>
+<h1>List Customers</h1>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'tbl-customer-entry-grid',
 	'selectableRows'=>1,

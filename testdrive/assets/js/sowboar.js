@@ -38,7 +38,7 @@ function checkData(element,type,extra,extra1){
 				alert("Dash (or period) is required between Litter Number and Pig in Litter.");
 			else
 				alert("Farm Herd - Not in valid format");
-			$("#earnotch").focus();
+			//$("#earnotch").focus();
 			return;
 		}
 		val = val.replace(".","-");
