@@ -91,8 +91,6 @@ class SowBoarController extends Controller
 		*/
 		//$model = $this->loadModel($id);
 		$model = $this->pedigree($id);
-		echo "<pre>";
-		print_r($model);
 		$this->render('pedigree',array(
 				'model'=> $model,
 		));
@@ -335,11 +333,7 @@ class SowBoarController extends Controller
 	public function pedigree($pk,$condition='',$params=array()){
 		$model = new SowBoar();
 		//Yii::trace(get_class($model).'.findByPk()','system.db.ar.CActiveRecord');
-		$data = $model->findBySql("select * from sow_boar");
-		$data = $model;
-		$data = new CActiveDataProvider($this, array(
-				'criteria'=>$criteria,
-		));
+		$data = $model->findAllBySql("select * from sow_boar where sow_boar_id = ".$pk);
 		//$prefix=$model->getTableAlias(true).'.';
 		//$criteria=$model->getCommandBuilder()->createPkCriteria($model->getTableSchema(),$pk,$condition,$params,$prefix);
 		return $data;
