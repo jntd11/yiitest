@@ -164,4 +164,14 @@ class SowBoar extends CActiveRecord
 		return $res = $cmd->queryColumn();
 	}
 	
+	public function pedigree(){
+		$criteria=new CDbCriteria;
+		//$criteria->compare('ear_notch','',true);
+		//$criteria->limit = 10;
+		return new CActiveDataProvider($this, array(
+				'criteria'=>$criteria,
+		));
+	}
+	
+	
 }

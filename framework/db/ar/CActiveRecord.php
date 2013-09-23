@@ -1790,6 +1790,7 @@ abstract class CActiveRecord extends CModel
 	 */
 	public function populateRecord($attributes,$callAfterFind=true)
 	{
+
 		if($attributes!==false)
 		{
 			$record=$this->instantiate($attributes);

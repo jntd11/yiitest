@@ -28,7 +28,7 @@ class SowBoarController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','search','Siredam','AutocompleteEarNotch','AutocompleteName','AutocompleteRegister','AutocompleteBorn','AutocompletePigs'),
+				'actions'=>array('index','view','search','Siredam','AutocompleteEarNotch','AutocompleteName','AutocompleteRegister','AutocompleteBorn','AutocompletePigs','pedigree'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -57,6 +57,49 @@ class SowBoarController extends Controller
 	}
 
 	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionPedigree($id)
+	{
+		$model=new SowBoar();
+		//echo "<pre>";
+		//$dataProvider=new CActiveDataProvider('SowBoar');
+		//echo "<pre>";
+		//$dataProvider = $model->findAll());
+		//$sql = "select * from sow_boar Limit 1";
+		//$dataProvider = $model->findAllBySql($sql);
+		//echo CHtml::openTag($this->itemsTagName,array('class'=>$this->itemsCssClass))."\n";
+		
+		//foreach ($data as $data1)
+			//print_r($data1);
+		/*if(($n=count($data))>0)
+		{
+			//$viewFile=$this->getViewFile($this->itemView);
+			$j=0;
+			foreach($data as $i=>$item)
+			{
+				//$data=$this->viewData;
+				$data['index']=$i;
+				$data['data']=$item;
+				$data['widget']=$this;
+				$owner->renderFile($viewFile,$data);
+				if($j++ < $n-1)
+					echo $this->separator;
+			}
+		}
+		*/
+		//$model = $this->loadModel($id);
+		$model = $this->pedigree($id);
+		echo "<pre>";
+		print_r($model);
+		$this->render('pedigree',array(
+				'model'=> $model,
+		));
+		
+	}
+	
+	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
@@ -72,6 +115,10 @@ class SowBoarController extends Controller
 			$model->attributes=$_POST['SowBoar'];
 			if($model->ear_notch != "")
 		 		$model->ear_notch = $this->calculateYear($model->ear_notch);
+			if($model->sire_notch != "")
+				$model->sire_notch = $this->calculateYear($model->sire_notch);
+			if($model->dam_notch != "")
+				$model->dam_notch = $this->calculateYear($model->dam_notch);
 		 	$model->save();
 			//if($model->save())
 				//$this->redirect(array('index','id'=>$model->sow_boar_id));
@@ -122,10 +169,15 @@ class SowBoarController extends Controller
 			$model->attributes=$_POST['SowBoar'];
 			if($model->ear_notch != "")
 		 		$model->ear_notch = $this->calculateYear($model->ear_notch);
+			
 		 		
 		 	$model->sire_notch = str_replace(".", "-", $model->sire_notch);
 		 	$model->dam_notch = str_replace(".", "-", $model->dam_notch);
-		 	 
+		 	if($model->sire_notch != "")
+		 		$model->sire_notch = $this->calculateYear($model->sire_notch);
+		 	if($model->dam_notch != "")
+		 		$model->dam_notch = $this->calculateYear($model->dam_notch);
+		 	
 			if($model->save()){
 				$this->redirect(array('update','id'=>$model->sow_boar_id));
 				echo "Saved";
@@ -280,6 +332,19 @@ class SowBoarController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
+	public function pedigree($pk,$condition='',$params=array()){
+		$model = new SowBoar();
+		//Yii::trace(get_class($model).'.findByPk()','system.db.ar.CActiveRecord');
+		$data = $model->findBySql("select * from sow_boar");
+		$data = $model;
+		$data = new CActiveDataProvider($this, array(
+				'criteria'=>$criteria,
+		));
+		//$prefix=$model->getTableAlias(true).'.';
+		//$criteria=$model->getCommandBuilder()->createPkCriteria($model->getTableSchema(),$pk,$condition,$params,$prefix);
+		return $data;
+	}
+	
 	public function actionAutocompleteRegister() {
 		$res =array();
 		if (isset($_GET['term'])) {
