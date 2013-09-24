@@ -12,5 +12,8 @@ $this->menu=array(
 	array('label'=>'Create Sows/Boars', 'url'=>array('create')),
 	array('label'=>'Search Sows/Boars', 'url'=>array('admin')),
 );
-print_r($model->attributes);
+echo "<pre>";
+//print_r($model);
+foreach($model as $model1)
+	print_r($model1->attributes);
 ?>

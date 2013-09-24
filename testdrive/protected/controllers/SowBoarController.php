@@ -7,6 +7,8 @@ class SowBoarController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
+	
+	static $count = 0;
 
 	/**
 	 * @return array action filters
@@ -330,10 +332,79 @@ class SowBoarController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
+	public function findNotches($group){
+		$model = new SowBoar();
+		foreach ($group as $key => $member) {
+			self::$count++;
+			$sql="select * from sow_boar where ear_notch =  '".$group[$key]['notch']."'";
+			$data1 = $model->findAllBySql($sql);
+			$subgroup[self::$count] = array("notch"=>$data1[0]->sire_notch,
+					     "name"=>$data1[0]->sow_boar_name,
+						//"data"=>$data1
+					);
+			self::$count++;
+			$subgroup[self::$count] = array("notch"=>$data1[0]->dam_notch,
+					"name"=>$data1[0]->sow_boar_name,
+					//"data"=>$data1
+			);
+		}
+		return $subgroup;
+	}
 	public function pedigree($pk,$condition='',$params=array()){
 		$model = new SowBoar();
 		//Yii::trace(get_class($model).'.findByPk()','system.db.ar.CActiveRecord');
-		$data = $model->findAllBySql("select * from sow_boar where sow_boar_id = ".$pk);
+		//$data = $model->findAllBySql("select * from sow_boar where sow_boar_id = ".$pk);
+		$data1 = $model->findAllBySql("select * from sow_boar where sow_boar_id = 6");
+		$data = $data1;
+		//Level Count
+		$level = 1;
+		self::$count++;
+		$group[$level][self::$count] = array("notch"=>$data1[0]->sire_notch,
+						"name"=>$data1[0]->sow_boar_name,
+						//,"data"=>$data1
+					);
+		self::$count++;
+		$group[$level][self::$count] = array("notch"=>$data1[0]->dam_notch,
+						"name"=>$data1[0]->sow_boar_name,
+						//,"data"=>$data1
+						);
+		self::$count = 0;
+		$subgroup = $this->findNotches($group[$level]);
+		$level++;
+		$group[$level] = $subgroup; 
+		self::$count = 0;
+		$subgroup = $this->findNotches($group[$level]);
+		$level++;
+		$group[$level] = $subgroup; 
+		self::$count = 0;
+		$subgroup = $this->findNotches($group[$level]);
+		$level++;
+		$group[$level] = $subgroup; 
+		echo "<pre>";
+		print_r($group);
+		exit;
+		for($i=0;$i<4;$i++){
+			if(isset($data1[0])) {
+				$sql="select * from sow_boar where ear_notch IN ( '".$data1[0]->sire_notch ."','".$data1[0]->dam_notch."') ORDER BY FIELD(ear_notch, '".$data1[0]->sire_notch ."','".$data1[0]->dam_notch."')";
+				$data1 = $model->findAllBySql($sql);
+				$data = array_merge($data,$data1);
+			}
+			
+		}
+		//$data3 = $model->findAllBySql("select * from sow_boar where sow_boar_id = 4");
+		//$data = array_merge($data1,$data2);
+		echo "<pre>";
+		echo count($data);
+		$count = 0;
+		foreach($data as $model1) { 
+			//print_r($model1->attributes);
+			$a[$count]['main'] = $model1->ear_notch;
+			$a[$count]['sire'] = $model1->sire_notch;
+			$a[$count]['dam'] = $model1->dam_notch;
+			$count++;
+		}
+		print_r($a);
+		exit;
 		//$prefix=$model->getTableAlias(true).'.';
 		//$criteria=$model->getCommandBuilder()->createPkCriteria($model->getTableSchema(),$pk,$condition,$params,$prefix);
 		return $data;
