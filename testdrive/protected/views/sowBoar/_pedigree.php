@@ -1,5 +1,4 @@
-<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v"/>
-<style>v\:*{ behavior:url(#default#VML);}</style> 			
+
 <style>
 	.copy {
 		font-family : "Verdana";				

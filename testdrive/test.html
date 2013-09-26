@@ -127,7 +127,22 @@ function hline(){
 	context.strokeStyle = "red";
 	context.stroke();
 }
+function vline(){
+	var c_canvas = document.getElementById("hline");
+	var context = c_canvas.getContext("2d");
+	context.width=10;
+	//context.strokeStyle = "#eee";
+	//context.stroke();
+	context.beginPath();
+	context.lineWidth = 2;
+	context.moveTo(0, 0);
+	context.lineTo(0, 40);
+	context.moveTo(40, 60);
+	context.strokeStyle = "red";
+	context.stroke();
+}
 hline();
+vline();
 </script>
 </body>
 </html>

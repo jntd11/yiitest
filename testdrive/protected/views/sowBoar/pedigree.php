@@ -21,10 +21,11 @@ $cs->registerCssFile(
 		Yii::app()->baseUrl.
 		'/css/ECOTree.css'
 );
-<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v"/>
-<style>v\:*{
-	behavior:url(#default#VML);}</style>
+
 //echo "<pre>";
 //print_r($model);
 ?>
+<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v"/>
+<style>v\:*{
+	behavior:url(#default#VML);}</style>
 <?php echo $this->renderPartial('_pedigree', array('model'=>$model)); ?>
