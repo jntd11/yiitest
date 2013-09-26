@@ -423,8 +423,8 @@ class SowBoarController extends Controller
 		$level++;
 		$group[$level] = $subgroup; 
 		*/
-		echo "<pre>";
-		print_r($group);
+		//echo "<pre>";
+		//print_r($group);
 
 		//$data3 = $model->findAllBySql("select * from sow_boar where sow_boar_id = 4");
 		//$data = array_merge($data1,$data2);

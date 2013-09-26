@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" >
 <title>Tutorial: Hello Dojo!</title>
+<link rel="stylesheet" href="1.css"> 
 </head>
 <body>
     <h1 id="greeting">Hello</h1>
@@ -19,14 +20,58 @@
     <script src="dojo-release-1.9.1-src/dojo/dojo.js" data-dojo-config="async: true"></script>
     <canvas id="c" width="500" height="375"></canvas>
     <div>
-    <canvas id="hline" width="59" height="50"></canvas> <a>Jai</a>
+    <canvas id="hline" width="50" height="1" style="border:1px ;"></canvas> <a href="">Jai</a>
     </div>
-    <table>
+    <div>
+    
+      sssssssssssssssss
+    </div>
+    <table border="0">
     <tr>
-    	<td>____________</td>
+    	<td class="veriline" rowspan="3">-</td>
+    	<td class="horiline-top">&nbsp;</td>
+    	<td class="horiline-top">&nbsp;</td>
+    	<td class="horiline-top">&nbsp;</td>
+    	<td class="horiline-top">&nbsp;</td>
+    	<td class="horiline-top">&nbsp;</td>
+    	<td class="horiline-top">&nbsp;</td>
+    	<td style="valign: top;">    <table border="0">
+    <tr>
+    	<td class="veriline" rowspan="3">-</td>
+    	<td class="horiline-top">&nbsp;</td>
+    	<td class="horiline-top">&nbsp;</td>
+    	<td class="horiline-top">&nbsp;</td>
+    	<td class="horiline-top">&nbsp;</td>
+    	<td class="horiline-top">&nbsp;</td>
+    	<td class="horiline-top">&nbsp;</td>
     </tr>
     <tr>
-    	<td>|</td>
+    	<td>b</td>
+    	<td>c</td>
+    </tr>
+    <tr >
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
+    </tr>
+    </table></td>
+    </tr>
+    <tr>
+    	<td>b</td>
+    	<td>c</td>
+    </tr>
+    <tr >
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
+    	<td class="horiline-bot">&nbsp;</td>
     </tr>
     </table>
 <script>
@@ -76,10 +121,10 @@ function hline(){
 	//context.stroke();
 	context.beginPath();
 	context.lineWidth = 2;
-	context.moveTo(0, 10);
-	context.lineTo(10, 40);
+	context.moveTo(0, 0);
+	context.lineTo(40, 0);
 	context.moveTo(60, 40);
-	context.strokeStyle = "#000";
+	context.strokeStyle = "red";
 	context.stroke();
 }
 hline();
