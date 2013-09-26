@@ -12,8 +12,10 @@ $this->menu=array(
 	array('label'=>'Create Sows/Boars', 'url'=>array('create')),
 	array('label'=>'Search Sows/Boars', 'url'=>array('admin')),
 );
-echo "<pre>";
+//echo "<pre>";
 //print_r($model);
-foreach($model as $model1)
-	print_r($model1->attributes);
+foreach($model as $key=>$val){
+	
+	//print_r($model1->attributes);
+}
 ?>

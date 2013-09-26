@@ -336,17 +336,41 @@ class SowBoarController extends Controller
 		$model = new SowBoar();
 		foreach ($group as $key => $member) {
 			self::$count++;
-			$sql="select * from sow_boar where ear_notch =  '".$group[$key]['notch']."'";
+			$sql="select sow_boar_id, sire_notch, dam_notch from sow_boar where ear_notch =  '".$group[$key]['notch']."'";
 			$data1 = $model->findAllBySql($sql);
-			$subgroup[self::$count] = array("notch"=>$data1[0]->sire_notch,
-					     "name"=>$data1[0]->sow_boar_name,
+			if(isset($data1[0])) {
+				$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->sire_notch."'";
+				$name = $model->findBySql($sql);
+				$subgroup[self::$count] = array("notch"=>$data1[0]->sire_notch,
+						     "name"=>$name->sow_boar_name,
+						     "no"=>$name->registeration_no,
+							 "id"=>$name->sow_boar_id,
+							//"data"=>$data1
+						);
+				$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->dam_notch."'";
+				$name = $model->findBySql($sql);
+				self::$count++;
+				$subgroup[self::$count] = array("notch"=>$data1[0]->dam_notch,
+						"name"=>(isset($name))?$name->sow_boar_name:"",
+					     "no"=>(isset($name))?$name->registeration_no:"",
+						 "id"=>(isset($name))?$name->sow_boar_id:"",
 						//"data"=>$data1
-					);
-			self::$count++;
-			$subgroup[self::$count] = array("notch"=>$data1[0]->dam_notch,
-					"name"=>$data1[0]->sow_boar_name,
-					//"data"=>$data1
-			);
+				);
+			}else{
+				$subgroup[self::$count] = array("notch"=>"",
+						"name"=>"",
+						"no"=>"",
+						"id"=>"",
+						//"data"=>$data1
+				);
+				self::$count++;
+				$subgroup[self::$count] = array("notch"=>"",
+						"name"=>"",
+						"no"=>"",
+						"id"=>"",
+						//"data"=>$data1
+				);				
+			}
 		}
 		return $subgroup;
 	}
@@ -359,16 +383,30 @@ class SowBoarController extends Controller
 		//Level Count
 		$level = 1;
 		self::$count++;
+		$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->sire_notch."'";
+		$name = $model->findBySql($sql);
 		$group[$level][self::$count] = array("notch"=>$data1[0]->sire_notch,
-						"name"=>$data1[0]->sow_boar_name,
-						//,"data"=>$data1
+						"name"=>$name->sow_boar_name,
+						"no"=>$name->registeration_no,
+						"id"=>$name->sow_boar_id,
+				//,"data"=>$data1
 					);
+		$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->dam_notch."'";
+		$name = $model->findBySql($sql);
 		self::$count++;
 		$group[$level][self::$count] = array("notch"=>$data1[0]->dam_notch,
-						"name"=>$data1[0]->sow_boar_name,
-						//,"data"=>$data1
+						"name"=>$name->sow_boar_name,
+						"no"=>$name->registeration_no,
+						"id"=>$name->sow_boar_id,
+				//,"data"=>$data1
 						);
-		self::$count = 0;
+		for($i=1;$i<=5;$i++) {
+			self::$count = 0;
+			$subgroup = $this->findNotches($group[$level]);
+			$level++;
+			$group[$level] = $subgroup;
+		}
+		/*self::$count = 0;
 		$subgroup = $this->findNotches($group[$level]);
 		$level++;
 		$group[$level] = $subgroup; 
@@ -380,20 +418,17 @@ class SowBoarController extends Controller
 		$subgroup = $this->findNotches($group[$level]);
 		$level++;
 		$group[$level] = $subgroup; 
+		self::$count = 0;
+		$subgroup = $this->findNotches($group[$level]);
+		$level++;
+		$group[$level] = $subgroup; 
+		*/
 		echo "<pre>";
 		print_r($group);
-		exit;
-		for($i=0;$i<4;$i++){
-			if(isset($data1[0])) {
-				$sql="select * from sow_boar where ear_notch IN ( '".$data1[0]->sire_notch ."','".$data1[0]->dam_notch."') ORDER BY FIELD(ear_notch, '".$data1[0]->sire_notch ."','".$data1[0]->dam_notch."')";
-				$data1 = $model->findAllBySql($sql);
-				$data = array_merge($data,$data1);
-			}
-			
-		}
+
 		//$data3 = $model->findAllBySql("select * from sow_boar where sow_boar_id = 4");
 		//$data = array_merge($data1,$data2);
-		echo "<pre>";
+		/*echo "<pre>";
 		echo count($data);
 		$count = 0;
 		foreach($data as $model1) { 
@@ -405,9 +440,10 @@ class SowBoarController extends Controller
 		}
 		print_r($a);
 		exit;
+		*/
 		//$prefix=$model->getTableAlias(true).'.';
 		//$criteria=$model->getCommandBuilder()->createPkCriteria($model->getTableSchema(),$pk,$condition,$params,$prefix);
-		return $data;
+		return $group;
 	}
 	
 	public function actionAutocompleteRegister() {

@@ -1,0 +1,912 @@
+1) To install the plugin, move www/analytics.js to your project's www folder and include a reference to it in your html file after cordova.js.
+
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="analytics.js"></script>
+
+2) Create a directory within your project called src/com/phonegap/plugins/analytics and copy src/com/phonegap/plugins/analytics/GoogleAnalyticsTracker.java into it.
+
+3) Add the following activity to your AndroidManifest.xml file, inside the <application> tag if it isn't already there.
+
+
+    <activity android:name="com.phonegap.DroidGap" android:label="@string/app_name">
+
+      <intent-filter>
+
+      </intent-filter>
+
+    </activity>
+
+4) Download GoogleAnalytics library (tested with v2.0 Beta 4; Use the version from this repo if needed) and copy lib/libGoogleAnalyticsV2.jar into the libs directory within your project. You may also need to right click on this file in eclipse and add the jar to the build path.
+
+5) In your res/xml/config.xml file add the following line:
+
+<plugin name="GoogleAnalyticsTracker" value="com.phonegap.plugins.analytics.GoogleAnalyticsTracker" />
+
+http%3A%2F%2Fwww.w3schools.com%2Fmy%20test.asp%3Fname%3Dst%C3%A5le%26car%3Dsaab%40 
+
+ http%3A%2F%2F192.168.1.6%3A8080%2FEasyMedAPI%2Fauth%3Femail%3Dj%40j.com%26password%3D123456%26format%3Djson 
+
+
+
+https://github.com/moodle/moodle/commit/29a4621e47dc8523620a9d70d4a34d988990c5d4
+
+online2.improvegroup.com.au
+Username: root
+Password: M@csBlowG0@ts
+https://github.com/moodle/moodle/commit/29a4621e47dc8523620a9d70d4a34d988990c5d4
+
+Table of Contents for Internal Documentation
+
+
+1.	Processes
+a.	Collecting Requirements
+b.	Release Process
+c.	Tickets Handling
+d.	
+2.	Domains
+a.	Database (snapshot of relationship between tables by Senthil)
+b.	Interface Specification
+i.	EasyMedAPI
+ii.	Webservices
+iii.	HL7
+c.	Configuration
+i.	Account Extensions 
+ii.	META and Account Rights
+d.	Mobile Apps
+e.	Messenger
+f.	PHP application structure
+g.	Java application structure
+h.	HL7
+i.	HIPAA
+j.	Cognos
+k.	Message Broker (Siva made documentation how to run MB without  interface etc like Deamon.. put it here)
+l.	Splunk
+m.	Audit and Traceability (Select * from audit table by Senthil.. Get help from Poo)
+n.	…
+
+3.	Functionalities
+a.	Login, logout, ping
+b.	Visit scheduling
+c.	CCR / Medical Record
+d.	…
+
+4.	Product Versions
+a.	Release Synopsis
+b.	Test Plans
+c.	SCRs & Implementation plans
+d.	Misc Presentations
+
+
+mindpowercoach.com/test_environment
+
+You can work right now my email is Edgar.payaslyan@gmail.com
+Plesk control Panel: https://yoursitepros.com:8443 (has access to the mysql db)
+login:       info@ajemco.com
+pass:        ajem123
+[11:28:38 AM] edgar payaslyan: ftp: ftp.ajemco.com 
+login:       ajemco.com
+pass:        ajem123
+[11:28:38 AM] edgar payaslyan: http://ajemco.com/administrator
+user: admin
+pass: ajemco7878
+
+You can work right now my email is Edgar.payaslyan@gmail.com
+
+http://www.yootheme.com/zoo/documentation/advanced/how-to-use-the-csv-importer
+http://www.yootheme.com/zoo/documentation?view=docs
+http://web-harvest.sourceforge.net/download.php
+
+http://www.wyndhamcollection.com/Bathroom-Vanities/
+
+URL: s01.lms.ac:2082
+username:fl03805
+password:fujidai1965
+***************
+***************
+New Server C-Panel Information:
+
+URL: https://server46.instantssl.co.jp:2083/
+username:fl03805	
+password: fujiest1965
+************************************************
+SSL: 　https://server46.instantssl.co.jp:2083/
+Same username and password, I think.
+
+The department Moodle URL is: www.flang-fjunv.com
+　DNS Primary　：　ns46.joesdns.net
+　DNS Secondary　：　ns2.joesdns.net
+)!kU%-=6%@*Q
+
+
+$CFG->dbtype    = 'mysqli';
+$CFG->dblibrary = 'native';
+$CFG->dbhost    = 'localhost';
+$CFG->dbname    = 'fl03805_mdle1';
+$CFG->dbuser    = 'fl03805_mdle1';
+$CFG->dbpass    = 'rHblw6THEnmY';
+$CFG->prefix    = 'mdl_';
+
+
+Username: admin
+PW: fujidai1
+www.flang-fjunv.com
+
+-revalidate
+
+$ git clone git://git.moodle.org/moodle.git                       (1)
+$ cd moodle
+$ git branch -a                                                   (2)
+$ git branch --track MOODLE_23_STABLE origin/MOODLE_23_STABLE      (3)
+$ git checkout MOODLE_23_STABLE                                    (4)
+
+780fb52c10c4b9ce50c4/zxc)(*123
+
+
+Jai,
+Great start on the PIGSAPP!
+
+Project B. Setup Customer Entry (F6 - 11.CUSTOMER ENTRY from PIGS).
+
+    1. We need to change Customer Code to Search. We will eliminate Customer Code.
+
+        a. This is where we will put to use the research you did earlier.
+
+        b. In this Search field we want to be able to start typing (either Last Name, First Name, Company or Phone #) and the dropdown will show immediately the names (or phone #) that start with what is typed. (You will need to include all 5 nonblank phone #'s in the search index.)
+
+        c. Down & Up arrow to highlight then Enter to select or left click to select from list shown and then display all the Customer fields.
+
+        d. Pressing Tab in the Search field will clear the Search field and start taking the new Company Name, etc.
+
+    2. We need to take a separate First Name and Last Name. I will split these out during the upload of Customer data from the current PIGS program.
+
+    3. We need to expand the number of phone fields to 5. The titles will be: Home, Business, Cell, Other 1, Other 2. These phone fields need to be large enough to take at least 30 additional characters after the number. This allows for short comments to identify the number for example: "218-732-1234 Lloyd's cell"
+
+    4. The field titles need to be change from all caps to up-low. Example: COMPANY NAME => Company Name. Also, the numbers at the beginning of each field title should be eliminated.
+
+    5. We need to have just one Customer database per login.
+
+    6. When you call up a customer in the old PIGS (you can use F10 to show the next customer when on the CODE or bottom option line) you will notice there are several "bottom option functions".
+
+        a. F3=DEL We need to be able to Delete this customer.
+
+        b. F4=SLD HOGS Skip for now - this will be added in a later project.
+
+        c. F5=SCRN 2 This shows 14 additional fields to take information on. All these additional fields need to be added to the main Customer Entry screen. The 4 SUGGESTED PROGRAM lines needs to be a free format box (like Notes) showing first 4 lines but allowing unlimited lines (30 if unlimited not possible).
+
+        d. SF6=ENVELOPE Skip for now - this will be part of the later project.
+
+        e. F6=MOVE is no longer needed.
+
+        f. F7=LTR SNT This automatically fills in the current Activity date into the LAST LETTER SENT field. Here is where if the User is positioned on this field that a "t" (or T) would fill in the current activity date and the + would add 1 day to the date shown and - would subtract 1 from the date shown (but NOT change the PIGSAPP Current Activity date selected at login).
+
+        g. F8=NOTES Need to show the first 10 lines of notes on main screen and allow for unlimited free format entry (if unlimited is not possible then at least 30 lines. The function key options on this box will not be needed.
+
+        h. SF4=CC This is Shift-F4 and shows the Credit Card info for this customer. This needs to be on the main screen also.
+
+        i. SF5=ST This is Shift-F5 and contains the Ship To fields.
+This needs to be on the main screen also. Note that we need 2 buttons, one to set Ship To fields to Customer fields and the other to Clear Ship To Fields.
+
+        j. DIRECTIONS/COMMENTS will be eliminated - I will incorporate any data from here into Notes.
+
+The layout of the main Customer Entry screen should be in this order:
+1. lines 1-11.
+2. Notes
+3. Credit Card info
+4. Ship To fields
+5. lines 12-22
+6. Additional fields (from line c above)
+
+Date fields: 14, 20, 21, 22
+Numeric fields (whole number no decimals): 15, 16, 17, 18
+
+Fields 12, 13, 15, 16, 17, 18 should be eliminated.
+
+Line 22 date should be automatically filled in with the current Activity date when this customer is originally entered and only changed after that by the user.
+
+Date fields need to have the t/+/- options when the cursor is positioned on that field. Also, put a small calendar icon next to each date field to click on for the date picker.
+
+I will need to import data from current users of PIGS so I will need to know how to access the Customer Database that you set up to import a text (CSV) file into.
+
+I have following doubts.
+
+    5. We need to have just one Customer database per login.
+    Can you explain this? We hope to have many, maybe hundreds of subscribers that will use this software. Each subscriber will have his own unique Customer database per login (as well as other information that must be kept separate by login).
+
+   We can't keep "function keys" on Web/browser. So you have acess it using mouse Sorry, I did not make it clear that the function keys would be replaced by buttons. I was showing the function keys as a reference to what is available now and will either be eliminated, dealt with later or needs to have the same functionality with a button or whatever.
+
+  I will need to import data from current users of PIGS so I will need to know how to access the Customer Database that you set up to import a text (CSV) file into.
+
+   Do you want to move from existing table to new one (the one we do now)? Not sure, may be we need write to script to that as sometime fields and order will change..... Currently the Customer Database (of about a dozen or so users of PIGS) is in an ISAM COBOL database. I will need to write a utility to export that data to a CSV file so that the data can then be imported into the Customer database you construct for the PIGSAPP application. Right now in the Auction program in phpmyadmin I have the feature to Import data from a CSV file into a table. I will need something similar that I can use to import the data and also construct (or rebuild) any index tables.
+Hi,
+Small doubt here.
+1-11
+12. Notes
+13-16 CC info (4)
+17-27 Shipping fields (11)
+
+Then you said 12-22. It has 12-24. Just 23. Also u have said (Numeric fields (whole number no decimals): 15, 16, 17, 18) and Fields 12, 13, 15, 16, 17, 18 should be eliminated. Just eleminate Fields 12, 13, 15, 16, 17, 18.
+
+That means only 14,19,20,21,22 and 23 (6 fields) to be added on this form? Yes, but field numbers not needed on new form as mouse click or tab will get you to that field.
+Does 23-34 not needed? 23 is needed. 30-34 is item j below which is incorporated in to item g below (Notes).
+
+05/06/2013
+a. F3=DEL We need to be able to Delete this customer. - Delete available
+
+07/06/2013
+Just started testing. Seems like just about every time I click on something that changes to a new screen it is asking me for a date. I am logged in as admin/admin. Is there something I am doing wrong? The program should only ask for a date if the user clicks on Change Activity Date under the Maintenance option.
+
+Some changes:
+1. No fields should be required.
+	Done. But does it cause empty entry?
+2. On the date fields, can we show just the date and not the time on both the View and the Update screens?
+        Done.
+3. State needs to be between City and Zipcode. Contact should be right after Zipcode.
+        Done
+4. Is there a reason why the Update screen cannot look just like the View screen? Field values to the right of field title instead of underneath.
+	Yes, i have changed it. How it looks now?
+5. How do I import data from the Old PIGS? It will be in a comma delimited text file. I want to see what happens when there are hundreds of entries.
+	We have 2 options. 
+	1. Give me a sample, i will code a script to import and map the data from old to new. 
+	2. Find the attached CSV, Check if it is possible to export from your COBOL DB to this format. If possible, we can import it directly using Phpmyadmin
+
+6. As per previous Email, I do not see "Date" issue. Calendar will appear on 3 fields when you click on it. (attr sale, actvity, last letter sent). Can you explain me. 
+
+7. Ignore my previous email related to autosuggest. It works.
+
+Kindly refresh the cache without fail.
+
+33814844
+
+12/06/2013
+-A INPUT -i lo -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+-A OUTPUT -p tcp -m tcp --dport 443 -j ACCEPT
+-A OUTPUT -p tcp -m tcp --dport 443 -j ACCEPT
+COMMIT
+# Completed on Wed Jun 12 05:44:48 2013
+
+http://docs.moodle.org/dev/Creating_a_theme
+http://docs.moodle.org/dev/Themes_2.0
+http://lesscss.org/#docs
+
+1800-200-2267
+
+MSH|^~\&|MedIS HL7 (medspazio)|11^11|MedIS HL7 Remote Application|11^11|20111218140102||ORM^O01|20111218140109|P|2.5
+PID|1||78616||TestFamilyName^TestGivenName||19601122000000000|U|||^^^^^||0919841798875^^^^^^0792316815
+PV1|1|E|^^^^^^|||||^test^
+ORC|SC||017076501||SC
+OBR|1||017076501|102060000000^Genou|||||||||Informations cliniques: \.br\|||^test|||||||||||||||^Renseignements voulus: \.br\|||||20111218093000000
+
+http://online2.improvegroup.com.au/mod/quiz/review.php?attempt=1625&showall=1
+
+  Great Job! I`ve contacted Simon and he has given some comments as I`ve been busy on some other things. I`ve looked through his comments and agree with everything he says. That said, I do have a couple of favors.
+ 
+ 
+ 
+0.Can you make the links at the top go active when a user mouses over them so that they know it is a link? Either a mouseover or underline is fine. Something that is VERY subtle (no big change) but let`s the user know that they can go here for the information if needed. I`ll let you decide.
+1. We will have a new class of students starting tests on July 1st. They were trained on the old home page, and if we suddenly change, they will be confused. So, We will implement the page in about 2 weeks. That said, we can finish the page (and the job) this weekend (I hope). But, I will ask you to load the page at a later date(July 14th, I will confirm that on Monday). Can you include that job in with this one so we can pay you now?
+
+Ans: We can keep it as it is now on live. Just change the theme using theme selector whenever you want this theme. This new theme (we created) is FUJI. In sandbox, if you want change the theme. Hope you know how to change the theme
+
+2. Simon has agreed to help us do some cleanup work now that the design is done. Specifically, he is going to help us put new pictures into the alternating picture space and make some of the landing pages for the links at the top of the page. That said, can you provide a step-by-step way of changing those pictures?
+
+Ans: Great. If you have FTP, you can change it on this folder. (public_html/sandbox/theme/fuji/pix) Replace the images (image-slider-1, so on) and clear the cache. Images will change. 
+For links, open the file on public_html/sandbox/theme/fuji/layout/frontpage.php with some editor. Change the a href on the following lines (90-120). If you need help let me know.
+
+3. Can you change the top links back to English so Simon can work?   AFter doing so, can you provide Simon a step-by-step on how to change them back to Japanese once we complete?
+Ans: You can change the default language from here http://flang-fjunv.com/sandbox/admin/settings.php?section=langsettings. I have changed it to english now. If you need help let me know.
+
+4. After complete, please submit billing information so I can pay you. We will change the clean-up work to hourly if that is ok. 
+Ans: I have changed login button so the translation will also apply for that.  I have completed your 5 points. But not considered simon comments below. 
+If you think it is completed, then I estimate it is around 120$. I hope you have created a job on odesk for 70$. If you can, pay me another 50$ thru odesk or paypal(mathangijai.c@gmail.com)
+
+5. Sorry, one more thing I just noticed. The top left logoLogo in the photoshop file that was send has the elearning part on the same line with the Fuji University. Is it possible to put that file in? Also, I just talked to Simon, he noted that the cursor changes to a hand for the links, being sufficient for showing users that they are links, so you can cancel that change for now. You do not have to edit the links. We may ask to change later.
+
+Ans: I will update it soon.
+
+1) The username and password fields need to be moved over to the left closer to the login button.
+
+2) The language drop down box needs to be changed to the far right side, inline with the right side of the login button, sitting on top of the purple header, and inline with the 'remember username'.
+
+3) We need to change the color of the 'Lost password?' from red to black, and if you mouse over it you need an underline to show it is click-able
+
+4) Disable the 'Mission' drop down box but allow 'Mission' to be click-able.
+
+5) Please remove the information on the right side of the girl student photo. This row of information, which is above the sliding bar needs to be deleted.
+     Please replace with the following text box beside the girl photo. Same width as the current row.
+
+1. if you go into Update TblCustomerEntry then change a field and click Save, it is telling me that the 3 date fields have input errors.
+done
+2. If changes have been made to any of the fields we need to make sure that the User has the option to Save or Discard the changes before exiting the screen if they did not click on the Save button.
+Done, Kindly check this way works
+3. Please change all the "TblCustomerEntry" to "Customers" on all the screens
+Done
+4. Change "Manage" to "Search".
+Done
+5. On the Manage (now Search) screen please do not allow deleting - only allow deletion from the Update screen.
+Done
+6. You can completely remove the View screen.
+DO u want to remove it fully? Done
+
+7. On the List TblCustomerEntry please show entries in column form with column headers similar to the Search screen (and no need to display the Customer Entry field) then just click on one of the fields of an entry to immediately go to the Update screen for that entry:
+Company Name       First Name    Last Name    Address1                       City                State        Home Phone     Cell Phone
+Test Jai                       Jai                   Sanker          chemnai                         chemnai        TN            828 2829292    88989899            
+Lloyd's on Portage   Lloyd              Harless        12099 Far Portage Dr.   Park Rapids  MN           218.732.1962  218.255.3756   
+
+Done
+
+8. On the Search screen, just have one entry named Phone but when you actually do the search you need to search all the phone fields and still display all 5 phone fields. That way the user doesn't have to remember which phone field was used to search by phone #.
+
+9. Here are some field titles that need to be changed:
+Address & Address => Address1 & Address2
+Phone Home => Home Phone
+Phone Business & Phone Cell => Business Phone & Cell Phone
+Phone Others & Phone Others => Phone Other1 & Phone Other2
+County => County/Area
+Sows & Boars => Sows/Brdg & Boars/Brdg
+Credit Card Name => Name on Card
+Area => County/Area
+
+10. Rep Gilts box should be 60 instead of 50 characters.
+
+03/07/2013
+Jai,
+Thanks for the updates.
+1. Seems to be fixed.
+2. If the user clicks on the Save button, there is no need to ask the question about Confirm Navigation - just go ahead and save the data. It is only when they try to navigate away from this Update page when data changes have been made that you need to come up with the Confirm Navigation question.
+Done
+3. Good.
+4. Good - please capitalize search (Search) on all the screens.
+Done
+5. Good
+6. After clicking Save on the Update screen the Customer shows in the old View screen. Please leave the user on the Update Customer screen after clicking Save.
+Done
+7. Good
+8. Good but there are some issues:
+    a. The search needs to not be case sensitive - in other words when I type the letter h in last name it should show Harless.
+    done
+    b. The drop downs are showing fine but when I click on one to select it - the screen just continues to show the whole list of Customers - for example type 218 in the phone search area - select one of the numbers and all 4 customers are still showing.
+    Revision on my comments on Item 8.b: I see that only the matching customers show after selecting the dropdown AND pressing the Enter key. Need to have it work so that selecting a dropdown also does the Enter key press function immediately.
+    Done.
+
+    c. I think having to click on the little pencil icon on the right on the Search screen is confusing - can you make it the same as the List of Customers screen - just click anywhere on that line to select and display that Customer in the Update screen?
+    Done
+9. Good
+10. Rep Gilts is still 50 - needs to be at least 60 characters.
+done
+
+
+
+https://mysql.dfw1-2.websitesettings.com
+512368_pigs
+098765Po
+72.3.204.211
+mysql51-015.wc2.dfw1.stabletransit.com
+ftp:  ftp.buyerschoiceauction1.com   user: lopnorth   pwd: Lop040770
+
+http://sandbox.easymedmobile.com:7800/EasyMedAPI/ws/hugs?wsdl
+
+05/07/2013
+Jai,
+
+The Mailing Codes need to have descriptions. These codes are used for selection purposes for mailings and other reports. It is a single letter code so each letter entered into the Mailing Code field should have a description associated with it. For example: C=Commercial Breeder, P=Purebred Breeder, S=ShowPig Client, etc.
+1. If the User inserts a Mailing Code that does not have a description, we need to ask for a description for that Code.
+2. Need to have a drop down to show all current Mailing Codes with descriptions for selection by the User. The drop down would need a <NEW> option for adding a new code and description. This drop down would show when the User types a character in the field.
+3. Need to have an option in the main selector under Maintenance to add a new Mailing Code with description, change the description of a Mailing Code or delete a Mailing Code and description.
+4. These codes should not be case sensitive so for example: c is the same as C.
+5. Need to allow for numbers and special characters (.,<>';:"][{}!@#$%^&*()_-+=)
+6. Allow for deletion of a code ONLY if it is not being used. This should be in the Maintenance option. If the User tries to delete a code and the code is in use by a Customer, display at least one of the Customers using that code. For example in a popup screen saying this code cannot be deleted because it is being used by: First Name Last Name.
+
+Here are some items not part of Customer Entry.
+a. On the main selector put Customer Entry as a sub item under Entry just labeled Customer.
+b. Is there a way to change the Activity date once the User is Logged in? Maybe an option under Maintenance labeled Activity date?	
+c. The date at the bottom of the screen should be titled "Activity date:"
+
+Jai,
+Thanks for the updates. Here are my comments so far using the same item numbers/letters as original email below:
+1 & 2. I'm thinking that the entry of a new Mailing Code when typed in on the Customer Entry screen should be more like a popup window that after the creation of the new code the popup disappears and the cursor is still positioned on the Mailing Code field on the Customer Entry screen with the new code showing. The popup screen should have the new code already filled in and the cursor should be positioned on the Description field of the new Mailing Code. This popup screen only needs the option to Create or exit without creating the new code. Here is what I tested: I opened my Customer record (Lloyd Harless) and typed the letter a (behind the xsxx that was already there) and the drop down showed "New" so I clicked on that and created the new Mailing Code "a" in a completely different screen. When I finished creating the new Mailing Code I had to call up my record again (Lloyd Harless). It was not showing the "a" that I had typed earlier and now when I type "a" again all I get is New in the drop down. It looks like if "a" is the only code in the Mailing Code field then the description shows in the drop down. Most Customers will have more than one Mailing Code so this needs to work for multiple letters/numbers in the Mailing Code field.
+
+2. I think New should be enclosed in <> (Example: <New> ) so that the user knows that selecting this option will allow creation of a new Mailing Code.
+
+6. When I went into Maintenance - Mailing Codes and tried to delete the Mailing Code "a" that I had just created and put into Customer Lloyd Harless, I got the screen that I have attached.
+
+a. The main selector should not have Customer - that should be under the main selector option: Entry. So when the cursor lands on Entry it should have the Customer option show up in the drop down.
+
+We will be out of the office this weekend (Friday, Saturday & Sunday) so I am extending the Due date to the 19th. I may be able to do some testing this weekend but not guaranteeing that I will be able to do any testing at all.
+
+
+<![CDATA[MSH|^~\&|unilab2|9^HEMOSPE-LB|EasyMed||20130619094955.447+0200||ORU^R01|ul2.9.3001.134178.1371628195447|F|2.5||1371628195447|||CHE|8859/15|fr
+PID|1||97014644||XXXX||||||||001808123456|||||||||||||||||
+OBR|1|9^^20130618^3001|134178|EXAM|1|20130618000000+0200|20130618120000+0200||0^0|||||201306181637+0200|1556^sgv^sang veineux^4||0041223720000^WPN^PH~0041795532955^BPN^CP~cardiologie@hcuge.ch^NET^Internet|N|N|||20130618163704+0200|||F||1^R
+OBX|2|TX|329522^INR^29570^1310|30|1.00||||||F|||20130618164940+0200|2164^INR^30^60|LA09^LA09
+
+]]>
+
+<![CDATA[MSH|^~\&|unilab2|9^HEMOSPE-LB|EasyMed||20130619094955.447+0200||ORU^R01|ul2.9.3001.134178.1371628195447|F|2.5||1371628195447|||CHE|8859/15|fr
+PID|1||97014644||XXXX||||||||001808123456|||||||||||||||||
+OBR|1|9^^20130618^3001|134178|EXAM|1|20130618000000+0200|20130618120000+0200||0^0|||||201306181637+0200|1556^sgv^sang veineux^4||0041223720000^WPN^PH~0041795532955^BPN^CP~cardiologie@hcuge.ch^NET^Internet|N|N|||20130618163704+0200|||F||1^R
+OBX|2|TX|329522^INR^29570^1310|30|1.00||||||F|||20130618164940+0200|2164^INR^30^60|LA09^LA09
+
+]]>
+MSH|^~\&|unilab2|4^HEMOS-LB|EasyMed||20130506151421.375+0100||ORU^R01|ul2.4.3001.46593.1367846061375|T|2.5||1367846061375|||CHE|8859/15|frPID|1||97005404||XXXX||||||0041797654321|||||||||||||||||OBR|1|4^^20130502^3001|46593|EXAM||20130502000000+0100| 20130502100000+0100||0^0|||||201305021114+0100|1556^sgv^sang veineux^4||0041223720000^WPN^PH~0041783720000^BPN^CP~cardiologie@hcuge.ch^NET^Internet|N|N|||20130502111420+0100|||F|OBX|1|TX|116715^INR^29570^200|20|3.32||||||F||| 20130502113414+0100|2164^INR^20^60|MKF^MKF
+
+http://www.pinger.com/textfree 
+
+<![CDATA[MSH|^~\&|unilab2|4^HEMOS-LB|EasyMed||20130506151421.375+0100||ORU^R01|ul2.4.3001.46593.1367846061375|T|2.5||1367846061375|||CHE|8859/15|fr\r\nPID|1||97005404||XXXX||||||0041797654321|||||||||||||||||\r\nOBR|1|4^^20130502^3001|46593|EXAM||20130502000000+0100| 20130502100000+0100||0^0|||||201305021114+0100|1556^sgv^sang veineux^4||0041223720000^WPN^PH~0041783720000^BPN^CP~cardiologie@hcuge.ch^NET^Internet|N|N|||20130502111420+0100|||F|OBX|1|TX|116715^INR^29570^200|20|3.32||||||F||| 20130502113414+0100|2164^INR^20^60|MKF^MKF]]>
+
+wacinski@213.162.21.114
+
+<![CDATA[MSH|^~\&|unilab2|32^MATPED-LB|EasyMed||20130619162139.139+0200||ORU^R01|ul2.32.3.133764.1371651699139|F|2.5||1371651699139|||CHE|8859/15|fr
+PID|1||6||JAI||||||||919841798875|||||||||||||||||
+OBR|1|4^^20130502^3001|46593|EXAM||20130502000000+0200|20130502100000+0200||0^0|||||201305021114+0200|1556^sgv^sang veineux^4||919841798875^WPN^PH~919841798875^BPN^CP~cardiologie@hcuge.ch^NET^Internet|N|N|||20130502111420+0200|||F||1^R
+OBX|2|TX|329647^INR^29570^63496|0|NON INTERPRÉT.||||||F|||20130619162124+0200|2164^INR^20^11707^Hémostase^^Hémostase|MKF^MKF]]>
+[19/07/2013 7:20:37 PM] ganesan srinivasan : <soapenv:Envelope xmlns:soape
+
+http://flang-fjunv.com/sandbox/course/editsection.php?id=13
+
+http://sandbox.easymedmobile.com:7800/EasyMedAPI/ws/hugs?wsdl
+http://sandbox.easymedmobile.com/hugs?wsdl
+
+https://secure.easymedmobile.com/hugs?wsdl
+
+<p class="multilang" lang="ja"><span class="multilang" lang="ja">富士大学 <br />‘学生諸君の夢の実現をお手伝いします。’<br /><br />このEラーニングサイトを利用は、本当に身近にかつ楽しみながら語学学習に励むことができる方法の１つです。とても簡単に始めることができます。あなたは担当者よりサイトにログインするためのユーザーネーム(ID)とパスワードを受け取ると、大学キャンパス内、キャンパス外のいずれからもアクセスすることができます。つまり、あなたはインターネットに接続する環境があれば、あなたの都合のよいときにどこからでもこのサイトにアクセスすることができます。分からないことがあれば、サポート担当者があなたの学びをサポートします。迷っている暇はありません。さあ、始めましょう。</span></p>
+
+Jai,
+Thanks for the updates - here are the issues I see:
+1. Item 4 in the original bid says that the codes should not be case sensitive. What I meant by that is that for the codes themselves we need to force all letters to be upper case. If the user types in a lower case letter in the Mailing Codes field just automatically change it to upper case. This is for only the code - the descriptions can be any upper or lower case letters, numbers or special characters.
+Done
+2. When I had a drop down of several codes showing and clicked on one to select it, it is putting the Description in the Mailing Codes field. It should be putting in the code.
+Done
+3. The title of the Mailing Codes field should be Mailing Codes not Mailing Code (to imply that there can be more than one code in this field).
+Done
+4. I don't want the comma or the space to be automatically inserted into the Mailing Codes field. If the Customer is a Yorkshire breeder and a Hampshire breeder and a Showpig Client his Mailing Codes would show like this: YHS
+Done
+5. We need a drop down arrow at the right side of the Mailing Codes field so that the user can click on that downarrow to see all the codes he has set up so far and be able to choose from one of those.
+Done
+6. When the User types a letter or number in the Mailing Codes field, I think we need to always show all the codes to pick from - not just the one that matches the letter. (So this would be just like the user clicked on the downarrow of Item 5 above)
+Is that ok
+7. The Mailing Codes have to be unique. You will notice that there are 3 different "b" codes currently in the Mailing Codes table. So if a User tries to Create a Mailing Code that is already in the table, we need to have a popup saying that this code is already is use, have the User click OK and then go back to the popup (or maintenance) screen asking the User for a Code to create.
+Done
+
+01/08/2013
+Jai,
+Issues found: (I did clear cache)
+1. a. When creating a new code from the popup screen in Customer Entry when I click <NEW>, that new code created is not saved to the Mailing Codes table.
+     Fixed
+   b. Need to force upper case when typing in a letter in the Mailing Codes field on the Customer Entry screen like you do on the <NEW> Mailing Codes popup screen.
+     Done
+   c. The force uppercase also needs to be on the Code field of the Mailing Codes Maintenance screen.
+     Done
+2. good
+3. do not see that this was changed on the Customer Entry screen.
+4. good
+5. I don't see the downarrow to show all codes - sometimes in IE only there is an X there to clear the field - this is not needed.
+  Can u check again? It works for me on pigsapp.com itself.
+6. good
+7. a. In the Mailing Code Maintenance screen there is no check for duplication.
+     Done
+    b. In the Customer Entry Mailing Codes popup screen, if the User is trying to enter a duplicate, please return to the Mailing Codes popup screen so the User can enter a different code.
+    Done
+8. Still having the issue with the sub-menus disappearing in FF & IE - still OK in Chrome.
+   not yet done
+Thanks,
+Lloyd
+
+
+1. a. good
+    b. good
+    c. good
+    d. the codes need to be sorted alphabetically in the Mailing Codes Maintenance screens and in the dropdown in the Customer Entry.
+     Done, Moreover u can click on header to sort on the column
+3. good
+5. see previous email about downarrow.
+7.a. good
+   b. good but I need a Cancel button to get out of the <New> code creation popup if I decide I don't want to create a new Mailing Codes code.
+8. fixed in IE 8, FF, Chrome, Opera & Safari - still only works sporadically in IE 9 & 10
+    Will check
+9. Need a Cancel button by the Save button on the Customer Entry. Also add a duplicate of the Save and Cancel buttons up just under Search Customers in the Operations list. On the Cancel button be sure to ask the User if he is sure he wants to exit this screen if there have been changes made to any of the fields.
+   Done. Explain please - Also add a duplicate of the Save and Cancel buttons up just under Search Customers in the Operations list.
+
+06/08/2013
+Jai,
+5. a. The drop down list of Mailing Codes needs to be sorted alphabetically.
+    Done
+    b. Can we get the codes & descriptions closer together vertically in the drop down list? If you could match the vertical spacing of the rest of the Customer fields that would be about right.
+    done
+    c. Also completely remove the other dropdown that shows when typing a letter or number in the Mailing Codes field. This is no longer needed.
+    done
+    d. After I created a new Mailing Code (in Customer Entry) and redisplayed the Mailing Codes drop down list, it did not show my new code. The new code did show up after I got out of the Customer Entry screen and came back in.
+       You need to refresh the page. I have tried to append at last (could not sort) once message created
+8. good
+9. OK - so those two new buttons (Save, Cancel) can not be on the right side under the Search Customers option in the Operations List?
+    May i know where do u mean?. Do you mean on this page, http://pigsapp.com/yii/testdrive/index.php?r=tblCustomerEntry/admin? What is the use of this buttons here?
+
+
+16/08/2013
+This project will allow for several Setup options. If you want to bring it up on your DOS PIGS go to F7-Maintenance Selector - 22.Setup - 1.Herd General Setup. I believe you should have 1Y as the Farm & Herd. Pressing Enter on that will display the Setup data. These fields will be referenced in many parts of the PIGSAPP program to determine specific action depending on which Farm & Herd the user has currently selected.
+
+1. a. There should be 1 table entry for each Farm & Herd. In this example the Farm is 1 but it can be any number or letter. The Herd is Y. That was picked to represent Yorkshire (a type of Hog). But allow for any number or letter in this 2 character field. This is what will separate out the Farms and Herds that the users need to work with.
+    b. Do not allow blanks in either the Farm or Herd character position. In other words, the Farm & Herd field must be exactly 2 characters.
+    c. Force upper case on both the Farm and Herd.
+Done
+
+2. If you position the cursor in the DOS PIGS to each line you will see on some of the lines the possible values that field may be set to. Example: 13.TAKE BIRTH WGT...:Y   at the bottom of the screen it shows: Y=TAKE LITTER BIRTH WEIGHT, N=NOT TAKE BIRTH WEIGHT.
+
+Done
+
+Here is a list of fields that need to have the values checked and what values are acceptable:
+11. C, U or M
+12. any uppercase letter
+13. Y or N
+14. N or #
+15. D or A
+16. H or T
+17. Q, S or N
+20. Y or N
+21. Y or N
+29. T or S
+30. Y or N
+Done
+
+3. All the fields need to have a blue information ball - similar to what Auction uses so when the cursor hovers over the blue information ball then a speech bubble appears that would display the information that I now display for that field at the bottom of the screen. I included Blue Information ball example for option 11.HOME COUNTRY.
+
+4. a. The text for the field titles needs to NOT be ALL capital letters - change the text to first letter of each word to upper case and the rest of the word in lower case (like you did in the Customer Entry screen).
+    b. Also, remove the numbers and periods from the fields titles and right justify the titles (like you did in the Customer Entry screen).
+    c. Field spacing should be like Customer Entry screen.
+    d. The layout should be as close to the DOS PIGS layout as possible except: Move lines 21.TAKE SOW SCORES through 31.PREV. HERD MARK should be horizontally even with 9..BREEDER NUMBER thru 19.DUE DAYS. (ie 2 columns similar to what you did in the Customer Entry screen). A mockup of the layout is attached as PIGSAPP Maint Selector Mockup.
+
+5. Move 32.FAX # up and to the left side between 8..PHONE and 9..BREEDER NUMBER.
+
+6. This Herd Setup screen should be an option under Maintenance called Herd Setup.
+ Done
+
+7. a. Need to add Farm & Herd on all screens next to the Activity Date titled: Farm & Herd: 1Y
+1Y here is just an example - it would of course be the current Farm & Herd selected by the user. See attached Farm & Herd example.
+    b. The combination of Activity date and Farm & Herd should be centered.
+    c. The last Farm & Herd selected before the User exits the program should be the Farm & Herd that will automatically be selected when the User comes back to the PIGSAPP program.
+
+8. Displaying all Farm & Herds in a list format would be good when first selecting Herd Setup. Then the user can just pick one - like you have Customers List now.
+
+9. Need an option to Create a new Farm & Herd record (similar to Create Customer)
+
+14/08/2013
+Here are the browser issues I have seen. Also, on the other thing that you had a question on. All 5 links at the top Missions, Departments.... will link to just one page--each of these will not have their own page. If possible, we would like this page to be a page that is one of the standard Moodle html pages that can be formatted in the moodle theme. Does that make sense? 
+
+
+Also, I do feel obligated to pay you for the time that we are using from now...I think your contract is still on. Let me know what we need to do in this case. 
+
+
+Browser Comments
+
+=====================================
+
+Internet Explorer appears perfect, but I cannot view the Japanese on the site. Is it possible to turn the language selector on again in Internet explorer so we can see?
+
+ 
+
+Chrome is near perfect. The only problem I can see is that the picture of the woman at the bottom still does not have the same height of the purple box. Also, when someone types their username and password in, they cannot see what they are typing because the information is “sunk” into the type boxes. Basically, the user can only see the top of the box.
+
+ 
+
+ 
+
+Firefox has the most issues. The login button is not perfectly aligned with the username and password boxes. The Fuji University logo is still slightly out of center with the username and password area (very slightly). The large picture changing area at the top has a very small white line that appears when the pictures change. Finally, the bottom picture is not the same height as the purple box it is located in.
+
+ 
+
+If necessary, we will tell the students that site is optimized for google chrome or internet explorer. I’d like to optimize for all browsers, but we need to move on. We will come back to this issue later if possible. 
+
+
+================================
+
+Fuji university changes
+chrome broweser:
+
+ username :                    Password :
+ width: 80%
+ margin -bottom:0.5em           height:6px
+ padding:4px 7px :
+ height :6px
+ font : 13px
+line-height:0.5 
+
+firefox 
+
+bottom bottom: 1px
+bottom -top:10px
+bottom -left:1px
+
+clear width table :97%
+
+USERNAME :
+margin -bottom :-0.5em
+padding :3px 2px
+width :78%
+font -size :12px
+
+Insert into account_rights (servicename, flag) values ('CENTER_HEALTH','addUser');
+Insert into account_rights (servicename, flag) values ('CENTER_HEALTH','seeUser');
+Insert into account_rights (servicename, flag) values ('CENTER_HEALTH','editUser');
+Insert into account_rights (servicename, flag) values ('CENTER_HEALTH','deleteUser');
+Insert into account_rights (servicename, flag) values ('CENTER_HEALTH','addAppointment');
+Insert into account_rights (servicename, flag) values ('CENTER_HEALTH','deleteAppointment');
+Insert into account_rights (servicename, flag) values ('CENTER_HEALTH','editAppointment');
+Insert into account_rights (servicename, flag) values ('CENTER_HEALTH','calendar');
+
+
+27/08/2013
+This is a repeat of my previous email with some additions. I hope we have given you enough information. Please let me know the cost of doing this and the time it will take?
+ 
+At the moment the practitioner inputs their own data via (http://www.aah.edu.au/cgi-bin/register.pl) on our secure intranet. It needs to be secure so we are the only ones that can include people in the list. We also have the option to put the Academy logo beside our graduates. You will also notice that the Academy always comes up first in any search.
+ 
+It needs to be searchable from the web page.
+ 
+As far as other features I'm not sure what other features are available. Can you explain what other features are available? 
+
+ 
+
+Here are another couple comments.
+
+ 
+
+-    When a practitioner submits the form from the website I get an alert then I have the opportunity to edit the entry before I give permission for it to be included on the Practitioner list.  
+
+-    The practitioner needs to be able to edit their listing. If the practitioner edits their entry we must also approve the edit before it appears on the list.
+
+-    Only the Academy and Leon appear on the list prior to searching and always appear as the first two in each search
+
+-    I suggest a browse button to enable the user to scroll through the full list if they wish.
+
+-     Would a distance from here selector be much more work?
+
+ 
+
+ 
+
+PRACTITIONER'S DIRECTORY    Brief (draft)
+
+ 
+
+Current practitioner directory
+http://www.aah.edu.au/cgi-bin/viewhypno_new.pl
+
+ 
+
+Current data entry form for practitioners
+
+http://www.aah.edu.au/register.html
+
+ 
+
+…………………………………………………………………….
+
+ 
+
+New directory to go here
+
+http://aah.edu.au/dev2/index.php/consultations/find-a-practitioner
+
+ 
+
+New data entry form could go here
+http://aah.edu.au/dev2/index.php/consultations/find-a-practitioner/19-general/52-practitioner-register
+
+ 
+
+These have been pasted in as a guide. They are not functional.
+
+ 
+Please tell us how you would do this. Whether Joomla extension or other?
+http://extensions.joomla.org/search?q=store+locator
+
+aaheduau@aah.edu.au
+Aah3du$u
+$db_name = "aaheduau_coursenotes";
+$db_user = "aaheduau_aahgene";
+$db_pwd = "sleepy42eyes";
+
+$file_path = "/home2/aaheduau/www/documents/";
+
+DB2
+db2 "select current time from sysibm.sysdummy1"
+
+02/09/2013
+
+This Project E is to replace the Sow/Boar Entry screen. You can look at it in the old PIGS if you go to the F6-Entry Selector and choose option 1. The attached doc will show you an entry you can call up in that screen. You will need to type the numbers and spaces just as they appear on that screenshot.
+
+1. The major issue for this screen will be the EAR NOTCH. This will require quite a bit of explanation:
+    a. The Ear Notch will need to be input by the user in many different places in PIGSAPP. These rules will apply every time.
+    b. Whenever the Ear Notch is to be input or displayed there will always be the Farm & Herd (1Y in the attached doc) must be a valid Farm & Herd for this User (Herd Setup), then a space, then the Herd Mark (CDO in the attached doc) (up to 4 characters) no validation, then a space, then the Year the pig was born (9 in the attached doc), then a space or S or F, then the Litter Number that the pig was born in (258 in the attached doc), then a dash and finally the Pig Number within the Litter (5 in the attached doc).
+    c. In the attached doc the Year the pig was born is only showing 9 but in the database it must be stored as 2009. This is because breeders (users) will have pigs in this table from as many as 40 to 50 years  ago or more to trace pedigrees. So older pigs may be born in 1999, 1989 or 1979, etc. These older pigs will require input and need to be displayed as 99, 89 or 79 respectively - not just 9 like the 2009 pig is displayed. So if the pig is 10 years old or older you need to display (or allow input) of the additional digit defining the decade. For now, do not take or display the century (19 or 20) - we will deal with that sometime later - but for now the century needs to be stored in the table that you build to save this data. You will have to determine the century based on the date entered. Examples: 9 = 2009, 99 = 1999, 2 = 2012, 02 = 2002, 92 = 1992, 3 = 2013, 03 = 2003, 4 = 2004 (until next year - then 4 will mean 2014).
+    d. The dash will be input by the user to separate the Litter Number of the pig and the Pig Number within the Litter. A lot of users want to stay on the 10 key pad when entering these numbers so we need to allow for the period (.) to be entered in place of the dash. However, this period needs to be converted immediately to a dash before storing or lookups (searches) to get a correct match since only the dash is saved to the table.
+    e. The Farm & Herd can only be one that is already setup (Herd Setup).
+    f. There must be a dash (or period converted to dash) to separate Litter Number and Pig in Litter.
+    g. The Litter Number is 1, 2 or 3 digits and is always right justified against the dash.
+    h. The Pig in Litter is either 1 or 2 digits and is always left justified against the dash when displayed.
+    i. Wherever the Ear Notch is to be input, pre-display the current Farm & Herd (the same one that is displayed at the bottom of every screen) and also display the Herd Mark (from the current Farm & Herd) and position the cursor to the second space after the displayed Farm & Herd and Herd Mark. Notice how that is done when you go into the old PIGS option 1 - SOW/BOAR ENTRY. Then allow the user to change any of this pre-displayed information but remember to validate the Farm & Herd. The Herd Mark does not need to be validated. This would work best if the arrow keys (or mouse pointer) could be used to move the cursor to make any of these changes as opposed to having to use the TAB key like in the old PIGS.
+    j. If the Farm & Herd do not validate, just come up with a small window saying this is not a valid Farm & Herd, have the user click OK and then reposition back to take the Farm & Herd.
+    k. If there is no dash (or period) entered, then popup a small window saying a dash (or period) is required between Litter Number and Pig in Litter. Have the user click OK and position back to the Ear Notch.
+
+2. The "look and feel" needs to be the same as we already have in Customer Entry and Herd Setup.
+    a. This includes changing field titles to UpLow - Example: "# PIGS IN LITTER" would have a field title of "# Pigs In Litter". Exceptions: MMDDYY must always be in caps. BOAR on line 12 must be all caps.
+    b. The old PIGS SOW/BOAR ENTRY shows you the layout of the fields. See below for exceptions.
+
+3. Born MMDDYY looks like a date field but just take it as text for now.
+
+4. 4..# PIGS IN LITTER and 5..21 DAY WEIGHT are numeric - Integer.
+
+5. Notice that 6..SIRE and 7..DAM are Ear Notch input/display. These fields can be blank but if they are not then notice that the display of the Ear Notch includes the NAME. If either or both of these fields are filled in, then you need to attempt to retrieve from the Pigs table the NAME for the respective (SIRE or DAM) entry and show the NAME to the right of the Ear Notch if you found it in the table. The Name of course will not be displayed if neither or both are not found - this is fine. There may be an Ear Notch with no corresponding entry in the table.
+
+6. 12.BRED MMDDYY/BOAR is also a date field but just take it as text. This is because when the gender of the pig is male then this field has the word BOAR (in all caps) to indicate that this entry is a boar not a sow.
+
+7. The COMMENTS lines will be just one text box (3 lines high for now) - I will combine the lines into 1 text field when I move data over to the table.
+
+8. For now ignore the #<SF6>PEDIGREE, <F4>KEPT DTRS and <F5>NEW HERD DTR - I will put these in separate projects.
+
+9. I need two additional buttons (beside Save and Cancel).
+    a. 1 button is Sire and the other is Dam.
+    b. What these buttons will do is when you click on Sire for instance, the screen will clear and bring up all the Sire record (but only if there is an entry for the Sire in the Pigs table - if not display Not Found where the Sire's name would normally display).
+    c.  The button for Dam will do the same for the entry in the Dam field.
+    d. Notice that these two fields may have data but not have an associated table entry in the DB so if that is the case, just display Not Found as appropriate and leave the current pig's information on the screen.
+
+10. Lines 19, 20, 21, 22 are numeric (21 is Integer but 19, 20 and 22 need to allow for decimals). These lines need to be moved down beside lines 12, 13, 14, 15. Also, there is no need for the gap between lines 7 and 12.
+
+11. 13..LAST PARITY is numeric - Integer.
+
+12. 14..SOLD MMDDYY leave as text.
+
+13. The Search Sow/Boar (similar to Search Customers with lookup while typing) and List Sow/Boar should contain the first 4 fields (Ear Notch, Name, Registration #, and Born MMDDYY) plus the Bred MMDDYY/BOAR field for now.
+
+
+Jai,
+5. Both the Sire and the Dam (if they have been entered by the User) would be in the same DB table as the pig you have displayed on the screen.
+9. Clicking on the Sire button would replace the current pig's information with its Sire's information just as if the user had typed in the Ear Notch to bring up that Sire. All pigs, their Sires, Grand Sires, Great Grand Sires, Great Great Grand Sires, etc. etc. .... would be in the same pigs DB table. The User is allowed to determine how much ancestry information is entered. All this apples to the Dams as well.
+
+You will notice, for example if you go into the old PIGS and bring up pig 1Y CDO 9 258-5 that the Sire is 1Y CDO 9 38-4. Since the Name of the Sire ("38 SPECIAL") is showing, I know that this Sire is also in the pigs DB table and I need to be able to just click on the Sire button to replace showing the 258-5 pig information with the 38-4 pig information.
+
+Joomla
+Form Field Types
+http://docs.joomla.org/Standard_form_field_types
+13/09/2013
+
+4. When I go to fill in the Sire or Dam, the Farm & Herd and Herd Mark needs to be pre-filled in with the current Farm & Herd and Herd Mark (1A aa in our working example).
+   Done
+5. good
+6. Whenever there is a valid Sire or Dam Ear Notch for a pig, the name of the Sire and/or Dam needs to be displayed. It looks like the name is only displayed when the Ear Notch of the Sire or Dam is first entered. You can look at 1A JAI 01 001-1. I have entered a Sire and Dam for that pig but the names do not show.
+   I am not sure I understand correctly. Whether it is because of bug (.) was not considered. Can you check now? See the attached image. 
+   Currently what i do is, 
+    1. Once you finished entering sire, i will check that sire with all existing Ear Notch. 
+    2. If it is found then the name of ear notch is displayed.
+    3. In addition, Do you want to search all the sire data in the table to match?
+
+7. The buttons are showing now but do not work. If I bring up pig 1A JAI 01 001-1 and then click on Sire, the screen should clear this pig and bring up 1A aa 9 1-2. Similar for Dam. Right now the screen clears and gives me Error 404.
+   Fixed. Can you check it out now?
+
+,'onFocus'=>'setDefault("'.$farmHerd.' '.$herdmark.'",this);'
+
+16/09/2013
+Base Skill:
+HTML, CSS, Javascript, Jquery.
+
+Essential Skills:
+Advanced JS frameworks and OOPs, Ext Js, Dojo, GWT, Bootstrap, Backbone, Day CQ, HTML 5, YUI, Responsive Web Design (RWD), Node.js, CanJs, Kintech JS, Sencha Touch, Zepto.js
+
+
+
+17/09/2013
+This is a repeat of my previous email with some additions. I hope we have given you enough information. Please let me know the cost of doing this and the time it will take?
+ 
+At the moment the practitioner inputs their own data via (http://www.aah.edu.au/cgi-bin/register.pl) on our secure intranet. It needs to be secure so we are the only ones that can include people in the list. We also have the option to put the Academy logo beside our graduates. You will also notice that the Academy always comes up first in any search.
+ 
+It needs to be searchable from the web page.
+ 
+As far as other features I'm not sure what other features are available. Can you explain what other features are available? 
+
+ 
+
+Here are another couple comments.
+
+ 
+
+-         When a practitioner submits the form from the website I get an alert then I have the opportunity to edit the entry before I give permission for it to be included on the Practitioner list.  
+
+-    The practitioner needs to be able to edit their listing. If the practitioner edits their entry we must also approve the edit before it appears on the list.
+
+-
+         Only the Academy and Leon appear on the list prior to searching and always appear as the first two in each search
+
+-    I suggest a browse button to enable the user to scroll through the full list if they wish.
+
+-        Would a distance from here selector be much more work?
+
+ 
+
+ 
+
+PRACTITIONER'S DIRECTORY    Brief (draft)
+
+ 
+
+Current practitioner directory
+http://www.aah.edu.au/cgi-bin/viewhypno_new.pl
+
+ 
+
+Current data entry form for practitioners
+
+http://www.aah.edu.au/register.html
+
+ 
+
+…………………………………………………………………….
+
+ 
+
+New directory to go here
+
+http://aah.edu.au/dev2/index.php/consultations/find-a-practitioner
+
+ 
+
+New data entry form could go here
+http://aah.edu.au/dev2/index.php/consultations/find-a-practitioner/19-general/52-practitioner-register
+
+ 
+
+These have been pasted in as a guide. They are not functional.
+
+ 
+Please tell us how you would do this. Whether Joomla extension or other?
+http://extensions.joomla.org/search?q=store+locator
+
+http://docs.splunk.com/Documentation/Splunk/5.0.4/Installation/Estimateyourstoragerequirements
+
+20/09/2013
+
+23/09/2013
+This Project F will start as a button in the Update Sows/Boars screen. If you want to see how this works in the OLD PIGS you can bring up 1. Sow/Boar Entry, select pig 1Y CDO 9 258.5 and at the bottom options line press Shift-F6 then F6 to print or F8 to display. I am also sending a jpg of the display or print you should get.
+
+1. Add a button to the right of the Sire and Dam buttons at the bottom of the Update Sows/Boars screen titled Pedigree.
+2. This button will immediately clear the screen and display what I have attached as a jpg.
+     a. The dashed Pedigree lines need to be solid lines. This printout was created using a limited character set but I would like the lines to be solid and the vertical lines to NOT extend past the horizontal lines like they do in the jpg at each of the places where the lines turn from vertical to horizontal.
+     b. Notice that the Name of the Pig is displayed between the Year and Litter of the Ear Notch.
+     c. Also notice that the Registration # is displayed after the last part of the Ear Notch.
+     d. You will notice that there are some blank spots in the Pedigree tree that have no Pig information - display whatever Pig information you find even if it is not complete and if there is no information at all, continue to leave the Pedigree lines.
+3. The default number of "Levels" or "generations" is 4 as shown in the attached jpg.
+     a. The Pig that was originally displayed on the Update Sows/Boars screen is called level 1. In the jpg this is 9 258-5.
+     b. The Sire and Dam of this Pig is level 2. In the jpg these are Sire: 9 38-4 and Dam: 8 43-10.
+     c. The Sire of Sire (7 34-9), Dam of Sire (6 91-4), Sire of Dam (6 9-5) and Dam of Dam (6 72-5) is level 3.
+     d. This expanding pedigree tree needs to be able to continue up to 6 Levels but only initially display 4 Levels.
+     e. Notice that there are some Pigs that have different Herd Marks than the original Pig. They may also contain a different Farm & Herd.
+4. There needs to be 6 buttons at the top of this Pedigree tree display under the screen title of Pedigree: Return, Update, Sire, Dam, +, -.
+     a. Return - This button will return the User to the Update Sows/Boars screen displaying the Pig that was used to originally start displaying the Pedigree screens.
+     b. Update - This button will return the User to the Update Sows/Boars screen displaying the Pig that is currently displayed in Level 1. The Update and Return buttons will do the same thing if the User has not clicked on the Sire or Dam buttons during the display of this pedigree.
+     c. Sire - Select the Sire of the current Level 1 Pig, clear and redisplay a new Pedigree screen using the Sire as the Level 1 Pig.
+     d. Dam - Select the Dam of the current Level 1 Pig, clear and redisplay a new Pedigree screen using the Dam as the Level 1 Pig.
+     e. +  Add another Level. When you are displaying 6 Levels this button will do nothing.
+     f. -   Remove the highest Level currently displayed. When you are displaying only 2 Levels this button will do nothing.
+
+idcuser   4182     1  0 Sep11 ?        00:00:00 sh /svc/java/jboss-6.0.0.Final/bin/run.sh -b 170.225.164.57
+
+
+2007/13865/49703
+31/08/2013 13:31:43
+
+25/09/2013
+
+Dojo - Chart
+http://diveintohtml5.info/canvas.html
+http://dojotoolkit.org/download/
+http://dojotoolkit.org/documentation/tutorials/1.9/hello_dojo/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Values,_variables,_and_literals?redirectlocale=en-US&redirectslug=JavaScript%2FGuide%2FValues%2C_variables%2C_and_literals#Object_literals
+Demos
+http://demos.dojotoolkit.org/demos/
+
+http://diveintohtml5.info/canvas.html
+http://dojotoolkit.org/reference-guide/1.9/dijit/form/HorizontalRule.html

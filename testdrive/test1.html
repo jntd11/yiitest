@@ -1,0 +1,107 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Demo: Basic Declarative Chart</title>
+		<link rel="stylesheet" href="style.css" media="screen">
+		<link rel="stylesheet" href="../../../resources/style/demo.css" media="screen">
+	</head>
+	<body>
+		<h1>Demo: Basic Declarative Chart</h1>
+		<div>
+<div style="width:2in;border-top:1px solid black;">
+    <div data-dojo-type="dijit/form/HorizontalRule" data-dojo-props="count:17" style="height:.4em;"></div>
+    <div data-dojo-type="dijit/form/HorizontalRule" data-dojo-props="count:9" style="height:.4em;"></div>
+    <div data-dojo-type="dijit/form/HorizontalRule" data-dojo-props="count:5" style="height:.4em;"></div>
+    <div data-dojo-type="dijit/form/HorizontalRule" data-dojo-props="count:3" style="height:.4em;"></div>
+    <ol data-dojo-type="dijit/form/HorizontalRuleLabels" data-dojo-props="labelStyle:'font-style:monospace;font-size:.7em;margin:-1em 0px 0px -.35em;'">
+       <li>0</li>
+       <li>1</li>
+       <li>2</li>
+    </ol>
+</div>
+		</div>
+		<!-- create the chart -->
+		<div
+			data-dojo-type="dojox/charting/widget/Chart"
+			data-dojo-props="theme:dojox.charting.themes.Claro" id="viewsChart" style="width: 550px; height: 550px;">
+
+			<!-- Pie Chart: add the plot -->
+			<div class="plot" name="default" type="Pie" radius="200" fontColor="#000" labelOffset="-20"></div>
+			<!-- pieData is the data source -->
+			<div class="series" name="Last Week's Visits" array="chartData"></div>
+		</div>
+		<canvas id="c" width="500" height="375"></canvas>
+		<!-- load dojo and provide config via data attribute -->
+		<!-- load dojo and provide config via data attribute -->
+		<script src="dojo-release-1.9.1-src/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+		<script>
+
+			// x and y coordinates used for easy understanding of where they should display
+			// Data represents website visits over a week period
+			chartData = [
+				{ x: 1, y: 19021 },
+				{ x: 1, y: 12837 },
+				{ x: 1, y: 12378 },
+				{ x: 1, y: 21882 },
+				{ x: 1, y: 17654 },
+				{ x: 1, y: 15833 },
+				{ x: 1, y: 16122 }
+			];
+
+			require([
+				// Require the widget parser
+				"dojo/parser",
+
+				 // Require the basic 2d chart resource
+				"dojox/charting/widget/Chart",
+
+				// Require the theme of our choosing
+			    "dojox/charting/themes/Claro",
+
+				// Charting plugins:
+
+				// 	Require the Pie type of Plot
+				"dojox/charting/plot2d/Pie"
+
+			]);
+			require(["dojo/parser", "dijit/form/HorizontalRule", "dijit/form/HorizontalRuleLabels"]);
+			var c_canvas = document.getElementById("c");
+			var context = c_canvas.getContext("2d");
+			for (var x = 0.5; x < 500; x += 10) {
+				  context.moveTo(x, 0);
+				  context.lineTo(x, 375);
+			}
+			for (var y = 0.5; y < 375; y += 10) {
+				  context.moveTo(0, y);
+				  context.lineTo(500, y);
+			}
+			context.strokeStyle = "#eee";
+			context.stroke();
+			context.beginPath();
+			context.moveTo(0, 40);
+			context.lineTo(240, 40);
+			context.moveTo(260, 40);
+			context.lineTo(500, 40);
+			context.moveTo(495, 35);
+			context.lineTo(500, 40);
+			context.lineTo(495, 45);
+
+			context.moveTo(60, 0);
+			context.lineTo(60, 153);
+			context.moveTo(60, 173);
+			context.lineTo(60, 375);
+			context.moveTo(65, 370);
+			context.lineTo(60, 375);
+			context.lineTo(55, 370);
+
+			context.strokeStyle = "#000";
+			context.stroke();
+
+			context.font = "bold 12px sans-serif";
+			context.fillText("Jai", 248, 43);
+			context.fillText("sankar", 58, 165);
+		</script>
+	</body>
+</html>
