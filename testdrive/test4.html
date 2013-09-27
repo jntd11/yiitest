@@ -2,10 +2,41 @@
 <html>
 <head>
 <meta charset="utf-8" >
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+function theDo(){
+	var theArray = new Array();
+	//These next two should be an already sorted (on manager) pair of Associate/Managers 
+	var colAssociate = $('.theAssociate'); //collection of associates
+	var colManager = $('.theManager'); //collection of their respective managers.	//Next, loop through everyone. "Trick" the org chart to place them differently if they have multiple reports
+	for( var i = 1 ; i < colAssociate.length ; i++ ) { 
+		if( colManager.find(':contains("' + colAssociate[i].innerText + '")').length == 0 &&
+				colManager[i].innerText == colManager[i-1].innerText ) { 
+			theArray[theArray.length] = [colAssociate[i].innerText , colAssociate[i-1].innerText  ]; //Report to the last person reporting to the manager causing the downward look
+		} else {
+			theArray[theArray.length] = [colAssociate[i].innerText , colManager[i].innerText ]; //Report to the manager
+		}
+	}
+	drawChart2(theArray); //do the regular chart drawing
+}
+
+function drawChart2(theArray) {
+	var data = new google.visualization.DataTable();
+	data.addColumn('string', 'Name');
+	data.addColumn('string', 'Manager');
+	data.addRows(theArray);
+	var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+	chart.draw(data, {allowHtml:true});
+}
+</script>
 <style>
 /*Now the CSS*/
 * {margin: 0; padding: 0;}
 
+.tree{
+  transform: rotate(270deg); 
+}
 .tree ul {
 	padding-top: 20px; position: relative;
 	
@@ -108,7 +139,7 @@ right connector from last child*/
 Thanks :)*/
 </style>
 </head>
-<body>
+<body onload="theDo()">
  <table cellpadding="0" cellspacing="0">
     <tr>
        <td>
@@ -184,7 +215,6 @@ gline();
 <tr><td>TEST</td></tr>
 <tr><td>TEST</td></tr>
 <tr><td>TEST</td></tr>
-
 <tr><td rowspan="4" valign="middle">TEST</td></tr>
 <tr><td>TEST</td></tr>
 <tr><td>TEST</td></tr>
@@ -198,7 +228,6 @@ gline();
 <tr><td>TEST</td></tr>
 <tr><td>TEST</td></tr>
 <tr><td>TEST</td></tr>
-
 </table>
 
 <!--
@@ -214,7 +243,7 @@ The markup will be simple nested lists
 					<a href="#">Child</a>
 					<ul>
 						<li>
-							<a href="#">Grand Child</a>
+							<a href="#" ><span style="transform: rotate(90deg);">Grand Childs</span></a>
 						</li>
 					</ul>
 				</li>
@@ -225,9 +254,6 @@ The markup will be simple nested lists
 						<li>
 							<a href="#">Grand Child</a>
 							<ul>
-								<li>
-									<a href="#">Great Grand Child</a>
-								</li>
 								<li>
 									<a href="#">Great Grand Child</a>
 								</li>
@@ -255,5 +281,17 @@ The markup will be simple nested lists
 		</li>
 	</ul>
 </div>
+<div class="theAssociate">Manager1</div>
+	<div class="theManager"></div>
+
+	<div class="theAssociate">Lacky1</div>
+	<div class="theManager">Manager1</div>
+	
+	<div class="theAssociate">Lacky2</div>
+	<div class="theManager">Manager1</div>
+	
+	<div class="theAssociate">Lacky3</div>
+	<div class="theManager">Manager1</div>
+	<div id='chart_div'></div>
 </body>
 </html>
