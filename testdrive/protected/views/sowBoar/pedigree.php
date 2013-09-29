@@ -14,18 +14,26 @@ $this->menu=array(
 );
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs=Yii::app()->clientScript;
-
-$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/ECOTree.js');
+//$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/ECOTree.js');
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowboar.js');
+//$cs->registerCssFile(Yii::app()->baseUrl.'/css/ECOTree.css');
 $cs->registerCssFile(
 		Yii::app()->baseUrl.
-		'/css/ECOTree.css'
+		'/css/pedigree.css'
 );
-
 //echo "<pre>";
 //print_r($model);
+
 ?>
-<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v"/>
-<style>v\:*{
-	behavior:url(#default#VML);}</style>
+<style>
+#page{
+  height: 2024px;
+  background: none repeat scroll 0 0 #FFFFFF;
+  clear: both;
+}
+#footer{
+  position: relative;
+  top: 1510px; 
+}
+</style>
 <?php echo $this->renderPartial('_pedigree', array('model'=>$model)); ?>

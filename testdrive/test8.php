@@ -40,7 +40,7 @@
 </style>
   </head>
   <body>
-    <table width="10%" style="position: absolute; top: 390px;" border="0">
+    <table width="10%" style="position: relative; top: 390px;" border="0">
 	    <tr><td class="a" rowspan="2">Test</td></tr>
     </table>
  <?php

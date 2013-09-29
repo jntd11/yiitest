@@ -110,7 +110,7 @@ $(document).ready(function(){
 	});
 	
 	//CreateTree();
-	$(window).load(CreateTree());
+	//$(window).load(CreateTree());
 	window.onbeforeunload = iamexiting;
 	function iamexiting(e) {
 		if($("#sow-boar-form").data("changed")) {
