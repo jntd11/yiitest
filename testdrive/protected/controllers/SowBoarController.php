@@ -335,12 +335,15 @@ class SowBoarController extends Controller
 	public function findNotches($group){
 		$model = new SowBoar();
 		foreach ($group as $key => $member) {
+			//echo "COUNT".self::$count;
 			self::$count++;
 			$sql="select sow_boar_id, sire_notch, dam_notch from sow_boar where ear_notch =  '".$group[$key]['notch']."'";
 			$data1 = $model->findAllBySql($sql);
 			if(isset($data1[0])) {
 				$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->sire_notch."'";
+				//echo "---"."<br>".$sql;
 				$name = $model->findBySql($sql);
+				//echo "COUNT".self::$count;
 				$subgroup[self::$count] = array("notch"=>$data1[0]->sire_notch,
 						     "name"=>$name->sow_boar_name,
 						     "no"=>$name->registeration_no,
@@ -348,8 +351,10 @@ class SowBoarController extends Controller
 							//"data"=>$data1
 						);
 				$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->dam_notch."'";
+				//echo "---"."<br>".$sql;
 				$name = $model->findBySql($sql);
 				self::$count++;
+				//echo "COUNT".self::$count;
 				$subgroup[self::$count] = array("notch"=>$data1[0]->dam_notch,
 						"name"=>(isset($name))?$name->sow_boar_name:"",
 					     "no"=>(isset($name))?$name->registeration_no:"",
@@ -372,13 +377,16 @@ class SowBoarController extends Controller
 				);				
 			}
 		}
+		//echo "<pre>";
+		//print_r($subgroup);
 		return $subgroup;
 	}
 	public function pedigree($pk,$condition='',$params=array()){
 		$model = new SowBoar();
 		//Yii::trace(get_class($model).'.findByPk()','system.db.ar.CActiveRecord');
 		//$data = $model->findAllBySql("select * from sow_boar where sow_boar_id = ".$pk);
-		$data1 = $model->findAllBySql("select * from sow_boar where sow_boar_id = 6");
+		"select * from sow_boar where sow_boar_id = ".$pk;
+		$data1 = $model->findAllBySql("select * from sow_boar where sow_boar_id = ".$pk);
 		$data = $data1;
 		//Level Count
 		$level = 1;
@@ -392,7 +400,10 @@ class SowBoarController extends Controller
 				//,"data"=>$data1
 					);
 		$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->dam_notch."'";
+		$name = null;
 		$name = $model->findBySql($sql);
+		//echo "<pre>";
+		//print_r($name);
 		self::$count++;
 		$group[$level][self::$count] = array("notch"=>$data1[0]->dam_notch,
 						"name"=>$name->sow_boar_name,
@@ -402,10 +413,15 @@ class SowBoarController extends Controller
 						);
 		for($i=1;$i<=5;$i++) {
 			self::$count = 0;
+			//print_r($group[$level]);
 			$subgroup = $this->findNotches($group[$level]);
 			$level++;
+			//echo "LEVEL".$level."<br>";
+			//print_r($subgroup);
 			$group[$level] = $subgroup;
 		}
+		//print_r($group);
+		//exit;
 		/*self::$count = 0;
 		$subgroup = $this->findNotches($group[$level]);
 		$level++;

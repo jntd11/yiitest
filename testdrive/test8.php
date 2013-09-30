@@ -8,10 +8,11 @@
 	height: 780px;
 }
 .a1{
-	border-top: 1px solid black; 
+	/*border-top: 1px solid black; */
 	border-bottom: 1px solid black;
 	border-left: 1px solid black; 
 	height: 340px;
+	white-space: nowrap;
 }
 .a2{
 	border-top: 1px solid black; 
@@ -46,13 +47,13 @@
  <?php
  $level[2] = '
 	 <table width="10%" style="position: absolute; top: 220px; left:11%" border="0">
-	    <tr><td class="a1" rowspan="2">$1</td></tr>
+	    <tr><td class="a1" rowspan="2"><hr style="position: absolute; top: -10px; width: 100%">$1</td></tr>
     </table>
     <table width="10%" style="position: absolute; top: 1010px; left:11%" border="0">
 	    <tr><td class="a1" rowspan="2">$2</td></tr>
     </table>';
 
-$level[2] = str_replace("$1","JAISANKAR",$level[2]);
+$level[2] = str_replace("$1","JAISANKAR JAISANKAR",$level[2]);
 $level[2] = str_replace("$2","Mathangi",$level[2]);
 echo $level[2];
 ?>

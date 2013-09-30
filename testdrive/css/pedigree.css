@@ -6,32 +6,49 @@
 	height: 780px;
 }
 .a1{
-	border-top: 1px solid black; 
-	border-bottom: 1px solid black;
+	/*border-top: 1px solid black; 
+	border-bottom: 1px solid black;*/
 	border-left: 1px solid black; 
 	height: 340px;
+	white-space: nowrap;
 }
 .a2{
-	border-top: 1px solid black; 
-	border-bottom: 1px solid black;
+	/*border-top: 1px solid black; 
+	border-bottom: 1px solid black;*/
 	border-left: 1px solid black; 
 	height: 180px;
 }
 .a3{
-	border-top: 1px solid black; 
-	border-bottom: 1px solid black;
+	/*border-top: 1px solid black; 
+	border-bottom: 1px solid black;*/
 	border-left: 1px solid black; 
 	height: 80px;
 }
 .a4{
-	border-top: 1px solid black; 
-	border-bottom: 1px solid black;
+	/*border-top: 1px solid black; 
+	border-bottom: 1px solid black;*/
 	border-left: 1px solid black; 
 	height: 40px;
 }
 .a5{
-	border-top: 1px solid red; 
-	border-bottom: 1px solid red;
+	/*border-top: 1px solid red; 
+	border-bottom: 1px solid red; */
 	border-left: 1px solid red; 
 	height: 9px;
+}
+.hr1{
+	width: 89px;
+	position: absolute;
+	top: -2px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr11{
+	width: 89px;
+	position: absolute;
+	bottom: -17px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
 }
