@@ -281,9 +281,9 @@ function level1Sow(type){
 	if(type == 1)
 		window.location="index.php?r=sowBoar/update&id="+$("#level0").val();
 	else if(type == 2)
-		window.location="index.php?r=sowBoar/update&id="+$("#sire").val();
+		window.location="index.php?r=sowBoar/pedigree&id="+$("#sire").val();
 	else if(type == 3)
-		window.location="index.php?r=sowBoar/update&id="+$("#dam").val();
+		window.location="index.php?r=sowBoar/pedigree&id="+$("#dam").val();
 }
 function levelIncDec(id,type){
 	var currId = parseInt($("#currenlevel").val());

@@ -4,6 +4,7 @@
 $levelshow = 4;
 if (isset($_GET['l']))
 	$levelshow = $_GET['l'];
+//print_r($model);
 ?>
 <input type="hidden" name="level0" id="level0" value="<?php echo $model[0]['id']?>" />
 <input type="hidden" name="sire" id="sire" value="<?php echo $model[1][1]['id']?>" />
