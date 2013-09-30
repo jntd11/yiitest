@@ -9,7 +9,7 @@ if (isset($_GET['l']))
 <input type="hidden" name="sire" id="sire" value="<?php echo $model[1][1]['id']?>" />
 <input type="hidden" name="dam" id="dam" value="<?php echo $model[1][2]['id']?>" />
 <input type="hidden" name="currenlevel" id="currenlevel" value="<?php echo $levelshow; ?>" />
-<table width="10%" style="position: absolute; top: 390px; width: 10%;" border="0">
+<table width="10%" style="position: absolute; top: 450px; width: 10%;" border="0">
 	    <tr><td class="a" rowspan="2"><?php echo $model[0]['notch']; ?></td></tr>
     </table>
  <?php
@@ -31,9 +31,9 @@ echo $level[2];
 <?php 
 
 $level[3] = "";
-$level3 = array("130","470","920","1260");
+$level3 = array("180","530","970","1310");
 foreach($level3 as $key=>$levels){
- $level[3] .= '<table width="10%" style="position: absolute; top: '.$levels.'px; left:31%; width: 20%" border="0">';
+ $level[3] .= '<table width="10%" style="position: absolute; top: '.$levels.'px; left:22%; width: 20%" border="0">';
  if($levelshow == 2)
  	$level[3] .= '<tr><td  rowspan="2"><span>$'.($key+1).'</span></td></tr>';
  else
@@ -57,12 +57,12 @@ if($levelshow >= 2)
 ?>
 <?php 
 $level[4] = "";
-$level4 = array("90","270","430","610","880","1060","1220","1400");
+$level4 = array("135","320","480","670","930","1110","1270","1450");
 foreach($level4 as $key=>$levels){
 	$style = "";
 	//if($key == 4)
 		//$style = "style='height: 60px;'";
-	$level[4] .=  '<table width="10%" style="position: absolute; top: '.$levels.'px; left:41%; width: 20%" border="0">';
+	$level[4] .=  '<table width="10%" style="position: absolute; top: '.$levels.'px; left:32%; width: 20%" border="0">';
 	if($levelshow == 3)
 		$level[4] .=  '<tr><td rowspan="2" <?php echo $style; ?><span>$'.($key+1).'</span></td></tr>';
 	else 
@@ -80,9 +80,9 @@ if($levelshow >= 3)
 	echo $level[4];
 
 $level[5] = "";
-$level5 = array("70","150","250","330","410","490","590","670","860","940","1050","1120","1200","1280","1380","1460");
+$level5 = array("110","200","290","380","460","540","640","740","910","990","1090","1170","1250","1340","1430","1510");
 foreach($level5 as $key=>$levels){
- $level[5] .=  '  <table width="10%" style="position: absolute; top: '.$levels.'px; left:51%; width: 20%" border="0">
+ $level[5] .=  '  <table width="10%" style="position: absolute; top: '.$levels.'px; left:42%; width: 20%" border="0">
 	    <tr><td class="a4" rowspan="2">';
  if($levelshow == 4)
  	$level[5] .=  '<span>$'.($key+1).'</span>';
@@ -102,9 +102,9 @@ if($levelshow >= 4)
 	echo $level[5];
 
 $level[6] = "";
-$level6 = array("63","100","140","180","240","280","320","360","400","435","480","520","580","620","660","695","850","890","930","960","1040","1080","1110","1150","1190","1220","1270","1300","1370","1400","1450","1480");
+$level6 = array("94","150","190","235","280","330","370","420","450","495","530","580","630","680","730","780","900","950","980","1030","1080","1130","1160","1210","1240","1290","1320","1380","1420","1470","1500","1550");
 foreach($level6 as $key=>$levels){
-   $level[6] .=  '  <table width="10%" style="position: absolute; top: '.$levels.'px; left:61%; width: 20%" border="0">';
+   $level[6] .=  '  <table width="10%" style="position: absolute; top: '.$levels.'px; left:52.2%; width: 20%" border="0">';
    if($levelshow == 5)
    		$level[6] .=  '  <tr><td>$'.($key+1).'</td></tr>';
    else 
