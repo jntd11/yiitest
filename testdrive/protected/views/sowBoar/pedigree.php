@@ -39,7 +39,7 @@ $id = isset($_GET['id'])?$_GET['id']:0;
 </div>
 <script>
 $(document).ready(function(){
-	window.scrollTo(100, 100);
+	window.scrollTo(300, 400);
 });
 </script>
 <style>
