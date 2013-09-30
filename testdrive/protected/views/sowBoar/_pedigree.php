@@ -4,7 +4,12 @@
 $levelshow = 4;
 if (isset($_GET['l']))
 	$levelshow = $_GET['l'];
-?><table width="10%" style="position: absolute; top: 390px; width: 10%;" border="0">
+?>
+<input type="hidden" name="level0" id="level0" value="<?php echo $model[0]['id']?>" />
+<input type="hidden" name="sire" id="sire" value="<?php echo $model[1][1]['id']?>" />
+<input type="hidden" name="dam" id="dam" value="<?php echo $model[1][2]['id']?>" />
+<input type="hidden" name="currenlevel" id="currenlevel" value="<?php echo $levelshow; ?>" />
+<table width="10%" style="position: absolute; top: 390px; width: 10%;" border="0">
 	    <tr><td class="a" rowspan="2"><?php echo $model[0]['notch']; ?></td></tr>
     </table>
  <?php

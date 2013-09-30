@@ -64,6 +64,8 @@ class SowBoarController extends Controller
 	 */
 	public function actionPedigree($id)
 	{
+		if(isset($_GET['p']))
+			Yii::app()->request->cookies['pedigree_parent'] = new CHttpCookie('pedigree_parent',$_GET['p'],array('expire'=>time()+(1*24*60*60)));
 		$model=new SowBoar();
 		//echo "<pre>";
 		//$dataProvider=new CActiveDataProvider('SowBoar');

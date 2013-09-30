@@ -93,6 +93,32 @@ function gerSireDam(type){
 		});
 	}
 }
+
+function gerSireDam(type){
+	if(type == 1){
+		var search = $("#sire_notch").val();
+	}else if(type == 2){
+		var search = $("#dam_notch").val();
+	}
+	
+	if(search != "") {
+		search = search.replace(".","-");
+		$.ajax({
+			url: encodeURI('index.php?r=sowBoar/search'),
+			type: "GET",
+			data: {s:search}
+		}).done(function(data){
+			var obj = $.parseJSON(data);
+			if(obj != "") {
+				if(type == 1){
+					window.location="index.php?r=sowBoar/siredam&val="+$("#sire_notch").val();
+				}else if(type == 2){
+					window.location="index.php?r=sowBoar/siredam&val="+$("#dam_notch").val();
+				}
+			}
+		});
+	}
+}
 $(document).ready(function(){
 	   var el = $("input:text").get(0);
 	    var elemLen = el.value.length;
@@ -243,3 +269,28 @@ function CreateTree() {
 	t.UpdateTree();
 }
 //$("body").load(CreateTree());
+function gerTree(id){
+	window.location="index.php?r=sowBoar/pedigree&id="+id+"&p="+id;
+}
+
+function parentSow(id){
+	if(id != "")
+		window.location="index.php?r=sowBoar/update&id="+id;
+}
+function level1Sow(type){
+	if(type == 1)
+		window.location="index.php?r=sowBoar/update&id="+$("#level0").val();
+	else if(type == 2)
+		window.location="index.php?r=sowBoar/update&id="+$("#sire").val();
+	else if(type == 3)
+		window.location="index.php?r=sowBoar/update&id="+$("#dam").val();
+}
+function levelIncDec(id,type){
+	var incId = parseInt($("#currenlevel").val())+1;
+	var decId = parseInt($("#currenlevel").val())-1;
+	if(type == 1)
+		window.location="index.php?r=sowBoar/pedigree&id="+id+"&l="+incId;
+	else if(type == 2)
+		window.location="index.php?r=sowBoar/pedigree&id="+id+"&l="+decId;
+
+}

@@ -142,6 +142,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelSow()')); ?>
 		<?php echo CHtml::Button('Sire',array('onClick'=>'gerSireDam(1)')); ?>
 		<?php echo CHtml::Button('Dam',array('onClick'=>'gerSireDam(2)')); ?>
+		<?php if(!$model->isNewRecord) echo CHtml::Button('Pedigree',array('onClick'=>'gerTree("'.$model->getPrimaryKey().'")')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
