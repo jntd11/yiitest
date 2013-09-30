@@ -37,7 +37,7 @@ $level3 = array("180","530","970","1310");
 foreach($level3 as $key=>$levels){
  $level[3] .= '<table width="10%" style="position: absolute; top: '.$levels.'px; left:22%; width: 20%" border="0">';
  if($levelshow == 2)
- 	$level[3] .= '<tr><td  rowspan="2"><span>$'.($key+1).'</span></td></tr>';
+ 	$level[3] .= '<tr><td class="a2" style="border: none;" rowspan="2"><span>$'.($key+1).'</span></td></tr>';
  else
  	$level[3] .= '<tr><td class="a2" rowspan="2"><hr class="hr1"/>$'.($key+1).'<hr class="hr11"/></td></tr>';
  $level[3] .= '</table>';
@@ -66,9 +66,9 @@ foreach($level4 as $key=>$levels){
 		//$style = "style='height: 60px;'";
 	$level[4] .=  '<table width="10%" style="position: absolute; top: '.$levels.'px; left:32%; width: 20%" border="0">';
 	if($levelshow == 3)
-		$level[4] .=  '<tr><td rowspan="2" <?php echo $style; ?><span>$'.($key+1).'</span></td></tr>';
+		$level[4] .=  '<tr><td rowspan="2"  class="a3" style="border: none;"><span>$'.($key+1).'</span></td></tr>';
 	else 
-		$level[4] .=  '<tr><td class="a3" rowspan="2" <?php echo $style; ?><hr class="hr1"/>$'.($key+1).'<hr class="hr11"/></td></tr>';
+		$level[4] .=  '<tr><td class="a3" rowspan="2" ><hr class="hr1"/>$'.($key+1).'<hr class="hr11"/></td></tr>';
 	$level[4] .=  '</table>';
 }
 //$level[4] = str_replace("$1","JAISANKAR",$level[4]);
@@ -85,11 +85,11 @@ $level[5] = "";
 $level5 = array("110","200","290","380","460","540","640","740","910","990","1090","1170","1250","1340","1430","1510");
 foreach($level5 as $key=>$levels){
  $level[5] .=  '  <table width="10%" style="position: absolute; top: '.$levels.'px; left:42%; width: 20%" border="0">
-	    <tr><td class="a4" rowspan="2">';
+	    <tr>';
  if($levelshow == 4)
- 	$level[5] .=  '<span>$'.($key+1).'</span>';
+ 	$level[5] .=  '<td class="a4" rowspan="2" style="border: none;"><span>$'.($key+1).'</span>';
  else
- 	$level[5] .=  '  <hr class="hr1"/>$'.($key+1).'<hr class="hr11"/>';
+ 	$level[5] .=  '<td class="a4" rowspan="2">  <hr class="hr1"/>$'.($key+1).'<hr class="hr11"/>';
  $level[5] .=  '  </td></tr></table>';
 }
 //$level[5] = str_replace("$1","JAISANKAR",$level[5]);
@@ -105,7 +105,7 @@ if($levelshow >= 4)
 
 $level[6] = "";
 $level6 = array("94","150","190","235","280","330","370","420","450","495","530",
-	"580","630","680","730","780","900","950","980","1030","1080","1130","1170","1210","1250","1290","1330","1380","1420","1470","1505","1550");
+	"580","630","680","730","780","900","950","985","1030","1080","1130","1170","1210","1250","1290","1330","1380","1420","1470","1505","1550");
 foreach($level6 as $key=>$levels){
    $level[6] .=  '  <table width="10%" style="position: absolute; top: '.$levels.'px; left:52.2%; width: 20%" border="0">';
    if($levelshow == 5)
