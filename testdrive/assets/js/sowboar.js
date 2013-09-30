@@ -286,8 +286,11 @@ function level1Sow(type){
 		window.location="index.php?r=sowBoar/update&id="+$("#dam").val();
 }
 function levelIncDec(id,type){
-	var incId = parseInt($("#currenlevel").val())+1;
-	var decId = parseInt($("#currenlevel").val())-1;
+	var currId = parseInt($("#currenlevel").val());
+	var incId = currId+1;
+	var decId = currId-1;
+	if((type == 1 && incId == 7) || (type == 2 && decId == 1))
+		return;
 	if(type == 1)
 		window.location="index.php?r=sowBoar/pedigree&id="+id+"&l="+incId;
 	else if(type == 2)

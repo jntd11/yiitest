@@ -54,7 +54,7 @@ $(document).ready(function(){
   top: 1510px; 
 }
 .container{
-  width: 1200px;
+  width: 1350px;
 }
 </style>
 <?php echo $this->renderPartial('_pedigree', array('model'=>$model)); ?>

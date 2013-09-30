@@ -759,3 +759,9 @@ REQUEST_URI=/yii/yii/testdrive/index.php?r=sowBoar/pedigree&id=2&p=2
 in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (416)
 in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (97)
 in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/09/30 09:48:25 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (171)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/09/30 09:48:25 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (171)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
