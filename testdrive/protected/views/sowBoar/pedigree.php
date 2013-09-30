@@ -21,10 +21,17 @@ $cs->registerCssFile(
 		Yii::app()->baseUrl.
 		'/css/pedigree.css'
 );
+
+
 //echo "<pre>";
 //print_r($model);
 
 ?>
+<script>
+$(document).ready(function(){
+	window.scrollTo(0, 0);
+});
+</script>
 <style>
 #page{
   height: 2024px;
@@ -35,6 +42,9 @@ $cs->registerCssFile(
 #footer{
   position: relative;
   top: 1510px; 
+}
+.container{
+  width: 1200px;
 }
 </style>
 <?php echo $this->renderPartial('_pedigree', array('model'=>$model)); ?>

@@ -385,9 +385,14 @@ class SowBoarController extends Controller
 		$model = new SowBoar();
 		//Yii::trace(get_class($model).'.findByPk()','system.db.ar.CActiveRecord');
 		//$data = $model->findAllBySql("select * from sow_boar where sow_boar_id = ".$pk);
-		"select * from sow_boar where sow_boar_id = ".$pk;
 		$data1 = $model->findAllBySql("select * from sow_boar where sow_boar_id = ".$pk);
 		$data = $data1;
+		$level = 0;
+		$group[$level] = array("notch"=>$data1[0]->sire_notch,
+							"name"=>$data1[0]->sow_boar_name,
+							"no"=>$data1[0]->registeration_no,
+							"id"=>$data1[0]->sow_boar_id,
+						);
 		//Level Count
 		$level = 1;
 		self::$count++;
