@@ -1,7 +1,7 @@
 @CHARSET "ISO-8859-1";
 .a{
-	border-top: 1px solid black; 
-	border-bottom: 1px solid black;
+	/*border-top: 1px solid black; 
+	border-bottom: 1px solid black;*/
 	border-left: 1px solid black; 
 	height: 780px;
 }
@@ -37,7 +37,7 @@
 	height: 9px;
 }
 .hr1{
-	width: 136px;
+	width: 122px;
 	position: absolute;
 	top: -2px;
 	left:  0px;
@@ -45,7 +45,23 @@
 	shade: noshade;
 }
 .hr11{
-	width: 136px;
+	width: 122px;
+	position: absolute;
+	bottom: -17px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr2{
+	width: 106px;
+	position: absolute;
+	top: -2px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr22{
+	width: 106px;
 	position: absolute;
 	bottom: -17px;
 	left:  0px;

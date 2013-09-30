@@ -5,13 +5,14 @@ $levelshow = 4;
 if (isset($_GET['l']))
 	$levelshow = $_GET['l'];
 //print_r($model);
+$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0]['no'],$model[0]['notch']);
 ?>
 <input type="hidden" name="level0" id="level0" value="<?php echo $model[0]['id']?>" />
 <input type="hidden" name="sire" id="sire" value="<?php echo $model[1][1]['id']?>" />
 <input type="hidden" name="dam" id="dam" value="<?php echo $model[1][2]['id']?>" />
 <input type="hidden" name="currenlevel" id="currenlevel" value="<?php echo $levelshow; ?>" />
-<table width="10%" style="position: absolute; top: 450px; width: 10%;" border="0">
-	    <tr><td class="a" rowspan="2"><?php echo $model[0]['notch']; ?></td></tr>
+<table width="10%" style="position: absolute; top: 450px; left:2.5%; width: 20%;" border="0">
+	    <tr><td class="a" rowspan="2"><hr class="hr1"/><?php echo $notch; ?><hr class="hr11"/></td></tr>
     </table>
  <?php
  $level[2] = '
@@ -103,7 +104,8 @@ if($levelshow >= 4)
 	echo $level[5];
 
 $level[6] = "";
-$level6 = array("94","150","190","235","280","330","370","420","450","495","530","580","630","680","730","780","900","950","980","1030","1080","1130","1160","1210","1240","1290","1320","1380","1420","1470","1500","1550");
+$level6 = array("94","150","190","235","280","330","370","420","450","495","530",
+	"580","630","680","730","780","900","950","980","1030","1080","1130","1170","1210","1250","1290","1330","1380","1420","1470","1505","1550");
 foreach($level6 as $key=>$levels){
    $level[6] .=  '  <table width="10%" style="position: absolute; top: '.$levels.'px; left:52.2%; width: 20%" border="0">';
    if($levelshow == 5)
