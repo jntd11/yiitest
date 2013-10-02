@@ -37,7 +37,7 @@
 	height: 9px;
 }
 .hr1{
-	width: 122px;
+	width: 140px;
 	position: absolute;
 	top: -2px;
 	left:  0px;
@@ -45,7 +45,7 @@
 	shade: noshade;
 }
 .hr11{
-	width: 122px;
+	width: 140px;
 	position: absolute;
 	bottom: -17px;
 	left:  0px;
@@ -53,7 +53,7 @@
 	shade: noshade;
 }
 .hr2{
-	width: 106px;
+	width: 123px;
 	position: absolute;
 	top: -2px;
 	left:  0px;
@@ -61,7 +61,39 @@
 	shade: noshade;
 }
 .hr22{
-	width: 106px;
+	width: 123px;
+	position: absolute;
+	bottom: -17px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr3{
+	width: 135px;
+	position: absolute;
+	top: -2px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr33{
+	width: 135px;
+	position: absolute;
+	bottom: -17px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr4{
+	width: 137px;
+	position: absolute;
+	top: -2px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr44{
+	width: 137px;
 	position: absolute;
 	bottom: -17px;
 	left:  0px;

@@ -12,7 +12,7 @@ $notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0
 <input type="hidden" name="dam" id="dam" value="<?php echo $model[1][2]['id']?>" />
 <input type="hidden" name="currenlevel" id="currenlevel" value="<?php echo $levelshow; ?>" />
 <table width="10%" style="position: absolute; top: 450px; left:2.5%; width: 20%;" border="0">
-	    <tr><td class="a" rowspan="2"><hr class="hr1"/><?php echo $notch; ?><hr class="hr11"/></td></tr>
+	    <tr><td class="a" rowspan="2"><hr class="hr2"/><?php echo $notch; ?><hr class="hr22"/></td></tr>
     </table>
  <?php
  $level[2] = '
@@ -39,7 +39,7 @@ foreach($level3 as $key=>$levels){
  if($levelshow == 2)
  	$level[3] .= '<tr><td class="a2" style="border: none;" rowspan="2"><span>$'.($key+1).'</span></td></tr>';
  else
- 	$level[3] .= '<tr><td class="a2" rowspan="2"><hr class="hr1"/>$'.($key+1).'<hr class="hr11"/></td></tr>';
+ 	$level[3] .= '<tr><td class="a2" rowspan="2"><hr class="hr3"/>$'.($key+1).'<hr class="hr33"/></td></tr>';
  $level[3] .= '</table>';
 }
 
@@ -68,7 +68,7 @@ foreach($level4 as $key=>$levels){
 	if($levelshow == 3)
 		$level[4] .=  '<tr><td rowspan="2"  class="a3" style="border: none;"><span>$'.($key+1).'</span></td></tr>';
 	else 
-		$level[4] .=  '<tr><td class="a3" rowspan="2" ><hr class="hr1"/>$'.($key+1).'<hr class="hr11"/></td></tr>';
+		$level[4] .=  '<tr><td class="a3" rowspan="2" ><hr class="hr3"/>$'.($key+1).'<hr class="hr33"/></td></tr>';
 	$level[4] .=  '</table>';
 }
 //$level[4] = str_replace("$1","JAISANKAR",$level[4]);
@@ -89,7 +89,7 @@ foreach($level5 as $key=>$levels){
  if($levelshow == 4)
  	$level[5] .=  '<td class="a4" rowspan="2" style="border: none;"><span>$'.($key+1).'</span>';
  else
- 	$level[5] .=  '<td class="a4" rowspan="2">  <hr class="hr1"/>$'.($key+1).'<hr class="hr11"/>';
+ 	$level[5] .=  '<td class="a4" rowspan="2">  <hr class="hr4"/>$'.($key+1).'<hr class="hr44"/>';
  $level[5] .=  '  </td></tr></table>';
 }
 //$level[5] = str_replace("$1","JAISANKAR",$level[5]);
@@ -111,7 +111,7 @@ foreach($level6 as $key=>$levels){
    if($levelshow == 5)
    		$level[6] .=  '  <tr><td>$'.($key+1).'</td></tr>';
    else 
-   		$level[6] .=  '  <tr><td class="a5"><hr class="hr1"/>$'.($key+1).'<hr class="hr11"/></td></tr>';
+   		$level[6] .=  '  <tr><td class="a5"><hr class="hr4"/>$'.($key+1).'<hr class="hr44"/></td></tr>';
    $level[6] .=  '   </table>';
 }
 
