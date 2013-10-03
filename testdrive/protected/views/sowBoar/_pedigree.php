@@ -17,10 +17,10 @@ $notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0
  <?php
  $level[2] = '
 	 <table width="10%" style="position: relative; top: 110px; left:19%; width: 20%;" border="0">
-	    <tr><td class="a1" rowspan="2"><hr class="hr1"/>$1 <hr class="hr11"/></td></tr>
+	    <tr><td class="a1" ><hr class="hr1"/>$1 <hr class="hr11"/></td></tr>
     </table>
     <table width="10%" style="position: relative; top: 530px; left:19%; width: 20%;" border="0">
-	    <tr><td class="a1" rowspan="2"><hr class="hr1"/>$2<hr class="hr11"/></td></tr>
+	    <tr><td class="a1" ><hr class="hr1"/>$2<hr class="hr11"/></td></tr>
     </table>';
 foreach ($model[1] as $key => $val) {
 	$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$val['name']." $1 ".$val['no'],$val['notch']);
