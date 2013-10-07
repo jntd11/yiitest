@@ -11,15 +11,15 @@ $notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0
 <input type="hidden" name="sire" id="sire" value="<?php echo $model[1][1]['id']?>" />
 <input type="hidden" name="dam" id="dam" value="<?php echo $model[1][2]['id']?>" />
 <input type="hidden" name="currenlevel" id="currenlevel" value="<?php echo $levelshow; ?>" />
-<table width="10%" style="position: relative; top: 450px; left:2%; width: 20%;" border="0">
+<table width="10%" style="position: relative; top: 450px; left:2%; width: 40%;" border="0">
 	    <tr><td class="a" rowspan="2"><hr class="hr2"/><?php echo $notch; ?><hr class="hr22"/></td></tr>
     </table>
  <?php
  $level[2] = '
-	 <table style="position: relative; top: -535px; left:19.1%; width: 20%;" border="0">
+	 <table style="position: relative; top: -535px; left:19.1%; width: 40%;" border="0">
 	    <tr><td class="a1" ><hr class="hr1"/>$1 <hr class="hr11"/></td></tr>
     </table>
-    <table style="position: relative; top: -110px; left:19.1%; width: 20%;" border="0">
+    <table style="position: relative; top: -110px; left:19.1%; width: 40%;" border="0">
 	    <tr><td class="a1" ><hr class="hr1"/>$2<hr class="hr11"/></td></tr>
     </table>';
 foreach ($model[1] as $key => $val) {
@@ -104,14 +104,14 @@ if($levelshow >= 4)
 	echo $level[5];
 
 $level[6] = "";
-$level6 = array("94","150","190","235","280","330","370","420","450","495","530",
-	"580","630","680","730","780","900","950","985","1030","1080","1130","1170","1210","1250","1290","1330","1380","1420","1470","1505","1550");
+$level6 = array("-4200","-4195","-4200","-4195","-4180","-4175","-4175","-4165","-4175","-4180","-4180",
+	"-4175","-4175","-4165","-4175","-4165","-4090","-4080","-4080","-4070","-4070","-4060","-4060","-4055","-4070","-4070","-4072","-4070","-4055","-4045","-4055","-4045");
 foreach($level6 as $key=>$levels){
-   $level[6] .=  '  <table width="10%" style="position: absolute; top: '.$levels.'px; left:52.2%; width: 20%" border="0">';
+   $level[6] .=  '  <table  style="position: relative; top: '.$levels.'px; left:98%; width: 40%" border="0">';
    if($levelshow == 5)
    		$level[6] .=  '  <tr><td>$'.($key+1).'</td></tr>';
    else 
-   		$level[6] .=  '  <tr><td class="a5"><hr class="hr4"/>$'.($key+1).'<hr class="hr44"/></td></tr>';
+   		$level[6] .=  '  <tr><td class="a5"><hr class="hr4"/>'.$key.'$'.($key+1).'<hr class="hr44"/></td></tr>';
    $level[6] .=  '   </table>';
 }
 
