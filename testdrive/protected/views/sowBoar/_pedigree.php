@@ -11,17 +11,37 @@ $notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0
 <input type="hidden" name="sire" id="sire" value="<?php echo $model[1][1]['id']?>" />
 <input type="hidden" name="dam" id="dam" value="<?php echo $model[1][2]['id']?>" />
 <input type="hidden" name="currenlevel" id="currenlevel" value="<?php echo $levelshow; ?>" />
-<table width="10%" style="position: relative; top: 450px; left:2%; width: 40%;" border="0">
+<?php if($levelshow == 2) {?>
+  <table style="position: relative; top: 50px; left:2%; width: 40%;" border="0">
+	    <tr><td class="a3" rowspan="2"><hr class="hr2"/><?php echo $notch; ?><hr class="hr22"/></td></tr>
+    </table>
+<?php } else {?>
+  <table width="10%" style="position: relative; top: 450px; left:2%; width: 40%;" border="0">
 	    <tr><td class="a" rowspan="2"><hr class="hr2"/><?php echo $notch; ?><hr class="hr22"/></td></tr>
     </table>
+
+<?php }?>
  <?php
- $level[2] = '
-	 <table style="position: relative; top: -535px; left:19.1%; width: 40%;" border="0">
-	    <tr><td class="a1" ><hr class="hr1"/>$1 <hr class="hr11"/></td></tr>
-    </table>
-    <table style="position: relative; top: -110px; left:19.1%; width: 40%;" border="0">
-	    <tr><td class="a1" ><hr class="hr1"/>$2<hr class="hr11"/></td></tr>
-    </table>';
+ 
+ if($levelshow == 2) {
+ 		$level[2] = '<table style="position: relative; top: -75px; left:19.1%; width: 40%;" border="0">';
+	    $level[2] .= '<tr><td class="a4" ><hr class="hr1"/>$1 <hr class="hr11"/></td></tr>';
+ }
+ else{ 
+ 		$level[2] = '<table style="position: relative; top: -535px; left:19.1%; width: 40%;" border="0">';
+ 		$level[2] .= '<tr><td class="a1" ><hr class="hr1"/>$1 <hr class="hr11"/></td></tr>';
+ }
+ 
+    $level[2] .= '</table>';
+ if($levelshow == 2) {
+    $level[2] .= '<table style="position: relative; top: -50px; left:19.1%; width: 40%;" border="0">';
+	$level[2] .= '<tr><td class="a4" ><hr class="hr1"/>$2<hr class="hr11"/></td></tr>';
+ }else{
+ 	$level[2] .= '<table style="position: relative; top: -110px; left:19.1%; width: 40%;" border="0">';
+ 	$level[2] .= '<tr><td class="a1" ><hr class="hr1"/>$2<hr class="hr11"/></td></tr>';
+ 	
+ }
+    $level[2] .= '</table>';
 foreach ($model[1] as $key => $val) {
 	$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$val['name']." $1 ".$val['no'],$val['notch']);
 	$level[2] = str_replace("$".$key,$notch,$level[2]);
