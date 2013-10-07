@@ -892,6 +892,16 @@ This Project F will start as a button in the Update Sows/Boars screen. If you wa
      e. +  Add another Level. When you are displaying 6 Levels this button will do nothing.
      f. -   Remove the highest Level currently displayed. When you are displaying only 2 Levels this button will do nothing.
 
+2. I would like to improve the looks a little still. But, I want you to get some sleep. This project is close enough to complete - I will tell Linda to pay you with bonus - as I know you will stick with this till I am happy with it. I will send you an attachment in another email later that you can work on tomorrow.
+
+Jai,
+
+I neglected to tell you about the vertical spacing that I want on the Pedigree display (Project F). Therefore, I set this up as a separate project.
+
+I have attached a doc that shows how I want the display of 2, 3 & 4 Levels of the Pedigree shown. How Levels 5 and 6 are currently displayed is fine for now. In essence, when you are displaying 2 Levels, 3 Levels or 4 Levels we need them compressed vertically as shown in the attachment. In particular, notice the right most horizontal lines should have the same vertical spacing no matter whether you are displaying 2 Levels, 3 Levels or 4 Levels. The vertical spacing of the right most horizontal lines needs to match what you are currently using when 5 Levels is displayed. Of course all other lines to the left would be horizontally and vertically adjusted accordingly.
+
+Please note that the snapshots in the attached doc are from the current Pedigree display so please ignore the horizontal lines that extend into the Ear Notch as I know you are working on fixing that issue (that those horizontal lines will just touch the vertical lines), thanks.
+
 idcuser   4182     1  0 Sep11 ?        00:00:00 sh /svc/java/jboss-6.0.0.Final/bin/run.sh -b 170.225.164.57
 
 

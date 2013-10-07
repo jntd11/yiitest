@@ -297,3 +297,31 @@ function levelIncDec(id,type){
 		window.location="index.php?r=sowBoar/pedigree&id="+id+"&l="+decId;
 
 }
+function setwidth(type) {
+	if(type == 1){
+		var h = $(window).height();
+        var w = $(window).width();
+        
+        var width;
+        if(w > 1340 || width > 140)
+        	width = 140;
+        else {
+        	width = w - 1187;
+        	width++;
+        }
+        $(".hr1").css('width', width);
+        console.log(w+'='+width);
+	}
+}
+$(function(){
+    $(window).resize(function(){
+    	//setwidth(1);
+        //$("#elementToResize").css('height',(h < 768 || w < 1024) ? 500 : 400);
+    });
+    $(window).mouseover(function(){
+    	//var w = $(window).width();
+    	//console.log(w);
+    	
+        //$("#elementToResize").css('height',(h < 768 || w < 1024) ? 500 : 400);
+    });
+});

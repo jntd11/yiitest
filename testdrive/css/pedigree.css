@@ -38,10 +38,10 @@
 }
 .hr1{
 	width: 140px;
-	position: fixed;
+	position: absolute;
 	top: -2px;
 	left:  0px;
-	background-color: red;
+	background-color: black;
 	shade: noshade;
 }
 .hr11{
