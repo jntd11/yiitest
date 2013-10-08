@@ -179,7 +179,7 @@ else
 foreach($level6 as $key=>$levels){
    $level[6] .=  '  <table  style="position: relative; top: '.$levels.'px; left:98%; width: 40%" border="0">';
    if($levelshow == 5)
-   		$level[6] .=  '  <tr><td class="a5" style="border: none;">$'.($key+1).'</span>&nbsp;</td></tr>';
+   		$level[6] .=  '  <tr><td class="a5" style="border: none;">$'.($key+1).'</span>&nbsp;'.$key.'</td></tr>';
    else 
    		$level[6] .=  '  <tr><td class="a5"><hr class="hr4"/>$'.($key+1).'<hr class="hr44"/></td></tr>';
    $level[6] .=  '   </table>';
@@ -203,9 +203,9 @@ $level7 = array("80","105","135","160","180","200","220","240","270","290","310"
 foreach($level7 as $key=>$levels){
 	$level[7] .=  '  <table width="10%" style="position: absolute; top: '.$levels.'px; left:63%; width: 20%" border="0">';
 	if($levelshow == 5)
-		$level[7] .=  '  <tr><td  rowspan="2" >$'.($key+1).'</td></tr>';
+		$level[7] .=  '  <tr><td  rowspan="2" >$'.($key+1).$key.'</td></tr>';
 	else 
-		$level[7] .=  '  <tr><td  rowspan="2" class="a6">$'.($key+1).'</td></tr>';
+		$level[7] .=  '  <tr><td  rowspan="2" class="a6">$'.($key+1).' </td></tr>';
 	$level[7] .=  '  </table>';
 }
 //$level[6] = str_replace("$1","JAISANKAR",$level[6]);
