@@ -19,6 +19,10 @@ $notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0
   <table style="position: relative; top: 150px; left:2%; width: 40%;" border="0">
 	    <tr><td class="a2" rowspan="2"><hr class="hr2"/><?php echo $notch; ?><hr class="hr22"/></td></tr>
     </table>
+<?php } else if($levelshow == 4) { ?>
+  <table style="position: relative; top: 350px; left:2%; width: 40%;" border="0">
+	    <tr><td class="a1" rowspan="2"><hr class="hr2"/><?php echo $notch; ?><hr class="hr22"/></td></tr>
+    </table>
 <?php }else {?>
   <table width="10%" style="position: relative; top: 450px; left:2%; width: 40%;" border="0">
 	    <tr><td class="a" rowspan="2"><hr class="hr2"/><?php echo $notch; ?><hr class="hr22"/></td></tr>
@@ -33,6 +37,9 @@ $notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0
  }else if($levelshow == 3) {
  		$level[2] = '<table style="position: relative; top: -105px; left:19.1%; width: 40%;" border="0">';
 	    $level[2] .= '<tr><td class="a3" ><hr class="hr1"/>$1 <hr class="hr11"/></td></tr>';
+ }else if($levelshow == 4) {
+ 		$level[2] = '<table style="position: relative; top: -105px; left:19.1%; width: 40%;" border="0">';
+	    $level[2] .= '<tr><td class="a2" ><hr class="hr1"/>$1 <hr class="hr11"/></td></tr>';
  } else{ 
  		$level[2] = '<table style="position: relative; top: -535px; left:19.1%; width: 40%;" border="0">';
  		$level[2] .= '<tr><td class="a1" ><hr class="hr1"/>$1 <hr class="hr11"/></td></tr>';
@@ -45,6 +52,9 @@ $notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0
  }elseif($levelshow == 3) {
     $level[2] .= '<table style="position: relative; top: -20px; left:19.1%; width: 40%;" border="0">';
 	$level[2] .= '<tr><td class="a3" ><hr class="hr1"/>$2<hr class="hr11"/></td></tr>';
+ }elseif($levelshow == 4) {
+    $level[2] .= '<table style="position: relative; top: 30px; left:19.1%; width: 40%;" border="0">';
+	$level[2] .= '<tr><td class="a2" ><hr class="hr1"/>$2<hr class="hr11"/></td></tr>';
  }else{
  	$level[2] .= '<table style="position: relative; top: -110px; left:19.1%; width: 40%;" border="0">';
  	$level[2] .= '<tr><td class="a1" ><hr class="hr1"/>$2<hr class="hr11"/></td></tr>';
@@ -62,10 +72,12 @@ echo $level[2];
 <?php 
 
 $level[3] = "";
-if($levelshow == 2 ) 
+if($levelshow == 2) 
 	$level3 = array("-221","-215","-215","-210");
 else if($levelshow == 3) 
 	$level3 = array("-340","-320","-285","-270");
+else if($levelshow == 4)
+	$level3 = array("-560","-480","-430","-350");
 else
 	$level3 = array("-1365","-1220","-990","-840");
 foreach($level3 as $key=>$levels){
@@ -76,6 +88,9 @@ foreach($level3 as $key=>$levels){
  }else if($levelshow == 3){
  	$level[3] .= '<table  style="position: relative; top: '.$levels.'px; left:39%; width: 40%" border="0">';
  	$level[3] .= '<tr><td class="a4" rowspan="2"><hr class="hr3"/>$'.($key+1).'<hr class="hr33"/></td></tr>';
+ }else if($levelshow == 4){
+ 	$level[3] .= '<table  style="position: relative; top: '.$levels.'px; left:39%; width: 40%" border="0">';
+ 	$level[3] .= '<tr><td class="a3" rowspan="2"><hr class="hr3"/>$'.($key+1).'<hr class="hr33"/></td></tr>';
  }else{
  	$level[3] .= '<table  style="position: relative; top: '.$levels.'px; left:39%; width: 40%" border="0">';
  	$level[3] .= '<tr><td class="a2" rowspan="2"><hr class="hr3"/>$'.($key+1).'<hr class="hr33"/></td></tr>';
@@ -101,6 +116,8 @@ if($levelshow >= 2)
 $level[4] = "";
 if($levelshow == 3)
 	$level4 = array("-630","-650","-680","-695","-710","-730","-760","-780");
+else if($levelshow == 4)
+	$level4 = array("-1010","-990","-960","-940","-930","-910","-880","-860");
 else
 	$level4 = array("-2240","-2150","-2100","-2020","-1870","-1790","-1740","-1650");
 foreach($level4 as $key=>$levels){
@@ -110,8 +127,10 @@ foreach($level4 as $key=>$levels){
 	$level[4] .=  '<table style="position: relative; top: '.$levels.'px; left:58%; width: 40%" border="0">';
 	if($levelshow == 3)
 		$level[4] .=  '<tr><td class="a4" style="border: none;"><span>$'.($key+1).'</span></td></tr>';
+	else if($levelshow == 4)
+		$level[4] .=  '<tr><td class="a4" ><hr class="hr3"/>$'.($key+1).'<hr class="hr33"/></td></tr>';
 	else 
-		$level[4] .=  '<tr><td class="a3" rowspan="2" ><hr class="hr3"/>$'.($key+1).'<hr class="hr33"/></td></tr>';
+		$level[4] .=  '<tr><td class="a3" ><hr class="hr3"/>$'.($key+1).'<hr class="hr33"/></td></tr>';
 	$level[4] .=  '</table>';
 }
 //$level[4] = str_replace("$1","JAISANKAR",$level[4]);
@@ -125,7 +144,10 @@ if($levelshow >= 3)
 	echo $level[4];
 
 $level[5] = "";
-$level5 = array("-3120","-3100","-3060","-3035","-3030","-3010","-2980","-2960","-2860","-2830","-2800","-2775","-2770","-2755","-2710","-2690");
+if($levelshow == 4)
+	$level5 = array("-1570","-1590","-1620","-1635","-1650","-1670","-1700","-1720","-1750","-1770","-1800","-1820","-1840","-1860","-1890","-1900");
+else
+	$level5 = array("-3120","-3100","-3060","-3035","-3030","-3010","-2980","-2960","-2860","-2830","-2800","-2775","-2770","-2755","-2710","-2690");
 foreach($level5 as $key=>$levels){
  $level[5] .=  '  <table width="10%" style="position: relative; top: '.$levels.'px; left:77%; width: 40%" border="0">
 	    <tr>';
