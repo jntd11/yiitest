@@ -882,3 +882,43 @@ Stack trace:
 REQUEST_URI=/yii/yii/testdrive/index.php?r=sowBoar/admin
 HTTP_REFERER=http://localhost/yii/yii/testdrive/
 ---
+2013/10/08 10:36:55 [error] [php] Trying to get property of non-object (C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php:416)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): SowBoarController->runAction()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): SowBoarController->filterAccessControl()
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(265): SowBoarController->runActionWithFilters()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): SowBoarController->run()
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=sowBoar/pedigree&id=4&p=4
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (416)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (97)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/08 10:37:03 [error] [php] Trying to get property of non-object (C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php:416)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): SowBoarController->runAction()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): SowBoarController->filterAccessControl()
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(265): SowBoarController->runActionWithFilters()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): SowBoarController->run()
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=sowBoar/pedigree&id=4&p=4
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (416)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (97)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
