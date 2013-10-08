@@ -58,9 +58,10 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'root',
+			'password' => '',
 			'charset' => 'utf8',
 		),
+		
 		/** server
 		'db'=>array(
 			'connectionString' => 'mysql:host=mysql51-015.wc2.dfw1.stabletransit.com;dbname=512368_pigs',

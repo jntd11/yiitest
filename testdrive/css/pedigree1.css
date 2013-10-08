@@ -1,0 +1,114 @@
+@CHARSET "ISO-8859-1";
+.a{
+	/*border-top: 1px solid black; 
+	border-bottom: 1px solid black;*/
+	border-left: 1px solid black; 
+	height: 780px;
+}
+.a1{
+	/*border-top: 1px solid black; 
+	border-bottom: 1px solid black;*/
+	border-left: 1px solid black; 
+	height: 340px;
+	white-space: nowrap;
+}
+.a2{
+	/*border-top: 1px solid black; 
+	border-bottom: 1px solid black;*/
+	border-left: 1px solid black; 
+	height: 180px;
+}
+.a3{
+	/*border-top: 1px solid black; 
+	border-bottom: 1px solid black;*/
+	border-left: 1px solid black; 
+	height: 80px;
+}
+.a4{
+	/*border-top: 1px solid black; 
+	border-bottom: 1px solid black;*/
+	border-left: 1px solid black; 
+	height: 40px;
+}
+.a5{
+	/*border-top: 1px solid black; 
+	border-bottom: 1px solid black;*/ 
+	border-left: 1px solid black; 
+	height: 9px;
+}
+.hr1{
+	width: 140px;
+	position: fixed;
+	top: -2px;
+	left:  0px;
+	background-color: red;
+	shade: noshade;
+}
+.hr11{
+	width: 140px;
+	position: absolute;
+	bottom: -17px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr2{
+	width: 123px;
+	position: absolute;
+	top: -2px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr22{
+	width: 123px;
+	position: absolute;
+	bottom: -17px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr3{
+	width: 135px;
+	position: absolute;
+	top: -2px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr33{
+	width: 135px;
+	position: absolute;
+	bottom: -17px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr4{
+	width: 137px;
+	position: absolute;
+	top: -2px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.hr44{
+	width: 137px;
+	position: absolute;
+	bottom: -17px;
+	left:  0px;
+	background-color: black;
+	shade: noshade;
+}
+.a6{
+	font-size: 11px;
+	color: blue;	
+}
+
+.span-5{
+	width: 180px;
+	padding-left: 405px;
+}
+#sidebar{
+	
+}
