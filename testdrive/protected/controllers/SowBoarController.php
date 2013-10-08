@@ -390,6 +390,8 @@ class SowBoarController extends Controller
 		$data1 = $model->findAllBySql("select * from sow_boar where sow_boar_id = ".$pk);
 		$data = $data1;
 		$level = 0;
+		if(!isset($data1[0])) 
+			return array();
 		$group[$level] = array("notch"=>$data1[0]->ear_notch,
 							"name"=>$data1[0]->sow_boar_name,
 							"no"=>$data1[0]->registeration_no,

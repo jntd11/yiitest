@@ -5,11 +5,13 @@ $levelshow = 4;
 if (isset($_GET['l']))
 	$levelshow = $_GET['l'];
 //print_r($model);
-$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0]['no'],$model[0]['notch']);
+$notch = "";
+if(isset($model[0]))
+	$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0]['no'],$model[0]['notch']);
 ?>
-<input type="hidden" name="level0" id="level0" value="<?php echo $model[0]['id']?>" />
-<input type="hidden" name="sire" id="sire" value="<?php echo $model[1][1]['id']?>" />
-<input type="hidden" name="dam" id="dam" value="<?php echo $model[1][2]['id']?>" />
+<input type="hidden" name="level0" id="level0" value="<?php echo (isset($model[0]))?$model[0]['id']:0; ?>" />
+<input type="hidden" name="sire" id="sire" value="<?php echo (isset($model[1]))?$model[1][1]['id']:0; ?>" />
+<input type="hidden" name="dam" id="dam" value="<?php echo (isset($model[1]))?$model[1][2]['id']:0; ?>" />
 <input type="hidden" name="currenlevel" id="currenlevel" value="<?php echo $levelshow; ?>" />
 <?php if($levelshow == 2) {?>
   <table style="position: relative; top: 50px; left:2%; width: 40%;" border="0">
@@ -61,10 +63,11 @@ $notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0
  	
  }
     $level[2] .= '</table>';
-foreach ($model[1] as $key => $val) {
-	$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$val['name']." $1 ".$val['no'],$val['notch']);
-	$level[2] = str_replace("$".$key,$notch,$level[2]);
-}
+if(isset($model[1]))
+	foreach ($model[1] as $key => $val) {
+		$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$val['name']." $1 ".$val['no'],$val['notch']);
+		$level[2] = str_replace("$".$key,$notch,$level[2]);
+	}
 //$level[2] = str_replace("$1",$model[1][1]['notch'],$level[2]);
 //$level[2] = str_replace("$2",$model[1][2]['notch'],$level[2]);
 echo $level[2];
@@ -103,6 +106,7 @@ foreach($level3 as $key=>$levels){
 //print_r($model[3]);
 //echo $val['notch'];
 //exit;
+if(isset($model[2]))
 foreach ($model[2] as $key => $val) {
 	$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$val['name']." $1 ".$val['no'],$val['notch']);
 	$level[3] = str_replace("$".$key,$notch,$level[3]);
@@ -135,7 +139,7 @@ foreach($level4 as $key=>$levels){
 }
 //$level[4] = str_replace("$1","JAISANKAR",$level[4]);
 //$level[4] = str_replace("$2","Mathangi",$level[4]);
-
+if(isset($model[3]))
 foreach ($model[3] as $key => $val) {
 	$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$val['name']." $1 ".$val['no'],$val['notch']);
 	$level[4] = str_replace("$".$key,$notch,$level[4]);
@@ -159,7 +163,7 @@ foreach($level5 as $key=>$levels){
 }
 //$level[5] = str_replace("$1","JAISANKAR",$level[5]);
 //$level[5] = str_replace("$2","Mathangi",$level[5]);
-
+if(isset($model[4]))
 foreach ($model[4] as $key => $val) {
 	//echo "KEY".$key."Val".$val['notch']."<br>";
 	$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$val['name']." $1 ".$val['no'],$val['notch']);
@@ -181,13 +185,14 @@ foreach($level6 as $key=>$levels){
    if($levelshow == 5)
    		$level[6] .=  '  <tr><td class="a5" style="border: none;">$'.($key+1).'</span>&nbsp;'.$key.'</td></tr>';
    else 
-   		$level[6] .=  '  <tr><td class="a5"><hr class="hr4"/>$'.($key+1).'<hr class="hr44"/></td></tr>';
+   		$level[6] .=  '  <tr><td class="a5"><hr class="hr4"/><span>$'.($key+1).'</span>&nbsp;<hr class="hr44"/></td></tr>';
    $level[6] .=  '   </table>';
 }
 
 	
 //$level[6] = str_replace("$1","JAISANKAR",$level[6]);
 //$level[6] = str_replace("$2","Mathangi",$level[6]);
+if(isset($model[5]))
 foreach ($model[5] as $key => $val) {
 	$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$val['name']." $1 ".$val['no'],$val['notch']);
 	//$level[6] = str_replace("$".$key,$val['notch'],$level[6]);
@@ -210,6 +215,7 @@ foreach($level7 as $key=>$levels){
 }
 //$level[6] = str_replace("$1","JAISANKAR",$level[6]);
 //$level[6] = str_replace("$2","Mathangi",$level[6]);
+if(isset($model[6]))
 foreach ($model[6] as $key => $val) {
 	$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$val['name']." $1 ".$val['no'],$val['notch']);
 	//$level[6] = str_replace("$".$key,$val['notch'],$level[6]);
