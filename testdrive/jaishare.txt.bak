@@ -935,4 +935,17 @@ www.punt2win.com/administrator
 [2:10:18 PM] leigh bartlett: and in the uniconsult logo spot i need my logo
 [2:10:20 PM] leigh bartlett: can u do that for me
 [2:10:24 PM] leigh bartlett: and tell me how much brother
+Punt2win99!
 userid: 408 427 423  passsword :6932
+
+design Patterns
+http://www.ibm.com/developerworks/library/os-php-designptrns/
+
+HL7 is an international community of healthcare subject matter experts and information scientists collaborating to create standards for the exchange, management and integration of electronic healthcare information.
+The HL7 Services-Aware Enterprise Architecture Framework (SAIF) provides consistency between all HL7 artifacts, and enables a standardized approach to Enterprise Architecture (EA) development and implementation, and a way to measure the consistency.
+
+WMB
+WebSphere Message Broker (WMB) is IBM's integration broker from the WebSphere product family that allows business information to flow between disparate applications across multiple hardware and software platforms. Rules can be applied to the data flowing through the message broker to route and transform the information. The product is an Enterprise Service Bus providing connectivity between applications and services in a Service Oriented Architecture.
+IBM Integration Bus (WMB V9) provides capabilities to build solutions needed to support diverse integration requirements through a set of connectors to a range of data sources, including packaged applications, files, mobile devices, messaging systems, and databases. A benefit of using IBM Integration Bus is that the tool enables existing applications for Web Services without costly legacy application rewrites. IIB avoids the point-to-point strain on development resources by connecting any application or service over multiple protocols, including SOAP, HTTP and JMS.[1] Modern secure authentication mechanisms, including the ability to perform actions on behalf of masquerading or delegate users, through MQ, HTTP and SOAP nodes are supported such as LDAP, X-AUTH, O-AUTH, and two-way SSL.
+IBM Integration Bus supports a wide variety of data formats, including standards-based formats (such as XML, DFDL, and JSON), industry formats (such as HL7), and custom formats. A comprehensive range of operations can be performed on data, including routing, filtering, enrichment, multicast for publish-subscribe, sequencing, and aggregation. These flexible integration capabilities are able to support the customer's choice of solution architecture, including service-oriented, event-oriented, data-driven, and file-based (batch or real-time). IIB unifies the Business Process Management grid, providing the workhorse behind how to do something, taking directions from other BPM tooling which tells IIB what to do.
+A developer creates WMB functionality in a cyclical workflow, probably more agile than most other software development. Developers will create a message flow, generate a BAR file, deploy the message flow contained in the BAR file, test the message flow and repeat as necessary to achieve reliable functionality.
