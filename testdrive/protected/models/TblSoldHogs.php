@@ -44,16 +44,31 @@ class TblSoldHogs extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('hog_ear_notch, customer_name, date_sold, sold_price, sale_type, invoice_number, app_xfer, comments, reason_sold, date_modified', 'required'),
+			array('hog_ear_notch, customer_name, date_sold, sold_price, app_xfer', 'required'),
 			array('sold_price, invoice_number', 'numerical', 'integerOnly'=>true),
 			array('hog_ear_notch, date_sold', 'length', 'max'=>20),
 			array('customer_name', 'length', 'max'=>50),
 			array('sale_type, app_xfer', 'length', 'max'=>1),
+			array('hog_ear_notch','validateEarNotch'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('tbl_sold_hogs_id, hog_ear_notch, customer_name, date_sold, sold_price, sale_type, invoice_number, app_xfer, comments, reason_sold, date_modified', 'safe', 'on'=>'search'),
 		);
 	}
+	
+	public function validateEarNotch($attribute,$params)
+	{
+		//$farmHerd = Yii::app()->request->cookies['farm_herd']." ";
+		$pattern = '/^([0-9][A-Z]) [a-z]+ [0-9]+[ SFsf][0-9]+[-.][0-9]+$/i';
+		$herds = $this->getHerd();
+		if(!preg_match($pattern, $this->$attribute,$matches)){
+			$this->addError($attribute, 'Sow/Boar Ear Notch is not in correct format!');
+		}
+		if(!in_array($matches[1], $herds)){
+			$this->addError($attribute, 'This is not a valid Farm & Herd');
+		}
+	}
+	
 
 	/**
 	 * @return array relational rules.

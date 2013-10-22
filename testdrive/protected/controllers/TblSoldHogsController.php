@@ -28,7 +28,7 @@ class TblSoldHogsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','AutocompleteFirstName'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -169,5 +169,20 @@ class TblSoldHogsController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionAutocompleteFirstName() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT first_name FROM tbl_customer_entry WHERE first_name LIKE :username  
+			UNION SELECT company_name FROM tbl_customer_entry WHERE company_name LIKE :username 
+			UNION SELECT last_name FROM tbl_customer_entry WHERE last_name LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
 	}
 }

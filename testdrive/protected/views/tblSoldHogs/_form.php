@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'hog_ear_notch'); ?>
-		<?php echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1)')); ?>
 		<?php echo $form->error($model,'hog_ear_notch'); ?>
 	</div>
 
@@ -67,12 +67,6 @@
 		<?php echo $form->labelEx($model,'reason_sold'); ?>
 		<?php echo $form->textArea($model,'reason_sold',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'reason_sold'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'date_modified'); ?>
-		<?php echo $form->textField($model,'date_modified'); ?>
-		<?php echo $form->error($model,'date_modified'); ?>
 	</div>
 
 	<div class="row buttons">
