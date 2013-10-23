@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'hog_ear_notch'); ?>
-		<?php echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1)')); ?>
+		<?php echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1)','id'=>'earnotch')); ?>
 		<?php echo $form->error($model,'hog_ear_notch'); ?>
 	</div>
 
@@ -29,13 +29,26 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'date_sold'); ?>
-		<?php echo $form->textField($model,'date_sold',array('size'=>20,'maxlength'=>20)); ?>
+		<?php //echo $form->textField($model,'date_sold',array('size'=>20,'maxlength'=>20));
+				$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+						'model' => $model,
+						'attribute' => 'date_sold',
+						'options' =>array(
+								'dateFormat'=>'mm-dd-yy',
+						),
+						'htmlOptions' => array(
+								'size' => '20',         // textField size
+								'maxlength' => '20',    // textField maxlength
+								'onBlur' => 'validateDate(this.value);'
+						),
+				));
+		?>
 		<?php echo $form->error($model,'date_sold'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'sold_price'); ?>
-		<?php echo $form->textField($model,'sold_price'); ?>
+		<?php echo $form->textField($model,'sold_price', array('onkeypress'=>'return isInteger(event);')); ?>
 		<?php echo $form->error($model,'sold_price'); ?>
 	</div>
 
@@ -47,13 +60,17 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'invoice_number'); ?>
-		<?php echo $form->textField($model,'invoice_number'); ?>
+		<?php echo $form->textField($model,'invoice_number',array('onkeypress'=>'return isInteger(event);')); ?>
 		<?php echo $form->error($model,'invoice_number'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'app_xfer'); ?>
-		<?php echo $form->textField($model,'app_xfer',array('size'=>1,'maxlength'=>1)); ?>
+		<?php 
+		//echo $form->textField($model,'app_xfer',array('size'=>1,'maxlength'=>1));
+		echo $form->dropDownList($model,'app_xfer',array('Y'=>'Y','N'=>'N'),
+				array('size'=>0,'tabindex'=>23,'maxlength'=>0)); 
+		?>
 		<?php echo $form->error($model,'app_xfer'); ?>
 	</div>
 
@@ -68,7 +85,7 @@
 		<?php echo $form->textArea($model,'reason_sold',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'reason_sold'); ?>
 	</div>
-
+	<div>&nbsp;</div>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

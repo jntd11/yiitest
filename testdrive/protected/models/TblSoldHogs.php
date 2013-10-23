@@ -49,7 +49,9 @@ class TblSoldHogs extends CActiveRecord
 			array('hog_ear_notch, date_sold', 'length', 'max'=>20),
 			array('customer_name', 'length', 'max'=>50),
 			array('sale_type, app_xfer', 'length', 'max'=>1),
+			array('invoice_number', 'length', 'max'=>6),
 			array('hog_ear_notch','validateEarNotch'),
+			array('date_sold', 'date', 'format'=>array('m-d-y','mm-dd-yy','mm-dd-yyyy','m-dd-yy','mm-d-yy','m-d-yyyy')),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('tbl_sold_hogs_id, hog_ear_notch, customer_name, date_sold, sold_price, sale_type, invoice_number, app_xfer, comments, reason_sold, date_modified', 'safe', 'on'=>'search'),
@@ -127,5 +129,10 @@ class TblSoldHogs extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	public function getHerd(){
+		$qu = "select farm_herd from tbl_herd_setup";
+		$cmd = YII::app()->db->createCommand($qu);
+		return $res = $cmd->queryColumn();
 	}
 }

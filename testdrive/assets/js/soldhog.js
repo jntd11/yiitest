@@ -18,31 +18,27 @@ $( "<div>" )
 function checkData(element,type){
 	if(type == 1){
 		var val = element.value;
-		var patt = /^[0-9][A-Z]$/
+		if(val == "")
+			return;
+		var patt1 = /^[0-9][A-Z] [a-z]+ [0-9]{1,2}[ SFsf][0-9]{1,3}[\-\.][0-9]{1,2}$/gi;
+		var patt2 = /[\-\.]/gi;
+		var patt3 = /^[0-9][A-Z] /gi;		
+		patt = patt1;
 		if(!patt.test(val)){
-			alert("Farm Herd - Not in valid format");
-			$("#herd").val("");
-			$("#herd").focus();
+			var patt4 = patt3;
+			if(!patt4.test(val)){
+				alert("This is not a valid ear notch");
+				$("#earnotch").val("");
+			}else if(!patt2.test(val))
+				alert("Dash (or period) is required between Litter Number and Pig in Litter.");
+			else
+				alert("Farm Herd - Not in valid format");
+			//$("#earnotch").focus();
+			return;
 		}
-		
-	}else if(type == 2){
-		var val = element.value;
-		var patt = /^[A-Z]$/
-		if(!patt.test(val)){
-			alert("Not in valid format - Should be letter");
-			$("#breed").val("");
-			$("#breed").focus();
-		}
-	}else if(type == 3){
-		var val = element.value;
-		var patt = /^[0-9]+$/
-		if(!patt.test(val)){
-			alert("Not in valid format - Should be Numbers");
-			$(element).val("");
-			$(element).focus();
-		}
+		val = val.replace(".","-");
+		$("#earnotch").val(val);
 	}
-	
 }
 $(document).ready(function(){
 	$("#tbl-herd-setup-form :input[type!='submit']").change(function() {
@@ -72,4 +68,12 @@ function autoSuggestSearch(){
 		    	$(this).val(data);
 		    }
 	});
+}
+
+function validateDate(val){
+	var patt = /^(([0-1][0-2])|([0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
+	if(!patt.test(val)){
+		alert("invalid date format")
+		//this.value = ""
+	}
 }

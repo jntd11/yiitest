@@ -942,11 +942,93 @@ design Patterns
 http://www.ibm.com/developerworks/library/os-php-designptrns/
 
 HL7
-HL7 is an international community of healthcare subject matter experts and information scientists collaborating to create standards for the exchange, management and integration of electronic healthcare information.
-The HL7 Services-Aware Enterprise Architecture Framework (SAIF) provides consistency between all HL7 artifacts, and enables a standardized approach to Enterprise Architecture (EA) development and implementation, and a way to measure the consistency.
+HL7 is an international community of healthcare subject matter experts and information scientists collaborating to create standards for the exchange, management and integration of electronic healthcare information. The HL7 Services-Aware Enterprise Architecture Framework (SAIF) provides consistency between all HL7 artifacts, and enables a standardized approach to Enterprise Architecture (EA) development and implementation, and a way to measure the consistency.
 
 WMB
 WebSphere Message Broker (WMB) is IBM's integration broker from the WebSphere product family that allows business information to flow between disparate applications across multiple hardware and software platforms. Rules can be applied to the data flowing through the message broker to route and transform the information. The product is an Enterprise Service Bus providing connectivity between applications and services in a Service Oriented Architecture.
 IBM Integration Bus (WMB V9) provides capabilities to build solutions needed to support diverse integration requirements through a set of connectors to a range of data sources, including packaged applications, files, mobile devices, messaging systems, and databases. A benefit of using IBM Integration Bus is that the tool enables existing applications for Web Services without costly legacy application rewrites. IIB avoids the point-to-point strain on development resources by connecting any application or service over multiple protocols, including SOAP, HTTP and JMS.[1] Modern secure authentication mechanisms, including the ability to perform actions on behalf of masquerading or delegate users, through MQ, HTTP and SOAP nodes are supported such as LDAP, X-AUTH, O-AUTH, and two-way SSL.
 IBM Integration Bus supports a wide variety of data formats, including standards-based formats (such as XML, DFDL, and JSON), industry formats (such as HL7), and custom formats. A comprehensive range of operations can be performed on data, including routing, filtering, enrichment, multicast for publish-subscribe, sequencing, and aggregation. These flexible integration capabilities are able to support the customer's choice of solution architecture, including service-oriented, event-oriented, data-driven, and file-based (batch or real-time). IIB unifies the Business Process Management grid, providing the workhorse behind how to do something, taking directions from other BPM tooling which tells IIB what to do.
 A developer creates WMB functionality in a cyclical workflow, probably more agile than most other software development. Developers will create a message flow, generate a BAR file, deploy the message flow contained in the BAR file, test the message flow and repeat as necessary to achieve reliable functionality.
+
+Jai,
+
+Project H is an entry screen and a display screen.
+
+A. The Sold Hogs screens will be under the Entry menu bar option just under the Sows/Boars entry option.
+    1. If you want to see the Old PIGS option that this is replacing then look at the F6 Entry Selector - 18 Sold Hogs Entry.
+    2. Here are the fields that need to be taken on the Update screen:
+        a. Hog Ear Notch - same format as the Sows/Boars Entry - this field is required.
+        b. Customer Name (replaces Customer Code) - this field is required:
+             1. Need to start showing matching customers from the customer table in a drop down as soon as the User starts typing.
+             2. Even though this says Customer Name, need to display any matches for First Name, Last Name or Company Name in the drop down for the User to be able to select.
+         c. Date Sold. This replaces MMDDYY SOLD - this field is required. This is a date field and needs to be able to take the date as:
+             1. MMDDYY, M-D-YY, MM-D-YY, M-DD-YY, MM-DD-YY.
+             2. Above - (dash) can also be / (slash) or . (period).
+             3. YY can also be YYYY.
+             4. Show previously entered Date Sold as YYYY-MM-DD.
+             5. Also date picker from calendar like you have done other places.
+             6. If the Hog Ear Notch in Item A.2.a above matches a Sows/Boars table entry then that Sows/Boars Sold Date field needs to be set to the date entered here.
+        d. Sold Price: whole dollar amount - no decimals - this field is required but 0 (zero) is allowed (and should be displayed as 0 (zero).
+        e. Sale Type: 1 character, no verification, allow any character (upper and lower case), etc - this field is NOT required.
+        f. Invoice Number: Allow 6 digits - integer - no decimals - this field is NOT required.
+        g. App Xfer: Force upper case Y or N only - this field is required.
+        h. Comments: Free format, at least 30 characters. Text box like Sows/Boars Comments would be fine.
+        i. Reason Sold: Free format.
+            1. This field is ONLY displayed if the Hog Ear Notch entered in Item A.2.a above matches an entry in the Sows/Boars table.
+            2. If any text is in the Reason Sold field of the matching Sows/Boars table entry then display that text here.
+            3. If the User makes any changes to the Reason Sold text here than the updated text must also be stored in the Reason Sold field in the matching Sows/Boars table entry.
+    3. Need to have the last 5 Sold Hogs entries from this User displayed on the screen.
+        a. You can either set this Sold Hogs entry up vertically like the Sows/Boars Entry or horizontally like the current Old PIGS Sold Hogs Entry - whichever is easier for you. I'm guessing vertically.
+        b. In either case, we need to have the most recent 5 Sold Hogs entered by the User displayed somewhere on the screen (probably at the bottom) so the User can keep track of where he is when entering many sold hogs at a time.
+        c. These last 5 entries need to be displayed every time this screen is displayed even though the User has logged out and logged back in.
+        d. The lines displayed should look like the Hogs Sold lines displayed in part B below but with the Company & Customer Names included.
+    4. The <F4> Print Bill of Sale option in the Old PIGS will be a later project.
+    5. I need the usual List, Create(Update) and Search Operations.
+    6. Search screen search on these fields:
+        a. Hog Ear Notch
+        b. Customer Name - this will simultaneously search the 3 fields First, Last & Company Name.
+        c. Sold Date
+        d. Invoice Number
+    7. Clicking on any field of the displayed Search records will take the User to the Update screen. (Functionality just like the Customers and Sows/Boars Search screens.)
+
+B. Need a button (Sold Hogs) on the Customers Entry screen to display Sold Hogs for this customer.
+    1. If you want to see what this is replacing in Old PIGS go to F6-Entry, 11.Customer Entry, type in code ALBDAN and press ENTER, F4=SLD HOGS, Enter.
+    2. Place the Sold Hogs button beside or under all 3 of the Save and Cancel button locations as appropriate.
+    3. When the User clicks on the Sold Hogs button:
+        a. Display this Customer Company Name, First Name & Last Name across the top on a new screen. You can left justify the name(s) in this order.
+        b. Display the Sold Hogs for this Customer under the Customer's name with the most recent (by Date Sold) hog at the top of the list.
+    4. List 20 Sold Hogs at a time on the page with the typical paging options as appropriate: Previous  1  2  3  ....  Next
+         a. I would like this number (20) to be a default value stored somewhere that can be easily changed later.
+         b. Need to allow the User to temporarily change this number on the screen right beside the date range and before the Redisplay button (see Item 7 below).
+    5. If there is anything in the Comments and/or Reason Sold fields, these should be displayed on a 2nd (and 3rd, etc.) line of each of the Sold Hog line(s) displayed.
+    6. Total the Sold Price column and display that total after the last Sold Hog displayed. Also count the number of records displayed and display this total line as xx Hogs Total   $xxx,xxx. Example: 12 Hogs Total   $23,125 positioning this total $ amount under the Sold Price.
+    7. Need a Start Date and End Date selection option right below the Customer Name (and above the first Sold Hogs line) so that the User can refine the display of the Sold Hogs to a particular date range (and # of Sold Hogs displayed per page - see item 4 above).
+        a. These selection options and button should be in a single line.
+        b. There would be no dates set in this date range when this screen is initially displayed.
+        c. The Start Date would be the oldest Date Sold of Sold Hogs to display.
+        d. If the Start Date is blank then the display will show hogs up thru the oldest Date Sold of hogs for this customer.
+        e. The End Date would be the newest Date Sold of Sold Hogs to display.
+        f. If the End Date is blank then the display will show hogs up thru the most recent Date Sold of hogs for this customer.
+        g. The xx Hogs Total  $xxx,xxx would be the total of only the Hogs for the date range selected.
+        h. There needs to be a Redisplay button to the right of the date range selection that the User will need to click on to redisplay the Sold Hogs matching his date range (and # per page) selection.
+        i. Allow the User to enter the Start and End dates in the same format as Item A.2.c above as well as the date picker from a calendar (like you do other places). Blank dates must be allowed - see b thru f above.
+        j. The Customer (and/or Company) Name does not need to be displayed on each Hog Sold line since this is a display of only the Sold Hogs for this customer.
+
+C. Some cleanup and additional items for Sows/Boars entry.
+    1. The Born MMDDYY is not being saved.
+    2. Born MMDDYY needs to be changed to Born Date.
+        a. This is a date field but not required - can be blank
+        b. Need to take and display this date just like Items A.2.c.1 thru 5 above.
+    3. Sold MMDDYY needs to be changed to Sold Date.
+        a. This is a date field but not required - can be blank.
+        b. Need to take and display this date just like Items A.2.c.1 thru 5 above.
+        c. If there is a matching Hog Ear Notch in the Sold Hogs table, then this Sold date needs to be updated to the Sold Date in the Sold Hogs table entry.
+    4. If the current Hog Ear Notch matches an entry in the Sold Hogs table, then any text entered or updated in the Reason Sold field needs to also be updated to the Reason Sold field in the Sold Hogs matching table entry.
+    5. Comments are not being saved.
+
+enquiry@navabrindavanam.com
+<*Da2gE3Hide password
+Qwe67890*()
+
+http://www.abcya.com/kindergarten_computers.htm
+http://www.knowledgeadventure.com/grade/kindergarten-games.aspx

@@ -1326,3 +1326,170 @@ Stack trace:
 REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/autocompleteFirstName&term=a
 HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/create
 ---
+2013/10/23 09:14:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "soldHog".' in C:\wamp\www\yii\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('soldHog')
+#1 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=soldHog
+---
+2013/10/23 09:14:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "soldHog/create".' in C:\wamp\www\yii\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('soldHog/create')
+#1 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=soldHog/create
+---
+2013/10/23 10:16:37 [error] [exception.CException] exception 'CException' with message 'Property "CJuiDatePicker.onChange" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('onChange', 'validateDate(th...')
+#1 C:\wamp\www\yii\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(TblSoldHogsController), 'zii.widgets.jui...', Array)
+#2 C:\wamp\www\yii\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.jui...', Array)
+#3 C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\_form.php(45): CBaseController->widget('zii.widgets.jui...', Array)
+#4 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#5 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#7 C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\create.php(19): CController->renderPartial('_form', Array)
+#8 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#9 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(79): CController->render('create', Array)
+#13 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblSoldHogsController->actionCreate()
+#14 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/cre...')
+#24 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#25 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/index
+---
+2013/10/23 10:16:49 [error] [exception.CException] exception 'CException' with message 'Property "CJuiDatePicker.onSelect" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('onSelect', 'validateDate(th...')
+#1 C:\wamp\www\yii\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(TblSoldHogsController), 'zii.widgets.jui...', Array)
+#2 C:\wamp\www\yii\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.jui...', Array)
+#3 C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\_form.php(45): CBaseController->widget('zii.widgets.jui...', Array)
+#4 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#5 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#7 C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\create.php(19): CController->renderPartial('_form', Array)
+#8 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#9 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(79): CController->render('create', Array)
+#13 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblSoldHogsController->actionCreate()
+#14 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/cre...')
+#24 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#25 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/index
+---
+2013/10/23 11:27:42 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 11:27:42 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 11:27:42 [error] [exception.CException] exception 'CException' with message 'TblSoldHogs and its behaviors do not have a method or closure named "getHerd".' in C:\wamp\www\yii\yii\framework\base\CComponent.php:265
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(225): CComponent->__call('getHerd', Array)
+#1 C:\wamp\www\yii\yii\testdrive\protected\models\TblSoldHogs.php(64): CActiveRecord->__call('getHerd', Array)
+#2 C:\wamp\www\yii\yii\testdrive\protected\models\TblSoldHogs.php(64): TblSoldHogs->getHerd()
+#3 C:\wamp\www\yii\yii\framework\validators\CInlineValidator.php(42): TblSoldHogs->validateEarNotch('hog_ear_notch', Array)
+#4 C:\wamp\www\yii\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(TblSoldHogs), 'hog_ear_notch')
+#5 C:\wamp\www\yii\yii\framework\base\CModel.php(159): CValidator->validate(Object(TblSoldHogs), NULL)
+#6 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(794): CModel->validate(NULL)
+#7 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(73): CActiveRecord->save()
+#8 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblSoldHogsController->actionCreate()
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#18 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/cre...')
+#19 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#20 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+---
+2013/10/23 11:29:58 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 11:29:58 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 11:31:59 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 11:31:59 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 11:39:03 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 11:39:03 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 11:39:38 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 11:39:38 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 11:40:18 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 11:40:18 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 12:26:10 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 12:26:10 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 12:26:16 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 12:26:16 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 12:26:39 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 12:26:39 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 12:27:37 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/10/23 12:27:37 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)

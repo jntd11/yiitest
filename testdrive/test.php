@@ -1,6 +1,6 @@
 <?php
-$input1 = "sdfgh";
-$input2 = "sdfgh";
+$input1 = "aaa";
+$input2 = "aaaaa";
 $leng1 = strlen($input1);
 $leng2 = strlen($input2);
 
@@ -21,6 +21,6 @@ if($str == "")
 	$output = 1;
 else
 	$output = strlen($str);
-return $output;
+echo $output;
  
 ?>
