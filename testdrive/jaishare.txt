@@ -1032,3 +1032,5 @@ Qwe67890*()
 
 http://www.abcya.com/kindergarten_computers.htm
 http://www.knowledgeadventure.com/grade/kindergarten-games.aspx
+
+http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/create

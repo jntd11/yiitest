@@ -131,7 +131,7 @@ class SowBoarController extends Controller
 		));
 	}
 
-	public function actionSearch(){
+	public function actionSearch($type=""){
 		$model=new SowBoar;
 		$criteria=new CDbCriteria;
 		$res =array();
@@ -140,11 +140,16 @@ class SowBoarController extends Controller
 		$search = str_replace(".", "-", $search);
 		$search = $this->calculateYear($search);
 		if (isset($search) && $search != "") {
-			$qtxt ="SELECT sow_boar_name FROM sow_boar WHERE ear_notch LIKE :search";
+			if($type == "")
+				$qtxt ="SELECT sow_boar_name FROM sow_boar WHERE ear_notch LIKE :search";
+			else 
+				$qtxt ="SELECT sold_mmddyy, reason_sold FROM sow_boar WHERE ear_notch LIKE :search";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":search", $search, PDO::PARAM_STR);
-			
-			$res =$command->queryColumn();
+			if($type == "")
+				$res =$command->queryColumn();
+			else 
+				$res =$command->queryRow();
 		}else
 			$res ="";
 		

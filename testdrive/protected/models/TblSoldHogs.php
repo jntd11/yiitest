@@ -66,7 +66,8 @@ class TblSoldHogs extends CActiveRecord
 		if(!preg_match($pattern, $this->$attribute,$matches)){
 			$this->addError($attribute, 'Sow/Boar Ear Notch is not in correct format!');
 		}
-		if(!in_array($matches[1], $herds)){
+		
+		if(isset($matches[1]) && !in_array($matches[1], $herds)){
 			$this->addError($attribute, 'This is not a valid Farm & Herd');
 		}
 	}

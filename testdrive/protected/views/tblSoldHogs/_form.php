@@ -21,13 +21,13 @@
 		<?php echo $form->error($model,'hog_ear_notch'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row1">
 		<?php echo $form->labelEx($model,'customer_name'); ?>
 		<?php echo $form->textField($model,'customer_name',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'customer_name'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row1">
 		<?php echo $form->labelEx($model,'date_sold'); ?>
 		<?php //echo $form->textField($model,'date_sold',array('size'=>20,'maxlength'=>20));
 				$this->widget('zii.widgets.jui.CJuiDatePicker', array(
@@ -36,10 +36,11 @@
 						'options' =>array(
 								'dateFormat'=>'mm-dd-yy',
 						),
+						
 						'htmlOptions' => array(
+								'id'=>'date_sold',
 								'size' => '20',         // textField size
 								'maxlength' => '20',    // textField maxlength
-								'onBlur' => 'validateDate(this.value);'
 						),
 				));
 		?>
@@ -82,12 +83,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'reason_sold'); ?>
-		<?php echo $form->textArea($model,'reason_sold',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'reason_sold',array('rows'=>6, 'cols'=>50, 'id'=>'reason_sold')); ?>
 		<?php echo $form->error($model,'reason_sold'); ?>
 	</div>
 	<div>&nbsp;</div>
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('onClick'=>'return validateForm();')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -38,6 +38,7 @@ function checkData(element,type){
 		}
 		val = val.replace(".","-");
 		$("#earnotch").val(val);
+		getDateReason(val);
 	}
 }
 $(document).ready(function(){
@@ -69,11 +70,32 @@ function autoSuggestSearch(){
 		    }
 	});
 }
-
+function getDateReason(val){
+	var search = $("#earnotch").val();
+	$.ajax({
+		url: encodeURI('index.php?r=sowBoar/search'),
+		type: "GET",
+		data: {s:search,type:1}
+	}).done(function(data){
+		var obj = $.parseJSON(data);
+		if(obj != "") {
+			$("#reason_sold").val(obj.reason_sold);
+			var dates = obj.sold_mmddyy;
+			dates = dates.replace(/([0-9][0-9])([0-9][0-9])([0-9][0-9])/,"$1-$2-$3");
+			$("#date_sold").val(dates);
+		}
+	});
+}
 function validateDate(val){
 	var patt = /^(([0-1][0-2])|([0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
 	if(!patt.test(val)){
-		alert("invalid date format")
+		alert("Date Sold - Invalid date format");
+		$("#date_sold").focus();
+		return false;
 		//this.value = ""
 	}
+	return true;
+}
+function validateForm(){
+	return validateDate($("#date_sold").val());
 }

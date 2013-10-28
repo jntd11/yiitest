@@ -69,7 +69,8 @@ class TblSoldHogsController extends Controller
 
 		if(isset($_POST['TblSoldHogs']))
 		{
-			$model->attributes=$_POST['TblSoldHogs'];
+			$model->comments	= $_POST['TblSoldHogs']['comments'];
+			$model->reason_sold	= $_POST['TblSoldHogs']['reason_sold'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->tbl_sold_hogs_id));
 		}
@@ -87,13 +88,16 @@ class TblSoldHogsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['TblSoldHogs']))
 		{
-			$model->attributes=$_POST['TblSoldHogs'];
+			$model->attributes = $_POST['TblSoldHogs'];
+			
+			$model->comments	= $_POST['TblSoldHogs']['comments'];
+			$model->reason_sold	= $_POST['TblSoldHogs']['reason_sold'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->tbl_sold_hogs_id));
 		}
