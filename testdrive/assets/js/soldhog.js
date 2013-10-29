@@ -69,6 +69,36 @@ function autoSuggestSearch(){
 		    	$(this).val(data);
 		    }
 	});
+	
+$("#sow-boar-grid [name='SowBoar[ear_notch]']").autocomplete({
+	    source: 'index.php?r=sowBoar/autocompleteEarNotch',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+	    }
+});
+$("#sow-boar-grid [name='SowBoar[sow_boar_name]']").autocomplete({
+    source: 'index.php?r=sowBoar/autocompleteName',
+    select: function( event, ui ) {
+    	var data = this.name+"="+ui.item.value;
+    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+    }
+});
+$("#sow-boar-grid [name='SowBoar[registeration_no]']").autocomplete({
+    source: 'index.php?r=sowBoar/autocompleteRegister',
+    select: function( event, ui ) {
+    	var data = this.name+"="+ui.item.value;
+    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+    }
+});
+$("#sow-boar-grid [name='SowBoar[born]']").autocomplete({
+    source: 'index.php?r=sowBoar/autocompleteBorn',
+    select: function( event, ui ) {
+    	var data = this.name+"="+ui.item.value;
+    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+    }
+});
+
 }
 function getDateReason(val){
 	var search = $("#earnotch").val();

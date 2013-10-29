@@ -1,6 +1,8 @@
 <?php
 /* @var $this TblSoldHogsController */
 /* @var $model TblSoldHogs */
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/customer.js');
+Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 
 $this->breadcrumbs=array(
 	'Tbl Sold Hogs'=>array('index'),
@@ -8,8 +10,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List TblSoldHogs', 'url'=>array('index')),
-	array('label'=>'Create TblSoldHogs', 'url'=>array('create')),
+	array('label'=>'List Sold Hogs', 'url'=>array('index')),
+	array('label'=>'Create Sold Hogs', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +28,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Tbl Sold Hogs</h1>
+<h1>Manage Sold Hogs</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -45,12 +47,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'tbl_sold_hogs_id',
 		'hog_ear_notch',
 		'customer_name',
 		'date_sold',
-		'sold_price',
-		'sale_type',
+		'invoice_number',
 		/*
 		'invoice_number',
 		'app_xfer',

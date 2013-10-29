@@ -69,15 +69,26 @@ class TblSoldHogsController extends Controller
 
 		if(isset($_POST['TblSoldHogs']))
 		{
+			$model->attributes=$_POST['TblSoldHogs'];
 			$model->comments	= $_POST['TblSoldHogs']['comments'];
 			$model->reason_sold	= $_POST['TblSoldHogs']['reason_sold'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->tbl_sold_hogs_id));
 		}
 
+ 		$dataProvider=new CActiveDataProvider('TblSoldHogs',
+				array(
+						'criteria'=>array(
+								'order'=>'date_sold DESC',
+								'limit'=>5,
+						)
+				)
+		); 
+		
 		$this->render('create',array(
 			'model'=>$model,
-		));
+			'dataProvider'=>$dataProvider,
+		));	
 	}
 
 	/**

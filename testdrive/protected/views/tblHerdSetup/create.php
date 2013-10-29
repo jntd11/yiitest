@@ -14,6 +14,6 @@ $this->menu=array(
 $cs=Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/herdsetup.js');
 ?>
-<h1>Create Farm & Herd</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+
+

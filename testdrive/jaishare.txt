@@ -1034,3 +1034,19 @@ http://www.abcya.com/kindergarten_computers.htm
 http://www.knowledgeadventure.com/grade/kindergarten-games.aspx
 
 http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+
+592a0d177cd1f2447bf7dd90c455a89c
+db936123bd8205393ba25130e3287d3c
+
+
+support@clickatell.com
+https://www.clickatell.com/login/ 
+easymedmobile 
+xperience1 
+Client ID: WTA743
+Login under "Developers Central"
+
+jai
+[28/10/2013 11:14:13 AM] jai: - Detect (from query string) where visitors to our site comes from.
+- Retain the information until booking/payment page.
+- Add the information to the email that should be sent to us after the payment.
