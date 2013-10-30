@@ -13,11 +13,8 @@ $this->menu=array(
 );
 
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
+
 $cs=Yii::app()->clientScript;
-$cs->registerCssFile(
-		$cs->getCoreScriptUrl().
-		'/jui/css/base/jquery-ui-1.10.2.custom.css'
-);
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/soldhog.js');
 
 ?>

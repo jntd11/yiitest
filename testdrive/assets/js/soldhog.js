@@ -62,37 +62,40 @@ $(document).ready(function(){
 });
 
 function autoSuggestSearch(){
-	$("#tbl-sold-hogs-form [name='TblSoldHogs[customer_name]']").autocomplete({
-		    source: 'index.php?r=tblSoldHogs/autocompleteFirstName',
-		    select: function( event, ui ) {
-		    	var data = ui.item.value;
-		    	$(this).val(data);
-		    }
-	});
+
+$("#tbl-sold-hogs-form [name='TblSoldHogs[customer_name]']").autocomplete({
+	    source: 'index.php?r=tblSoldHogs/autocompleteFirstName',
+	    select: function( event, ui ) {
+	    	var data = ui.item.value;
+	    	$(this).val(data);
+	    }
+});
 	
-$("#sow-boar-grid [name='SowBoar[ear_notch]']").autocomplete({
-	    source: 'index.php?r=sowBoar/autocompleteEarNotch',
+	
+$("#tbl-sold-hogs-grid [name='TblSoldHogs[hog_ear_notch]']").autocomplete({
+	    source: 'index.php?r=tblSoldHogs/autocompleteEarNotch',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
 	    	$('#sow-boar-grid').yiiGridView('update', {data: data});
 	    }
 });
-$("#sow-boar-grid [name='SowBoar[sow_boar_name]']").autocomplete({
-    source: 'index.php?r=sowBoar/autocompleteName',
+
+$("#tbl-sold-hogs-grid [name='TblSoldHogs[date_sold]']").autocomplete({
+    source: 'index.php?r=tblSoldHogs/autocompleteDateSold',
     select: function( event, ui ) {
     	var data = this.name+"="+ui.item.value;
     	$('#sow-boar-grid').yiiGridView('update', {data: data});
     }
 });
-$("#sow-boar-grid [name='SowBoar[registeration_no]']").autocomplete({
-    source: 'index.php?r=sowBoar/autocompleteRegister',
+$("#tbl-sold-hogs-grid [name='TblSoldHogs[invoice_number]']").autocomplete({
+    source: 'index.php?r=tblSoldHogs/autocompleteInvoice',
     select: function( event, ui ) {
     	var data = this.name+"="+ui.item.value;
     	$('#sow-boar-grid').yiiGridView('update', {data: data});
     }
 });
-$("#sow-boar-grid [name='SowBoar[born]']").autocomplete({
-    source: 'index.php?r=sowBoar/autocompleteBorn',
+$("#tbl-sold-hogs-grid [name='TblSoldHogs[customer_name]']").autocomplete({
+    source: 'index.php?r=tblSoldHogs/autocompleteName',
     select: function( event, ui ) {
     	var data = this.name+"="+ui.item.value;
     	$('#sow-boar-grid').yiiGridView('update', {data: data});

@@ -28,7 +28,7 @@ class TblSoldHogsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','AutocompleteFirstName'),
+				'actions'=>array('index','view','AutocompleteFirstName','AutocompleteEarNotch','AutocompleteDateSold','AutocompleteInvoice','AutocompleteName'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -193,6 +193,57 @@ class TblSoldHogsController extends Controller
 			$qtxt ="SELECT first_name FROM tbl_customer_entry WHERE first_name LIKE :username  
 			UNION SELECT company_name FROM tbl_customer_entry WHERE company_name LIKE :username 
 			UNION SELECT last_name FROM tbl_customer_entry WHERE last_name LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	
+	public function actionAutocompleteEarNotch() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT hog_ear_notch FROM   tbl_sold_hogs WHERE hog_ear_notch LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	
+	public function actionAutocompleteName() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT customer_name 	 FROM   tbl_sold_hogs WHERE customer_name LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+
+	public function actionAutocompleteDateSold() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT date_sold FROM   tbl_sold_hogs WHERE date_sold LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompleteInvoice() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT invoice_number FROM   tbl_sold_hogs WHERE invoice_number LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
