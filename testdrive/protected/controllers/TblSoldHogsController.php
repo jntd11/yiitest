@@ -28,7 +28,7 @@ class TblSoldHogsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','AutocompleteFirstName','AutocompleteEarNotch','AutocompleteDateSold','AutocompleteInvoice','AutocompleteName'),
+				'actions'=>array('index','view','AutocompleteFirstName','AutocompleteEarNotch','AutocompleteDateSold','AutocompleteInvoice','AutocompleteName','soldlist'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -143,6 +143,22 @@ class TblSoldHogsController extends Controller
 		));
 	}
 
+	/**
+	 * Lists all models.
+	 */
+	public function actionSoldlist()
+	{
+		$crit =  new CDbCriteria();
+		$model=new TblSoldHogs('getlist');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['TblSoldHogs']))
+			$model->attributes=$_GET['TblSoldHogs'];
+		
+		$this->render('soldlist',array(
+			'model'=>$model,
+		));
+	}
+	
 	/**
 	 * Manages all models.
 	 */

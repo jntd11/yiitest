@@ -492,6 +492,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 	<div class="row">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblCustomerEntry/index"')); ?>
+		<?php if(!$model->isNewRecord) echo CHtml::Button('Sold Hogs', array('onClick'=>"window.location='index.php?r=tblSoldHogs/soldlist&id=".$model->getPrimaryKey()."'")); ?>
 	</div>
 <?php $this->endWidget(); ?>
 	<p class="note">Fields with <span class="required">*</span> are required.</p>

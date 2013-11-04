@@ -992,7 +992,7 @@ A. The Sold Hogs screens will be under the Entry menu bar option just under the 
     7. Clicking on any field of the displayed Search records will take the User to the Update screen. (Functionality just like the Customers and Sows/Boars Search screens.)
 
 B. Need a button (Sold Hogs) on the Customers Entry screen to display Sold Hogs for this customer.
-    1. If you want to see what this is replacing in Old PIGS go to F6-Entry, 11.Customer Entry, type in code ALBDAN and press ENTER, F4=SLD HOGS, Enter.
+    1. If you want to see what this is replacing in Old PIGS go to F6-Entry, 11.Customer Entry, type in code ALBDAN and press ENTER, F4=SLD HOGS, Enter. BJUTOM
     2. Place the Sold Hogs button beside or under all 3 of the Save and Cancel button locations as appropriate.
     3. When the User clicks on the Sold Hogs button:
         a. Display this Customer Company Name, First Name & Last Name across the top on a new screen. You can left justify the name(s) in this order.
@@ -1050,3 +1050,4 @@ jai
 [28/10/2013 11:14:13 AM] jai: - Detect (from query string) where visitors to our site comes from.
 - Retain the information until booking/payment page.
 - Add the information to the email that should be sent to us after the payment.
+http://www.yiiframework.com/wiki/157/keeping-a-running-total-in-a-cgridview/

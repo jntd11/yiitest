@@ -131,9 +131,40 @@ class TblSoldHogs extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	public function getlist($pagecount=0)
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+	
+		$criteria=new CDbCriteria;
+	
+		$criteria->compare('tbl_sold_hogs_id',$this->tbl_sold_hogs_id);
+		$criteria->compare('hog_ear_notch',$this->hog_ear_notch,true);
+		$criteria->compare('customer_name',$this->customer_name,true);
+		$criteria->compare('date_sold',$this->date_sold,true);
+		$criteria->compare('sold_price',$this->sold_price);
+		$criteria->compare('sale_type',$this->sale_type,true);
+		$criteria->compare('invoice_number',$this->invoice_number);
+		$criteria->compare('app_xfer',$this->app_xfer,true);
+		$criteria->compare('comments',$this->comments,true);
+		$criteria->compare('reason_sold',$this->reason_sold,true);
+		$criteria->compare('date_modified',$this->date_modified,true);
+		//$count = $this->count($criteria);
+		return new CActiveDataProvider($this, array(
+				'criteria'=>$criteria,
+				'pagination'=>($pagecount > 0)?array('pagesize'=>2):false,
+		));
+	}
 	public function getHerd(){
 		$qu = "select farm_herd from tbl_herd_setup";
 		$cmd = YII::app()->db->createCommand($qu);
 		return $res = $cmd->queryColumn();
+	}
+	
+	public static function sumPrice($provider){
+		$total=0;
+		foreach($provider->data as $item)
+			$total+=$item->sold_price;
+		return $total;
 	}
 }

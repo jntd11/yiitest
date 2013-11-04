@@ -102,6 +102,13 @@ $("#tbl-sold-hogs-grid [name='TblSoldHogs[customer_name]']").autocomplete({
     }
 });
 
+$("#jaitest").autocomplete({
+    source: 'index.php?r=tblSoldHogs/autocompleteName',
+    select: function( event, ui ) {
+    	var data = ui.item.value;
+    	$(this).val(data);
+    }
+});
 }
 function getDateReason(val){
 	var search = $("#earnotch").val();

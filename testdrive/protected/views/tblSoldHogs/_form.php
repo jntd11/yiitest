@@ -20,14 +20,12 @@
 		<?php echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1)','id'=>'earnotch')); ?>
 		<?php echo $form->error($model,'hog_ear_notch'); ?>
 	</div>
-
-	<div class="row1">
-		<?php echo $form->labelEx($model,'customer_name'); ?>
+	<div class="row">
+	<?php echo $form->labelEx($model,'customer_name'); ?>
 		<?php echo $form->textField($model,'customer_name',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'customer_name'); ?>
 	</div>
-
-	<div class="row1">
+	<div class="row">
 		<?php echo $form->labelEx($model,'date_sold'); ?>
 		<?php //echo $form->textField($model,'date_sold',array('size'=>20,'maxlength'=>20));
 				$this->widget('zii.widgets.jui.CJuiDatePicker', array(
