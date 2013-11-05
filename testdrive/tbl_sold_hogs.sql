@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 22, 2013 at 09:19 AM
+-- Generation Time: Nov 05, 2013 at 12:50 PM
 -- Server version: 5.5.23
 -- PHP Version: 5.3.10
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `tbl_sold_hogs` (
   `tbl_sold_hogs_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cust_id` int(11) NOT NULL,
   `hog_ear_notch` varchar(20) NOT NULL,
   `customer_name` varchar(50) NOT NULL,
   `date_sold` varchar(20) NOT NULL,
@@ -35,11 +36,21 @@ CREATE TABLE IF NOT EXISTS `tbl_sold_hogs` (
   `sale_type` varchar(1) NOT NULL,
   `invoice_number` int(6) NOT NULL,
   `app_xfer` varchar(1) NOT NULL,
-  `comments` text NOT NULL,
-  `reason_sold` text NOT NULL,
+  `comments` text,
+  `reason_sold` text,
   `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`tbl_sold_hogs_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `tbl_sold_hogs`
+--
+
+INSERT INTO `tbl_sold_hogs` (`tbl_sold_hogs_id`, `cust_id`, `hog_ear_notch`, `customer_name`, `date_sold`, `sold_price`, `sale_type`, `invoice_number`, `app_xfer`, `comments`, `reason_sold`, `date_modified`) VALUES
+(1, 2, '2B C 13 192-2', 'Test Jai', '01-01-2010', 11, 'S', 1212, 'Y', 'asas', 'aasas', '2013-10-25 11:16:03'),
+(2, 2, '1A aa 9 1-2', 'jai', '10-16-2013', 1212, '', 0, 'Y', '', '', '2013-10-29 12:48:51'),
+(3, 2, '1A aa 13 300-1', 'jai', '10-15-2013', 12121, 'S', 0, 'N', '', 'this is test', '2013-10-29 12:49:35'),
+(4, 3, '1A aa 81 300-2', 'Nagarjana', '11-04-2013', 1222, 'S', 0, 'Y', 'as asas', 'asasas  asas', '2013-11-04 08:51:03');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
