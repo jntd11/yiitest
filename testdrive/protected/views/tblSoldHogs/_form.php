@@ -23,6 +23,7 @@
 	<div class="row">
 	<?php echo $form->labelEx($model,'customer_name'); ?>
 		<?php echo $form->textField($model,'customer_name',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->hiddenField($model, 'cust_id',array('id'=>'cust_id')); ?>
 		<?php echo $form->error($model,'customer_name'); ?>
 	</div>
 	<div class="row">

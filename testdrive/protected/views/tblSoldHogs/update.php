@@ -14,6 +14,8 @@ $this->menu=array(
 	array('label'=>'View Sold Hogs', 'url'=>array('view', 'id'=>$model->tbl_sold_hogs_id)),
 	array('label'=>'Manage Sold Hogs', 'url'=>array('admin')),
 );
+$cs=Yii::app()->clientScript;
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/soldhog.js');
 ?>
 
 <h1>Update Sold Hogs <?php echo $model->tbl_sold_hogs_id; ?></h1>

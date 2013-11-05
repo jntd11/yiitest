@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'tbl_sold_hogs':
  * @property integer $tbl_sold_hogs_id
+ * @property integer $cust_id
  * @property string $hog_ear_notch
  * @property string $customer_name
  * @property string $date_sold
@@ -91,6 +92,7 @@ class TblSoldHogs extends CActiveRecord
 	{
 		return array(
 			'tbl_sold_hogs_id' => 'Tbl Sold Hogs',
+			'cust_id' => 'Customer id',
 			'hog_ear_notch' => 'Hog Ear Notch',
 			'customer_name' => 'Customer Name',
 			'date_sold' => 'Date Sold',
@@ -137,22 +139,26 @@ class TblSoldHogs extends CActiveRecord
 		// should not be searched.
 	
 		$criteria=new CDbCriteria;
-	
-		$criteria->compare('tbl_sold_hogs_id',$this->tbl_sold_hogs_id);
-		$criteria->compare('hog_ear_notch',$this->hog_ear_notch,true);
-		$criteria->compare('customer_name',$this->customer_name,true);
-		$criteria->compare('date_sold',$this->date_sold,true);
-		$criteria->compare('sold_price',$this->sold_price);
-		$criteria->compare('sale_type',$this->sale_type,true);
-		$criteria->compare('invoice_number',$this->invoice_number);
-		$criteria->compare('app_xfer',$this->app_xfer,true);
-		$criteria->compare('comments',$this->comments,true);
-		$criteria->compare('reason_sold',$this->reason_sold,true);
-		$criteria->compare('date_modified',$this->date_modified,true);
+		$start_date = '01-01-1900';
+		$end_date = date("m-d-Y");
+		if(isset($_POST['start_date']) && !empty($_POST['start_date']))
+			$start_date = $_POST['start_date'];
+		if(isset($_POST['end_date']) && !empty($_POST['end_date']))
+			$end_date = $_POST['end_date'];
+		
+		$pages = 1;
+		if(isset($_GET['pages']))
+			$pages = $_GET['pages'];
+		if(isset($_POST['pages']))
+			$pages = $_POST['pages'];
+		
+		$criteria->addBetweenCondition('date_sold',$start_date,$end_date);
+		$criteria->compare('cust_id',$this->cust_id,true);
+		//$criteria->compare('date_sold',$this->date_sold,true);
 		//$count = $this->count($criteria);
 		return new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,
-				'pagination'=>($pagecount > 0)?array('pagesize'=>2):false,
+				'pagination'=>($pagecount > 0)?array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'id'=>$this->cust_id)):false,
 		));
 	}
 	public function getHerd(){

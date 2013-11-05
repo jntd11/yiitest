@@ -1050,3 +1050,28 @@ jai
 [28/10/2013 11:14:13 AM] jai: - Detect (from query string) where visitors to our site comes from.
 - Retain the information until booking/payment page.
 - Add the information to the email that should be sent to us after the payment.
+http://www.yiiframework.com/wiki/157/keeping-a-running-total-in-a-cgridview/
+
+Bill no: 40489779153
+Phone 28241234
+
+
+ID: 408 380 278
+ PW: rvn942
+
+    We are waiting to move the www.neted.com.au hosting location to the godaddy servers until the middle of next week. We will need your help with that operation. In the meantime, we would like to setup the subdomain www.e-campus.neted.com.au to point to what is currently www.neted.com.au/e-campus . I have attempted to setup subdomain forwarding in the godaddy DNS server control panel but it doesn't appear to be working. Is it possible to set this up before moving the www.neted.com.au to the godaddy server? Thank you,
+
+
+Jai,
+  Here is the account information for the godaddy account.
+Username: 56584279
+PW: Julatten1
+
+http://neted.com.au/
+NameVirtualHost *:80
+<VirtualHost *:80>
+     ServerName e-campus.neted.com.au
+     DocumentRoot "/Library/Server/Web/Data/Sites/Default/e-campus"
+</VirtualHost>
+
+http://krypted.com/mac-os-x/setting-up-and-using-web-services-in-os-x-mountain-lion-server/

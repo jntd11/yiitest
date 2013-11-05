@@ -66,8 +66,10 @@ function autoSuggestSearch(){
 $("#tbl-sold-hogs-form [name='TblSoldHogs[customer_name]']").autocomplete({
 	    source: 'index.php?r=tblSoldHogs/autocompleteFirstName',
 	    select: function( event, ui ) {
-	    	var data = ui.item.value;
-	    	$(this).val(data);
+	    	var data = ui.item.label;
+	    	$("#tbl-sold-hogs-form [name='TblSoldHogs[customer_name]']").val(ui.item.label);
+	    	$("#cust_id").val(ui.item.value);
+	    	return false;
 	    }
 });
 	
@@ -129,7 +131,7 @@ function getDateReason(val){
 function validateDate(val){
 	var patt = /^(([0-1][0-2])|([0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
 	if(!patt.test(val)){
-		alert("Date Sold - Invalid date format");
+		alert("Date - Invalid date format");
 		$("#date_sold").focus();
 		return false;
 		//this.value = ""
@@ -138,4 +140,13 @@ function validateDate(val){
 }
 function validateForm(){
 	return validateDate($("#date_sold").val());
+}
+function validateSearch(){
+	var  startBool = true;
+	if($("#start_date").val() != "")
+		startBool = startBool && validateDate($("#start_date").val());
+	if($("#end_date").val() != "")
+		startBool = startBool && validateDate($("#end_date").val());
+	
+	return startBool;
 }

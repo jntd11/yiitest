@@ -109,6 +109,7 @@ class TblSoldHogsController extends Controller
 			
 			$model->comments	= $_POST['TblSoldHogs']['comments'];
 			$model->reason_sold	= $_POST['TblSoldHogs']['reason_sold'];
+			$model->cust_id	= $_POST['TblSoldHogs']['cust_id'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->tbl_sold_hogs_id));
 		}
@@ -148,14 +149,20 @@ class TblSoldHogsController extends Controller
 	 */
 	public function actionSoldlist()
 	{
+		
 		$crit =  new CDbCriteria();
 		$model=new TblSoldHogs('getlist');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['TblSoldHogs']))
-			$model->attributes=$_GET['TblSoldHogs'];
+		$custmormodel = null;
+		if(isset($_GET['id'])) {
+			$model->cust_id =$_GET['id'];
+			$custmormodel = TblCustomerEntry::model()->findByPk($model->cust_id);
+		}
 		
+				
 		$this->render('soldlist',array(
 			'model'=>$model,
+			'custmormodel'=>$custmormodel,
 		));
 	}
 	
@@ -206,13 +213,14 @@ class TblSoldHogsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT first_name FROM tbl_customer_entry WHERE first_name LIKE :username  
-			UNION SELECT company_name FROM tbl_customer_entry WHERE company_name LIKE :username 
-			UNION SELECT last_name FROM tbl_customer_entry WHERE last_name LIKE :username";
+			$qtxt ="SELECT first_name as label, customer_entry_id  as value FROM tbl_customer_entry WHERE first_name LIKE :username  
+			UNION SELECT company_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE company_name LIKE :username 
+			UNION SELECT last_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE last_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
-			$res =$command->queryColumn();
+			$res =$command->queryAll();
 		}
+		
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
