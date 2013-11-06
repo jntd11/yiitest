@@ -15,6 +15,7 @@
  * @property string $app_xfer
  * @property string $comments
  * @property string $reason_sold
+ * @property integer $ear_notch_id
  * @property string $date_modified
  */
 class TblSoldHogs extends CActiveRecord
@@ -146,7 +147,7 @@ class TblSoldHogs extends CActiveRecord
 		if(isset($_POST['end_date']) && !empty($_POST['end_date']))
 			$end_date = $_POST['end_date'];
 		
-		$pages = 1;
+		$pages = 20;
 		if(isset($_GET['pages']))
 			$pages = $_GET['pages'];
 		if(isset($_POST['pages']))

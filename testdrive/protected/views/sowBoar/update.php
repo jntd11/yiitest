@@ -2,7 +2,7 @@
 /* @var $this SowBoarController */
 /* @var $model SowBoar */
 $cs=Yii::app()->clientScript;
-$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowboar.js');
 $this->breadcrumbs=array(
 	'Sow/Boars'=>array('index'),

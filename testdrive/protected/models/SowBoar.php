@@ -101,7 +101,7 @@ class SowBoar extends CActiveRecord
 			'sow_boar_name' => 'Sow/Boar Name',
 			'sow_boar_id' => 'Sow Boar',
 			'registeration_no' => 'Registeration #',
-			'born' => 'Born MMDDYY',
+			'born' => 'Born Date',
 			'no_pigs' => '# Pigs In Litter',
 			'weight_21' => '21 Days Weight',
 			'sire_notch' => 'Sire Ear Notch',

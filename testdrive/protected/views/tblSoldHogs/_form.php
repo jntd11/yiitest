@@ -19,6 +19,7 @@
 		<?php echo $form->labelEx($model,'hog_ear_notch'); ?>
 		<?php echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1)','id'=>'earnotch')); ?>
 		<?php echo $form->error($model,'hog_ear_notch'); ?>
+		<?php echo $form->hiddenField($model, 'ear_notch_id',array('id'=>'ear_notch_id')); ?>
 	</div>
 	<div class="row">
 	<?php echo $form->labelEx($model,'customer_name'); ?>
@@ -81,7 +82,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'reason_sold'); ?>
+		<?php echo $form->labelEx($model,'reason_sold',array('id'=>'label_reason_sold')); ?>
 		<?php echo $form->textArea($model,'reason_sold',array('rows'=>6, 'cols'=>50, 'id'=>'reason_sold')); ?>
 		<?php echo $form->error($model,'reason_sold'); ?>
 	</div>

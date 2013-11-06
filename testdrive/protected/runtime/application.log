@@ -4024,3 +4024,470 @@ REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs%2Fsoldlist&a=10&TblSoldHo
 in C:\wamp\www\yii\yii\testdrive\protected\models\TblSoldHogs.php (159)
 in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\soldlist.php (108)
 in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (166)
+2013/11/06 09:13:36 [error] [php] Undefined variable: dataProviderFull (C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\create.php:37)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(869): TblSoldHogsController->renderFile()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(782): TblSoldHogsController->renderPartial()
+#2 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(91): TblSoldHogsController->render()
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblSoldHogsController->actionCreate()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblSoldHogsController->runAction()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblSoldHogsController->filterAccessControl()
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblSoldHogsController->runActionWithFilters()
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblSoldHogsController->run()
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\create.php (37)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (91)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:13:49 [error] [php] Undefined variable: formatter (C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\create.php:37)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(869): TblSoldHogsController->renderFile()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(782): TblSoldHogsController->renderPartial()
+#2 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(91): TblSoldHogsController->render()
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblSoldHogsController->actionCreate()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblSoldHogsController->runAction()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblSoldHogsController->filterAccessControl()
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblSoldHogsController->runActionWithFilters()
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblSoldHogsController->run()
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\create.php (37)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (91)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:16:43 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:16:43 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:16:43 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:16:43 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1364 Field 'cust_id' doesn't have a default value. The SQL statement executed was: INSERT INTO `tbl_sold_hogs` (`hog_ear_notch`, `customer_name`, `date_sold`, `sold_price`, `sale_type`, `invoice_number`, `app_xfer`, `comments`, `reason_sold`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (75)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:16:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1364 Field 'cust_id' doesn't have a default value. The SQL statement executed was: INSERT INTO `tbl_sold_hogs` (`hog_ear_notch`, `customer_name`, `date_sold`, `sold_price`, `sale_type`, `invoice_number`, `app_xfer`, `comments`, `reason_sold`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\yii\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(75): CActiveRecord->save()
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblSoldHogsController->actionCreate()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/cre...')
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+---
+2013/11/06 09:18:17 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:18:17 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:18:17 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:18:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1364 Field 'cust_id' doesn't have a default value. The SQL statement executed was: INSERT INTO `tbl_sold_hogs` (`hog_ear_notch`, `customer_name`, `date_sold`, `sold_price`, `sale_type`, `invoice_number`, `app_xfer`, `comments`, `reason_sold`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (75)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:18:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1364 Field 'cust_id' doesn't have a default value. The SQL statement executed was: INSERT INTO `tbl_sold_hogs` (`hog_ear_notch`, `customer_name`, `date_sold`, `sold_price`, `sale_type`, `invoice_number`, `app_xfer`, `comments`, `reason_sold`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp\www\yii\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(75): CActiveRecord->save()
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblSoldHogsController->actionCreate()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/cre...')
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+---
+2013/11/06 09:19:08 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:19:08 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:19:08 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:48:39 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where ear_notch = "1A aa 13 300-1" LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `sow_boar` `t` WHERE  where ear_notch = "1A aa 13 300-1" LIMIT 1.
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (108)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 09:48:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where ear_notch = "1A aa 13 300-1" LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `sow_boar` `t` WHERE  where ear_notch = "1A aa 13 300-1" LIMIT 1' in C:\wamp\www\yii\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\CDbCommand.php(414): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(1297): CDbCommand->queryRow()
+#2 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(1402): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(108): CActiveRecord->find(' where ear_notc...')
+#4 [internal function]: TblSoldHogsController->actionUpdate('3')
+#5 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TblSoldHogsController), Array)
+#6 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TblSoldHogsController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#16 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/upd...')
+#17 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/update/id/3
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/index
+---
+2013/11/06 09:49:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php:204
+Stack trace:
+#0 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(106): TblSoldHogsController->loadModel('')
+#1 [internal function]: TblSoldHogsController->actionUpdate('')
+#2 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TblSoldHogsController), Array)
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TblSoldHogsController), Object(ReflectionMethod), Array)
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/upd...')
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/update/id/
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/index
+---
+2013/11/06 10:05:17 [warning] [application] Failed to set unsafe attribute "ear_notch_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (115)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:05:17 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (115)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:05:17 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (115)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:05:17 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (115)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:13:28 [error] [php] Trying to get property of non-object (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php:111)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblSoldHogsController->runAction()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblSoldHogsController->filterAccessControl()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblSoldHogsController->runActionWithFilters()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblSoldHogsController->run()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/update/id/4
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (111)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:16:40 [warning] [application] Failed to set unsafe attribute "ear_notch_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:16:40 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:16:40 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:16:40 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:16:40 [error] [exception.CException] exception 'CException' with message 'Property "TblSoldHogs.sold_mmddyy" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('sold_mmddyy')
+#1 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(128): CActiveRecord->__get('sold_mmddyy')
+#2 [internal function]: TblSoldHogsController->actionUpdate('4')
+#3 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TblSoldHogsController), Array)
+#4 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TblSoldHogsController), Object(ReflectionMethod), Array)
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#14 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/upd...')
+#15 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/update/id/4
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/update/id/4
+---
+2013/11/06 10:17:20 [warning] [application] Failed to set unsafe attribute "ear_notch_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:17:20 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:17:20 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:17:20 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:18:10 [warning] [application] Failed to set unsafe attribute "ear_notch_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:18:10 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:18:10 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:18:10 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:19:46 [warning] [application] Failed to set unsafe attribute "ear_notch_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:19:46 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:19:46 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:19:46 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:20:06 [warning] [application] Failed to set unsafe attribute "ear_notch_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:20:06 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:20:06 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:20:06 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:29:57 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (121)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:29:57 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (121)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:29:57 [warning] [application] Failed to set unsafe attribute "notes" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (122)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:29:57 [warning] [application] Failed to set unsafe attribute "notes1" of "TblCustomerEntry".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblCustomerEntryController.php (122)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:31:23 [error] [exception.CException] exception 'CException' with message 'Property "SowBoar.date_sold" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('date_sold')
+#1 C:\wamp\www\yii\yii\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('date_sold')
+#2 C:\wamp\www\yii\yii\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(SowBoar), 'date_sold')
+#3 C:\wamp\www\yii\yii\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(SowBoar), 'date_sold', Array)
+#4 C:\wamp\www\yii\yii\framework\zii\widgets\jui\CJuiDatePicker.php(82): CHtml::activeTextField(Object(SowBoar), 'date_sold', Array)
+#5 C:\wamp\www\yii\yii\framework\web\CBaseController.php(173): CJuiDatePicker->run()
+#6 C:\wamp\www\yii\yii\testdrive\protected\views\sowBoar\_form.php(66): CBaseController->widget('zii.widgets.jui...', Array)
+#7 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#8 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#10 C:\wamp\www\yii\yii\testdrive\protected\views\sowBoar\update.php(23): CController->renderPartial('_form', Array)
+#11 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#12 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#14 C:\wamp\www\yii\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#15 C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php(198): CController->render('update', Array)
+#16 [internal function]: SowBoarController->actionUpdate('2')
+#17 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SowBoarController), Array)
+#18 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SowBoarController), Object(ReflectionMethod), Array)
+#19 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#28 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sowBoar/update/...')
+#29 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#30 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#31 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=sowBoar/update/id/2
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=sowBoar/admin
+---
+2013/11/06 10:33:40 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (178)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:33:40 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (178)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:34:21 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (178)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:34:21 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (178)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:35:11 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (178)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:35:11 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (178)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:36:54 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (177)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:36:54 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (177)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:37:24 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (177)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 10:37:24 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (177)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:24:52 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (177)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:24:52 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (177)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:25:23 [warning] [application] Failed to set unsafe attribute "born" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (177)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:25:23 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (177)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:27:19 [warning] [application] Failed to set unsafe attribute "ear_notch_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:27:19 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:27:19 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:27:19 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:29:18 [warning] [application] Failed to set unsafe attribute "ear_notch_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:29:18 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:29:18 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:29:18 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (117)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:31:19 [warning] [application] Failed to set unsafe attribute "ear_notch_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:31:19 [warning] [application] Failed to set unsafe attribute "cust_id" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:31:19 [warning] [application] Failed to set unsafe attribute "comments" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:31:19 [warning] [application] Failed to set unsafe attribute "reason_sold" of "TblSoldHogs".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (72)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:34:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf16_bin,IMPLICIT) and (utf8_general_ci,IMPLICIT) for operation 'UNION'. The SQL statement executed was: SELECT first_name as label, customer_entry_id  as value FROM tbl_customer_entry WHERE first_name LIKE :username  
+			UNION SELECT company_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE company_name LIKE :username 
+			UNION SELECT last_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE last_name LIKE :username.
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (238)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:34:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf16_bin,IMPLICIT) and (utf8_general_ci,IMPLICIT) for operation 'UNION'. The SQL statement executed was: SELECT first_name as label, customer_entry_id  as value FROM tbl_customer_entry WHERE first_name LIKE :username  
+			UNION SELECT company_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE company_name LIKE :username 
+			UNION SELECT last_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE last_name LIKE :username' in C:\wamp\www\yii\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(238): CDbCommand->queryAll()
+#2 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblSoldHogsController->actionAutocompleteFirstName()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('autocompleteFir...')
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/aut...')
+#13 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/autocompleteFirstName&term=b
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+---
+2013/11/06 11:34:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf16_bin,IMPLICIT) and (utf8_general_ci,IMPLICIT) for operation 'UNION'. The SQL statement executed was: SELECT first_name as label, customer_entry_id  as value FROM tbl_customer_entry WHERE first_name LIKE :username  
+			UNION SELECT company_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE company_name LIKE :username 
+			UNION SELECT last_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE last_name LIKE :username.
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (238)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/06 11:34:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf16_bin,IMPLICIT) and (utf8_general_ci,IMPLICIT) for operation 'UNION'. The SQL statement executed was: SELECT first_name as label, customer_entry_id  as value FROM tbl_customer_entry WHERE first_name LIKE :username  
+			UNION SELECT company_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE company_name LIKE :username 
+			UNION SELECT last_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE last_name LIKE :username' in C:\wamp\www\yii\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(238): CDbCommand->queryAll()
+#2 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblSoldHogsController->actionAutocompleteFirstName()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('autocompleteFir...')
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/aut...')
+#13 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/autocompleteFirstName&term=na
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/create
+---

@@ -121,11 +121,24 @@ function getDateReason(val){
 	}).done(function(data){
 		var obj = $.parseJSON(data);
 		if(obj != "") {
-			$("#reason_sold").val(obj.reason_sold);
+			$("#reason_sold").show();
+			$("#label_reason_sold").show();
+			if(obj.reason_sold == "") {
+				//$("#reason_sold").hide();
+				//$("#label_reason_sold").hide();
+			}else{
+				$("#reason_sold").val(obj.reason_sold);
+			}
+			if(obj.sow_boar_id == "")
+				$("#ear_notch_id").val(0);
+			else
+				$("#ear_notch_id").val(obj.sow_boar_id);
+			
 			var dates = obj.sold_mmddyy;
 			dates = dates.replace(/([0-9][0-9])([0-9][0-9])([0-9][0-9])/,"$1-$2-$3");
 			$("#date_sold").val(dates);
 		}
+		
 	});
 }
 function validateDate(val){
@@ -134,7 +147,6 @@ function validateDate(val){
 		alert("Date - Invalid date format");
 		$("#date_sold").focus();
 		return false;
-		//this.value = ""
 	}
 	return true;
 }

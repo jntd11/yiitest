@@ -121,6 +121,7 @@ class SowBoarController extends Controller
 				$model->sire_notch = $this->calculateYear($model->sire_notch);
 			if($model->dam_notch != "")
 				$model->dam_notch = $this->calculateYear($model->dam_notch);
+			$model->comments = $_POST['SowBoar']['comments'];
 		 	$model->save();
 			//if($model->save())
 				//$this->redirect(array('index','id'=>$model->sow_boar_id));
@@ -143,7 +144,7 @@ class SowBoarController extends Controller
 			if($type == "")
 				$qtxt ="SELECT sow_boar_name FROM sow_boar WHERE ear_notch LIKE :search";
 			else 
-				$qtxt ="SELECT sold_mmddyy, reason_sold FROM sow_boar WHERE ear_notch LIKE :search";
+				$qtxt ="SELECT sold_mmddyy, reason_sold, sow_boar_id FROM sow_boar WHERE ear_notch LIKE :search";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":search", $search, PDO::PARAM_STR);
 			if($type == "")
@@ -164,7 +165,7 @@ class SowBoarController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		
+		//exit;
 		$ear_notch_array =  preg_split("/ /", $model->ear_notch);
 		$ear_notch_array[2] = preg_replace("/[0-9][0-9]([0-9][0-9])/", "$1", $ear_notch_array[2]);
 		$model->ear_notch = implode(" ", $ear_notch_array);
@@ -174,10 +175,10 @@ class SowBoarController extends Controller
 		if(isset($_POST['SowBoar']))
 		{
 			$model->attributes=$_POST['SowBoar'];
+			$model->born = $_POST['SowBoar']['born'];
+			$model->comments = $_POST['SowBoar']['comments'];
 			if($model->ear_notch != "")
 		 		$model->ear_notch = $this->calculateYear($model->ear_notch);
-			
-		 		
 		 	$model->sire_notch = str_replace(".", "-", $model->sire_notch);
 		 	$model->dam_notch = str_replace(".", "-", $model->dam_notch);
 		 	if($model->sire_notch != "")

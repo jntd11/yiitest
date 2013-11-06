@@ -49,7 +49,22 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'born'); ?>
-		<?php echo $form->textField($model,'born',array('tabindex'=>4)); ?>
+		<?php //echo $form->textField($model,'born',array('tabindex'=>4)); 
+			  $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			  		'model' => $model,
+			  		'attribute' => 'born',
+			  		'options' =>array(
+			  				'dateFormat'=>'mm-dd-yy',
+			  		),
+			  
+			  		'htmlOptions' => array(
+			  				'id'=>'born',
+			  				'size' => '20',         // textField size
+			  				'maxlength' => '20',    // textField maxlength
+			  				'tabindex'=>4
+			  		),
+			  ));
+		?>
 		<?php echo $form->error($model,'born'); ?>
 	</div></td><td>&nbsp;</td></tr>
 
@@ -138,7 +153,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 	</div></td></tr>
 </table>
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('onClick'=>'return validateForm();')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelSow()')); ?>
 		<?php echo CHtml::Button('Sire',array('onClick'=>'gerSireDam(1)')); ?>
 		<?php echo CHtml::Button('Dam',array('onClick'=>'gerSireDam(2)')); ?>

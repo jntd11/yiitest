@@ -325,3 +325,15 @@ $(function(){
         //$("#elementToResize").css('height',(h < 768 || w < 1024) ? 500 : 400);
     });
 });
+function validateDate(val){
+	var patt = /^(([0-1][0-2])|([0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
+	if(!patt.test(val)){
+		alert("Date - Invalid date format");
+		$("#born").focus();
+		return false;
+	}
+	return true;
+}
+function validateForm(){
+	return validateDate($("#born").val());
+}

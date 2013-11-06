@@ -11,7 +11,6 @@ $this->menu=array(
 	array('label'=>'List Sows/Boars', 'url'=>array('index')),
 	array('label'=>'Search Sows/Boars', 'url'=>array('admin')),
 );
-Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs=Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowboar.js');
 

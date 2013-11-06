@@ -72,8 +72,18 @@ class TblSoldHogsController extends Controller
 			$model->attributes=$_POST['TblSoldHogs'];
 			$model->comments	= $_POST['TblSoldHogs']['comments'];
 			$model->reason_sold	= $_POST['TblSoldHogs']['reason_sold'];
-			if($model->save())
+			$model->cust_id	= $_POST['TblSoldHogs']['cust_id'];
+			$model->ear_notch_id = $_POST['TblSoldHogs']['ear_notch_id'];
+
+			if($model->save()) {
+				$modelSowBoars = SowBoar::model()->findByPk($model->ear_notch_id);
+				if($modelSowBoars != null) {
+					$modelSowBoars->reason_sold = $model->reason_sold;
+					$modelSowBoars->sold_mmddyy = $model->date_sold;
+					$modelSowBoars->save();
+				}
 				$this->redirect(array('view','id'=>$model->tbl_sold_hogs_id));
+			}
 		}
 
  		$dataProvider=new CActiveDataProvider('TblSoldHogs',
@@ -99,10 +109,9 @@ class TblSoldHogsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		
+	
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['TblSoldHogs']))
 		{
 			$model->attributes = $_POST['TblSoldHogs'];
@@ -110,8 +119,16 @@ class TblSoldHogsController extends Controller
 			$model->comments	= $_POST['TblSoldHogs']['comments'];
 			$model->reason_sold	= $_POST['TblSoldHogs']['reason_sold'];
 			$model->cust_id	= $_POST['TblSoldHogs']['cust_id'];
-			if($model->save())
+			$model->ear_notch_id = $_POST['TblSoldHogs']['ear_notch_id'];
+			if($model->save()) {
+				$modelSowBoars = SowBoar::model()->findByPk($model->ear_notch_id);
+				if($modelSowBoars != null) {
+					$modelSowBoars->reason_sold = $model->reason_sold;
+					$modelSowBoars->sold_mmddyy = $model->date_sold;
+					$modelSowBoars->save();
+				}
 				$this->redirect(array('view','id'=>$model->tbl_sold_hogs_id));
+			}
 		}
 
 		$this->render('update',array(
@@ -242,7 +259,7 @@ class TblSoldHogsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT customer_name 	 FROM   tbl_sold_hogs WHERE customer_name LIKE :username";
+			$qtxt ="SELECT customer_name  FROM   tbl_sold_hogs WHERE customer_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
