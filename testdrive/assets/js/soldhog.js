@@ -15,10 +15,11 @@ $( "<div>" )
 });
 });
 
-function checkData(element,type){
+function checkData(element,type,extra,extra1){
+	var val = element.value;
 	if(type == 1){
-		var val = element.value;
-		if(val == "")
+		
+		if(val == "" || extra+" "+extra1 == val)
 			return;
 		var patt1 = /^[0-9][A-Z] [a-z]+ [0-9]{1,2}[ SFsf][0-9]{1,3}[\-\.][0-9]{1,2}$/gi;
 		var patt2 = /[\-\.]/gi;
@@ -28,7 +29,13 @@ function checkData(element,type){
 			var patt4 = patt3;
 			if(!patt4.test(val)){
 				alert("This is not a valid ear notch");
-				$("#earnotch").val("");
+				if(extra != "" && extra1 != "")
+					$("#earnotch").val(extra+extra1);
+				else if(extra != "")
+					$("#earnotch").val(extra);
+				else
+					$("#earnotch").val("");
+				
 			}else if(!patt2.test(val))
 				alert("Dash (or period) is required between Litter Number and Pig in Litter.");
 			else
@@ -42,23 +49,24 @@ function checkData(element,type){
 	}
 }
 $(document).ready(function(){
-	$("#tbl-herd-setup-form :input[type!='submit']").change(function() {
-		   $("#tbl-herd-setup-form").data("changed",true);
+	$("#tbl-sold-hogs-form :input[type!='submit']").change(function() {
+		   $("#tbl-sold-hogs-form").data("changed",true);
 	});
 
-	$("#tbl-herd-setup-form :input[type=submit]").click(function() {
-		   $("#tbl-herd-setup-form").data("changed",false);
+	$("#tbl-sold-hogs-form :input[type=submit]").click(function() {
+		   $("#tbl-sold-hogs-form").data("changed",false);
 	});
 	autoSuggestSearch();
 	
 	window.onbeforeunload = iamexiting;
 	function iamexiting(e) {
-		if($("#tbl-herd-setup-form").data("changed")) {
+		if($("#tbl-sold-hogs-form").data("changed")) {
 			   return 'You have unsaved changes. Do you want to continue';
 			   // submit the form
 		}
 		return;
 	}
+	
 });
 
 function autoSuggestSearch(){
@@ -151,7 +159,14 @@ function validateDate(val){
 	return true;
 }
 function validateForm(){
-	return validateDate($("#date_sold").val());
+	if($("#cust_id").val() == "") {
+		alert("Enter a valid customer name");
+		return false;
+	}
+	if(!validateDate($("#date_sold").val()))
+		return false;
+	return true;
+
 }
 function validateSearch(){
 	var  startBool = true;
@@ -161,4 +176,9 @@ function validateSearch(){
 		startBool = startBool && validateDate($("#end_date").val());
 	
 	return startBool;
+}
+function cancelsoldhogs(){
+	$("#earnotch").val("");
+	$("#TblSoldHogs_customer_name").focus();
+	window.location="index.php?r=tblSoldHogs/index";
 }

@@ -12,7 +12,7 @@ $this->menu=array(
 	array('label'=>'Create Sold Hogs', 'url'=>array('create')),
 	array('label'=>'Update Sold Hogs', 'url'=>array('update', 'id'=>$model->tbl_sold_hogs_id)),
 	array('label'=>'Delete Sold Hogs', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->tbl_sold_hogs_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Sold Hogs', 'url'=>array('admin')),
+	array('label'=>'Search Sold Hogs', 'url'=>array('admin')),
 );
 ?>
 

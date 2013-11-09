@@ -230,9 +230,9 @@ class TblSoldHogsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT first_name as label, customer_entry_id  as value FROM tbl_customer_entry WHERE first_name LIKE :username  
-			UNION SELECT company_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE company_name LIKE :username 
-			UNION SELECT last_name as label, customer_entry_id as value FROM tbl_customer_entry WHERE last_name LIKE :username";
+			$qtxt ="SELECT concat_ws(' ',first_name, last_name) as label, customer_entry_id  as value FROM tbl_customer_entry WHERE first_name LIKE :username  
+			OR  company_name LIKE :username 
+			OR last_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryAll();
@@ -259,7 +259,7 @@ class TblSoldHogsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT customer_name  FROM   tbl_sold_hogs WHERE customer_name LIKE :username";
+			$qtxt ="SELECT distinct customer_name  FROM   tbl_sold_hogs WHERE customer_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();

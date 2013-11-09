@@ -2,6 +2,10 @@
 /* @var $this TblSoldHogsController */
 /* @var $model TblSoldHogs */
 /* @var $form CActiveForm */
+$farmHerd = Yii::app()->request->cookies['farm_herd'];
+$herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
+if($herdmark != "")
+	$herdmark = $herdmark." ";
 ?>
 
 <div class="form">
@@ -17,7 +21,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'hog_ear_notch'); ?>
-		<?php echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1)','id'=>'earnotch')); ?>
+		<?php
+			if($model->isNewRecord) 
+				echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1)','value'=>$farmHerd." ".$herdmark,'id'=>'earnotch'));
+			else 
+				echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2)','id'=>'earnotch')); 
+			?>
 		<?php echo $form->error($model,'hog_ear_notch'); ?>
 		<?php echo $form->hiddenField($model, 'ear_notch_id',array('id'=>'ear_notch_id')); ?>
 	</div>
@@ -77,18 +86,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'comments'); ?>
-		<?php echo $form->textArea($model,'comments',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'comments',array('rows'=>3, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'comments'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'reason_sold',array('id'=>'label_reason_sold')); ?>
-		<?php echo $form->textArea($model,'reason_sold',array('rows'=>6, 'cols'=>50, 'id'=>'reason_sold')); ?>
+		<?php echo $form->textArea($model,'reason_sold',array('rows'=>3, 'cols'=>50, 'id'=>'reason_sold')); ?>
 		<?php echo $form->error($model,'reason_sold'); ?>
 	</div>
 	<div>&nbsp;</div>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('onClick'=>'return validateForm();')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelsoldhogs()')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

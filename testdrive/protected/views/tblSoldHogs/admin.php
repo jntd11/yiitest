@@ -4,9 +4,10 @@
 
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 
+
 $this->breadcrumbs=array(
 	'Tbl Sold Hogs'=>array('index'),
-	'Manage',
+	'Search',
 );
 
 $this->menu=array(
@@ -29,7 +30,7 @@ $('.search-form form').submit(function(){
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/soldhog.js');
 ?>
 
-<h1>Manage Sold Hogs</h1>
+<h1>Search Sold Hogs</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -46,6 +47,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'tbl-sold-hogs-grid',
 	'dataProvider'=>$model->search(),
+	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'filter'=>$model,
 	'columns'=>array(
 		'hog_ear_notch',

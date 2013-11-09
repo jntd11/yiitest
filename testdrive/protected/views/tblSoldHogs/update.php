@@ -12,7 +12,7 @@ $this->menu=array(
 	array('label'=>'List Sold Hogs', 'url'=>array('index')),
 	array('label'=>'Create Sold Hogs', 'url'=>array('create')),
 	array('label'=>'View Sold Hogs', 'url'=>array('view', 'id'=>$model->tbl_sold_hogs_id)),
-	array('label'=>'Manage Sold Hogs', 'url'=>array('admin')),
+	array('label'=>'Search Sold Hogs', 'url'=>array('admin')),
 );
 $cs=Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/soldhog.js');

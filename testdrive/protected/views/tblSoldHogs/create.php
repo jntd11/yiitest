@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Sold Hogs', 'url'=>array('index')),
-	array('label'=>'Manage Sold Hogs', 'url'=>array('admin')),
+	array('label'=>'Search Sold Hogs', 'url'=>array('admin')),
 );
 
 $cs=Yii::app()->clientScript;
