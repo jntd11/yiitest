@@ -252,4 +252,5 @@ class TblCustomerEntry extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
 }

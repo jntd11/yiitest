@@ -1,18 +1,5 @@
 $(function() {
-$( document ).tooltip({
-position: {
-my: "center bottom-20",
-at: "center top",
-using: function( position, feedback ) {
-$( this ).css( position );
-$( "<div>" )
-.addClass( "arrow" )
-.addClass( feedback.vertical )
-.addClass( feedback.horizontal )
-.appendTo( this );
-}
-}
-});
+
 });
 
 function checkData(element,type,extra,extra1){
@@ -111,7 +98,6 @@ $("#tbl-sold-hogs-grid [name='TblSoldHogs[customer_name]']").autocomplete({
     	$('#sow-boar-grid').yiiGridView('update', {data: data});
     }
 });
-
 $("#jaitest").autocomplete({
     source: 'index.php?r=tblSoldHogs/autocompleteName',
     select: function( event, ui ) {
@@ -181,4 +167,15 @@ function cancelsoldhogs(){
 	$("#earnotch").val("");
 	$("#TblSoldHogs_customer_name").focus();
 	window.location="index.php?r=tblSoldHogs/index";
+}
+function getSoldHog(){
+	var search = $("#soldhogname").val();
+	$.ajax({
+		url: encodeURI('index.php?r=tblSoldHogs/autocompleteId'),
+		type: "GET",
+		data: {s:search}
+	}).done(function(data){
+		var obj = $.parseJSON(data);
+		$('#grid-view').yiiGridView('update', {data: data});
+	});
 }

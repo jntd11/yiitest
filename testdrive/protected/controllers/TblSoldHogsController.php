@@ -28,7 +28,7 @@ class TblSoldHogsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','AutocompleteFirstName','AutocompleteEarNotch','AutocompleteDateSold','AutocompleteInvoice','AutocompleteName','soldlist'),
+				'actions'=>array('index','view','AutocompleteFirstName','AutocompleteEarNotch','AutocompleteDateSold','AutocompleteInvoice','AutocompleteName','soldlist','Rebuild','rebuildManual','AutocompleteId'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -199,12 +199,50 @@ class TblSoldHogsController extends Controller
 	{
 	
 		$crit =  new CDbCriteria();
-		$model=new TblSoldHogs();
+		$model = new TblSoldHogs('rebuild');
+		$custmormodel = new TblCustomerEntry();
 		$this->render('rebuild',array(
 				'model'=>$model,
-				
+				'custmormodel'=>$custmormodel,
+		));
+		$dataProvider = $model->rebuild();
+		$countFailure = $countSuccess = 0;
+		foreach ($dataProvider->data as $items) {
+			$model = $this->loadModel($items['tbl_sold_hogs_id']);
+			echo $items['hog_ear_notch'];
+			//$('#message').html('Working on ".$items['hog_ear_notch']."');
+			echo '<script>$("#message").html("Working on '.$items['hog_ear_notch'].'");</script>';
+			echo '<script>alert($("#message").html());</script>';
+			$sql = "select customer_entry_id FROM  tbl_customer_entry where first_name = '".$items['customer_name']."' OR last_name = '".$items['customer_name']."'";
+			$customers = $custmormodel->findBySql($sql);
+			if(isset($customers->customer_entry_id)) {
+				$model->cust_id = $customers->customer_entry_id;
+				$model->is_rebuild = 1;
+				$datearr = explode("-", $model->date_sold);
+				$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
+				$model->save();
+				$countSuccess++; 
+			}else{
+				$countFailure++;
+			}
+		}
+		echo '<script>$("#message").append("<br>'.$countSuccess.' Customers found");</script>';
+		echo '<script>$("#message").append("<br>'.$countFailure.' Customer Not Found. To update manually <a href=\"\">click here</a>");</script>';
+	}
+
+	public function actionrebuildManual(){
+		$crit =  new CDbCriteria();
+		$model = new TblSoldHogs('rebuildManual');
+		$qtxt ="SELECT concat_ws(' ',first_name, last_name) as label, customer_entry_id  as value FROM tbl_customer_entry ";
+		$command =Yii::app()->db->createCommand($qtxt);
+		$res =$command->queryAll();
+		$this->render('rebuildManual',array(
+				'model'=>$model,
+				'datacustmodel'=>$res,
+				'dataProvider'=>$model->rebuildManual(),
 		));
 	}
+
 	/**
 	 * Manages all models.
 	 */
@@ -289,7 +327,19 @@ class TblSoldHogsController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-
+	public function actionAutocompleteId() {
+		$res =array();
+		if (isset($_GET['s'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT * FROM   tbl_sold_hogs WHERE tbl_sold_hogs_id = :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", $_GET['s'], PDO::PARAM_STR);
+			$res =$command->queryRow();
+			
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
 	public function actionAutocompleteDateSold() {
 		$res =array();
 		if (isset($_GET['term'])) {

@@ -1075,3 +1075,35 @@ NameVirtualHost *:80
 </VirtualHost>
 
 http://krypted.com/mac-os-x/setting-up-and-using-web-services-in-os-x-mountain-lion-server/
+http://192.168.1.6/easymedmobiledb2.com/
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45532732-1', 'walkinbangkok.com');
+  ga('send', 'pageview');
+
+</script>
+
+Tags
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WRZ4RH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WRZ4RH');</script>
+<!-- End Google Tag Manager -->
+
+https://support.google.com/analytics/answer/1033867?hl=en&ref_topic=1032998
+http://www.walkinbangkok.com/?utm_source=mayavaram&utm_medium=CPC&utm_term=links&utm_content=ad1&utm_campaign=product
+http://www.ppchero.com/guide-to-url-tracking-in-google-analytics/
+https://developers.google.com/analytics/devguides/collection/analyticsjs/pages
+
+gwmi win32_environment -computername dc1.acme.com
+gwmi win32_environment -computername dc1.acme.com |select name,variablevalue |ft -auto
+
+

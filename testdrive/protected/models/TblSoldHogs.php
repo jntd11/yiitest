@@ -168,6 +168,33 @@ class TblSoldHogs extends CActiveRecord
 				'pagination'=>($pagecount > 0)?array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'id'=>$this->cust_id)):array('pagesize'=>5),
 		));
 	}
+	public function rebuild()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+	
+		$criteria=new CDbCriteria;
+		$criteria->compare('is_rebuild',0);
+		return $datap = new CActiveDataProvider($this, array(
+					'criteria'=>$criteria,
+		));
+
+	}
+	public function rebuildManual()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+	
+		$criteria=new CDbCriteria;
+		$criteria->compare('is_rebuild',0);
+		$criteria->distinct = true;
+		$criteria->select = 'customer_name, tbl_sold_hogs_id';
+		return $datap = new CActiveDataProvider($this, array(
+				'criteria'=>$criteria,
+		));
+	
+	}	
+	
 	public function getHerd(){
 		$qu = "select farm_herd from tbl_herd_setup";
 		$cmd = YII::app()->db->createCommand($qu);
