@@ -44,6 +44,7 @@ if($herdmark != "")
 						'attribute' => 'date_sold',
 						'options' =>array(
 								'dateFormat'=>'mm-dd-yy',
+								'constrainInput'=>false
 						),
 						
 						'htmlOptions' => array(

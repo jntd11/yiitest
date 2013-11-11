@@ -74,7 +74,9 @@ class TblSoldHogsController extends Controller
 			$model->reason_sold	= $_POST['TblSoldHogs']['reason_sold'];
 			$model->cust_id	= $_POST['TblSoldHogs']['cust_id'];
 			$model->ear_notch_id = $_POST['TblSoldHogs']['ear_notch_id'];
-
+			$datearr = explode("-", $model->date_sold);
+			$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
+			
 			if($model->save()) {
 				$modelSowBoars = SowBoar::model()->findByPk($model->ear_notch_id);
 				if($modelSowBoars != null) {
@@ -90,8 +92,10 @@ class TblSoldHogsController extends Controller
 				array(
 						'criteria'=>array(
 								'order'=>'date_sold DESC',
-								'limit'=>5,
-						)
+								'limit'=>5
+								
+						),
+						'pagination'=>array('pagesize'=>5),
 				)
 		); 
 		
@@ -120,6 +124,11 @@ class TblSoldHogsController extends Controller
 			$model->reason_sold	= $_POST['TblSoldHogs']['reason_sold'];
 			$model->cust_id	= $_POST['TblSoldHogs']['cust_id'];
 			$model->ear_notch_id = $_POST['TblSoldHogs']['ear_notch_id'];
+			//echo "jai".strtotime($model->date_sold);
+			$datearr = explode("-", $model->date_sold);
+			$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
+			//echo $model->date_sold = date("Y-m-d",strtotime($model->date_sold));
+			//exit;
 			if($model->save()) {
 				$modelSowBoars = SowBoar::model()->findByPk($model->ear_notch_id);
 				if($modelSowBoars != null) {
@@ -183,6 +192,19 @@ class TblSoldHogsController extends Controller
 		));
 	}
 	
+	/**
+	 * Lists all models.
+	 */
+	public function actionRebuild()
+	{
+	
+		$crit =  new CDbCriteria();
+		$model=new TblSoldHogs();
+		$this->render('rebuild',array(
+				'model'=>$model,
+				
+		));
+	}
 	/**
 	 * Manages all models.
 	 */

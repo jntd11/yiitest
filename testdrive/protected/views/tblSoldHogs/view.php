@@ -14,6 +14,7 @@ $this->menu=array(
 	array('label'=>'Delete Sold Hogs', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->tbl_sold_hogs_id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Search Sold Hogs', 'url'=>array('admin')),
 );
+$model->date_sold = date("m-d-y",strtotime($model->date_sold));
 ?>
 
 <h1>View TblSoldHogs #<?php echo $model->tbl_sold_hogs_id; ?></h1>

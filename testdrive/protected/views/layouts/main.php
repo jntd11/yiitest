@@ -61,6 +61,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 				array('label'=>'Maintenance', 'itemOptions'=>array('id'=>'Maintenance'), 'linkOptions'=>array('accesskey'=>'m'), 'url'=>array('/user'), 'items'=>array(
 							array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup')),
 							array('label'=>'Ear Tag Maintenance', 'url'=>array('create')),
+							array('label'=>'Sold Hogs Rebuild', 'url'=>array('/tblSoldHogs/rebuild')),
 							array('label'=>'Breeding Record Maintenance', 'url'=>array('admin')),
 							array('label'=>'Farrowing/Litter Maintenance', 'url'=>array('admin')),
 							array('label'=>'Automatic Chores Maintenance', 'url'=>array('admin')),

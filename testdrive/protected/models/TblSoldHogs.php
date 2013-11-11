@@ -53,7 +53,7 @@ class TblSoldHogs extends CActiveRecord
 			array('sale_type, app_xfer', 'length', 'max'=>1),
 			array('invoice_number', 'length', 'max'=>6),
 			array('hog_ear_notch','validateEarNotch'),
-			array('date_sold', 'date', 'format'=>array('m-d-y','mm-dd-yy','mm-dd-yyyy','m-dd-yy','mm-d-yy','m-d-yyyy')),
+			array('date_sold', 'date', 'format'=>array('m-d-y','mm-dd-yy','mm-dd-yyyy','m-dd-yy','mm-d-yy','m-d-yyyy','yyyy-dd-mm')),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('tbl_sold_hogs_id, hog_ear_notch, customer_name, date_sold, sold_price, sale_type, invoice_number, app_xfer, comments, reason_sold, date_modified', 'safe', 'on'=>'search'),
@@ -141,25 +141,31 @@ class TblSoldHogs extends CActiveRecord
 	
 		$criteria=new CDbCriteria;
 		$start_date = '01-01-1900';
-		$end_date = date("m-d-Y");
-		if(isset($_POST['start_date']) && !empty($_POST['start_date']))
-			$start_date = $_POST['start_date'];
-		if(isset($_POST['end_date']) && !empty($_POST['end_date']))
+		$end_date = date("Y-m-d", time() + (365 * 24 * 60 * 60));
+		if(isset($_POST['start_date']) && !empty($_POST['start_date'])) {
+			$start_date =  $_POST['start_date'];
+			$datearr = explode("-", $start_date);
+			$start_date = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
+		}
+		if(isset($_POST['end_date']) && !empty($_POST['end_date'])){
 			$end_date = $_POST['end_date'];
+			$datearr = explode("-", $end_date);
+			$end_date  = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
+		}
 		
 		$pages = 20;
 		if(isset($_GET['pages']))
 			$pages = $_GET['pages'];
 		if(isset($_POST['pages']))
 			$pages = $_POST['pages'];
-		
-		$criteria->addBetweenCondition('date_sold',$start_date,$end_date);
-		$criteria->compare('cust_id',$this->cust_id,true);
+		$criteria->compare('date_sold >',$start_date);
+		$criteria->compare('date_sold <',$end_date);
+		$criteria->compare('cust_id',$this->cust_id);
 		//$criteria->compare('date_sold',$this->date_sold,true);
 		//$count = $this->count($criteria);
 		return new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,
-				'pagination'=>($pagecount > 0)?array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'id'=>$this->cust_id)):false,
+				'pagination'=>($pagecount > 0)?array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'id'=>$this->cust_id)):array('pagesize'=>5),
 		));
 	}
 	public function getHerd(){
