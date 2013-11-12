@@ -25,6 +25,7 @@ $formatter = new CFormatter();
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'tbl-sold-hogs-grid',
 	'selectableRows'=>1,
+	
 	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'dataProvider'=>$dataProvider,
 	'columns'=>array(

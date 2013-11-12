@@ -91,7 +91,7 @@ class TblSoldHogsController extends Controller
  		$dataProvider=new CActiveDataProvider('TblSoldHogs',
 				array(
 						'criteria'=>array(
-								'order'=>'date_sold DESC',
+								'order'=>'date_modified DESC',
 								'limit'=>5
 								
 						),
