@@ -216,7 +216,8 @@ class TblSoldHogsController extends Controller
 			//$('#message').html('Working on ".$items['hog_ear_notch']."');
 			echo '<script>$("#message").html("Working on '.$items['hog_ear_notch'].'");</script>';
 			//echo '<script>alert($("#message").html());</script>';
-			$sql = "select customer_entry_id FROM  tbl_customer_entry where first_name = '".$items['customer_name']."' OR last_name = '".$items['customer_name']."'";
+			$sql = "select customer_entry_id FROM  tbl_customer_entry where concat_ws(' ',first_name, last_name) = '".$items['customer_name']."'";
+			// OR last_name = '".$items['customer_name']."'"
 			$customers = $custmormodel->findBySql($sql);
 			if(isset($customers->customer_entry_id)) {
 				$model->cust_id = $customers->customer_entry_id;
@@ -229,6 +230,7 @@ class TblSoldHogsController extends Controller
 				$countFailure++;
 			}
 		}
+		echo '<script>$("#message").html("Finished");</script>';
 		echo '<script>$("#message").append("<br>'.$countSuccess.' Customers found");</script>';
 		echo '<script>$("#message").append("<br>'.$countFailure.' Customer Not Found. To update manually <a href=\"index.php?r=tblSoldHogs/rebuildManual\">click here</a>");</script>';
 	}
