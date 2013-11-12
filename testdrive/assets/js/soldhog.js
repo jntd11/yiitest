@@ -176,6 +176,13 @@ function getSoldHog(){
 		data: {s:search}
 	}).done(function(data){
 		var obj = $.parseJSON(data);
-		$('#grid-view').yiiGridView('update', {data: data});
+		$("#tbl_sold_hogs_id").html(obj.tbl_sold_hogs_id);
+		$("#hog_ear_notch").html(obj.hog_ear_notch);
+		$("#customer_name").html(obj.customer_name);
+		$("#date_sold").html(obj.date_sold);
+		$("#comments").html(obj.comments);
+		$("#sold_price").html(obj.sold_price);
+		$("#reason_sold").html(obj.reason_sold);
+		$("#invoice_number").html(obj.invoice_number);
 	});
 }

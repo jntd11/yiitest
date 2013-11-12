@@ -18,9 +18,12 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs=Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/soldhog.js');
-	 
-
 ?>
+<script>  
+if(!confirm("Are you sure you want to rebuild the Sold Hogs Customer link?")) {
+	window.location = 'index.php?r=tblSoldHogs/index';
+}
+</script>
    <div id="message">Started...</div>
  
 
