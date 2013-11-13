@@ -33,9 +33,7 @@ if(count($dataProvider->data) <= 0) {
 <div class="row">
 Sold Hogs Name: 
 <select name="soldhogname" id="soldhogname" onChange="getSoldHog()">
-<option value="">Select</option>
 <?php
-	
 foreach ($dataProvider->data as $items) {
 	echo "<option value='".$items['tbl_sold_hogs_id']."' >".$items['customer_name']."</option>";
 } 
@@ -97,6 +95,11 @@ echo $content;
 	<br />
 </div>
 </div>
+<script type="text/javascript">
+<!--
+getSoldHog();
+//-->
+</script>
 <?php 
 }
 ?> 
