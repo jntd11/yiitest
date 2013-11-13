@@ -186,3 +186,14 @@ function getSoldHog(){
 		$("#invoice_number").html(obj.invoice_number);
 	});
 }
+function getUnMatchedSoldhog(){
+	var search = $("#soldhogname").val();
+	$.ajax({
+		url: encodeURI('index.php?r=tblSoldHogs/rebuildManual'),
+		type: "GET",
+		data: {s:search}
+	}).done(function(data){
+		$("#data").append(data);
+		
+	});
+}

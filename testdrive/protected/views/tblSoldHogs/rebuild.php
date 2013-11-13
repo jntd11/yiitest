@@ -24,6 +24,15 @@ if(!confirm("Are you sure you want to rebuild the Sold Hogs Customer link?")) {
 	window.location = 'index.php?r=tblSoldHogs/index';
 }
 </script>
-   <div id="message">Started...</div>
- 
+<div id="message">Started...</div>
+ <div id="data">
+   <?php 
+   $this->renderPartial('_ajaxContent', array('myValue'=>"testing")); 
+   ?>
+</div>
+<?php 
+echo CHtml::ajaxButton ("Update data",
+                              CController::createUrl('tblSoldHogs/UpdateAjax'), 
+                              array('update' => '#data'));
+?>
 

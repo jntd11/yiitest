@@ -1,18 +1,1 @@
-International Health Passport
-
-This is an Online Personal Health Record (PHR) created in minutes by you or your doctor. It gives patients secure access to their medical history anytime 365 days a year through their mobile phone/PDA or the Internet. The International Health Passport gives patients peace of mind wherever they are in the world.
-Easy SmartCare
-
-Easy SmartCare allows Healthcare Organizations (Clinics/Hospitals/Doctors' Practices) to communicate with patients through their mobile phone/PDA/Internet/text messages. It is a solution for providing two-way communication between caregiver and patient. This provides end-to-end patient care from before the visit and through the healing process after the treatment when they have left the medical practice.
-
-The software provides better preparation, decreased absenteeism, medication reminders and monitoring for the patient and improved outpatient management.
-Disease Management Software
-
-EasyMed provides a system for managing large-scale National Health Projects through the population's mobile phone technology. This allows monitoring of patients' compliance to their treatment programs, data capture to assist caregivers, diagnostic and analysis, automated coaching system, history of treatment and reminders to patients of medical appointments.
-
-The software's interaction with the patient gives the Health Authority/Medical Association an opportunity to manage specific diseases that they have chosen to target.
-Clinical Trials
-
-Our solution for clinical trials provides detailed monitoring of patients' compliance to a specific treatment program through their mobile phone/PDA.
-
-This allows pharmaceutical and biotechnology companies to carry out clinical trials on our technology in real time, replacing the standard CRF paper questionnaire.
+dearnramkumar@gmail.com
