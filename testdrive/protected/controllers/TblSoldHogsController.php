@@ -238,25 +238,29 @@ class TblSoldHogsController extends Controller
 		*/
 	}
 	
-	public function actionUpdateAjax()
+	public function actionUpdateAjax($iscontinue = 0,$message="")
 	{
 		$crit =  new CDbCriteria();
 		$model = new TblSoldHogs('rebuild');
 		$custmormodel = new TblCustomerEntry();
 		
 		$data = array();
-		$data["myValue"] = "Content updated in AJAX";
-		
-		$qu = "UPDATE tbl_sold_hogs SET is_rebuild = 0 ";
-		$cmd = YII::app()->db->createCommand($qu);
-		$res = $cmd->query();
+		if($message != "")
+			$data["myValue"] = "<table class='detail-view'><tr class='odd'><td >".$message."</td></tr>";
+		else
+			$data["myValue"] = "<table class='detail-view'><tr class='odd'><td >"."Started..."."</td></tr>";
+		if(!$iscontinue) {
+			$qu = "UPDATE tbl_sold_hogs SET is_rebuild = 0 ";
+			$cmd = YII::app()->db->createCommand($qu);
+			$res = $cmd->query();
+		}
 		$dataProvider = $model->rebuild();
 		$countFailure = $countSuccess = 0;
 		foreach ($dataProvider->data as $items) {
 			$model = $this->loadModel($items['tbl_sold_hogs_id']);
 			//$('#message').html('Working on ".$items['hog_ear_notch']."');
 			$this->renderPartial('_ajaxContent', $data, false, true);
-			$data["myValue"] = "Working on ".$items['hog_ear_notch']."<br>";
+			$data["myValue"] = "<table class='detail-view'><tr class='odd'><td >"."Working on ".$items['hog_ear_notch'];
 			$this->renderPartial('_ajaxContent', $data, false, true);
 			$sql = "select customer_entry_id FROM  tbl_customer_entry where concat_ws(' ',first_name, last_name) = '".$items['customer_name']."'";
 			// OR last_name = '".$items['customer_name']."'"
@@ -268,8 +272,10 @@ class TblSoldHogsController extends Controller
 				$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
 				$model->save();
 				$countSuccess++;
+				$data["myValue"] = " - Match Found "."</td></tr>";
 			}else{
-				echo "<script>getUnMatchedSoldhog();</script>";
+				$data["myValue"] = "</td></tr>";
+				echo "<script>getUnMatchedSoldhog('".$items['tbl_sold_hogs_id']."');</script>";
 				$countFailure++;
 				break;
 			}
@@ -280,27 +286,30 @@ class TblSoldHogsController extends Controller
 
 	public function actionrebuildManual(){
 		$content = "";
-		if(isset($_POST['custname']) && $_POST['custname'] != "" && $_POST['soldhogname'] != "")
+		if(isset($_GET['c']) && $_GET['c'] != "" && $_GET['s'] != "")
 		{
-			$tbl_sold_hogs_id = $_POST['soldhogname'];
+			$tbl_sold_hogs_id = $_GET['s'];
 			$model = $this->loadModel($tbl_sold_hogs_id);
-			$model->cust_id	= $_POST['custname'];
+			$model->cust_id	= $_GET['c'];
 			$model->is_rebuild = 1;
 			$datearr = explode("-", $model->date_sold);
 			$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
-			
 			if(!$model->save()){
 				foreach ($model->errors as $key=>$errors)
 					foreach($errors as $error)
 						if($error!='')
-							$content.="<li>$error</li>\n";
+							$content .= $error;
 			}else{
-				$content .= "<li>Customer name mapped successfuly</li>\n";
+				$content .= "Customer name mapped successfuly";
 			}
+			$this->actionUpdateAjax(1,$content);
+			return ;
 		}
 		$crit =  new CDbCriteria();
-		$model = new TblSoldHogs('rebuildManual');
-		
+		//$model = new TblSoldHogs('rebuildManual');
+		$model = new TblSoldHogs();
+		if(isset($_GET['id']))
+			$model = $this->loadModel($_GET['id']);
 		
 		$qtxt ="SELECT concat_ws(' ',first_name, last_name) as label, customer_entry_id  as value FROM tbl_customer_entry ";
 		$command =Yii::app()->db->createCommand($qtxt);
@@ -309,7 +318,7 @@ class TblSoldHogsController extends Controller
 				'model'=>$model,
 				'datacustmodel'=>$res,
 				'content'=>$content,
-				'dataProvider'=>$model->rebuildManual(),
+				'dataProvider'=>$model,
 		));
 	}
 

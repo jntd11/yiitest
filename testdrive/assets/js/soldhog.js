@@ -186,14 +186,35 @@ function getSoldHog(){
 		$("#invoice_number").html(obj.invoice_number);
 	});
 }
-function getUnMatchedSoldhog(){
+function getUnMatchedSoldhog(id){
 	var search = $("#soldhogname").val();
 	$.ajax({
 		url: encodeURI('index.php?r=tblSoldHogs/rebuildManual'),
 		type: "GET",
-		data: {s:search}
+		data: {id:id},
 	}).done(function(data){
-		$("#data").append(data);
+		$("#dataUpdate").prepend(data);
 		
+	});
+}
+
+function confirmRebuild(){
+	if(!confirm("Are you sure you want to rebuild the Sold Hogs Customer link?")) {
+		window.location = 'index.php?r=tblSoldHogs/index';
+		return false;
+	}
+	$("#rebuild").hide();
+	return true;
+}
+function updateSoldHog(){
+	$("#updates").hide();
+	var search = $("#soldhogname").val();
+	$.ajax({
+		url: encodeURI('index.php?r=tblSoldHogs/rebuildManual'),
+		type: "GET",
+		data: {s:$("#soldhogname").val(),c:$("#custname").val()}
+	}).done(function(data){
+		$("#forms").remove();
+		$("#dataUpdate").append(data);
 	});
 }

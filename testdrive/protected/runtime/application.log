@@ -6474,3 +6474,110 @@ REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/rebuild
 in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\_ajaxContent.php (21)
 in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\rebuild.php (30)
 in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (209)
+2013/11/14 09:16:33 [error] [exception.CException] exception 'CException' with message 'Property "TblSoldHogs.data" is not defined.' in C:\wamp\www\yii\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('data')
+#1 C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\rebuildManual.php(21): CActiveRecord->__get('data')
+#2 C:\wamp\www\yii\yii\framework\web\CBaseController.php(126): require('C:\wamp\www\yii...')
+#3 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\yii...', Array, true)
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\yii...', Array, true)
+#5 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(315): CController->renderPartial('rebuildManual', Array)
+#6 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblSoldHogsController->actionrebuildManual()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('rebuildManual')
+#16 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/reb...')
+#17 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/rebuildManual
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/rebuild
+---
+2013/11/14 10:04:59 [error] [php] Undefined index: soldhogname (C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php:285)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblSoldHogsController->runAction()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblSoldHogsController->filterAccessControl()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblSoldHogsController->runActionWithFilters()
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblSoldHogsController->run()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/rebuildManual&s=1&c=2
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (285)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2013/11/14 10:41:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php:350
+Stack trace:
+#0 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(116): TblSoldHogsController->loadModel('')
+#1 [internal function]: TblSoldHogsController->actionUpdate('')
+#2 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TblSoldHogsController), Array)
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TblSoldHogsController), Object(ReflectionMethod), Array)
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/upd...')
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/update/id/
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/index
+---
+2013/11/14 10:41:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php:350
+Stack trace:
+#0 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(116): TblSoldHogsController->loadModel('')
+#1 [internal function]: TblSoldHogsController->actionUpdate('')
+#2 C:\wamp\www\yii\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TblSoldHogsController), Array)
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TblSoldHogsController), Object(ReflectionMethod), Array)
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tblSoldHogs/upd...')
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/update/id/
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/index
+---
+2013/11/14 10:51:27 [error] [php] Undefined variable: baseScriptUrl (C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\rebuild.php:21)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(869): TblSoldHogsController->renderFile()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(782): TblSoldHogsController->renderPartial()
+#2 C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php(209): TblSoldHogsController->render()
+#3 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): TblSoldHogsController->actionRebuild()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): TblSoldHogsController->runAction()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): TblSoldHogsController->filterAccessControl()
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(265): TblSoldHogsController->runActionWithFilters()
+#12 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): TblSoldHogsController->run()
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=tblSoldHogs/rebuild
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\rebuild.php (21)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (209)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)

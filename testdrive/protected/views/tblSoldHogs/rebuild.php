@@ -18,21 +18,17 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs=Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/soldhog.js');
+$baseScriptUrl = Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('zii.widgets.assets')).'/detailview';
+$cs->registerCssFile(
+		$baseScriptUrl.'/styles.css'
+);
 ?>
-<script>  
-if(!confirm("Are you sure you want to rebuild the Sold Hogs Customer link?")) {
-	window.location = 'index.php?r=tblSoldHogs/index';
-}
-</script>
-<div id="message">Started...</div>
- <div id="data">
-   <?php 
-   $this->renderPartial('_ajaxContent', array('myValue'=>"testing")); 
-   ?>
-</div>
+<div id="message"></div>
+ <div id="data"></div>
+ <div id="dataUpdate"></div>
 <?php 
-echo CHtml::ajaxButton ("Update data",
+echo CHtml::ajaxButton ("Rebuild Sold Hogs",
                               CController::createUrl('tblSoldHogs/UpdateAjax'), 
-                              array('update' => '#data'));
+                              array('update' => '#dataUpdate'),array('onClick'=>"return confirmRebuild();",'id'=>"rebuild"));
 ?>
 
