@@ -255,8 +255,16 @@ class TblSoldHogsController extends Controller
 			$res = $cmd->query();
 		}
 		$dataProvider = $model->rebuild();
+		//echo "JAI".$dataProvider->itemCount;
 		$countFailure = $countSuccess = 0;
-		foreach ($dataProvider->data as $items) {
+		$qtxt ="SELECT * FROM  tbl_sold_hogs where is_rebuild = 0 ";
+		$command =Yii::app()->db->createCommand($qtxt);
+		$res =$command->queryAll();
+		$isSuccess = 0;
+		if((count($res) == 0) && ($iscontinue == 1)) {
+			$isSuccess = 1;
+		}
+		foreach ($res as $items) {
 			$model = $this->loadModel($items['tbl_sold_hogs_id']);
 			//$('#message').html('Working on ".$items['hog_ear_notch']."');
 			$this->renderPartial('_ajaxContent', $data, false, true);
@@ -265,21 +273,31 @@ class TblSoldHogsController extends Controller
 			$sql = "select customer_entry_id FROM  tbl_customer_entry where concat_ws(' ',first_name, last_name) = '".$items['customer_name']."'";
 			// OR last_name = '".$items['customer_name']."'"
 			$customers = $custmormodel->findBySql($sql);
+			//echo "<br>".$items['tbl_sold_hogs_id'];
 			if(isset($customers->customer_entry_id)) {
+			
 				$model->cust_id = $customers->customer_entry_id;
 				$model->is_rebuild = 1;
-				$datearr = explode("-", $model->date_sold);
-				$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
+				//$datearr = explode("-", $model->date_sold);
+				//$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
+				//exit;
 				$model->save();
 				$countSuccess++;
-				$data["myValue"] = " - Match Found "."</td></tr>";
+				$isSuccess = 1;
+				$data["myValue"] =  " - Match Found "."</td></tr>";
 			}else{
+				$isSuccess = 0;
 				$data["myValue"] = "</td></tr>";
 				echo "<script>getUnMatchedSoldhog('".$items['tbl_sold_hogs_id']."');</script>";
 				$countFailure++;
 				break;
 			}
+			
 		}
+		$this->renderPartial('_ajaxContent', $data, false, true);
+		if($isSuccess)
+			$data["myValue"] = "<table class='detail-view'><tr class='odd'><td >"."Rebuild Completed..."."</td></tr>";
+		$this->renderPartial('_ajaxContent', $data, false, true);
 		$dataProvider = $model->rebuildManual();
 		//$this->renderPartial('rebuildManual', $dataProvider, false, true);
 	}
@@ -289,11 +307,13 @@ class TblSoldHogsController extends Controller
 		if(isset($_GET['c']) && $_GET['c'] != "" && $_GET['s'] != "")
 		{
 			$tbl_sold_hogs_id = $_GET['s'];
+			$custModel = TblCustomerEntry::model()->findByPk($_GET['c']);
 			$model = $this->loadModel($tbl_sold_hogs_id);
 			$model->cust_id	= $_GET['c'];
 			$model->is_rebuild = 1;
-			$datearr = explode("-", $model->date_sold);
-			$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
+			$model->customer_name = $custModel->first_name." ".$custModel->last_name;
+			//$datearr = explode("-", $model->date_sold);
+			//$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
 			if(!$model->save()){
 				foreach ($model->errors as $key=>$errors)
 					foreach($errors as $error)

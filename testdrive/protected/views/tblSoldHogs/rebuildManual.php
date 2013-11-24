@@ -37,7 +37,12 @@
 <?php
 
 foreach ($datacustmodel as $items) {
-	echo "<option value='".$items['value']."'>".$items['label']."</option>";
+		$selected = '';
+	if(substr($dataProvider->customer_name, 0, 4) ==  substr($items['label'], 0, 4) || substr($dataProvider->customer_name, 0, 3) ==  substr($items['label'], 0, 3)
+	|| substr($dataProvider->customer_name, 0, 3) ==  substr($items['label'], 0, 3) || substr($dataProvider->customer_name, 0, 1) ==  substr($items['label'], 0, 1))
+		$selected = 'selected="selected"';
+	echo "<option value='".$items['value']."' ".$selected.">".$items['label']."</option>";
+    
 } 
 ?>
 </select>

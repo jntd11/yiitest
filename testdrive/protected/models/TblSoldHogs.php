@@ -177,6 +177,7 @@ class TblSoldHogs extends CActiveRecord
 		$criteria->compare('is_rebuild',0);
 		return $datap = new CActiveDataProvider($this, array(
 					'criteria'=>$criteria,
+					'pagination'=> array('pagesize'=>1000),
 		));
 
 	}

@@ -136,7 +136,7 @@ function getDateReason(val){
 	});
 }
 function validateDate(val){
-	var patt = /^(([0-1][0-2])|([0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
+	var patt = /^(((([0-1][0-2])|([0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*)|([0-9][0-9][0-9][0-9]\-[0-9][0-9]\-[0-9][0-9]))$/;
 	if(!patt.test(val)){
 		alert("Date - Invalid date format");
 		$("#date_sold").focus();
