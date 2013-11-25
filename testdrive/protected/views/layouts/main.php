@@ -23,6 +23,7 @@ $session->open();
 //$currdate = $session['date'];
 $currdate = Yii::app()->request->cookies['date'];
 $farmHerd = Yii::app()->request->cookies['farm_herd'];
+$farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery');
 //$cs->registerCoreScript('jquery-ui-1.10.2.custom');
@@ -93,6 +94,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
+	<div id="infobar"><span id="currdate"><?php echo $currdate; ?></span> <span id="farmherd"><?php echo $farmHerd; ?></span></div>
 
 	<?php echo $content; ?>
 
@@ -100,7 +102,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 	<div id="footer">
 		<div id="dialog"><p>Date: <input type="text" id="datepicker" />&nbsp;</p></div>
-		<div><b>Activity date:</b> <span id="currdate"><?php echo $currdate; ?></span> <b>Farm & herd:</b> <span id="farmherd"><?php echo $farmHerd; ?></span></div>
+		<div><b>Activity Date:</b> <span id="currdate"><?php echo $currdate; ?></span> <b>Farm & Herd:</b> <span id="farmherd"><?php echo $farmHerd; ?> <?php echo " ".$farmHerdName; ?></span></div>
 	</div><!-- footer -->
 
 </div><!-- page -->

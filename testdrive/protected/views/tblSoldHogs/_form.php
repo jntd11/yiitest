@@ -3,6 +3,7 @@
 /* @var $model TblSoldHogs */
 /* @var $form CActiveForm */
 $farmHerd = Yii::app()->request->cookies['farm_herd'];
+$farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 if($herdmark != "")
 	$herdmark = $herdmark." ";
