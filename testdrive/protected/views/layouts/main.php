@@ -84,6 +84,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Manage User', 'url'=>array('admin'))
 				)),
 				array('label'=>'Login', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>Yii::t('app','Rights'), 'url'=>array('/rights')),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>

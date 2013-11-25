@@ -117,6 +117,9 @@ $(document).ready(function(){
 	$("#submitactivitydate").bind('click',function(){
 		location.reload();
 	});
+	tinymce.init({
+	    selector: "textarea"
+	 });
 });
 
 function openDialog(){

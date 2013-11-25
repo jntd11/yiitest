@@ -1107,3 +1107,236 @@ gwmi win32_environment -computername dc1.acme.com
 gwmi win32_environment -computername dc1.acme.com |select name,variablevalue |ft -auto
 
 
+11/11/2013
+Need an option in the Maintenance Selector to rebuild the Sold Hogs to Customers  link - cust_id. This is initially because I need to try to import some User's live data to start testing with real data.
+1. This will be the bottom option in the Maintenance Selector - call it Sold Hogs Rebuild..
+2. The option needs to run through the Sold Hogs table and check for a match of the customer_name in the Sold Hogs table to the first_name and last_name in the Customers table and set the Sold Hogs cust_id accordingly.
+    a. If there is no name match then display a drop down of names the User can choose from to set the cust_id and customer_name in the Sold Hogs table from the Customer name chosen.
+    b. All the Sold Hogs information that has no matching Customer name will have to be displayed so the User can choose the correct Customer for this hog.
+3. When the User initially clicks on this option, bring up a popup screen that asks: Are you sure you want to rebuild the Sold Hogs Customer link? Yes No
+    a. If Yes - begin the rebuild
+    b. If No just exit.
+4. Display the Hog Ear Notch during the rebuild so the User knows something is happening - something like: Working on: 1A 2 3-4
+
+teamwork
+tox18BAX8!
+mayavaram.com
+DB
+mayavaram
+wJ4bPUGvYc4K3htP
+jntd11
+wJ4bPUGvYc4K3htP;
+https://drupal.org/node/519486
+Fb
+Skandankadagam
+	
+Mayavaram
+App ID:	552925688117228
+App Secret:	ef23f9399b5dca7bfa91d328820a9fba(reset)
+13188650373
+CAACEdEose0cBAKyq4aoC3HeIGm6tiIqueqdELEKVJ7pNJzTZCV2n1SMIcEMS2nGtzOKk9Scqkm64sDvUr18Mm7G9umomPZAETNWzCkZAT3UekT2VZAkCG6qzTU64harbYN5zAdaSwfRFP0N5iiy61l6lB8rWZCOUMcBMEY1HsvElatwk4nmay5pPlDUMHZCijHOhIZAsgixkQZDZD
+https://plus.google.com/photos/104860207447596659972/albums/5945642160334103665?authkey=CKbH14rT1ZqlfA
+
+Easymed
+1. Drug Interactions
+2. Dashboard is good
+3. Health passport is different, it has options to choose
+
+
+umanlife
+1. No
+1. Faster
+2. Surgeries
+3.
+
+Incorrect input: ORA-01403: no data found
+
+Abc67890~
+
+<key>RunAtLoad</key> <true/> <key>KeepAlive</key> <true/>
+http://www.phase2technology.com/blog/how-to-enable-local-smtp-server-postfix-on-os-x-leopard/
+CVMC64CRSY
+
+IPDIRECT-031998
+
+
+As I mentioned in my last email, this project will be changing how the PIGSAPP will "look and feel". Some of these changes come from Linda's good eye for what will look good to the end User and some changes come from our testing how things look on portable devices - tablets and smartphones. Do you have a tablet or smartphone?
+
+After I wrote this project up it seems like a lot but there is quite a bit of just cosmetic changes that I wouldn't think should take very long - especially when you start to see what we are looking for and the consistency we are trying to put into PIGSAPP.
+
+1.  The "Activity Date: xx/xx/xxxx Farm & Herd: 1A" needs to be also displayed in the upper right of the PIGSAPP screen to the right side just under the Blue Menu bar but without the titles.
+    a. So it would look like this right justified just under the Blue Menu bar: xx/xx/xxxx  1A (on the same line as the breadcrumb)
+    Done
+    b. The display at the bottom of each screen needs to add the Farm Name after the Farm & Herd so it would look like this:
+         Activity Date: xx/xx/xxxx Farm & Herd: 1A Jai's York Farm
+	 Done
+    c. Please note that the words Date and Herd need to be capitalized.
+    Done 
+2. The Menu Bar is being re-arranged.
+    a. The Blue bar will show: Home  Customers  Pigs  Chores  Semen Other                 Login
+    b. Home will not have any dropdown.
+    c. Customers will have a dropdown with two options for now:
+        1. List
+             a. This option will take the User to the Customer Search screen. I will give you changes to the Customer screens later in this project.
+        2. Mailing Code
+             b. This option will take the User to Manage Mailing Codes screen. Changes to this screen later in this project.
+    d. Pigs will have a dropdown with 5 options for now:
+        1. Bred
+            a. This option is not completed yet.
+        2. Farrowed
+            a. This option is not completed yet.
+        3. Weaned
+            a. This option is not completed yet.
+        4. Sold
+            a. This option will take the User to the Sold Hogs Search screen. I will give you changes to the Sold Hogs screens later in this project.
+        5. Sows/Boars
+            a. This option will take the User to the Sows/Boars Search screen. I will give you changes to the Sows/Boars screens later in this project.
+    e. Chores
+        1. This option is not completed yet.
+    f. Semen
+        1. This option is not completed yet.
+    g. Other will have these dropdowns:
+        1. Herd Setup
+        2. Sold Hogs Rebuild
+        3. Activity Date
+        4. User
+    h. Login
+        1. This option needs to be right justified on the Blue Menu bar.
+        2. Logout (User) will be located here when the User is Logged in.
+3. We need a place where we can insert some HTML code that will be displayed on the Home page. Linda has a WYSIWYG program that can generate HTML code, we just need a place to put the code so it displays on the Home screen.
+    a. It is fine if you just want to give us the file name and where it is located and the location in the file where to place the HTML code.
+    b. Remove the: "Welcome to" from the Home screen and this is where we want the HTML code to display.
+4. None of the screens should show any data until the User is logged in. We don't want strangers poking around looking at data.
+    a. The login is going to be used a little different than I originally thought.
+    b. Under the breadcrumb remove: "Login" and "Please fill out the following form with your login credentials."
+    c. Move "Fields with * are required." to below the Login button.
+    d. Now move everything over to the right side of the screen so that it is closer to the Login option on the Blue menu bar.
+    e. What is the Date field for at the bottom of the Login screen? It should be removed I think.
+    f. There will only be 1 Username and Password for each PIGSAPP that is setup. A different User will have a completely different web address. I don't see any reason why we still can't use tbl_user in the DB.
+        1. Just use the Update User screen for the Other - User option.
+        2. Remove the "Update User #"
+        3. Move the Fields with * are required to the bottom of the screen.
+        4. Add a Cancel button that does not save any data and returns to the Home screen. Remember all buttons will be at both the top and bottom.
+        5. The Save button will save the User's data and return to the Home screen.
+        6. Remove the Date: and box in the footer of the screen.
+        7. Remove the Operations column like in all other screens.
+    g. I think we should store the Activity Date and current Farm & Herd in this table so the next time this User logs in then those items are already set.
+    h. Need a clickable message on the Login screen: Forgot Password
+        1. This will send an email to the email address for this User with a new password that he can use to login.
+        2. The message in the email should be:
+             Here is your new password for PIGSAPP because you clicked on Forgot Password: 34r53p3o4
+             Please use this password for your next Login into PIGSAPP.
+             Once you have logged in, proceed to Other - User and change the password to your preference.
+             Thank you,
+admin@pigsapp.com
+        3. The password generated above needs to be somewhat random letters and numbers at least 8 characters long.
+        4. This will be stored as their new password until the User logs in to change it.
+5. The look of all the screens needs to be changed.
+    a. The Operations column needs to be eliminated on all screens. All operations will now be buttons in two locations:
+        1. Just under the breadcrumb
+        2. At the bottom of the page (but above the Activity Date line) - this will be an exact copy of the buttons below the breadcrumb so if a button is to be put on the page it will be in both places - top and bottom.
+        3. I like the display option you put on the list of Sold Hogs for a Customer where you can select the Number of items per page and click the Redisplay button. I need this feature on the following screens:
+            a. Customer Search
+            b. Sows/Boars Search
+            c. Sold Hogs Search
+            d. These 3 screens as well as the Sold Hogs for a Customer need to initially start with displaying 20 items per page but allow the user to change that number to: 5, 10, 20, 50, 100, 500.
+            e. If the User changes this number of items per page, keep that number with that particular screen until the user changes it.
+        4. We want to get away from the word "Search". So all the current Search screens will be called List. So a List screen may or may not have a search option depending on the number of items that could be listed.
+    b. Here are screen by screen changes.
+        1. Entry - Customers
+            a. This will now become Customers - List.
+            b. The breadcrumb should read: Home >> Customers >> List
+            c. Remove "Search Customers"
+            d. Move the "You may optionally enter......" sentence to the bottom of the screen below the bottom buttons.
+            e. Add the Redisplay feature - see 5.a.3
+            f. Add a button called New. (Remember both under breadcrumb and at the bottom of the page).
+                1. Clicking on the New button will take the User to what is now called the Customer Create screen.
+                2. Breadcrumb will become Home >> Customers >> New
+                3. Change the Create button to Save. Clicking this button will save the data and take the User back to Home >> Customers >> List.
+                4. Add a button called "Save & New". This will save the current data and redisplay the current screen without data.
+                5. Cancel will take the User back to Home >> Customers >> List.
+            g. In the current Update Customer screen:
+                1. The breadcrumb will be Home >> Customers >> Update
+                2. Remove Update Customer #
+                3. Save button will save data and return the User to Home >> Customers >> List.
+                4. Add a new button called Save & New that will save the current data and take the user to Home >> Customers >> New
+                5. The Cancel button will not save any data and take the User to Home >> Customers >> List.
+                6. Sold Hogs button - no change.
+        2. Entry Sows/Boars
+            a. This will now become Pigs - Sows/Boars
+            b. Breadcrumb will be Home >> Pigs >> Sows/Boars >> List
+            c. Remove "Search Sows/Boars"
+            d. Move the "You may optionally enter......" sentence to the bottom of the screen below the bottom buttons.
+            e. Add the Redisplay feature - see 5.a.3
+            f. Add a button called New. (Remember both under breadcrumb and at the bottom of the page).
+                1. Clicking on the New button will take the User to what is now called the Create Sows/Boars screen.
+                2. Breadcrumb will become Home >> Pigs >> Sows/Boars >> New
+                3. Change the Create button to Save. Clicking this button will save the data and take the User back to Home >> Pigs >> Sows/Boars >> List.
+                4. Add a button called "Save & New". This will save the current data and redisplay the current screen without data.
+                5. Cancel will take the User back to Home >> Pigs >> Sows/Boars >> List.
+            g. In the current Update Sows/Boars screen:
+                1. The breadcrumb will be Home >> Pigs >> Sows/Boars >> Update
+                2. Remove Update Sows/Boars #
+                3. Save button will save data and return the User to Home >> Pigs >> Sows/Boars >> List.
+                4. Add a new button called Save & New that will save the current data and take the user to Home >> Pigs >> Sows/Boars >> New
+                5. The Cancel button will not save any data and take the User to Home >> Pigs >> Sows/Boars >> List.
+                6. Sire, Dam, Pedigree buttons - no change. Just make sure all buttons are in both places as mentioned above.
+        3. Entry Sold Hogs
+            a. This will now become Pigs - Sold Hogs
+            b. Breadcrumb will be Home >> Pigs >> Sold Hogs >> List
+                1. Note that this is a change in that the Blue bar menu will take the User to the List (formerly Search) screen instead of the Update screen.
+            c. Remove "Search Sold Hogs"
+            d. Move the "You may optionally enter......" sentence to the bottom of the screen below the bottom buttons.
+            e. Add the Redisplay feature - see 5.a.3
+            f. Add a button called New. (Remember both under breadcrumb and at the bottom of the page).
+                1. Clicking on the New button will take the User to what is now called the Create Sold Hogs screen.
+                2. Breadcrumb will become Home >> Pigs >> Sold Hogs >> New
+                3. Change the Create button to Save. Clicking this button will save the data and take the User back to Home >> Pigs >> Sold Hogs >> List.
+                4. Add a button called "Save & New". This will save the current data and redisplay the current screen without data.
+                5. Cancel will take the User back to Home >> Pigs >> Sold Hogs >> List.
+            g. In the current Update Sold Hogs screen:
+                1. The breadcrumb will be Home >> Pigs >> Sold Hogs >> Update
+                2. Remove Update Sold Hogs #
+                3. Save button will save data and return the User to Home >> Pigs >> Sold Hogs >> List.
+                4. Add a new button called Save & New that will save the current data and take the user to Home >> Pigs >> Sold Hogs >> New
+                5. The Cancel button will not save any data and take the User to Home >> Pigs >> Sold Hogs >> List.
+                6. The display of the last 5 entered Sold Hogs - no change.
+        4. Maintenance - Mailing Code
+            a. This will become Customers - Mailing Codes
+            b. Breadcrumb will be Home >> Customers >> Mailing Codes >> List
+            c. Remove "Manage Mailing Codes"
+            d. Move the "You may optionally enter......" sentence to the bottom of the screen below the bottom buttons.
+            e. Add the Redisplay feature - see 5.a.3
+            f.  Add a button called New. (Remember both under breadcrumb and at the bottom of the page).
+                1. Clicking on the New button will take the User to what is now called the Create Mailing Code screen.
+                2. Breadcrumb will become Home >> Customers >> Mailing Codes >> New
+                3. Change the Create button to Save. Clicking this button will save the data and take the User back to Home >> Customers >> Mailing Codes >> List.
+                4. Add a button called "Save & New". This will save the current data and redisplay the current screen without data.
+                5. Cancel will take the User back to Home >> Customers >> Mailing Codes >> List.
+            g. In the current Manage Mailing Codes screen:
+                1. The breadcrumb will be Home >> Customers >> Mailing Codes >> Update
+                2. Remove Update Mailing Code #
+                3. Save button will save data and return the User to Home >> Customers >> Mailing Codes >> List.
+                4. Add a new button called Save & New that will save the current data and take the user to Home >> Customers >> Mailing Codes >> New
+                5. The Cancel button will not save any data and take the User to Home >> Customers >> Mailing Codes >> List.
+                6. Sold Hogs button - no change.
+        4. Maintenance - Herd Setup
+            a. This will become Other - Herd Setup
+            b. Breadcrumb will be Home >> Other >> Herd Setup >> List
+            c. Remove "Manage tbl Herd Setups"
+            d. Move the "You may optionally enter......" sentence to the bottom of the screen below the bottom buttons.
+            e. Add the Redisplay feature - see 5.a.3
+            f. Add a button called New. (Remember both under breadcrumb and at the bottom of the page).
+                1. Clicking on the New button will take the User to what is now called the Create Farm & Herd screen.
+                2. Breadcrumb will become Home >> Other >> Herd Setup >> New
+                3. Change the Create button to Save. Clicking this button will save the data and take the User back to Home >> Other >> Herd Setup >> List.
+                4. Add a button called "Save & New". This will save the current data and redisplay the current screen without data.
+                5. Cancel will take the User back to Home >> Other >> Herd Setup >> List.
+            g. In the current Update Farm & Herd:
+                1. The breadcrumb will be Home >> Other >> Herd Setup >> Update
+                2. Remove Update Farm & Herd #
+                3. Save button will save data and return the User to Home >> Other >> Herd Setup >> List.
+                4. Add a new button called Save & New that will save the current data and take the user to Home >> Other >> Herd Setup >> New
+                5. The Cancel button will not save any data and take the User to Home >> Other >> Herd Setup >> List.
+
+http://localhost/yii/yii/testdrive/index.php?r=rights/authItem/generate

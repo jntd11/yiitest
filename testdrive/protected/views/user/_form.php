@@ -36,7 +36,20 @@
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
-
+<?php
+if (Yii::app()->user->isSuperuser) {
+       $all_roles=new RAuthItemDataProvider('roles', array( 
+    'type'=>2,
+    ));
+      $data=$all_roles->fetchData();
+?>
+    <div>
+        <label for="type_id">Type</label>
+        <?php echo CHtml::dropDownList("Type",'',CHtml::listData($data,'name','name'));?> 
+    </div>
+<?php
+}
+?>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
