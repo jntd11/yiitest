@@ -526,3 +526,6 @@ div.form.gii pre.results span.error
 {
 	float: right;
 }
+.html {
+	z-index: 10px;
+}

@@ -1,6 +1,6 @@
 <?php
 
-class TblSoldHogsController extends Controller
+class TblSoldHogsController extends RController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -16,6 +16,7 @@ class TblSoldHogsController extends Controller
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
+			'rights', // perform access control for CRUD operations
 		);
 	}
 
@@ -37,7 +38,7 @@ class TblSoldHogsController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),

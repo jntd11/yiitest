@@ -17,6 +17,8 @@ return array(
 		'application.models.*',
 		'application.components.*',
 		'application.modules.rights.components.dataproviders.*',
+			'application.modules.rights.*',
+			'application.modules.rights.components.*',
 			'application.modules.user.models.*',
 			'application.modules.user.components.*',
 			'application.modules.rights.*',

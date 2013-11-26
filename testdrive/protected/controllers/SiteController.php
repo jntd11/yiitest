@@ -29,7 +29,27 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		//print_r($_REQUEST);
+		$model = new TblContent();
+		$qtxt ="SELECT * FROM  tbl_content where page = 'index'";
+		$command =Yii::app()->db->createCommand($qtxt);
+		$res =$command->queryAll();
+		if((count($res) > 0) && (!empty($res[0]['content']))) {
+			$model=TblContent::model()->findByPk($res[0]['content_id']);
+		}
+		if(isset($_POST['yt0'])) {
+			if(isset($_POST['contentmain']) && !empty($_POST['contentmain'])) 
+				$model->content = $_POST['contentmain'];
+			else
+				$model->content = "";
+			$model->page = 'index';
+			$model->save();
+			//print_r($model->errors);
+		}
+		$model->page = "index";
+		$data = $model->search();
+		
+		$this->render('index',array('data'=>$data));
 	}
 
 	/**
