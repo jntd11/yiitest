@@ -7,6 +7,7 @@ $cs->registerCoreScript('jquery-ui-1.10.2.custom');
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/tinymce/tinymce.min.js');
 ?>
+
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 <div id="content">
 <?php 
@@ -33,3 +34,8 @@ if(Yii::app()->user->isSuperUser){
 <?php $this->endWidget(); ?>
 </div>
 <?php }?>
+<script>
+tinymce.init({
+		    selector: "textarea"
+		 });
+</script>

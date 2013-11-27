@@ -23,7 +23,12 @@ $('.search-form form').submit(function(){
     return false;
 });
 ");
-
+$cs=Yii::app()->clientScript;
+$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+$cs->registerCssFile(
+		$cs->getCoreScriptUrl().
+		'/jui/css/base/jquery-ui-1.10.2.custom.css'
+);
 ?>
 <h1><?php echo UserModule::t("Manage Users"); ?></h1>
 

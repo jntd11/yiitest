@@ -6,9 +6,6 @@
 	'htmlOptions' => array('enctype'=>'multipart/form-data'),
 ));
 ?>
-
-	<p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
-
 	<?php echo $form->errorSummary(array($model,$profile)); ?>
 
 	<div class="row">
@@ -64,6 +61,7 @@
 			}
 		}
 ?>
+<p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? UserModule::t('Create') : UserModule::t('Save')); ?>
 	</div>

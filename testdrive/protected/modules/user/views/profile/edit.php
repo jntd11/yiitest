@@ -7,10 +7,16 @@ $this->menu=array(
 	((UserModule::isAdmin())
 		?array('label'=>UserModule::t('Manage Users'), 'url'=>array('/user/admin'))
 		:array()),
-    array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
+		((UserModule::isAdmin())? array('label'=>UserModule::t('List User'), 'url'=>array('/user')):array()),
     array('label'=>UserModule::t('Profile'), 'url'=>array('/user/profile')),
     array('label'=>UserModule::t('Change password'), 'url'=>array('changepassword')),
     array('label'=>UserModule::t('Logout'), 'url'=>array('/user/logout')),
+);
+$cs=Yii::app()->clientScript;
+$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+$cs->registerCssFile(
+		$cs->getCoreScriptUrl().
+		'/jui/css/base/jquery-ui-1.10.2.custom.css'
 );
 ?><h1><?php echo UserModule::t('Edit profile'); ?></h1>
 

@@ -26,12 +26,13 @@ $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery');
-//$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+$cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs->registerCssFile(
 		$cs->getCoreScriptUrl().
 		'/jui/css/base/jquery-ui-1.10.2.custom.css'
 );
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
+
 ?>
 </head>
 
@@ -55,10 +56,10 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				//array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Users', 'url'=>array('/user'), 'itemOptions'=>array('id'=>'users'), 'linkOptions'=>array('id'=>'userlink', 'accesskey'=>'u'), 'items'=>array(
-						array('label'=>'Create User', 'url'=>array('create')),
-						array('label'=>'Manage User', 'url'=>array('admin'))
-						)),
+				(Yii::app()->user->isSuperUser)?array('label'=>'Users', 'url'=>array('/user'), 'itemOptions'=>array('id'=>'users'), 'linkOptions'=>array('id'=>'userlink', 'accesskey'=>'u'), 'items'=>array(
+							array('label'=>'Create User', 'url'=>array('/user/admin/create')),
+							array('label'=>'Manage User', 'url'=>array('admin'))
+							)):array(),
 				array('label'=>'Maintenance', 'itemOptions'=>array('id'=>'Maintenance'), 'linkOptions'=>array('accesskey'=>'m'), 'url'=>array('/user'), 'items'=>array(
 							array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup')),
 							array('label'=>'Ear Tag Maintenance', 'url'=>array('create')),
@@ -83,8 +84,11 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Create User', 'url'=>array('create')),
 							array('label'=>'Manage User', 'url'=>array('admin'))
 				)),
-				array('label'=>'Login', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>Yii::t('app','Rights'), 'url'=>array('/rights')),
+				array('label'=>'Login', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Others', 'itemOptions'=>array('id'=>'Others'), 'url'=>array(''), 'linkOptions'=>array('accesskey'=>'O'), 'items'=>array(
+					array('label'=>Yii::t('app','Rights'), 'url'=>array('/rights')),
+					array('label'=>Yii::t('app','Profile'), 'url'=>array('/user/profile')),
+				)),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>

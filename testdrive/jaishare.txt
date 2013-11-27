@@ -1206,6 +1206,7 @@ After I wrote this project up it seems like a lot but there is quite a bit of ju
 3. We need a place where we can insert some HTML code that will be displayed on the Home page. Linda has a WYSIWYG program that can generate HTML code, we just need a place to put the code so it displays on the Home screen.
     a. It is fine if you just want to give us the file name and where it is located and the location in the file where to place the HTML code.
     b. Remove the: "Welcome to" from the Home screen and this is where we want the HTML code to display.
+   Done
 4. None of the screens should show any data until the User is logged in. We don't want strangers poking around looking at data.
     a. The login is going to be used a little different than I originally thought.
     b. Under the breadcrumb remove: "Login" and "Please fill out the following form with your login credentials."
@@ -1218,7 +1219,7 @@ After I wrote this project up it seems like a lot but there is quite a bit of ju
         3. Move the Fields with * are required to the bottom of the screen.
         4. Add a Cancel button that does not save any data and returns to the Home screen. Remember all buttons will be at both the top and bottom.
         5. The Save button will save the User's data and return to the Home screen.
-        6. Remove the Date: and box in the footer of the screen.
+6. Remove the Date: and box in the footer of the screen.
         7. Remove the Operations column like in all other screens.
     g. I think we should store the Activity Date and current Farm & Herd in this table so the next time this User logs in then those items are already set.
     h. Need a clickable message on the Login screen: Forgot Password
@@ -1231,6 +1232,13 @@ After I wrote this project up it seems like a lot but there is quite a bit of ju
 admin@pigsapp.com
         3. The password generated above needs to be somewhat random letters and numbers at least 8 characters long.
         4. This will be stored as their new password until the User logs in to change it.
+
+Note: Kindly check this, because i have restructured the user module completely. It has with rights and roles. Based on your role, you will have different access. User is admin/admin and demo/demo1
+
+1. Now, you can edit/create users
+2. Demo user can see their profile
+3. Password recovery is bid different they have to set themselves based on link on email....
+
 5. The look of all the screens needs to be changed.
     a. The Operations column needs to be eliminated on all screens. All operations will now be buttons in two locations:
         1. Just under the breadcrumb
@@ -1341,3 +1349,37 @@ admin@pigsapp.com
 
 http://localhost/yii/yii/testdrive/index.php?r=rights/authItem/generate
 http://www.yiiframework.com/wiki/423/installing-yii-users-and-rights-to-newly-created-yii-app/#hh0
+Your php.ini file can be found at C:\wamp\bin\apache\Apache2.2.21\bin\php.ini
+To ensure proper functioning of OpenEMR you must make sure that settings in php.ini file include "short_open_tag = On", "display_errors = Off", "register_globals = Off", "max_execution_time" set to at least 60, "max_input_time" set to at least 90, "post_max_size" set to at least 30M, and "memory_limit" set to at least "128M".
+In order to take full advantage of the patient documents capability you must make sure that settings in php.ini file include "file_uploads = On", that "upload_max_filesize" is appropriate for your use and that "upload_tmp_dir" is set to a correct value that will work on your system.
+
+ <Directory C:\wamp\www\openemr-4.1.2\openemr-4.1.2\sites\*\documents>
+      order deny,allow
+      Deny from all
+  </Directory>
+  <Directory C:\wamp\www\openemr-4.1.2\openemr-4.1.2\sites\*\edi>
+      order deny,allow
+      Deny from all
+  </Directory>
+  <Directory C:\wamp\www\openemr-4.1.2\openemr-4.1.2\sites\*\era>
+      order deny,allow
+      Deny from all
+  </Directory>
+
+  Congratulations! OpenEMR is now installed.
+
+Access controls (php-GACL) are installed for fine-grained security, and can be administered in OpenEMR's admin->acl menu.
+Reviewing C:\wamp\www\openemr-4.1.2\openemr-4.1.2\library\classes/../../sites/default/config.php is a good idea. This file contains some settings that you may want to change.
+There's much information and many extra tools bundled within the OpenEMR installation directory. Please refer to openemr/Documentation. Many forms and other useful scripts can be found at openemr/contrib.
+To ensure a consistent look and feel through out the application using Firefox is recommended.
+The OpenEMR project home page, documentation, and forums can be found at http://www.open-emr.org
+We pursue grants to help fund the future development of OpenEMR. To apply for these grants, we need to estimate how many times this program is installed and how many practices are evaluating or using this software. It would be awesome if you would email us at drbowen@oemr.org if you have installed this software. The more details about your plans with this software, the better, but even just sending us an email stating you just installed it is very helpful.
+We recommend you print these instructions for future reference.
+
+The initial OpenEMR user is 'admin' and the password is 'admin'
+
+If you edited the PHP or Apache configuration files during this installation process, then we recommend you restart your Apache server before following below OpenEMR link.
+
+Test1
+r5#0%b
+123456

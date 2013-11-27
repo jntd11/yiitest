@@ -229,3 +229,7 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 	bottom: -20px;
 	top: auto;
 }
+.login{
+	position: relative;
+	left: 30%;
+}
