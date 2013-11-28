@@ -1233,7 +1233,12 @@ admin@pigsapp.com
         3. The password generated above needs to be somewhat random letters and numbers at least 8 characters long.
         4. This will be stored as their new password until the User logs in to change it.
 
-Note: Kindly check this, because i have restructured the user module completely. It has with rights and roles. Based on your role, you will have different access. user
+Note: Kindly check this, because i have restructured the user module completely. It has with rights and roles. Based on your role, you will have different access. User is admin/admin and demo/demo1
+
+1. Now, you can edit/create users
+2. Demo user can see their profile
+3. Password recovery is bid different they have to set themselves based on link on email....
+
 5. The look of all the screens needs to be changed.
     a. The Operations column needs to be eliminated on all screens. All operations will now be buttons in two locations:
         1. Just under the breadcrumb

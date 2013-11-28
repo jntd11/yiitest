@@ -259,3 +259,6 @@ div.search-form
 	margin-top: -21px;
 	margin-right: 10px;
 }
+.buttons{
+	text-decoration: none;
+}
