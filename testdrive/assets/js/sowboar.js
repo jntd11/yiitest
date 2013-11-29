@@ -154,7 +154,7 @@ $(document).ready(function(){
 function cancelSow(){
 	$("#earnotch").val("");
 	$("#SowBoar_sow_boar_name").focus();
-	window.location="index.php?r=sowBoar/index";
+	window.location="index.php?r=sowBoar/admin";
 }
 
 function setDefault(val,obj){

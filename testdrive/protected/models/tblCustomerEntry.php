@@ -247,9 +247,10 @@ class TblCustomerEntry extends CActiveRecord
 		$criteria->compare('notes3',$this->notes3,true);
 		$criteria->compare('notes4',$this->notes4,true);
 		$criteria->compare('modified_date',$this->modified_date,true);
-
+		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages)),
 		));
 	}
 	

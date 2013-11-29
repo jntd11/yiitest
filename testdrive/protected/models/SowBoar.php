@@ -152,9 +152,10 @@ class SowBoar extends CActiveRecord
 		$criteria->compare('sire_initials',$this->sire_initials,true);
 		$criteria->compare('comments',$this->comments,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
-
+		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages)),
 		));
 	}
 	

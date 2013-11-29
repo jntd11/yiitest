@@ -129,9 +129,10 @@ class TblSoldHogs extends CActiveRecord
 		$criteria->compare('comments',$this->comments,true);
 		$criteria->compare('reason_sold',$this->reason_sold,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
-
+		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages)),
 		));
 	}
 	public function getlist($pagecount=0)

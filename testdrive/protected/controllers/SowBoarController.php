@@ -39,7 +39,7 @@ class SowBoarController extends RController
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -128,8 +128,9 @@ class SowBoarController extends RController
 				$model->dam_notch = $this->calculateYear($model->dam_notch);
 			$model->comments = $_POST['SowBoar']['comments'];
 		 	$model->save();
-			//if($model->save())
-				//$this->redirect(array('index','id'=>$model->sow_boar_id));
+			if($model->save())
+				if(!isset($_POST['savenew']))
+					$this->redirect(array('admin','id'=>$model->sow_boar_id));
 		}
 
 		$this->render('create',array(

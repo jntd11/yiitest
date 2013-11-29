@@ -4,17 +4,19 @@
 
 $this->breadcrumbs=array(
 	'Customers'=>array('index'),
-	'Create',
+	'New',
 );
 
 $this->menu=array(
 	array('label'=>'List Customers', 'url'=>array('index')),
 	array('label'=>'Search Customers', 'url'=>array('admin')),
 );
-$this->buttons=array(
-	CHtml::submitButton('Create',array('onClick'=>'$("#tbl-customer-entry-form").data("changed",false); $("#tbl-customer-entry-form").submit()')),
+/*$this->buttons=array(
+	CHtml::submitButton('Save',array('onClick'=>'$("#tbl-customer-entry-form").data("changed",false); $("#tbl-customer-entry-form").submit()')),
+	CHtml::submitButton('Save & New',array('id'=>'savenew','onClick'=>'$("#tbl-customer-entry-form").data("changed",false); $("#tbl-customer-entry-form").submit()')),
 	CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblCustomerEntry/index"'))
 );
+*/
 $cs=Yii::app()->clientScript;
 $cs->registerCssFile(
 		Yii::app()->baseUrl.

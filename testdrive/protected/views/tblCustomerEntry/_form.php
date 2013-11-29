@@ -14,8 +14,9 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 
 	<?php echo $form->errorSummary($model); ?>
 	<div class="row">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblCustomerEntry/index"')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('id'=>'savenew')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblCustomerEntry/admin"')); ?>
 		<?php if(!$model->isNewRecord) echo CHtml::Button('Sold Hogs', array('onClick'=>"window.location='index.php?r=tblSoldHogs/soldlist&id=".$model->getPrimaryKey()."'")); ?>
 	</div>	
 	<div>&nbsp;</div>
@@ -492,8 +493,9 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 	</table>
 	<div>&nbsp;</div>
 	<div class="row">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblCustomerEntry/index"')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('id'=>'savenew')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblCustomerEntry/admin"')); ?>
 		<?php if(!$model->isNewRecord) echo CHtml::Button('Sold Hogs', array('onClick'=>"window.location='index.php?r=tblSoldHogs/soldlist&id=".$model->getPrimaryKey()."'")); ?>
 	</div>
 <?php $this->endWidget(); ?>

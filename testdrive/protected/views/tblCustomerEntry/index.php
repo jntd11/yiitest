@@ -12,10 +12,11 @@ $this->menu=array(
 	array('label'=>'Create Customers', 'url'=>array('create')),
 	array('label'=>'Search Customers', 'url'=>array('admin')),
 );
-?>
 
+?>
 <h1>List Customers</h1>
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'tbl-customer-entry-grid',
 	'selectableRows'=>1,
 	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',

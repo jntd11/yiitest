@@ -3,8 +3,9 @@
 /* @var $model SowBoar */
 
 $this->breadcrumbs=array(
+	'Pigs'=>array('index'),
 	'Sows/Boars'=>array('index'),
-	'Create',
+	'New',
 );
 
 $this->menu=array(

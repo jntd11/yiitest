@@ -34,7 +34,7 @@ class TblCustomerEntryController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -74,8 +74,12 @@ class TblCustomerEntryController extends Controller
 		{
 			$model->attributes=$_POST['TblCustomerEntry'];
 			//$model->att_sale = date("Y-m-d H:i:s",strtotime($model->getAttribute('att_sale')));
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->customer_entry_id));
+			if($model->save()) {
+				if(isset($_POST['yt1']))
+					$this->redirect(array('create'));
+				else 
+					$this->redirect(array('admin','id'=>$model->customer_entry_id));
+			}
 		}
 		
 		

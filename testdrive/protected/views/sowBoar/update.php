@@ -5,6 +5,7 @@ $cs=Yii::app()->clientScript;
 
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowboar.js');
 $this->breadcrumbs=array(
+	'Pigs'=>array('index'),
 	'Sow/Boars'=>array('index'),
 	$model->sow_boar_id=>array('view','id'=>$model->sow_boar_id),
 	'Update',
@@ -18,6 +19,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Sows/Boars <?php echo $model->sow_boar_id; ?></h1>
+<h1></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
