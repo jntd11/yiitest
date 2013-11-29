@@ -10,6 +10,11 @@ if($herdmark != "")
 ?>
 
 <div class="form">
+	<div class="row buttons">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save', array('onClick'=>'return validateForm();')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New', array('onClick'=>'return validateForm();','name'=>'savenew')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelsoldhogs()')); ?>
+	</div>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'tbl-sold-hogs-form',
@@ -99,7 +104,8 @@ if($herdmark != "")
 	</div>
 	<div>&nbsp;</div>
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('onClick'=>'return validateForm();')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save', array('onClick'=>'return validateForm();')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New', array('onClick'=>'return validateForm();','name'=>'savenew')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelsoldhogs()')); ?>
 	</div>
 

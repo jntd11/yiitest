@@ -3,6 +3,7 @@
 /* @var $model TblSoldHogs */
 
 $this->breadcrumbs=array(
+	'Pigs'=>array('index'),
 	'Sold Hogs'=>array('index'),
 	$model->tbl_sold_hogs_id=>array('view','id'=>$model->tbl_sold_hogs_id),
 	'Update',

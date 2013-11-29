@@ -85,7 +85,10 @@ class TblSoldHogsController extends RController
 					$modelSowBoars->sold_mmddyy = $model->date_sold;
 					$modelSowBoars->save();
 				}
-				//$this->redirect(array('view','id'=>$model->tbl_sold_hogs_id));
+				if(!isset($_POST['savenew']))
+					$this->redirect(array('admin','id'=>$model->tbl_sold_hogs_id));
+				else 
+					$this->redirect(array('create'));
 			}
 		}
 		$model=new TblSoldHogs;
@@ -138,7 +141,12 @@ class TblSoldHogsController extends RController
 					$modelSowBoars->sold_mmddyy = $model->date_sold;
 					$modelSowBoars->save();
 				}
-				$this->redirect(array('view','id'=>$model->tbl_sold_hogs_id));
+				if(!isset($_POST['savenew']))
+					$this->redirect(array('admin','id'=>$model->tbl_sold_hogs_id));
+				else
+					$this->redirect(array('create'));
+				
+				//$this->redirect(array('view','id'=>$model->tbl_sold_hogs_id));
 			}
 		}
 
