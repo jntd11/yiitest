@@ -164,9 +164,16 @@ class UserController extends Controller
 		 	$date = date("m/d/Y");
 		 	break;
 		}
+		
 		$session = new CHttpSession();
 		$session->open();
 		echo Yii::app()->request->cookies['date'] = new CHttpCookie('date',$date,array('expire'=>time()+(365*24*60*60)));
+		if(!Yii::app()->user->isGuest){
+			$qu = "UPDATE users SET activity_date = '".$date."' WHERE id = ".Yii::app()->user->id;
+			$cmd = YII::app()->db->createCommand($qu);
+			$res = $cmd->query();
+		}
+		
 		//$session['date'] = $date;
 	}
 	

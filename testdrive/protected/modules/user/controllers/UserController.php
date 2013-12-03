@@ -25,7 +25,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','test','ActivityDate'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -97,5 +97,50 @@ class UserController extends Controller
 				throw new CHttpException(404,'The requested page does not exist.');
 		}
 		return $this->_model;
+	}
+	
+	/**
+	 * Manages all models.
+	 */
+	public function actionTest()
+	{
+		$req = new CHttpRequest();
+		$date = $req->getParam("d");
+		if($date == "")
+			$date = date("m/d/y");
+		$step = $req->getParam("s");
+		switch($step) {
+			case 'N':
+				$date = date("m/d/Y",strtotime($date) + (1*24*60*60));
+				break;
+			case 'P':
+				$date = date("m/d/Y",strtotime($date) - (1*24*60*60));
+				break;
+			case 'T':
+				$date = date("m/d/Y");
+				break;
+		}
+	
+		$session = new CHttpSession();
+		$session->open();
+		echo Yii::app()->request->cookies['date'] = new CHttpCookie('date',$date,array('expire'=>time()+(365*24*60*60)));
+		if(!Yii::app()->user->isGuest){
+			$qu = "UPDATE users SET activity_date = '".$date."' WHERE id = ".Yii::app()->user->id;
+			$cmd = YII::app()->db->createCommand($qu);
+			$res = $cmd->query();
+		}
+	
+		//$session['date'] = $date;
+	}
+	
+	/**
+	 * Manages all models.
+	 */
+	public function actionActivityDate()
+	{
+		$dataProvider=new CActiveDataProvider('User');
+		$this->render('activitydate',array(
+				'dataProvider'=>$dataProvider,
+		));
 	}
 }

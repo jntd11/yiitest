@@ -48,6 +48,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 		<div id="menu-top">
 		
 		<?php
+		
 			//zii.widgets.CMenu 0 application.extensions.mbmenu.MbMenu
 			$this->widget('zii.widgets.CMenu',array(
 			'activeCssClass'=>'active',
@@ -62,9 +63,9 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Mailing Code', 'url'=>array('/tblMailingCode/admin')),
 				)),
 					array('label'=>'Pigs', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(
-							array('label'=>'Bred', 'itemOptions'=>array('id'=>'breed')),
-							array('label'=>'Farrowed', 'itemOptions'=>array('id'=>'farrowed')),
-							array('label'=>'Weaned', 'itemOptions'=>array('id'=>'weaned')),
+							array('label'=>'Bred', 'itemOptions'=>array('id'=>'breed'), 'url'=>array('')),
+							array('label'=>'Farrowed', 'itemOptions'=>array('id'=>'farrowed'), 'url'=>array('')),
+							array('label'=>'Weaned', 'itemOptions'=>array('id'=>'weaned'), 'url'=>array('')),
 							array('label'=>'Sold Hogs', 'itemOptions'=>array('id'=>'soldhogs'), 'linkOptions'=>array('accesskey'=>'h'), 'url'=>array('/tblSoldHogs/admin')),
 							array('label'=>'Sows/Boars', 'itemOptions'=>array('id'=>'sowboar'), 'linkOptions'=>array('accesskey'=>'s'), 'url'=>array('/sowBoar/admin')),
 							
@@ -77,12 +78,12 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Activity date', 'url'=>array('user/activitydate')),
 							array('label'=>Yii::t('app','Rights'), 'url'=>array('/rights')),
 							array('label'=>Yii::t('app','Profile'), 'url'=>array('/user/profile')),
-							(Yii::app()->user->isSuperUser)?array('label'=>'Users', 'url'=>array('/user'), 'itemOptions'=>array('id'=>'users'), 'linkOptions'=>array('id'=>'userlink', 'accesskey'=>'u'), 'items'=>array(
-									array('label'=>'Create User', 'url'=>array('/user/admin/create')),
-									array('label'=>'Manage User', 'url'=>array('admin'))
-							)):array(),
+							(Yii::app()->user->isSuperUser)?array('label'=>'Users', 'url'=>array('/user'), 'itemOptions'=>array('id'=>'users'), 'linkOptions'=>array('id'=>'userlink', 'accesskey'=>'u'), 'items'=>array()
+							):array(),
 					)),
-						
+						//
+									//array('label'=>'Create User', 'url'=>array('/user/admin/create')),
+									//array('label'=>'Manage User', 'url'=>array('admin'))
 				/* array('label'=>'Maintenance', 'itemOptions'=>array('id'=>'Maintenance'), 'linkOptions'=>array('accesskey'=>'m'), 'url'=>array('/user'), 'items'=>array(
 							array('label'=>'Ear Tag Maintenance', 'url'=>array('create')),
 							array('label'=>'Breeding Record Maintenance', 'url'=>array('admin')),
@@ -102,8 +103,8 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Create User', 'url'=>array('create')),
 							array('label'=>'Manage User', 'url'=>array('admin'))
 				)), */
-				array('label'=>'Login', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Login', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest,'itemOptions'=>array('class'=>'lastmenu')),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest,'itemOptions'=>array('class'=>'lastmenu1'))
 			),
 		)); ?>
 		</div>
