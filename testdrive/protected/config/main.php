@@ -86,7 +86,7 @@ return array(
 					'baseUrl'=>'/rights', // Base URL for Rights. Change if module is nested.
 					'layout'=>'rights.views.layouts.main',  // Layout to use for displaying Rights.
 					'appLayout'=>'application.views.layouts.main', // Application layout.
-											'cssFile'=>'rights.css', // Style sheet file to use for Rights.
+											'cssFile'=>'/css/default.css', // Style sheet file to use for Rights.
 											'install'=>false,  // Whether to enable installer.
 					'debug'=>false,
 			),
@@ -130,15 +130,15 @@ return array(
 		*/
 		// uncomment the following to use a MySQL database
 		
-		'db'=>array(
+/* 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
-		),
+		), */
 		
-		/** server
+		/** server **/
 		'db'=>array(
 			'connectionString' => 'mysql:host=mysql51-015.wc2.dfw1.stabletransit.com;dbname=512368_pigs',
 			'emulatePrepare' => true,
@@ -146,7 +146,7 @@ return array(
 			'password' => '098765Po',
 			'charset' => 'utf8',
 		),
-		**/
+		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',

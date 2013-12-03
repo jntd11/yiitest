@@ -1347,6 +1347,7 @@ Note: Kindly check this, because i have restructured the user module completely.
                 4. Add a new button called Save & New that will save the current data and take the user to Home >> Other >> Herd Setup >> New
                 5. The Cancel button will not save any data and take the User to Home >> Other >> Herd Setup >> List.
 
+  I have done above things, I am not sure whether i understand correctly on few above things...  Like a. Not sure whether it is menu or heading...
 http://localhost/yii/yii/testdrive/index.php?r=rights/authItem/generate
 http://www.yiiframework.com/wiki/423/installing-yii-users-and-rights-to-newly-created-yii-app/#hh0
 Your php.ini file can be found at C:\wamp\bin\apache\Apache2.2.21\bin\php.ini
