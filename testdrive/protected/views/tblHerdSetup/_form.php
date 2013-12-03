@@ -200,8 +200,9 @@
 	
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('tabindex'=>40)); ?>
-		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblHerdSetup/index"')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('tabindex'=>40)); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New', array('tabindex'=>41,'name'=>'savenew')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblHerdSetup/admin"')); ?>
 	</div>
 <?php $this->endWidget(); ?>
 

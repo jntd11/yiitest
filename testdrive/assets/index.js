@@ -157,3 +157,4 @@ function isInteger(event){
 
 	         return true;
 }
+

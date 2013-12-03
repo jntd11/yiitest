@@ -5,9 +5,9 @@
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->breadcrumbs=array(
-	'Tbl Mailing Codes'=>array('index'),
-	$model->mailing_code_id=>array('view','id'=>$model->mailing_code_id),
-	'Update',
+		'Customers'=>array('index'),
+		'Mailing Codes'=>array('index'),
+		'Update',
 );
 
 $this->menu=array(
@@ -18,6 +18,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Mailing Code <?php echo $model->mailing_code_id; ?></h1>
+<h1></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

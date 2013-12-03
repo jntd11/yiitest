@@ -3,8 +3,9 @@
 /* @var $model TblHerdSetup */
 
 $this->breadcrumbs=array(
-	'Farm & Herd'=>array('index'),
-	'Create',
+	'Other'=>array('admin'),
+	'Herd Setup'=>array('admin'),
+	'New',
 );
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->menu=array(
@@ -14,6 +15,6 @@ $this->menu=array(
 $cs=Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/herdsetup.js');
 ?>
+<h1></h1>
 
-
-
+<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

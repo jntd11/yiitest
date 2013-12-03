@@ -72,8 +72,13 @@ class TblMailingCodeController extends Controller
 			$model->attributes=$_POST['tblMailingCode'];
 			$results = $this->getMailingCode($model->mailing_code_label);
 			if($results == '0') {
-				if($model->save())
-					$this->redirect(array('view','id'=>$model->mailing_code_id));
+				if($model->save()){
+					if(!isset($_POST['savenew']))
+						$this->redirect(array('admin'));
+					else
+						$this->redirect(array('create'));
+				}
+					//$this->redirect(array('view','id'=>$model->mailing_code_id));
 			}else{
 				Yii::app()->user->setFlash('deleteStatus','Not Created, Mailing Code Already Exists');
 				echo "<div class='flash-success'>Not Created, Mailing Code Already Exists</div>";

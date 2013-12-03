@@ -61,9 +61,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Manage User', 'url'=>array('admin'))
 							)):array(),
 				array('label'=>'Maintenance', 'itemOptions'=>array('id'=>'Maintenance'), 'linkOptions'=>array('accesskey'=>'m'), 'url'=>array('/user'), 'items'=>array(
-							array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup')),
 							array('label'=>'Ear Tag Maintenance', 'url'=>array('create')),
-							
 							array('label'=>'Breeding Record Maintenance', 'url'=>array('admin')),
 							array('label'=>'Farrowing/Litter Maintenance', 'url'=>array('admin')),
 							array('label'=>'Automatic Chores Maintenance', 'url'=>array('admin')),
@@ -73,13 +71,19 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Activity date', 'url'=>array('user/activitydate')),
 							array('label'=>'Sold Hogs Rebuild', 'url'=>array('/tblSoldHogs/rebuild')),
 				)),
-				array('label'=>'Entry', 
-						'itemOptions'=>array('id'=>'customerentry'), 'linkOptions'=>array('accesskey'=>'e'), 'url'=>array(''), 'items'=>array(
-								array('label'=>'Customers', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblCustomerEntry/admin')),
-								array('label'=>'Sows/Boars', 'itemOptions'=>array('id'=>'sowboar'), 'linkOptions'=>array('accesskey'=>'s'), 'url'=>array('/sowBoar/admin')),
-								array('label'=>'Sold Hogs', 'itemOptions'=>array('id'=>'soldhogs'), 'linkOptions'=>array('accesskey'=>'h'), 'url'=>array('/tblSoldHogs/admin'))
-				)),
-					
+				//array('label'=>'Entry', 
+						//'itemOptions'=>array('id'=>'customerentry'), 'linkOptions'=>array('accesskey'=>'e'), 'url'=>array(''), 'items'=>array(
+								//array('label'=>'Sows/Boars', 'itemOptions'=>array('id'=>'sowboar'), 'linkOptions'=>array('accesskey'=>'s'), 'url'=>array('/sowBoar/admin')),
+								//array('label'=>'Sold Hogs', 'itemOptions'=>array('id'=>'soldhogs'), 'linkOptions'=>array('accesskey'=>'h'), 'url'=>array('/tblSoldHogs/admin'))
+				//)),
+				array('label'=>'Pigs', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(
+						array('label'=>'Sold Hogs', 'itemOptions'=>array('id'=>'soldhogs'), 'linkOptions'=>array('accesskey'=>'h'), 'url'=>array('/tblSoldHogs/admin')),
+						array('label'=>'Sows/Boars', 'itemOptions'=>array('id'=>'sowboar'), 'linkOptions'=>array('accesskey'=>'s'), 'url'=>array('/sowBoar/admin')),
+				)),					
+				array('label'=>'Customers', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(
+							array('label'=>'List ', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblCustomerEntry/admin')),
+							array('label'=>'Mailing Code', 'url'=>array('/tblMailingCode/admin')),
+				)),					
 				array('label'=>'Reports', 'itemOptions'=>array('id'=>'reports'), 'url'=>array('/user'), 'linkOptions'=>array('accesskey'=>'r'), 'items'=>array(
 							array('label'=>'Create User', 'url'=>array('create')),
 							array('label'=>'Manage User', 'url'=>array('admin'))
@@ -88,6 +92,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 				array('label'=>'Others', 'itemOptions'=>array('id'=>'Others'), 'url'=>array(''), 'linkOptions'=>array('accesskey'=>'O'), 'items'=>array(
 					array('label'=>Yii::t('app','Rights'), 'url'=>array('/rights')),
 					array('label'=>Yii::t('app','Profile'), 'url'=>array('/user/profile')),
+					array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup/admin')),
 				)),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

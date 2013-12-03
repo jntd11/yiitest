@@ -1385,3 +1385,35 @@ r5#0%b
 123456
 
 Complaint is registered with Complaint No. 100055-42101 You can get the status of the complaint from the following address: http://www.indiapost.gov.in/ccc/PCStatus.aspx
+
+http://sandbox.easymedmobile.com:8080/EasyMedAPI/getDashboardData?uuId=9E49B8AA-376854FB-EA31AA7C-41F93481&sessionID=CE26106A-47E4-703A-5D6C-B2633B988705&format=json&tmp=1358341006175
+http://192.168.1.6:8080/EasyMedAPI/auth?email=jaisankar@easymedmobile.com&password=123456&format=json
+http://192.168.1.6:8080/EasyMedAPI/getDashboardData?uuId=C3CCF9FC-12BFEAB2-64852011-C5332175&sessionID=A0386ED6-A127-CAAC-BC87-382D71796BB6&format=json&tmp=1358341006175
+http://192.168.1.6/easymedjai/?m=admin&c=listUsers&action=viewUser&userId=10672
+http://192.168.1.6/easymedjai/?m=admin&c=listUsers&action=viewUser&userId=6515
+
+
+
+    Home
+    Configuration Panel
+    Users list
+    Country configurator
+    Coupon
+    Caregivers
+    Department
+    Mobile Applications
+    Transactions
+    Packages
+    Error Log
+    Lab Result Notifications
+
+SELECT * FROM account_ext a LEFT JOIN affiliate aff ON (a.id = aff.affId) LEFT JOIN doctor d ON (a.id = d.docId) WHERE a.userId=6515 ORDER BY startDate
+
+53780	0787203523	0795533060
+251922	0787203523	0795533060
+97005404	0787203523	0787203523
+311528	0787203523	0795533060
+
+0787203523   0795533060
+0787203523   0795533060
+0787203523   0787203523

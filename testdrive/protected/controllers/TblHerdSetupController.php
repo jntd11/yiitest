@@ -71,6 +71,10 @@ class TblHerdSetupController extends Controller
 		{
 			$model->attributes=$_POST['TblHerdSetup'];
 			if($model->save()) {
+				if(!isset($_POST['savenew']))
+					$this->redirect(array('admin'));
+				else
+					$this->redirect(array('create'));
 				Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$model->getAttribute("farm_herd"),array('expire'=>time()+(365*24*60*60)));
 				Yii::app()->request->cookies['farm_herd_name'] = new CHttpCookie('farm_herd_name',$model->getAttribute("farm_name"),array('expire'=>time()+(365*24*60*60)));
 				Yii::app()->request->cookies['breeder_herd_mark'] = new CHttpCookie('breeder_herd_mark',$model->getAttribute("breeder_herd_mark"),array('expire'=>time()+(365*24*60*60)));
@@ -98,8 +102,13 @@ class TblHerdSetupController extends Controller
 		if(isset($_POST['TblHerdSetup']))
 		{
 			$model->attributes=$_POST['TblHerdSetup'];
-			if($model->save())
-				$this->redirect(array('index','id'=>$model->herd_id));
+			if($model->save()) {
+				if(!isset($_POST['savenew']))
+					$this->redirect(array('admin'));
+				else
+					$this->redirect(array('create'));
+			}
+				//$this->redirect(array('index','id'=>$model->herd_id));
 		}
 
 		$this->render('update',array(
