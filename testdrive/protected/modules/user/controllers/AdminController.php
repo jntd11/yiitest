@@ -3,7 +3,8 @@
 class AdminController extends Controller
 {
 	public $defaultAction = 'admin';
-	public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
+	
 	
 	private $_model;
 

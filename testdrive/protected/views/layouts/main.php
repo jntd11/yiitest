@@ -21,6 +21,17 @@ $session = new CHttpSession();
 $session->open();
 
 //$currdate = $session['date'];
+if(Yii::app()->request->cookies['date'] == null || Yii::app()->request->cookies['date'] == "" || Yii::app()->request->cookies['farm_herd'] == ""){
+	$qu = "select activity_date,  farm_herd_name,  farm_herd from users where id = ".Yii::app()->user->id;
+	$cmd = YII::app()->db->createCommand($qu);
+	$res = $cmd->queryRow();
+	if(isset($res['activity_date']))
+		Yii::app()->request->cookies['date'] = new CHttpCookie('date',$res['activity_date'],array('expire'=>time()+(365*24*60*60)));
+	if(isset($res['farm_herd_name']))
+		Yii::app()->request->cookies['farm_herd_name'] = new CHttpCookie('farm_herd_name',$res['farm_herd_name'],array('expire'=>time()+(365*24*60*60)));;
+	if(isset($res['farm_herd']))
+		Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$res['farm_herd'],array('expire'=>time()+(365*24*60*60)));;
+}
 $currdate = Yii::app()->request->cookies['date'];
 $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];

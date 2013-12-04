@@ -6,9 +6,11 @@
 			<?php
 				
 				foreach ($this->menu as $key=>$value){
-					$link = "index.php?r=".$this->getUniqueId()."/".CHtml::normalizeUrl($value['url'][0]);
-					//$this->getRoute().$value['url'][0];
-					echo '<a href="'.$link.'" class="buttons"><input type="button" value="'.$value['label'].'" /></a>'." ";
+					if(isset($value['url'])) {
+						$link = "index.php?r=".$this->getUniqueId()."/".CHtml::normalizeUrl($value['url'][0]);
+						//$this->getRoute().$value['url'][0];
+						echo '<a href="'.$link.'" class="buttons"><input type="button" value="'.$value['label'].'" /></a>'." ";
+					}
 				}
 			?>
 			<?php
@@ -28,9 +30,11 @@
 			<?php
 				
 				foreach ($this->menu as $key=>$value){
-					$link = "index.php?r=".$this->getUniqueId()."/".CHtml::normalizeUrl($value['url'][0]);
-					//$this->getRoute().$value['url'][0];
-					echo '<a href="'.$link.'" class="buttons"><input type="button" value="'.$value['label'].'" /></a>'." ";
+					if(isset($value['url'])) {
+						$link = "index.php?r=".$this->getUniqueId()."/".CHtml::normalizeUrl($value['url'][0]);
+						//$this->getRoute().$value['url'][0];
+						echo '<a href="'.$link.'" class="buttons"><input type="button" value="'.$value['label'].'" /></a>'." ";
+					}
 				}
 			?>		
 			<?php

@@ -103,7 +103,7 @@ http://www.wyndhamcollection.com/Bathroom-Vanities/
 URL: s01.lms.ac:2082
 username:fl03805
 password:fujidai1965
-***************1
+***************
 ***************
 New Server C-Panel Information:
 
@@ -1218,8 +1218,8 @@ After I wrote this project up it seems like a lot but there is quite a bit of ju
         2. Remove the "Update User #"
         3. Move the Fields with * are required to the bottom of the screen.
         4. Add a Cancel button that does not save any data and returns to the Home screen. Remember all buttons will be at both the top and bottom.
-	5. The Save button will save the User's data and return to the Home screen.
-	6. Remove the Date: and box in the footer of the screen.
+        5. The Save button will save the User's data and return to the Home screen.
+6. Remove the Date: and box in the footer of the screen.
         7. Remove the Operations column like in all other screens.
     g. I think we should store the Activity Date and current Farm & Herd in this table so the next time this User logs in then those items are already set.
     h. Need a clickable message on the Login screen: Forgot Password
@@ -1418,3 +1418,9 @@ SELECT * FROM account_ext a LEFT JOIN affiliate aff ON (a.id = aff.affId) LEFT J
 0787203523   0795533060
 0787203523   0795533060
 0787203523   0787203523
+
+\\192.168.1.6\testshare\jai
+
+HY00000762000104
+Health Insurance
+09/12/2012 - 08/12/2013
