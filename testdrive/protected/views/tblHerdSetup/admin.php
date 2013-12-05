@@ -47,7 +47,7 @@ $form=$this->beginWidget('CActiveForm', array(
 		'enableAjaxValidation'=>false,
 ));
 $pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
-echo CHtml::dropDownList('pages',$pages, array('2'=>'2','5','5','10'=>'10','20'=>'20','50'=>'50','100'=>'100','500'=>'500'),array('size'=>0,'tabindex'=>23,'maxlength'=>0));
+echo CHtml::dropDownList('pages',$pages, array('2'=>'2','5'=>'5','10'=>'10','20'=>'20','50'=>'50','100'=>'100','500'=>'500'),array('size'=>0,'tabindex'=>23,'maxlength'=>0));
 echo " &nbsp;";
 echo CHtml::submitButton('Redisplay',array('onClick'=>''));
 $this->endWidget();

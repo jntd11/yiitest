@@ -2,6 +2,7 @@
 
 <?php $this->beginContent('//layouts/main'); ?>
 <div id="content">
+		<?php if(count($this->menu)) { ?>
 		<div >
 			<?php
 				
@@ -24,8 +25,11 @@
 			?>
 		</div>
 		<div>&nbsp;</div>
+		<?php } ?>
 	<?php echo $content; ?>
-	<div>&nbsp;</div>
+	<?php if(count($this->menu)) { ?>
+		<div>&nbsp;</div>
+	
 		<div >
 			<?php
 				
@@ -47,5 +51,6 @@
 				}
 			?>
 		</div>
+	<?php } ?>
 </div><!-- content -->
 <?php $this->endContent(); ?>

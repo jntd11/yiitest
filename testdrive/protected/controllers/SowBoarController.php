@@ -6,7 +6,7 @@ class SowBoarController extends RController
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column1';
+	public $layout='//layouts/column3';
 	
 	static $count = 0;
 
@@ -130,7 +130,9 @@ class SowBoarController extends RController
 		 	$model->save();
 			if($model->save())
 				if(!isset($_POST['savenew']))
-					$this->redirect(array('admin','id'=>$model->sow_boar_id));
+					$this->redirect(array('admin'));
+			    else 
+			    	$this->redirect(array('create'));
 		}
 
 		$this->render('create',array(
@@ -193,7 +195,10 @@ class SowBoarController extends RController
 		 		$model->dam_notch = $this->calculateYear($model->dam_notch);
 		 	
 			if($model->save()){
-				$this->redirect(array('update','id'=>$model->sow_boar_id));
+				if(isset($_POST['savenew']))
+					$this->redirect(array('create'));
+				else
+					$this->redirect(array('update','id'=>$model->sow_boar_id));
 				echo "Saved";
 			}
 		}

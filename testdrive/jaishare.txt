@@ -1424,3 +1424,103 @@ SELECT * FROM account_ext a LEFT JOIN affiliate aff ON (a.id = aff.affId) LEFT J
 HY00000762000104
 Health Insurance
 09/12/2012 - 08/12/2013
+
+
+05/12/2013
+These issues I initially noticed - not necessarily associated with a particular item in the Project J specifications.
+1. Sometimes the Activity Date and Farm & Herd on the right side on the top Menu bar is on the bar and sometimes it is under the bar. It would be good to be consistent in the bar if possible.
+Fixed at below manu bar
+2. The connecting lines in the Sows/Boars Pedigree display now has gaps since the right column was eliminated.
+Check Now
+3. Also, the Hog Name is missing (Project F Item 2.b)
+NA
+4. In the Sold Hogs for a particular customer (my example: Carla Williamsen - Anderson's Show Pigs) the Total for the Sold Price is not right. In fact the total changes depending on which column the list of 16 Hogs is sorted on. Sorted by Hog Ear Notch the Total is $1050, Sorted by Date Sold the Total is $1950.
+It is because of default page size, fixed now.
+
+5. Clicking on Others - Activity Date gives me a 404 error.
+Fixed
+
+6. When clicking on the New button to enter a new customer - please remove the Create Customers page title between the buttons at the top.
+Done
+7. Same for Sold Hogs and Sows/Boars.
+Done
+8. Clicking on Pigs - Sold Hogs - New takes me to the new Sows/Boars screen - should take me to an new Sold Hogs screen.
+Done
+9. The Redisplay option on the Customer List and Mailing Codes List screens are not working.
+Done
+10. In the Sold Hogs List and the Sows/Boars List the Redisplay option of how many to display should only have 5, 10, 20, 50, 100, 500. It has an extra 5 and a 2 which should be removed and the other 5 is only showing 4. The Customer List also has these extra numbers that need to be removed.
+Done. "2" For testing purpose in local, will be removed later.... Remind me later.... 
+
+11. All pages that list (currently: Customers, Sows/Boars, Sold Hogs, Mailing Codes) need to have the search options and these will be called List in the breadcrumb. So we want to remove all pages that are strictly lists with no search option. (See Item 5.a.4 in the original specs.)
+Do you want simply all old "list" pages (without search page)?
+
+12. Home >> Customers >> List:
+    a. Remove List Customers button - top and bottom.
+    b. Remove Create Customers button - top and bottom.
+    c. Move Advanced Search to the bottom of the screen under "You may optionally....".
+    d. Place the top New button to the same line as the Redisplay button and remove as much blank space as possible (so the New button will be just under the breadcrumb).
+  Done
+13. Home >> Customers >> # >> Update:
+    a. Remove the Create Customers button - top and bottom.
+    b. Remove the Search Customers button - top and bottom.
+    c. Direct the List Customers to go to the Home >> Customers >> List page. (the one with the search options)
+    d. On the top of this screen move the Save, Save & New, Cancel & Sold Hogs buttons up to the same line as and after the List Customers button and remove any blank space.
+    e. On the bottom of this screen move the List Customers button to the same line as the rest of the bottom buttons to the left of the Save button.
+    f. The Save & New button is not working - it should save the current Customer's data and go to Home >> Customers >> New.
+ Done
+14. Home >> Customers >> New:
+    a. Remove Create Customer title.
+    b. Remove Search Customers buttons (top & bottom)
+    c. Direct the List Customers to go to the Home >> Customers >> List page. (the one with the search options)
+    d. On the top of this screen move the Save, Save & New & Cancel buttons up to the same line as and after the List Customers button and remove any blank space.
+    e. On the bottom of this screen move the List Customers button to the same line as the rest of the bottom buttons to the left of the Save button.
+Done
+15. Home >> Pigs >> Tbl Sold Hogs >> List:
+    a. Please remove Tbl from the breadcrumb.
+    b. Remove the Create Sold Hogs button - top and bottom.
+    c. Remove the List Sold Hogs button - top and bottom.
+    d. Move Advanced Search to the bottom of the screen under "You may optionally....".
+    e. Place the New button on the same line as the Redisplay button and remove as much blank space as possible (so the New button will be just under the breadcrumb).
+ Done
+16. Home >> Pigs >> Sold Hogs >> # >> Update:
+    a. Remove the Create Sold Hogs button - top and bottom.
+    b. Remove the Search Sold Hogs button - top and bottom.
+    c. Remove the View Sold Hogs button - top and bottom.
+    d. Direct the List Sold Hogs to go to the Home >> Pigs >> Sold Hogs >> List page. (the one with the search options)
+    e. On the top of this screen move the Save, Save & New & Cancel buttons up to the same line as and after the List Sold Hogs button and remove any blank space and remove the Update Sold Hogs # screen title.
+    e. On the bottom of this screen move the List Sold Hogs button to the same line as the rest of the bottom buttons to the left of the Save button.
+    f. The Save & New button is not working - it should save the current Sold Hog data and go to Home >> Pigs >> Sold Hogs >> New.
+Done
+  
+17. Home >> Pigs >> Sold Hogs >> New:
+    a. I cannot get to this screen because the New button in Sold Hogs is taking me to the Home >> Pigs >> Sows/Boars >> New screen.
+    b. I assume it would need similar adjustments as I am having you make on the Customers >> New screen.
+
+ Check Now
+
+18. Home >> Pigs >> Sows/Boars >> List:
+    a. Remove the Create Sows/Boars button - top and bottom.
+    b. Remove the List Sows/Boars button - top and bottom.
+    c. Move Advanced Search to the bottom of the screen under "You may optionally....".
+    d. Place the New button on the same line as the Redisplay button and remove as much blank space as possible (so the New button will be just under the breadcrumb).
+
+Done
+19. Home >> Pigs >> Sows/Boars >> # >> Update:
+    a. Remove the Create Sows/Boars button - top and bottom.
+    b. Remove the Search Sows/Boars button - top and bottom.
+    c. Direct the List Sows/Boars to go to the Home >> Pigs >> Sows/Boars >> List page. (the one with the search options)
+    e. On the top of this screen move the Save, Save & New, Cancel, Sire, Dam & Pedigree buttons up to the same line as and after the List Sows/Boars button and remove any blank space.
+    e. On the bottom of this screen move the List Sold Hogs button to the same line as the rest of the bottom buttons to the left of the Save button.
+    f. Need to allow for a blank Born Date.
+   DOne
+20. Home >> Pigs >> Sows/Boars >> New:
+    a. Remove Create Sows/Boars title.
+    b. Remove Search Sows/Boars buttons (top & bottom)
+    c. Direct the List Sows/Boars to go to the Home >> Pigs >> Sows/Boars >> List page. (the one with the search options)
+    d. On the top of this screen move the Save, Save & New, Cancel, Sire & Dam buttons up to the same line as and after the List Sows/Boars button and remove any blank space.
+    e. On the bottom of this screen move the List Sows/Boars button to the same line as the rest of the bottom buttons to the left of the Save button.
+
+Done
+I will do more testing after you have made these changes and the changes I sent this morning.
+
+http://pigsapp.com/yii/testdrive/index.php?r=tblSoldHogs/soldlist&id=46

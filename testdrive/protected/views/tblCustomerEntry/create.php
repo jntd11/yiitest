@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Customers', 'url'=>array('index')),
-	array('label'=>'Search Customers', 'url'=>array('admin')),
+	//array('label'=>'List Customers', 'url'=>array('admin')),
+	//array('label'=>'Search Customers', 'url'=>array('admin')),
 );
 /*$this->buttons=array(
 	CHtml::submitButton('Save',array('onClick'=>'$("#tbl-customer-entry-form").data("changed",false); $("#tbl-customer-entry-form").submit()')),
@@ -32,7 +32,7 @@ jQuery(function(){ // on document load
 })
 
 </script>
-<h1>Create Customers</h1>
+<h1></h1>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 
 <?php $model=new tblMailingCode; 

@@ -75,7 +75,7 @@ class TblCustomerEntryController extends Controller
 			$model->attributes=$_POST['TblCustomerEntry'];
 			//$model->att_sale = date("Y-m-d H:i:s",strtotime($model->getAttribute('att_sale')));
 			if($model->save()) {
-				if(isset($_POST['yt1']))
+				if(isset($_POST['savenew']))
 					$this->redirect(array('create'));
 				else 
 					$this->redirect(array('admin','id'=>$model->customer_entry_id));
@@ -127,7 +127,10 @@ class TblCustomerEntryController extends Controller
 			$model->notes = $_POST['TblCustomerEntry']['notes'];
 			$model->notes1 = $_POST['TblCustomerEntry']['notes1'];
 			if($model->save()){
-				$this->redirect(array('update','id'=>$model->customer_entry_id));
+				if(isset($_POST['savenew']))
+					$this->redirect(array('create'));
+				else
+					$this->redirect(array('update','id'=>$model->customer_entry_id));
 				//$this->redirect(array('view','id'=>$model->customer_entry_id));
 			}
 		}

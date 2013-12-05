@@ -166,7 +166,7 @@ class TblSoldHogs extends CActiveRecord
 		//$count = $this->count($criteria);
 		return new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,
-				'pagination'=>($pagecount > 0)?array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'id'=>$this->cust_id)):array('pagesize'=>5),
+				'pagination'=>($pagecount > 0)?array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'id'=>$this->cust_id)):array('pagesize'=>20),
 		));
 	}
 	public function rebuild()
@@ -205,8 +205,9 @@ class TblSoldHogs extends CActiveRecord
 	
 	public static function sumPrice($provider){
 		$total=0;
-		foreach($provider->data as $item)
+		foreach($provider->data as $item) {
 			$total+=$item->sold_price;
+		}
 		return $total;
 	}
 }
