@@ -8,18 +8,19 @@ $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 if($herdmark != "")
 	$herdmark = $herdmark." ";
 ?>
-
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'tbl-sold-hogs-form',
+	'enableAjaxValidation'=>false,
+)); ?>
 <div class="form">
 	<div class="row buttons">
+		<?php echo CHtml::Button('List Sold Hogs',array('onClick'=>'window.location="index.php?r=tblSoldHogs/admin"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save', array('onClick'=>'return validateForm();')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New', array('onClick'=>'return validateForm();','name'=>'savenew')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelsoldhogs()')); ?>
 	</div>
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'tbl-sold-hogs-form',
-	'enableAjaxValidation'=>false,
-)); ?>
+
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
@@ -104,6 +105,7 @@ if($herdmark != "")
 	</div>
 	<div>&nbsp;</div>
 	<div class="row buttons">
+		<?php echo CHtml::Button('List Sold Hogs',array('onClick'=>'window.location="index.php?r=tblSoldHogs/admin"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save', array('onClick'=>'return validateForm();')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New', array('onClick'=>'return validateForm();','name'=>'savenew')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelsoldhogs()')); ?>

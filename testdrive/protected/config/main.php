@@ -139,7 +139,9 @@ return array(
 		),
 		
 		/** server **/
-		/* 'db'=>array(
+
+	/* 	'db'=>array(
+
 			'connectionString' => 'mysql:host=mysql51-015.wc2.dfw1.stabletransit.com;dbname=512368_pigs',
 			'emulatePrepare' => true,
 			'username' => '512368_pigs',

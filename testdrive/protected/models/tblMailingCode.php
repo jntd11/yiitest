@@ -81,9 +81,10 @@ class tblMailingCode extends CActiveRecord
 		$criteria->compare('mailing_code_id',$this->mailing_code_id);
 		$criteria->compare('mailing_code_label',$this->mailing_code_label,true);
 		$criteria->compare('mailing_code_desc',$this->mailing_code_desc,true);
-
+		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages)),
 		));
 	}
 	

@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Customers', 'url'=>array('index')),
-	array('label'=>'Create Customers', 'url'=>array('create')),
+	//array('label'=>'List Customers', 'url'=>array('admin')),
+	//array('label'=>'Create Customers', 'url'=>array('create')),
 	//array('label'=>'View Customers', 'url'=>array('view', 'id'=>$model->customer_entry_id)),
-	array('label'=>'Search Customers', 'url'=>array('admin')),
+	//array('label'=>'Search Customers', 'url'=>array('admin')),
 );
 /*$this->buttons=array(
 		CHtml::submitButton('Save',array('onClick'=>'$("#tbl-customer-entry-form").data("changed",false); $("#tbl-customer-entry-form").submit()')),

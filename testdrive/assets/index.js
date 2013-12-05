@@ -10,7 +10,7 @@ $(document).ready(function(){
 //	  },
 	  onSelect: function(dateText, inst){
 					$.ajax({
-						url: encodeURI('index.php?r=user/test'),
+						url: encodeURI('index.php?r=user/user/test'),
 						type: "GET",
 						data: {d:dateText,s:''}
 					}).done(function(data){

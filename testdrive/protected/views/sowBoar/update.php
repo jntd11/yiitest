@@ -12,13 +12,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Sows/Boars', 'url'=>array('index')),
-	array('label'=>'Create Sows/Boars', 'url'=>array('create')),
+	//array('label'=>'List Sows/Boars', 'url'=>array('index')),
+	//array('label'=>'Create Sows/Boars', 'url'=>array('create')),
 	/*array('label'=>'View Sows/Boars', 'url'=>array('view', 'id'=>$model->sow_boar_id)),*/
-	array('label'=>'Search Sows/Boars', 'url'=>array('admin')),
+	//array('label'=>'Search Sows/Boars', 'url'=>array('admin')),
 );
 ?>
-
-<h1></h1>
-
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

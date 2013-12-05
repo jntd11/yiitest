@@ -21,6 +21,17 @@ $session = new CHttpSession();
 $session->open();
 
 //$currdate = $session['date'];
+if(Yii::app()->request->cookies['date'] == null || Yii::app()->request->cookies['date'] == "" || Yii::app()->request->cookies['farm_herd'] == ""){
+	$qu = "select activity_date,  farm_herd_name,  farm_herd from users where id = ".Yii::app()->user->id;
+	$cmd = YII::app()->db->createCommand($qu);
+	$res = $cmd->queryRow();
+	if(isset($res['activity_date']))
+		Yii::app()->request->cookies['date'] = new CHttpCookie('date',$res['activity_date'],array('expire'=>time()+(365*24*60*60)));
+	if(isset($res['farm_herd_name']))
+		Yii::app()->request->cookies['farm_herd_name'] = new CHttpCookie('farm_herd_name',$res['farm_herd_name'],array('expire'=>time()+(365*24*60*60)));;
+	if(isset($res['farm_herd']))
+		Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$res['farm_herd'],array('expire'=>time()+(365*24*60*60)));;
+}
 $currdate = Yii::app()->request->cookies['date'];
 $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
@@ -75,7 +86,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 					array('label'=>'Others', 'itemOptions'=>array('id'=>'Others'), 'url'=>array(''), 'linkOptions'=>array('accesskey'=>'O'), 'items'=>array(
 							array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup/admin')),
 							array('label'=>'Sold Hogs Rebuild', 'url'=>array('/tblSoldHogs/rebuild')),
-							array('label'=>'Activity date', 'url'=>array('user/activitydate')),
+							array('label'=>'Activity date', 'url'=>array('/user/user/activitydate')),
 							array('label'=>Yii::t('app','Rights'), 'url'=>array('/rights')),
 							array('label'=>Yii::t('app','Profile'), 'url'=>array('/user/profile')),
 							(Yii::app()->user->isSuperUser)?array('label'=>'Users', 'url'=>array('/user'), 'itemOptions'=>array('id'=>'users'), 'linkOptions'=>array('id'=>'userlink', 'accesskey'=>'u'), 'items'=>array()
@@ -104,17 +115,20 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Manage User', 'url'=>array('admin'))
 				)), */
 				array('label'=>'Login', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest,'itemOptions'=>array('class'=>'lastmenu')),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest,'itemOptions'=>array('class'=>'lastmenu1'))
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest,'itemOptions'=>array('class'=>'lastmenu1')),
 			),
 		)); ?>
+		
 		</div>
+		
 	</div><!-- mainmenu -->
+	<div id="infobar"><span id="currdate"><?php echo $currdate; ?></span> <span id="farmherd"><?php echo $farmHerd; ?></span>&nbsp;&nbsp;</div>
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
-	<div id="infobar"><span id="currdate"><?php echo $currdate; ?></span> <span id="farmherd"><?php echo $farmHerd; ?></span></div>
+	
 
 	<?php echo $content; ?>
 

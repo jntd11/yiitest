@@ -18,6 +18,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 	'enableAjaxValidation'=>false,
 )); ?>
 	<div class="row buttons">
+		<?php echo CHtml::Button('List Sow Boars',array('onClick'=>'window.location="index.php?r=sowBoar/admin"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateForm();')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('onClick'=>'return validateForm();','id'=>'savenew','name'=>'savenew')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelSow()')); ?>
@@ -162,6 +163,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<div class="row buttons">
+		<?php echo CHtml::Button('List Sow Boars',array('onClick'=>'window.location="index.php?r=sowBoar/admin"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateForm();')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('onClick'=>'return validateForm();','id'=>'savenew','name'=>'savenew')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelSow()')); ?>

@@ -10,15 +10,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Sold Hogs', 'url'=>array('index')),
-	array('label'=>'Search Sold Hogs', 'url'=>array('admin')),
+	//array('label'=>'List Sold Hogs', 'url'=>array('index')),
+	//array('label'=>'Search Sold Hogs', 'url'=>array('admin')),
 );
 
 $cs=Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/soldhog.js');
 
 ?>
-<h1>Create Sold Hogs</h1>
+<h1></h1>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 
 <?php

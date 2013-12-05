@@ -13,6 +13,14 @@ $( "<div>" )
 }
 }
 });
+
+var obj = $("table").last().attr('style');
+if(obj != null && obj != "") {
+	var res = obj.match(/top:[\- ]+([0-9]+)px/g);
+	//alert(res);
+	$("#bottommenu").attr("style","position: relative;"+res);
+}
+
 });
 var oldval;
 function checkData(element,type,extra,extra1){
@@ -326,6 +334,8 @@ $(function(){
     });
 });
 function validateDate(val){
+	if(val == "")
+		return true;
 	var patt = /^(([0-1][0-2])|([0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
 	if(!patt.test(val)){
 		alert("Date - Invalid date format");
