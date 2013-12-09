@@ -14,7 +14,8 @@ $this->menu=array(
 	//array('label'=>'View Farm & Herd', 'url'=>array('view', 'id'=>$model->herd_id)),
 	array('label'=>'Manage Farm & Herd', 'url'=>array('admin')),
 );
-$qu = "UPDATE users SET farm_herd = '".mysql_real_escape_string($model->getAttribute("farm_herd"))."', farm_herd_name = '".mysql_real_escape_string($model->getAttribute("farm_name"))."' WHERE id = ".Yii::app()->user->id;
+
+$qu = "UPDATE users SET farm_herd = '". addslashes($model->getAttribute("farm_herd"))."', farm_herd_name = '".addslashes($model->getAttribute("farm_name"))."' WHERE id = ".Yii::app()->user->id;
 $cmd = YII::app()->db->createCommand($qu);
 $res = $cmd->query();
 

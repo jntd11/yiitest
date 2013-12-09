@@ -364,9 +364,9 @@ class SowBoarController extends RController
 				$name = $model->findBySql($sql);
 				//echo "COUNT".self::$count;
 				$subgroup[self::$count] = array("notch"=>$data1[0]->sire_notch,
-						     "name"=>$name->sow_boar_name,
-						     "no"=>$name->registeration_no,
-							 "id"=>$name->sow_boar_id,
+						     "name"=>isset($name->sow_boar_name)?$name->sow_boar_name:"",
+						     "no"=>isset($name->registeration_no)?$name->registeration_no:"",
+							 "id"=>isset($name->sow_boar_id)?$name->sow_boar_id:"",
 							//"data"=>$data1
 						);
 				$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->dam_notch."'";

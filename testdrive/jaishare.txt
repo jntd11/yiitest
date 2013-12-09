@@ -1524,3 +1524,57 @@ Done
 I will do more testing after you have made these changes and the changes I sent this morning.
 
 http://pigsapp.com/yii/testdrive/index.php?r=tblSoldHogs/soldlist&id=46
+
+06/12/2013
+
+06/12/2013
+I will reply on issue 11 immediately so you can work on that while I test: We do not want separate List page and Search page. So basically we want only one page and we are going to call it the List page but we want this List page to include the search options. There is no need for both separate pages.
+
+21. Attached screenshot ProjectJ1.doc is the screen I get in FF and Chrome when trying to go to pigsapp.com/yii/testdrive after I did a clear cache on those two browsers. IE seems to be working fine for now.
+Done
+
+22. Attached screenshot ProjectJ2.doc is what I get when I click on a Customer from the Home >> Customers >> List page. However, if I click on the Update icon then the customer will be displayed on the Home >> Customers >> # >> Update page.
+Check now
+
+23. Attached screenshot ProjectJ3.doc is what I get when I try to Save. This is the correct Ear Notch for this hog. Not sure what is failing in the verification.
+Is space not required between 1H and CDO?
+
+24. In the attached screenshot ProjectJ4.doc notice the 0 at the end of the Sow/Boar Ear Notch which does not show on the Home >> Pigs >> Sows/Boars >> List. It looks like that maybe the fact that this Ear Notch actually has a Herd Mark of 4 letters instead of 3 may be causing the issue - I'm not sure. However, we need to allow for 4 letter Ear Notches (BEYE in this example).
+Four Digit is not a problem. Kindly confirm 2 things,  
+1. Does space is not requeired between 1D and BEYE.?
+2. Does 0 come at last block ? I check for numbers-numbers at the end of the string? Doesn't required?
+
+More issues:
+25. On the Home >> Customers >> List screen I did a First Name search for carla and it pops up 2 names but when I try to click on a name the screen does nothing. See attachment ProjectJ5. It is not just the First Name that has the problem - this happens on all the search boxes.
+Check now
+
+26. Went into Home >> Others >> Herd Setup >> List and tried to update 1Y and got the attached ProjectJ7.
+Fixed
+
+Testing results on specific issues:
+1. good
+2. good - some additional changes to the Pedigree screen:
+    a. The breadcrumb for the Sows/Boars Pedigree screen should be Home >> Pigs >> Sows/Boars >> # >> Update >> Pedigree
+    b. Change "Create Sows/Boars" buttons to "New".
+    c. Change "Search Sows/Boars" buttons to "List Sows/Boars".
+    d. Remove the "Pedigree" page title.
+    e. Move the Return, Update, Sire, Dam, + & - buttons up to the same line as and in front of New and List Sows/Boars buttons.
+    f. The initial display when you click on Pedigree from the Home >> Pigs >> Sows/Boars >> # >> Update screen has a lot of white space between the buttons and the pedigree graphic. 
+    Please eliminate as much of the white space as possible. The rest of the screens using + or - are fine.
+    It is bit tough, it will affect the positions. May be I will try. 
+
+    g. The Sire and Dam buttons are not working on the Home >> Pigs >> Sows/Boars >> # >> Update screen.
+    Space Issue again, Can u confirm the formats of Sow/Boar Ear Notch ?
+
+4. Can't search on the Customer >> List page so cannot test Carla until issue #25 is fixed.
+    a. Tried to use the "Go to page" Next and got the screen shown in ProjectJ6 attachment.
+    Search works. Go to also Works for me. Which Browser? IE? 
+
+5. good
+6. good
+7. good
+    a. In the Home >> Pigs >> Sold Hogs >> Create screen please move "Fields with * are required." to the bottom of the screen like you did the other screens and change the breadcrumb to Home >> Pigs >> Sold Hogs >> New.
+   Done
+
+    1DBG 2005 1-4
+    1DBG 2005 201-4

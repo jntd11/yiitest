@@ -33,7 +33,7 @@ $(document).ready(function(){
 						if($("#datepicker").val() == "") 
 							alert("Enter Valid Date");
 						else
-							$( this ).dialog( "close" );
+							$(this).dialog("close");
 					}
 				}
 			]

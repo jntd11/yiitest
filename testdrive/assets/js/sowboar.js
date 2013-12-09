@@ -102,31 +102,6 @@ function gerSireDam(type){
 	}
 }
 
-function gerSireDam(type){
-	if(type == 1){
-		var search = $("#sire_notch").val();
-	}else if(type == 2){
-		var search = $("#dam_notch").val();
-	}
-	
-	if(search != "") {
-		search = search.replace(".","-");
-		$.ajax({
-			url: encodeURI('index.php?r=sowBoar/search'),
-			type: "GET",
-			data: {s:search}
-		}).done(function(data){
-			var obj = $.parseJSON(data);
-			if(obj != "") {
-				if(type == 1){
-					window.location="index.php?r=sowBoar/siredam&val="+$("#sire_notch").val();
-				}else if(type == 2){
-					window.location="index.php?r=sowBoar/siredam&val="+$("#dam_notch").val();
-				}
-			}
-		});
-	}
-}
 $(document).ready(function(){
 	   var el = $("input:text").get(0);
 	    var elemLen = el.value.length;

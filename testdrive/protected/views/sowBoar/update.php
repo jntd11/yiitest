@@ -3,7 +3,7 @@
 /* @var $model SowBoar */
 $cs=Yii::app()->clientScript;
 
-$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowboar.js');
+
 $this->breadcrumbs=array(
 	'Pigs'=>array('index'),
 	'Sow/Boars'=>array('index'),
@@ -17,5 +17,6 @@ $this->menu=array(
 	/*array('label'=>'View Sows/Boars', 'url'=>array('view', 'id'=>$model->sow_boar_id)),*/
 	//array('label'=>'Search Sows/Boars', 'url'=>array('admin')),
 );
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowboar.js');
 ?>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

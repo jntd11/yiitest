@@ -21,7 +21,7 @@ $session = new CHttpSession();
 $session->open();
 
 //$currdate = $session['date'];
-if(Yii::app()->request->cookies['date'] == null || Yii::app()->request->cookies['date'] == "" || Yii::app()->request->cookies['farm_herd'] == ""){
+if((Yii::app()->user->id != "") && (Yii::app()->request->cookies['date'] == null || Yii::app()->request->cookies['date'] == "" || Yii::app()->request->cookies['farm_herd'] == "")){
 	$qu = "select activity_date,  farm_herd_name,  farm_herd from users where id = ".Yii::app()->user->id;
 	$cmd = YII::app()->db->createCommand($qu);
 	$res = $cmd->queryRow();

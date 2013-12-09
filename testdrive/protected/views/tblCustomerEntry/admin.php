@@ -12,19 +12,27 @@ $this->menu=array(
 	/* array('label'=>'List Customers', 'url'=>array('index')),
 	array('label'=>'Create Customers', 'url'=>array('create')), */
 );
+$cs=Yii::app()->clientScript;
+//$cs->registerCoreScript('jquery.ui');
+$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+$cs->registerCssFile(
+		$cs->getCoreScriptUrl().
+		'/jui/css/base/jquery-ui-1.10.2.custom.css'
+);
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
+		$('.search-button').click(function(){
+		$('.search-form').toggle();
+		return false;
 });
-$('.search-form form').submit(function(){
-	$('#tbl-customer-entry-grid').yiiGridView('update', {
+		$('.search-form form').submit(function(){
+		$('#Tbl-customer-entry-grid').yiiGridView('update', {
 		data: $(this).serialize()
-	});
-	return false;
 });
-");
+		return false;
+});
+		");
 ?>
 <div style="float: left;"><a class="buttons" href="index.php?r=tblCustomerEntry/create"><input type="button" value="New"></a></div>
 <div style="float: left; margin-left: 50%">
@@ -41,11 +49,13 @@ $this->endWidget();
 ?>
 </div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'tbl-customer-entry-grid',
+	'id'=>'Tbl-customer-entry-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
-	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
+	'selectionChanged'=>'function(id){ 
+		location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
+	 }',
 	'columns'=>array(
 		'company_name',
 		'first_name',

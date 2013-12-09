@@ -15,7 +15,6 @@ $cs->registerCssFile(
 		'/jui/css/base/jquery-ui-1.10.2.custom.css'
 );
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
-$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowboar.js');
 
 $this->menu=array(
 	//array('label'=>'List Sows/Boars', 'url'=>array('index')),
@@ -57,7 +56,9 @@ $this->endWidget();
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	 'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
-	 'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
+	 'selectionChanged'=>'function(id){
+		 location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
+	}',
 	'columns'=>array(
 		array('name'=>'ear_notch','value'=>'$this->grid->controller->calculateYear($data->ear_notch,2)'),
 		'sow_boar_name',

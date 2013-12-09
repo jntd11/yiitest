@@ -1,16 +1,19 @@
 <?php
 /* @var $this SowBoarController */
 /* @var $dataProvider CActiveDataProvider */
-
+$id = isset($_GET['id'])?$_GET['id']:0;
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->breadcrumbs=array(
-	'Sows/Boars',
+		'Pigs'=>array('index'),
+		'Sow/Boars'=>array('index'),
+		$id=>array('view','id'=>$id),
+		'Update',
 );
 
 $this->menu=array(
-	array('label'=>'Create Sows/Boars', 'url'=>array('create')),
-	array('label'=>'Search Sows/Boars', 'url'=>array('admin')),
+	//array('label'=>'New', 'url'=>array('create')),
+	//array('label'=>'List Sows/Boars', 'url'=>array('admin')),
 );
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs=Yii::app()->clientScript;
@@ -22,14 +25,15 @@ $cs->registerCssFile(
 		'/css/pedigree.css'
 );
 $parentId = Yii::app()->request->cookies['pedigree_parent'];
-$id = isset($_GET['id'])?$_GET['id']:0; 
+ 
 
 //echo "<pre>";
 //print_r($model);
 
 ?>
-<div><h1>Pedigree</h1></div>
 <div>
+<?php echo CHtml::Button('New',array('onClick'=>'window.location="index.php?r=sowBoar/create"')); ?>
+<?php echo CHtml::Button('List Sows/Boars',array('onClick'=>'window.location="index.php?r=sowBoar/admin"')); ?>
 <?php echo CHtml::Button('Return',array('onClick'=>'parentSow("'.$parentId.'")')); ?>
 <?php echo CHtml::Button('Update',array('onClick'=>'level1Sow(1)')); ?>
 <?php echo CHtml::Button('Sire',array('onClick'=>'level1Sow(2)')); ?>
