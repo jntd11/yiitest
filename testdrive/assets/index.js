@@ -49,7 +49,7 @@ $(document).ready(function(){
 				case 187:
 				case 61:
 					$.ajax({
-						url: encodeURI('index.php?r=user/test'),
+						url: encodeURI('index.php?r=user/user/test'),
 						type: "GET",
 						data: {d:$("#"+activeId).val(),s:'N'}
 					}).done(function(data){
@@ -59,7 +59,7 @@ $(document).ready(function(){
 				case 189:
 				case 173:
 					$.ajax({
-						url: encodeURI('index.php?r=user/test'),
+						url: encodeURI('index.php?r=user/user/test'),
 						type: "GET",
 						data: {d:$("#"+activeId).val(),s:'P'}
 					}).done(function(data){
@@ -69,7 +69,7 @@ $(document).ready(function(){
 				case 84:
 
 					$.ajax({
-						url: encodeURI('index.php?r=user/test'),
+						url: encodeURI('index.php?r=user/user/test'),
 						type: "GET",
 						data: {d:$("#"+activeId).val(),s:'T'}
 					}).done(function(data){
@@ -82,7 +82,7 @@ $(document).ready(function(){
 				case 187:
 				case 61:
 					$.ajax({
-						url: encodeURI('index.php?r=user/test'),
+						url: encodeURI('index.php?r=user/user/test'),
 						type: "GET",
 						data: {d:$("#currdate").html(),s:'N'}
 					}).done(function(data){
@@ -92,7 +92,7 @@ $(document).ready(function(){
 				case 189:
 				case 173:
 					$.ajax({
-						url: encodeURI('index.php?r=user/test'),
+						url: encodeURI('index.php?r=user/user/test'),
 						type: "GET",
 						data: {d:$("#currdate").html(),s:'P'}
 					}).done(function(data){
@@ -101,7 +101,7 @@ $(document).ready(function(){
 					break;
 				case 84:
 					$.ajax({
-						url: encodeURI('index.php?r=user/test'),
+						url: encodeURI('index.php?r=user/user/test'),
 						type: "GET",
 						data: {d:$("#currdate").html(),s:'T'}
 					}).done(function(data){

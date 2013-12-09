@@ -28,9 +28,9 @@ function checkData(element,type,extra,extra1){
 		var val = element.value;
 		if(val == "" || extra+" "+extra1 == val)
 			return;
-		var patt1 = /^[0-9][A-Z] [a-z]+ [0-9]{1,2}[ SFsf][0-9]{1,3}[\-\.][0-9]{1,2}$/gi;
+		var patt1 = /^[0-9][A-Z] *[a-z]+ [0-9]{1,2}[ SFsf][0-9]{1,4}[\-\.][0-9]{1,3}$/gi;
 		var patt2 = /[\-\.]/gi;
-		var patt3 = /^[0-9][A-Z] /gi;		
+		var patt3 = /^[0-9][A-Z]/gi;		
 		patt = patt1;
 		if(!patt.test(val)){
 			var patt4 = patt3;
@@ -261,12 +261,23 @@ function parentSow(id){
 		window.location="index.php?r=sowBoar/update&id="+id;
 }
 function level1Sow(type){
-	if(type == 1)
+	if(type == 1){
 		window.location="index.php?r=sowBoar/update&id="+$("#level0").val();
-	else if(type == 2)
+	}
+	else if(type == 2){
+		if($("#sire").val() == "" || $("#sire").val() == 0){
+			alert("No Sire Details found");
+			return;
+		}
 		window.location="index.php?r=sowBoar/pedigree&id="+$("#sire").val();
-	else if(type == 3)
+	}
+	else if(type == 3){
+		if($("#dam").val() == "" || $("#dam").val() == 0) {
+			alert("No Dam Details found");
+			return;
+		}
 		window.location="index.php?r=sowBoar/pedigree&id="+$("#dam").val();
+	}
 }
 function levelIncDec(id,type){
 	var currId = parseInt($("#currenlevel").val());

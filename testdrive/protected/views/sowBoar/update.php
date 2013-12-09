@@ -10,7 +10,11 @@ $this->breadcrumbs=array(
 	$model->sow_boar_id=>array('view','id'=>$model->sow_boar_id),
 	'Update',
 );
-
+$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+$cs->registerCssFile(
+		$cs->getCoreScriptUrl().
+		'/jui/css/base/jquery-ui-1.10.2.custom.css'
+);
 $this->menu=array(
 	//array('label'=>'List Sows/Boars', 'url'=>array('index')),
 	//array('label'=>'Create Sows/Boars', 'url'=>array('create')),

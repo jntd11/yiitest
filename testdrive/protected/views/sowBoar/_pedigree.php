@@ -156,7 +156,7 @@ foreach($level5 as $key=>$levels){
  $level[5] .=  '  <table width="10%" style="position: relative; top: '.$levels.'px; left:77%; width: 40%" border="0">
 	    <tr>';
  if($levelshow == 4)
- 	$level[5] .=  '<td class="a4" rowspan="2" style="border: none;"><span>$'.($key+1).'$</span>';
+ 	$level[5] .=  '<td class="a4" rowspan="2" style="border: none;"><span>$'.($key+1).'</span>';
  else
  	$level[5] .=  '<td class="a4" rowspan="2">  <hr class="hr4"/>$'.($key+1).'<hr class="hr44"/>';
  $level[5] .=  '  </td></tr></table>';

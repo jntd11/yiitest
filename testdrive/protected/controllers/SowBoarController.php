@@ -287,7 +287,13 @@ class SowBoarController extends RController
 	}
 	
 	public function calculateYear($date,$type=1){
+			
 			$ear_notch_array =  preg_split("/ /", $date);
+			
+			$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
+			if(!$isPresent)
+				return $date;
+			$ear_notch_array[2] = $matches[1];
 			$curr_year = date("y");
 			if(!isset($ear_notch_array[2]))
 				return $date;
@@ -305,7 +311,9 @@ class SowBoarController extends RController
 				}else if($length < 2){
 					$ear_notch_array[2] = "0".$ear_notch_array[2];
 				}
-				return implode($ear_notch_array, " ");
+				//return implode($ear_notch_array, " ");
+				$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
+				return $date;
 			}
 			//echo "$year <= $curr_year";
 			if($year <= $curr_year){
@@ -324,7 +332,10 @@ class SowBoarController extends RController
 			}
 			
 			//echo implode($ear_notch_array, " ");			exit;
-		return implode($ear_notch_array, " ");
+		
+		$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
+		return $date;
+		//return implode($ear_notch_array, " ");
 	}
 	
 	public function actionAutocompleteEarNotch() {

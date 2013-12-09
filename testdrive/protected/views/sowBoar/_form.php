@@ -62,7 +62,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 			  		'model' => $model,
 			  		'attribute' => 'born',
 			  		'options' =>array(
-			  				'dateFormat'=>'mm-dd-yy',
+			  				'dateFormat'=>'m-d-yy',
 			  		),
 			  
 			  		'htmlOptions' => array(

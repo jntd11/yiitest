@@ -14,6 +14,7 @@ $cs->registerCssFile(
 		$cs->getCoreScriptUrl().
 		'/jui/css/base/jquery-ui-1.10.2.custom.css'
 );
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowboar.js');
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 $this->menu=array(
@@ -52,7 +53,7 @@ $this->endWidget();
 ?>
 </div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'sow-boar-grid',
+	'id'=>'Sow-boar-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	 'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',

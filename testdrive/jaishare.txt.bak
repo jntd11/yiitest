@@ -1574,7 +1574,82 @@ Testing results on specific issues:
 6. good
 7. good
     a. In the Home >> Pigs >> Sold Hogs >> Create screen please move "Fields with * are required." to the bottom of the screen like you did the other screens and change the breadcrumb to Home >> Pigs >> Sold Hogs >> New.
-    Done
+   Done
 
     1DBG 2005 1-4
     1DBG 2005 201-4
+
+ 09/12/2013
+ Jai,
+Reply to questions below:
+23. You are correct that space is not required between 1H and CDO.
+Done
+24. Also space not required between 1D and BEYE.
+      3 is the last number in the Ear Notch and is displayed correctly on the List but when I go into the update screen for this hog there is an added space and zero that should not be there.
+ Can you check now
+4. This was in IE since FF and Chrome were not working at all.
+Kindly Check now, after clearing cache.. Search should work
+
+Some more issues:
+27. Concerning the Hog Ear Notch, if there is not a period (which you convert to a dash (-)) then the only validation is on the 1st 2 characters (Farm & Herd) to make sure that Farm & Herd is in the Others >> Herd Setup >> List.
+    a. The general format of the Ear Notch is:
+        1. Farm & Herd - 2 characters and must match one of the entries in Others - Herd Setup.
+        2. If there is not period or dash in the rest of the Ear Notch then there is no further validation and just take the rest of the Ear Notch as is.
+        3. If there is a dash (or a period is typed by the User which you convert to a dash) then the rest of the Ear Notch is as follows:
+            a. Herd Mark - 1 to 4 characters - no validation
+            b. Year - The year the hog was born. This needs to be stored as 4 digits for sorting.
+                1. Display of just 1 digit if the year is within the last 10 years and 2 digits not within the last 10 years.
+                2. Entry of 1, 2 or 4 digits. Just 1 digit if the year is within the last 10 years, or 2 or 4 if not within the last 10 years.
+                3. Examples:
+                    a. 2013 would be displayed as 3 and taken as 3, 13 or 2013.
+                    b. 2009 would be displayed as 9 and taken as 9, 09 or 2009.
+                    c. 2003 would be displayed as 03 and taken as 03 or 2003. (3 would indicate 2013).
+                    d. 1998 would be displayed as 98 and taken as 98 or 1998.
+             c. Litter number - validation is 1 to 4 characters before the dash.
+             d. dash
+             e. Pig in litter - 1 to 3 characters after the dash.
+
+I have changed the logic. Can you check now?
+28. In the Home >> Customers >> Mailing Codes >> List screen:
+    a. Remove the "List Mailing Codes" and "Create Mailing Codes" buttons.
+    b. Move "Advanced Search" to the bottom of the screen. 
+Done
+29. In the Home >> Customers >> Mailing Codes >> New screen:
+    a. The "List Mailing Codes" button needs to go to the List (with the search options) referenced in issue #28 above.
+    b. Remove the "Manage Mailing Codes" button.
+    c. Remove "Create Mailing Code" page title.
+    d. Move "Fields with * are required" to the bottom of the screen.
+Done
+
+Results of testing previous issues:
+21. good
+22. good
+23. see issue #27 above.
+25. good
+26. good
+2. The white space at the top of the pedigree graphics is fine now, however I have attached ProjectJ8 that shows that the initial screen when clicking on the Pedigree button from Home >> Pigs >> Sows/Boars >> # >> Update is not showing the menu bar and the buttons. The second page of the attachment shows how the initial screen should be initially positioned. Don't know what the $1$, etc are at the right side of the graphic lines.
+     a thru f. good
+     g. still not working - Sire and Dam buttons in Pedigree screen work fine. See issue #27 above for Ear Notch information.
+4. good
+    a. Breadcrumb should be Home >> Customers >> # >> Update >> Sold Hogs
+    b. Change "Create Sold Hogs" button to "New". Both top and bottom buttons.
+    c. Change "Search Sold Hogs" button to "List Sold Hogs". Both top and bottom buttons.
+8. good
+9. good
+10. good
+11. good - Yes, there is no need for a List page without search options.
+12. good.
+13. good
+14. good except there is the current activity date pre-filled in on the Last Letter Sent field. The pre-filled in date should be on the Entry Date field and the Last Letter Sent field should be blank.
+15. good
+16. good
+17. good
+18. good but looks like the display is not wide enough - the Redisplay option is taking 2 lines instead of just 1 like the other List screens.
+
+Will test more this afternoon,
+Thanks,
+
+209212001
+209212001
+19910730
+

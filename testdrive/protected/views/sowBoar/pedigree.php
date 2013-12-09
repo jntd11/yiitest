@@ -43,7 +43,7 @@ $parentId = Yii::app()->request->cookies['pedigree_parent'];
 </div>
 <script>
 $(document).ready(function(){
-	window.scrollTo(200, 200);
+	window.scrollTo(50, 50);
 });
 </script>
 <style>

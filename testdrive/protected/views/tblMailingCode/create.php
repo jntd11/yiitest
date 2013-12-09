@@ -11,11 +11,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Mailing Code', 'url'=>array('index')),
-	array('label'=>'Manage Mailing Code', 'url'=>array('admin')),
+	array('label'=>'List Mailing Code', 'url'=>array('admin')),
 );
 ?>
-
-<h1>Create Mailing Code</h1>
-
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

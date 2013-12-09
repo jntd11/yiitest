@@ -37,7 +37,7 @@ $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery');
-$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+//$cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs->registerCssFile(
 		$cs->getCoreScriptUrl().
 		'/jui/css/base/jquery-ui-1.10.2.custom.css'

@@ -61,6 +61,7 @@ class SowBoar extends CActiveRecord
 			array('sow_boar_name', 'length', 'max'=>30),
 			array('sire_initials', 'length', 'max'=>2),
 			array('ear_notch','validateEarNotch'),
+			array('born', 'date', 'format'=>array('m-d-y','mm-dd-yy','mm-dd-yyyy','m-dd-yy','mm-d-yy','m-d-yyyy','yyyy-dd-mm')),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('ear_notch, sow_boar_name, sow_boar_id, registeration_no, born, no_pigs, weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, offspring_name, back_fat, loinneye, days, EBV, sire_initials, comments, date_modified', 'safe', 'on'=>'search'),
@@ -70,12 +71,15 @@ class SowBoar extends CActiveRecord
 	public function validateEarNotch($attribute,$params)
 	{
 		//$farmHerd = Yii::app()->request->cookies['farm_herd']." ";
-	    $pattern = '/^([0-9][A-Z]) [a-z]+ [0-9]+[ SFsf][0-9]+[-.][0-9]+$/i';
+		$patt1 = '/[-.]/';
+		$patt2 = '/^([0-9][A-Z])/';
+	    $pattern = '/^([0-9][A-Z]) *[a-z]+ [0-9]+[ SFsf][0-9]+[-.][0-9]+$/i';
 	    $herds = $this->getHerd();
-	    if(!preg_match($pattern, $this->$attribute,$matches)){
+	    if(preg_match($patt1, $this->$attribute) && !preg_match($pattern, $this->$attribute,$matches)){
 	       $this->addError($attribute, 'Sow/Boar Ear Notch is not in correct format!');
 	    }
-	    if(!in_array($matches[1], $herds)){
+	    $isTrue = preg_match($patt2, $this->$attribute,$matches2);
+	    if($isTrue && !in_array($matches2[1], $herds)){
 	    	$this->addError($attribute, 'This is not a valid Farm & Herd');
 	    }
 	}
