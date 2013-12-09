@@ -3,7 +3,10 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-		'Herd Setup',
+		'Customers'=>array('admin'),
+		$_GET['id']=>array('view','id'=>$_GET['id']),
+		'Update'=>array('admin'),
+		'Sold Hogs'=>array('soldlist'),
 );
 
 $this->breadcrumbs=array(
@@ -11,8 +14,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Sold Hogs', 'url'=>array('create')),
-	array('label'=>'Search Sold Hogs', 'url'=>array('admin')),
+	array('label'=>'New', 'url'=>array('create')),
+	array('label'=>'List Sold Hogs', 'url'=>array('admin')),
 );
 $cs=Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/soldhog.js');
