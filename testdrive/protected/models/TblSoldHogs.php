@@ -62,14 +62,15 @@ class TblSoldHogs extends CActiveRecord
 	
 	public function validateEarNotch($attribute,$params)
 	{
-		//$farmHerd = Yii::app()->request->cookies['farm_herd']." ";
-		$pattern = '/^([0-9][A-Z]) [a-z]+ [0-9]+[ SFsf][0-9]+[-.][0-9]+$/i';
+		$patt1 = '/[-.]/';
+		$patt2 = '/^([0-9][A-Z])/';
+		$pattern = '/^([0-9][A-Z]) *[a-z]+ *[0-9]+[ SFsf][0-9]+[-.][0-9]+$/i';
 		$herds = $this->getHerd();
-		if(!preg_match($pattern, $this->$attribute,$matches)){
-			$this->addError($attribute, 'Sow/Boar Ear Notch is not in correct format!');
+		if(preg_match($patt1, $this->$attribute) && !preg_match($pattern, $this->$attribute,$matches)){
+			$this->addError($attribute, 'Sow/Boar Ear Notch is not in correct format!'.$this->$attribute);
 		}
-		
-		if(isset($matches[1]) && !in_array($matches[1], $herds)){
+		$isTrue = preg_match($patt2, $this->$attribute,$matches2);
+		if($isTrue && !in_array($matches2[1], $herds)){
 			$this->addError($attribute, 'This is not a valid Farm & Herd');
 		}
 	}

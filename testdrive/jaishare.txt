@@ -1635,6 +1635,7 @@ Results of testing previous issues:
     a. Breadcrumb should be Home >> Customers >> # >> Update >> Sold Hogs
     b. Change "Create Sold Hogs" button to "New". Both top and bottom buttons.
     c. Change "Search Sold Hogs" button to "List Sold Hogs". Both top and bottom buttons.
+  Done
 8. good
 9. good
 10. good
@@ -1642,11 +1643,12 @@ Results of testing previous issues:
 12. good.
 13. good
 14. good except there is the current activity date pre-filled in on the Last Letter Sent field. The pre-filled in date should be on the Entry Date field and the Last Letter Sent field should be blank.
+Done
 15. good
 16. good
 17. good
 18. good but looks like the display is not wide enough - the Redisplay option is taking 2 lines instead of just 1 like the other List screens.
-
+Done
 Will test more this afternoon,
 Thanks,
 
@@ -1654,3 +1656,41 @@ Thanks,
 209212001
 19910730
 
+ execute instruction line: cd /svc/netsuccess
+
+- execute instruction line: sh ./restart_portal
+
+- execute instruction line: sh ./restart_online
+
+Jai,
+Thanks for you patience on how the Ear Notch works. I know it is a little complicated but we'll get there.
+
+Results of testing:
+27. Still having problems with the Ear Notch format. See attachment ProjectJ9.
+    a. There are 3 screenshots - 2 from Sold Hogs and 1 from Sow/Boar.
+    b. All Ear Notches are valid.
+        1. The first screen shot of 1DBPF 21 02/1102 - only validate the Farm & Herd (1D) as there is no period (.) or dash (-).
+	Done
+        2. The second screen shot of 1YCDO 2009 1-1 - this actually should be displayed and taken as 1YCDO 9 1-1 - see 27.a.3.b.1 and 27.a.3.b.3.b below.
+	Actually there is extra space after last "1". Now accomadated. Is that ok, Now?
+
+        3. The third screen shot of 1DBEYE2010 19-3 - this actually should be display and taken as 1DBEYE0 19-3.
+	This is due to non space before 2010. Can identify four digits as year, but it may go wrong in some cases.  
+        4. Remember that internally in the DB that the year is always 4 digits but the display and input is reduced to 1 or 2 digits.
+	I. Initially identified based on group. 
+	II. recently, change to identify year space on both sides. 
+	III. Now, identifying if space occurs after numbers, it is taken as year. 
+	Is that ok? Does it work?
+	
+4. Buttons are good but breadcrumb has not changed.
+Done
+28. Not seeing the changes. I have cleared cache.
+Check Now
+29. Not seeing the changes. I have cleared cache.
+Check Now
+
+^([0-9][A-Z]) *[a-z]+ [0-9]+[ SFsf][0-9]+[-.][0-9]+$
+1DBPF 21 02/1102
+1YCDO 2009 1-1
+1DBEYE2010 19-3
+1YCDO 2009 1-1

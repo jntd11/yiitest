@@ -75,6 +75,7 @@ class TblSoldHogsController extends RController
 			$model->reason_sold	= $_POST['TblSoldHogs']['reason_sold'];
 			$model->cust_id	= $_POST['TblSoldHogs']['cust_id'];
 			$model->ear_notch_id = $_POST['TblSoldHogs']['ear_notch_id'];
+			$model->hog_ear_notch = trim($model->hog_ear_notch);
 			$datearr = explode("-", $model->date_sold);
 			$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
 			
@@ -118,7 +119,9 @@ class TblSoldHogsController extends RController
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-	
+		$model->hog_ear_notch = trim($model->hog_ear_notch);
+		$model->hog_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->hog_ear_notch);
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 		if(isset($_POST['TblSoldHogs']))
@@ -129,6 +132,8 @@ class TblSoldHogsController extends RController
 			$model->reason_sold	= $_POST['TblSoldHogs']['reason_sold'];
 			$model->cust_id	= $_POST['TblSoldHogs']['cust_id'];
 			$model->ear_notch_id = $_POST['TblSoldHogs']['ear_notch_id'];
+			$model->hog_ear_notch = trim($model->hog_ear_notch);
+			
 			//echo "jai".strtotime($model->date_sold);
 			$datearr = explode("-", $model->date_sold);
 			$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));

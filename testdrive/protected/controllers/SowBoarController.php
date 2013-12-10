@@ -127,6 +127,9 @@ class SowBoarController extends RController
 			if($model->dam_notch != "")
 				$model->dam_notch = $this->calculateYear($model->dam_notch);
 			$model->comments = $_POST['SowBoar']['comments'];
+			$model->ear_notch = trim($model->ear_notch);
+			$model->sire_notch = trim($model->sire_notch);
+			$model->dam_notch = trim($model->dam_notch);
 		 	$model->save();
 			if($model->save())
 				if(!isset($_POST['savenew']))
@@ -173,16 +176,23 @@ class SowBoarController extends RController
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		//exit;
-		$ear_notch_array =  preg_split("/ /", $model->ear_notch);
-		$ear_notch_array[2] = preg_replace("/[0-9][0-9]([0-9][0-9])/", "$1", $ear_notch_array[2]);
-		$model->ear_notch = implode(" ", $ear_notch_array);
+		//$ear_notch_array =  preg_split("/ /", $model->ear_notch);
+		//$ear_notch_array[2] = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1", $ear_notch_array[2]);
+		//$model->ear_notch = implode(" ", $ear_notch_array);
+		$model->ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->ear_notch);
+		
+		$model->dam_notch = trim($model->dam_notch);
+		$model->ear_notch = trim($model->ear_notch);
+		$model->sire_notch = trim($model->sire_notch);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['SowBoar']))
 		{
 			$model->attributes=$_POST['SowBoar'];
+			$model->dam_notch = trim($model->dam_notch);
+			$model->ear_notch = trim($model->ear_notch);
+			$model->sire_notch = trim($model->sire_notch);
 			$model->born = $_POST['SowBoar']['born'];
 			$model->comments = $_POST['SowBoar']['comments'];
 			if($model->ear_notch != "")
@@ -193,7 +203,6 @@ class SowBoarController extends RController
 		 		$model->sire_notch = $this->calculateYear($model->sire_notch);
 		 	if($model->dam_notch != "")
 		 		$model->dam_notch = $this->calculateYear($model->dam_notch);
-		 	
 			if($model->save()){
 				if(isset($_POST['savenew']))
 					$this->redirect(array('create'));
@@ -291,8 +300,15 @@ class SowBoarController extends RController
 			$ear_notch_array =  preg_split("/ /", $date);
 			
 			$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
+			$isPresent1 =  preg_match("/[0-9][0-9][0-9][0-9] /", $date);
 			if(!$isPresent)
-				return $date;
+				if(!$isPresent1){
+					return $date;
+				}
+				else {
+					$date = preg_replace("/([0-9][0-9][0-9][0-9] )/", " $1", $date);
+					$ear_notch_array =  preg_split("/ /", $date);
+				}
 			$ear_notch_array[2] = $matches[1];
 			$curr_year = date("y");
 			if(!isset($ear_notch_array[2]))

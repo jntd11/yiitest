@@ -9,9 +9,6 @@ $this->breadcrumbs=array(
 		'Sold Hogs'=>array('soldlist'),
 );
 
-$this->breadcrumbs=array(
-	'List of Sold Hogs',
-);
 
 $this->menu=array(
 	array('label'=>'New', 'url'=>array('create')),
