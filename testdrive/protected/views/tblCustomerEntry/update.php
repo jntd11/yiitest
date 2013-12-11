@@ -14,7 +14,8 @@ $this->menu=array(
 	//array('label'=>'View Customers', 'url'=>array('view', 'id'=>$model->customer_entry_id)),
 	//array('label'=>'Search Customers', 'url'=>array('admin')),
 );
-/*$this->buttons=array(
+/*
+ * $this->buttons=array(
 		CHtml::submitButton('Save',array('onClick'=>'$("#tbl-customer-entry-form").data("changed",false); $("#tbl-customer-entry-form").submit()')),
 		CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblCustomerEntry/index"'))
 );

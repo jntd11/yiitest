@@ -11,8 +11,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Farm & Herd', 'url'=>array('index')),
-	array('label'=>'Create Farm & Herd', 'url'=>array('create')),
+	//array('label'=>'List Farm & Herd', 'url'=>array('index')),
+	//array('label'=>'Create Farm & Herd', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -28,19 +28,12 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
+<div style="float: left;">
+	<a class="buttons" href="index.php?r=tblHerdSetup/admin"><input type="button" value="List Farm & Herd"></a> 
+	<a class="buttons" href="index.php?r=tblHerdSetup/create"><input type="button" value="New"></a>
+</div>
+<div style="float: left; margin-left: 40%">
 
-<h1></h1>
-
-
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-<a class="buttons" href="index.php?r=tblHerdSetup/create"><input type="button" value="New"></a>
-<div style="text-align: right">
 <?php 
 $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'tbl-sold-hogs-form',
@@ -56,9 +49,11 @@ $this->endWidget();
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'tbl-herd-setup-grid',
 	'dataProvider'=>$model->search(),
+		'selectionChanged'=>'function(id){
+		location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
+		}',
 	'filter'=>$model,
 	'columns'=>array(
-		'herd_id',
 		'farm_herd',
 		'breeder_name',
 		'farm_name',
@@ -97,11 +92,20 @@ $this->endWidget();
 		*/
 		array(
 			'class'=>'CButtonColumn',
+				'template' => '{update}',
 		),
 	),
 )); ?>
+<a class="buttons" href="index.php?r=tblHerdSetup/admin"><input type="button" value="List Farm & Herd"></a> 
 <a class="buttons" href="index.php?r=tblHerdSetup/create"><input type="button" value="New"></a>
+
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
+<p><?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?></p>
+<div class="search-form" style="display:none">
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->

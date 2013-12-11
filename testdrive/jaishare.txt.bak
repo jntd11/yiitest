@@ -1630,10 +1630,12 @@ Results of testing previous issues:
 2. The white space at the top of the pedigree graphics is fine now, however I have attached ProjectJ8 that shows that the initial screen when clicking on the Pedigree button from Home >> Pigs >> Sows/Boars >> # >> Update is not showing the menu bar and the buttons. The second page of the attachment shows how the initial screen should be initially positioned. Don't know what the $1$, etc are at the right side of the graphic lines.
      a thru f. good
      g. still not working - Sire and Dam buttons in Pedigree screen work fine. See issue #27 above for Ear Notch information.
+     Can you check now? Actually there is no match sire data found in some case
 4. good
     a. Breadcrumb should be Home >> Customers >> # >> Update >> Sold Hogs
     b. Change "Create Sold Hogs" button to "New". Both top and bottom buttons.
     c. Change "Search Sold Hogs" button to "List Sold Hogs". Both top and bottom buttons.
+  Done
 8. good
 9. good
 10. good
@@ -1641,15 +1643,102 @@ Results of testing previous issues:
 12. good.
 13. good
 14. good except there is the current activity date pre-filled in on the Last Letter Sent field. The pre-filled in date should be on the Entry Date field and the Last Letter Sent field should be blank.
+Done
 15. good
 16. good
 17. good
 18. good but looks like the display is not wide enough - the Redisplay option is taking 2 lines instead of just 1 like the other List screens.
-
+Done
 Will test more this afternoon,
 Thanks,
 
 209212001
 209212001
 19910730
+
+ execute instruction line: cd /svc/netsuccess
+
+- execute instruction line: sh ./restart_portal
+
+- execute instruction line: sh ./restart_online
+
+Jai,
+Thanks for you patience on how the Ear Notch works. I know it is a little complicated but we'll get there.
+
+Results of testing:
+27. Still having problems with the Ear Notch format. See attachment ProjectJ9.
+    a. There are 3 screenshots - 2 from Sold Hogs and 1 from Sow/Boar.
+    b. All Ear Notches are valid.
+        1. The first screen shot of 1DBPF 21 02/1102 - only validate the Farm & Herd (1D) as there is no period (.) or dash (-).
+	Done
+        2. The second screen shot of 1YCDO 2009 1-1 - this actually should be displayed and taken as 1YCDO 9 1-1 - see 27.a.3.b.1 and 27.a.3.b.3.b below.
+	Actually there is extra space after last "1". Now accomadated. Is that ok, Now?
+
+        3. The third screen shot of 1DBEYE2010 19-3 - this actually should be display and taken as 1DBEYE0 19-3.
+	This is due to non space before 2010. Can identify four digits as year, but it may go wrong in some cases.  
+        4. Remember that internally in the DB that the year is always 4 digits but the display and input is reduced to 1 or 2 digits.
+	I. Initially identified based on group. 
+	II. recently, change to identify year space on both sides. 
+	III. Now, identifying if space occurs after numbers, it is taken as year. 
+	Is that ok? Does it work?
+	
+4. Buttons are good but breadcrumb has not changed.
+Done
+28. Not seeing the changes. I have cleared cache.
+Check Now
+29. Not seeing the changes. I have cleared cache.
+Check Now
+
+^([0-9][A-Z]) *[a-z]+ [0-9]+[ SFsf][0-9]+[-.][0-9]+$
+1DBPF 21 02/1102
+1YCDO 2009 1-1
+1DBEYE2010 19-3
+1YCDO 2009 1-1
+
+4. good
+27. We are getting a lot closer - thanks.
+    I have to leave for a meeting so I will test this out more later today - just wanted to get the other items to you.
+28. good but 2 additional items while we are here:
+    a. Put the Redisplay button (and #) on the same line as the New button and the "Displaying 1-11 of 11 results." line.
+    done
+    b. Remove the Number column - that would be confusing to Users.
+    done
+    c. Needs to have the same feature as other List pages: Click anywhere on the line to go to the Update screen for that Mailing Code.
+    Done
+29. good except:
+    a. Bottom List Mailing Code button needs to be on the same line as the other bottom buttons (Save, Save & New and Cancel)
+    Done
+    b. Please restrict Mailing Code to 1 character.
+    Done
+30. The buttons on the Home >> Customers >> Mailing Codes >> Update page need to match the buttons on the Home >> Customers >> Mailing Codes >> New screen page.
+    Done
+31. These issues pertain to the last major item in the original Project J specifications (4. Maintenance - Herd Setup). I know some of these changes seem a little picky but we are trying to make the pages as consistent as possible throughout the project.
+        4. Maintenance - Herd Setup
+            a. This will become Other - Herd Setup - GOOD
+            b. Breadcrumb will be Home >> Other >> Herd Setup >> List - GOOD
+            c. Remove "Manage tbl Herd Setups" - GOOD
+            d. Move the "You may optionally enter......" sentence to the bottom of the screen below the bottom buttons. - GOOD
+            e. Add the Redisplay feature - see 5.a.3 - Good but position New button, Redisplay button & "Displaying...." all on same line as other List pages.
+                1. "Advanced Search" needs to be moved to the bottom of the page.
+                2. Need to be able to click anywhere on one of the listed Farm & Herds lines (not just on the Update icon) to go to the Update page for that Farm & Herd.
+                3. Remove the red X and spy glass from each line.
+                4. Remove the first column (Herd).
+		Done
+            f. Add a button called New. (Remember both under breadcrumb and at the bottom of the page).
+                1. Clicking on the New button will take the User to what is now called the Create Farm & Herd screen. - GOOD
+                2. Breadcrumb will become Home >> Other >> Herd Setup >> New - GOOD
+                3. Change the Create button to Save. Clicking this button will save the data and take the User back to Home >> Other >> Herd Setup >> List. Good but need to duplicate Save, Save & New, Cancel buttons at top of screen on the same line as List Farm & Herd button (removing Manage Farm & Herd button). Also place all buttons at the bottom of the page on the same line.
+		Done
+                4. Add a button called "Save & New". This will save the current data and redisplay the current screen without data. - GOOD
+                5. Cancel will take the User back to Home >> Other >> Herd Setup >> List. - GOOD
+            g. In the current Update Farm & Herd:
+                1. The breadcrumb will be Home >> Other >> Herd Setup >> Update - GOOD
+                2. Remove Update Farm & Herd # - GOOD
+                3. Save button will save data and return the User to Home >> Other >> Herd Setup >> List. - GOOD
+                4. Add a new button called Save & New that will save the current data and take the user to Home >> Other >> Herd Setup >> New - GOOD
+                5. The Cancel button will not save any data and take the User to Home >> Other >> Herd Setup >> List. - GOOD
+                6. Need to duplicate the Save, Save & New, Cancel buttons to the same line as the List Farm & Herd button at the top of the screen (removing Create Farm & Herd, Manage Farm & Herd buttons).
+		Done
+                7. Line up all the buttons at the bottom of the page.
+                8. Move the Fields with * are required to bottom of page.
 

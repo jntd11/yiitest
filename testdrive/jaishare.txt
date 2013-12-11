@@ -1694,3 +1694,52 @@ Check Now
 1YCDO 2009 1-1
 1DBEYE2010 19-3
 1YCDO 2009 1-1
+
+4. good
+27. We are getting a lot closer - thanks.
+    I have to leave for a meeting so I will test this out more later today - just wanted to get the other items to you.
+28. good but 2 additional items while we are here:
+    a. Put the Redisplay button (and #) on the same line as the New button and the "Displaying 1-11 of 11 results." line.
+    done
+    b. Remove the Number column - that would be confusing to Users.
+    done
+    c. Needs to have the same feature as other List pages: Click anywhere on the line to go to the Update screen for that Mailing Code.
+    Done
+29. good except:
+    a. Bottom List Mailing Code button needs to be on the same line as the other bottom buttons (Save, Save & New and Cancel)
+    Done
+    b. Please restrict Mailing Code to 1 character.
+    Done
+30. The buttons on the Home >> Customers >> Mailing Codes >> Update page need to match the buttons on the Home >> Customers >> Mailing Codes >> New screen page.
+    Done
+31. These issues pertain to the last major item in the original Project J specifications (4. Maintenance - Herd Setup). I know some of these changes seem a little picky but we are trying to make the pages as consistent as possible throughout the project.
+        4. Maintenance - Herd Setup
+            a. This will become Other - Herd Setup - GOOD
+            b. Breadcrumb will be Home >> Other >> Herd Setup >> List - GOOD
+            c. Remove "Manage tbl Herd Setups" - GOOD
+            d. Move the "You may optionally enter......" sentence to the bottom of the screen below the bottom buttons. - GOOD
+            e. Add the Redisplay feature - see 5.a.3 - Good but position New button, Redisplay button & "Displaying...." all on same line as other List pages.
+                1. "Advanced Search" needs to be moved to the bottom of the page.
+                2. Need to be able to click anywhere on one of the listed Farm & Herds lines (not just on the Update icon) to go to the Update page for that Farm & Herd.
+                3. Remove the red X and spy glass from each line.
+                4. Remove the first column (Herd).
+		Done
+            f. Add a button called New. (Remember both under breadcrumb and at the bottom of the page).
+                1. Clicking on the New button will take the User to what is now called the Create Farm & Herd screen. - GOOD
+                2. Breadcrumb will become Home >> Other >> Herd Setup >> New - GOOD
+                3. Change the Create button to Save. Clicking this button will save the data and take the User back to Home >> Other >> Herd Setup >> List. Good but need to duplicate Save, Save & New, Cancel buttons at top of screen on the same line as List Farm & Herd button (removing Manage Farm & Herd button). Also place all buttons at the bottom of the page on the same line.
+		Done
+                4. Add a button called "Save & New". This will save the current data and redisplay the current screen without data. - GOOD
+                5. Cancel will take the User back to Home >> Other >> Herd Setup >> List. - GOOD
+            g. In the current Update Farm & Herd:
+                1. The breadcrumb will be Home >> Other >> Herd Setup >> Update - GOOD
+                2. Remove Update Farm & Herd # - GOOD
+                3. Save button will save data and return the User to Home >> Other >> Herd Setup >> List. - GOOD
+                4. Add a new button called Save & New that will save the current data and take the user to Home >> Other >> Herd Setup >> New - GOOD
+                5. The Cancel button will not save any data and take the User to Home >> Other >> Herd Setup >> List. - GOOD
+                6. Need to duplicate the Save, Save & New, Cancel buttons to the same line as the List Farm & Herd button at the top of the screen (removing Create Farm & Herd, Manage Farm & Herd buttons).
+		Done
+                7. Line up all the buttons at the bottom of the page.
+                8. Move the Fields with * are required to bottom of page.
+		Done
+

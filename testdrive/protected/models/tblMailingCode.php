@@ -37,7 +37,7 @@ class tblMailingCode extends CActiveRecord
 		// will receive user inputs.
 		return array( 
 			array('mailing_code_label, mailing_code_desc', 'required'),
-			array('mailing_code_label', 'length', 'max'=>50),
+			array('mailing_code_label', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('mailing_code_id, mailing_code_label, mailing_code_desc', 'safe', 'on'=>'search'),

@@ -4,13 +4,18 @@
 /* @var $form CActiveForm */
 ?>
 <div class="form">
+	<div class="row buttons">
+		<?php echo CHtml::Button('List Farm & Herd',array('onClick'=>'window.location="index.php?r=tblHerdSetup/admin"')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('tabindex'=>40)); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New', array('tabindex'=>41,'name'=>'savenew')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblHerdSetup/admin"')); ?>
+	</div>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'tbl-herd-setup-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 	<table>
@@ -198,8 +203,10 @@
 	</div></td><td>&nbsp;</td></tr>
 </table>
 	
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<div class="row buttons">
+		<?php echo CHtml::Button('List Farm & Herd',array('onClick'=>'window.location="index.php?r=tblHerdSetup/admin"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('tabindex'=>40)); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New', array('tabindex'=>41,'name'=>'savenew')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblHerdSetup/admin"')); ?>

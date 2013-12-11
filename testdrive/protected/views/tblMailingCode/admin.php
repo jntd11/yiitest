@@ -27,8 +27,10 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
-<a class="buttons" href="index.php?r=tblMailingCode/create"><input type="button" value="New"></a>
-<div style="text-align: right">
+
+
+<div style="float: left;"><a class="buttons" href="index.php?r=tblMailingCode/create"><input type="button" value="New"></a></div>
+<div style="float: left; margin-left: 50%">
 <?php 
 $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'tbl-sold-hogs-form',
@@ -46,8 +48,10 @@ $this->endWidget();
 	'id'=>'tbl-mailing-code-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'selectionChanged'=>'function(id){
+		location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
+	 }',
 	'columns'=>array(
-		'mailing_code_id',
 		'mailing_code_label',
 		'mailing_code_desc',
 		array(

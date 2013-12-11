@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->menu=array(
-	array('label'=>'List Farm & Herd', 'url'=>array('index')),
-	array('label'=>'Create Farm & Herd', 'url'=>array('create')),
+	//array('label'=>'List Farm & Herd', 'url'=>array('index')),
+	//array('label'=>'Create Farm & Herd', 'url'=>array('create')),
 	//array('label'=>'View Farm & Herd', 'url'=>array('view', 'id'=>$model->herd_id)),
-	array('label'=>'Manage Farm & Herd', 'url'=>array('admin')),
+	//array('label'=>'Manage Farm & Herd', 'url'=>array('admin')),
 );
 
 $qu = "UPDATE users SET farm_herd = '". addslashes($model->getAttribute("farm_herd"))."', farm_herd_name = '".addslashes($model->getAttribute("farm_name"))."' WHERE id = ".Yii::app()->user->id;

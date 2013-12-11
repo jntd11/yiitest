@@ -11,9 +11,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Mailing Code', 'url'=>array('admin')),
+/* 	array('label'=>'List Mailing Code', 'url'=>array('admin')),
 	array('label'=>'Create Mailing Code', 'url'=>array('create')),
-	array('label'=>'View Mailing Code', 'url'=>array('view', 'id'=>$model->mailing_code_id)),
+	array('label'=>'View Mailing Code', 'url'=>array('view', 'id'=>$model->mailing_code_id)), */
 );
 ?>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
