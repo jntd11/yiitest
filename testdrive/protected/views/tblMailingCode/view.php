@@ -6,12 +6,12 @@
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->breadcrumbs=array(
-	'Tbl Mailing Codes'=>array('index'),
+	'Tbl Mailing Codes'=>array('admin'),
 	$model->mailing_code_id,
 );
 
 $this->menu=array(
-	array('label'=>'List Mailing Code', 'url'=>array('index')),
+	array('label'=>'List Mailing Code', 'url'=>array('admin')),
 	array('label'=>'Create Mailing Code', 'url'=>array('create')),
 	array('label'=>'Update Mailing Code', 'url'=>array('update', 'id'=>$model->mailing_code_id)),
 	array('label'=>'Delete Mailing Code', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->mailing_code_id),'confirm'=>'Are you sure you want to delete this item?')),

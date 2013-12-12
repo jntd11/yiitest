@@ -25,7 +25,7 @@ if(Yii::app()->user->isSuperUser){
 		'validateOnSubmit'=>true,
 	),
 )); ?>
-<textarea id='textarea' class='html' rows='10' cols="50" name="contentmain"></textarea>
+<textarea id='textarea' class='html' rows='10' cols="50" name="contentmain"><?php echo $data->model->content; ?></textarea>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Save'); ?>

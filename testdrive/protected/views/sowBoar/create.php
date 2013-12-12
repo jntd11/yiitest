@@ -3,8 +3,8 @@
 /* @var $model SowBoar */
 
 $this->breadcrumbs=array(
-	'Pigs'=>array('index'),
-	'Sows/Boars'=>array('index'),
+	'Pigs'=>array('admin'),
+	'Sows/Boars'=>array('admin'),
 	'New',
 );
 

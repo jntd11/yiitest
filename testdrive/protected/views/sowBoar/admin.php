@@ -3,8 +3,8 @@
 /* @var $model SowBoar */
 
 $this->breadcrumbs=array(
-	'Pigs'=>array('index'),
-	'Sows/Boars'=>array('index'),
+	'Pigs'=>array('admin'),
+	'Sows/Boars'=>array('admin'),
 	'List',
 );
 $cs=Yii::app()->clientScript;
@@ -34,6 +34,7 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+
 ?>
 
 <h1></h1>

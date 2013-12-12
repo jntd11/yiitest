@@ -122,7 +122,11 @@ class TblMailingCodeController extends Controller
 		{
 			$model->attributes=$_POST['tblMailingCode'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->mailing_code_id));
+				if(!isset($_POST['savenew']))
+					$this->redirect(array('admin'));
+				else
+					$this->redirect(array('create'));
+				//$this->redirect(array('view','id'=>$model->mailing_code_id));
 		}
 
 		$this->render('update',array(

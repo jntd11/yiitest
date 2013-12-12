@@ -3,12 +3,12 @@
 /* @var $model TblSoldHogs */
 
 $this->breadcrumbs=array(
-	'Sold Hogs'=>array('index'),
+	'Sold Hogs'=>array('admin'),
 	$model->tbl_sold_hogs_id,
 );
 
 $this->menu=array(
-	array('label'=>'List Sold Hogs', 'url'=>array('index')),
+	array('label'=>'List Sold Hogs', 'url'=>array('admin')),
 	array('label'=>'Create Sold Hogs', 'url'=>array('create')),
 	array('label'=>'Update Sold Hogs', 'url'=>array('update', 'id'=>$model->tbl_sold_hogs_id)),
 	array('label'=>'Delete Sold Hogs', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->tbl_sold_hogs_id),'confirm'=>'Are you sure you want to delete this item?')),

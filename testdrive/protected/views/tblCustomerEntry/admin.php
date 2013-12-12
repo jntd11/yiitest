@@ -4,7 +4,7 @@
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/customer.js');
 Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->breadcrumbs=array(
-	'Customers'=>array('index'),
+	'Customers'=>array('admin'),
 	'List',
 );
 

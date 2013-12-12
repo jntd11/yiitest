@@ -11,7 +11,7 @@ $cs->registerCssFile(
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
+	'Users'=>array('admin'),
 	'Manage',
 );
 ?>

@@ -6,8 +6,8 @@ Yii::app()->clientScript->registerCoreScript('jquery-ui-1.10.2.custom');
 
 
 $this->breadcrumbs=array(
-	'Pigs'=>array('index'),
-	'Sold Hogs'=>array('index'),
+	'Pigs'=>array('admin'),
+	'Sold Hogs'=>array('admin'),
 	'List',
 );
 

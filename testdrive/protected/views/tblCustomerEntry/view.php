@@ -4,12 +4,12 @@
 
 
 $this->breadcrumbs=array(
-	'Customers'=>array('index'),
+	'Customers'=>array('admin'),
 	$model->customer_entry_id,
 );
 
 $this->menu=array(
-	array('label'=>'List Customers', 'url'=>array('index')),
+	array('label'=>'List Customers', 'url'=>array('admin')),
 	array('label'=>'Create Customers', 'url'=>array('create')),
 	array('label'=>'Update Customers', 'url'=>array('update', 'id'=>$model->customer_entry_id)),
 	array('label'=>'Delete Customers', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->customer_entry_id),'confirm'=>'Are you sure you want to delete this item?')),

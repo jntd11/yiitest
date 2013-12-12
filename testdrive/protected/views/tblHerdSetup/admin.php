@@ -27,6 +27,11 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+Yii::app()->clientScript->registerScript('row_dblclick', "
+    $('table > tbody > tr').on('dblclick', function(id){
+            $(this).click();
+    });"
+);
 ?>
 <div style="float: left;">
 	<a class="buttons" href="index.php?r=tblHerdSetup/admin"><input type="button" value="List Farm & Herd"></a> 
@@ -52,6 +57,7 @@ $this->endWidget();
 		'selectionChanged'=>'function(id){
 		location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
 		}',
+		
 	'filter'=>$model,
 	'columns'=>array(
 		'farm_herd',

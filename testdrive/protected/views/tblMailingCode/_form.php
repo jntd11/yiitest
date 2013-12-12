@@ -3,8 +3,7 @@
 /* @var $model tblMailingCode */
 /* @var $form CActiveForm */
 ?>
-		<?php echo CHtml::Button('List Mailing Code',array('onClick'=>'window.location="index.php?r=tblMailingCode/admin";')); ?>
-		<?php echo CHtml::Button('Create Mailing Code',array('onClick'=>'window.location="index.php?r=tblMailingCode/create";')); ?>
+	
 
 <div class="form">
 
@@ -12,7 +11,10 @@
 	'id'=>'tbl-mailing-code-form',
 	'enableAjaxValidation'=>false,
 )); ?>
-
+	<?php echo CHtml::Button('List Mailing Code',array('onClick'=>'window.location="index.php?r=tblMailingCode/admin";')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New', array('name'=>'savenew')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblMailingCode/admin";')); ?>
 	<?php echo $form->errorSummary($model); ?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'mailing_code_label'); ?>
@@ -28,7 +30,6 @@
 
 	<div class="row buttons">
 		<?php echo CHtml::Button('List Mailing Code',array('onClick'=>'window.location="index.php?r=tblMailingCode/admin";')); ?>
-		<?php echo CHtml::Button('Create Mailing Code',array('onClick'=>'window.location="index.php?r=tblMailingCode/create";')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save'); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New', array('name'=>'savenew')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblMailingCode/admin";')); ?>

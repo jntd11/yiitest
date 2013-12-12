@@ -5,8 +5,8 @@ $id = isset($_GET['id'])?$_GET['id']:0;
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->breadcrumbs=array(
-		'Pigs'=>array('index'),
-		'Sow/Boars'=>array('index'),
+		'Pigs'=>array('admin'),
+		'Sow/Boars'=>array('admin'),
 		$id=>array('view','id'=>$id),
 		'Update',
 );

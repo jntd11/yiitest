@@ -3,12 +3,12 @@
 /* @var $model TblHerdSetup */
 
 $this->breadcrumbs=array(
-	'Farm & Herd Setup'=>array('index'),
+	'Farm & Herd Setup'=>array('admin'),
 	$model->herd_id,
 );
 
 $this->menu=array(
-	array('label'=>'List Farm & Herd', 'url'=>array('index')),
+	array('label'=>'List Farm & Herd', 'url'=>array('admin')),
 	array('label'=>'Create Farm & Herd', 'url'=>array('create')),
 	array('label'=>'Update Farm & Herd', 'url'=>array('update', 'id'=>$model->herd_id)),
 	array('label'=>'Delete Farm & Herd', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->herd_id),'confirm'=>'Are you sure you want to delete this item?')),

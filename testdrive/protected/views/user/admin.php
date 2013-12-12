@@ -11,12 +11,12 @@ $cs->registerCssFile(
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
+	'Users'=>array('admin'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List User', 'url'=>array('index')),
+	array('label'=>'List User', 'url'=>array('admin')),
 	array('label'=>'Create User', 'url'=>array('create')),
 );
 

@@ -184,10 +184,12 @@ class TblHerdSetup extends CActiveRecord
 		$criteria->compare('prev_herd_mark',$this->prev_herd_mark,true);
 		$criteria->compare('fax',$this->fax,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
-
+		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+				'criteria'=>$criteria,
+				'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages)),
 		));
+
 	}
 	
 }

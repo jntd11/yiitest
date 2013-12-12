@@ -3,11 +3,11 @@
 /* @var $model SowBoar */
 
 $this->breadcrumbs=array(
-	'Sows/Boars'=>array('index'),
+	'Sows/Boars'=>array('admin'),
 	$model->sow_boar_id,
 );
 $this->menu=array(
-	array('label'=>'List Sows/Boars', 'url'=>array('index')),
+	array('label'=>'List Sows/Boars', 'url'=>array('admin')),
 	array('label'=>'Create Sows/Boars', 'url'=>array('create')),
 	array('label'=>'Update Sows/Boars', 'url'=>array('update', 'id'=>$model->sow_boar_id)),
 	array('label'=>'Delete Sows/Boars', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->sow_boar_id),'confirm'=>'Are you sure you want to delete this item?')),

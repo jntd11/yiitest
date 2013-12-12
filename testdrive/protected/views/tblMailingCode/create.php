@@ -5,8 +5,8 @@
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $this->breadcrumbs=array(
-	'Customers'=>array('index'),
-	'Mailing Codes'=>array('index'),
+	'Customers'=>array('admin'),
+	'Mailing Codes'=>array('admin'),
 	'New',
 );
 

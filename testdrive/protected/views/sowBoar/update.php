@@ -5,8 +5,8 @@ $cs=Yii::app()->clientScript;
 
 
 $this->breadcrumbs=array(
-	'Pigs'=>array('index'),
-	'Sow/Boars'=>array('index'),
+	'Pigs'=>array('admin'),
+	'Sow/Boars'=>array('admin'),
 	$model->sow_boar_id=>array('view','id'=>$model->sow_boar_id),
 	'Update',
 );

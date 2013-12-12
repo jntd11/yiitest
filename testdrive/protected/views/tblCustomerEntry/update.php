@@ -3,7 +3,7 @@
 /* @var $model TblCustomerEntry */
 
 $this->breadcrumbs=array(
-	'Customers'=>array('index'),
+	'Customers'=>array('admin'),
 	$model->customer_entry_id=>array('view','id'=>$model->customer_entry_id),
 	'Update',
 );
