@@ -49,7 +49,7 @@ return array(
 					'loginNotActiv' => false,
 			
 					# activate user on registration (only sendActivationMail = false)
-					'activeAfterRegister' => false,
+					'activeAfterRegister' => false, 
 			
 			# automatically login from registration
 							'autoLogin' => true,
