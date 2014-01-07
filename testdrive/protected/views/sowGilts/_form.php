@@ -2,6 +2,11 @@
 /* @var $this SowGiltsController */
 /* @var $model SowGilts */
 /* @var $form CActiveForm */
+$farmHerd = Yii::app()->request->cookies['farm_herd'];
+$farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
+$herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
+if($herdmark != "")
+	$herdmark = $herdmark." ";
 ?>
 
 <div class="form">
@@ -23,7 +28,15 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'sire_ear_notch'); ?>
-		<?php echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20)); ?>
+		<?php 
+		if(count($model->errors)){
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1));
+		}else if($model->isNewRecord) {
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$farmHerd." ".$herdmark,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1));
+		}else{
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2)','id'=>'earnotch','tabindex'=>1));
+		}
+		?>
 		<?php echo $form->error($model,'sire_ear_notch'); ?>
 	</div>
 

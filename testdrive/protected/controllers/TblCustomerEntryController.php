@@ -7,7 +7,7 @@ class TblCustomerEntryController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	//public $layout='//layouts/column1';
-	public $layout='//layouts/column-mobile';
+	public $layout='//layouts/column1';
 
 	/**
 	 * @return array action filters
