@@ -21,12 +21,6 @@ if($herdmark != "")
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'date_bred'); ?>
-		<?php echo $form->textField($model,'date_bred',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'date_bred'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'sire_ear_notch'); ?>
 		<?php 
 		if(count($model->errors)){
@@ -37,9 +31,34 @@ if($herdmark != "")
 			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2)','id'=>'earnotch','tabindex'=>1));
 		}
 		?>
+		<label id="earnotchwarning" style="color: red"></label>
 		<?php echo $form->error($model,'sire_ear_notch'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'date_bred'); ?>
+		<?php 
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+				'model' => $model,
+				'attribute' => 'date_bred',
+				'options' =>array(
+						'dateFormat'=>'mm/dd/yy',
+						'showOn'=>'button',
+						'buttonImage'=>'img/calendar.gif',
+				),
+					
+				'htmlOptions' => array(
+						'id'=>'born',
+						'size' => '20',         // textField size
+						'maxlength' => '20',    // textField maxlength
+						'tabindex'=>4
+				),
+		));
+		//echo $form->textField($model,'date_bred',array('size'=>10,'maxlength'=>10)); 
+		?>
+		<?php echo $form->error($model,'date_bred'); ?>
+	</div>
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'service_type'); ?>
 		<?php echo $form->textField($model,'service_type',array('size'=>5,'maxlength'=>5)); ?>

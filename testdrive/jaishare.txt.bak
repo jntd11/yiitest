@@ -1846,6 +1846,7 @@ A. The Pigs Bred Sows screens will be using the Bred option (change to Bred Sows
         a. Sow Ear Notch, Bred Date, Sire Ear Notch, Service Type, Misc., Pass Date, Due Date, Days Between.
         b. General layout and buttons on this screen should match the layout and buttons of the Sold Hogs List screen.
         c. Initially sorted by Due Date - decending (most recent date first).
+
     3. Here are the fields for the New and Update screens:
         a. Sow Ear Notch - This field is required.
             1. Same format as the Sows/Boars Entry - this field is required.
@@ -1909,3 +1910,12 @@ B. I am trying to narrow down how to handle date display and entry fields and be
          e. Pigs - Sold Hogs - List - Date Sold Search field (if the User tabs past this blank date field - leave it blank).
          f. Pigs - Sows/Boars - List - Born Date Search field (if the User tabs past this blank date field - leave it blank).
          g. I'm sure there will be some of the field types in the tables that need to be changed - let me know when that is done and I will reload the data.
+
+Android Links
+http://android-ui-utils.googlecode.com/hg/asset-studio/dist/index.html
+
+Comparison
+http://www.technologyreview.com/news/424328/rise-of-the-hybrid-mobile-app/
+http://www.sitepoint.com/build-a-mobile-hybrid-app-using-ibm-worklight-part-1/
+http://www.developer-tech.com/blog-hub/2013/aug/23/worried-about-app-security-go-hybrid/
+http://venturebeat.com/2013/04/17/linkedin-mobile-web-breakup/

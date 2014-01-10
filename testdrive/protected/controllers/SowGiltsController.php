@@ -28,7 +28,7 @@ class SowGiltsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','AutocompleteEarNotch'),
+				'actions'=>array('index','view','AutocompleteEarNotch','Checksolddate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -175,12 +175,26 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT ear_notch FROM  sow_boar WHERE ear_notch LIKE :username";
+			$qtxt ="SELECT ear_notch FROM  sow_boar WHERE ear_notch LIKE :username and bred_date != 'BOAR'";
 			$command =Yii::app()->db->createCommand($qtxt);
-			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$term = str_replace(" ", "", $_GET['term']);
+			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 		}
 		echo CJSON::encode($res);
 		Yii::app()->end();
+	}
+	public function actionChecksolddate() {
+		$res =array();
+		if (isset($_GET['s'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT sold_mmddyy  FROM  sow_boar WHERE ear_notch = :username and bred_date != 'BOAR'";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$term = $_GET['s'];
+			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo $res[0];
+		
 	}
 }

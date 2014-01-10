@@ -1,26 +1,10 @@
 $(function() {
-$( document ).tooltip({
-position: {
-my: "center bottom-20",
-at: "center top",
-using: function( position, feedback ) {
-$( this ).css( position );
-$( "<div>" )
-.addClass( "arrow" )
-.addClass( feedback.vertical )
-.addClass( feedback.horizontal )
-.appendTo( this );
-}
-}
-});
-
-var obj = $("table").last().attr('style');
-if(obj != null && obj != "") {
-	var res = obj.match(/top:[\- ]+([0-9]+)px/g);
-	//alert(res);
-	$("#bottommenu").attr("style","position: relative;"+res);
-}
-
+	var obj = $("table").last().attr('style');
+	if(obj != null && obj != "") {
+		var res = obj.match(/top:[\- ]+([0-9]+)px/g);
+		//alert(res);
+		$("#bottommenu").attr("style","position: relative;"+res);
+	}
 });
 var oldval;
 function checkData(element,type,extra,extra1){
@@ -28,7 +12,7 @@ function checkData(element,type,extra,extra1){
 		var val = element.value;
 		if(val == "" || extra+" "+extra1 == val)
 			return;
-		var patt1 = /^[0-9][A-Z] *[a-z]+ [0-9]{1,2}[ SFsf][0-9]{1,4}[\-\.][0-9]{1,3}$/gi;
+		var patt1 = /^[0-9][A-Z] *[a-z]+ [0-9]{1,4}[ SFsf][0-9]{1,4}[\-\.][0-9]{1,3}$/gi;
 		var patt2 = /[\-\.]/gi;
 		var patt3 = /^[0-9][A-Z]/gi;		
 		patt = patt1;
@@ -55,6 +39,7 @@ function checkData(element,type,extra,extra1){
 		var val = element.value;
 		val = val.replace(".","-");
 	}
+	checkDate(val);
 }
 
 
@@ -73,12 +58,11 @@ $(document).ready(function(){
 	$("#sow-boar-form :input[type=submit]").click(function() {
 		   $("#sow-boar-form").data("changed",false);
 	});
-	
-	$("#sow-glids-form [name='SowGilts[sire_ear_notch]']").autocomplete({
+	$("#earnotch").autocomplete({
 	    source: 'index.php?r=sowGilts/autocompleteEarNotch',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
-	    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+	    	$("#earnotch").val(ui.item.value);
 	    }
 	});
 	//CreateTree();
@@ -201,4 +185,19 @@ function validateDate(val){
 }
 function validateForm(){
 	return validateDate($("#born").val());
+}
+function checkDate(val){
+	if(val != "") {
+		$.ajax({
+			url: encodeURI('index.php?r=sowGilts/Checksolddate'),
+			type: "GET",
+			data: {s:val}
+		}).done(function(data){
+			if(data != "")
+				$("#earnotchwarning").html("This Sow has been sold");
+			else 
+				$("#earnotchwarning").html("");
+		});
+	}
+	return;
 }
