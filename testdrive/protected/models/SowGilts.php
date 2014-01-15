@@ -8,6 +8,7 @@
  * @property string $date_bred
  * @property string $sire_ear_notch
  * @property string $service_type
+ * @property string $sow_ear_notch
  * @property string $comments
  * @property string $passover_date
  * @property string $due_date
@@ -44,14 +45,14 @@ class SowGilts extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('date_bred, sire_ear_notch, service_type, comments, passover_date, due_date, days_between, settled, farrowed, date_modified', 'required'),
+			array('sow_ear_notch, date_bred, sire_ear_notch, passover_date, due_date, days_between, settled, farrowed', 'required'),
 			array('date_bred, passover_date, due_date, days_between', 'length', 'max'=>10),
-			array('sire_ear_notch', 'length', 'max'=>20),
+			array('sire_ear_notch, sow_ear_notch', 'length', 'max'=>20),
 			array('service_type', 'length', 'max'=>5),
 			array('settled, farrowed', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('sow_gilts_id, date_bred, sire_ear_notch, service_type, comments, passover_date, due_date, days_between, settled, farrowed, date_modified', 'safe', 'on'=>'search'),
+			array('sow_gilts_id, date_bred, sow_ear_notch, sire_ear_notch, service_type, comments, passover_date, due_date, days_between, settled, farrowed, date_modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,10 +74,11 @@ class SowGilts extends CActiveRecord
 	{
 		return array(
 			'sow_gilts_id' => 'Sow Gilts',
+			'sow_ear_notch' => 'Sow Ear Notch',
 			'date_bred' => 'Date Bred',
 			'sire_ear_notch' => 'Sire Ear Notch',
 			'service_type' => 'Service Type',
-			'comments' => 'Comments',
+			'comments' => 'Misc',
 			'passover_date' => 'Passover Date',
 			'due_date' => 'Due Date',
 			'days_between' => 'Days Between',
@@ -100,6 +102,7 @@ class SowGilts extends CActiveRecord
 		$criteria->compare('sow_gilts_id',$this->sow_gilts_id);
 		$criteria->compare('date_bred',$this->date_bred,true);
 		$criteria->compare('sire_ear_notch',$this->sire_ear_notch,true);
+		$criteria->compare('sow_ear_notch',$this->sow_ear_notch,true);
 		$criteria->compare('service_type',$this->service_type,true);
 		$criteria->compare('comments',$this->comments,true);
 		$criteria->compare('passover_date',$this->passover_date,true);

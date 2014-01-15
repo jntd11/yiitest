@@ -28,7 +28,7 @@ class SowGiltsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','AutocompleteEarNotch','Checksolddate'),
+				'actions'=>array('index','view','AutocompleteEarNotch','Checksolddate','Checkexist','AutocompleteSireNotch'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -184,17 +184,54 @@ class SowGiltsController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
+	public function actionAutocompleteSireNotch() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT ear_notch FROM  sow_boar WHERE ear_notch LIKE :username and bred_date = 'BOAR'";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$term = str_replace(" ", "", $_GET['term']);
+			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
 	public function actionChecksolddate() {
 		$res =array();
 		if (isset($_GET['s'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT sold_mmddyy  FROM  sow_boar WHERE ear_notch = :username and bred_date != 'BOAR'";
+			if($_GET['type'] == 2) 
+				$qtxt ="SELECT sold_mmddyy  FROM  sow_boar WHERE ear_notch = :username and bred_date = 'BOAR'";
+			else 
+				$qtxt ="SELECT sold_mmddyy  FROM  sow_boar WHERE ear_notch = :username and bred_date != 'BOAR'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = $_GET['s'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 		}
-		echo $res[0];
+		echo isset($res[0])?$res[0]:"";
 		
 	}
+	public function actionCheckexist() {
+		$res =array();
+		if (isset($_GET['born']) && isset($_GET['earnotch'])) {
+			$qtxt ="SELECT sow_gilts_id	 FROM  sow_gilts WHERE sire_ear_notch	 = '".$_GET['earnotch']."' and date_bred = '".$_GET['born']."'";
+			$command =Yii::app()->db->createCommand($qtxt);
+			/* $term = $_GET['s'];
+			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR); */
+			$res =$command->queryColumn();
+			if(isset($res['sow_gilts_id'])) {
+				$this->redirect(array('view','id'=>$res['sow_gilts_id']));
+			}else{
+				$farm = substr($_GET['earnotch'], 0, 2);;
+				$qtxt ="SELECT * FROM  tbl_herd_setup WHERE farm_herd = '".$farm."' ";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryRow();
+				echo CJSON::encode($res);
+			}
+		}
+		
+	}
+	
 }

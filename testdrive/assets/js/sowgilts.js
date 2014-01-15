@@ -39,7 +39,7 @@ function checkData(element,type,extra,extra1){
 		var val = element.value;
 		val = val.replace(".","-");
 	}
-	checkDate(val);
+	checkDate(val,1);
 }
 
 
@@ -63,8 +63,16 @@ $(document).ready(function(){
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
 	    	$("#earnotch").val(ui.item.value);
-	    }
+	    },
 	});
+	$("#sirenotch").autocomplete({
+	    source: 'index.php?r=sowGilts/autocompletesirenotch',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	$("#sirenotch").val(ui.item.value);
+	    },
+	});
+	
 	//CreateTree();
 	//$(window).load(CreateTree());
 	window.onbeforeunload = iamexiting;
@@ -186,17 +194,51 @@ function validateDate(val){
 function validateForm(){
 	return validateDate($("#born").val());
 }
-function checkDate(val){
+function checkDate(val,type){
 	if(val != "") {
 		$.ajax({
 			url: encodeURI('index.php?r=sowGilts/Checksolddate'),
 			type: "GET",
-			data: {s:val}
+			data: {s:val,type:type}
 		}).done(function(data){
-			if(data != "")
-				$("#earnotchwarning").html("This Sow has been sold");
-			else 
-				$("#earnotchwarning").html("");
+			if(data != "") {
+				if(type == 2)
+					$("#sirenotchwarning").html("This Sow has been sold");
+				else
+					$("#earnotchwarning").html("This Sow has been sold");
+			}
+			else{ 
+				
+				if(type == 2)
+					$("#sirenotchwarning").html("");
+				else
+					$("#earnotchwarning").html("");
+			}
+		});
+	}
+	return;
+}
+function checkExist(dates){
+	var earnotch = $("#earnotch").val();
+	if($("#born").val() == "") {
+		$("#born").val(dates);
+	}
+	var born = $("#born").val();
+	
+	if(earnotch != "" && born != "") {
+		$.ajax({
+			url: encodeURI('index.php?r=sowGilts/Checkexist'),
+			type: "GET",
+			data: {earnotch:earnotch,born:born}
+		}).done(function(data){
+			if(data != "") {
+				var Obj = JSON.parse(data);
+				var myDate=new Date(born); 
+				myDate.setDate(myDate.getDate()+parseInt(Obj.passover_days));
+				$("#SowGilts_passover_date").val($.datepicker.formatDate("mm/dd/yy", myDate));
+				myDate.setDate(myDate.getDate()+parseInt(Obj.due_days));
+				$("#SowGilts_due_date").val($.datepicker.formatDate("mm/dd/yy", myDate));
+			}
 		});
 	}
 	return;
