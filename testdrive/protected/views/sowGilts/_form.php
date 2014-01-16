@@ -18,8 +18,12 @@ if($herdmark != "")
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
+	<div class="row buttons">
+		<?php echo CHtml::Button('List Bred Sows',array('onClick'=>'window.location="index.php?r=sowGilts/admin"')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateForm();')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('onClick'=>'return validateForm();','id'=>'savenew','name'=>'savenew')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelSow()')); ?>
+	</div>
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
@@ -54,8 +58,8 @@ if($herdmark != "")
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
 						'tabindex'=>4,
-						'onBlur'=>'checkExist("'.$activitydate.'");',
-						'onChange'=>'checkExist("'.$activitydate.'");',
+						'onBlur'=>($model->isNewRecord)?'checkExist("'.$activitydate.'");':'checkExist("'.$activitydate.'",1);',
+						'onChange'=>($model->isNewRecord)?'checkExist("'.$activitydate.'");':'checkExist("'.$activitydate.'",1);',
 						'tabindex'=>2,
 				),
 				
@@ -89,45 +93,51 @@ if($herdmark != "")
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'comments'); ?>
-		<?php echo $form->textArea($model,'comments',array('rows'=>6, 'cols'=>50,'tabindex'=>5)); ?>
+		<?php echo $form->textField($model,'comments',array('size'=>5,'maxlength'=>5,'tabindex'=>5)); ?>
 		<?php echo $form->error($model,'comments'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'passover_date'); ?>
-		<?php echo $form->textField($model,'passover_date',array('size'=>10,'maxlength'=>10,'tabindex'=>6)); ?>
+		<?php echo $form->textField($model,'passover_date',array('size'=>10,'maxlength'=>10,'tabindex'=>6,'disabled'=>true)); ?>
 		<?php echo $form->error($model,'passover_date'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'due_date'); ?>
-		<?php echo $form->textField($model,'due_date',array('size'=>10,'maxlength'=>10,'tabindex'=>7)); ?>
+		<?php echo $form->textField($model,'due_date',array('size'=>10,'maxlength'=>10,'tabindex'=>7,'disabled'=>true)); ?>
 		<?php echo $form->error($model,'due_date'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'days_between'); ?>
-		<?php echo $form->textField($model,'days_between',array('size'=>10,'maxlength'=>10,'tabindex'=>8)); ?>
+		<?php echo $form->textField($model,'days_between',array('size'=>10,'maxlength'=>10,'tabindex'=>8,'disabled'=>true)); ?>
 		<?php echo $form->error($model,'days_between'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'settled'); ?>
-		<?php echo $form->textField($model,'settled',array('size'=>1,'maxlength'=>1,'tabindex'=>9)); ?>
-		<?php echo $form->error($model,'settled'); ?>
+		<?php //echo $form->labelEx($model,'settled'); ?>
+		<?php if($model->isNewRecord) echo $form->hiddenField($model,'settled',array('size'=>1,'maxlength'=>1,'tabindex'=>9, 'value'=>'N')); ?>
+		<?php //echo $form->error($model,'settled'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'farrowed'); ?>
-		<?php echo $form->textField($model,'farrowed',array('size'=>1,'maxlength'=>1,'tabindex'=>10)); ?>
-		<?php echo $form->error($model,'farrowed'); ?>
+		<?php //echo $form->labelEx($model,'farrowed'); ?>
+		<?php 
+			if($model->isNewRecord)  echo $form->hiddenField($model,'farrowed',array('size'=>1,'maxlength'=>1,'tabindex'=>10, 'value'=>'N'));
+		?>
+		<?php //echo $form->error($model,'farrowed'); ?>
 	</div>
 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::Button('List Bred Sows',array('onClick'=>'window.location="index.php?r=sowGilts/admin"')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('onClick'=>'','id'=>'savenew','name'=>'savenew')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelSow()')); ?>
 	</div>
-
+	
 <?php $this->endWidget(); ?>
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 </div><!-- form -->

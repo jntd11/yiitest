@@ -1924,3 +1924,7 @@ http://venturebeat.com/2013/04/17/linkedin-mobile-web-breakup/
 GRITA : ssh -p 2242 emsbn01@bastion.grita.fr
 GRITA Username : emsbn01
 GRITA Password: *Em5!2k@
+
+
+SELECT * FROM file WHERE LCASE(fileCat) = 'patient' AND ownerId=13328 AND status = 0 ORDER BY dateAdded DESC FETCH FIRST 1 ROWS ONLY
+UPDATE file SET status = 1 WHERE LCASE(fileCat) = 'patient' AND ownerId=13328 AND status = 0

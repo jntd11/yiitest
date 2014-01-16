@@ -6,7 +6,7 @@ class SowGiltsController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -28,7 +28,8 @@ class SowGiltsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','AutocompleteEarNotch','Checksolddate','Checkexist','AutocompleteSireNotch'),
+				'actions'=>array('index','view','AutocompleteEarNotch','Checksolddate','Checkexist','AutocompleteSireNotch','getdaysbtw','autocompleteSow','autocompleteDateBred','autocompleteSire','autocompleteService',
+						'autocompleteComments','autocompletePass','autocompleteDue','autocompleteDays'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -70,8 +71,15 @@ class SowGiltsController extends Controller
 		if(isset($_POST['SowGilts']))
 		{
 			$model->attributes=$_POST['SowGilts'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->sow_gilts_id));
+			if($model->save()){
+				$query = "Update sow_boar SET bred_date = '".date("Ymd",strtotime($model->date_bred)) ."' WHERE ear_notch = '".$model->sow_ear_notch."' AND bred_date < '".date("Ymd",strtotime($model->date_bred)) ."'";
+				$command =Yii::app()->db->createCommand($query);
+				$command->query();
+				if(!isset($_POST['savenew']))
+					$this->redirect(array('admin'));
+				else
+					$this->redirect(array('create'));
+			}
 		}
 
 		$this->render('create',array(
@@ -94,8 +102,14 @@ class SowGiltsController extends Controller
 		if(isset($_POST['SowGilts']))
 		{
 			$model->attributes=$_POST['SowGilts'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->sow_gilts_id));
+			if($model->save()) {
+				if(isset($_POST['savenew']))
+					$this->redirect(array('create'));
+				else
+					$this->redirect(array('update','id'=>$model->sow_gilts_id));
+				//$this->redirect(array('view','id'=>$model->sow_gilts_id));
+			}
+				
 		}
 
 		$this->render('update',array(
@@ -175,7 +189,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT ear_notch FROM  sow_boar WHERE ear_notch LIKE :username and bred_date != 'BOAR'";
+			$qtxt ="SELECT ear_notch FROM  sow_boar WHERE replace(ear_notch,' ','') LIKE :username and bred_date != 'BOAR'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
@@ -188,7 +202,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT ear_notch FROM  sow_boar WHERE ear_notch LIKE :username and bred_date = 'BOAR'";
+			$qtxt ="SELECT ear_notch FROM  sow_boar WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
@@ -216,15 +230,16 @@ class SowGiltsController extends Controller
 	public function actionCheckexist() {
 		$res =array();
 		if (isset($_GET['born']) && isset($_GET['earnotch'])) {
-			$qtxt ="SELECT sow_gilts_id	 FROM  sow_gilts WHERE sire_ear_notch	 = '".$_GET['earnotch']."' and date_bred = '".$_GET['born']."'";
+			$qtxt ="SELECT sow_gilts_id	 FROM  sow_gilts WHERE sow_ear_notch	 = '".$_GET['earnotch']."' and date_bred = '".$_GET['born']."'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			/* $term = $_GET['s'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR); */
 			$res =$command->queryColumn();
-			if(isset($res['sow_gilts_id'])) {
-				$this->redirect(array('view','id'=>$res['sow_gilts_id']));
+			if(isset($res[0])) {
+				echo "redirect-".$res[0];
+				//$this->redirect(array('view','id'=>$res[0]));
 			}else{
-				$farm = substr($_GET['earnotch'], 0, 2);;
+				$farm = substr($_GET['earnotch'], 0, 2);
 				$qtxt ="SELECT * FROM  tbl_herd_setup WHERE farm_herd = '".$farm."' ";
 				$command =Yii::app()->db->createCommand($qtxt);
 				$res =$command->queryRow();
@@ -232,6 +247,132 @@ class SowGiltsController extends Controller
 			}
 		}
 		
+	}
+	public function actiongetdaysbtw() {
+		$res =array();
+		if (isset($_GET['born']) && isset($_GET['earnotch'])) {
+			$qtxt ="SELECT date_bred FROM  sow_gilts WHERE sow_ear_notch = '".$_GET['earnotch']."' ORDER by date_bred DESC Limit 1";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$res =$command->queryColumn();
+			//echo $res['date_bred'];
+			if(isset($res[0])) {
+				$days = (strtotime($_GET['born']) - strtotime($res[0]))/(24*60*60);
+				echo $days; 
+			}else{
+				$qtxt ="SELECT born FROM  sow_boar WHERE ear_notch = '".$_GET['earnotch']."' ";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryRow();
+				if(isset($res['born'])) {
+					$days = (strtotime($_GET['born']) - strtotime($res['born']))/(24*60*60);
+					echo $days;
+				}else {
+					echo  0;	
+				}
+				
+			}
+		}
+	
+	}
+	
+	public function actionautocompleteSow() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT sow_ear_notch FROM  sow_gilts WHERE sow_ear_notch LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	
+	public function actionautocompleteDateBred() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT date_bred	 FROM  sow_gilts WHERE date_bred	 LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	
+	public function actionautocompleteSire() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT sire_ear_notch	 FROM  sow_gilts WHERE sire_ear_notch	 LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	
+	public function actionautocompleteService() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT service_type	 FROM  sow_gilts WHERE service_type	 LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionautocompleteComments() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT comments	 FROM  sow_gilts WHERE comments	 LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionautocompletePass() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT passover_date		 FROM  sow_gilts WHERE passover_date		 LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	
+	public function actionautocompleteDue() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT passover_date	 FROM  sow_gilts WHERE passover_date	 LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionautocompleteDays() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT due_date	 FROM  sow_gilts WHERE due_date	 LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
 	}
 	
 }

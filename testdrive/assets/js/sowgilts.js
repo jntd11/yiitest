@@ -54,7 +54,7 @@ $(document).ready(function(){
 	$("#sow-boar-form :input[type!='submit']").change(function() {
 		   $("#sow-boar-form").data("changed",true);
 	});
-	//autoSuggestSearch();
+	autoSuggestSearch();
 	$("#sow-boar-form :input[type=submit]").click(function() {
 		   $("#sow-boar-form").data("changed",false);
 	});
@@ -90,9 +90,7 @@ $(document).ready(function(){
 });
 
 function cancelSow(){
-	$("#earnotch").val("");
-	$("#SowBoar_sow_boar_name").focus();
-	window.location="index.php?r=sowBoar/admin";
+	window.location="index.php?r=sowGilts/admin";
 }
 
 function setDefault(val,obj){
@@ -112,41 +110,65 @@ function setDefault(val,obj){
 	
 }
 function autoSuggestSearch(){
-	$("#sow-boar-grid [name='SowBoar[ear_notch]']").autocomplete({
-		    source: 'index.php?r=sowBoar/autocompleteEarNotch',
+	$("#sow-gilts-grid [name='SowGilts[sow_ear_notch]']").autocomplete({
+		    source: 'index.php?r=sowGilts/autocompleteSow',
 		    select: function( event, ui ) {
 		    	var data = this.name+"="+ui.item.value;
-		    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+		    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
 		    }
 	});
-	$("#sow-boar-grid [name='SowBoar[sow_boar_name]']").autocomplete({
-	    source: 'index.php?r=sowBoar/autocompleteName',
+	$("#sow-gilts-grid [name='SowGilts[date_bred]']").autocomplete({
+	    source: 'index.php?r=sowGilts/autocompleteDateBred',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
-	    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
 	    }
 	});
-	$("#sow-boar-grid [name='SowBoar[registeration_no]']").autocomplete({
-	    source: 'index.php?r=sowBoar/autocompleteRegister',
+	$("#sow-gilts-grid [name='SowGilts[sire_ear_notch]']").autocomplete({
+	    source: 'index.php?r=sowGilts/autocompleteSire',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
-	    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
 	    }
 	});
-	$("#sow-boar-grid [name='SowBoar[born]']").autocomplete({
-	    source: 'index.php?r=sowBoar/autocompleteBorn',
+	$("#sow-gilts-grid [name='SowGilts[service_type]']").autocomplete({
+	    source: 'index.php?r=sowGilts/autocompleteService',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
-	    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
 	    }
 	});
-	$("#sow-boar-grid [name='SowBoar[no_pigs]']").autocomplete({
-	    source: 'index.php?r=sowBoar/autocompletePigs',
+	$("#sow-gilts-grid [name='SowGilts[comments]']").autocomplete({
+	    source: 'index.php?r=sowGilts/autocompleteComments',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
-	    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
 	    }
 	});
+	
+	$("#sow-gilts-grid [name='SowGilts[passover_date]']").autocomplete({
+	    source: 'index.php?r=sowGilts/autocompletePass',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
+	    }
+	});
+	
+	$("#sow-gilts-grid [name='SowGilts[due_date]']").autocomplete({
+	    source: 'index.php?r=sowGilts/autocompleteDue',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
+	    }
+	});
+	$("#sow-gilts-grid [name='SowGilts[days_between]']").autocomplete({
+	    source: 'index.php?r=sowGilts/autocompleteDays',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
+	    }
+	});	
+	
 }
 $(function() { 
 	 $(':text').focus(function() { 
@@ -218,7 +240,7 @@ function checkDate(val,type){
 	}
 	return;
 }
-function checkExist(dates){
+function checkExist(dates,isupd){
 	var earnotch = $("#earnotch").val();
 	if($("#born").val() == "") {
 		$("#born").val(dates);
@@ -226,19 +248,32 @@ function checkExist(dates){
 	var born = $("#born").val();
 	
 	if(earnotch != "" && born != "") {
+		if(isupd != 1) {
+			$.ajax({
+				url: encodeURI('index.php?r=sowGilts/Checkexist'),
+				type: "GET",
+				data: {earnotch:earnotch,born:born}
+			}).done(function(data){
+				if(data.match(/redirect/)){
+					data = data.replace("redirect-","");
+					window.location.href = "index.php?r=sowGilts/update&id="+data;
+				}
+				if(data != "") {
+					var Obj = JSON.parse(data);
+					var myDate=new Date(born); 
+					myDate.setDate(myDate.getDate()+parseInt(Obj.passover_days));
+					$("#SowGilts_passover_date").val($.datepicker.formatDate("mm/dd/yy", myDate));
+					myDate.setDate(myDate.getDate()+parseInt(Obj.due_days));
+					$("#SowGilts_due_date").val($.datepicker.formatDate("mm/dd/yy", myDate));
+				}
+			});
+		}
 		$.ajax({
-			url: encodeURI('index.php?r=sowGilts/Checkexist'),
+			url: encodeURI('index.php?r=sowGilts/getdaysbtw'),
 			type: "GET",
 			data: {earnotch:earnotch,born:born}
 		}).done(function(data){
-			if(data != "") {
-				var Obj = JSON.parse(data);
-				var myDate=new Date(born); 
-				myDate.setDate(myDate.getDate()+parseInt(Obj.passover_days));
-				$("#SowGilts_passover_date").val($.datepicker.formatDate("mm/dd/yy", myDate));
-				myDate.setDate(myDate.getDate()+parseInt(Obj.due_days));
-				$("#SowGilts_due_date").val($.datepicker.formatDate("mm/dd/yy", myDate));
-			}
+				$("#SowGilts_days_between").val(data);
 		});
 	}
 	return;

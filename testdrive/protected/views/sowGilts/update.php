@@ -14,6 +14,13 @@ $this->menu=array(
 	array('label'=>'View SowGilts', 'url'=>array('view', 'id'=>$model->sow_gilts_id)),
 	array('label'=>'Manage SowGilts', 'url'=>array('admin')),
 );
+$cs=Yii::app()->clientScript;
+/* $cs->registerCoreScript('jquery-ui-1.10.2.custom');
+ $cs->registerCssFile(
+ 		$cs->getCoreScriptUrl().
+ 		'/jui/css/base/jquery-ui-1.10.2.custom.css'
+ ); */
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowgilts.js');
 ?>
 
 <h1>Update SowGilts <?php echo $model->sow_gilts_id; ?></h1>
