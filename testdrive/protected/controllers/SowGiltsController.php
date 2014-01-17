@@ -151,9 +151,13 @@ class SowGiltsController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['SowGilts']))
 			$model->attributes=$_GET['SowGilts'];
-
+		$sort = new CSort();
+		$sort->attributes  = array(
+						'desc'=>'due_date'
+		);
 		$this->render('admin',array(
 			'model'=>$model,
+			'sort'=>$sort,
 		));
 	}
 

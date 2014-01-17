@@ -111,9 +111,12 @@ class SowGilts extends CActiveRecord
 		$criteria->compare('settled',$this->settled,true);
 		$criteria->compare('farrowed',$this->farrowed,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
-
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+				'sort'=>array(
+						'defaultOrder'=>'due_date DESC',
+				),
 		));
 	}
 }

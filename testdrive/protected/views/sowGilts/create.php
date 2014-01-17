@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Pigs'=>array('admin'),
-	'Bred Sows'=>array('index'),
+	'Bred Sows'=>array('admin'),
 	'New',
 );
 
