@@ -1743,3 +1743,188 @@ Check Now
                 8. Move the Fields with * are required to bottom of page.
 		Done
 
+
+346.24	6/11
+201.24	6/11
+280 - Booked
+
+356 + 10
+140 Refund  - 500 for me...
+
+842 - Current Amount
+
+1
+	10-Nov-2013 	6000005385 	
+SBI Debit
+	Recharge Successful 	600
+
+
+Payment Settled
+	560 (+135)
+2
+	05-Nov-2013 	6000001590 	
+SBI Debit
+	Recharge Successful 	700
+	
+	570  (+250)
+
+	4710545610
+
+	
+Payment Settled
+
+
+http://www.vogella.com/articles/Eclipse/article.html
+
+1300 - 842 = 460 
+296+296 = 594
+1300 - 594 = 706 + 135 = 842
+
+For dad - 350 - 150 = 200
+
+	jntd11
+RDS Password 	jqc199
+
+
+C:\Program Files (x86)\IBM\WebSphere MQ_1\java\lib\com.ibm.mqjms.jar;C:\Program Files (x86)\IBM\WebSphere MQ_1\java\lib\com.ibm.mq.jar;.;C:\PROGRA~2\IBM\SQLLIB\java\db2java.zip;C:\PROGRA~2\IBM\SQLLIB\java\db2jcc.jar;C:\PROGRA~2\IBM\SQLLIB\java\db2jcc_license_cu.jar;C:\PROGRA~2\IBM\SQLLIB\bin
+C:\Program Files (x86)\IBM\WebSphere MQ_1\java\lib;C:\Program Files (x86)\IBM\WebSphere MQ_1\java\lib64;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%JAVA_HOME%\bin;%ANT_HOME%\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\IBM\WebSphere MQ_1\bin64;C:\Program Files (x86)\IBM\WebSphere MQ_1\bin;C:\Program Files (x86)\IBM\WebSphere MQ_1\tools\c\samples\bin;C:\Program Files (x86)\Android\android-sdk\platform-tools;C:\Program Files (x86)\Android\android-sdk\tools;C:\Program Files (x86)\Git\cmd;C:\wamp\bin\php\php5.3.10\;C:\Program Files (x86)\Zend\ZendServer\share\ZendFramework\bin;C:\Program Files (x86)\Zend\ZendServer\bin;C:\PROGRA~2\IBM\SQLLIB\BIN;C:\PROGRA~2\IBM\SQLLIB\FUNCTION;C:\Program Files (x86)\Zend\MySQL55\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Android\android-sdk\platform-tools;C:\Program Files (x86)\Android\android-sdk\tools;C:\Program Files (x86)\Java\jdk1.7.0_04\bin;C:\Program Files (x86)\Android\android-sdk;
+
+REST
+http://rest.elkstein.org/search?updated-max=2008-02-12T18:00:00-08:00&max-results=4&start=4&by-date=false
+
+Soap Step by Step
+http://www.sitepoint.com/web-services-with-php-and-soap-1/
+
+
+http://developer.android.com/training/basics/firstapp/creating-project.html
+
+
+Objective C on iOS
+====================
+http://www.gnustep.org/experience/Windows.html
+
+
+Options -
+
+1. PHP 
+   Strengths
+	PHP, MySql, Linux, DB2, Yii, Joomla, Moodle
+   Oppurtunities
+	PHP, Drupal, Zend, Yii, MVC, Phpunit
+   Weekness
+        Drupal, Zend, MVC, PhpUnit
+   Plan
+	No projects on Drupal
+	Opennings are Less
+
+2. Phonegap -
+   Strengths
+	Phonegap, Html5, CSS3,JQM
+   Oppurtunities
+	Phonegap, Html5, CSS3, Sentatouch, JQM, Obective JS (extjs, node.js, backbone)
+   Plan
+        Need to improve Phonegap, JQM
+	Need to improve Sentatouch, extjs, node.js, backbone
+   Need to install in local
+
+3. Message Broker. 
+     Need to improve, install in local
+
+4. Android Programming
+	Need to read android, java
+
+5. iOS Programming
+	Need to read Objective C, iOS
+gcc `gnustep-config --objc-flags` -L /GNUstep/System/Library/Libraries hello.m -o hello -lgnustep-base -lobjc
+
+06/01/2014
+Project K will be quite similar to Part A of Project H. It will be consist of List, New and Update screens.
+
+A. The Pigs Bred Sows screens will be using the Bred option (change to Bred Sows) under the Pigs menu bar option.
+    1. If you want to see the Old PIGS option that this is replacing then look at the F6 Entry Selector - 2..Sows/Gilts Bred Entry.
+    2. The List screen with search options (just like Sold Hogs) will be the initial screen. Here are the fields to search on:
+        a. Sow Ear Notch, Bred Date, Sire Ear Notch, Service Type, Misc., Pass Date, Due Date, Days Between.
+        b. General layout and buttons on this screen should match the layout and buttons of the Sold Hogs List screen.
+        c. Initially sorted by Due Date - decending (most recent date first).
+
+    3. Here are the fields for the New and Update screens:
+        a. Sow Ear Notch - This field is required.
+            1. Same format as the Sows/Boars Entry - this field is required.
+            2. As the User is typing an Ear Notch - need to display matching choices from the Sows/Boars table in a drop down to pick from.
+            3. This cannot be a BOAR (the word BOAR in Bred Date/BOAR field in Sows/Boars table.)
+            4. Need to check the Sold Date for this Sow and if the field is not blank then display a warning in red beside this field that this Sow has been sold.
+	   Done
+        b. Date Bred. This replaces BRED MMDDYY - this field is required.
+             1. See Part B below for date field entry and formatting.
+             2. After the User has entered the Sow Ear Notch and the Date Bred, if there is already an entry for this Sow and this Date Bred in the Sows Bred table (new table for this project), then retrieve that entry and display the information that was previously entered (Sire Ear Notch, Service type, Misc., etc.) and allow changes.
+        c. Sire Ear Notch - This field is required.
+             1. This is a Hog Ear Notch that must be in the Sows/Boars table but there MUST be the word BOAR in the Bred Date/BOAR field in the Sows/Boars table.
+             2. Need a picker list for this as well (they must be Boars (have the word BOAR in Bred Date/BOAR field).
+             3. Need to check the Sold Date for this Sire and if the field is not blank then display a warning in red beside this field that this Sire has been sold.
+        d. SVC. TYPE - change title to Service Type: 3 character free format text - This field not required.
+        e. MISC. - change title to Misc. - 5 character free format text - This field not required.
+        f. Comments: Free format, at least 20 characters - This field not required. Text box like Sows/Boars Comments would be fine.
+        g. There are 3 calculated fields - note that these calculated values need to be displayed only and saved for searching purposes in the List page:
+             1. PASS MMDD - change title to Passover Date:
+                 a. This date is calculated by taking the Date Bred and adding the number of days in Passover Days for the Sow's Farm & Herd in Herd Setup.
+                 b. This is a display only field - do not allow changes to this field.
+                 c. Display format: MM/DD/YYYY
+             2. DUE MMDD - change title to Due Date:
+                 a. This date is calculated by taking the Date Bred and adding the number of days in Due Days for the Sow's Farm & Herd in Herd Setup.
+                 b. This is a display only field - do not allow changes to this field.
+                 c. Display format: MM/DD/YYYY
+             3. DAYS BTW - change title to Days between:
+                 a. This is a calculation of the number of days between the Date Bred for this entry for this sow and the date this sow was previously bred.
+                      1. Use the bred date from the most recent sows bred record for this sow.
+                      2. If no previous sows bred record then use the date born for this sow.
+                 b. This is a display only field - do not allow changes to this field.
+        h. When this information is saved to the Sows Bred table, you also need to save the Bred Date to the Sow's sow_boar table Bred Date/BOAR field. BUT - only if the date is newer that the date already in this Sow's entry in the sow_boar table.
+        i. Need to add 2 more fields in the Sows Bred table but not shown on the screen:
+           1. Settled - 1 character, Y or N.
+           2. Farrowed - 1 character, Y or N.
+           3. Set both of these fields to N if this is a new entry.
+           4. Leave these two fields as is if not a new entry - see A.3.b.2 above.
+        j. Buttons on the Update and New pages match Sold Hogs except List Sold Hogs button will be List Bred Sows.
+
+B. I am trying to narrow down how to handle date display and entry fields and be as consistent throughout PIGSAPP as possible. This is how all future dates will be handled throughout PIGSAPP unless otherwise noted.
+    1. This date entry in no way applies to the year that we need to work with on the Ear Notch fields.
+    2. In the attachment there are two date fields showing - DATE and DUE DATE.
+    3. All dates should be displayed as shown MM/DD/YYYY
+        a. Always 2 characters for MM and DD.
+        b. Always 4 characters for YYYY.
+    4. Do NOT automatically show the calendar when the User lands on the date field.
+        a. Notice that the date fields in the attachment have a very small calendar icon to the right of the date field.
+        b. Only when the User clicks on this calendar icon should the calendar popup for the user to pick a date.
+        c. If the date is already filled in and the User clicks on the calendar icon, then the calendar must show the date that is in the date field.
+        d. If the date field is blank or not an actual date, then display the current Activity Date if the User clicks on the calendar icon.
+        e. If the User just tabs past leaving a blank date field, then fill in the date field with the current Activity Date IF the date field is a required field - IF the date field is not required then leave it as blank.
+    5. Dates can by typed in by the User in the following formats without using the calendar popup.
+         a. MMDDYY, M-D-YY, MM-D-YY, M-DD-YY, MM-DD-YY.
+         b. Above - (dash) can also be / (slash) or . (period).
+         c. YY can also be YYYY.
+6. Here is where I have found date fields that need to be changed per this Part B.
+         a. Others - Activity Date - Notice that when the Activity Date is already set that the entry field should be showing that date.
+         b. Pigs - Sold Hogs - Sold Date
+         c. Pigs - Sows Boars - Born Date, Bred MMDDYY/Boar (Change field title to Bred Date/BOAR), Sold MMDDYY (Change field title to Sold Date).
+             1. Note that Bred Date/BOAR must be validated as blank, a valid date or the word BOAR - and BOAR must be all capitals.
+         d. Customers - List - Last Letter Sent, Att Sale, Entry Date.
+         e. Pigs - Sold Hogs - List - Date Sold Search field (if the User tabs past this blank date field - leave it blank).
+         f. Pigs - Sows/Boars - List - Born Date Search field (if the User tabs past this blank date field - leave it blank).
+         g. I'm sure there will be some of the field types in the tables that need to be changed - let me know when that is done and I will reload the data.
+
+Android Links
+http://android-ui-utils.googlecode.com/hg/asset-studio/dist/index.html
+
+Comparison
+http://www.technologyreview.com/news/424328/rise-of-the-hybrid-mobile-app/
+http://www.sitepoint.com/build-a-mobile-hybrid-app-using-ibm-worklight-part-1/
+http://www.developer-tech.com/blog-hub/2013/aug/23/worried-about-app-security-go-hybrid/
+http://venturebeat.com/2013/04/17/linkedin-mobile-web-breakup/
+
+GRITA : ssh -p 2242 emsbn01@bastion.grita.fr
+GRITA Username : emsbn01
+GRITA Password: *Em5!2k@
+
+
+SELECT * FROM file WHERE LCASE(fileCat) = 'patient' AND ownerId=13328 AND status = 0 ORDER BY dateAdded DESC FETCH FIRST 1 ROWS ONLY
+UPDATE file SET status = 1 WHERE LCASE(fileCat) = 'patient' AND ownerId=13328 AND status = 0

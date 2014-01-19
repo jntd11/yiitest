@@ -301,18 +301,21 @@ class SowBoarController extends RController
 			
 			$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
 			$isPresent1 =  preg_match("/[0-9][0-9][0-9][0-9] /", $date);
-			if(!$isPresent)
+			if(!$isPresent){
 				if(!$isPresent1){
 					return $date;
 				}
 				else {
 					$date = preg_replace("/([0-9][0-9][0-9][0-9] )/", " $1", $date);
 					$ear_notch_array =  preg_split("/ /", $date);
+					$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
 				}
-			$ear_notch_array[2] = $matches[1];
-			$curr_year = date("y");
+			} else {
+				$ear_notch_array[2] = $matches[1];
+			}
 			if(!isset($ear_notch_array[2]))
 				return $date;
+			$curr_year = date("y");
 			$year = $ear_notch_array[2];
 			$length = strlen($year);
 			if($length > 2){
