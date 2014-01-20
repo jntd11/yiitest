@@ -34,7 +34,7 @@ $cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowgilts.js');
 ?>
 
-<div style="float: left;"><a class="buttons" href="index.php?r=sowBoar/create"><input type="button" value="New"></a></div>
+<div style="float: left;"><a class="buttons" href="index.php?r=sowGilts/create"><input type="button" value="New"></a></div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'sow-gilts-grid',
 	'dataProvider'=>$model->search(),
@@ -64,7 +64,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowgilts.js');
 		),
 	),
 )); ?>
-<a class="buttons" href="index.php?r=sowBoar/create"><input type="button" value="New"></a>
+<a class="buttons" href="index.php?r=sowGilts/create"><input type="button" value="New"></a>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

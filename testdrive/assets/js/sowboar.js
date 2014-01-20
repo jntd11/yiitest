@@ -28,7 +28,7 @@ function checkData(element,type,extra,extra1){
 		var val = element.value;
 		if(val == "" || extra+" "+extra1 == val)
 			return;
-		var patt1 = /^[0-9][A-Z] *[a-z]+ [0-9]{1,2}[ SFsf][0-9]{1,4}[\-\.][0-9]{1,3}$/gi;
+		var patt1 = /^[0-9][A-Z] *[a-z]+ *[0-9]{1,2}[ SFsf][0-9]{1,4}[\-\.][0-9]{1,3}$/gi;
 		var patt2 = /[\-\.]/gi;
 		var patt3 = /^[0-9][A-Z]/gi;		
 		patt = patt1;
@@ -322,7 +322,8 @@ $(function(){
 function validateDate(val){
 	if(val == "")
 		return true;
-	var patt = /^(([0-1][0-2])|([0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
+	//var patt = /^(([0-1][0-2])|([0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
+	var patt = /^(([0-1][0-2])|([0]*[0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
 	if(!patt.test(val)){
 		alert("Date - Invalid date format");
 		$("#born").focus();

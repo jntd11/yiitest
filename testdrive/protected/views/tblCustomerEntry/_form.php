@@ -3,6 +3,7 @@
 /* @var $model TblCustomerEntry */
 /* @var $form CActiveForm */
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/customer.js');
+$activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
 ?>
 
 <div class="form">
@@ -187,11 +188,19 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 				'model' => $model,
 				'attribute' => 'att_sale',
 				'options' =>array(
-							'dateFormat'=>'yy-mm-dd',
+							//'dateFormat'=>'yy-mm-dd',
+						'constrainInput'=> false,
+						'showOn'=>'button',
+						'defaultDate'=>''.$activitydate.'',
+						'buttonImage'=>'img/calendar.gif',
+						
 						),
 				'htmlOptions' => array(
+						'id'=>'att_sale',
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
+						'onBlur'=>'validateDatePicker("att_sale")',
+						
 				),
 		));
 		?>
@@ -210,12 +219,18 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 				'model' => $model,
 				'attribute' => 'last_letter_sent',
 				'options' =>array(
-						'dateFormat'=>'yy-mm-dd',
+						//'dateFormat'=>'yy-mm-dd',
+						'constrainInput'=> false,
+						'showOn'=>'button',
+						'defaultDate'=>''.$activitydate.'',
+						'buttonImage'=>'img/calendar.gif',
 				),
 				
 				'htmlOptions' => array(
+						'id'=>'last_letter_sent',
 						'size' => '10',         // textField size
 						'maxlength' => '20',    // textField maxlength
+						'onBlur'=>'validateDatePicker("last_letter_sent")',
 				),
 		));
 		?>
@@ -231,11 +246,17 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/c
 				'model' => $model,
 				'attribute' => 'entry_date',
 				'options' =>array(
-							'dateFormat'=>'yy-mm-dd',
+						//	'dateFormat'=>'yy-mm-dd',
+						'constrainInput'=> false,
+						'showOn'=>'button',
+						'defaultDate'=>''.$activitydate.'',
+						'buttonImage'=>'img/calendar.gif',
 						),
 				'htmlOptions' => array(
+						'id'=>'entry_date',
 						'size' => '10',         // textField size
 						'maxlength' => '20',    // textField maxlength
+						'onBlur'=>'validateDatePicker("entry_date")',
 				),
 		));
 		?>

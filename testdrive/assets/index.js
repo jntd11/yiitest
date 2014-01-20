@@ -2,6 +2,8 @@ $(document).ready(function(){
 	$( "#datepicker" ).datepicker({
       changeMonth: true,
       changeYear: true,
+      showOn: 'button',
+      buttonImage:'img/calendar.gif',
 //	  onClose: function(dateText, inst){
 //		  if(dateText == ""){
 //			  alert("Please Select a Date");
@@ -21,6 +23,8 @@ $(document).ready(function(){
 		  	    }
     });
 	if($("#currdate").html() == "" || $("#activitypage").val() == 1) {
+		if($("#activitypage").val() == 1)
+			$("#datepicker").val($("#currdate").html());
 		$("#dialog").dialog({
 			autoOpen: true,
 			width: 400,
@@ -117,6 +121,7 @@ $(document).ready(function(){
 	$("#submitactivitydate").bind('click',function(){
 		location.reload();
 	});
+	
 });
 
 function openDialog(){
@@ -158,3 +163,23 @@ function isInteger(event){
 	         return true;
 }
 
+function dateReplace(event){
+	var charCode = (event.which) ? event.which : event.keyCode
+	alert(charCode);
+}
+
+function validateDatePicker(fieldId){
+	var val = $("#"+fieldId).val();
+	if(val == "" || (fieldId == 'bred_date' && val == 'BOAR'))
+		return true;
+	val = val.replace(/[\.\-]/g,"/");
+	$("#"+fieldId).val(val);
+	var patt = /^(([0-1][0-2])|([0]*[0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
+	if(!patt.test(val)){
+		alert("Date - Invalid date format");
+		$("#"+fieldId).val("");
+		$("#"+fieldId).focus();
+		return false;
+	}
+	return true;
+}

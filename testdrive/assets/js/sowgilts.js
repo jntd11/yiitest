@@ -205,10 +205,10 @@ $(function(){
 function validateDate(val){
 	if(val == "")
 		return true;
-	var patt = /^(([0-1][0-2])|([0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
+	var patt = /^(([0-1][0-2])|([0]*[0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
 	if(!patt.test(val)){
 		alert("Date - Invalid date format");
-		$("#born").focus();
+		//$("#born").focus();
 		return false;
 	}
 	return true;
@@ -241,22 +241,33 @@ function checkDate(val,type){
 	return;
 }
 function checkExist(dates,isupd){
+	
 	var earnotch = $("#earnotch").val();
 	if($("#born").val() == "") {
 		$("#born").val(dates);
+	} else {
+		var born = $("#born").val();
+		born = born.replace(/[\.\-]/g,"/");
+		$("#born").val(born);
 	}
 	var born = $("#born").val();
+	if(!validateDate(born)) {
+		$("#born").val("");
+		return false; 
+	}
 	
 	if(earnotch != "" && born != "") {
-		if(isupd != 1) {
+		
 			$.ajax({
 				url: encodeURI('index.php?r=sowGilts/Checkexist'),
 				type: "GET",
 				data: {earnotch:earnotch,born:born}
 			}).done(function(data){
-				if(data.match(/redirect/)){
-					data = data.replace("redirect-","");
-					window.location.href = "index.php?r=sowGilts/update&id="+data;
+				if(isupd != 1) {
+					if(data.match(/redirect/)){
+						data = data.replace("redirect-","");
+						window.location.href = "index.php?r=sowGilts/update&id="+data;
+					}
 				}
 				if(data != "") {
 					var Obj = JSON.parse(data);
@@ -267,7 +278,7 @@ function checkExist(dates,isupd){
 					$("#SowGilts_due_date").val($.datepicker.formatDate("mm/dd/yy", myDate));
 				}
 			});
-		}
+		
 		$.ajax({
 			url: encodeURI('index.php?r=sowGilts/getdaysbtw'),
 			type: "GET",

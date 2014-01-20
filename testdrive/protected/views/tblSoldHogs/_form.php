@@ -7,6 +7,7 @@ $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 if($herdmark != "")
 	$herdmark = $herdmark." ";
+$activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
 ?>
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'tbl-sold-hogs-form',
@@ -50,14 +51,19 @@ if($herdmark != "")
 						'model' => $model,
 						'attribute' => 'date_sold',
 						'options' =>array(
-								'dateFormat'=>'mm-dd-yy',
-								'constrainInput'=>false
+								//'dateFormat'=>'mm-dd-yy',
+								'constrainInput'=>false,
+								'showOn'=>'button',
+								'defaultDate'=>''.$activitydate.'',
+								'buttonImage'=>'img/calendar.gif',
 						),
 						
 						'htmlOptions' => array(
 								'id'=>'date_sold',
 								'size' => '20',         // textField size
 								'maxlength' => '20',    // textField maxlength
+								'onBlur'=>'validateDatePicker("date_sold")',
+								
 						),
 				));
 		?>

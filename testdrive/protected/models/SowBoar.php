@@ -61,7 +61,7 @@ class SowBoar extends CActiveRecord
 			array('sow_boar_name', 'length', 'max'=>30),
 			array('sire_initials', 'length', 'max'=>2),
 			array('ear_notch','validateEarNotch'),
-			array('born', 'date', 'format'=>array('m-d-y','mm-dd-yy','mm-dd-yyyy','m-dd-yy','mm-d-yy','m-d-yyyy','yyyy-dd-mm')),
+			array('born', 'date', 'format'=>array('m/d/y','mm/dd/yy','mm/dd/yyyy','m/dd/yy','mm/d/yy','m/d/yyyy','yyyy/dd/mm')),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('ear_notch, sow_boar_name, sow_boar_id, registeration_no, born, no_pigs, weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, offspring_name, back_fat, loinneye, days, EBV, sire_initials, comments, date_modified', 'safe', 'on'=>'search'),
@@ -110,9 +110,9 @@ class SowBoar extends CActiveRecord
 			'weight_21' => '21 Days Weight',
 			'sire_notch' => 'Sire Ear Notch',
 			'dam_notch' => 'Dam Ear Notch',
-			'bred_date' => 'Bred MMDDYY/Boar',
+			'bred_date' => 'Bred Date/Boar',
 			'last_parity' => 'Last Parity',
-			'sold_mmddyy' => 'Sold MMDDYY',
+			'sold_mmddyy' => 'Sold Date',
 			'reason_sold' => 'Reason Sold',
 			'offspring_name' => 'Offspring Name',
 			'back_fat' => 'Back Fat',

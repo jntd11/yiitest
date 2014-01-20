@@ -48,7 +48,8 @@ if($herdmark != "")
 				'model' => $model,
 				'attribute' => 'date_bred',
 				'options' =>array(
-						'dateFormat'=>'mm/dd/yy',
+						//'dateFormat'=>'mm/dd/yy','mmddyy','mm-d-yy','m-dd-yy','m-d-yy'
+						'constrainInput'=> false,
 						'showOn'=>'button',
 						'defaultDate'=>''.$activitydate.'',
 						'buttonImage'=>'img/calendar.gif',
@@ -99,19 +100,19 @@ if($herdmark != "")
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'passover_date'); ?>
-		<?php echo $form->textField($model,'passover_date',array('size'=>10,'maxlength'=>10,'tabindex'=>6,'disabled'=>true)); ?>
+		<?php echo $form->textField($model,'passover_date',array('size'=>10,'maxlength'=>10,'tabindex'=>6,'readonly'=>'readonly')); ?>
 		<?php echo $form->error($model,'passover_date'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'due_date'); ?>
-		<?php echo $form->textField($model,'due_date',array('size'=>10,'maxlength'=>10,'tabindex'=>7,'disabled'=>true)); ?>
+		<?php echo $form->textField($model,'due_date',array('size'=>10,'maxlength'=>10,'tabindex'=>7,'readonly'=>'readonly')); ?>
 		<?php echo $form->error($model,'due_date'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'days_between'); ?>
-		<?php echo $form->textField($model,'days_between',array('size'=>10,'maxlength'=>10,'tabindex'=>8,'disabled'=>true)); ?>
+		<?php echo $form->textField($model,'days_between',array('size'=>10,'maxlength'=>10,'tabindex'=>8,'readonly'=>'readonly')); ?>
 		<?php echo $form->error($model,'days_between'); ?>
 	</div>
 

@@ -1928,3 +1928,36 @@ GRITA Password: *Em5!2k@
 
 SELECT * FROM file WHERE LCASE(fileCat) = 'patient' AND ownerId=13328 AND status = 0 ORDER BY dateAdded DESC FETCH FIRST 1 ROWS ONLY
 UPDATE file SET status = 1 WHERE LCASE(fileCat) = 'patient' AND ownerId=13328 AND status = 0
+
+20/01/2014
+First looks are good - will test more extensive in the morning.
+1. Not sure what you mean "Already auto suggestion is there on date fields on list". Can you explain?
+NA
+2. I think to be consistent, we need to have all date values in the search of a List need to have the same Entry formats and Calendar icon for popup as the Update date fields.
+NA
+
+3. Are all date fields stored the same now in the tables?
+Data has to be stored on DB in this format. MM/DD/YYY. But there are some wrong dates too... like 20090100. Date is wrong here right? Can i prepare a sql or do you upload a data again?
+
+4. B.6.d "Customers - List" should have been "Customers - # - Update"  and the 3 date fields need to be taken and displayed per Part B. - My mistake - Due date will be changed to the 21st.
+Done
+
+5. When I click on the Calendar popup icon in the Home>>Pigs>>Sows/Boars>>#>>Update screen IE 11 goes to blank screen. From List, Chrome displays Update screen for a couple of seconds then goes blank.
+Done, Can you check
+
+6. Home>>Pigs>>Sold Hogs>>#>>Update
+    a. Clicking on Calendar Icon for Date Sold - when the field is blank, the calendar is showing today's date - should be showing the Activity Date.
+    Done
+
+    b. Clicking on Save is not saving the new Sold Date.
+    Done
+    c. Clicking on Cancel is going back to the wrong List screen (not the List with Search).
+    Done
+
+7. In Home>>Pigs>>Sows Gilts>>#>>Update changing the Date Bred does not change the Passover Date, the Due Date nor the Days Between accordingly.
+Done
+
+
+19981104
+20000100
+1D9RDC98 17-2

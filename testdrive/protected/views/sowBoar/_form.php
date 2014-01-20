@@ -7,7 +7,7 @@ $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 if($herdmark != "")
 	$herdmark = $herdmark." ";
-	
+$activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
 $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 ?>
 
@@ -62,14 +62,19 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 			  		'model' => $model,
 			  		'attribute' => 'born',
 			  		'options' =>array(
-			  				'dateFormat'=>'m-d-yy',
+			  				//'dateFormat'=>'m-d-yy',
+							'constrainInput'=> false,
+							'showOn'=>'button',
+							'defaultDate'=>''.$activitydate.'',
+							'buttonImage'=>'img/calendar.gif',
 			  		),
 			  
 			  		'htmlOptions' => array(
 			  				'id'=>'born',
 			  				'size' => '20',         // textField size
 			  				'maxlength' => '20',    // textField maxlength
-			  				'tabindex'=>4
+			  				'tabindex'=>4,
+							'onBlur'=>'validateDatePicker("born")',
 			  		),
 			  ));
 		?>
@@ -110,7 +115,27 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'bred_date'); ?>
-		<?php echo $form->textField($model,'bred_date',array('size'=>20,'maxlength'=>20,'tabindex'=>9)); ?>
+		<?php //echo $form->textField($model,'bred_date',array('size'=>20,'maxlength'=>20,'tabindex'=>9)); 
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+				'model' => $model,
+				'attribute' => 'bred_date',
+				'options' =>array(
+						//'dateFormat'=>'m-d-yy',
+						'constrainInput'=> false,
+						'showOn'=>'button',
+						'defaultDate'=>''.$activitydate.'',
+						'buttonImage'=>'img/calendar.gif',
+				),
+					
+				'htmlOptions' => array(
+						'id'=>'bred_date',
+						'size' => '20',         // textField size
+						'maxlength' => '20',    // textField maxlength
+						'tabindex'=>9,
+						'onBlur'=>'validateDatePicker("bred_date")',
+				),
+		));
+		?>
 		<?php echo $form->error($model,'bred_date'); ?>
 	</div></td><td><div class="row">
 		<?php echo $form->labelEx($model,'back_fat'); ?>
@@ -130,7 +155,28 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'sold_mmddyy'); ?>
-		<?php echo $form->textField($model,'sold_mmddyy',array('size'=>20,'maxlength'=>20,'tabindex'=>13)); ?>
+		<?php 
+		//echo $form->textField($model,'sold_mmddyy',array('size'=>20,'maxlength'=>20,'tabindex'=>13));
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+				'model' => $model,
+				'attribute' => 'sold_mmddyy',
+				'options' =>array(
+						//'dateFormat'=>'m-d-yy',
+						'constrainInput'=> false,
+						'showOn'=>'button',
+						'defaultDate'=>''.$activitydate.'',
+						'buttonImage'=>'img/calendar.gif',
+				),
+					
+				'htmlOptions' => array(
+						'id'=>'sold_mmddyy',
+						'size' => '20',         // textField size
+						'maxlength' => '20',    // textField maxlength
+						'tabindex'=>13,
+						'onBlur'=>'validateDatePicker("sold_mmddyy")',
+				),
+		));
+		?>
 		<?php echo $form->error($model,'sold_mmddyy'); ?>
 	</div></td><td><div class="row">
 		<?php echo $form->labelEx($model,'days'); ?>

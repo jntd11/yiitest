@@ -53,7 +53,7 @@ $(document).ready(function(){
 		}
 		return;
 	}
-	
+	$("#date_sold").datepicker('setDate','01/01/2013');
 });
 
 function autoSuggestSearch(){
@@ -136,7 +136,8 @@ function getDateReason(val){
 	});
 }
 function validateDate(val){
-	var patt = /^(((([0-1][0-2])|([0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*)|([0-9][0-9][0-9][0-9]\-[0-9][0-9]\-[0-9][0-9]))$/;
+	var patt = /^(((([0-1][0-2])|([0]*[0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*)|([0-9][0-9][0-9][0-9]\-[0-9][0-9]\-[0-9][0-9]))$/;
+	//var patt = /^(([0-1][0-2])|([0]*[0-9]))[\-\.\/][0-9][0-9]*[\-\.\/][0-9][0-9]([0-9][0-9])*$/;
 	if(!patt.test(val)){
 		alert("Date - Invalid date format");
 		$("#date_sold").focus();
@@ -166,7 +167,7 @@ function validateSearch(){
 function cancelsoldhogs(){
 	$("#earnotch").val("");
 	$("#TblSoldHogs_customer_name").focus();
-	window.location="index.php?r=tblSoldHogs/index";
+	window.location="index.php?r=tblSoldHogs/admin";
 }
 function getSoldHog(){
 	var search = $("#soldhogname").val();

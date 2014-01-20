@@ -76,7 +76,7 @@ class TblSoldHogsController extends RController
 			$model->cust_id	= $_POST['TblSoldHogs']['cust_id'];
 			$model->ear_notch_id = $_POST['TblSoldHogs']['ear_notch_id'];
 			$model->hog_ear_notch = trim($model->hog_ear_notch);
-			$datearr = explode("-", $model->date_sold);
+			$datearr = explode("/", $model->date_sold);
 			$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
 			
 			if($model->save()) {
@@ -135,7 +135,8 @@ class TblSoldHogsController extends RController
 			$model->hog_ear_notch = trim($model->hog_ear_notch);
 			
 			//echo "jai".strtotime($model->date_sold);
-			$datearr = explode("-", $model->date_sold);
+			$datearr = explode("/", $model->date_sold);
+			
 			$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
 			//echo $model->date_sold = date("Y-m-d",strtotime($model->date_sold));
 			//exit;
