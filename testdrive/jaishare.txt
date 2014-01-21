@@ -1961,3 +1961,16 @@ Done
 19981104
 20000100
 1D9RDC98 17-2
+
+
+20-01-2014
+1. We will leave this as is for now but I am still thinking about what is best - may revisit after we get the rest of the date entry/display issues settled.
+2. NA for now.
+3. I will re-upload data.
+4. Calendar popup works fine but I get ProjectK1 screen when clicking on Save.
+Done
+5. good
+6. See attachment ProjectK2. I put in a new date, saved, called up the same pig, changed the Comments (put in an x), saved and see the weird date.
+Done
+7. Passover Date and Due Date good but Days Between not using previous bred date for calculation. See 1DCDO 1999 2-1 12/31/2013 record and her previous record is dated 11/10/2013. The Days Between is showing 1 but the days between 12/31/2013 and 11/10/2013 is 51.
+Done

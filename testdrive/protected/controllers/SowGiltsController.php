@@ -256,6 +256,9 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['born']) && isset($_GET['earnotch'])) {
 			$qtxt ="SELECT date_bred FROM  sow_gilts WHERE sow_ear_notch = '".$_GET['earnotch']."' ORDER by date_bred DESC Limit 1";
+			if($_GET['id'] > 0) {
+				$qtxt ="SELECT date_bred FROM  sow_gilts WHERE sow_ear_notch = '".$_GET['earnotch']."' and sow_gilts_id != ".$_GET['id']." ORDER by date_bred DESC Limit 1";
+			}
 			$command =Yii::app()->db->createCommand($qtxt);
 			$res =$command->queryColumn();
 			//echo $res['date_bred'];

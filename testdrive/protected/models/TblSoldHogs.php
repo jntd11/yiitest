@@ -53,7 +53,7 @@ class TblSoldHogs extends CActiveRecord
 			array('sale_type, app_xfer', 'length', 'max'=>1),
 			array('invoice_number', 'length', 'max'=>6),
 			array('hog_ear_notch','validateEarNotch'),
-			array('date_sold', 'date', 'format'=>array('m-d-y','mm-dd-yy','mm-dd-yyyy','m-dd-yy','mm-d-yy','m-d-yyyy','yyyy-dd-mm')),
+			array('date_sold', 'date', 'format'=>array('m/d/y','mm/dd/yy','mm/dd/yyyy','m/dd/yy','mm/d/yy','m/d/yyyy','yyyy/dd/mm')),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('tbl_sold_hogs_id, hog_ear_notch, customer_name, date_sold, sold_price, sale_type, invoice_number, app_xfer, comments, reason_sold, date_modified', 'safe', 'on'=>'search'),

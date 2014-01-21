@@ -278,11 +278,13 @@ function checkExist(dates,isupd){
 					$("#SowGilts_due_date").val($.datepicker.formatDate("mm/dd/yy", myDate));
 				}
 			});
-		
+		if(isupd){
+			var id = $("#sow_id").val();
+		}
 		$.ajax({
 			url: encodeURI('index.php?r=sowGilts/getdaysbtw'),
 			type: "GET",
-			data: {earnotch:earnotch,born:born}
+			data: {earnotch:earnotch,born:born,id:id}
 		}).done(function(data){
 				$("#SowGilts_days_between").val(data);
 		});

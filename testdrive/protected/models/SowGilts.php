@@ -9,6 +9,7 @@
  * @property string $sire_ear_notch
  * @property string $service_type
  * @property string $sow_ear_notch
+ * @property string $misc
  * @property string $comments
  * @property string $passover_date
  * @property string $due_date
@@ -48,11 +49,12 @@ class SowGilts extends CActiveRecord
 			array('sow_ear_notch, date_bred, sire_ear_notch, passover_date, due_date, days_between, settled, farrowed', 'required'),
 			array('date_bred, passover_date, due_date, days_between', 'length', 'max'=>10),
 			array('sire_ear_notch, sow_ear_notch', 'length', 'max'=>20),
-			array('service_type', 'length', 'max'=>5),
+			array('service_type, misc', 'length', 'max'=>5),
 			array('settled, farrowed', 'length', 'max'=>1),
+			array('comments', 'length', 'max'=>2000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('sow_gilts_id, date_bred, sow_ear_notch, sire_ear_notch, service_type, comments, passover_date, due_date, days_between, settled, farrowed, date_modified', 'safe', 'on'=>'search'),
+			array('sow_gilts_id,  sow_ear_notch, date_bred, sire_ear_notch, service_type, misc, passover_date, due_date, days_between, comments, settled, farrowed, date_modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,11 +80,13 @@ class SowGilts extends CActiveRecord
 			'date_bred' => 'Date Bred',
 			'sire_ear_notch' => 'Sire Ear Notch',
 			'service_type' => 'Service Type',
-			'comments' => 'Misc',
+			'misc' => 'Misc',
+			'comments' => 'Comments',
 			'passover_date' => 'Passover Date',
 			'due_date' => 'Due Date',
 			'days_between' => 'Days Between',
 			'settled' => 'Settled',
+
 			'farrowed' => 'Farrowed',
 			'date_modified' => 'Date Modified',
 		);
@@ -101,9 +105,10 @@ class SowGilts extends CActiveRecord
 
 		$criteria->compare('sow_gilts_id',$this->sow_gilts_id);
 		$criteria->compare('date_bred',$this->date_bred,true);
-		$criteria->compare('sire_ear_notch',$this->sire_ear_notch,true);
 		$criteria->compare('sow_ear_notch',$this->sow_ear_notch,true);
+		$criteria->compare('sire_ear_notch',$this->sire_ear_notch,true);
 		$criteria->compare('service_type',$this->service_type,true);
+		$criteria->compare('misc',$this->misc,true);
 		$criteria->compare('comments',$this->comments,true);
 		$criteria->compare('passover_date',$this->passover_date,true);
 		$criteria->compare('due_date',$this->due_date,true);

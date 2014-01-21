@@ -120,7 +120,6 @@ class TblCustomerEntryController extends Controller
 		$oldid = $id;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['TblCustomerEntry']))
 		{
 			$model->attributes=$_POST['TblCustomerEntry'];
@@ -341,9 +340,9 @@ class TblCustomerEntryController extends Controller
 	public function loadModel($id)
 	{
 		$model=TblCustomerEntry::model()->findByPk($id);
-		$model->att_sale = date("Y-m-d",strtotime($model->att_sale));
-		$model->entry_date = date("Y-m-d",strtotime($model->entry_date));
-		$model->last_letter_sent = date("Y-m-d",strtotime($model->last_letter_sent));
+		$model->att_sale = date("d/m/Y",strtotime($model->att_sale));
+		$model->entry_date = date("d/m/Y",strtotime($model->entry_date));
+		$model->last_letter_sent = date("d/m/Y",strtotime($model->last_letter_sent));
 		
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');

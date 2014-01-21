@@ -27,6 +27,7 @@ if($herdmark != "")
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<input type="hidden" id="sow_id" value="<?php echo $model->sow_gilts_id; ?>" />
 		<?php echo $form->labelEx($model,'sow_ear_notch'); ?>
 		<?php 
 		if(count($model->errors)){
@@ -91,10 +92,14 @@ if($herdmark != "")
 		<?php echo $form->textField($model,'service_type',array('size'=>5,'maxlength'=>5,'tabindex'=>4)); ?>
 		<?php echo $form->error($model,'service_type'); ?>
 	</div>
-
+	<div class="row">
+		<?php echo $form->labelEx($model,'misc'); ?>
+		<?php echo $form->textField($model,'misc',array('size'=>5,'maxlength'=>5,'tabindex'=>5)); ?>
+		<?php echo $form->error($model,'misc'); ?>
+	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'comments'); ?>
-		<?php echo $form->textField($model,'comments',array('size'=>5,'maxlength'=>5,'tabindex'=>5)); ?>
+		<?php  echo $form->textArea($model,'comments',array('rows'=>6, 'cols'=>50,'tabindex'=>6));?>
 		<?php echo $form->error($model,'comments'); ?>
 	</div>
 
