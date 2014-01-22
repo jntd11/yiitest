@@ -51,12 +51,12 @@ $(document).ready(function(){
 	    el.selectionEnd = elemLen;
 	    el.focus();
 	$("#sow_boar_notch").focus();
-	$("#sow-boar-form :input[type!='submit']").change(function() {
-		   $("#sow-boar-form").data("changed",true);
+	$("#sow-gilts-form :input[type!='submit']").change(function() {
+		   $("#sow-gilts-form").data("changed",true);
 	});
 	autoSuggestSearch();
-	$("#sow-boar-form :input[type=submit]").click(function() {
-		   $("#sow-boar-form").data("changed",false);
+	$("#sow-gilts-form :input[type=submit]").click(function() {
+		   $("#sow-gilts-form").data("changed",false);
 	});
 	$("#earnotch").autocomplete({
 	    source: 'index.php?r=sowGilts/autocompleteEarNotch',
@@ -77,7 +77,7 @@ $(document).ready(function(){
 	//$(window).load(CreateTree());
 	window.onbeforeunload = iamexiting;
 	function iamexiting(e) {
-		if($("#sow-boar-form").data("changed")) {
+		if($("#sow-gilts-form").data("changed")) {
 			   return 'You have unsaved changes. Do you want to continue';
 			   // submit the form
 		}
@@ -261,7 +261,7 @@ function checkExist(dates,isupd){
 			$.ajax({
 				url: encodeURI('index.php?r=sowGilts/Checkexist'),
 				type: "GET",
-				data: {earnotch:earnotch,born:born}
+				data: {earnotch:earnotch,born:born,isupd:isupd}
 			}).done(function(data){
 				if(isupd != 1) {
 					if(data.match(/redirect/)){

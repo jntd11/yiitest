@@ -716,6 +716,32 @@ $file_path = "/home2/aaheduau/www/documents/";
 DB2
 db2 "select current time from sysibm.sysdummy1"
 
+unset($CFG);
+
+$CFG = new stdClass();
+$CFG->dbtype    = 'mysql';
+$CFG->dbhost    = 'localhost';
+$CFG->dbname    = 'aaheduau_moodle';
+$CFG->dbuser    = 'aaheduau_moodle';
+$CFG->dbpass    = '~lwc1152';
+$CFG->dbpersist =  false;
+$CFG->prefix    = 'mdl_';
+
+$CFG->wwwroot   = 'http://www.aah.edu.au/moodle';
+$CFG->dirroot   = '/home4/aaheduau/public_html/moodle';
+$CFG->dataroot  = '/home4/aaheduau/moodledata/moodledata';
+$CFG->admin     = 'admin';
+
+$CFG->directorypermissions = 00777;  // try 02777 on a server in Safe Mode
+
+$CFG->passwordsaltmain = 'FreEc0Q+d,@fO(HF&A,99Bj(u1 3';
+//$CFG->debug = 6143;
+//$CFG->debugdisplay = 1;
+
+require_once("$CFG->dirroot/lib/setup.php");
+// MAKE SURE WHEN YOU EDIT THIS FILE THAT THERE ARE NO SPACES, BLANK LINES,
+// RETURNS, OR ANYTHING ELSE AFTER THE TWO CHARACTERS ON THE NEXT LINE.
+
 02/09/2013
 
 This Project E is to replace the Sow/Boar Entry screen. You can look at it in the old PIGS if you go to the F6-Entry Selector and choose option 1. The attached doc will show you an entry you can call up in that screen. You will need to type the numbers and spaces just as they appear on that screenshot.
@@ -1974,3 +2000,42 @@ Done
 Done
 7. Passover Date and Due Date good but Days Between not using previous bred date for calculation. See 1DCDO 1999 2-1 12/31/2013 record and her previous record is dated 11/10/2013. The Days Between is showing 1 but the days between 12/31/2013 and 11/10/2013 is 51.
 Done
+
+http://www.dinamalar.com/news_detail.asp?id=900210
+
+22/01/2014
+Some more items I noticed.
+11. Home>>Pigs>>Sold Hogs>>List
+      a. When I type characters in the search boxes a dropdown appears but when I click on one of the drop downs that value is filled into the search box but all the records are still displayed. On the Customer>>List screen once I pick a dropdown, only the items matching the dropdown are displayed. I like the way the Customer>>List screen functions rather that the way this one is functioning.
+      Done
+
+      b. Please remove the red X and the spyglass from this List screen.
+      Done
+
+12. Home>>Pigs>>Sows/Boars>>List should function the same as Customer>>List (dropdown displays while typing - selecting dropdown displays matches)
+Done
+13. In the main menu dropdown of Pigs, remove the "&" from the Bred & Sows to make it Bred Sows.
+Done
+
+I guess I didn't realize you had completed these items in that email - my bad - will give another day on deadline.
+3. I am working on.
+4. Good
+6. Good
+7. Calculations are good (except for part b below)
+    a. There is no warning if I try to exit the screen after changes have been made.
+    Check now.
+    b. The calculation on 1DCDO 1999 2-1 for Date Bred of 12/31/2013 is good but for Date Bred of 11/10/2013 it gets a little tricky - If there is no older breeding record for this Sow then you need to use her Data Born from her Sows/Boars record as the "Previous bred date" for calculation of Days Between. So the Days Between would be the calculation of days between her birth and her first breeding record (which the 11/10/2013 record is her first in this case). This is item A.3.g.3.a.2 of the original bid.
+
+    Can you check it now?  Actually i have done it before but did not consider the date latter. So it was showing negative. On update screen i am not calculating on page load, just displaying from table. It will recalculate once you pass thru "Date bred" Field
+
+10. Home>>Pigs>>Bred Sows>>List
+      a. Do all the search columns have to be the same width? The Ear Notch is harder to read if it is not all on the same line. Can you widen the two Ear Notch fields and make narrower the 3 date and "Days Between" fields so that the Ear Notchs for both Sow and Sire are all on one line?
+	Can you check now?
+      b. When I type in part of a date in the Due Date column (like 2013) and pick one of the 2 shown I get "No results found"
+      Done
+
+      c. When I type a number in the Days Between I either get a bunch of dates (that don't match) or nothing (even though it is a number that matches).
+      Done
+
+      d. Please remove the red X and spyglass for now.
+      Done

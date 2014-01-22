@@ -44,9 +44,9 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowgilts.js');
 	'filter'=>$model,
 		'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
 	'columns'=>array(
-		'sow_ear_notch',
+		array('name'=>'sow_ear_notch','value'=>'$data->sow_ear_notch','htmlOptions'=>array('width'=>110)),
 		'date_bred',
-		'sire_ear_notch',
+		array('name'=>'sire_ear_notch','value'=>'$data->sire_ear_notch','htmlOptions'=>array('width'=>110)),
 		'service_type',
 		'comments',
 		'passover_date',
@@ -59,9 +59,10 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowgilts.js');
 		'farrowed',
 		'date_modified',
 		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
+			array(
+					'class'=>'CButtonColumn',
+					'template' => '{update}',
+			),
 	),
 )); ?>
 <a class="buttons" href="index.php?r=sowGilts/create"><input type="button" value="New"></a>

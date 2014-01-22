@@ -52,8 +52,10 @@ $this->endWidget();
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'tbl-sold-hogs-grid',
 	'dataProvider'=>$model->search(),
+	'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
 	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'filter'=>$model,
+	
 	'columns'=>array(
 		'hog_ear_notch',
 		'customer_name',
@@ -68,6 +70,7 @@ $this->endWidget();
 		*/
 		array(
 			'class'=>'CButtonColumn',
+			'template' => '{update}',
 		),
 	),
 )); ?>

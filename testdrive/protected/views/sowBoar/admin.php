@@ -54,13 +54,13 @@ $this->endWidget();
 ?>
 </div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'Sow-boar-grid',
+	'id'=>'sow-boar-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	 'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
 	 'selectionChanged'=>'function(id){
 		 location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
-	}',
+	 }',
 	'columns'=>array(
 		array('name'=>'ear_notch','value'=>'$this->grid->controller->calculateYear($data->ear_notch,2)'),
 		'sow_boar_name',

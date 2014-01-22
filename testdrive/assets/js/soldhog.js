@@ -73,7 +73,7 @@ $("#tbl-sold-hogs-grid [name='TblSoldHogs[hog_ear_notch]']").autocomplete({
 	    source: 'index.php?r=tblSoldHogs/autocompleteEarNotch',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
-	    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+	    	$('#tbl-sold-hogs-grid').yiiGridView('update', {data: data});
 	    }
 });
 
@@ -81,21 +81,21 @@ $("#tbl-sold-hogs-grid [name='TblSoldHogs[date_sold]']").autocomplete({
     source: 'index.php?r=tblSoldHogs/autocompleteDateSold',
     select: function( event, ui ) {
     	var data = this.name+"="+ui.item.value;
-    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+    	$('#tbl-sold-hogs-grid').yiiGridView('update', {data: data});
     }
 });
 $("#tbl-sold-hogs-grid [name='TblSoldHogs[invoice_number]']").autocomplete({
     source: 'index.php?r=tblSoldHogs/autocompleteInvoice',
     select: function( event, ui ) {
     	var data = this.name+"="+ui.item.value;
-    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+    	$('#tbl-sold-hogs-grid').yiiGridView('update', {data: data});
     }
 });
 $("#tbl-sold-hogs-grid [name='TblSoldHogs[customer_name]']").autocomplete({
     source: 'index.php?r=tblSoldHogs/autocompleteName',
     select: function( event, ui ) {
     	var data = this.name+"="+ui.item.value;
-    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+    	$('#tbl-sold-hogs-grid').yiiGridView('update', {data: data});
     }
 });
 $("#jaitest").autocomplete({

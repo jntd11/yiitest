@@ -239,7 +239,7 @@ class SowGiltsController extends Controller
 			/* $term = $_GET['s'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR); */
 			$res =$command->queryColumn();
-			if(isset($res[0])) {
+			if(isset($res[0]) && $_GET['isupd'] != 1) {
 				echo "redirect-".$res[0];
 				//$this->redirect(array('view','id'=>$res[0]));
 			}else{
@@ -262,7 +262,7 @@ class SowGiltsController extends Controller
 			$command =Yii::app()->db->createCommand($qtxt);
 			$res =$command->queryColumn();
 			//echo $res['date_bred'];
-			if(isset($res[0])) {
+			if(isset($res[0]) && $_GET['born'] > $res[0]) {
 				$days = (strtotime($_GET['born']) - strtotime($res[0]))/(24*60*60);
 				echo $days; 
 			}else{
@@ -361,7 +361,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT passover_date	 FROM  sow_gilts WHERE passover_date	 LIKE :username";
+			$qtxt ="SELECT due_date	 FROM  sow_gilts WHERE passover_date	 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -373,7 +373,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT due_date	 FROM  sow_gilts WHERE due_date	 LIKE :username";
+			$qtxt ="SELECT days_between	 FROM  sow_gilts WHERE due_date	 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();

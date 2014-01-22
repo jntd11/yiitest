@@ -74,7 +74,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Mailing Code', 'url'=>array('/tblMailingCode/admin')),
 				)),
 					array('label'=>'Pigs', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(
-							array('label'=>'Bred & Sows', 'itemOptions'=>array('id'=>'breed'), 'url'=>array('/sowGilts/admin')),
+							array('label'=>'Bred Sows', 'itemOptions'=>array('id'=>'breed'), 'url'=>array('/sowGilts/admin')),
 							array('label'=>'Farrowed', 'itemOptions'=>array('id'=>'farrowed'), 'url'=>array('')),
 							array('label'=>'Weaned', 'itemOptions'=>array('id'=>'weaned'), 'url'=>array('')),
 							array('label'=>'Sold Hogs', 'itemOptions'=>array('id'=>'soldhogs'), 'linkOptions'=>array('accesskey'=>'h'), 'url'=>array('/tblSoldHogs/admin')),
