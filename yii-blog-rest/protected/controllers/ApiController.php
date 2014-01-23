@@ -36,6 +36,28 @@ class ApiController extends Controller
     {
         echo CJSON::encode(array(1, 2, 3));
     } // }}} 
+    public function actionLogin()
+    {
+    	$this->_checkAuth();
+    	switch($_GET['model'])
+    	{
+    		case 'posts': // {{{
+    			$models = Post::model()->findAll();
+    			break; // }}}
+    		default: // {{{
+    			$this->_sendResponse(501, sprintf('Error: Mode <b>list</b> is not implemented for model <b>%s</b>',$_GET['model']) );
+    			exit; // }}}
+    	}
+    	if(is_null($models)) {
+    		$this->_sendResponse(200, sprintf('No items where found for model <b>%s</b>', $_GET['model']) );
+    	} else {
+    		$rows = array();
+    		foreach($models as $model)
+    			$rows[] = $model->attributes;
+    
+    		$this->_sendResponse(200, CJSON::encode($rows));
+    	}
+    }
     // {{{ actionList
     public function actionList()
     {
@@ -365,6 +387,33 @@ class ApiController extends Controller
 
         return (isset($codes[$status])) ? $codes[$status] : '';
     } // }}} 
+    
+    private function _checkAuth()
+    {
+    	// Check if we have the USERNAME and PASSWORD HTTP headers set?
+    	//echo "<pre>";
+    	//print_r($_SERVER);
+    
+    	print_r($_REQUEST);
+    	if(!(isset($_SERVER['HTTP_X_'.self::APPLICATION_ID.'_USERNAME']) and isset($_SERVER['HTTP_X_'.self::APPLICATION_ID.'_PASSWORD']))) {
+    		// Error: Unauthorized
+    		$this->_sendResponse(401);
+    	}
+    	$username = $_SERVER['HTTP_X_'.self::APPLICATION_ID.'_USERNAME'];
+    	$password = $_SERVER['HTTP_X_'.self::APPLICATION_ID.'_PASSWORD'];
+    	// Find the user
+    
+    	$user=User::model()->find('LOWER(username)=?',array(strtolower($username)));
+    
+    	if($user===null) {
+    		// Error: Unauthorized
+    		$this->_sendResponse(401, 'Error: User Name is invalid');
+    	} else if(!$user->validatePassword($password)) {
+    		// Error: Unauthorized
+    		$this->_sendResponse(401, 'Error: User Password is invalid');
+    	}
+    }
+    
     // {{{ _checkAuth
     /**
      * Checks if a request is authorized
@@ -372,16 +421,18 @@ class ApiController extends Controller
      * @access private
      * @return void
      */
-    private function _checkAuth()
+    private function _checkAuth2()
     {
         // Check if we have the USERNAME and PASSWORD HTTP headers set?
-        print_r($_SERVER);
-        if(!(isset($_SERVER['HTTP_X_'.self::APPLICATION_ID.'_USERNAME']) and isset($_SERVER['HTTP_X_'.self::APPLICATION_ID.'_PASSWORD']))) {
+        print_r($_REQUEST);
+        if(!(isset($_REQUEST['username']) and isset($_REQUEST['pass']))) {
             // Error: Unauthorized
             $this->_sendResponse(401);
         }
-        $username = $_SERVER['HTTP_X_'.self::APPLICATION_ID.'_USERNAME'];
-        $password = $_SERVER['HTTP_X_'.self::APPLICATION_ID.'_PASSWORD'];
+//         $username = $_SERVER['HTTP_X_'.self::APPLICATION_ID.'_USERNAME'];
+//         $password = $_SERVER['HTTP_X_'.self::APPLICATION_ID.'_PASSWORD'];
+		$username = $_REQUEST['username'];
+		$password = $_REQUEST['pass'];
         // Find the user
         
         $user=User::model()->find('LOWER(username)=?',array(strtolower($username)));
