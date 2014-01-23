@@ -104,9 +104,12 @@ function autoSuggestSearch(){
 			    	$('#Tbl-customer-entry-grid').yiiGridView('update', {data: data});
 			    }
 	});
-	$('table > tbody > tr').on('dblclick', function(id){
-        $(this).click();
+	$('#Tbl-customer-entry-grid tbody > tr').on('click', function(id){
+		//$(this).click();
+		var link = $(this).find('a.update').attr('href');
+		location.href = link;
 	});
+
 	/*
 	 * $("#tbl-customer-entry-form [name='TblCustomerEntry[mailing_code]']").autocomplete({
 	    source: 'index.php?r=tblCustomerEntry/autocompleteMailingCode',

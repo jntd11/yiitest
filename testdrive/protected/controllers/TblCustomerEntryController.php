@@ -340,9 +340,9 @@ class TblCustomerEntryController extends Controller
 	public function loadModel($id)
 	{
 		$model=TblCustomerEntry::model()->findByPk($id);
-		$model->att_sale = date("d/m/Y",strtotime($model->att_sale));
-		$model->entry_date = date("d/m/Y",strtotime($model->entry_date));
-		$model->last_letter_sent = date("d/m/Y",strtotime($model->last_letter_sent));
+		//$model->att_sale = date("d/m/Y",strtotime($model->att_sale));
+		//$model->entry_date = date("d/m/Y",strtotime($model->entry_date));
+		//$model->last_letter_sent = date("d/m/Y",strtotime($model->last_letter_sent));
 		
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');

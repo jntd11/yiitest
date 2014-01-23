@@ -33,11 +33,19 @@ Yii::app()->clientScript->registerScript('search', "
 		return false;
 });
 		");
-Yii::app()->clientScript->registerScript('row_dblclick', "
+/* Yii::app()->clientScript->registerScript('row_dblclick', "
     $('table > tbody > tr').on('dblclick', function(id){
-            $(this).click();
+            alert(id);
+		//$(this).click();
     });"
+); */
+Yii::app()->clientScript->registerScript('row_dblclick', "$('#Tbl-customer-entry-grid tbody > tr').on('click', function(id){
+	//$(this).click();
+	var link = $(this).find('a.update').attr('href');
+	location.href = link;
+});"
 );
+
 ?>
 <div style="float: left;"><a class="buttons" href="index.php?r=tblCustomerEntry/create"><input type="button" value="New"></a></div>
 <div style="float: left; margin-left: 50%">
@@ -59,7 +67,7 @@ $this->endWidget();
 	'filter'=>$model,
 	'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
 	'selectionChanged'=>'function(id){ 
-		location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
+		//location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
 	 }',
 	'columns'=>array(
 		'company_name',

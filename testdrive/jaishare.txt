@@ -2051,3 +2051,22 @@ Done
 12. Don't see any dropdowns
 Done
 13. Good
+23/01/2014
+
+15. Customers>>#>>Update - Att Sale Date looks fine but Last Letter Sent and Entry Date have the Month and Day turned around on the display (in Acme Printing 03/13/1989 is showing as 13/03/1989)
+Fixed
+16. Customers>>List - double clicking on a customer (without doing a search) takes me to "Page cannot be displayed" screen.
+I have changed the logic differently. Can you check?
+
+17. Pigs>>Bred Sows>>List
+      a. Double clicking on a bred record (without doing a search) takes me to "Page cannot be displayed" screen.
+       I have changed the logic differently. Can you check?
+
+      b. Just noticed that the Redisplay option (with the initial display of 20 lines) is not available like on the Sold Hogs and Sows/Boars List screens.
+      Done
+
+      c. Original bid Part A.2.c is not working - Don't know if the new date format is a problem but the records are not "most recent Sow Bred record first" sorted by Bred Date.
+18. Pigs>>Sold Hogs>>List - double clicking on a pig (without doing a search) takes me to "Page cannot be displayed" screen.
+I have changed the logic differently. Can you check?
+19. Pigs>>Sows Boars>>List - double clicking on a pig (without doing a search) takes me to "Page cannot be displayed" screen.
+I have changed the logic differently. Can you check?

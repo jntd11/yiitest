@@ -27,11 +27,18 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
-Yii::app()->clientScript->registerScript('row_dblclick', "
+/* Yii::app()->clientScript->registerScript('row_dblclick', "
     $('table > tbody > tr').on('dblclick', function(id){
             $(this).click();
     });"
+); */
+Yii::app()->clientScript->registerScript('row_dblclick', "$('#tbl-herd-setup-grid tbody > tr').on('click', function(id){
+		//$(this).click();
+		var link = $(this).find('a.update').attr('href');
+		location.href = link;
+});"
 );
+
 ?>
 <div style="float: left;">
 	<a class="buttons" href="index.php?r=tblHerdSetup/admin"><input type="button" value="List Farm & Herd"></a> 
@@ -55,9 +62,9 @@ $this->endWidget();
 	'id'=>'tbl-herd-setup-grid',
 	'dataProvider'=>$model->search(),
 		'selectionChanged'=>'function(id){
-		location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
+			//location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
 		}',
-		
+	'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
 	'filter'=>$model,
 	'columns'=>array(
 		'farm_herd',

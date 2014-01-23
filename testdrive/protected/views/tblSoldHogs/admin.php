@@ -28,13 +28,18 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
-Yii::app()->clientScript->registerScript('row_dblclick', "
+/* Yii::app()->clientScript->registerScript('row_dblclick', "
     $('table > tbody > tr').on('dblclick', function(id){
             $(this).click();
     });"
-);
+); */
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/assets/js/soldhog.js');
-
+Yii::app()->clientScript->registerScript('row_dblclick', "$('#tbl-sold-hogs-grid tbody > tr').on('click', function(id){
+		//$(this).click();
+		var link = $(this).find('a.update').attr('href');
+		location.href = link;
+});"
+);
 ?>
 
 <h1></h1>
@@ -59,7 +64,7 @@ $this->endWidget();
 	'id'=>'tbl-sold-hogs-grid',
 	'dataProvider'=>$model->search(),
 	'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
-	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
+	//'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'filter'=>$model,
 	
 	'columns'=>array(

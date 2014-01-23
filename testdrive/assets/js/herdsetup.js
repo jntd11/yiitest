@@ -62,4 +62,9 @@ $(document).ready(function(){
 		}
 		return;
 	}
+	$('#tbl-herd-setup-grid tbody > tr').on('click', function(id){
+		//$(this).click();
+		var link = $(this).find('a.update').attr('href');
+		location.href = link;
+	});
 });

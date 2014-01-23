@@ -168,9 +168,10 @@ function autoSuggestSearch(){
 	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
 	    }
 	});	
-	
-	$('table > tbody > tr').on('dblclick', function(id){
-        $(this).click();
+	$('#sow-gilts-grid tbody > tr').on('click', function(id){
+		//$(this).click();
+		var link = $(this).find('a.update').attr('href');
+		location.href = link;
 	});
 	
 }
@@ -291,7 +292,7 @@ function checkExist(dates,isupd){
 			type: "GET",
 			data: {earnotch:earnotch,born:born,id:id}
 		}).done(function(data){
-				$("#SowGilts_days_between").val(data);
+				$("#SowGilts_days_between").val(parseInt(data));
 		});
 	}
 	return;

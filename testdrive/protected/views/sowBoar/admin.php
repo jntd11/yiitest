@@ -34,10 +34,16 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
-Yii::app()->clientScript->registerScript('row_dblclick', "
+/* Yii::app()->clientScript->registerScript('row_dblclick', "
     $('table > tbody > tr').on('dblclick', function(id){
             $(this).click();
     });"
+); */
+Yii::app()->clientScript->registerScript('row_dblclick', "$('#sow-boar-grid tbody > tr').on('click', function(id){
+		//$(this).click();
+		var link = $(this).find('a.update').attr('href');
+		location.href = link;
+});"
 );
 ?>
 
@@ -61,9 +67,8 @@ $this->endWidget();
 	'id'=>'sow-boar-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-	 'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
 	 'selectionChanged'=>'function(id){
-		 location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
+		 //location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
 	 }',
 	'columns'=>array(
 		array('name'=>'ear_notch','value'=>'$this->grid->controller->calculateYear($data->ear_notch,2)'),

@@ -105,8 +105,10 @@ $("#jaitest").autocomplete({
     	$(this).val(data);
     }
 });
-$('table > tbody > tr').on('dblclick', function(id){
-    $(this).click();
+$('#tbl-sold-hogs-grid tbody > tr').on('click', function(id){
+	//$(this).click();
+	var link = $(this).find('a.update').attr('href');
+	location.href = link;
 });
 }
 function getDateReason(val){
