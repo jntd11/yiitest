@@ -105,6 +105,9 @@ $("#jaitest").autocomplete({
     	$(this).val(data);
     }
 });
+$('table > tbody > tr').on('dblclick', function(id){
+    $(this).click();
+});
 }
 function getDateReason(val){
 	var search = $("#earnotch").val();

@@ -43,6 +43,7 @@ $(document).ready(function(){
 		}
 		return;
 	}
+
 });
 
 function autoSuggestSearch(){
@@ -103,7 +104,9 @@ function autoSuggestSearch(){
 			    	$('#Tbl-customer-entry-grid').yiiGridView('update', {data: data});
 			    }
 	});
-	
+	$('table > tbody > tr').on('dblclick', function(id){
+        $(this).click();
+	});
 	/*
 	 * $("#tbl-customer-entry-form [name='TblCustomerEntry[mailing_code]']").autocomplete({
 	    source: 'index.php?r=tblCustomerEntry/autocompleteMailingCode',

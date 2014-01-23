@@ -33,6 +33,11 @@ Yii::app()->clientScript->registerScript('search', "
 		return false;
 });
 		");
+Yii::app()->clientScript->registerScript('row_dblclick', "
+    $('table > tbody > tr').on('dblclick', function(id){
+            $(this).click();
+    });"
+);
 ?>
 <div style="float: left;"><a class="buttons" href="index.php?r=tblCustomerEntry/create"><input type="button" value="New"></a></div>
 <div style="float: left; margin-left: 50%">

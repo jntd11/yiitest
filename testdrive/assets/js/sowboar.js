@@ -192,6 +192,9 @@ function autoSuggestSearch(){
 	    	$('#sow-boar-grid').yiiGridView('update', {data: data});
 	    }
 	});
+	$('table > tbody > tr').on('dblclick', function(id){
+        $(this).click();
+	});
 }
 $(function() { 
 	 $(':text').focus(function() { 

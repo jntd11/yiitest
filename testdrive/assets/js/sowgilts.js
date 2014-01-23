@@ -169,6 +169,10 @@ function autoSuggestSearch(){
 	    }
 	});	
 	
+	$('table > tbody > tr').on('dblclick', function(id){
+        $(this).click();
+	});
+	
 }
 $(function() { 
 	 $(':text').focus(function() { 
@@ -271,11 +275,12 @@ function checkExist(dates,isupd){
 				}
 				if(data != "") {
 					var Obj = JSON.parse(data);
-					var myDate=new Date(born); 
+					var myDate = new Date(born); 
+					var myDateOrg= new Date(born);  
 					myDate.setDate(myDate.getDate()+parseInt(Obj.passover_days));
 					$("#SowGilts_passover_date").val($.datepicker.formatDate("mm/dd/yy", myDate));
-					myDate.setDate(myDate.getDate()+parseInt(Obj.due_days));
-					$("#SowGilts_due_date").val($.datepicker.formatDate("mm/dd/yy", myDate));
+					myDateOrg.setDate(myDateOrg.getDate()+parseInt(Obj.due_days));
+					$("#SowGilts_due_date").val($.datepicker.formatDate("mm/dd/yy", myDateOrg));
 				}
 			});
 		if(isupd){

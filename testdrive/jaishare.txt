@@ -2037,5 +2037,17 @@ I guess I didn't realize you had completed these items in that email - my bad - 
       c. When I type a number in the Days Between I either get a bunch of dates (that don't match) or nothing (even though it is a number that matches).
       Done
 
-      d. Please remove the red X and spyglass for now.
-      Done
+d. Please remove the red X and spyglass for now. Done
+
+22-01-2014
+
+7. Good except I just noticed that the Due Date is being calculated from the Passover Date - it should be calculated from Date Bred.
+Done
+10. Good except I accidentally double clicked on a selection (after picking a dropdown) and I get the attached screen (ProjectK3).
+      e. Looks like on all the "List" screens we need to make sure a double click does the same as a single click instead of an "Error" screen (both before and after picking a dropdown).
+
+      Can u check now?
+11. Good
+12. Don't see any dropdowns
+Done
+13. Good

@@ -34,7 +34,11 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
-
+Yii::app()->clientScript->registerScript('row_dblclick', "
+    $('table > tbody > tr').on('dblclick', function(id){
+            $(this).click();
+    });"
+);
 ?>
 
 <h1></h1>

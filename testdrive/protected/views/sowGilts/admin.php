@@ -25,6 +25,11 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+Yii::app()->clientScript->registerScript('row_dblclick', "
+    $('table > tbody > tr').on('dblclick', function(id){
+            $(this).click();
+    });"
+);
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery-ui-1.10.2.custom');
  $cs->registerCssFile(
