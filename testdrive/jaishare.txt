@@ -2292,3 +2292,29 @@ Unsuccessful: alter table doctor_appointments add constraint FK61B4FBD4C5D2DBE2 
 06:11:02,640 ERROR [SchemaUpdate] Unsuccessful: alter table user_health_item add constraint FK31073CA2C5D2DBE2 foreign key (userId) references user
 06:11:02,640 ERROR [SchemaUpdate] DB2 SQL Error: SQLCODE=-667, SQLSTATE=23520, SQLERRMC=FK31073CA2C5D2DBE2, DRIVER=3.62.56
 06:11:02,739 INFO  [SchemaUpdate] schema update complete
+
+
+Please find the details below:
+
+url: http://www.digitalportfol.io
+
+cpanel: http://www.digitalportfol.io/cpanel
+user: digiport
+pass: tkY^7Ac/VtjMC+g2V*VifP767A
+
+mahara: http://www.digitalportfol.io/admin/
+user: admin
+pass: K,t,7MTyR@m=9786wy
+
+janrain login: https://dashboard.janrain.com/signin
+user: admin@startupacademy.se
+pass: 4HTR2#jLHv+W33uwx2m>c+QqnX
+
+We would like to have login through following social networks:
+OpenID
+Google
+Yahoo
+Facebook
+Twitter
+LinkedIn
+
