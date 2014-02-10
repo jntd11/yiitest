@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 29, 2013 at 01:08 PM
+-- Generation Time: Feb 10, 2014 at 01:59 AM
 -- Server version: 5.5.20
 -- PHP Version: 5.3.10
 
@@ -297,6 +297,47 @@ INSERT INTO `authitemchild` (`parent`, `child`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `litters`
+--
+
+CREATE TABLE IF NOT EXISTS `litters` (
+  `litters_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sire_ear_notch` varchar(50) NOT NULL,
+  `sow_parity` int(2) NOT NULL,
+  `times_settle` int(1) NOT NULL,
+  `herd_litter` int(5) NOT NULL,
+  `no_pigs` int(2) NOT NULL,
+  `no_born_alive` int(2) NOT NULL,
+  `no_boars_alive` int(2) NOT NULL,
+  `gilts_alive` int(2) NOT NULL,
+  `birth_wgt` int(3) NOT NULL,
+  `comments` text NOT NULL,
+  `born_date` varchar(20) NOT NULL,
+  `21_wgt` int(3) NOT NULL,
+  `asscn_ebv` float NOT NULL,
+  `nsif_ebv` float NOT NULL,
+  `nsif_spi` float NOT NULL,
+  `weighing_age` int(2) NOT NULL,
+  `weaned_males` int(2) NOT NULL,
+  `weaned_females` int(2) NOT NULL,
+  `no_pigs_weighted` int(2) NOT NULL,
+  `actual_weight` int(3) NOT NULL,
+  `pigs_transfer` int(2) NOT NULL,
+  `males_born` int(2) NOT NULL,
+  `females_born` int(2) NOT NULL,
+  `birth_weight` int(3) NOT NULL,
+  `weighted_date` varchar(20) NOT NULL,
+  `males_born_alive` int(2) NOT NULL,
+  `females_born_alive` int(2) NOT NULL,
+  `weaned_date` varchar(20) NOT NULL,
+  `first_pig_number` int(5) NOT NULL,
+  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`litters_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `profiles`
 --
 
@@ -400,25 +441,59 @@ CREATE TABLE IF NOT EXISTS `sow_boar` (
 --
 
 INSERT INTO `sow_boar` (`ear_notch`, `sow_boar_name`, `sow_boar_id`, `registeration_no`, `born`, `no_pigs`, `weight_21`, `sire_notch`, `dam_notch`, `bred_date`, `last_parity`, `sold_mmddyy`, `reason_sold`, `offspring_name`, `back_fat`, `loinneye`, `days`, `EBV`, `sire_initials`, `comments`, `date_modified`) VALUES
-('3D AAA 2009 100-1', 'Jai First', 10, '', '11-06-2013', 0, 0, '1A aa 2009 1-1', '1A aa 2009 1-2', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, 'comments 1\r\ncomments 2\r\ncomments 3\r\n', '2013-09-14 09:30:40'),
-('1A aa 2009 1-1', 'TEST JAIs', 11, '', '11-06-2013', 0, 0, '1A aa 2013 1-2', '1A aa 2009 1-2', '', 0, '123199', '', '', NULL, NULL, 0, NULL, NULL, 'comments', '2013-09-14 09:37:28'),
-('1A aa 2009 1-2', 'TEST SKANDAN', 12, 'l', NULL, 1, 1, '1A aa 2009 1-1', '1A aa 2007 7-7', 'l', 1, 'l', 'l', 'l', 1, 1, 1, 1, NULL, NULL, '2013-09-14 09:37:49'),
-('1A aa 2009 1-3', 'ldh 9 1-3', 13, '', '11-14-2013', 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, '', '2013-09-14 13:22:51'),
-('1A aa 2013 1-2', 'ldh 03 1-2', 15, '', NULL, 0, 0, '1A aa 1999 103-2', '1A aa 2002 2-2', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-14 13:37:29'),
-('1A aa 1998 1-2', 'ldh 98 1-2', 16, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-14 13:38:33'),
-('1A aa 1999 103-2', 'Jai 98 103-1 JAIS', 17, '', NULL, 0, 0, '1A aa 2007 7-8', '1A aa 2005 5-5', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-14 15:40:51'),
-('1A aa 2003 2-2', 'ldh 03 2-2', 18, '', NULL, 0, 0, '1A aa ', '1A aa ', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 14:07:38'),
-('1A aa 2002 2-2', 'ldh 02 2-2', 19, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 14:11:56'),
-('1A aa 1995 5-5', 'ldh 95 5-5', 20, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 14:14:22'),
-('1A aa 1985 5-5', 'ldh 85 5-5', 21, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 14:15:26'),
-('1A aa 2012 2-2', 'ldh 2 2-2', 22, '', NULL, 0, 0, '1A aa 95 5-5', '1A aa ', '', 0, '2013-11-15', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 14:16:31'),
-('1A aa 2013 3-3', 'ldh 3 3-3', 23, '', NULL, 0, 0, '', '', '', 0, '2184-10-01', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 14:20:04'),
-('1A aa 2001 711-1', 'jai 15 Sep 1A aa 01 711-1', 24, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 16:05:38'),
-('1A aa 2007 7-7', 'ldh 7 7-7', 25, '', NULL, 0, 0, '1A aa 2005 5-5', '3D AAA 2009 100-1', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-16 13:02:42'),
-('1A aa 2007 7-8', 'ldh 7 7-8', 26, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-16 13:04:11'),
-('1A aa 2006 6-6', 'ldh 6 6-6', 27, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-16 16:54:15'),
-('1A aa 2005 5-5', '5 5-5', 28, '', NULL, 0, 0, '', '', '', 0, '2013-11-27', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-16 16:55:57'),
-('1A aa 1991 201-3', 'aaa', 29, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, '', '2013-11-29 13:00:34');
+('3D AAA 2009 100-1', 'Jai First', 10, '', '11-06-2013', 0, 0, '1A aa 2009 1-1', '1A aa 2009 1-2', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, 'comments 1\r\ncomments 2\r\ncomments 3\r\n', '2013-09-14 04:00:40'),
+('1A aa 2009 1-1', 'TEST JAIs', 11, '', '11-06-2013', 0, 0, '1A aa 2013 1-2', '1A aa 2009 1-2', '', 0, '123199', '', '', NULL, NULL, 0, NULL, NULL, 'comments', '2013-09-14 04:07:28'),
+('1A aa 2009 1-2', 'TEST SKANDAN', 12, 'l', NULL, 1, 1, '1A aa 2009 1-1', '1A aa 2007 7-7', 'l', 1, 'l', 'l', 'l', 1, 1, 1, 1, NULL, NULL, '2013-09-14 04:07:49'),
+('1A aa 2009 1-3', 'ldh 9 1-3', 13, '', '11-14-2013', 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, '', '2013-09-14 07:52:51'),
+('1A aa 2013 1-2', 'ldh 03 1-2', 15, '', NULL, 0, 0, '1A aa 1999 103-2', '1A aa 2002 2-2', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-14 08:07:29'),
+('1A aa 1998 1-2', 'ldh 98 1-2', 16, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-14 08:08:33'),
+('1A aa 1999 103-2', 'Jai 98 103-1 JAIS', 17, '', NULL, 0, 0, '1A aa 2007 7-8', '1A aa 2005 5-5', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-14 10:10:51'),
+('1A aa 2003 2-2', 'ldh 03 2-2', 18, '', NULL, 0, 0, '1A aa ', '1A aa ', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 08:37:38'),
+('1A aa 2002 2-2', 'ldh 02 2-2', 19, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 08:41:56'),
+('1A aa 1995 5-5', 'ldh 95 5-5', 20, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 08:44:22'),
+('1A aa 1985 5-5', 'ldh 85 5-5', 21, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 08:45:26'),
+('1A aa 2012 2-2', 'ldh 2 2-2', 22, '', NULL, 0, 0, '1A aa 95 5-5', '1A aa ', '', 0, '2013-11-15', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 08:46:31'),
+('1A aa 2013 3-3', 'ldh 3 3-3', 23, '', NULL, 0, 0, '', '', '', 0, '2184-10-01', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 08:50:04'),
+('1A aa 2001 711-1', 'jai 15 Sep 1A aa 01 711-1', 24, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-15 10:35:38'),
+('1A aa 2007 7-7', 'ldh 7 7-7', 25, '', NULL, 0, 0, '1A aa 2005 5-5', '3D AAA 2009 100-1', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-16 07:32:42'),
+('1A aa 2007 7-8', 'ldh 7 7-8', 26, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-16 07:34:11'),
+('1A aa 2006 6-6', 'ldh 6 6-6', 27, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-16 11:24:15'),
+('1A aa 2005 5-5', '5 5-5', 28, '', NULL, 0, 0, '', '', '', 0, '2013-11-27', '', '', NULL, NULL, 0, NULL, NULL, NULL, '2013-09-16 11:25:57'),
+('1A aa 1991 201-3', 'aaa', 29, '', NULL, 0, 0, '', '', '', 0, '', '', '', NULL, NULL, 0, NULL, NULL, '', '2013-11-29 07:30:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sow_gilts`
+--
+
+CREATE TABLE IF NOT EXISTS `sow_gilts` (
+  `sow_gilts_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sow_ear_notch` varchar(20) NOT NULL,
+  `date_bred` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `sire_ear_notch` varchar(20) NOT NULL,
+  `service_type` varchar(5) NOT NULL,
+  `misc` varchar(5) NOT NULL,
+  `comments` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `passover_date` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `due_date` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `days_between` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `settled` varchar(1) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `farrowed` varchar(1) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`sow_gilts_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `sow_gilts`
+--
+
+INSERT INTO `sow_gilts` (`sow_gilts_id`, `sow_ear_notch`, `date_bred`, `sire_ear_notch`, `service_type`, `misc`, `comments`, `passover_date`, `due_date`, `days_between`, `settled`, `farrowed`, `date_modified`) VALUES
+(1, '1DCDO 2012 5-7', '01/08/2013', '1DCDO 1998 202-2', 'A', '', '', '01/29/2013', '05/23/2013', '366', 'N', 'N', '2014-01-16 09:45:07'),
+(2, '1DCDO 1999 2-1', '01/16/2014', '1D CDO ', '', '', '', '02/06/2014', '05/31/2014', '5493', 'N', 'N', '2014-01-16 09:46:06'),
+(3, '1DCDO 1999 3-1', '01/15/2014', '1DCDO 1998 202-2', 'B', '', '', '02/05/2014', '05/30/2014', '5490', 'N', 'N', '2014-01-16 10:35:24'),
+(4, '1DCDO 2000 17-7b', '01/16/2014', '1DCDO 2001 221-7', '', 'aa', 'aaaaaaaaaaaaaa', '02/06/2014', '05/31/2014', '5088', 'N', 'N', '2014-01-16 10:38:18'),
+(5, '1DCDO 1999 16-5', '01/16/2014', '1DCDO 2001 238-7', '', '', '', '02/06/2014', '05/31/2014', '5457', 'N', 'N', '2014-01-16 10:40:12');
 
 -- --------------------------------------------------------
 
@@ -439,7 +514,7 @@ CREATE TABLE IF NOT EXISTS `tbl_content` (
 --
 
 INSERT INTO `tbl_content` (`content_id`, `content`, `page`, `date_modified`) VALUES
-(24, '<div class="header" style="margin: 0px; padding: 0px; border: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; vertical-align: baseline; background-color: #edf2f2;">\r\n<div class="container" style="margin: 0px auto; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; vertical-align: baseline; width: 950px;">\r\n<div class="header-content" style="margin: 0px; padding: 48px 0px 24px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #000000; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; vertical-align: baseline; position: relative; background-image: url(''http://easymedmobile.com/wp-content/uploads/2012/07/Phones.png''); background-position: 480px 10px; background-repeat: no-repeat no-repeat;">\r\n<h1 style="margin: 0px 0px 9px; padding: 0px; border: 0px; font-family: inherit; font-size: 24px; font-style: inherit; font-variant: inherit; font-weight: normal; line-height: 30px; vertical-align: baseline; color: #ed1d24; max-width: 450px;">Hospitals, clinics, private practices</h1>\r\n<h2 style="margin: 0px 0px 7px; padding: 0px; border: 0px; font-family: inherit; font-size: 40px; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: 47px; vertical-align: baseline; max-width: 450px;">Dramatically improve patient care</h2>\r\n<p style="margin: 0px 0px 12px; padding: 0px; border: 0px; font-family: inherit; font-size: 17px; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: 26px; vertical-align: baseline; max-width: 450px;">Reduce your costs starting in the first month.</p>\r\n<p style="margin: 0px 0px 12px; padding: 0px; border: 0px; font-family: inherit; font-size: 17px; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: 26px; vertical-align: baseline; max-width: 450px;">EasyMed answers today&rsquo;s most pressing needs in healthcare: better service with lower costs. Easy to implement &ndash; we&rsquo;ll do it for you.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="container" style="margin: 0px auto; padding: 0px; border: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; vertical-align: baseline; width: 950px;">&nbsp;</div>', 'index', '2013-11-26 12:10:22');
+(24, '<div class="header" style="margin: 0px; padding: 0px; border: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; vertical-align: baseline; background-color: #edf2f2;">\r\n<div class="container" style="margin: 0px auto; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; vertical-align: baseline; width: 950px;">\r\n<div class="header-content" style="margin: 0px; padding: 48px 0px 24px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #000000; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; vertical-align: baseline; position: relative; background-image: url(''http://easymedmobile.com/wp-content/uploads/2012/07/Phones.png''); background-position: 480px 10px; background-repeat: no-repeat no-repeat;">\r\n<h1 style="margin: 0px 0px 9px; padding: 0px; border: 0px; font-family: inherit; font-size: 24px; font-style: inherit; font-variant: inherit; font-weight: normal; line-height: 30px; vertical-align: baseline; color: #ed1d24; max-width: 450px;">Hospitals, clinics, private practices</h1>\r\n<h2 style="margin: 0px 0px 7px; padding: 0px; border: 0px; font-family: inherit; font-size: 40px; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: 47px; vertical-align: baseline; max-width: 450px;">Dramatically improve patient care</h2>\r\n<p style="margin: 0px 0px 12px; padding: 0px; border: 0px; font-family: inherit; font-size: 17px; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: 26px; vertical-align: baseline; max-width: 450px;">Reduce your costs starting in the first month.</p>\r\n<p style="margin: 0px 0px 12px; padding: 0px; border: 0px; font-family: inherit; font-size: 17px; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: 26px; vertical-align: baseline; max-width: 450px;">EasyMed answers today&rsquo;s most pressing needs in healthcare: better service with lower costs. Easy to implement &ndash; we&rsquo;ll do it for you</p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="container" style="margin: 0px auto; padding: 0px; border: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; vertical-align: baseline; width: 950px;">&nbsp;</div>', 'index', '2013-11-26 06:40:22');
 
 -- --------------------------------------------------------
 
@@ -481,11 +556,11 @@ CREATE TABLE IF NOT EXISTS `tbl_customer_entry` (
   `ship_contact` varchar(50) NOT NULL,
   `ship_area` varchar(50) NOT NULL,
   `ship_phone` varchar(20) NOT NULL,
-  `att_sale` datetime NOT NULL,
+  `att_sale` varchar(20) NOT NULL,
   `mailing_code` varchar(50) DEFAULT NULL,
   `last_invoice` int(11) NOT NULL,
-  `last_letter_sent` datetime NOT NULL,
-  `entry_date` datetime NOT NULL,
+  `last_letter_sent` varchar(20) NOT NULL,
+  `entry_date` varchar(20) NOT NULL,
   `herdmark` varchar(50) DEFAULT NULL,
   `total_sows` int(11) NOT NULL,
   `total_boars` int(11) NOT NULL,
@@ -510,12 +585,12 @@ CREATE TABLE IF NOT EXISTS `tbl_customer_entry` (
 --
 
 INSERT INTO `tbl_customer_entry` (`customer_entry_id`, `company_name`, `first_name`, `last_name`, `address1`, `address2`, `city`, `zip`, `phone_home`, `phone_business`, `phone_cell`, `phone_other1`, `phone_other2`, `state`, `country`, `contact`, `county`, `notes`, `cc_brand`, `cc_number`, `cc_expiration`, `cc_name`, `ship_company_name`, `ship_name`, `ship_address1`, `ship_address2`, `ship_city`, `ship_state`, `ship_country`, `ship_zip`, `ship_contact`, `ship_area`, `ship_phone`, `att_sale`, `mailing_code`, `last_invoice`, `last_letter_sent`, `entry_date`, `herdmark`, `total_sows`, `total_boars`, `facility`, `sows`, `boars`, `frequency`, `system`, `feeder`, `finish`, `rep_glits`, `notes1`, `notes2`, `notes3`, `notes4`, `modified_date`) VALUES
-(2, 'Test Jai', 'jai ..', 'sankar', 'chennai', 'Chrompet', 'chennai', 600044, '828 28292929', '90101039393', '888282828', '9199191919', '9999999999 fax', 'TN', 'India', 'jai', 'india', 'dlsfjsdf\r\nsdfl''sdf\r\nsdf;\r\nsdf\r\ndf\r\nds\r\nfsd\r\nf\r\nds\r\nf\r\ndsf', 'MASTER', 2147483647, '1727', 'Jaisankar', 'Test Jai', 'jai sankar', 'chennai', 'Chrompet', 'chennai', 'TN', 'India', 600044, 'jai', 'india', '828 28292929', '2013-06-26 00:00:00', 'b,', 11, '2013-06-26 00:00:00', '2013-06-26 00:00:00', 'sasadf', 100, 200, 'fdsf', 500, 300, '1', 'System', 'Feeder', 'Finishe', 'Rep222222222222222222222222222222222222222222222222222222222', 'ndfnsda\r\ndsafksd\r\ndsafksdf\r\nksdfk', 'dlfsdf\r\nsdflsdfl\r\n\r\n\r\n\r\ndsfsdf\r\nd\r\nf', 'dfdsf', 'dfdsf', '2013-06-05 09:43:18'),
-(3, 'Lloyd''s on Portage                                                ', 'Lloyd', 'Harless', '12099 Far Portage Dr.', 'test', 'Park Rapids', 56470, '218-732-6929', '218.732.1962', '218.555.1212', 'x', 'xsx', 'MN', 'USA', 'Lloyd', 'Hubbard', 'notesx\r\naaaaaaaaaaaaaaaa\r\nbbbbbbbbbbbb\r\ncccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc', 'MC', 2147483647, '11.22', 'Test', 'x', 'xx', 'x', 'x', 'x', 'x', 'x', 12345, 'x', 'x', 'x', '2007-06-08 00:00:00', 'H1XJM', 1234567, '2013-06-06 00:00:00', '2013-06-06 00:00:00', 'xxx', 5, 5, 'y', 5, 5, 'x', 'x', 'x', 'y', 'x', 'nx', 'n', 'n', 'n', '2013-06-07 01:10:16'),
-(4, 'Test Jai', 'jai', 'sankar(4)', 'chennai', 'Chrompet', 'chennai', 600044, '828 28292929', '90101039393', '888282828', '9199191919', '9999999999', 'TN', 'India', 'jai', 'india', 'dlsfjsdf\nsdfl''sdf\nsdf;\nsdf\ndf\nds\nfsd\nf\nds\nf\ndsf', 'MASTER', 2147483647, '1727', 'Jaisankar', 'Jai', 'jai', '7B ', 'ldfkld', 'chennai', 'TN', 'India', 522200, 'Jai', 'India', '882823828', '2013-06-04 00:00:00', 'C', 11, '2013-06-04 00:00:00', '2013-06-04 00:00:00', 'sasadf', 100, 200, 'fdsf', 500, 300, '1', 'System', 'Feeder', 'Finishe', 'Rep', 'ndfnsda\ndsafksd\ndsafksdf\nksdfk', 'dlfsdf\nsdflsdfl\n\n\n\ndsfsdf\nd\nf', 'dfdsf', 'dfdsf', '2013-06-05 20:13:18'),
-(5, 'Navabrind IT solutions', 'Venkatest', 'Nagarjana', 'Chennai', 'India', 'Bangaloer', 919191, '111111', '222222', '777777', '999999', '100000', 'karnatka', 'India', 'Venk', 'India', 'Jai', 'VISA', 2147483647, '1122', 'kai', 'sads', 'Jai', 'jai', 'j', 'Chennai', 'TN', 'India', 3343434, 'India', 'aaaa', '343434', '2013-06-05 00:00:00', '1212', 43434, '2013-06-05 00:00:00', '2013-06-04 00:00:00', '', 11, 11, 'dfdf', 111, 222, '2323', 'as', 'as', 's', 's', 'sankar dssds', '2', '2', '2', '2013-06-06 22:23:10'),
-(6, 'test', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', 0, '', '', '', '0000-00-00 00:00:00', '', 0, '2013-11-30 00:00:00', '0000-00-00 00:00:00', '', 0, 0, '', 0, 0, '', '', '', '', '', '', '', '', '', '2013-11-29 12:34:16'),
-(7, 'test2', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', 0, '', '', '', '0000-00-00 00:00:00', '', 0, '2013-11-21 00:00:00', '0000-00-00 00:00:00', '', 0, 0, '', 0, 0, '', '', '', '', '', '', '', '', '', '2013-11-29 12:34:30');
+(2, 'Test Jai', 'jai ..', 'sankar', 'chennai', 'Chrompet', 'chennai', 600044, '828 28292929', '90101039393', '888282828', '9199191919', '9999999999 fax', 'TN', 'India', 'jai', 'india', 'dlsfjsdf\r\nsdfl''sdf\r\nsdf;\r\nsdf\r\ndf\r\nds\r\nfsd\r\nf\r\nds\r\nf\r\ndsf', 'MASTER', 2147483647, '1727', 'Jaisankar', 'Test Jai', 'jai sankar', 'chennai', 'Chrompet', 'chennai', 'TN', 'India', 600044, 'jai', 'india', '828 28292929', '08/08/2013', 'b,', 11, '08/07/2013', '01/01/2014', 'sasadf', 100, 200, 'fdsf', 500, 300, '1', 'System', 'Feeder', 'Finishe', 'Rep222222222222222222222222222222222222222222222222222222222', 'ndfnsda\r\ndsafksd\r\ndsafksdf\r\nksdfk', 'dlfsdf\r\nsdflsdfl\r\n\r\n\r\n\r\ndsfsdf\r\nd\r\nf', 'dfdsf', 'dfdsf', '2013-06-05 04:13:18'),
+(3, 'Lloyd''s on Portage                                                ', 'Lloyd', 'Harless', '12099 Far Portage Dr.', 'test', 'Park Rapids', 56470, '218-732-6929', '218.732.1962', '218.555.1212', 'x', 'xsx', 'MN', 'USA', 'Lloyd', 'Hubbard', 'notesx\r\naaaaaaaaaaaaaaaa\r\nbbbbbbbbbbbb\r\ncccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc', 'MC', 2147483647, '11.22', 'Test', 'x', 'xx', 'x', 'x', 'x', 'x', 'x', 12345, 'x', 'x', 'x', '2007-06-08 00:00:00', 'H1XJM', 1234567, '2013-06-06 00:00:00', '2013-06-06 00:00:00', 'xxx', 5, 5, 'y', 5, 5, 'x', 'x', 'x', 'y', 'x', 'nx', 'n', 'n', 'n', '2013-06-06 19:40:16'),
+(4, 'Test Jai', 'jai', 'sankar(4)', 'chennai', 'Chrompet', 'chennai', 600044, '828 28292929', '90101039393', '888282828', '9199191919', '9999999999', 'TN', 'India', 'jai', 'india', 'dlsfjsdf\nsdfl''sdf\nsdf;\nsdf\ndf\nds\nfsd\nf\nds\nf\ndsf', 'MASTER', 2147483647, '1727', 'Jaisankar', 'Jai', 'jai', '7B ', 'ldfkld', 'chennai', 'TN', 'India', 522200, 'Jai', 'India', '882823828', '2013-06-04 00:00:00', 'C', 11, '2013-06-04 00:00:00', '2013-06-04 00:00:00', 'sasadf', 100, 200, 'fdsf', 500, 300, '1', 'System', 'Feeder', 'Finishe', 'Rep', 'ndfnsda\ndsafksd\ndsafksdf\nksdfk', 'dlfsdf\nsdflsdfl\n\n\n\ndsfsdf\nd\nf', 'dfdsf', 'dfdsf', '2013-06-05 14:43:18'),
+(5, 'Navabrind IT solutions', 'Venkatest', 'Nagarjana', 'Chennai', 'India', 'Bangaloer', 919191, '111111', '222222', '777777', '999999', '100000', 'karnatka', 'India', 'Venk', 'India', 'Jai', 'VISA', 2147483647, '1122', 'kai', 'sads', 'Jai', 'jai', 'j', 'Chennai', 'TN', 'India', 3343434, 'India', 'aaaa', '343434', '05/06/2013', '1212', 43434, '05/06/2013', '04/06/2013', '', 11, 11, 'dfdf', 111, 222, '2323', 'as', 'as', 's', 's', 'sankar dssds', '2', '2', '2', '2013-06-06 16:53:10'),
+(6, 'test', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', 0, '', '', '', '0000-00-00 00:00:00', '', 0, '2013-11-30 00:00:00', '0000-00-00 00:00:00', '', 0, 0, '', 0, 0, '', '', '', '', '', '', '', '', '', '2013-11-29 07:04:16'),
+(7, 'test2', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', 0, '', '', '', '0000-00-00 00:00:00', '', 0, '2013-11-21 00:00:00', '0000-00-00 00:00:00', '', 0, 0, '', 0, 0, '', '', '', '', '', '', '', '', '', '2013-11-29 07:04:30');
 
 -- --------------------------------------------------------
 
@@ -567,9 +642,9 @@ CREATE TABLE IF NOT EXISTS `tbl_herd_setup` (
 --
 
 INSERT INTO `tbl_herd_setup` (`herd_id`, `farm_herd`, `breeder_name`, `farm_name`, `address1`, `address2`, `city`, `state`, `zip`, `phone`, `breeder_number`, `breeder_herd_mark`, `home_country`, `breed`, `is_weight`, `breeder_no`, `weighted`, `is_hog_tag`, `hog_numbering`, `passover_days`, `due_days`, `take_boars_gilts`, `take_sow_scores`, `spring_start`, `spring_end`, `spring_letter`, `fall_start`, `fall_end`, `fall_letter`, `shift_year`, `take_weaned_date`, `take_deffects`, `prev_herd_mark`, `fax`, `date_modified`) VALUES
-(3, '1A', 'Jai', 'Jai''s York Farm', 'Chennai 1', 'Chennai 2', 'Chennai', 'TN', 600044, '9841798875', 1111111, 'aa', 'M', 'D', 'N', '#', '#', 'T', 'N', 21, 114, 'N', 'N', 11, 22, 'S', 11, 33, 'A', 'S', 'S', 'N', 'x', '9841798875', '2013-08-23 10:55:24'),
-(4, '3D', 'Breed 1', 'Farm 1', 'Address 1x', '', 'Delhi', 'QA', 2232, '20202002020', 99, 'A', 'C', 'A', 'N', '#', '#', 'T', 'N', 11, 33, 'Y', 'N', 11, 22, '', 22, 11, '', 'L', 'S', 'N', '', '', '2013-08-24 17:23:29'),
-(5, '4E', 'TblHerdSetup[breeder_name]', 'TblHerdSetup[farm_name]', 'TblHerdSetup[address1]', 'TblHerdSetup[address2]', 'TblHerdSetup[city]', 'TblHerdSetup[state]', 90210, 'TblHerdSetup[phone]', 1111, 'TblHe', 'C', 'T', 'Y', 'N', 'N', 'H', 'Q', 11, 33, 'Y', 'Y', 99, 66, 'T', 87, 98, 'T', 'S', 'T', 'Y', 'TblHerdSet', 'TblHerdSetup[fax]', '2013-08-25 03:52:39');
+(3, '1A', 'Jai', 'Jai''s York Farm', 'Chennai 1', 'Chennai 2', 'Chennai', 'TN', 600044, '9841798875', 1111111, 'aa', 'M', 'D', 'N', '#', '#', 'T', 'N', 21, 114, 'N', 'N', 11, 22, 'S', 11, 33, 'A', 'S', 'S', 'N', 'x', '9841798875', '2013-08-23 05:25:24'),
+(4, '3D', 'Breed 1', 'Farm 1', 'Address 1x', '', 'Delhi', 'QA', 2232, '20202002020', 99, 'A', 'C', 'A', 'N', '#', '#', 'T', 'N', 11, 33, 'Y', 'N', 11, 22, '', 22, 11, '', 'L', 'S', 'N', '', '', '2013-08-24 11:53:29'),
+(5, '4E', 'TblHerdSetup[breeder_name]', 'TblHerdSetup[farm_name]', 'TblHerdSetup[address1]', 'TblHerdSetup[address2]', 'TblHerdSetup[city]', 'TblHerdSetup[state]', 90210, 'TblHerdSetup[phone]', 1111, 'TblHe', 'C', 'T', 'Y', 'N', 'N', 'H', 'Q', 11, 33, 'Y', 'Y', 99, 66, 'T', 87, 98, 'T', 'S', 'T', 'Y', 'TblHerdSet', 'TblHerdSetup[fax]', '2013-08-24 22:22:39');
 
 -- --------------------------------------------------------
 
@@ -603,7 +678,7 @@ CREATE TABLE IF NOT EXISTS `tbl_sold_hogs` (
   `cust_id` int(11) NOT NULL,
   `hog_ear_notch` varchar(20) NOT NULL,
   `customer_name` varchar(50) NOT NULL,
-  `date_sold` date NOT NULL,
+  `date_sold` varchar(20) NOT NULL,
   `sold_price` int(10) NOT NULL,
   `sale_type` varchar(1) NOT NULL,
   `invoice_number` int(6) NOT NULL,
@@ -621,17 +696,17 @@ CREATE TABLE IF NOT EXISTS `tbl_sold_hogs` (
 --
 
 INSERT INTO `tbl_sold_hogs` (`tbl_sold_hogs_id`, `cust_id`, `hog_ear_notch`, `customer_name`, `date_sold`, `sold_price`, `sale_type`, `invoice_number`, `app_xfer`, `comments`, `reason_sold`, `date_modified`, `ear_notch_id`, `is_rebuild`) VALUES
-(1, 3, '1A cdo 9f12-1', 'Lloyd Harless', '2013-11-05', 123, 'S', 1234, 'N', 'test of line 1\r\nthis is a test of line 2\r\nline 3 is even longer to see what happens\r\nthis is line 4 which is medium length\r\nline 5 will be medium length as well', 'now we take the lines for reason sold to longer so this is line 1\r\nline 2 is short\r\nthis is line 3\r\nline 4 is a lot longer than line 3 but not as long as line 1 \r\nline 5', '2013-11-07 02:22:28', NULL, 1),
-(2, 2, '1A cdo 6 1.2', 'jai sankar', '2013-09-11', 333, 'f', 0, 'Y', '', '', '2013-11-07 02:25:44', NULL, 1),
-(3, 5, '1A cdo 5 1-2', 'Venkatest Nagarjana', '2013-11-19', 444, 'f', 0, 'Y', '', '', '2013-11-07 02:27:14', NULL, 1),
-(4, 2, '1A aa 5 6-7', 'jai sankar', '2013-11-13', 123, '', 0, 'Y', '', '', '2013-11-07 14:12:29', NULL, 1),
-(5, 2, '1A aa 1 2-3', 'jai sankar', '2013-09-11', 555, '', 0, 'Y', '', '', '2013-11-07 15:46:13', NULL, 1),
-(6, 3, '1A aa 1 1-1', 'Lloyd Harless', '2013-09-10', 123, '', 0, 'Y', '', '', '2013-11-08 14:27:48', NULL, 1),
-(7, 3, '1A aa 2 2-2', 'Lloyd Harless', '2013-09-11', 123, '', 0, 'Y', '', '', '2013-11-08 14:30:53', 22, 1),
-(8, 3, '1A aa 2 2-2', 'Lloyd Harless', '2013-09-11', 12345, '', 0, 'Y', '', '', '2013-11-08 21:43:08', 22, 1),
-(9, 2, '1A aa 3 3-3', 'jai sankar', '2013-09-12', 555, '', 0, 'Y', '', '', '2013-11-11 13:53:10', 23, 1),
-(10, 3, '1A aa 4 4-4', 'Lloyd Harless', '2013-11-16', 4444, 'p', 0, 'Y', '', '', '2013-11-11 22:05:01', NULL, 1),
-(11, 3, '1A aa 5 5-5', 'Lloyd Harless', '2013-09-11', 555, '', 0, 'Y', '', '', '2013-11-12 14:45:11', 28, 1);
+(1, 3, '1A cdo 9f12-1', 'Lloyd Harless', '08/08/2013', 123, 'S', 1234, 'N', 'test of line 1\r\nthis is a test of line 2\r\nline 3 is even longer to see what happens\r\nthis is line 4 which is medium length\r\nline 5 will be medium length as well', 'now we take the lines for reason sold to longer so this is line 1\r\nline 2 is short\r\nthis is line 3\r\nline 4 is a lot longer than line 3 but not as long as line 1 \r\nline 5', '2013-11-06 20:52:28', NULL, 1),
+(2, 2, '1A cdo 6 1.2', 'jai sankar', '2013-09-11', 333, 'f', 0, 'Y', '', '', '2013-11-06 20:55:44', NULL, 1),
+(3, 5, '1A cdo 5 1-2', 'Venkatest Nagarjana', '08/01/2013', 444, 'f', 0, 'Y', '', '', '2013-11-06 20:57:14', NULL, 1),
+(4, 2, '1A aa 5 6-7', 'jai sankar', '2013-11-13', 123, '', 0, 'Y', '', '', '2013-11-07 08:42:29', NULL, 1),
+(5, 2, '1A aa 1 2-3', 'jai sankar', '2013-09-11', 555, '', 0, 'Y', '', '', '2013-11-07 10:16:13', NULL, 1),
+(6, 3, '1A aa 1 1-1', 'Lloyd Harless', '2013-09-10', 123, '', 0, 'Y', '', '', '2013-11-08 08:57:48', NULL, 1),
+(7, 3, '1A aa 2 2-2', 'Lloyd Harless', '2013-09-11', 123, '', 0, 'Y', '', '', '2013-11-08 09:00:53', 22, 1),
+(8, 3, '1A aa 2 2-2', 'Lloyd Harless', '2013-09-11', 12345, '', 0, 'Y', '', '', '2013-11-08 16:13:08', 22, 1),
+(9, 2, '1A aa 3 3-3', 'jai sankar', '2013-09-12', 555, '', 0, 'Y', '', '', '2013-11-11 08:23:10', 23, 1),
+(10, 3, '1A aa 4 4-4', 'Lloyd Harless', '2013-11-16', 4444, 'p', 0, 'Y', '', '', '2013-11-11 16:35:01', NULL, 1),
+(11, 3, '1A aa 5 5-5', 'Lloyd Harless', '2013-09-11', 555, '', 0, 'Y', '', '', '2013-11-12 09:15:11', 28, 1);
 
 -- --------------------------------------------------------
 
@@ -671,6 +746,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `lastvisit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `superuser` int(1) NOT NULL DEFAULT '0',
   `status` int(1) NOT NULL DEFAULT '0',
+  `activity_date` varchar(20) NOT NULL,
+  `farm_herd` varchar(20) NOT NULL,
+  `farm_herd_name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
@@ -682,10 +760,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `activkey`, `create_at`, `lastvisit_at`, `superuser`, `status`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '9a24eff8c15a6a141ece27eb6947da0f', '2013-11-25 11:23:07', '2013-11-29 02:54:15', 1, 1),
-(2, 'demo', 'e368b9938746fa090d6afd3628355133', 'demo@example.com', 'ad18eafdf2638cc39495d806f302ce57', '2013-11-25 11:23:07', '2013-11-29 02:57:38', 0, 1),
-(3, 'test', '098f6bcd4621d373cade4e832627b4f6', 'jaisankarn@gmail.com', 'ddf5854d9e74a8053a9b11f1ba53a15a', '2013-11-27 07:16:57', '2013-11-27 07:17:45', 0, 1);
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `activkey`, `create_at`, `lastvisit_at`, `superuser`, `status`, `activity_date`, `farm_herd`, `farm_herd_name`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '9a24eff8c15a6a141ece27eb6947da0f', '2013-11-25 05:53:07', '2014-01-19 11:27:22', 1, 1, '01/19/2014', '1A', 'Jai''s York Farm'),
+(2, 'demo', 'e368b9938746fa090d6afd3628355133', 'demo@example.com', 'ad18eafdf2638cc39495d806f302ce57', '2013-11-25 05:53:07', '2013-11-28 21:27:38', 0, 1, '', '', ''),
+(3, 'test', '098f6bcd4621d373cade4e832627b4f6', 'jaisankarn@gmail.com', 'ddf5854d9e74a8053a9b11f1ba53a15a', '2013-11-27 01:46:57', '2013-11-27 01:47:45', 0, 1, '', '', '');
 
 --
 -- Constraints for dumped tables

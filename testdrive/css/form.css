@@ -79,7 +79,7 @@ div.form .row
 {
 	margin: 5px 0;
 }
-form#tbl-customer-entry-form .row, form#tbl-herd-setup-form .row, form#sow-boar-form  .row, form#tbl-sold-hogs-form .row
+form#tbl-customer-entry-form .row, form#tbl-herd-setup-form .row, form#sow-boar-form  .row, form#tbl-sold-hogs-form .row, form#sow-gilts-form .row 
 {
 	margin: -8px 0;
 }

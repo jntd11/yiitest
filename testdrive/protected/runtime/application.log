@@ -2365,6 +2365,7 @@ Stack trace:
 REQUEST_URI=/yii/yii/testdrive/index.php?r=sowGilts/admin
 HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=tblSoldHogs/admin
 ---
+<<<<<<< Updated upstream
 2014/02/03 11:50:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "list".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
 Stack trace:
 #0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('list')
@@ -2384,4 +2385,342 @@ Stack trace:
 #4 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
 #5 {main}
 REQUEST_URI=/yii/yii/testdrive/index.php?r=sowGilts/list
+=======
+2014/01/23 16:32:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php:381
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\auth\CDbAuthManager.php(589): CModule->getComponent('db')
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\auth\CDbAuthManager.php(59): CDbAuthManager->getDbConnection()
+#5 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(387): CDbAuthManager->init()
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(185): CModule->getComponent('authManager')
+#7 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RAuthorizer.php(27): CWebApplication->getAuthManager()
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(387): RAuthorizer->init()
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\RightsModule.php(192): CModule->getComponent('authorizer')
+#10 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\Rights.php(287): RightsModule->getAuthorizer()
+#11 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RWebUser.php(21): Rights::getAuthorizer()
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\auth\CWebUser.php(476): RWebUser->afterLogin(true)
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\auth\CWebUser.php(206): CWebUser->restoreFromCookie()
+#14 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(387): CWebUser->init()
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(103): CModule->getComponent('user')
+#16 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php(24): CModule->__get('user')
+#17 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#18 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#19 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#20 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#21 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#22 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(206): COutputProcessor->run()
+#23 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#24 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php(56): CBaseController->endContent()
+#25 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#26 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#27 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(784): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#28 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SiteController.php(121): CController->render('login', Array)
+#29 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#30 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#31 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#32 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#33 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('login')
+#34 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#35 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#36 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#37 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=site/login
+---
+2014/02/09 05:32:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+' in C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php:381
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\auth\CDbAuthManager.php(589): CModule->getComponent('db')
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\auth\CDbAuthManager.php(59): CDbAuthManager->getDbConnection()
+#5 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(387): CDbAuthManager->init()
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(185): CModule->getComponent('authManager')
+#7 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RAuthorizer.php(27): CWebApplication->getAuthManager()
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(387): RAuthorizer->init()
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\RightsModule.php(192): CModule->getComponent('authorizer')
+#10 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\Rights.php(287): RightsModule->getAuthorizer()
+#11 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RWebUser.php(21): Rights::getAuthorizer()
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\auth\CWebUser.php(476): RWebUser->afterLogin(true)
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\auth\CWebUser.php(206): CWebUser->restoreFromCookie()
+#14 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(387): CWebUser->init()
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(103): CModule->getComponent('user')
+#16 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php(24): CModule->__get('user')
+#17 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#18 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#19 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#20 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#21 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#22 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(206): COutputProcessor->run()
+#23 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#24 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php(56): CBaseController->endContent()
+#25 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#26 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#27 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(784): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#28 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SiteController.php(121): CController->render('login', Array)
+#29 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#30 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#31 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#32 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#33 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('login')
+#34 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#35 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#36 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#37 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=site/login
+>>>>>>> Stashed changes
+---
+2014/02/09 06:31:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php:381
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(2310): CActiveRecord->getDbConnection()
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(TblContent))
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(402): CActiveRecord::model('TblContent')
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(77): CActiveRecord->getMetaData()
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SiteController.php(36): CActiveRecord->__construct()
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('')
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#16 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/yii/testdrive/index.php
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=site/login
+---
+2014/02/09 06:32:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php:381
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(2310): CActiveRecord->getDbConnection()
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(TblContent))
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(402): CActiveRecord::model('TblContent')
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(77): CActiveRecord->getMetaData()
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SiteController.php(36): CActiveRecord->__construct()
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('')
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#16 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/yii/testdrive/index.php
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=site/login
+---
+2014/02/09 17:13:39 [error] [exception.CException] exception 'CException' with message 'Property "SowGilts.litters_id" is not defined.' in C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(143): CComponent->__get('litters_id')
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('litters_id')
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(SowGilts), 'litters_id')
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(SowGilts), 'litters_id', Array)
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(SowGilts), 'litters_id', Array)
+#5 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\_search.php(16): CActiveForm->textField(Object(SowGilts), 'litters_id')
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\admin.php(40): CController->renderPartial('_search', Array)
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\LittersController.php(155): CController->render('admin', Array)
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): LittersController->actionAdmin()
+#16 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('admin')
+#25 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('litters/admin')
+#26 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=litters/admin
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=litters
+---
+2014/02/09 17:14:20 [error] [exception.CException] exception 'CException' with message 'Property "SowGilts.litters_id" is not defined.' in C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(143): CComponent->__get('litters_id')
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('litters_id')
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(SowGilts), 'litters_id')
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(SowGilts), 'litters_id', Array)
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(SowGilts), 'litters_id', Array)
+#5 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\_search.php(16): CActiveForm->textField(Object(SowGilts), 'litters_id')
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\admin.php(103): CController->renderPartial('_search', Array)
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\LittersController.php(155): CController->render('admin', Array)
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): LittersController->actionAdmin()
+#16 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('admin')
+#25 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('litters/admin')
+#26 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=litters/admin
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=litters
+---
+2014/02/09 17:15:04 [error] [exception.CException] exception 'CException' with message 'Property "SowGilts.litters_id" is not defined.' in C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(143): CComponent->__get('litters_id')
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('litters_id')
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(SowGilts), 'litters_id')
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(SowGilts), 'litters_id', Array)
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(SowGilts), 'litters_id', Array)
+#5 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\_search.php(16): CActiveForm->textField(Object(SowGilts), 'litters_id')
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\admin.php(103): CController->renderPartial('_search', Array)
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\LittersController.php(155): CController->render('admin', Array)
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): LittersController->actionAdmin()
+#16 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('admin')
+#25 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('litters/admin')
+#26 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=litters/admin
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=litters
+---
+2014/02/09 17:15:50 [error] [exception.CException] exception 'CException' with message 'Property "SowGilts.litters_id" is not defined.' in C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(143): CComponent->__get('litters_id')
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('litters_id')
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(SowGilts), 'litters_id')
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(SowGilts), 'litters_id', Array)
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(SowGilts), 'litters_id', Array)
+#5 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\_search.php(16): CActiveForm->textField(Object(SowGilts), 'litters_id')
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\admin.php(103): CController->renderPartial('_search', Array)
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\LittersController.php(155): CController->render('admin', Array)
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): LittersController->actionAdmin()
+#16 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('admin')
+#25 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('litters/admin')
+#26 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=litters/admin
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=litters
+---
+2014/02/09 17:15:53 [error] [exception.CException] exception 'CException' with message 'Property "SowGilts.litters_id" is not defined.' in C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(143): CComponent->__get('litters_id')
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('litters_id')
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(SowGilts), 'litters_id')
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(SowGilts), 'litters_id', Array)
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(SowGilts), 'litters_id', Array)
+#5 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\_search.php(16): CActiveForm->textField(Object(SowGilts), 'litters_id')
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\admin.php(103): CController->renderPartial('_search', Array)
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\LittersController.php(155): CController->render('admin', Array)
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): LittersController->actionAdmin()
+#16 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('admin')
+#25 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('litters/admin')
+#26 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=litters/admin
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=litters
+---
+2014/02/10 00:48:05 [error] [exception.CException] exception 'CException' with message 'Property "SowGilts.litters_id" is not defined.' in C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(143): CComponent->__get('litters_id')
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('litters_id')
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(SowGilts), 'litters_id')
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(SowGilts), 'litters_id', Array)
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(SowGilts), 'litters_id', Array)
+#5 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\_search.php(16): CActiveForm->textField(Object(SowGilts), 'litters_id')
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\litters\admin.php(103): CController->renderPartial('_search', Array)
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\LittersController.php(155): CController->render('admin', Array)
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): LittersController->actionAdmin()
+#16 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('admin')
+#25 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('litters/admin')
+#26 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=litters/admin
+HTTP_REFERER=http://localhost/yii/testdrive/index.php
 ---

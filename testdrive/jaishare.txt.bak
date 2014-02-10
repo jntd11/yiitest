@@ -2317,3 +2317,127 @@ Yahoo
 Facebook
 Twitter
 LinkedIn
+
+09-02-2014
+Project L will be somewhat similar to Project K. It will be consist of List and Update screens. 
+
+A. The Pigs Farrowed screens will be using the Farrowed option under the Pigs menu bar option. 
+    1. If you want to see the Old PIGS option that this is replacing then look at the F6 Entry Selector - 3..Sows/Gilts Farrowed Entry. 
+    2. The Pigs>>Farrowed>>List screen uses the Sows_Gilts table with search options and just like Bred Sows>>List this will be the initial screen. Here are the fields to search on: 
+        a. Sow Ear Notch, Bred Date, Sire Ear Notch, Service Type, Misc., Pass Date, Due Date, Farrowed. 
+           (Farrowed is the farrowed field in the sows_gilts table.)
+        b. General layout and buttons on this screen should match the layout and buttons of the Bred Sows>>List screen. 
+        c. Initially sorted by Due Date - decending (most recent date first). 
+    3. You need to create a new table "litters" for saving the data taken below.
+    4. Here are the fields for the Pigs>>Farrowed>>#>>Update screen: Very similar in layout to the Project K Pigs>>Sows Gilts>>Update screen. By the way I just noticed - please change the breadcrumbs for the Main Menu - Pigs - Bred Sows screens to "Bred Sows" not "Sows Gilts".
+        a. Sow Ear Notch
+           1. This field is just a display from List screen - no changes allowed. 
+        b. Date Bred. 
+           1. This field is just a display from List screen - no changes allowed. 
+        c. Due Date. 
+           1. This field is just a display from List screen - no changes allowed. 
+        d. Sire Ear Notch - This field is required. 
+           1. This field should display the sire_ear_notch from the selected sows_gilts record.
+           2. The User will be allowed to change this. If this is changed - it must be saved back to this sows_gilts record.
+           3. This is a Hog Ear Notch that must be in the Sows/Boars table but there MUST be the word BOAR in the Bred Date/BOAR field in the Sows/Boars table. 
+           4. Need a picker list for this as well but they must be Boars (have the word BOAR in Bred Date/BOAR field). 
+           5. Need to check the Sold Date for this Sire and if the field is not blank then display a warning in red beside this field that this Sire has been sold. 
+        e. Sow Parity.
+           1. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then pre-set this value to the last_parity value in this Sow's sow_boar record.
+           2. Otherwise add 1 to the last_parity value for this sow and display that value.
+           3. Check to see if there is a record in the "litters" table for this sow and parity.
+              a. If so, then display all the rest of the data of the fields listed below.
+              b. If not, then just display this parity and position to the Farrowed Date field.
+        f. Farrowed Date
+           1. This would be a typical date field as outlined in Project K.
+           2. If the Farrowed field in the sow_gilts table record selected above is set to "N" then pre-fill in with the current Activity Date allowing change by User.
+           3. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then there will be a record for this sow for this parity in the "litters" table that will have the farrowed_date to display here. 
+        g. Times to Settle.
+           1. Required field.
+           2. 1 digit number.
+           3. If the Farrowed field in the sow_gilts table record selected above is set to "N" then pre-fill with "1". 
+           4. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then display number from "litters" record.
+        g. Herd Litter #.
+           1. Required field.
+           2. 5 digit number. 
+           3. If the Farrowed field in the sow_gilts table record selected above is set to "N" then pre-fill with blank. 
+           4. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then display number from "litters" record.
+        h. # Pigs Born
+           1. NOT required field.
+           2. 2 digit number. 
+           3. If the Farrowed field in the sow_gilts table record selected above is set to "N" then pre-fill with blank. 
+           4. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then display number from "litters" record.
+        i. # Born Alive
+           1. NOT required field.
+           2. 2 digit number. 
+           3. If the Farrowed field in the sow_gilts table record selected above is set to "N" then pre-fill with blank. 
+           4. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then display number from "litters" record.
+        j. # Boars Alive
+           1. NOT required field.
+           2. 2 digit number. 
+           3. If the Farrowed field in the sow_gilts table record selected above is set to "N" then pre-fill with blank. 
+           4. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then display number from "litters" record.
+        k. # Gilts Alive
+           1. NOT required field.
+           2. 2 digit number. 
+           3. If the Farrowed field in the sow_gilts table record selected above is set to "N" then pre-fill with blank. 
+           4. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then display number from "litters" record.
+        l. Birth Wgt.
+           1. NOT required field.
+           2. 3 digit number. 
+           3. If the Farrowed field in the sow_gilts table record selected above is set to "N" then pre-fill with blank. 
+           4. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then display number from "litters" record.
+        m. Comments
+           1. NOT required field.
+           2. At least 67 characters - make it like the other places we have put comments. 
+           3. If the Farrowed field in the sow_gilts table record selected above is set to "N" then pre-fill with blank. 
+           4. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then display field from "litters" record.
+     5. When Save is clicked.
+        a. Save this information to the new table "litters" into corresponding fields.
+           1. Dam Ear Notch
+           2. Parity                    2 digits
+           3. Litter Number             5 digits
+           4. Born Date                 
+           5. Sire Ear Notch
+           6. Number Pigs Born          2 digits
+           7. Number Pigs Born Alive    2 digits
+           8. 21 Day Weight             3 digits
+           9. ASSCN EBV                 4.2 (4 digits left, 2 digits right of decimal point) example: 135.65
+           10.NSIF EBV                  4.2 (4 digits left, 2 digits right of decimal point)
+           11.NSIF SPI                  4.2 (4 digits left, 2 digits right of decimal point)
+           12.Weighing Age              2 digits
+           13.Weaned Males              2 digits
+           14.Weaned Females            2 digits
+           15.Times To Settle           1 digits
+           16.Number Pigs Weighed       2 digits
+           17.Actual Weight             3 digits
+           18.Pigs After Transfer       2 digits
+           19.Males Born                2 digits
+           20.Females Born              2 digits
+           21.Birth Weight              3 digits
+           22.Weighed Date             
+           23.Males Born Alive          2 digits
+           24.Females Born Alive        2 digits
+           25.Weaned Date
+           26.First Pig Number          5 digits
+           27.Comments
+        b. Several of these fields will be used in a later project.
+     6. Note that if the Sire Ear Notch was changed, you will need to update this sows_gilts record in the DB table.
+     7. If the User clicks save with a non blank farrowed date, then change the Farrowed field in this sows_gilts record to "Y".
+
+B. In all the List screens:
+     1. Whenever I click on a column to sort by that column and then click on a next or previous page, the sort reverts back to the default.
+     2. The List should stay sorted by the column selected until I get out of the screen or click on another column.
+     3. See attachment ProjectL1
+        a. First screenshot is Customers>>List when I first load it up.
+        b. Second screenshot is showing where I changed to 100 Customers per page - still good.
+        c. Third screenshot is after I clicked on the First Name column to sort by first name. Notice that the lines to display is still 100 - which is good - but there are only 20 lines displayed. Should be 100.
+
+C. Please change the DB table names:
+   1. "sow_gilts" to "breeding".
+   2. "sow_boar" to "herd".
+   3. "tbl_customer_entry" to "customers".
+   4. "tbl_herd_setup" to "herd_setup".
+   5. "tbl_mailing_code" to "mailing_codes".
+   6. "tbl_sold_hogs" to "sold_hogs".
+

@@ -25,7 +25,7 @@ if($herdmark != "")
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelSow()')); ?>
 	</div>
 	<?php echo $form->errorSummary($model); ?>
-
+	<div>&nbsp;</div>
 	<div class="row">
 		<input type="hidden" id="sow_id" value="<?php echo $model->sow_gilts_id; ?>" />
 		<?php echo $form->labelEx($model,'sow_ear_notch'); ?>
@@ -134,7 +134,7 @@ if($herdmark != "")
 		?>
 		<?php //echo $form->error($model,'farrowed'); ?>
 	</div>
-
+	<div>&nbsp;</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::Button('List Bred Sows',array('onClick'=>'window.location="index.php?r=sowGilts/admin"')); ?>
@@ -144,6 +144,7 @@ if($herdmark != "")
 	</div>
 	
 <?php $this->endWidget(); ?>
+
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 </div><!-- form -->
