@@ -71,7 +71,7 @@ if($herdmark != "")
 		<?php echo $form->error($model,'date_bred'); ?>
 	</div>
 	
-		<div class="row">
+	<div class="row">
 		<?php echo $form->labelEx($model,'sire_ear_notch'); ?>
 		<?php 
 		if(count($model->errors)){

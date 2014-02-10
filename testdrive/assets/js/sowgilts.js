@@ -92,6 +92,9 @@ $(document).ready(function(){
 function cancelSow(){
 	window.location="index.php?r=sowGilts/admin";
 }
+function cancelLitter(){
+	window.location="index.php?r=litters/admin";
+}
 
 function setDefault(val,obj){
 	var id = $(obj).attr('id');
@@ -221,6 +224,9 @@ function validateDate(val){
 function validateForm(){
 	return validateDate($("#born").val());
 }
+function validateLitterForm(){
+	return validateDate($("#farrowed_date").val());
+}
 function checkDate(val,type){
 	if(val != "") {
 		$.ajax({
@@ -244,6 +250,53 @@ function checkDate(val,type){
 		});
 	}
 	return;
+}
+function checkFarrow(val){
+	if(val != "") {
+		$.ajax({
+			url: encodeURI('index.php?r=sowGilts/CheckFarrowed'),
+			type: "GET",
+			data: {s:val}
+		}).done(function(data){
+			if(data == 1) {
+				$("#sow_parity").val(data);
+			}else{
+				var Obj = JSON.parse(data);
+				$("#litters_id").val(Obj.litter_id);
+				$("#farrowed_date").val(Obj.farrowed_date);
+				$("#time_settle").val(Obj.time_settle);
+				$("#herd_litter").val(Obj.herd_litter);
+				$("#no_pigs").val(Obj.no_pigs);
+				$("#no_born_alive").val(Obj.no_born_alive);
+				$("#no_boars_alive").val(Obj.no_boars_alive);
+				$("#gilts_alive").val(Obj.gilts_alive);
+				$("#birth_wgt").val(Obj.birth_wgt);
+			}
+		});
+	}
+}
+function checkExistlitters(){
+	$.ajax({
+		url: encodeURI('index.php?r=sowGilts/Checkexist'),
+		type: "GET",
+		data: {earnotch:earnotch,born:born,isupd:isupd}
+	}).done(function(data){
+		if(isupd != 1) {
+			if(data.match(/redirect/)){
+				data = data.replace("redirect-","");
+				window.location.href = "index.php?r=sowGilts/update&id="+data;
+			}
+		}
+		if(data != "") {
+			var Obj = JSON.parse(data);
+			var myDate = new Date(born); 
+			var myDateOrg= new Date(born);  
+			myDate.setDate(myDate.getDate()+parseInt(Obj.passover_days));
+			$("#SowGilts_passover_date").val($.datepicker.formatDate("mm/dd/yy", myDate));
+			myDateOrg.setDate(myDateOrg.getDate()+parseInt(Obj.due_days));
+			$("#SowGilts_due_date").val($.datepicker.formatDate("mm/dd/yy", myDateOrg));
+		}
+	});
 }
 function checkExist(dates,isupd){
 	

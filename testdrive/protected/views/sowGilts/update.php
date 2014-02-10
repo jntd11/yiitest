@@ -3,8 +3,8 @@
 /* @var $model SowGilts */
 
 $this->breadcrumbs=array(
-		'Pigs'=>array('admin'),
-	'Sow Gilts'=>array('admin'),
+	'Pigs'=>array('admin'),
+	'Bred Sows'=>array('admin'),
 	$model->sow_gilts_id=>array('view','id'=>$model->sow_gilts_id),
 	'Update',
 );

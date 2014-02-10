@@ -15,6 +15,7 @@
  * @property integer $gilts_alive
  * @property integer $birth_wgt
  * @property string $comments
+ * @property string $farrowed_date
  * @property string $date_modified
  */
 class Litters extends CActiveRecord
@@ -45,12 +46,14 @@ class Litters extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, no_boars_alive, gilts_alive, birth_wgt, comments, date_modified', 'required'),
+			array('sire_ear_notch, sow_parity, times_settle, herd_litter', 'required'),
 			array('sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, no_boars_alive, gilts_alive, birth_wgt', 'numerical', 'integerOnly'=>true),
 			array('sire_ear_notch', 'length', 'max'=>50),
+			array('farrowed_date','date'),
+			array('comments','length','max'=>10000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('litters_id, sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, no_boars_alive, gilts_alive, birth_wgt, comments, date_modified', 'safe', 'on'=>'search'),
+			array('litters_id, sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, no_boars_alive, gilts_alive, birth_wgt, comments, date_modified, farrowed_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,8 +75,12 @@ class Litters extends CActiveRecord
 	{
 		return array(
 			'litters_id' => 'Litters',
+			'sow_ear_notch' => 'Sow Ear Notch',
+			'date_bred' => 'Date Bred',
+			'due_date' => 'Due Date',
 			'sire_ear_notch' => 'Sire Ear Notch',
 			'sow_parity' => 'Sow Parity',
+			'farrowed_date'=> 'Farrowed Date',
 			'times_settle' => 'Times Settle',
 			'herd_litter' => 'Herd Litter',
 			'no_pigs' => 'No Pigs',

@@ -6,7 +6,7 @@ class LittersController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -86,20 +86,38 @@ class LittersController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
-
+		//$model=$this->loadModel($id);
+		$modelSowgilts = SowGilts::model()->findByPk($id);
+		if($modelSowgilts===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		
+		$model = Litters::model()->findByAttributes(array('sire_ear_notch'=>$modelSowgilts->sire_ear_notch));
+		
+		if($model===null) {
+			$model=new Litters;
+		}
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Litters']))
 		{
-			$model->attributes=$_POST['Litters'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->litters_id));
+			$model->attributes = $_POST['Litters'];
+			if($model->save()) {
+				$sql = "UPDATE sow_gilts SET ";
+				$sql .= " farrowed = 'Y' ";
+				if($_POST['sire_ear_notch_org'] != $model->sire_ear_notch)
+					$sql .= " sire_ear_notch = '".$model->sire_ear_notch."' ";
+				$sql .= " WHERE sow_gilts_id = ".$id;
+				$command = Yii::app()->db->createCommand($sql);
+				$command->execute();
+				$this->redirect(array('admin'));
+			}
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'modelsowgilts'=>$modelSowgilts,
 		));
 	}
 

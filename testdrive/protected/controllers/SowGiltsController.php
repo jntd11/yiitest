@@ -29,7 +29,7 @@ class SowGiltsController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view','AutocompleteEarNotch','Checksolddate','Checkexist','AutocompleteSireNotch','getdaysbtw','autocompleteSow','autocompleteDateBred','autocompleteSire','autocompleteService',
-						'autocompleteComments','autocompletePass','autocompleteDue','autocompleteDays'),
+						'autocompleteComments','autocompletePass','autocompleteDue','autocompleteDays','CheckFarrowed'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -230,6 +230,28 @@ class SowGiltsController extends Controller
 		}
 		echo isset($res[0])?$res[0]:"";
 		
+	}
+	public function actionCheckFarrowed() {
+		$res =array();
+		if (isset($_GET['s'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			
+			$qtxt ="SELECT farrowed FROM sow_gilts WHERE sire_ear_notch = :username ";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$term = $_GET['s'];
+			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+			if(isset($res[0]) && $res[0] == "Y") {
+				$qtxt ="SELECT * FROM litters WHERE sire_ear_notch = :username ";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$term = $_GET['s'];
+				$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
+				$res = $command->queryRow();
+				echo CJSON::encode($res);
+			}else{
+				echo 1;
+			}
+		}
 	}
 	public function actionCheckexist() {
 		$res =array();

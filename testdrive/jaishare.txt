@@ -2343,12 +2343,15 @@ A. The Pigs Farrowed screens will be using the Farrowed option under the Pigs me
            3. This is a Hog Ear Notch that must be in the Sows/Boars table but there MUST be the word BOAR in the Bred Date/BOAR field in the Sows/Boars table. 
            4. Need a picker list for this as well but they must be Boars (have the word BOAR in Bred Date/BOAR field). 
            5. Need to check the Sold Date for this Sire and if the field is not blank then display a warning in red beside this field that this Sire has been sold. 
+	   Done
         e. Sow Parity.
            1. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then pre-set this value to the last_parity value in this Sow's sow_boar record.
            2. Otherwise add 1 to the last_parity value for this sow and display that value.
            3. Check to see if there is a record in the "litters" table for this sow and parity.
               a. If so, then display all the rest of the data of the fields listed below.
               b. If not, then just display this parity and position to the Farrowed Date field.
+	   Quet: Can i have to check the litters table with sire_ear_notch and sow_parity fields for existence? 
+
         f. Farrowed Date
            1. This would be a typical date field as outlined in Project K.
            2. If the Farrowed field in the sow_gilts table record selected above is set to "N" then pre-fill in with the current Activity Date allowing change by User.

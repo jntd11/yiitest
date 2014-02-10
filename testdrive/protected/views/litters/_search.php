@@ -1,6 +1,6 @@
 <?php
-/* @var $this LittersController */
-/* @var $model Litters */
+/* @var $this SowGiltsController */
+/* @var $model SowGilts */
 /* @var $form CActiveForm */
 ?>
 
@@ -12,58 +12,53 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'litters_id'); ?>
-		<?php echo $form->textField($model,'litters_id'); ?>
+		<?php echo $form->label($model,'sow_gilts_id'); ?>
+		<?php echo $form->textField($model,'sow_gilts_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'date_bred'); ?>
+		<?php echo $form->textField($model,'date_bred',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'sire_ear_notch'); ?>
-		<?php echo $form->textField($model,'sire_ear_notch',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'sow_parity'); ?>
-		<?php echo $form->textField($model,'sow_parity'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'times_settle'); ?>
-		<?php echo $form->textField($model,'times_settle'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'herd_litter'); ?>
-		<?php echo $form->textField($model,'herd_litter'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'no_pigs'); ?>
-		<?php echo $form->textField($model,'no_pigs'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'no_born_alive'); ?>
-		<?php echo $form->textField($model,'no_born_alive'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'no_boars_alive'); ?>
-		<?php echo $form->textField($model,'no_boars_alive'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'gilts_alive'); ?>
-		<?php echo $form->textField($model,'gilts_alive'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'birth_wgt'); ?>
-		<?php echo $form->textField($model,'birth_wgt'); ?>
+		<?php echo $form->label($model,'service_type'); ?>
+		<?php echo $form->textField($model,'service_type',array('size'=>5,'maxlength'=>5)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'comments'); ?>
 		<?php echo $form->textArea($model,'comments',array('rows'=>6, 'cols'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'passover_date'); ?>
+		<?php echo $form->textField($model,'passover_date',array('size'=>10,'maxlength'=>10)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'due_date'); ?>
+		<?php echo $form->textField($model,'due_date',array('size'=>10,'maxlength'=>10)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'days_between'); ?>
+		<?php echo $form->textField($model,'days_between',array('size'=>10,'maxlength'=>10)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'settled'); ?>
+		<?php echo $form->textField($model,'settled',array('size'=>1,'maxlength'=>1)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'farrowed'); ?>
+		<?php echo $form->textField($model,'farrowed',array('size'=>1,'maxlength'=>1)); ?>
 	</div>
 
 	<div class="row">

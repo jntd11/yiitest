@@ -2319,6 +2319,7 @@ Twitter
 LinkedIn
 
 09-02-2014
+
 Project L will be somewhat similar to Project K. It will be consist of List and Update screens. 
 
 A. The Pigs Farrowed screens will be using the Farrowed option under the Pigs menu bar option. 
@@ -2342,6 +2343,7 @@ A. The Pigs Farrowed screens will be using the Farrowed option under the Pigs me
            3. This is a Hog Ear Notch that must be in the Sows/Boars table but there MUST be the word BOAR in the Bred Date/BOAR field in the Sows/Boars table. 
            4. Need a picker list for this as well but they must be Boars (have the word BOAR in Bred Date/BOAR field). 
            5. Need to check the Sold Date for this Sire and if the field is not blank then display a warning in red beside this field that this Sire has been sold. 
+	   Done
         e. Sow Parity.
            1. If the Farrowed field in the sow_gilts table record selected above is set to "Y" then pre-set this value to the last_parity value in this Sow's sow_boar record.
            2. Otherwise add 1 to the last_parity value for this sow and display that value.
