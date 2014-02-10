@@ -47,9 +47,9 @@ if($herdmark != "")
 		
 		<?php 
 		if(count($model->errors)){
-			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2); checkFarrow(this.value);','id'=>'sirenotch'));
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2); checkFarrow(this.value,'.$modelsowgilts->sow_gilts_id.');','id'=>'sirenotch'));
 		}else {
-			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$modelsowgilts->sire_ear_notch,'onBlur'=>'checkDate(this.value,2); checkFarrow(this.value);','id'=>'sirenotch'));
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$modelsowgilts->sire_ear_notch,'onBlur'=>'checkDate(this.value,2); checkFarrow(this.value,'.$modelsowgilts->sow_gilts_id.');','id'=>'sirenotch'));
 		}
 		?>
 		<label id="sirenotchwarning" style="color: red"></label>
@@ -72,7 +72,6 @@ if($herdmark != "")
 						//'dateFormat'=>'mm/dd/yy','mmddyy','mm-d-yy','m-dd-yy','m-d-yy'
 						'constrainInput'=> false,
 						'showOn'=>'button',
-						'defaultDate'=>$activitydate,
 						'buttonImage'=>'img/calendar.gif',
 				),
 				'htmlOptions' => array(
@@ -81,7 +80,7 @@ if($herdmark != "")
 						'maxlength' => '20',    // textField maxlength
 						'tabindex'=>4,
 						'tabindex'=>2,
-						'value'=>$activitydate,
+						'value'=>''.$activitydate.'',
 				),
 				
 		));

@@ -251,16 +251,16 @@ function checkDate(val,type){
 	}
 	return;
 }
-function checkFarrow(val){
+function checkFarrow(val,id){
 	if(val != "") {
 		$.ajax({
 			url: encodeURI('index.php?r=sowGilts/CheckFarrowed'),
 			type: "GET",
-			data: {s:val}
+			data: {s:val,id:id}
 		}).done(function(data){
 			if(data == 1) {
 				$("#sow_parity").val(data);
-			}else{
+			}else if(data != 'false'){
 				var Obj = JSON.parse(data);
 				$("#litters_id").val(Obj.litter_id);
 				$("#farrowed_date").val(Obj.farrowed_date);

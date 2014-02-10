@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Pigs'=>array('admin'),
-	'Bred Sows'=>array('admin'),
+	'Farrowed'=>array('admin'),
 	'List',
 );
 
@@ -72,10 +72,11 @@ $this->endWidget();
 		'date_bred',
 		array('name'=>'sire_ear_notch','value'=>'$data->sire_ear_notch','htmlOptions'=>array('width'=>110)),
 		'service_type',
-		'comments',
+		//'comments',
+		'misc',
 		'passover_date',
 		'due_date',
-		'days_between',
+		'farrowed',
 		/*
 		'due_date',
 		'days_between',

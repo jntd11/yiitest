@@ -236,9 +236,9 @@ class SowGiltsController extends Controller
 		if (isset($_GET['s'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
 			
-			$qtxt ="SELECT farrowed FROM sow_gilts WHERE sire_ear_notch = :username ";
+			$qtxt ="SELECT farrowed FROM sow_gilts WHERE sow_gilts_id = :username ";
 			$command =Yii::app()->db->createCommand($qtxt);
-			$term = $_GET['s'];
+			$term = $_GET['id'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 			if(isset($res[0]) && $res[0] == "Y") {
