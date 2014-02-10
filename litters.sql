@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 10, 2014 at 02:00 AM
+-- Generation Time: Feb 10, 2014 at 11:42 AM
 -- Server version: 5.5.20
 -- PHP Version: 5.3.10
 
@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `litters` (
   `litters_id` int(11) NOT NULL AUTO_INCREMENT,
   `sire_ear_notch` varchar(50) NOT NULL,
   `sow_parity` int(2) NOT NULL,
+  `farrowed_date` varchar(50) DEFAULT NULL,
   `times_settle` int(1) NOT NULL,
   `herd_litter` int(5) NOT NULL,
   `no_pigs` int(2) NOT NULL,
@@ -58,8 +59,20 @@ CREATE TABLE IF NOT EXISTS `litters` (
   `weaned_date` varchar(20) NOT NULL,
   `first_pig_number` int(5) NOT NULL,
   `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `sow_ear_notch` varchar(20) NOT NULL,
+  `date_bred` varchar(10) NOT NULL,
+  `due_date` varchar(10) NOT NULL,
   PRIMARY KEY (`litters_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `litters`
+--
+
+INSERT INTO `litters` (`litters_id`, `sire_ear_notch`, `sow_parity`, `farrowed_date`, `times_settle`, `herd_litter`, `no_pigs`, `no_born_alive`, `no_boars_alive`, `gilts_alive`, `birth_wgt`, `comments`, `born_date`, `21_wgt`, `asscn_ebv`, `nsif_ebv`, `nsif_spi`, `weighing_age`, `weaned_males`, `weaned_females`, `no_pigs_weighted`, `actual_weight`, `pigs_transfer`, `males_born`, `females_born`, `birth_weight`, `weighted_date`, `males_born_alive`, `females_born_alive`, `weaned_date`, `first_pig_number`, `date_modified`, `sow_ear_notch`, `date_bred`, `due_date`) VALUES
+(1, '1DCDO 2001 238-7', 1, '02/10/2014', 1, 11212, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, '', 0, '2014-02-10 11:09:13', '', '', ''),
+(2, '1DCDO 2001 221-7', 1, NULL, 1, 12111, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, '', 0, '2014-02-10 11:23:25', '', '', ''),
+(3, '1DCDO 1998 202-2', 1, '02/10/2014', 1, 1222, 3, 3, 1, 1, 99, 'ssss', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, '', 0, '2014-02-10 11:35:49', '', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

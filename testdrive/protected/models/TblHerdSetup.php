@@ -185,9 +185,11 @@ class TblHerdSetup extends CActiveRecord
 		$criteria->compare('fax',$this->fax,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
+		$TblHerdSetup_sort = isset($_REQUEST['TblHerdSetup_sort'])?$_REQUEST['TblHerdSetup_sort']:"";
 		return new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,
-				'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages)),
+				'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'TblHerdSetup_sort'=>$TblHerdSetup_sort)),
+				'sort'=>array('params'=>array('pages'=>$pages)),
 		));
 
 	}
