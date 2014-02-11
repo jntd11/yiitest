@@ -24,22 +24,22 @@ if($herdmark != "")
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelLitter()')); ?>
 	</div>
 	<?php echo $form->errorSummary($model); ?>
-	
-	<div class="row">
-		<?php echo $form->labelEx($modelsowgilts,'sow_ear_notch'); ?>
+	<div >
+		<?php echo $form->labelEx($modelsowgilts,'sow_ear_notch');
+		echo $form->hiddenField($model,'sow_ear_notch',array('value'=>$modelsowgilts->sow_ear_notch));
+		 ?>
 		<?php echo $modelsowgilts->sow_ear_notch; ?>
 	</div>
-	<div class="row">
+	<div >
 		<?php echo $form->labelEx($modelsowgilts,'date_bred'); ?>
 		<?php echo $modelsowgilts->date_bred; ?>
 	</div>
-		<div class="row">
+		<div >
 		<?php echo $form->labelEx($modelsowgilts,'due_date'); ?>
 		<?php echo $modelsowgilts->due_date; ?>
 	</div>
 	
-
-	<div class="row">
+	<div class="">
 		<?php echo $form->hiddenField($model,'litters_id');?>
 		<?php echo $form->hiddenField($modelsowgilts,'sire_ear_notch',array('name'=>'sire_ear_notch_org'));?>
 		
@@ -47,9 +47,9 @@ if($herdmark != "")
 		
 		<?php 
 		if(count($model->errors)){
-			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2); checkFarrow(this.value,'.$modelsowgilts->sow_gilts_id.');','id'=>'sirenotch'));
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2); checkFarrow('.$modelsowgilts->sow_gilts_id.');','id'=>'sirenotch'));
 		}else {
-			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$modelsowgilts->sire_ear_notch,'onBlur'=>'checkDate(this.value,2); checkFarrow(this.value,'.$modelsowgilts->sow_gilts_id.');','id'=>'sirenotch'));
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$modelsowgilts->sire_ear_notch,'onBlur'=>'checkDate(this.value,2); checkFarrow('.$modelsowgilts->sow_gilts_id.');','id'=>'sirenotch'));
 		}
 		?>
 		<label id="sirenotchwarning" style="color: red"></label>
@@ -135,6 +135,7 @@ if($herdmark != "")
 		<?php echo $form->labelEx($model,'comments'); ?>
 		<?php echo $form->textArea($model,'comments',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'comments'); ?>
+		<p class="note">Fields with <span class="required">*</span> are required.</p>
 	</div>
 
 	
@@ -143,7 +144,7 @@ if($herdmark != "")
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm();')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelLitter()')); ?>
 	</div>
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

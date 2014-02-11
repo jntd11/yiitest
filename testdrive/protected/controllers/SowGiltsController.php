@@ -241,16 +241,25 @@ class SowGiltsController extends Controller
 			$term = $_GET['id'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
 			$res =$command->queryColumn();
+			
+			$qtxt ="SELECT last_parity FROM sow_boar WHERE ear_notch = :username ";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$term = $_GET['s'];
+			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
+			 $resParity = $command->queryColumn();
+			 
 			if(isset($res[0]) && $res[0] == "Y") {
-				$qtxt ="SELECT * FROM litters WHERE sire_ear_notch = :username ";
+				$currentParity = $resParity[0];
+				$qtxt ="SELECT * FROM litters WHERE sire_ear_notch = :username AND sow_parity = ".$currentParity;
 				$command =Yii::app()->db->createCommand($qtxt);
 				$term = $_GET['s'];
 				$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
 				$res = $command->queryRow();
-				echo CJSON::encode($res);
 			}else{
-				echo 1;
+				$currentParity = $resParity[0] + 1;
 			}
+			$res['last_parity'] = $currentParity;
+			echo CJSON::encode($res);
 		}
 	}
 	public function actionCheckexist() {

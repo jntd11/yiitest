@@ -251,28 +251,29 @@ function checkDate(val,type){
 	}
 	return;
 }
-function checkFarrow(val,id){
+function checkFarrow(id){
+	var val = $("#Litters_sow_ear_notch").val();
 	if(val != "") {
 		$.ajax({
 			url: encodeURI('index.php?r=sowGilts/CheckFarrowed'),
 			type: "GET",
 			data: {s:val,id:id}
 		}).done(function(data){
-			if(data == 1) {
-				$("#sow_parity").val(data);
-			}else if(data != 'false'){
-				var Obj = JSON.parse(data);
-				$("#litters_id").val(Obj.litter_id);
-				$("#farrowed_date").val(Obj.farrowed_date);
-				$("#time_settle").val(Obj.time_settle);
-				$("#herd_litter").val(Obj.herd_litter);
-				$("#no_pigs").val(Obj.no_pigs);
-				$("#no_born_alive").val(Obj.no_born_alive);
-				$("#no_boars_alive").val(Obj.no_boars_alive);
-				$("#gilts_alive").val(Obj.gilts_alive);
-				$("#birth_wgt").val(Obj.birth_wgt);
+			    var Obj = JSON.parse(data);
+				$("#sow_parity").val(Obj.last_parity);
+				if(Obj.litter_id != "null") {
+					$("#litters_id").val(Obj.litter_id);
+					$("#farrowed_date").val(Obj.farrowed_date);
+					$("#time_settle").val(Obj.time_settle);
+					$("#herd_litter").val(Obj.herd_litter);
+					$("#no_pigs").val(Obj.no_pigs);
+					$("#no_born_alive").val(Obj.no_born_alive);
+					$("#no_boars_alive").val(Obj.no_boars_alive);
+					$("#gilts_alive").val(Obj.gilts_alive);
+					$("#birth_wgt").val(Obj.birth_wgt);
+				}
 			}
-		});
+		);
 	}
 }
 function checkExistlitters(){

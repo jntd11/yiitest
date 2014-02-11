@@ -2350,6 +2350,8 @@ A. The Pigs Farrowed screens will be using the Farrowed option under the Pigs me
            3. Check to see if there is a record in the "litters" table for this sow and parity.
               a. If so, then display all the rest of the data of the fields listed below.
               b. If not, then just display this parity and position to the Farrowed Date field.
+	   Quet: Can i have to check the litters table with sire_ear_notch and sow_parity fields for existence? 
+
         f. Farrowed Date
            1. This would be a typical date field as outlined in Project K.
            2. If the Farrowed field in the sow_gilts table record selected above is set to "N" then pre-fill in with the current Activity Date allowing change by User.
@@ -2443,3 +2445,29 @@ C. Please change the DB table names:
    5. "tbl_mailing_code" to "mailing_codes".
    6. "tbl_sold_hogs" to "sold_hogs".
 
+
+11/02/2014
+FIrst glance - looking pretty good.
+A. Pigs>>Farrowed>>#>>Update - need to compress vertically to get the vertical spaces out from between each field - like I have had you do on all other Update screens so that the screen takes the least amount of room vertically.
+done
+A.2. Pigs>>Farrowed>>List - Need to shrink these column widths: Date Bred, Service Type, Misc, Due Date and Farrowed so that the header just fits into the column and use that extra width to expand Sow Ear Notch and Sire Ear Notch column widths as some Ear Notches are wrapping to a second line.
+Done
+A.3. The litter table needs to have unique records by Sow Ear Notch and Sow Parity. Explanation: For each litter that a Sow has, there will be a unique Parity assigned to that litter: 1 is her first litter, 2 is her second litter, 3 her third and so forth.
+Done.
+
+B. Much better:
+    1. Customer>>List - not fixed - still has the issues originally listed.
+    2. Pigs>>Sows Boars>>List - looks good.
+    3. Pigs>>Bred Sows>>List - looks good.
+    4. Pigs>>Sold Hogs>>List - looks good.
+    5. Pigs>>Farrowed>>List - Looks good.
+
+     Quest: A.3. The litter table needs to have unique records by Sow Ear Notch and Sow Parity. Explanation: For each litter that a Sow has, there will be a unique Parity assigned to that litter: 1 is her first litter, 2 is her second litter, 3 her third and so forth. 
+
+    Actually Ae3. I am checking sire ear notch on litter table and fetching it.. I thought there will be unique entry for each sire notch... As per your comment below, we have to identify based on "Sow Ear Notch" and "Parity". For example there will entry like this on table
+   Sow ear                                  parity 
+  1DCDO 1999 16-3                1
+  1DCDO 1999 16-3                2
+
+   So i may need to store the "sow ear notch" on this litters table.
+   A.3 You are correct - the records in the litter table are based on (indexed by) Sow Ear Notch and Sow's Parity as you listed - not the Sire Ear Notch. There is a Sire for each litter but that is NOT how the records should be stored
