@@ -35,7 +35,7 @@ class SowGilts extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'sow_gilts';
+		return 'breeding';
 	}
 
 	/**

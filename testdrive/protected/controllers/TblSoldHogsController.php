@@ -223,7 +223,7 @@ class TblSoldHogsController extends RController
 				'custmormodel'=>$custmormodel,
 		));
 		
-		/*$qu = "UPDATE tbl_sold_hogs SET is_rebuild = 0 ";
+		/*$qu = "UPDATE sold_hogs SET is_rebuild = 0 ";
 		$cmd = YII::app()->db->createCommand($qu);
 		$res = $cmd->query();
 		$dataProvider = $model->rebuild();
@@ -233,7 +233,7 @@ class TblSoldHogsController extends RController
 			//$('#message').html('Working on ".$items['hog_ear_notch']."');
 			echo '<script>$("#message").html("Working on '.$items['hog_ear_notch'].'");</script>';
 			//echo '<script>alert($("#message").html());</script>';
-			$sql = "select customer_entry_id FROM  tbl_customer_entry where concat_ws(' ',first_name, last_name) = '".$items['customer_name']."'";
+			$sql = "select customer_entry_id FROM  customers where concat_ws(' ',first_name, last_name) = '".$items['customer_name']."'";
 			// OR last_name = '".$items['customer_name']."'"
 			$customers = $custmormodel->findBySql($sql);
 			if(isset($customers->customer_entry_id)) {
@@ -265,14 +265,14 @@ class TblSoldHogsController extends RController
 		else
 			$data["myValue"] = "<table class='detail-view'><tr class='odd'><td >"."Started..."."</td></tr>";
 		if(!$iscontinue) {
-			$qu = "UPDATE tbl_sold_hogs SET is_rebuild = 0 ";
+			$qu = "UPDATE sold_hogs SET is_rebuild = 0 ";
 			$cmd = YII::app()->db->createCommand($qu);
 			$res = $cmd->query();
 		}
 		$dataProvider = $model->rebuild();
 		//echo "JAI".$dataProvider->itemCount;
 		$countFailure = $countSuccess = 0;
-		$qtxt ="SELECT * FROM  tbl_sold_hogs where is_rebuild = 0 ";
+		$qtxt ="SELECT * FROM  sold_hogs where is_rebuild = 0 ";
 		$command =Yii::app()->db->createCommand($qtxt);
 		$res =$command->queryAll();
 		$isSuccess = 0;
@@ -285,7 +285,7 @@ class TblSoldHogsController extends RController
 			$this->renderPartial('_ajaxContent', $data, false, true);
 			$data["myValue"] = "<table class='detail-view'><tr class='odd'><td >"."Working on ".$items['hog_ear_notch'];
 			$this->renderPartial('_ajaxContent', $data, false, true);
-			$sql = "select customer_entry_id FROM  tbl_customer_entry where concat_ws(' ',first_name, last_name) = '".$items['customer_name']."'";
+			$sql = "select customer_entry_id FROM  customers where concat_ws(' ',first_name, last_name) = '".$items['customer_name']."'";
 			// OR last_name = '".$items['customer_name']."'"
 			$customers = $custmormodel->findBySql($sql);
 			//echo "<br>".$items['tbl_sold_hogs_id'];
@@ -346,7 +346,7 @@ class TblSoldHogsController extends RController
 		if(isset($_GET['id']))
 			$model = $this->loadModel($_GET['id']);
 		
-		$qtxt ="SELECT concat_ws(' ',first_name, last_name) as label, customer_entry_id  as value FROM tbl_customer_entry ";
+		$qtxt ="SELECT concat_ws(' ',first_name, last_name) as label, customer_entry_id  as value FROM customers ";
 		$command =Yii::app()->db->createCommand($qtxt);
 		$res =$command->queryAll();
 		$this->renderPartial('rebuildManual',array(
@@ -404,7 +404,7 @@ class TblSoldHogsController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT concat_ws(' ',first_name, last_name) as label, customer_entry_id  as value FROM tbl_customer_entry WHERE first_name LIKE :username  
+			$qtxt ="SELECT concat_ws(' ',first_name, last_name) as label, customer_entry_id  as value FROM customers WHERE first_name LIKE :username  
 			OR  company_name LIKE :username 
 			OR last_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
@@ -420,7 +420,7 @@ class TblSoldHogsController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT hog_ear_notch FROM   tbl_sold_hogs WHERE hog_ear_notch LIKE :username";
+			$qtxt ="SELECT hog_ear_notch FROM   sold_hogs WHERE hog_ear_notch LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -433,7 +433,7 @@ class TblSoldHogsController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT distinct customer_name  FROM   tbl_sold_hogs WHERE customer_name LIKE :username";
+			$qtxt ="SELECT distinct customer_name  FROM   sold_hogs WHERE customer_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -445,7 +445,7 @@ class TblSoldHogsController extends RController
 		$res =array();
 		if (isset($_GET['s'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT * FROM   tbl_sold_hogs WHERE tbl_sold_hogs_id = :username";
+			$qtxt ="SELECT * FROM   sold_hogs WHERE tbl_sold_hogs_id = :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", $_GET['s'], PDO::PARAM_STR);
 			$res =$command->queryRow();
@@ -459,7 +459,7 @@ class TblSoldHogsController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT date_sold FROM   tbl_sold_hogs WHERE date_sold LIKE :username";
+			$qtxt ="SELECT date_sold FROM   sold_hogs WHERE date_sold LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -472,7 +472,7 @@ class TblSoldHogsController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT invoice_number FROM   tbl_sold_hogs WHERE invoice_number LIKE :username";
+			$qtxt ="SELECT invoice_number FROM   sold_hogs WHERE invoice_number LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();

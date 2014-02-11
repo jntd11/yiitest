@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "tbl_customer_entry".
+ * This is the model class for table "customers".
  *
- * The followings are the available columns in table 'tbl_customer_entry':
+ * The followings are the available columns in table 'customers':
  * @property integer $customer_entry_id
  * @property string $company_name
  * @property string $first_name
@@ -76,7 +76,7 @@ class TblCustomerEntry extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_customer_entry';
+		return 'customers';
 	}
 
 	/**

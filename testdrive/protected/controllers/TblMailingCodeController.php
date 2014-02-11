@@ -93,7 +93,7 @@ class TblMailingCodeController extends Controller
 	public function getMailingCode($term=NULL) {
 		$res =array();
 		if (isset($term)) {
-			$qtxt ="SELECT mailing_code_label FROM tbl_mailing_code WHERE  mailing_code_label LIKE :username";
+			$qtxt ="SELECT mailing_code_label FROM mailing_codes WHERE  mailing_code_label LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();

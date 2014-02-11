@@ -76,7 +76,7 @@ class SowBoarController extends RController
 		//$dataProvider=new CActiveDataProvider('SowBoar');
 		//echo "<pre>";
 		//$dataProvider = $model->findAll());
-		//$sql = "select * from sow_boar Limit 1";
+		//$sql = "select * from herd Limit 1";
 		//$dataProvider = $model->findAllBySql($sql);
 		//echo CHtml::openTag($this->itemsTagName,array('class'=>$this->itemsCssClass))."\n";
 		
@@ -153,9 +153,9 @@ class SowBoarController extends RController
 		$search = $this->calculateYear($search);
 		if (isset($search) && $search != "") {
 			if($type == "")
-				$qtxt ="SELECT sow_boar_name FROM sow_boar WHERE ear_notch LIKE :search";
+				$qtxt ="SELECT sow_boar_name FROM herd WHERE ear_notch LIKE :search";
 			else 
-				$qtxt ="SELECT sold_mmddyy, reason_sold, sow_boar_id FROM sow_boar WHERE ear_notch LIKE :search";
+				$qtxt ="SELECT sold_mmddyy, reason_sold, sow_boar_id FROM  herd WHERE ear_notch LIKE :search";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":search", $search, PDO::PARAM_STR);
 			if($type == "")
@@ -361,7 +361,7 @@ class SowBoarController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			 $qtxt ="SELECT ear_notch FROM  sow_boar WHERE ear_notch LIKE :username";
+			 $qtxt ="SELECT ear_notch FROM  herd WHERE ear_notch LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -373,7 +373,7 @@ class SowBoarController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			 $qtxt ="SELECT sow_boar_name FROM  sow_boar WHERE sow_boar_name LIKE :username";
+			 $qtxt ="SELECT sow_boar_name FROM  herd WHERE sow_boar_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -386,10 +386,10 @@ class SowBoarController extends RController
 		foreach ($group as $key => $member) {
 			//echo "COUNT".self::$count;
 			self::$count++;
-			$sql="select sow_boar_id, sire_notch, dam_notch from sow_boar where ear_notch =  '".$group[$key]['notch']."'";
+			$sql="select sow_boar_id, sire_notch, dam_notch from herd where ear_notch =  '".$group[$key]['notch']."'";
 			$data1 = $model->findAllBySql($sql);
 			if(isset($data1[0])) {
-				$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->sire_notch."'";
+				$sql="select sow_boar_id, sow_boar_name, registeration_no from herd where ear_notch =  '".$data1[0]->sire_notch."'";
 				//echo "---"."<br>".$sql;
 				$name = $model->findBySql($sql);
 				//echo "COUNT".self::$count;
@@ -399,7 +399,7 @@ class SowBoarController extends RController
 							 "id"=>isset($name->sow_boar_id)?$name->sow_boar_id:"",
 							//"data"=>$data1
 						);
-				$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->dam_notch."'";
+				$sql="select sow_boar_id, sow_boar_name, registeration_no from herd where ear_notch =  '".$data1[0]->dam_notch."'";
 				//echo "---"."<br>".$sql;
 				$name = $model->findBySql($sql);
 				self::$count++;
@@ -433,8 +433,8 @@ class SowBoarController extends RController
 	public function pedigree($pk,$condition='',$params=array()){
 		$model = new SowBoar();
 		//Yii::trace(get_class($model).'.findByPk()','system.db.ar.CActiveRecord');
-		//$data = $model->findAllBySql("select * from sow_boar where sow_boar_id = ".$pk);
-		$data1 = $model->findAllBySql("select * from sow_boar where sow_boar_id = ".$pk);
+		//$data = $model->findAllBySql("select * from herd where sow_boar_id = ".$pk);
+		$data1 = $model->findAllBySql("select * from herd where sow_boar_id = ".$pk);
 		$data = $data1;
 		$level = 0;
 		if(!isset($data1[0])) 
@@ -447,7 +447,7 @@ class SowBoarController extends RController
 		//Level Count
 		$level = 1;
 		self::$count++;
-		$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->sire_notch."'";
+		$sql="select sow_boar_id, sow_boar_name, registeration_no from herd where ear_notch =  '".$data1[0]->sire_notch."'";
 		$name = $model->findBySql($sql);
 		$group[$level][self::$count] = array("notch"=>$data1[0]->sire_notch,
 						"name"=>$name->sow_boar_name,
@@ -455,7 +455,7 @@ class SowBoarController extends RController
 						"id"=>$name->sow_boar_id,
 				//,"data"=>$data1
 					);
-		$sql="select sow_boar_id, sow_boar_name, registeration_no from sow_boar where ear_notch =  '".$data1[0]->dam_notch."'";
+		$sql="select sow_boar_id, sow_boar_name, registeration_no from herd where ear_notch =  '".$data1[0]->dam_notch."'";
 		$name = null;
 		$name = $model->findBySql($sql);
 		//echo "<pre>";
@@ -501,7 +501,7 @@ class SowBoarController extends RController
 		//echo "<pre>";
 		//print_r($group);
 
-		//$data3 = $model->findAllBySql("select * from sow_boar where sow_boar_id = 4");
+		//$data3 = $model->findAllBySql("select * from herd where sow_boar_id = 4");
 		//$data = array_merge($data1,$data2);
 		/*echo "<pre>";
 		echo count($data);
@@ -525,7 +525,7 @@ class SowBoarController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			 $qtxt ="SELECT registeration_no FROM  sow_boar WHERE registeration_no LIKE :username";
+			 $qtxt ="SELECT registeration_no FROM  herd WHERE registeration_no LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -537,7 +537,7 @@ class SowBoarController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			 $qtxt ="SELECT born FROM  sow_boar WHERE born LIKE :username";
+			 $qtxt ="SELECT born FROM  herd WHERE born LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -549,7 +549,7 @@ class SowBoarController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			 $qtxt ="SELECT no_pigs FROM  sow_boar WHERE no_pigs LIKE :username";
+			 $qtxt ="SELECT no_pigs FROM  herd WHERE no_pigs LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();

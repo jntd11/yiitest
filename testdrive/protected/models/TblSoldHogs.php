@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "tbl_sold_hogs".
+ * This is the model class for table "sold_hogs".
  *
- * The followings are the available columns in table 'tbl_sold_hogs':
+ * The followings are the available columns in table 'sold_hogs':
  * @property integer $tbl_sold_hogs_id
  * @property integer $cust_id
  * @property string $hog_ear_notch
@@ -35,7 +35,7 @@ class TblSoldHogs extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_sold_hogs';
+		return 'sold_hogs';
 	}
 
 	/**

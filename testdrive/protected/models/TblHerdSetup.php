@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "tbl_herd_setup".
+ * This is the model class for table "herd_setup".
  *
- * The followings are the available columns in table 'tbl_herd_setup':
+ * The followings are the available columns in table 'herd_setup':
  * @property integer $herd_id
  * @property string $farm_herd
  * @property string $breeder_name
@@ -57,7 +57,7 @@ class TblHerdSetup extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_herd_setup';
+		return 'herd_setup';
 	}
 
 	/**

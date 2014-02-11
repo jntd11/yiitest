@@ -72,7 +72,7 @@ class SowGiltsController extends Controller
 		{
 			$model->attributes=$_POST['SowGilts'];
 			if($model->save()){
-				$query = "Update sow_boar SET bred_date = '".date("Ymd",strtotime($model->date_bred)) ."' WHERE ear_notch = '".$model->sow_ear_notch."' AND bred_date < '".date("Ymd",strtotime($model->date_bred)) ."'";
+				$query = "Update herd SET bred_date = '".date("Ymd",strtotime($model->date_bred)) ."' WHERE ear_notch = '".$model->sow_ear_notch."' AND bred_date < '".date("Ymd",strtotime($model->date_bred)) ."'";
 				$command =Yii::app()->db->createCommand($query);
 				$command->query();
 				if(!isset($_POST['savenew']))
@@ -193,7 +193,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT ear_notch FROM  sow_boar WHERE replace(ear_notch,' ','') LIKE :username and bred_date != 'BOAR'";
+			$qtxt ="SELECT ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date != 'BOAR'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
@@ -206,7 +206,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT ear_notch FROM  sow_boar WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'";
+			$qtxt ="SELECT ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
@@ -220,9 +220,9 @@ class SowGiltsController extends Controller
 		if (isset($_GET['s'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
 			if($_GET['type'] == 2) 
-				$qtxt ="SELECT sold_mmddyy  FROM  sow_boar WHERE ear_notch = :username and bred_date = 'BOAR'";
+				$qtxt ="SELECT sold_mmddyy  FROM  herd WHERE ear_notch = :username and bred_date = 'BOAR'";
 			else 
-				$qtxt ="SELECT sold_mmddyy  FROM  sow_boar WHERE ear_notch = :username and bred_date != 'BOAR'";
+				$qtxt ="SELECT sold_mmddyy  FROM  herd WHERE ear_notch = :username and bred_date != 'BOAR'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = $_GET['s'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
@@ -236,13 +236,13 @@ class SowGiltsController extends Controller
 		if (isset($_GET['s'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
 			
-			$qtxt ="SELECT farrowed FROM sow_gilts WHERE sow_gilts_id = :username ";
+			$qtxt ="SELECT farrowed FROM breeding WHERE sow_gilts_id = :username ";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = $_GET['id'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 			
-			$qtxt ="SELECT last_parity FROM sow_boar WHERE ear_notch = :username ";
+			$qtxt ="SELECT last_parity FROM herd WHERE ear_notch = :username ";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = $_GET['s'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
@@ -265,7 +265,7 @@ class SowGiltsController extends Controller
 	public function actionCheckexist() {
 		$res =array();
 		if (isset($_GET['born']) && isset($_GET['earnotch'])) {
-			$qtxt ="SELECT sow_gilts_id	 FROM  sow_gilts WHERE sow_ear_notch	 = '".$_GET['earnotch']."' and date_bred = '".$_GET['born']."'";
+			$qtxt ="SELECT sow_gilts_id	 FROM  breeding WHERE sow_ear_notch	 = '".$_GET['earnotch']."' and date_bred = '".$_GET['born']."'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			/* $term = $_GET['s'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR); */
@@ -275,7 +275,7 @@ class SowGiltsController extends Controller
 				//$this->redirect(array('view','id'=>$res[0]));
 			}else{
 				$farm = substr($_GET['earnotch'], 0, 2);
-				$qtxt ="SELECT * FROM  tbl_herd_setup WHERE farm_herd = '".$farm."' ";
+				$qtxt ="SELECT * FROM  herd_setup WHERE farm_herd = '".$farm."' ";
 				$command =Yii::app()->db->createCommand($qtxt);
 				$res =$command->queryRow();
 				echo CJSON::encode($res);
@@ -286,9 +286,9 @@ class SowGiltsController extends Controller
 	public function actiongetdaysbtw() {
 		$res =array();
 		if (isset($_GET['born']) && isset($_GET['earnotch'])) {
-			$qtxt ="SELECT date_bred FROM  sow_gilts WHERE sow_ear_notch = '".$_GET['earnotch']."' ORDER by date_bred DESC Limit 1";
+			$qtxt ="SELECT date_bred FROM  breeding WHERE sow_ear_notch = '".$_GET['earnotch']."' ORDER by date_bred DESC Limit 1";
 			if($_GET['id'] > 0) {
-				$qtxt ="SELECT date_bred FROM  sow_gilts WHERE sow_ear_notch = '".$_GET['earnotch']."' and sow_gilts_id != ".$_GET['id']." ORDER by date_bred DESC Limit 1";
+				$qtxt ="SELECT date_bred FROM  breeding WHERE sow_ear_notch = '".$_GET['earnotch']."' and sow_gilts_id != ".$_GET['id']." ORDER by date_bred DESC Limit 1";
 			}
 			$command =Yii::app()->db->createCommand($qtxt);
 			$res =$command->queryColumn();
@@ -297,7 +297,7 @@ class SowGiltsController extends Controller
 				$days = (strtotime($_GET['born']) - strtotime($res[0]))/(24*60*60);
 				echo $days; 
 			}else{
-				$qtxt ="SELECT born FROM  sow_boar WHERE ear_notch = '".$_GET['earnotch']."' ";
+				$qtxt ="SELECT born FROM  herd WHERE ear_notch = '".$_GET['earnotch']."' ";
 				$command =Yii::app()->db->createCommand($qtxt);
 				$res =$command->queryRow();
 				if(isset($res['born'])) {
@@ -316,7 +316,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT sow_ear_notch FROM  sow_gilts WHERE sow_ear_notch LIKE :username";
+			$qtxt ="SELECT sow_ear_notch FROM  breeding WHERE sow_ear_notch LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -329,7 +329,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT date_bred	 FROM  sow_gilts WHERE date_bred	 LIKE :username";
+			$qtxt ="SELECT date_bred	 FROM  breeding WHERE date_bred	 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -342,7 +342,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT sire_ear_notch	 FROM  sow_gilts WHERE sire_ear_notch	 LIKE :username";
+			$qtxt ="SELECT sire_ear_notch	 FROM  breeding WHERE sire_ear_notch	 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -355,7 +355,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT service_type	 FROM  sow_gilts WHERE service_type	 LIKE :username";
+			$qtxt ="SELECT service_type	 FROM  breeding WHERE service_type	 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -367,7 +367,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT comments	 FROM  sow_gilts WHERE comments	 LIKE :username";
+			$qtxt ="SELECT comments	 FROM  breeding WHERE comments	 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -379,7 +379,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT passover_date		 FROM  sow_gilts WHERE passover_date		 LIKE :username";
+			$qtxt ="SELECT passover_date		 FROM  breeding WHERE passover_date		 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -392,7 +392,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT due_date	 FROM  sow_gilts WHERE passover_date	 LIKE :username";
+			$qtxt ="SELECT due_date	 FROM  breeding WHERE passover_date	 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -404,7 +404,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT days_between	 FROM  sow_gilts WHERE due_date	 LIKE :username";
+			$qtxt ="SELECT days_between	 FROM  breeding WHERE due_date	 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();

@@ -104,7 +104,7 @@ class LittersController extends Controller
 		{
 			$model->attributes = $_POST['Litters'];
 			if($model->save()) {
-				$sql = "UPDATE sow_gilts SET ";
+				$sql = "UPDATE breeding SET ";
 				$sql .= " farrowed = 'Y' ";
 				if($_POST['sire_ear_notch_org'] != $model->sire_ear_notch)
 					$sql .= " sire_ear_notch = '".$model->sire_ear_notch."' ";

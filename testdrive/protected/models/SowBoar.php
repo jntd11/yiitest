@@ -43,7 +43,7 @@ class SowBoar extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'sow_boar';
+		return 'herd';
 	}
 
 	/**

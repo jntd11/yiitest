@@ -25,7 +25,7 @@ class tblMailingCode extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_mailing_code';
+		return 'mailing_codes';
 	}
 
 	/**

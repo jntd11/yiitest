@@ -195,7 +195,7 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			 $qtxt ="SELECT first_name FROM tbl_customer_entry WHERE first_name LIKE :username";
+			 $qtxt ="SELECT first_name FROM customers WHERE first_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -207,7 +207,7 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT last_name FROM tbl_customer_entry WHERE last_name LIKE :username";
+			$qtxt ="SELECT last_name FROM customers WHERE last_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -219,7 +219,7 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT company_name FROM tbl_customer_entry WHERE company_name LIKE :username";
+			$qtxt ="SELECT company_name FROM customers WHERE company_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -231,11 +231,11 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT phone_home FROM tbl_customer_entry WHERE phone_home LIKE :username 
-				UNION SELECT phone_business FROM tbl_customer_entry WHERE phone_business LIKE :username 
-				UNION SELECT phone_cell FROM tbl_customer_entry WHERE phone_cell LIKE :username
-				UNION SELECT phone_other1 FROM tbl_customer_entry WHERE phone_other1 LIKE :username 
-				UNION SELECT phone_other2 FROM tbl_customer_entry WHERE phone_other2 LIKE :username";
+			$qtxt ="SELECT phone_home FROM customers WHERE phone_home LIKE :username 
+				UNION SELECT phone_business FROM customers WHERE phone_business LIKE :username 
+				UNION SELECT phone_cell FROM customers WHERE phone_cell LIKE :username
+				UNION SELECT phone_other1 FROM customers WHERE phone_other1 LIKE :username 
+				UNION SELECT phone_other2 FROM customers WHERE phone_other2 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -247,7 +247,7 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT  phone_business FROM tbl_customer_entry WHERE phone_business LIKE :username";
+			$qtxt ="SELECT  phone_business FROM customers WHERE phone_business LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -259,7 +259,7 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT phone_cell FROM tbl_customer_entry WHERE  phone_cell LIKE :username";
+			$qtxt ="SELECT phone_cell FROM customers WHERE  phone_cell LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -271,7 +271,7 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT phone_other1 FROM tbl_customer_entry WHERE  phone_other1 LIKE :username";
+			$qtxt ="SELECT phone_other1 FROM customers WHERE  phone_other1 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -283,7 +283,7 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT phone_other2 FROM tbl_customer_entry WHERE  phone_other2 LIKE :username";
+			$qtxt ="SELECT phone_other2 FROM customers WHERE  phone_other2 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -298,8 +298,8 @@ class TblCustomerEntryController extends Controller
 			//$term = preg_split("/ |\,| \,/",$_GET['term']);
 			//$last = $term[count($term) - 1];
 			// http://www.yiiframework.com/doc/guide/database.dao
-			//$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc) FROM tbl_mailing_code WHERE  mailing_code_label LIKE :username";
-			$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc) FROM tbl_mailing_code order by mailing_code_label";
+			//$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc) FROM mailing_codes WHERE  mailing_code_label LIKE :username";
+			$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc) FROM mailing_codes order by mailing_code_label";
 			$command =Yii::app()->db->createCommand($qtxt);
 			//$command->bindValue(":username", '%'.$last.'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -312,7 +312,7 @@ class TblCustomerEntryController extends Controller
 	public function getMailingCode($term=NULL) {
 		$res =array();
 		if (isset($term)) {
-			$qtxt ="SELECT mailing_code_label FROM tbl_mailing_code WHERE  mailing_code_label LIKE :username";
+			$qtxt ="SELECT mailing_code_label FROM mailing_codes WHERE  mailing_code_label LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -325,7 +325,7 @@ class TblCustomerEntryController extends Controller
 
 	public function getMailingCodes($term=NULL) {
 		$res =array();
-		$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM tbl_mailing_code order by mailing_code_label asc";
+		$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc";
 		$command =Yii::app()->db->createCommand($qtxt);
 		$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
 		return $res = $command->queryColumn();
