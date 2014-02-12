@@ -246,11 +246,11 @@ class SowGiltsController extends Controller
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = $_GET['s'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
-			 $resParity = $command->queryColumn();
+			$resParity = $command->queryColumn();
 			 
 			if(isset($res[0]) && $res[0] == "Y") {
 				$currentParity = $resParity[0];
-				$qtxt ="SELECT * FROM litters WHERE sire_ear_notch = :username AND sow_parity = ".$currentParity;
+				$qtxt ="SELECT * FROM litters WHERE sow_ear_notch = :username AND sow_parity = ".$currentParity;
 				$command =Yii::app()->db->createCommand($qtxt);
 				$term = $_GET['s'];
 				$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);

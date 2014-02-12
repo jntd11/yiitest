@@ -87,6 +87,7 @@ $(document).ready(function(){
 		searchSireDam($('#sire_notch').val(),'sirename');
 	if($("#dam_notch").val() != "" && $("#sire_notch").val() != undefined) 
 		searchSireDam($("#dam_notch").val(),'damname');
+	$("#farrowed_date").focus();
 });
 
 function cancelSow(){
@@ -261,8 +262,8 @@ function checkFarrow(id){
 		}).done(function(data){
 			    var Obj = JSON.parse(data);
 				$("#sow_parity").val(Obj.last_parity);
-				if(Obj.litter_id != "null") {
-					$("#litters_id").val(Obj.litter_id);
+				if(typeof Obj.litters_id != "undefined") {
+					$("#litters_id").val(Obj.litters_id);
 					$("#farrowed_date").val(Obj.farrowed_date);
 					$("#time_settle").val(Obj.time_settle);
 					$("#herd_litter").val(Obj.herd_litter);
@@ -298,6 +299,11 @@ function checkExistlitters(){
 			$("#SowGilts_due_date").val($.datepicker.formatDate("mm/dd/yy", myDateOrg));
 		}
 	});
+}
+function changeDate(){
+	var farrowed = $("#farrowed_date").val();
+	farrowed = farrowed.replace(/[\.\-]/g,"/");
+	$("#farrowed_date").val(farrowed);
 }
 function checkExist(dates,isupd){
 	

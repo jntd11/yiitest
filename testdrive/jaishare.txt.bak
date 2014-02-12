@@ -2461,7 +2461,7 @@ B. Much better:
     3. Pigs>>Bred Sows>>List - looks good.
     4. Pigs>>Sold Hogs>>List - looks good.
     5. Pigs>>Farrowed>>List - Looks good.
-
+ 
      Quest: A.3. The litter table needs to have unique records by Sow Ear Notch and Sow Parity. Explanation: For each litter that a Sow has, there will be a unique Parity assigned to that litter: 1 is her first litter, 2 is her second litter, 3 her third and so forth. 
 
     Actually Ae3. I am checking sire ear notch on litter table and fetching it.. I thought there will be unique entry for each sire notch... As per your comment below, we have to identify based on "Sow Ear Notch" and "Parity". For example there will entry like this on table
@@ -2471,3 +2471,36 @@ B. Much better:
 
    So i may need to store the "sow ear notch" on this litters table.
    A.3 You are correct - the records in the litter table are based on (indexed by) Sow Ear Notch and Sow's Parity as you listed - not the Sire Ear Notch. There is a Sire for each litter but that is NOT how the records should be stored
+contractor
+Contractor99!
+
+MSH|^~\&amp;|unilab2|4^HEMOS-LB|EasyMed||20140211120914.321+0100||ORU^R01|ul2.4.175.10046510.1392116954321|P|2.5||1392116954321|||CHE|8859/15|fr
+PID|1||53780||XXXX|||||||||||||||||||||||||
+OBR|1|4^^20140211^0175|10046510|EXAM||20140211000000+0100|20140211100000+0100||0^0|||||201402111117+0100|1556^sgv^sang veineux^4||0795533060^BPN^CP~^NET^Internet|N|N|||20140211111703+0100|||F||1^R
+OBX|2|TX|161448215^INR^29570^200|20|2.54||2.0 - 4.5||||F|||20140211120829+0100|2164^INR^20^60|A-S1^ANVY
+
+
+12/02/2014
+Jai,
+A. Good
+A.2. Good
+A.3. Testing
+B. Good
+C. Good
+
+Problems found:
+1. Pigs>>Farrowed>>#>>Update - the word "Pigs" is lost in the Update breadcrumb.
+Done
+2. Pigs>>Farrowed>>#>>Update - When tabbing thru the fields from Sire Ear Notch to Sow Parity to Farrowed Date - need the cursor to stop in the field box ready for the User to type a date instead of going to the calendar icon. Tabbing should not stop on the calendar icon.
+Done
+3. Reference ProjectL2.doc attachment - When I call up the first record showing in Pigs>>Farrowed>>List, I see the first screen in the attachment which is correct. However, when I start tabbing thru the fields, the second screen shows that the Sow Parity gets changed to 0 and the Farrowed Date is cleared. These fields need to be left as in the first screen.
+Now check. There was small bug, can you check? Also, can i have to update "sow_parity" values to last_parity on "herd" table while saving the record...
+
+4. As I am testing the Update screen, we need a small change: When a record is called up from the List screen, display all the fields as you are currently doing but position the cursor ready to take the Farrowed Date.
+    a. If the Farrowed Date field is blank, pre-fill in with the current activity date.
+    Done
+    b. If the Farrowed Date field is not blank, do not change the date but allow the User to change the date.
+    Done
+5. Pigs>>Farrowed>>#>>Update - any date I try to type in is telling me "The Format of the Farrowed Date is invalid"
+
+6. Is it possible to exchange the positions of sow_ear_notch and sire_ear_notch in the litters table? I know this is picky but I'm afraid that since the table is unique by Sow Ear Notch and Sow Parity that having the sire_ear_notch as the first field will be confusing and probably mis-interpreted later on when having to import data, etc. 

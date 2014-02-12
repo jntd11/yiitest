@@ -49,7 +49,7 @@ class Litters extends CActiveRecord
 			array('sire_ear_notch, sow_parity, times_settle, herd_litter', 'required'),
 			array('sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, no_boars_alive, gilts_alive, birth_wgt', 'numerical', 'integerOnly'=>true),
 			array('sire_ear_notch', 'length', 'max'=>50),
-			array('farrowed_date','date'),
+			array('farrowed_date','length','max'=>20),
 			array('sow_ear_notch','length','max'=>50),
 			array('comments','length','max'=>10000),
 			// The following rule is used by search().

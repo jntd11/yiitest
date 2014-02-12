@@ -106,9 +106,16 @@ class LittersController extends Controller
 			if($model->save()) {
 				$sql = "UPDATE breeding SET ";
 				$sql .= " farrowed = 'Y' ";
+				$sql .= " WHERE 1 = 1 ";
 				if($_POST['sire_ear_notch_org'] != $model->sire_ear_notch)
 					$sql .= " sire_ear_notch = '".$model->sire_ear_notch."' ";
-				$sql .= " WHERE sow_gilts_id = ".$id;
+				$sql .= " AND sow_gilts_id = ".$id;
+				$command = Yii::app()->db->createCommand($sql);
+				$command->execute();
+				
+				$sql = "UPDATE herd SET ";
+				$sql .= " last_parity =  ".$model->sow_parity;
+				$sql .= " WHERE ear_notch = '".$model->sow_ear_notch."'";
 				$command = Yii::app()->db->createCommand($sql);
 				$command->execute();
 				$this->redirect(array('admin'));

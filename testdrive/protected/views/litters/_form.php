@@ -11,6 +11,7 @@ if($herdmark != "")
 	$herdmark = $herdmark." ";
 ?>
 
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -73,14 +74,14 @@ if($herdmark != "")
 						'constrainInput'=> false,
 						'showOn'=>'button',
 						'buttonImage'=>'img/calendar.gif',
+						'default'=>''.$activitydate.'',
 				),
 				'htmlOptions' => array(
 						'id'=>'farrowed_date',
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
-						'tabindex'=>4,
-						'tabindex'=>2,
 						'value'=>''.$activitydate.'',
+						'onBlur'=>'changeDate();',
 				),
 				
 		));
