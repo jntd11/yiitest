@@ -49,45 +49,25 @@ $(document).ready(function(){
 
 	    el.selectionStart = elemLen;
 	    el.selectionEnd = elemLen;
-	    el.focus();
-	if($("#sow_boar_notch").val() != "undefined")
-		$("#sow_boar_notch").focus();
-	$("#sow-gilts-form :input[type!='submit']").change(function() {
-		   $("#sow-gilts-form").data("changed",true);
+
+	$("#litters-form :input[type!='submit']").change(function() {
+		   $("#litters-form").data("changed",true);
 	});
 	autoSuggestSearch();
-	$("#sow-gilts-form :input[type=submit]").click(function() {
-		   $("#sow-gilts-form").data("changed",false);
-	});
-	$("#earnotch").autocomplete({
-	    source: 'index.php?r=sowGilts/autocompleteEarNotch',
-	    select: function( event, ui ) {
-	    	var data = this.name+"="+ui.item.value;
-	    	$("#earnotch").val(ui.item.value);
-	    },
-	});
-	$("#sirenotch").autocomplete({
-	    source: 'index.php?r=sowGilts/autocompletesirenotch',
-	    select: function( event, ui ) {
-	    	var data = this.name+"="+ui.item.value;
-	    	$("#sirenotch").val(ui.item.value);
-	    },
+	$("#litters-form :input[type=submit]").click(function() {
+		   $("#litters-form").data("changed",false);
 	});
 	
 	//CreateTree();
 	//$(window).load(CreateTree());
 	window.onbeforeunload = iamexiting;
 	function iamexiting(e) {
-		if($("#sow-gilts-form").data("changed")) {
+		if($("#litters-form").data("changed")) {
 			   return 'You have unsaved changes. Do you want to continue';
 			   // submit the form
 		}
 		return;
 	}
-	if($("#sire_notch").val() != "" && $("#sire_notch").val() != undefined) 
-		searchSireDam($('#sire_notch').val(),'sirename');
-	if($("#dam_notch").val() != "" && $("#sire_notch").val() != undefined) 
-		searchSireDam($("#dam_notch").val(),'damname');
 	if($("#farrowed_date").val() != "undefined") {
 		$("#farrowed_date").focus();
 	}
@@ -182,15 +162,15 @@ function autoSuggestSearch(){
 	});
 	
 }
-$(function() { 
+/*$(function() { 
 	 $(':text').focus(function() { 
-	  if (this.setSelectionRange) /* DOM */ 
+	  if (this.setSelectionRange)  DOM  
 	  { 
-	   setTimeout(function(t) { /* hack for select delay */ 
+	   setTimeout(function(t) {  hack for select delay  
 	    t.setSelectionRange(t.value.length,t.value.length); 
 	   },0,this); 
 	  } 
-	  else if (this.createTextRange) /* IE */ 
+	  else if (this.createTextRange)  IE  
 	  { 
 	   r=this.createTextRange(); 
 	   r.collapse(false); 
@@ -213,7 +193,7 @@ $(function(){
     	
         //$("#elementToResize").css('height',(h < 768 || w < 1024) ? 500 : 400);
     });
-});
+});*/
 function validateDate(val){
 	if(val == "")
 		return true;
@@ -359,4 +339,7 @@ function checkExist(dates,isupd){
 		});
 	}
 	return;
+}
+function saveFocus(){
+	$("#submit").focus();
 }

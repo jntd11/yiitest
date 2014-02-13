@@ -21,7 +21,7 @@ $cs=Yii::app()->clientScript;
  		$cs->getCoreScriptUrl().
  		'/jui/css/base/jquery-ui-1.10.2.custom.css'
  ); */
-$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowgilts.js');
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/litters.js');
 
 ?>
 <?php echo $this->renderPartial('_form', array('model'=>$model,'modelsowgilts'=>$modelsowgilts)); ?>

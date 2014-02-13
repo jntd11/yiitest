@@ -74,14 +74,14 @@ if($herdmark != "")
 						'constrainInput'=> false,
 						'showOn'=>'button',
 						'buttonImage'=>'img/calendar.gif',
-						'default'=>''.$activitydate.'',
+						'defaultDate'=>''.$activitydate.'',
 				),
 				'htmlOptions' => array(
 						'id'=>'farrowed_date',
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
 						'value'=>''.$activitydate.'',
-						'onBlur'=>'changeDate();',
+						//'onChange'=>'changeDate();',
 				),
 				
 		));
@@ -134,7 +134,7 @@ if($herdmark != "")
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'comments'); ?>
-		<?php echo $form->textArea($model,'comments',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'comments',array('rows'=>6, 'cols'=>50,'onBlur'=>'saveFocus();')); ?>
 		<?php echo $form->error($model,'comments'); ?>
 		<p class="note">Fields with <span class="required">*</span> are required.</p>
 	</div>
@@ -142,7 +142,7 @@ if($herdmark != "")
 	
 	<div class="row buttons">
 		<?php echo CHtml::Button('List Farrowed',array('onClick'=>'window.location="index.php?r=litters/admin"')); ?>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm();')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm();','id'=>'submit','tabIndex'=>10)); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelLitter()')); ?>
 	</div>
 	

@@ -2505,3 +2505,16 @@ Now check. There was small bug, can you check? Also, can i have to update "sow_p
 Done
 6. Is it possible to exchange the positions of sow_ear_notch and sire_ear_notch in the litters table? I know this is picky but I'm afraid that since the table is unique by Sow Ear Notch and Sow Parity that having the sire_ear_notch as the first field will be confusing and probably mis-interpreted later on when having to import data, etc. 
 Done
+
+12-02-2014
+1. Good
+2. Pigs>>Farrowed>>#>>Update - When I bring up the first record in List, the cursor positions to the Farrowed Date - Good - but other issues:
+     a. I cannot change the Sow Parity from "0" and since the Farrowed Date would have been blank (since there are no litters records) the date should the Current Activity date (12/30/13) not today's date.
+
+     b. Also, tabbing is not letting me past the Farrowed Date field.
+     c. Clicking Cancel or List Farrowed buttons to get out of Update gives me the attached screen ProjectL3.doc
+     d. Trying to tab thru to Comments takes me back to Birth Weight.
+3. Still testing. Yes - Per original request (A.4.e.) you need to update the Sow's Last Parity (herd table) with the parity of the litter record you are updating (unless the parity is less than the parity on the sow's record). If the "farrowed" field in the breeding record is set to "Y" then there should be an associated "litter" record - in which case the "sow_parity" in the "litter" record should match the "last_parity" in this Sow's "herd" record. If it does not and the sow_parity value in the "litter" record is less than the "last_parity" value in this Sow's "herd" record then the User is just looking at or updating an OLD record and the "herd" "last_parity" should not be updated. If the "litter" "sow_parity" is greater than the "herd" "last_parity" then the sow's "last_parity" should be updated when the "litter" record is Saved.
+4. Setting the Farrowed Date to something other than today always changes it immediately back to today's date.
+5. Good
+6. Good

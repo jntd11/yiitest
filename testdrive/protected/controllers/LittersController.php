@@ -115,7 +115,7 @@ class LittersController extends Controller
 				
 				$sql = "UPDATE herd SET ";
 				$sql .= " last_parity =  ".$model->sow_parity;
-				$sql .= " WHERE ear_notch = '".$model->sow_ear_notch."'";
+				$sql .= " WHERE ear_notch = '".$model->sow_ear_notch."' AND last_parity < ". $model->sow_parity;
 				$command = Yii::app()->db->createCommand($sql);
 				$command->execute();
 				$this->redirect(array('admin'));
