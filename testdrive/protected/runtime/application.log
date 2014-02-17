@@ -3585,3 +3585,6 @@ Stack trace:
 REQUEST_URI=/yii/testdrive/index.php?r=sowBoar/admin
 HTTP_REFERER=http://localhost/yii/testdrive/index.php
 ---
+2014/02/16 16:21:32 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\LittersController.php (112)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)

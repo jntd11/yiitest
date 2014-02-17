@@ -54,7 +54,7 @@ class Litters extends CActiveRecord
 			array('comments','length','max'=>10000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('litters_id, sow_ear_notch, sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, no_boars_alive, gilts_alive, birth_wgt, comments, date_modified, farrowed_date', 'safe', 'on'=>'search'),
+			array('litters_id, sow_ear_notch, date_bred, sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, no_boars_alive, gilts_alive, birth_wgt, comments, date_modified, farrowed_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -82,12 +82,12 @@ class Litters extends CActiveRecord
 			'sire_ear_notch' => 'Sire Ear Notch',
 			'sow_parity' => 'Sow Parity',
 			'farrowed_date'=> 'Farrowed Date',
-			'times_settle' => 'Times Settle',
+			'times_settle' => 'Times to Settle',
 			'herd_litter' => 'Herd Litter',
-			'no_pigs' => 'No Pigs',
-			'no_born_alive' => 'No Born Alive',
-			'no_boars_alive' => 'No Boars Alive',
-			'gilts_alive' => 'Gilts Alive',
+			'no_pigs' => '# Pigs Born',
+			'no_born_alive' => '# Born Alive',
+			'no_boars_alive' => '# Boars Alive',
+			'gilts_alive' => '# Gilts Alive',
 			'birth_wgt' => 'Birth Wgt',
 			'comments' => 'Comments',
 			'date_modified' => 'Date Modified',

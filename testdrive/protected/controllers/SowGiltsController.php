@@ -236,19 +236,21 @@ class SowGiltsController extends Controller
 		if (isset($_GET['s'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
 			
-			$qtxt ="SELECT farrowed FROM breeding WHERE sow_gilts_id = :username ";
+			$qtxt ="SELECT farrowed, date_bred FROM breeding WHERE sow_gilts_id = :username ";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = $_GET['id'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
-			$res =$command->queryColumn();
+			$res =$command->queryRow();
 			
-			$qtxt ="SELECT last_parity FROM herd WHERE ear_notch = :username ";
-			$command =Yii::app()->db->createCommand($qtxt);
-			$term = $_GET['s'];
-			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
-			$resParity = $command->queryColumn();
+			if(isset($res->farrowed) && $res->farrowed == "Y") {
+				$qtxt ="SELECT last_parity FROM herd WHERE ear_notch = :username AND bred_date = ' ".$res[0]->date_bred."'";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$term = $_GET['s'];
+				$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
+				$resParity = $command->queryColumn();
+			}
 			 
-			if(isset($res[0]) && $res[0] == "Y") {
+			if(isset($resParity[0])) {
 				$currentParity = $resParity[0];
 				$qtxt ="SELECT * FROM litters WHERE sow_ear_notch = :username AND sow_parity = ".$currentParity;
 				$command =Yii::app()->db->createCommand($qtxt);

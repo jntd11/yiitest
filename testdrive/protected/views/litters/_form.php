@@ -32,7 +32,9 @@ if($herdmark != "")
 		<?php echo $modelsowgilts->sow_ear_notch; ?>
 	</div>
 	<div >
-		<?php echo $form->labelEx($modelsowgilts,'date_bred'); ?>
+		<?php 
+		echo $form->hiddenField($model,'date_bred',array('value'=>$modelsowgilts->date_bred));
+		echo $form->labelEx($modelsowgilts,'date_bred'); ?>
 		<?php echo $modelsowgilts->date_bred; ?>
 	</div>
 		<div >

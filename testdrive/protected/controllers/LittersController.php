@@ -91,7 +91,15 @@ class LittersController extends Controller
 		if($modelSowgilts===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		
-		$model = Litters::model()->findByAttributes(array('sire_ear_notch'=>$modelSowgilts->sire_ear_notch));
+		
+		 $qtxt ="SELECT * FROM herd WHERE ear_notch = '".$modelSowgilts->sow_ear_notch."' AND bred_date = '".$modelSowgilts->date_bred."'";
+		$command =Yii::app()->db->createCommand($qtxt);
+		$res = $command->queryRow();
+
+
+		if(isset($res['last_parity']) &&  $modelSowgilts->farrowed == 'Y') {
+			$model = Litters::model()->findByAttributes(array('sow_ear_notch'=>$modelSowgilts->sow_ear_notch,'sow_parity'=>$res['last_parity']));
+		}
 		
 		if($model===null) {
 			$model=new Litters;
@@ -114,7 +122,7 @@ class LittersController extends Controller
 				$command->execute();
 				
 				$sql = "UPDATE herd SET ";
-				$sql .= " last_parity =  ".$model->sow_parity;
+				$sql .= " last_parity =  ".$model->sow_parity .", bred_date = '".$model->date_bred."' ";
 				$sql .= " WHERE ear_notch = '".$model->sow_ear_notch."' AND last_parity < ". $model->sow_parity;
 				$command = Yii::app()->db->createCommand($sql);
 				$command->execute();
