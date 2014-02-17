@@ -32,11 +32,11 @@ class LittersController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','UpdateLitter'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','admin1','UpdateLitter'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -135,7 +135,35 @@ class LittersController extends Controller
 			'modelsowgilts'=>$modelSowgilts,
 		));
 	}
-
+	
+	/**
+	 * Updates a particular model.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * @param integer $id the ID of the model to be updated
+	 */
+	public function actionUpdateLitter($id)
+	{
+		$model=$this->loadModel($id);
+		
+		if($model===null) {
+			$model=new Litters;
+		}
+	
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+	
+		if(isset($_POST['Litters']))
+		{
+			$model->attributes = $_POST['Litters'];
+			if($model->save()) {
+				$this->redirect(array('admin'));
+			}
+		}
+	
+		$this->render('updatelitter',array(
+				'model'=>$model,
+		));
+	}
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -187,7 +215,27 @@ class LittersController extends Controller
 				'sort'=>$sort,
 		));
 	}
+	
+	/**
+	 * Manages all models.
+	 */
+	public function actionAdmin1()
+	{
 
+		$model=new Litters('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Litters']))
+			$model->attributes=$_GET['Litters'];
+		$sort = new CSort();
+		$sort->attributes  = array(
+				'desc'=>'due_date'
+		);
+		$this->render('admin-wean',array(
+				'model'=>$model,
+				'sort'=>$sort,
+		)); 
+	}
+	
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

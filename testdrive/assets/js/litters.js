@@ -160,6 +160,7 @@ function autoSuggestSearch(){
 		var link = $(this).find('a.update').attr('href');
 		location.href = link;
 	});
+	calculateAge();
 	
 }
 /*$(function() { 
@@ -342,4 +343,16 @@ function checkExist(dates,isupd){
 }
 function saveFocus(){
 	$("#submit").focus();
+}
+function calculateAge(){
+	var age;
+	var weighted_date = $("#weighted_date").val();
+	var farrowed_date = $("#farrowed_date").val();
+	if(weighted_date == "" || farrowed_date == "") 
+		return;
+	var date1 = new Date(weighted_date);
+	var date2 = new Date(farrowed_date);
+	$("#weighing_age").val(parseInt((date1.getTime() - date2.getTime())/(24*60*60*1000)));
+	return ;
+	
 }

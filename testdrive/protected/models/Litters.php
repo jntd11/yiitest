@@ -47,7 +47,10 @@ class Litters extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('sire_ear_notch, sow_parity, times_settle, herd_litter', 'required'),
-			array('sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, no_boars_alive, gilts_alive, birth_wgt', 'numerical', 'integerOnly'=>true),
+			array('sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, 
+					no_boars_alive, gilts_alive, birth_wgt, pigs_transfer, weaned_males, weaned_females, no_pigs_weighted,weighing_age,actual_weight,21_wgt', 'numerical', 'integerOnly'=>true),
+			array('pigs_transfer, weaned_males, weaned_females,no_pigs_weighted,weighing_age','length','max'=>2),
+			array('actual_weight,21_wgt','length','max'=>3),
 			array('sire_ear_notch', 'length', 'max'=>50),
 			array('farrowed_date','length','max'=>20),
 			array('sow_ear_notch','length','max'=>50),
@@ -90,6 +93,13 @@ class Litters extends CActiveRecord
 			'gilts_alive' => '# Gilts Alive',
 			'birth_wgt' => 'Birth Wgt',
 			'comments' => 'Comments',
+			'pigs_transfer'=>'# After Transfer',
+			'weaned_males'=>'# Weaned Males',
+			'weaned_females'=>'# Weaned Females',
+			'no_pigs_weighted'=>'# Pigs Weighed',
+			'weighing_age'=>'Age',
+				'actual_weight'=>'Actual Weight',
+			'21_wgt'=>'21 Day Weight',
 			'date_modified' => 'Date Modified',
 		);
 	}
@@ -98,7 +108,7 @@ class Litters extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function searchOrg()
+	public function search()
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
@@ -117,16 +127,23 @@ class Litters extends CActiveRecord
 		$criteria->compare('birth_wgt',$this->birth_wgt);
 		$criteria->compare('comments',$this->comments,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
-
+		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
+		$Litters_sort = isset($_REQUEST['Litters_sort'])?$_REQUEST['Litters_sort']:"";
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'Litters_sort'=>$Litters_sort)),
+			'sort'=>array(
+						'defaultOrder'=>"STR_TO_DATE( farrowed_date, '%m/%d/%Y' ) DESC" ,
+						'params'=>array('pages'=>$pages)
+			),
 		));
 	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function searchOld()
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
