@@ -51,7 +51,7 @@ class Litters extends CActiveRecord
 					no_boars_alive, gilts_alive, birth_wgt, pigs_transfer, weaned_males, weaned_females, no_pigs_weighted,weighing_age,actual_weight,21_wgt', 'numerical', 'integerOnly'=>true),
 			array('pigs_transfer, weaned_males, weaned_females,no_pigs_weighted,weighing_age','length','max'=>2),
 			array('actual_weight,21_wgt','length','max'=>3),
-			array('sire_ear_notch', 'length', 'max'=>50),
+			array('sire_ear_notch, date_bred', 'length', 'max'=>50),
 			array('farrowed_date','length','max'=>20),
 			array('sow_ear_notch','length','max'=>50),
 			array('comments','length','max'=>10000),
@@ -114,9 +114,9 @@ class Litters extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
 		$criteria->compare('litters_id',$this->litters_id);
 		$criteria->compare('sire_ear_notch',$this->sire_ear_notch,true);
+		$criteria->compare('sow_ear_notch',$this->sow_ear_notch,true);
 		$criteria->compare('sow_parity',$this->sow_parity);
 		$criteria->compare('times_settle',$this->times_settle);
 		$criteria->compare('herd_litter',$this->herd_litter);
@@ -127,9 +127,13 @@ class Litters extends CActiveRecord
 		$criteria->compare('birth_wgt',$this->birth_wgt);
 		$criteria->compare('comments',$this->comments,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
-		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
-		$Litters_sort = isset($_REQUEST['Litters_sort'])?$_REQUEST['Litters_sort']:"";
+		$criteria->compare('farrowed_date',$this->farrowed_date,true);
+		$criteria->compare('weaned_date',$this->weaned_date,true);
+		$criteria->compare('weighted_date',$this->weighted_date,true);
 		
+		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
+		
+		$Litters_sort = isset($_REQUEST['Litters_sort'])?$_REQUEST['Litters_sort']:"";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'Litters_sort'=>$Litters_sort)),

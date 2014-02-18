@@ -79,6 +79,9 @@ function cancelSow(){
 function cancelLitter(){
 	window.location="index.php?r=litters/admin";
 }
+function cancelWeaned(){
+	window.location="index.php?r=litters/admin1";
+}
 
 function setDefault(val,obj){
 	var id = $(obj).attr('id');
@@ -97,64 +100,51 @@ function setDefault(val,obj){
 	
 }
 function autoSuggestSearch(){
-	$("#sow-gilts-grid [name='SowGilts[sow_ear_notch]']").autocomplete({
-		    source: 'index.php?r=sowGilts/autocompleteSow',
-		    select: function( event, ui ) {
-		    	var data = this.name+"="+ui.item.value;
-		    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
-		    }
-	});
-	$("#sow-gilts-grid [name='SowGilts[date_bred]']").autocomplete({
-	    source: 'index.php?r=sowGilts/autocompleteDateBred',
-	    select: function( event, ui ) {
-	    	var data = this.name+"="+ui.item.value;
-	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
-	    }
-	});
-	$("#sow-gilts-grid [name='SowGilts[sire_ear_notch]']").autocomplete({
-	    source: 'index.php?r=sowGilts/autocompleteSire',
-	    select: function( event, ui ) {
-	    	var data = this.name+"="+ui.item.value;
-	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
-	    }
-	});
-	$("#sow-gilts-grid [name='SowGilts[service_type]']").autocomplete({
-	    source: 'index.php?r=sowGilts/autocompleteService',
-	    select: function( event, ui ) {
-	    	var data = this.name+"="+ui.item.value;
-	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
-	    }
-	});
-	$("#sow-gilts-grid [name='SowGilts[comments]']").autocomplete({
-	    source: 'index.php?r=sowGilts/autocompleteComments',
+	
+	$("#sow-gilts-grid [name='Litters[sow_ear_notch]']").autocomplete({
+	    source: 'index.php?r=litters/autocompleteSow',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
 	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
 	    }
 	});
 	
-	$("#sow-gilts-grid [name='SowGilts[passover_date]']").autocomplete({
-	    source: 'index.php?r=sowGilts/autocompletePass',
+	$("#sow-gilts-grid [name='Litters[sow_parity]']").autocomplete({
+	    source: 'index.php?r=litters/autocompleteParity',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
+	    }
+	});
+	$("#sow-gilts-grid [name='Litters[herd_litter]']").autocomplete({
+	    source: 'index.php?r=litters/autocompleteHerdlitter',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
+	    }
+	});
+	$("#sow-gilts-grid [name='Litters[farrowed_date]']").autocomplete({
+	    source: 'index.php?r=litters/autocompleteFarrowedDate',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
+	    }
+	});
+	$("#sow-gilts-grid [name='Litters[weighted_date]']").autocomplete({
+	    source: 'index.php?r=litters/autocompleteWeighteddate',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
+	    }
+	});
+	$("#sow-gilts-grid [name='Litters[weaned_date]']").autocomplete({
+	    source: 'index.php?r=litters/autocompleteWeaneddate',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
 	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
 	    }
 	});
 	
-	$("#sow-gilts-grid [name='SowGilts[due_date]']").autocomplete({
-	    source: 'index.php?r=sowGilts/autocompleteDue',
-	    select: function( event, ui ) {
-	    	var data = this.name+"="+ui.item.value;
-	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
-	    }
-	});
-	$("#sow-gilts-grid [name='SowGilts[days_between]']").autocomplete({
-	    source: 'index.php?r=sowGilts/autocompleteDays',
-	    select: function( event, ui ) {
-	    	var data = this.name+"="+ui.item.value;
-	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
-	    }
-	});	
 	$('#sow-gilts-grid tbody > tr').on('click', function(id){
 		//$(this).click();
 		var link = $(this).find('a.update').attr('href');
@@ -209,9 +199,10 @@ function validateDate(val){
 function validateForm(){
 	return validateDate($("#born").val());
 }
-function validateLitterForm(){
-	return validateDate($("#farrowed_date").val());
+function validateLitterForm1(){
+	return validateDate($("#weighted_date").val());
 }
+
 function checkDate(val,type){
 	if(val != "") {
 		$.ajax({

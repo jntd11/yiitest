@@ -27,9 +27,9 @@ if($herdmark != "")
 ));
 ?>
 	<div class="row buttons">
-		<?php echo CHtml::Button('List Farrowed',array('onClick'=>'window.location="index.php?r=litters/admin"')); ?>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm();')); ?>
-		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelLitter()')); ?>
+		<?php echo CHtml::Button('List Weaned',array('onClick'=>'window.location="index.php?r=litters/admin1"')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm1();')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelWeaned()')); ?>
 	</div>
 	<?php echo $form->errorSummary($model); ?>
 	<div >
@@ -134,32 +134,14 @@ if($herdmark != "")
 						'id'=>'weaned_date',
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
-						'value'=>,
+						'value'=>$weaned_date,
 				),
 				
 		));
 		 
 		?>
-		<?php echo $form->error($model,'weighted_date'); ?>
+		<?php echo $form->error($model,'weaned_date'); ?>
 		</div>
-	<div class="row">
-		<?php echo $form->labelEx($model,'no_boars_alive'); ?>
-		<?php echo $form->textField($model,'no_boars_alive',array('size'=>2,'maxlength'=>2)); ?>
-		<?php echo $form->error($model,'no_boars_alive'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'gilts_alive'); ?>
-		<?php echo $form->textField($model,'gilts_alive',array('size'=>2,'maxlength'=>2)); ?>
-		<?php echo $form->error($model,'gilts_alive'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'birth_wgt'); ?>
-		<?php echo $form->textField($model,'birth_wgt',array('size'=>3,'maxlength'=>3)); ?>
-		<?php echo $form->error($model,'birth_wgt'); ?>
-	</div>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'comments'); ?>
 		<?php echo $form->textArea($model,'comments',array('rows'=>6, 'cols'=>50,'onBlur'=>'saveFocus();')); ?>
@@ -169,9 +151,9 @@ if($herdmark != "")
 
 	
 	<div class="row buttons">
-		<?php echo CHtml::Button('List Farrowed',array('onClick'=>'window.location="index.php?r=litters/admin"')); ?>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm();','id'=>'submit','tabIndex'=>10)); ?>
-		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelLitter()')); ?>
+		<?php echo CHtml::Button('List Weaned',array('onClick'=>'window.location="index.php?r=litters/admin1"')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm1();','id'=>'submit','tabIndex'=>10)); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelWeaned()')); ?>
 	</div>
 	
 <?php $this->endWidget(); ?>

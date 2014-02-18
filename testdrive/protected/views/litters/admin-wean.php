@@ -3,8 +3,8 @@
 /* @var $model SowGilts */
 
 $this->breadcrumbs=array(
-	'Pigs'=>array('admin-wean'),
-	'Farrowed'=>array('admin-wean'),
+	'Pigs'=>array('admin1'),
+	'Weaned'=>array('admin1'),
 	'List',
 );
 
@@ -19,7 +19,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#sow-gilts-grid').yiiGridView('UpdateLitter', {
+	$('#sow-gilts-grid').yiiGridView('Update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -42,7 +42,7 @@ $cs->registerCoreScript('jquery-ui-1.10.2.custom');
  		$cs->getCoreScriptUrl().
  		'/jui/css/base/jquery-ui-1.10.2.custom.css'
  );
-$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowgilts.js');
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/litters.js');
 ?>
 
 <div style="float: left;"><a class="buttons" href="index.php?r=sowGilts/create"><input type="button" value="New"></a></div>
@@ -63,17 +63,17 @@ $this->endWidget();
 	'id'=>'sow-gilts-grid',
 	'dataProvider'=>$model->search(),
 	'selectionChanged'=>'function(id){
-		//location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
+		location.href = "'.$this->createUrl('updatelitter').'/id/"+$.fn.yiiGridView.getSelection(id);
 	}',
 	'filter'=>$model,
 		'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
 	'columns'=>array(
-		array('name'=>'sow_ear_notch','value'=>'$data->sow_ear_notch','htmlOptions'=>array('width'=>200)),
+		array('name'=>'sow_ear_notch','value'=>'$data->sow_ear_notch','htmlOptions'=>array('width'=>250)),
 		'sow_parity',
 		'herd_litter',
-		array('name'=>'farrowed_date','value'=>'$data->farrowed_date','htmlOptions'=>array('width'=>40)),
-		array('name'=>'weighted_date','value'=>'$data->weighted_date','htmlOptions'=>array('width'=>40)),
-		array('name'=>'weaned_date','value'=>'$data->weaned_date','htmlOptions'=>array('width'=>40)),
+		array('name'=>'farrowed_date','value'=>'$data->farrowed_date','htmlOptions'=>array('width'=>100)),
+		array('name'=>'weighted_date','value'=>'$data->weighted_date','htmlOptions'=>array('width'=>100)),
+		array('name'=>'weaned_date','value'=>'$data->weaned_date','htmlOptions'=>array('width'=>100)),
 		//'comments',
 		/* array('name'=>'misc','value'=>'$data->misc','htmlOptions'=>array('width'=>40)),
 		'passover_date',

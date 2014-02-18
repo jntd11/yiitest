@@ -28,7 +28,8 @@ class LittersController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','autocompleteSow','autocompleteParity','autocompleteHerdlitter',
+						'autocompleteFarroweddate','autocompleteWeighteddate','autocompleteWeaneddate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -92,17 +93,16 @@ class LittersController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		
 		
-		 $qtxt ="SELECT * FROM herd WHERE ear_notch = '".$modelSowgilts->sow_ear_notch."' AND bred_date = '".$modelSowgilts->date_bred."'";
+		$qtxt ="SELECT * FROM herd WHERE ear_notch = '".$modelSowgilts->sow_ear_notch."' AND bred_date = '".$modelSowgilts->date_bred."'";
 		$command =Yii::app()->db->createCommand($qtxt);
 		$res = $command->queryRow();
-
 
 		if(isset($res['last_parity']) &&  $modelSowgilts->farrowed == 'Y') {
 			$model = Litters::model()->findByAttributes(array('sow_ear_notch'=>$modelSowgilts->sow_ear_notch,'sow_parity'=>$res['last_parity']));
 		}
 		
-		if($model===null) {
-			$model=new Litters;
+		if(!isset($model) || $model === null) {
+			$model = new Litters;
 		}
 		
 		// Uncomment the following line if AJAX validation is needed
@@ -122,8 +122,14 @@ class LittersController extends Controller
 				$command->execute();
 				
 				$sql = "UPDATE herd SET ";
-				$sql .= " last_parity =  ".$model->sow_parity .", bred_date = '".$model->date_bred."' ";
-				$sql .= " WHERE ear_notch = '".$model->sow_ear_notch."' AND last_parity < ". $model->sow_parity;
+				$sql .= " bred_date = '".$model->date_bred."' ";
+				$sql .= " WHERE ear_notch = '".$model->sow_ear_notch."'";
+				$command = Yii::app()->db->createCommand($sql);
+				$command->execute();
+
+				$sql = "UPDATE herd SET ";
+				$sql .= " last_parity =  ".$model->sow_parity;
+				$sql .= " WHERE ear_notch = '".$model->sow_ear_notch."' AND last_parity <= ". $model->sow_parity;
 				$command = Yii::app()->db->createCommand($sql);
 				$command->execute();
 				$this->redirect(array('admin'));
@@ -263,4 +269,78 @@ class LittersController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	public function actionautocompleteSow() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT distinct sow_ear_notch FROM  litters WHERE sow_ear_notch LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionautocompleteParity() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT distinct sow_parity FROM  litters WHERE sow_parity LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionautocompleteHerdlitter() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT distinct herd_litter FROM  litters WHERE herd_litter LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionautocompleteFarroweddate() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT distinct farrowed_date FROM  litters WHERE farrowed_date LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionautocompleteWeighteddate() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT distinct weighted_date FROM  litters WHERE weighted_date LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionautocompleteWeaneddate() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT distinct weaned_date FROM  litters WHERE weaned_date LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	
 }

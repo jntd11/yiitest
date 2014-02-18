@@ -4270,3 +4270,399 @@ REQUEST_URI=/yii/yii/testdrive/index.php?r=litters/updatelitter&id=1
 in C:\wamp\www\yii\yii\testdrive\protected\views\litters\updatelitter.php (27)
 in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (165)
 in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:41:03 [error] [php] Undefined variable: model (C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php:104)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): LittersController->runAction()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): LittersController->filterAccessControl()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(265): LittersController->runActionWithFilters()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): LittersController->run()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=litters/update&id=6841
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (104)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:47:25 [error] [php] Undefined variable: model (C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php:104)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): LittersController->runAction()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): LittersController->filterAccessControl()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(265): LittersController->runActionWithFilters()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): LittersController->run()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=litters/update&id=6841
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (104)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:47:51 [error] [php] Undefined variable: model (C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php:105)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): LittersController->runAction()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): LittersController->filterAccessControl()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(265): LittersController->runActionWithFilters()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): LittersController->run()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=litters/update&id=6841
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (105)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:47:54 [error] [php] Undefined variable: model (C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php:106)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): LittersController->runAction()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): LittersController->filterAccessControl()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(265): LittersController->runActionWithFilters()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): LittersController->run()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=litters/update&id=6841
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (106)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:51:39 [warning] [application] Failed to set unsafe attribute "date_bred" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:51:39 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:52:20 [warning] [application] Failed to set unsafe attribute "date_bred" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:52:20 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:52:34 [warning] [application] Failed to set unsafe attribute "date_bred" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:52:34 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:53:25 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:56:28 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:59:23 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:59:35 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 10:59:44 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:00:00 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:01:30 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:03:28 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (113)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:17:22 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (162)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:17:22 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (162)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:43:24 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:43:24 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:51:09 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:51:09 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:52:12 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:52:12 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:52:26 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:52:26 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:52:29 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:52:29 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:54:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\www\yii\yii\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(RWebUser), 'You are not aut...')
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('autocompleteSow')
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('litters/autocom...')
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=litters/autocompleteSow&term=1
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=litters/admin1
+---
+2014/02/18 11:54:17 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:54:17 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:54:50 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:54:50 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:56:31 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:56:31 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:57:03 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 11:57:03 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:02:43 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:02:43 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:03:14 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:03:14 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:04:15 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:04:15 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:05:20 [error] [php] Object of class CDbCriteria could not be converted to string (C:\wamp\www\yii\yii\testdrive\protected\models\Litters.php:132)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): LittersController->renderInternal()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(869): LittersController->renderFile()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(782): LittersController->renderPartial()
+#3 C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php(241): LittersController->render()
+#4 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): LittersController->actionAdmin1()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): LittersController->runAction()
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): LittersController->filterAccessControl()
+#10 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(265): LittersController->runActionWithFilters()
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): LittersController->run()
+#14 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=litters%2Fadmin1&Litters%5Bsow_ear_notch%5D=1YCDO+1981+3-2&Litters_page=1&ajax=sow-gilts-grid
+in C:\wamp\www\yii\yii\testdrive\protected\models\Litters.php (132)
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin-wean.php (64)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (241)
+2014/02/18 12:05:20 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:05:20 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:05:20 [error] [php] Object of class CDbCriteria could not be converted to string (C:\wamp\www\yii\yii\testdrive\protected\models\Litters.php:132)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CBaseController.php(95): LittersController->renderInternal()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(869): LittersController->renderFile()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(782): LittersController->renderPartial()
+#3 C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php(241): LittersController->render()
+#4 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): LittersController->actionAdmin1()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): LittersController->runAction()
+#7 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): LittersController->filterAccessControl()
+#10 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(265): LittersController->runActionWithFilters()
+#13 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): LittersController->run()
+#14 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=litters%2Fadmin1&Litters%5Bsow_ear_notch%5D=1YCDO+1981+3-2&Litters%5Bsow_parity%5D=&Litters%5Bherd_litter%5D=&Litters%5Bfarrowed_date%5D=&Litters%5Bweighted_date%5D=&Litters%5Bweaned_date%5D=&Litters_page=1&ajax=sow-gilts-grid
+in C:\wamp\www\yii\yii\testdrive\protected\models\Litters.php (132)
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin-wean.php (64)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (241)
+2014/02/18 12:05:54 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:05:54 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:06:55 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:06:55 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:10:23 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:10:23 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:10:38 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:10:38 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (233)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:26:41 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:26:41 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:27:14 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:27:14 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:27:51 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:27:51 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:28:31 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:28:31 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:30:03 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:30:03 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:30:23 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:30:23 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:30:34 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:30:34 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:33:40 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:33:40 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:34:02 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:34:02 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:34:21 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:34:34 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:34:34 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:34:46 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:34:54 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:35:42 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:35:42 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:37:54 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:38:08 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:39:02 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:39:02 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:39:10 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:39:10 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:39:17 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:39:17 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:40:36 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:40:36 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:41:07 [warning] [application] Failed to set unsafe attribute "weighted_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/02/18 12:41:07 [warning] [application] Failed to set unsafe attribute "weaned_date" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (234)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
