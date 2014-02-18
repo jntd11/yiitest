@@ -162,7 +162,7 @@ class LittersController extends Controller
 		{
 			$model->attributes = $_POST['Litters'];
 			if($model->save()) {
-				$this->redirect(array('admin'));
+				$this->redirect(array('admin1'));
 			}
 		}
 	
