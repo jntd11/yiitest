@@ -7,6 +7,11 @@ $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
 
+if($model->farrowed_date != "") 
+	$farrowed_date = $model->farrowed_date; 
+else 
+	$farrowed_date = $activitydate;
+
 if($herdmark != "")
 	$herdmark = $herdmark." ";
 ?>
@@ -82,7 +87,7 @@ if($herdmark != "")
 						'id'=>'farrowed_date',
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
-						'value'=>''.$activitydate.'',
+						'value'=>''.$farrowed_date.'',
 						//'onChange'=>'changeDate();',
 				),
 				

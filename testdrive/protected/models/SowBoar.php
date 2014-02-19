@@ -166,7 +166,7 @@ class SowBoar extends CActiveRecord
 	}
 	
 	public function getHerd(){
-		$qu = "select farm_herd from tbl_herd_setup";
+		$qu = "select farm_herd from herd_setup";
 		$cmd = YII::app()->db->createCommand($qu);
 		return $res = $cmd->queryColumn();
 	}
