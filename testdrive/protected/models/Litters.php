@@ -48,16 +48,16 @@ class Litters extends CActiveRecord
 		return array(
 			array('sire_ear_notch, sow_parity, times_settle, herd_litter', 'required'),
 			array('sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, 
-					no_boars_alive, gilts_alive, birth_wgt, pigs_transfer, weaned_males, weaned_females, no_pigs_weighted,weighing_age,actual_weight,21_wgt', 'numerical', 'integerOnly'=>true),
+					no_boars_alive, gilts_alive, birth_wgt, pigs_transfer, weaned_males, weaned_females, no_pigs_weighted,weighing_age,actual_weight,wgt_21', 'numerical', 'integerOnly'=>true),
 			array('pigs_transfer, weaned_males, weaned_females,no_pigs_weighted,weighing_age','length','max'=>2),
-			array('actual_weight,21_wgt','length','max'=>3),
-			array('sire_ear_notch, date_bred', 'length', 'max'=>50),
+			array('actual_weight,wgt_21','length','max'=>3),
+			array('sire_ear_notch, date_bred, weighted_date, weaned_date', 'length', 'max'=>50),
 			array('farrowed_date','length','max'=>20),
 			array('sow_ear_notch','length','max'=>50),
 			array('comments','length','max'=>10000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('litters_id, sow_ear_notch, date_bred, sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, no_boars_alive, gilts_alive, birth_wgt, comments, date_modified, farrowed_date', 'safe', 'on'=>'search'),
+			array('litters_id, sow_ear_notch, date_bred, sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, no_boars_alive, gilts_alive, birth_wgt, comments, date_modified, farrowed_date, weighted_date, weaned_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -98,9 +98,10 @@ class Litters extends CActiveRecord
 			'weaned_females'=>'# Weaned Females',
 			'no_pigs_weighted'=>'# Pigs Weighed',
 			'weighing_age'=>'Age',
-				'actual_weight'=>'Actual Weight',
-			'21_wgt'=>'21 Day Weight',
+			'actual_weight'=>'Actual Weight',
+			'wgt_21'=>'21 Day Weight',
 			'date_modified' => 'Date Modified',
+			'weighted_date'=>"Weighed Date",
 		);
 	}
 

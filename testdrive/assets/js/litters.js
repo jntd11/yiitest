@@ -68,9 +68,12 @@ $(document).ready(function(){
 		}
 		return;
 	}
-	if($("#farrowed_date").val() != "undefined") {
+	if(typeof $("#farrowed_date").val() != "undefined") {
 		$("#farrowed_date").focus();
+	}else if(typeof  $("#Litters_pigs_transfer").val() != "undefined") {
+		$("#Litters_pigs_transfer").focus();
 	}
+	
 });
 
 function cancelSow(){
@@ -338,12 +341,24 @@ function saveFocus(){
 function calculateAge(){
 	var age;
 	var weighted_date = $("#weighted_date").val();
-	var farrowed_date = $("#farrowed_date").val();
+	var farrowed_date = $("#farroweddate").val();
 	if(weighted_date == "" || farrowed_date == "") 
 		return;
 	var date1 = new Date(weighted_date);
 	var date2 = new Date(farrowed_date);
 	$("#weighing_age").val(parseInt((date1.getTime() - date2.getTime())/(24*60*60*1000)));
-	return ;
-	
+	$("#weighing_age").focus();
+	//return;
+}
+
+function fillweight(){
+	if($("#Litters_no_pigs_weighted").val() == ""){
+		$("#Litters_no_pigs_weighted").val(parseInt($("#Litters_weaned_males").val())+parseInt($("#Litters_weaned_females").val())); 
+	}
+}
+
+function setweanedDate(){
+	if($("#weaned_date").val() == "") {
+		$("#weaned_date").val($("#weighted_date").val());
+	}
 }

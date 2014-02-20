@@ -47,7 +47,7 @@ if($herdmark != "")
 	<div >
 		<?php echo $form->label($model,'farrowed_date'); ?>
 		<?php echo $model->farrowed_date;
-			 echo $form->hiddenField($model,'farrowed_date',array('value'=>$model->farrowed_date,'id'=>'farrowed_date'));
+			 echo $form->hiddenField($model,'farrowed_date',array('value'=>$model->farrowed_date,'id'=>'farroweddate'));
 		 ?>
 	</div>	
 	<div >
@@ -56,22 +56,22 @@ if($herdmark != "")
 	</div>	
 	<div>
 		<?php echo $form->labelEx($model,'pigs_transfer'); ?>
-		<?php echo $form->textField($model,'pigs_transfer', array('size'=>2,'maxlength'=>2)); ?>
+		<?php echo $form->textField($model,'pigs_transfer', array('size'=>2,'maxlength'=>2,'value'=>($model->pigs_transfer)?$model->pigs_transfer:"")); ?>
 		<?php echo $form->error($model,'pigs_transfer'); ?>
 	</div>
-	<div>
+	<div class="row">
 		<?php echo $form->labelEx($model,'weaned_males'); ?>
-		<?php echo $form->textField($model,'weaned_males', array('size'=>2,'maxlength'=>2)); ?>
+		<?php echo $form->textField($model,'weaned_males', array('size'=>2,'maxlength'=>2,'value'=>($model->weaned_males)?$model->weaned_males:"")); ?>
 		<?php echo $form->error($model,'weaned_males'); ?>
 	</div>
-	<div>
+	<div class="row">
 		<?php echo $form->labelEx($model,'weaned_females'); ?>
-		<?php echo $form->textField($model,'weaned_females', array('size'=>2,'maxlength'=>2)); ?>
+		<?php echo $form->textField($model,'weaned_females', array('size'=>2,'maxlength'=>2,'value'=>($model->weaned_females)?$model->weaned_females:"")); ?>
 		<?php echo $form->error($model,'weaned_females'); ?>
 	</div>
-	<div>
+	<div class="row">
 		<?php echo $form->labelEx($model,'no_pigs_weighted'); ?>
-		<?php echo $form->textField($model,'no_pigs_weighted', array('size'=>2,'maxlength'=>2)); ?>
+		<?php echo $form->textField($model,'no_pigs_weighted', array('size'=>2,'maxlength'=>2,'value'=>($model->no_pigs_weighted)?$model->no_pigs_weighted:"",'onfocus'=>'fillweight();')); ?>
 		<?php echo $form->error($model,'no_pigs_weighted'); ?>
 	</div>	
 	<div class="row">
@@ -109,13 +109,13 @@ if($herdmark != "")
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'actual_weight'); ?>
-		<?php echo $form->textField($model,'actual_weight',array('size'=>3,'maxlength'=>3)); ?>
+		<?php echo $form->textField($model,'actual_weight',array('size'=>3,'maxlength'=>3,'value'=>($model->actual_weight)?$model->actual_weight:"")); ?>
 		<?php echo $form->error($model,'actual_weight'); ?>
 	</div>
 	<div class="row">
-		<?php echo $form->labelEx($model,'21_wgt'); ?>
-		<?php echo $form->textField($model,'21_wgt',array('size'=>3,'maxlength'=>3)); ?>
-		<?php echo $form->error($model,'21_wgt'); ?>
+		<?php echo $form->labelEx($model,'wgt_21'); ?>
+		<?php echo $form->textField($model,'wgt_21',array('size'=>3,'maxlength'=>3,'value'=>($model->wgt_21)?$model->wgt_21:"")); ?>
+		<?php echo $form->error($model,'wgt_21'); ?>
 	</div>
 		<div class="row">
 		<?php echo $form->labelEx($model,'weaned_date'); ?>
@@ -134,7 +134,10 @@ if($herdmark != "")
 						'id'=>'weaned_date',
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
-						'value'=>$weaned_date,
+						//'value'=>,
+						'onFocus'=>'setweanedDate();',
+						'onChange'=>'$("#Litters_comments").focus();',
+						'onBlur'=>'$("#Litters_comments").focus();',
 				),
 				
 		));

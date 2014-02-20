@@ -88,7 +88,8 @@ if($herdmark != "")
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
 						'value'=>''.$farrowed_date.'',
-						//'onChange'=>'changeDate();',
+						'onChange'=>'$("#Litters_times_settle").focus();',
+						'onBlur'=>'$("#Litters_times_settle").focus();',
 				),
 				
 		));
