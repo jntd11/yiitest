@@ -57,9 +57,9 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 	<div id="mainmenu">
 		<div id="menu-top">
-		
+
 		<?php
-		
+
 			//zii.widgets.CMenu 0 application.extensions.mbmenu.MbMenu
 			$this->widget('zii.widgets.CMenu',array(
 			'activeCssClass'=>'active',
@@ -68,10 +68,12 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				//array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				
+
 				array('label'=>'Customers', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(
 							array('label'=>'List ', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblCustomerEntry/admin')),
 							array('label'=>'Mailing Code', 'url'=>array('/tblMailingCode/admin')),
+							array('label'=>'Defects Code', 'url'=>array('/DefectsCode/admin')
+							  ),
 				)),
 					array('label'=>'Pigs', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(
 							array('label'=>'Bred Sows', 'itemOptions'=>array('id'=>'breed'), 'url'=>array('/sowGilts/admin')),
@@ -79,7 +81,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Weaned', 'itemOptions'=>array('id'=>'weaned'), 'url'=>array('/litters/admin1')),
 							array('label'=>'Sold Hogs', 'itemOptions'=>array('id'=>'soldhogs'), 'linkOptions'=>array('accesskey'=>'h'), 'url'=>array('/tblSoldHogs/admin')),
 							array('label'=>'Sows/Boars', 'itemOptions'=>array('id'=>'sowboar'), 'linkOptions'=>array('accesskey'=>'s'), 'url'=>array('/sowBoar/admin')),
-							
+
 					)),
 					array('label'=>'Chores', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(					)),
 					array('label'=>'Semen', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(					)),
@@ -103,9 +105,9 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Automatic Chores Table', 'url'=>array('admin')),
 							array('label'=>'Change Hog Number', 'url'=>array('admin')),
 							array('label'=>'Mailing Code', 'url'=>array('/tblMailingCode')),
-							
+
 				)), */
-				//array('label'=>'Entry', 
+				//array('label'=>'Entry',
 						//'itemOptions'=>array('id'=>'customerentry'), 'linkOptions'=>array('accesskey'=>'e'), 'url'=>array(''), 'items'=>array(
 								//array('label'=>'Sows/Boars', 'itemOptions'=>array('id'=>'sowboar'), 'linkOptions'=>array('accesskey'=>'s'), 'url'=>array('/sowBoar/admin')),
 								//array('label'=>'Sold Hogs', 'itemOptions'=>array('id'=>'soldhogs'), 'linkOptions'=>array('accesskey'=>'h'), 'url'=>array('/tblSoldHogs/admin'))
@@ -118,9 +120,9 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'linkOptions'=>array('accesskey'=>'l'), 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest,'itemOptions'=>array('class'=>'lastmenu1')),
 			),
 		)); ?>
-		
+
 		</div>
-		
+
 	</div><!-- mainmenu -->
 	<div id="infobar"><span id="currdate"><?php echo $currdate; ?></span> <span id="farmherd"><?php echo $farmHerd; ?></span>&nbsp;&nbsp;</div>
 	<?php if(isset($this->breadcrumbs)):?>
@@ -128,7 +130,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
-	
+
 
 	<?php echo $content; ?>
 
