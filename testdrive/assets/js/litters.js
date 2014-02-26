@@ -147,6 +147,15 @@ function autoSuggestSearch(){
 	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
 	    }
 	});
+	$("#litters-form [name='Litters[defect_code1]']").autocomplete({
+	    source: 'index.php?r=DefectsCode/autocompleteDefects',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	var valArray = ui.item.value.split("-");
+	    	ui.item.value = valArray[0]; 
+	    }
+	});
+	
 	
 	$('#sow-gilts-grid tbody > tr').on('click', function(id){
 		//$(this).click();
@@ -361,4 +370,16 @@ function setweanedDate(){
 	if($("#weaned_date").val() == "") {
 		$("#weaned_date").val($("#weighted_date").val());
 	}
+}
+function fillCode(val){
+	if(val == '&lt;New&gt;'){ 
+		openDialogMailing();
+	}else {
+		var valArray = val.split("-");
+		$("#litters-form [name='Litters[defect_code1]']").val(valArray[0]);
+	}
+}
+
+function successPopup(data){
+	$("#dropmenu1").append("<li><a href='javascript: void(0)' onClick='fillCode($(this).html())'>"+$("#mailing_code_label").val()+"-"+$("#mailing_code_desc").val()+"</a></li>");
 }

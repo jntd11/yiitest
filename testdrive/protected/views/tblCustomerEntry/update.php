@@ -37,9 +37,10 @@ jQuery(function(){ // on document load
 
 
 <?php
-//<h1>Update Customer <?php echo $model->customer_entry_id;  
+//<h1>Update Customer <?php echo $model->customer_entry_id;
 echo $this->renderPartial('_form', array('model'=>$model)); ?>
-<?php $model=new tblMailingCode; 
+<?php
+$model=new tblMailingCode;
 $mc = $this->getMailingCodes();
 ?>
 <div class="form" id="mailingcodedialog" style="display: none">
@@ -63,16 +64,16 @@ $mc = $this->getMailingCodes();
 		<?php echo $form->textField($model,'mailing_code_desc',array('size'=>60,'maxlength'=>60,'id'=>'mailing_code_desc')); ?>
 		<?php echo $form->error($model,'mailing_code_desc'); ?>
 	</div>
-	
+
 	<div class="row buttons">
-		<?php echo CHtml::ajaxSubmitButton("Create",  '', array('success' => 'function(data) { 
+		<?php echo CHtml::ajaxSubmitButton("Create",  '', array('success' => 'function(data) {
 				if(data == 1) { alert("Mailing Code Already Exists"); return;}
-				$("#mailingcodedialog").dialog("close"); 
+				$("#mailingcodedialog").dialog("close");
 				$("#TblCustomerEntry_mailing_code").val($("#TblCustomerEntry_mailing_code").val()+$("#mailing_code_label").val()); successPopup(data);}')); ?>
 		<?php echo CHtml::button('Cancel',array('onclick'=>'$("#mailingcodedialog").dialog("close")')); ?>
 	</div>
 
-<?php $this->endWidget(); 
+<?php $this->endWidget();
 echo '<ul id="dropmenu1" class="splitdropdown">';
 foreach($mc as $key=>$val){
 	echo "<li><a href='javascript: void(0)' onClick='fillCode($(this).html())'>".$val."</a></li>";

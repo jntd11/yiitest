@@ -46,13 +46,33 @@ echo " &nbsp;";
 echo CHtml::submitButton('Redisplay',array('onClick'=>''));
 $this->endWidget();
 ?>
+<script>
+$(document).ready(function(){
+    $("#defects-code-grid [name='DefectsCode[code]']").autocomplete({
+	    source: 'index.php?r=DefectsCode/autocompletecode',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	$('#defects-code-grid').yiiGridView('update', {data: data});
+	    }
+});
+    $("#defects-code-grid [name='DefectsCode[description]']").autocomplete({
+    	    source: 'index.php?r=DefectsCode/autocompleteDesc',
+    	    select: function( event, ui ) {
+    	    	var data = this.name+"="+ui.item.value;
+    	    	$('#defects-code-grid').yiiGridView('update', {data: data});
+    	    }
+    });
+});
+</script>
 </div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'defects-code-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+  'selectionChanged'=>'function(id){
+    location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
+   }',
 	'columns'=>array(
-		'defects_code_id',
 		'code',
 		'description',
 		array(

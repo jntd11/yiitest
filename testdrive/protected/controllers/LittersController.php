@@ -91,8 +91,8 @@ class LittersController extends Controller
 		$modelSowgilts = SowGilts::model()->findByPk($id);
 		if($modelSowgilts===null)
 			throw new CHttpException(404,'The requested page does not exist.');
-		
-		
+
+
 		$qtxt ="SELECT * FROM herd WHERE ear_notch = '".$modelSowgilts->sow_ear_notch."' AND bred_date = '".$modelSowgilts->date_bred."'";
 		$command =Yii::app()->db->createCommand($qtxt);
 		$res = $command->queryRow();
@@ -100,11 +100,11 @@ class LittersController extends Controller
 		if(isset($res['last_parity']) &&  $modelSowgilts->farrowed == 'Y') {
 			$model = Litters::model()->findByAttributes(array('sow_ear_notch'=>$modelSowgilts->sow_ear_notch,'sow_parity'=>$res['last_parity']));
 		}
-		
+
 		if(!isset($model) || $model === null) {
 			$model = new Litters;
 		}
-		
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -120,7 +120,7 @@ class LittersController extends Controller
 				$sql .= " AND sow_gilts_id = ".$id;
 				$command = Yii::app()->db->createCommand($sql);
 				$command->execute();
-				
+
 				$sql = "UPDATE herd SET ";
 				$sql .= " bred_date = '".$model->date_bred."' ";
 				$sql .= " WHERE ear_notch = '".$model->sow_ear_notch."'";
@@ -141,7 +141,7 @@ class LittersController extends Controller
 			'modelsowgilts'=>$modelSowgilts,
 		));
 	}
-	
+
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -150,14 +150,14 @@ class LittersController extends Controller
 	public function actionUpdateLitter($id)
 	{
 		$model=$this->loadModel($id);
-		
+
 		if($model===null) {
 			$model=new Litters;
 		}
-	
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-	
+
 		if(isset($_POST['Litters']))
 		{
 			$model->attributes = $_POST['Litters'];
@@ -165,7 +165,7 @@ class LittersController extends Controller
 				$this->redirect(array('admin1'));
 			}
 		}
-	
+
 		$this->render('updatelitter',array(
 				'model'=>$model,
 		));
@@ -221,7 +221,7 @@ class LittersController extends Controller
 				'sort'=>$sort,
 		));
 	}
-	
+
 	/**
 	 * Manages all models.
 	 */
@@ -239,9 +239,9 @@ class LittersController extends Controller
 		$this->render('admin-wean',array(
 				'model'=>$model,
 				'sort'=>$sort,
-		)); 
+		));
 	}
-	
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -269,7 +269,7 @@ class LittersController extends Controller
 			Yii::app()->end();
 		}
 	}
-	
+
 	public function actionautocompleteSow() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -342,5 +342,14 @@ class LittersController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-	
+
+	public function getDefectsCodes($term=NULL) {
+	 $res =array();
+	 $qtxt ="SELECT concat_ws('-',code,description)  FROM defects_code order by code asc";
+	 $command =Yii::app()->db->createCommand($qtxt);
+	 $command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+	 return $res = $command->queryColumn();
+	}
+
+
 }

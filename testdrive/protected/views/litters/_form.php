@@ -7,9 +7,9 @@ $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
 
-if($model->farrowed_date != "") 
-	$farrowed_date = $model->farrowed_date; 
-else 
+if($model->farrowed_date != "")
+	$farrowed_date = $model->farrowed_date;
+else
 	$farrowed_date = $activitydate;
 
 if($herdmark != "")
@@ -37,7 +37,7 @@ if($herdmark != "")
 		<?php echo $modelsowgilts->sow_ear_notch; ?>
 	</div>
 	<div >
-		<?php 
+		<?php
 		echo $form->hiddenField($model,'date_bred',array('value'=>$modelsowgilts->date_bred));
 		echo $form->labelEx($modelsowgilts,'date_bred'); ?>
 		<?php echo $modelsowgilts->date_bred; ?>
@@ -46,14 +46,14 @@ if($herdmark != "")
 		<?php echo $form->labelEx($modelsowgilts,'due_date'); ?>
 		<?php echo $modelsowgilts->due_date; ?>
 	</div>
-	
+
 	<div class="">
 		<?php echo $form->hiddenField($model,'litters_id');?>
 		<?php echo $form->hiddenField($modelsowgilts,'sire_ear_notch',array('name'=>'sire_ear_notch_org'));?>
-		
+
 		<?php echo $form->labelEx($model,'sire_ear_notch'); ?>
-		
-		<?php 
+
+		<?php
 		if(count($model->errors)){
 			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2); checkFarrow('.$modelsowgilts->sow_gilts_id.');','id'=>'sirenotch'));
 		}else {
@@ -69,10 +69,10 @@ if($herdmark != "")
 		<?php echo $form->textField($model,'sow_parity',array('id'=>'sow_parity')); ?>
 		<?php echo $form->error($model,'sow_parity'); ?>
 	</div>
-	
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'farrowed_date'); ?>
-	<?php 
+	<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 				'model' => $model,
 				'attribute' => 'farrowed_date',
@@ -91,9 +91,9 @@ if($herdmark != "")
 						'onChange'=>'$("#Litters_times_settle").focus();',
 						'onBlur'=>'$("#Litters_times_settle").focus();',
 				),
-				
+
 		));
-		 
+
 		?>
 		<?php echo $form->error($model,'farrowed_date'); ?>
 		</div>
@@ -146,14 +146,25 @@ if($herdmark != "")
 		<?php echo $form->error($model,'comments'); ?>
 		<p class="note">Fields with <span class="required">*</span> are required.</p>
 	</div>
+	<div class="row">
 
-	
+		<?php echo $form->labelEx($model,'defect_code'); ?>
+		<?php echo $form->textField($model,'defect_code1',array('size'=>3,'maxlength'=>3,'onkeyup'=>'caps(this)')); ?>
+		<a href="#" class="splitmenubutton" data-showmenu="dropmenu1" data-splitmenu="false">Code</a>
+		<?php echo $form->error($model,'defect_code1'); ?>
+		<?php echo $form->labelEx($model,'defect_count'); ?>
+		<?php echo $form->textField($model,'defect_count1',array('size'=>3,'maxlength'=>3)); ?>
+		<?php echo $form->error($model,'defect_count1'); ?>
+		</div>
+    <div>&nbsp;</div>
+
+
 	<div class="row buttons">
 		<?php echo CHtml::Button('List Farrowed',array('onClick'=>'window.location="index.php?r=litters/admin"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm();','id'=>'submit','tabIndex'=>10)); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelLitter()')); ?>
 	</div>
-	
+
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

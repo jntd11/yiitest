@@ -28,7 +28,7 @@ class DefectsCodeController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','Autocompletecode','Autocompletedesc','AutocompleteDefects'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -71,7 +71,11 @@ class DefectsCodeController extends Controller
 		{
 			$model->attributes=$_POST['DefectsCode'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->defects_code_id));
+			 if(!isset($_POST['savenew']))
+			   $this->redirect(array('admin'));
+			 else
+			   $this->redirect(array('create'));
+			//$this->redirect(array('view','id'=>$model->defects_code_id));
 		}
 
 		$this->render('create',array(
@@ -95,7 +99,11 @@ class DefectsCodeController extends Controller
 		{
 			$model->attributes=$_POST['DefectsCode'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->defects_code_id));
+ 			 if(!isset($_POST['savenew']))
+ 			  $this->redirect(array('admin'));
+ 			 else
+ 			  $this->redirect(array('create'));
+				//$this->redirect(array('view','id'=>$model->defects_code_id));
 		}
 
 		$this->render('update',array(
@@ -170,4 +178,41 @@ class DefectsCodeController extends Controller
 			Yii::app()->end();
 		}
 	}
+	public function actionAutocompletecode() {
+     	 $res =array();
+     	 if (isset($_GET['term'])) {
+     	  // http://www.yiiframework.com/doc/guide/database.dao
+     	  $qtxt ="SELECT code  FROM   defects_code WHERE code LIKE :username";
+     	  $command =Yii::app()->db->createCommand($qtxt);
+     	  $command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+     	  $res =$command->queryColumn();
+     	 }
+     	 echo CJSON::encode($res);
+     	 Yii::app()->end();
+	}
+	public function actionAutocompletedesc() {
+	 $res =array();
+	 if (isset($_GET['term'])) {
+	  // http://www.yiiframework.com/doc/guide/database.dao
+	  $qtxt ="SELECT description  FROM   defects_code WHERE description LIKE :username";
+	  $command =Yii::app()->db->createCommand($qtxt);
+	  $command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+	  $res =$command->queryColumn();
+	 }
+	 echo CJSON::encode($res);
+	 Yii::app()->end();
+	}
+	public function actionAutocompleteDefects() {
+	 $res =array();
+	 if (isset($_GET['term'])) {
+	  // http://www.yiiframework.com/doc/guide/database.dao
+	  $qtxt ="SELECT concat_ws('-',code,description) FROM   defects_code WHERE code LIKE :username";
+	  $command =Yii::app()->db->createCommand($qtxt);
+	  $command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+	  $res =$command->queryRow();
+	 }
+	 echo CJSON::encode($res);
+	 Yii::app()->end();
+	}
+
 }
