@@ -87,6 +87,7 @@ class LittersController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+        $oldid = $id;
 		//$model=$this->loadModel($id);
 		$modelSowgilts = SowGilts::model()->findByPk($id);
 		if($modelSowgilts===null)
@@ -135,11 +136,22 @@ class LittersController extends Controller
 				$this->redirect(array('admin'));
 			}
 		}
-
-		$this->render('update',array(
-			'model'=>$model,
-			'modelsowgilts'=>$modelSowgilts,
-		));
+		if(isset($_POST['DefectsCode']))
+		{
+		 $modelDefects =new DefectsCode();
+		 $modelDefects->attributes=$_POST['DefectsCode'];
+		 $results = $this->isDefectCodeExist($modelDefects->code);
+ 		 if($results == 0) {
+  		  $modelDefects->save();
+  		  $code = $modelDefects->code;
+  		  $model->defect_code1 = $code;
+ 		 }
+		}else {
+    		$this->render('update',array(
+    			'model'=>$model,
+    			'modelsowgilts'=>$modelSowgilts,
+    		));
+		}
 	}
 
 	/**
@@ -349,6 +361,19 @@ class LittersController extends Controller
 	 $command =Yii::app()->db->createCommand($qtxt);
 	 $command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
 	 return $res = $command->queryColumn();
+	}
+	public function isDefectCodeExist($term=NULL) {
+ 	 $res =array();
+ 	 if (isset($term)) {
+ 	  $qtxt ="SELECT code FROM defects_code WHERE  code LIKE :username";
+ 	  $command =Yii::app()->db->createCommand($qtxt);
+ 	  $command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+ 	  $res =$command->queryColumn();
+ 	 }
+ 	 if(count($res) > 0)
+ 	  echo 1;
+ 	 else
+ 	  echo 0;
 	}
 
 

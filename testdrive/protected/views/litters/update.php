@@ -68,7 +68,7 @@ $mc = $this->getDefectsCodes();
 		<?php echo CHtml::ajaxSubmitButton("Create",  '', array('success' => 'function(data) {
 				if(data == 1) { alert("Defect Code Already Exists"); return;}
 				$("#mailingcodedialog").dialog("close");
-				$("#TblCustomerEntry_mailing_code").val($("#TblCustomerEntry_mailing_code").val()+$("#mailing_code_label").val()); successPopup(data);}')); ?>
+				$("#Litters_defect_code1").val($("#code").val()); successPopup(data);}')); ?>
 		<?php echo CHtml::button('Cancel',array('onclick'=>'$("#mailingcodedialog").dialog("close")')); ?>
 	</div>
 
