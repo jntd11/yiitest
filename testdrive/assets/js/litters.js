@@ -147,7 +147,7 @@ function autoSuggestSearch(){
 	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
 	    }
 	});
-	$("#litters-form [name='Litters[defect_code1]']").autocomplete({
+	$("#litters-form [name='Litters[defect_code*]']").autocomplete({
 	    source: 'index.php?r=DefectsCode/autocompleteDefects',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;

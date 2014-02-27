@@ -147,7 +147,6 @@ if($herdmark != "")
 		<p class="note">Fields with <span class="required">*</span> are required.</p>
 	</div>
 	<div class="row">
-
 		<?php echo $form->labelEx($model,'defect_code'); ?>
 		<?php echo $form->textField($model,'defect_code1',array('size'=>3,'maxlength'=>3,'onkeyup'=>'caps(this)')); ?>
 		<a href="#" class="splitmenubutton" data-showmenu="dropmenu1" data-splitmenu="false">Code</a>
@@ -155,6 +154,16 @@ if($herdmark != "")
 		<?php echo $form->labelEx($model,'defect_count'); ?>
 		<?php echo $form->textField($model,'defect_count1',array('size'=>3,'maxlength'=>3)); ?>
 		<?php echo $form->error($model,'defect_count1'); ?>
+		</div>
+    <div>&nbsp;</div>
+    <div class="row">
+		<?php echo $form->labelEx($model,'defect_code'); ?>
+		<?php echo $form->textField($model,'defect_code2',array('size'=>3,'maxlength'=>3,'onkeyup'=>'caps(this)')); ?>
+		<a href="#" class="splitmenubutton" data-showmenu="dropmenu1" data-splitmenu="false">Code</a>
+		<?php echo $form->error($model,'defect_code2'); ?>
+		<?php echo $form->labelEx($model,'defect_count'); ?>
+		<?php echo $form->textField($model,'defect_count2',array('size'=>3,'maxlength'=>3)); ?>
+		<?php echo $form->error($model,'defect_count2'); ?>
 		</div>
     <div>&nbsp;</div>
 
