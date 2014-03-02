@@ -209,7 +209,7 @@ class DefectsCodeController extends Controller
 	  $qtxt ="SELECT concat_ws('-',code,description) FROM   defects_code WHERE code LIKE :username";
 	  $command =Yii::app()->db->createCommand($qtxt);
 	  $command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
-	  $res =$command->queryRow();
+	  $res =$command->queryColumn();
 	 }
 	 echo CJSON::encode($res);
 	 Yii::app()->end();

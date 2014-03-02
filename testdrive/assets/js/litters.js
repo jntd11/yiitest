@@ -147,7 +147,7 @@ function autoSuggestSearch(){
 	    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
 	    }
 	});
-	$("#litters-form [name='Litters[defect_code*]']").autocomplete({
+	$("#litters-form [id*=Litters_defect_code]").autocomplete({
 	    source: 'index.php?r=DefectsCode/autocompleteDefects',
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
@@ -371,15 +371,26 @@ function setweanedDate(){
 		$("#weaned_date").val($("#weighted_date").val());
 	}
 }
-function fillCode(val){
-	if(val == '&lt;New&gt;'){ 
-		openDialogMailing();
+function fillCode(val,id){
+	if(val == '&lt;New&gt;'){
+		$("#current_defectcode").val(id);
+		$("#mailingcodedialog").dialog({
+			autoOpen: true,
+			width: 600,
+			modal: true,
+			data: 1,
+			closeOnEscape: true,
+		});
+		$("#Litters_defect_count"+id).focus();
+		
 	}else {
 		var valArray = val.split("-");
-		$("#litters-form [name='Litters[defect_code1]']").val(valArray[0]);
+		$("#litters-form [name='Litters[defect_code"+id+"]']").val(valArray[0]);
+		$("#Litters_defect_count"+id).focus();
 	}
 }
 
 function successPopup(data){
-	$("#dropmenu1").append("<li><a href='javascript: void(0)' onClick='fillCode($(this).html())'>"+$("#mailing_code_label").val()+"-"+$("#mailing_code_desc").val()+"</a></li>");
+	$("#dropmenu"+$("#current_defectcode").val()).append("<li><a href='javascript: void(0)' onClick='fillCode($(this).html(),$(\"#current_defectcode\").val())'>"+$("#code").val()+"-"+$("#description").val()+"</a></li>");
+	$("#Litters_defect_count"+$("#current_defectcode").val()).focus();
 }

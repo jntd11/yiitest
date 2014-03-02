@@ -149,6 +149,7 @@ function openDialogMailing(){
 		autoOpen: true,
 		width: 600,
 		modal: true,
+		data: 1,
 		closeOnEscape: true,
 	});
 }

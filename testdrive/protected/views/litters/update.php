@@ -68,16 +68,18 @@ $mc = $this->getDefectsCodes();
 		<?php echo CHtml::ajaxSubmitButton("Create",  '', array('success' => 'function(data) {
 				if(data == 1) { alert("Defect Code Already Exists"); return;}
 				$("#mailingcodedialog").dialog("close");
-				$("#Litters_defect_code1").val($("#code").val()); successPopup(data);}')); ?>
+				$("#Litters_defect_code"+$("#current_defectcode").val()).val($("#code").val()); successPopup(data);}')); ?>
 		<?php echo CHtml::button('Cancel',array('onclick'=>'$("#mailingcodedialog").dialog("close")')); ?>
 	</div>
 
 <?php $this->endWidget();
-echo '<ul id="dropmenu1" class="splitdropdown">';
-foreach($mc as $key=>$val){
-	echo "<li><a href='javascript: void(0)' onClick='fillCode($(this).html())'>".$val."</a></li>";
+for($i=1;$i <= 10; $i++) {
+		echo '<ul id="dropmenu'.$i.'" class="splitdropdown">';
+		foreach($mc as $key=>$val){
+			echo "<li><a href='javascript: void(0)' onClick='fillCode($(this).html(),$i)'>".$val."</a></li>";
+		}
+		echo "<li><a href='javascript: void(0)' onClick='fillCode($(this).html(),$i)'>&lt;New&gt;</a></li>";
+		echo '</ul>';
 }
-echo "<li><a href='javascript: void(0)' onClick='fillCode($(this).html())'>&lt;New&gt;</a></li>";
-echo '</ul>';
 ?>
 </div>

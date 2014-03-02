@@ -146,32 +146,26 @@ if($herdmark != "")
 		<?php echo $form->error($model,'comments'); ?>
 		<p class="note">Fields with <span class="required">*</span> are required.</p>
 	</div>
-	<div class="row">
-		<?php echo $form->labelEx($model,'defect_code'); ?>
-		<?php echo $form->textField($model,'defect_code1',array('size'=>3,'maxlength'=>3,'onkeyup'=>'caps(this)')); ?>
-		<a href="#" class="splitmenubutton" data-showmenu="dropmenu1" data-splitmenu="false">Code</a>
-		<?php echo $form->error($model,'defect_code1'); ?>
-		<?php echo $form->labelEx($model,'defect_count'); ?>
-		<?php echo $form->textField($model,'defect_count1',array('size'=>3,'maxlength'=>3)); ?>
-		<?php echo $form->error($model,'defect_count1'); ?>
+	<?php for($i=1;$i <= 10; $i++) { ?>
+		<div class="row">
+			<?php echo $form->labelEx($model,'defect_code'); ?>
+			<?php echo $form->textField($model,'defect_code'.$i,array('size'=>3,'maxlength'=>3,'onkeyup'=>'caps(this)')); ?>
+			<a href="#" class="splitmenubutton" data-showmenu="dropmenu<?php echo $i; ?>". data-splitmenu="false">Code</a>
+			<?php echo $form->error($model,'defect_code'.$i); ?>
+			<?php echo $form->labelEx($model,'defect_count'); ?>
+			<?php echo $form->textField($model,'defect_count'.$i,array('size'=>3,'maxlength'=>3)); ?>
+			<?php echo $form->error($model,'defect_count'.$i); ?>
 		</div>
-    <div>&nbsp;</div>
-    <div class="row">
-		<?php echo $form->labelEx($model,'defect_code'); ?>
-		<?php echo $form->textField($model,'defect_code2',array('size'=>3,'maxlength'=>3,'onkeyup'=>'caps(this)')); ?>
-		<a href="#" class="splitmenubutton" data-showmenu="dropmenu1" data-splitmenu="false">Code</a>
-		<?php echo $form->error($model,'defect_code2'); ?>
-		<?php echo $form->labelEx($model,'defect_count'); ?>
-		<?php echo $form->textField($model,'defect_count2',array('size'=>3,'maxlength'=>3)); ?>
-		<?php echo $form->error($model,'defect_count2'); ?>
-		</div>
-    <div>&nbsp;</div>
+		   <div>&nbsp;</div>
+	<?php } ?>
 
-
+    <div>&nbsp;</div>
 	<div class="row buttons">
+	   
 		<?php echo CHtml::Button('List Farrowed',array('onClick'=>'window.location="index.php?r=litters/admin"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm();','id'=>'submit','tabIndex'=>10)); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelLitter()')); ?>
+		<input type="hidden" name="current_defectcode" id="current_defectcode" />
 	</div>
 
 <?php $this->endWidget(); ?>

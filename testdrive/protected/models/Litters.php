@@ -50,15 +50,18 @@ class Litters extends CActiveRecord
 			array('sow_parity, times_settle, herd_litter, no_pigs, no_born_alive,
 					no_boars_alive, gilts_alive, birth_wgt, pigs_transfer, weaned_males, weaned_females, no_pigs_weighted,weighing_age,actual_weight,wgt_21', 'numerical', 'integerOnly'=>true),
 			array('pigs_transfer, weaned_males, weaned_females,no_pigs_weighted,weighing_age','length','max'=>2),
-		     array('defect_count1','numerical', 'integerOnly'=>true),
-			array('actual_weight,wgt_21, defect_code1, defect_count1','length','max'=>3),
+		     array('defect_count1,defect_count2,defect_count3,defect_count4,defect_count5,defect_count6,defect_count7,defect_count8,defect_count9,defect_count10',
+		     		'numerical', 'integerOnly'=>true),
+			array('actual_weight,wgt_21, defect_code1, defect_count1, defect_code2,defect_code3,defect_code4,defect_code5,
+					defect_code6,defect_code7, defect_code8,defect_code9,defect_code10,','length','max'=>3),
 			array('sire_ear_notch, date_bred, weighted_date, weaned_date', 'length', 'max'=>50),
 			array('farrowed_date','length','max'=>20),
 			array('sow_ear_notch','length','max'=>50),
 			array('comments','length','max'=>10000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('litters_id, sow_ear_notch, date_bred, sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, no_boars_alive, gilts_alive, birth_wgt, comments, date_modified, farrowed_date, weighted_date, weaned_date', 'safe', 'on'=>'search'),
+			array('litters_id, sow_ear_notch, date_bred, sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, 
+					no_boars_alive, gilts_alive, birth_wgt, comments, date_modified, farrowed_date, weighted_date, weaned_date', 'safe', 'on'=>'search'),
 		);
 	}
 
