@@ -152,7 +152,10 @@ function autoSuggestSearch(){
 	    select: function( event, ui ) {
 	    	var data = this.name+"="+ui.item.value;
 	    	var valArray = ui.item.value.split("-");
-	    	ui.item.value = valArray[0]; 
+	    	ui.item.value = valArray[0];
+	    	var id = this.id;
+	    	desc = id.split("Litters_defect_code");
+	    	$("#desc"+desc[1]).html(valArray[1])
 	    }
 	});
 	
@@ -386,6 +389,7 @@ function fillCode(val,id){
 	}else {
 		var valArray = val.split("-");
 		$("#litters-form [name='Litters[defect_code"+id+"]']").val(valArray[0]);
+		$("#desc"+id).html(valArray[1]);
 		$("#Litters_defect_count"+id).focus();
 	}
 }

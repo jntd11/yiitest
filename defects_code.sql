@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1
+-- version 3.4.9
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Feb 25, 2014 at 12:23 PM
--- Server version: 5.5.20
--- PHP Version: 5.3.10
+-- Host: mysql51-015.wc2:3306
+-- Generation Time: Mar 03, 2014 at 02:39 AM
+-- Server version: 5.1.61
+-- PHP Version: 5.2.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `testdrive`
+-- Database: `512368_pigs`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `defects_code` (
   `description` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`defects_code_id`),
   KEY `code` (`code`,`description`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `defects_code`
@@ -40,7 +40,8 @@ CREATE TABLE IF NOT EXISTS `defects_code` (
 
 INSERT INTO `defects_code` (`defects_code_id`, `code`, `description`) VALUES
 (1, 'A', 'asasas'),
-(2, 'AAA', '');
+(4, 'C', 'ccc'),
+(3, 'Q', 'qqq');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

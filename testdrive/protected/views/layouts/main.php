@@ -72,8 +72,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 				array('label'=>'Customers', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(
 							array('label'=>'List ', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblCustomerEntry/admin')),
 							array('label'=>'Mailing Code', 'url'=>array('/tblMailingCode/admin')),
-							array('label'=>'Defects Code', 'url'=>array('/DefectsCode/admin')
-							  ),
+
 				)),
 					array('label'=>'Pigs', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(
 							array('label'=>'Bred Sows', 'itemOptions'=>array('id'=>'breed'), 'url'=>array('/sowGilts/admin')),
@@ -89,6 +88,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup/admin')),
 							array('label'=>'Sold Hogs Rebuild', 'url'=>array('/tblSoldHogs/rebuild')),
 							array('label'=>'Activity date', 'url'=>array('/user/user/activitydate')),
+					        array('label'=>'Defects Code', 'url'=>array('/DefectsCode/admin')),
 							array('label'=>Yii::t('app','Rights'), 'url'=>array('/rights')),
 							array('label'=>Yii::t('app','Profile'), 'url'=>array('/user/profile')),
 							(Yii::app()->user->isSuperUser)?array('label'=>'Users', 'url'=>array('/user'), 'itemOptions'=>array('id'=>'users'), 'linkOptions'=>array('id'=>'userlink', 'accesskey'=>'u'), 'items'=>array()

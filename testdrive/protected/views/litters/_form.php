@@ -144,16 +144,17 @@ if($herdmark != "")
 		<?php echo $form->labelEx($model,'comments'); ?>
 		<?php echo $form->textArea($model,'comments',array('rows'=>6, 'cols'=>50,'onBlur'=>'saveFocus();')); ?>
 		<?php echo $form->error($model,'comments'); ?>
-		<p class="note">Fields with <span class="required">*</span> are required.</p>
+
 	</div>
 	<?php for($i=1;$i <= 10; $i++) { ?>
 		<div class="row">
 			<?php echo $form->labelEx($model,'defect_code'); ?>
 			<?php echo $form->textField($model,'defect_code'.$i,array('size'=>3,'maxlength'=>3,'onkeyup'=>'caps(this)')); ?>
-			<a href="#" class="splitmenubutton" data-showmenu="dropmenu<?php echo $i; ?>". data-splitmenu="false">Code</a>
+			<a href="#" tabIndex="-1" class="splitmenubutton" data-showmenu="dropmenu<?php echo $i; ?>". data-splitmenu="false">Code</a>
 			<?php echo $form->error($model,'defect_code'.$i); ?>
 			<?php echo $form->labelEx($model,'defect_count'); ?>
 			<?php echo $form->textField($model,'defect_count'.$i,array('size'=>3,'maxlength'=>3)); ?>
+			<span id="desc<?php echo $i; ?>"></span>
 			<?php echo $form->error($model,'defect_count'.$i); ?>
 		</div>
 		   <div>&nbsp;</div>
@@ -161,13 +162,13 @@ if($herdmark != "")
 
     <div>&nbsp;</div>
 	<div class="row buttons">
-	   
+
 		<?php echo CHtml::Button('List Farrowed',array('onClick'=>'window.location="index.php?r=litters/admin"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm();','id'=>'submit','tabIndex'=>10)); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelLitter()')); ?>
 		<input type="hidden" name="current_defectcode" id="current_defectcode" />
 	</div>
-
+<p class="note">Fields with <span class="required">*</span> are required.</p>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
