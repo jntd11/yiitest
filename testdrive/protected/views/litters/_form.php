@@ -89,6 +89,7 @@ if($herdmark != "")
 						'maxlength' => '20',    // textField maxlength
 						'value'=>''.$farrowed_date.'',
 						'onChange'=>'$("#Litters_times_settle").focus();',
+				        //'onKeyPress'=>'focusTimes(event);',
 						'onBlur'=>'$("#Litters_times_settle").focus();',
 				),
 
@@ -100,7 +101,7 @@ if($herdmark != "")
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'times_settle'); ?>
-		<?php echo $form->textField($model,'times_settle', array('value'=>1,'size'=>1,'maxlength'=>1)); ?>
+		<?php echo $form->textField($model,'times_settle', array('value'=>1,'size'=>2,'maxlength'=>1,'id'=>'Litters_times_settle')); ?>
 		<?php echo $form->error($model,'times_settle'); ?>
 	</div>
 
@@ -154,7 +155,7 @@ if($herdmark != "")
 			<?php echo $form->error($model,'defect_code'.$i); ?>
 			<?php echo $form->labelEx($model,'defect_count'); ?>
 			<?php echo $form->textField($model,'defect_count'.$i,array('size'=>3,'maxlength'=>3)); ?>
-			<span id="desc<?php echo $i; ?>"></span>
+			<span id="desc<?php echo $i; ?>"><?php echo (isset($desc[$i]))?$desc[$i]:""; ?></span>
 			<?php echo $form->error($model,'defect_count'.$i); ?>
 		</div>
 		   <div>&nbsp;</div>
@@ -164,7 +165,7 @@ if($herdmark != "")
 	<div class="row buttons">
 
 		<?php echo CHtml::Button('List Farrowed',array('onClick'=>'window.location="index.php?r=litters/admin"')); ?>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm();','id'=>'submit','tabIndex'=>10)); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm();','id'=>'submit')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelLitter()')); ?>
 		<input type="hidden" name="current_defectcode" id="current_defectcode" />
 	</div>

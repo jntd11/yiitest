@@ -159,7 +159,7 @@ if($herdmark != "")
 			<?php echo $form->error($model,'defect_code'.$i); ?>
 			<?php echo $form->labelEx($model,'defect_count'); ?>
 			<?php echo $form->textField($model,'defect_count'.$i,array('size'=>3,'maxlength'=>3)); ?>
-			<span id="desc<?php echo $i; ?>"></span>
+			<span id="desc<?php echo $i; ?>"><?php echo (isset($desc[$i]))?$desc[$i]:""; ?></span>
 			<?php echo $form->error($model,'defect_count'.$i); ?>
 		</div>
 		   <div>&nbsp;</div>
@@ -169,7 +169,7 @@ if($herdmark != "")
 
 	<div class="row buttons">
 		<?php echo CHtml::Button('List Weaned',array('onClick'=>'window.location="index.php?r=litters/admin1"')); ?>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm1();','id'=>'submit','tabIndex'=>10)); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save',array('onClick'=>'return validateLitterForm1();','id'=>'submit')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelWeaned()')); ?>
 		<input type="hidden" name="current_defectcode" id="current_defectcode" />
 	</div>

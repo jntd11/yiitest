@@ -69,7 +69,7 @@ $(document).ready(function(){
 		return;
 	}
 	if(typeof $("#farrowed_date").val() != "undefined") {
-		$("#farrowed_date").focus();
+		$("#sow_parity").focus();
 	}else if(typeof  $("#Litters_pigs_transfer").val() != "undefined") {
 		$("#Litters_pigs_transfer").focus();
 	}
@@ -348,7 +348,7 @@ function checkExist(dates,isupd){
 	return;
 }
 function saveFocus(){
-	$("#submit").focus();
+	//$("#submit").focus();
 }
 function calculateAge(){
 	var age;
@@ -402,6 +402,7 @@ function checkValid(val,id){
 		}).done(function(data){
 				if(data == 0) {
 					alert("Not a valid code");
+					$("#"+id).val("");
 					$("#"+id).focus();
 				}
 		});
@@ -411,4 +412,13 @@ function checkValid(val,id){
 function successPopup(data){
 	$("#dropmenu"+$("#current_defectcode").val()).append("<li><a href='javascript: void(0)' onClick='fillCode($(this).html(),$(\"#current_defectcode\").val())'>"+$("#code").val()+"-"+$("#description").val()+"</a></li>");
 	$("#Litters_defect_count"+$("#current_defectcode").val()).focus();
+}
+function focusTimes(e){
+	 var keyCode = e.keyCode || e.which; 
+	  if (keyCode == 9) {
+		  e.preventDefault();
+		  $("#Litters_times_settle").focus();
+	    // call custom function here
+	  }
+	  e.preventDefault();
 }

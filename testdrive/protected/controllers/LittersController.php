@@ -97,9 +97,18 @@ class LittersController extends Controller
 		$qtxt ="SELECT * FROM herd WHERE ear_notch = '".$modelSowgilts->sow_ear_notch."' AND bred_date = '".$modelSowgilts->date_bred."'";
 		$command =Yii::app()->db->createCommand($qtxt);
 		$res = $command->queryRow();
-
+		$desc = array();
 		if(isset($res['last_parity']) &&  $modelSowgilts->farrowed == 'Y') {
 			$model = Litters::model()->findByAttributes(array('sow_ear_notch'=>$modelSowgilts->sow_ear_notch,'sow_parity'=>$res['last_parity']));
+            for($i=1;$i<=10;$i++){
+                 $code = $model->{'defect_code'.$i};
+                 if($code != "") {
+                     $qtxt ="SELECT description FROM defects_code WHERE code = '".$code."'";
+                     $command = Yii::app()->db->createCommand($qtxt);
+                     $res = $command->queryColumn();
+                     $desc[$i] = $res[0];
+                 }
+            }
 		}
 
 		if(!isset($model) || $model === null) {
@@ -136,20 +145,20 @@ class LittersController extends Controller
 				$this->redirect(array('admin'));
 			}
 		}
-		if(isset($_POST['DefectsCode']))
-		{
-		 $modelDefects =new DefectsCode();
-		 $modelDefects->attributes=$_POST['DefectsCode'];
-		 $results = $this->isDefectCodeExist($modelDefects->code);
- 		 if($results == 0) {
-  		  $modelDefects->save();
-  		  $code = $modelDefects->code;
-  		  $model->defect_code1 = $code;
- 		 }
-		}else {
+		if(isset($_POST['DefectsCode'])){
+    		 $modelDefects =new DefectsCode();
+    		 $modelDefects->attributes=$_POST['DefectsCode'];
+    		 $results = $this->isDefectCodeExist($modelDefects->code);
+     		 if($results == 0) {
+      		  $modelDefects->save();
+      		  $code = $modelDefects->code;
+      		  $model->defect_code1 = $code;
+     		 }
+    	}else {
     		$this->render('update',array(
     			'model'=>$model,
     			'modelsowgilts'=>$modelSowgilts,
+    		    'desc'=>$desc,
     		));
 		}
 	}
@@ -162,11 +171,20 @@ class LittersController extends Controller
 	public function actionUpdateLitter($id)
 	{
 		$model=$this->loadModel($id);
-
+        $desc = array();
 		if($model===null) {
 			$model=new Litters;
+		}else {
+     		for($i=1;$i<=10;$i++){
+     		 $code = $model->{'defect_code'.$i};
+     		 if($code != "") {
+     		  $qtxt ="SELECT description FROM defects_code WHERE code = '".$code."'";
+     		  $command = Yii::app()->db->createCommand($qtxt);
+     		  $res = $command->queryColumn();
+     		  $desc[$i] = $res[0];
+     		 }
+     		}
 		}
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -180,6 +198,7 @@ class LittersController extends Controller
 
 		$this->render('updatelitter',array(
 				'model'=>$model,
+		        'desc'=>$desc,
 		));
 	}
 	/**

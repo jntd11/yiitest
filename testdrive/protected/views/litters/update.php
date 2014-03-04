@@ -37,7 +37,7 @@ jQuery(function(){ // on document load
 })
 
 </script>
-<?php echo $this->renderPartial('_form', array('model'=>$model,'modelsowgilts'=>$modelsowgilts)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'modelsowgilts'=>$modelsowgilts,'desc'=>$desc)); ?>
 <?php
 $model=new DefectsCode();
 $mc = $this->getDefectsCodes();
@@ -68,8 +68,8 @@ $mc = $this->getDefectsCodes();
 		<?php echo CHtml::ajaxSubmitButton("Create",  '', array('success' => 'function(data) {
 				if(data == 1) { alert("Defect Code Already Exists"); return;}
 				$("#mailingcodedialog").dialog("close");
-				$("#Litters_defect_code"+$("#current_defectcode").val()).val($("#code").val()); 
-				$("#desc"+$("#current_defectcode").val()).html($("#description").val()); 
+				$("#Litters_defect_code"+$("#current_defectcode").val()).val($("#code").val());
+				$("#desc"+$("#current_defectcode").val()).html($("#description").val());
 				successPopup(data);}')); ?>
 		<?php echo CHtml::button('Cancel',array('onclick'=>'$("#mailingcodedialog").dialog("close")')); ?>
 	</div>

@@ -109,7 +109,7 @@ class SowGiltsController extends Controller
 					$this->redirect(array('update','id'=>$model->sow_gilts_id));
 				//$this->redirect(array('view','id'=>$model->sow_gilts_id));
 			}
-				
+
 		}
 
 		$this->render('update',array(
@@ -188,7 +188,7 @@ class SowGiltsController extends Controller
 			Yii::app()->end();
 		}
 	}
-	
+
 	public function actionAutocompleteEarNotch() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -219,9 +219,9 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['s'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			if($_GET['type'] == 2) 
+			if($_GET['type'] == 2)
 				$qtxt ="SELECT sold_mmddyy  FROM  herd WHERE ear_notch = :username and bred_date = 'BOAR'";
-			else 
+			else
 				$qtxt ="SELECT sold_mmddyy  FROM  herd WHERE ear_notch = :username and bred_date != 'BOAR'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = $_GET['s'];
@@ -229,19 +229,19 @@ class SowGiltsController extends Controller
 			$res =$command->queryColumn();
 		}
 		echo isset($res[0])?$res[0]:"";
-		
+
 	}
 	public function actionCheckFarrowed() {
 		$res =array();
 		if (isset($_GET['s'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			
+
 			$qtxt ="SELECT farrowed, date_bred FROM breeding WHERE sow_gilts_id = :username ";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = $_GET['id'];
 			$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
 			$res =$command->queryRow();
-			
+
 			if(isset($res->farrowed) && $res->farrowed == "Y") {
 				$qtxt ="SELECT last_parity FROM herd WHERE ear_notch = :username AND bred_date = ' ".$res[0]->date_bred."'";
 				$command =Yii::app()->db->createCommand($qtxt);
@@ -249,7 +249,7 @@ class SowGiltsController extends Controller
 				$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
 				$resParity = $command->queryColumn();
 			}
-			 
+
 			if(isset($resParity[0])) {
 				$currentParity = $resParity[0];
 				$qtxt ="SELECT * FROM litters WHERE sow_ear_notch = :username AND sow_parity = ".$currentParity;
@@ -258,7 +258,7 @@ class SowGiltsController extends Controller
 				$command->bindValue(":username", ''.$term.'', PDO::PARAM_STR);
 				$res = $command->queryRow();
 			}else{
-				$currentParity = $resParity[0] + 1;
+				$currentParity = 1;
 			}
 			$res['last_parity'] = $currentParity;
 			echo CJSON::encode($res);
@@ -283,7 +283,7 @@ class SowGiltsController extends Controller
 				echo CJSON::encode($res);
 			}
 		}
-		
+
 	}
 	public function actiongetdaysbtw() {
 		$res =array();
@@ -297,7 +297,7 @@ class SowGiltsController extends Controller
 			//echo $res['date_bred'];
 			if(isset($res[0]) && $_GET['born'] > $res[0]) {
 				$days = (strtotime($_GET['born']) - strtotime($res[0]))/(24*60*60);
-				echo $days; 
+				echo $days;
 			}else{
 				$qtxt ="SELECT born FROM  herd WHERE ear_notch = '".$_GET['earnotch']."' ";
 				$command =Yii::app()->db->createCommand($qtxt);
@@ -306,14 +306,14 @@ class SowGiltsController extends Controller
 					$days = (strtotime($_GET['born']) - strtotime($res['born']))/(24*60*60);
 					echo $days;
 				}else {
-					echo  0;	
+					echo  0;
 				}
-				
+
 			}
 		}
-	
+
 	}
-	
+
 	public function actionautocompleteSow() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -326,7 +326,7 @@ class SowGiltsController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-	
+
 	public function actionautocompleteDateBred() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -339,7 +339,7 @@ class SowGiltsController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-	
+
 	public function actionautocompleteSire() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -352,7 +352,7 @@ class SowGiltsController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-	
+
 	public function actionautocompleteService() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -389,7 +389,7 @@ class SowGiltsController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-	
+
 	public function actionautocompleteDue() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -414,5 +414,5 @@ class SowGiltsController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-	
+
 }
