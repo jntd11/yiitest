@@ -82,9 +82,17 @@ class DefectsCode extends CActiveRecord
 		$criteria->compare('defects_code_id',$this->defects_code_id);
 		$criteria->compare('code',$this->code,true);
 		$criteria->compare('description',$this->description,true);
-
+		
+		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
+		
+		$Litters_sort = isset($_REQUEST['DefectsCode_sort'])?$_REQUEST['DefectsCode_sort']:"";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+				'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'Litters_sort'=>$Litters_sort)),
+				'sort'=>array(
+						'defaultOrder'=>"code ASC" ,
+						'params'=>array('pages'=>$pages)
+				),
 		));
 	}
 }

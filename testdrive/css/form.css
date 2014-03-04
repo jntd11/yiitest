@@ -69,7 +69,7 @@ form#tbl-sold-hogs-form label, form#litters-form label, form#litters-form label{
 	text-align: right;
 }
 
-#label_TblCustomerEntry_notes {
+#label_TblCustomerEntry_notes, #Litters_comments, #SowGilts_comments, #TblSoldHogs_comments, #TblSoldHogs_comments, #reason_sold, #SowBoar_comments{
 	vertical-align: top;
 }
 #label_suggest_program{

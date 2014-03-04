@@ -393,6 +393,20 @@ function fillCode(val,id){
 		$("#Litters_defect_count"+id).focus();
 	}
 }
+function checkValid(val,id){
+	if(val != "") {
+		$.ajax({
+			url: encodeURI('index.php?r=DefectsCode/autocompleteDefects'),
+			type: "GET",
+			data: {val:val}
+		}).done(function(data){
+				if(data == 0) {
+					alert("Not a valid code");
+					$("#"+id).focus();
+				}
+		});
+	}
+}
 
 function successPopup(data){
 	$("#dropmenu"+$("#current_defectcode").val()).append("<li><a href='javascript: void(0)' onClick='fillCode($(this).html(),$(\"#current_defectcode\").val())'>"+$("#code").val()+"-"+$("#description").val()+"</a></li>");

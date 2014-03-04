@@ -86,9 +86,10 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 					array('label'=>'Semen', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(					)),
 					array('label'=>'Others', 'itemOptions'=>array('id'=>'Others'), 'url'=>array(''), 'linkOptions'=>array('accesskey'=>'O'), 'items'=>array(
 							array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup/admin')),
+							array('label'=>'Defects Codes', 'url'=>array('/DefectsCode/admin')),
 							array('label'=>'Sold Hogs Rebuild', 'url'=>array('/tblSoldHogs/rebuild')),
 							array('label'=>'Activity date', 'url'=>array('/user/user/activitydate')),
-					        array('label'=>'Defects Code', 'url'=>array('/DefectsCode/admin')),
+					        
 							array('label'=>Yii::t('app','Rights'), 'url'=>array('/rights')),
 							array('label'=>Yii::t('app','Profile'), 'url'=>array('/user/profile')),
 							(Yii::app()->user->isSuperUser)?array('label'=>'Users', 'url'=>array('/user'), 'itemOptions'=>array('id'=>'users'), 'linkOptions'=>array('id'=>'userlink', 'accesskey'=>'u'), 'items'=>array()
