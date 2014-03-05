@@ -396,7 +396,7 @@ function fillCode(val,id){
 	}
 }
 function checkValid(val,id){
-	$("#defect_code"+id).val($("#"+id).val().toUpperCase());
+	$("#"+id).val($("#"+id).val().toUpperCase());
 	if(val != "") {
 		$.ajax({
 			url: encodeURI('index.php?r=DefectsCode/autocompleteDefects'),
