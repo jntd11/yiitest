@@ -154,7 +154,7 @@ if($herdmark != "")
 <?php for($i=1;$i <= 10; $i++) { ?>
 		<div class="row">
 			<?php echo $form->labelEx($model,'defect_code'); ?>
-			<?php echo $form->textField($model,'defect_code'.$i,array('size'=>3,'maxlength'=>3,'onkeyup'=>'caps(this)','onBlur'=>'checkValid(this.value,this.id);')); ?>
+			<?php echo $form->textField($model,'defect_code'.$i,array('size'=>3,'maxlength'=>3,'onBlur'=>'checkValid(this.value,this.id);')); ?>
 			<a href="#" tabIndex="-1" class="splitmenubutton" data-showmenu="dropmenu<?php echo $i; ?>". data-splitmenu="false">Code</a>
 			<?php echo $form->error($model,'defect_code'.$i); ?>
 			<?php echo $form->labelEx($model,'defect_count'); ?>

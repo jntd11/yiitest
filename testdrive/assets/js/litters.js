@@ -49,7 +49,9 @@ $(document).ready(function(){
 
 	    el.selectionStart = elemLen;
 	    el.selectionEnd = elemLen;
-
+	    $("input[type='text']").on("click", function () {
+	    	   $(this).select();
+	    	});
 	$("#litters-form :input[type!='submit']").change(function() {
 		   $("#litters-form").data("changed",true);
 	});
@@ -394,6 +396,7 @@ function fillCode(val,id){
 	}
 }
 function checkValid(val,id){
+	$("#defect_code"+id).val($("#"+id).val().toUpperCase());
 	if(val != "") {
 		$.ajax({
 			url: encodeURI('index.php?r=DefectsCode/autocompleteDefects'),
@@ -404,6 +407,11 @@ function checkValid(val,id){
 					alert("Not a valid code");
 					$("#"+id).val("");
 					$("#"+id).focus();
+				}else{
+					
+					id = id.split("Litters_defect_code");
+		
+					$("#desc"+id[1]).html(data);
 				}
 		});
 	}

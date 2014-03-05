@@ -213,13 +213,16 @@ class DefectsCodeController extends Controller
 	 }
 	 if (isset($_GET['val'])) {
 	 	// http://www.yiiframework.com/doc/guide/database.dao
-	 	$qtxt ="SELECT concat_ws('-',code,description) FROM   defects_code WHERE code LIKE :username";
+	 	$qtxt ="SELECT description FROM   defects_code WHERE code LIKE :username";
 	 	$command =Yii::app()->db->createCommand($qtxt);
 	 	$command->bindValue(":username", ''.$_GET['val'].'', PDO::PARAM_STR);
 	 	$res =$command->queryColumn();
 	 }
 	 if(count($res) > 0)
-		 echo CJSON::encode($res);
+	 	if (isset($_GET['val']))
+	 		echo $res[0];
+	 	else
+		  echo CJSON::encode($res);
 	 else 
 	 	echo 0;
 	 Yii::app()->end();
