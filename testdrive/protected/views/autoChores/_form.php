@@ -94,7 +94,21 @@ foreach($dataProvider->getData() as $record) {
 </tbody>
 </table>
 </div>
-
+<ul id="menu">
+  <li><a href="#"><span class="ui-icon ui-icon-disk"></span>Save</a></li>
+  <li><a href="#"><span class="ui-icon ui-icon-zoomin"></span>Zoom In</a></li>
+  <li><a href="#"><span class="ui-icon ui-icon-zoomout"></span>Zoom Out</a></li>
+  <li class="ui-state-disabled"><a href="#"><span class="ui-icon ui-icon-print"></span>Print...</a></li>
+  <li>
+    <a href="#">Playback</a>
+    <ul>
+      <li><a href="#"><span class="ui-icon ui-icon-seek-start"></span>Prev</a></li>
+      <li><a href="#"><span class="ui-icon ui-icon-stop"></span>Stop</a></li>
+      <li><a href="#"><span class="ui-icon ui-icon-play"></span>Play</a></li>
+      <li><a href="#"><span class="ui-icon ui-icon-seek-end"></span>Next</a></li>
+    </ul>
+  </li>
+</ul>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

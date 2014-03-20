@@ -17,7 +17,13 @@ $cs->registerCssFile(
   Yii::app()->baseUrl.
   '/css/styles.css'
 );
+$cs->registerCoreScript('jquery-ui-1.10.2.custom');
 
 ?>
+<script>
+  $(function() {
+    $( "#menu" ).menu();
+  });
+</script>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model,'dataProvider'=>$dataProvider)); ?>
