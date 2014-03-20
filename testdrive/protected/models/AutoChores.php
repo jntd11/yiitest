@@ -43,8 +43,8 @@ class AutoChores extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('description, times_occur, days_between, generated_by, date_asof, days_after, farm_herd, disabled, date_modified', 'required'),
-			array('times_occur, days_between, days_after, farm_herd, disabled', 'numerical', 'integerOnly'=>true),
+			array('description, times_occur, days_between, generated_by, date_asof, days_after, farm_herd', 'required'),
+			array('times_occur, days_between, days_after', 'numerical', 'integerOnly'=>true),
 			array('description', 'length', 'max'=>25),
 			array('generated_by', 'length', 'max'=>20),
 			array('date_asof', 'length', 'max'=>10),

@@ -51,7 +51,8 @@ class AutoChoresController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+
+	    $this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
@@ -66,7 +67,8 @@ class AutoChoresController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		$dataProvider = new CActiveDataProvider('AutoChores');
+		$dataProvider->setPagination(false);
 		if(isset($_POST['AutoChores']))
 		{
 			$model->attributes=$_POST['AutoChores'];
@@ -76,6 +78,7 @@ class AutoChoresController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+		    'dataProvider'=>$dataProvider,
 		));
 	}
 
@@ -133,7 +136,7 @@ class AutoChoresController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new AutoChores('search');
+		$model = new AutoChores('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['AutoChores']))
 			$model->attributes=$_GET['AutoChores'];
