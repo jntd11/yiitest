@@ -18,12 +18,8 @@ $cs->registerCssFile(
   '/css/styles.css'
 );
 $cs->registerCoreScript('jquery-ui-1.10.2.custom');
+$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/jquery.ui-contextmenu.js');
+$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/autochores.js');
 
 ?>
-<script>
-  $(function() {
-    $( "#menu" ).menu();
-  });
-</script>
-
 <?php echo $this->renderPartial('_form', array('model'=>$model,'dataProvider'=>$dataProvider)); ?>

@@ -14,10 +14,8 @@ $form=$this->beginWidget('CActiveForm', array(
 ));
 echo "COUNT".$count = $dataProvider->itemCount;
 $names = array();
-print_r($dataProvider->getData());
-
- ?>
-<div class="grid-view" id="sow-gilts-grid">
+?>
+<div class="grid-view" id="container">
 <table class="items">
 <thead>
 <tr>
@@ -35,55 +33,55 @@ print_r($dataProvider->getData());
 <?php
 foreach($dataProvider->getData() as $record) {
 ?>
-<tr class="odd">
-<td><?php echo $record->description; ?></td>
-<td><?php echo $record->times_occur; ?></td>
-<td><?php echo $record->days_between; ?></td>
-<td><?php echo $record->generated_by; ?></td>
-<td><?php echo $record->date_asof; ?></td>
-<td><?php echo $record->days_after; ?></td>
-<td><?php echo $record->farm_herd; ?></td>
-<td><?php echo ($record->disabled != 'Y')?"Disabled":""; ?></td>
+<tr class="odd hasmenu" id="<?php echo $record->auto_chores_id; ?>">
+<td id="<?php echo $record->auto_chores_id."_desc"; ?>"><?php echo $record->description; ?></td>
+<td id="<?php echo $record->auto_chores_id."_times"; ?>"><?php echo $record->times_occur; ?></td>
+<td id="<?php echo $record->auto_chores_id."_days"; ?>"><?php echo $record->days_between; ?></td>
+<td id="<?php echo $record->auto_chores_id."_generated"; ?>"><?php echo $record->generated_by; ?></td>
+<td id="<?php echo $record->auto_chores_id."_date"; ?>"><?php echo $record->date_asof; ?></td>
+<td id="<?php echo $record->auto_chores_id."_after"; ?>"><?php echo $record->days_after; ?></td>
+<td id="<?php echo $record->auto_chores_id."_farm"; ?>"><?php echo $record->farm_herd; ?></td>
+<td id="<?php echo $record->auto_chores_id."_disabled"; ?>"><?php echo ($record->disabled != 'Y')?"Disabled":""; ?></td>
 </tr>
 
 <?php
 }
 ?>
 
-<tr class="odd">
+<tr class="odd" id="insertrow">
 	<?php echo $form->errorSummary($model); ?>
 
-	<td>
+	<td id="descinsert">
 		<?php echo $form->textField($model,'description',array('size'=>25,'maxlength'=>25)); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</td>
 
-	<td>
+	<td  id="timesinsert">
 		<?php echo $form->textField($model,'times_occur',array('size'=>2,'maxlength'=>2)); ?>
 		<?php echo $form->error($model,'times_occur'); ?>
 	</td>
 
-	<td>
+	<td  id="daysinsert">
 		<?php echo $form->textField($model,'days_between'); ?>
 		<?php echo $form->error($model,'days_between',array('size'=>3,'maxlength'=>3)); ?>
 	</td>
 
-	<td>
+	<td  id="generatedinsert">
 		<?php echo $form->textField($model,'generated_by',array('size'=>1,'maxlength'=>1)); ?>
 		<?php echo $form->error($model,'generated_by'); ?>
 	</td>
 
-	<td>
+	<td  id="dateinsert">
 		<?php echo $form->textField($model,'date_asof',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'date_asof'); ?>
 	</td>
 
-	<td>
+	<td  id="daysinsert">
 		<?php echo $form->textField($model,'days_after',array('size'=>3,'maxlength'=>3)); ?>
 		<?php echo $form->error($model,'days_after'); ?>
 	</td>
 
-	<td>
+	<td  id="farminsert">
 		<?php echo $form->textField($model,'farm_herd',array('size'=>2,'maxlength'=>2)); ?>
 		<?php echo $form->error($model,'farm_herd'); ?>
 	</td>
@@ -94,21 +92,7 @@ foreach($dataProvider->getData() as $record) {
 </tbody>
 </table>
 </div>
-<ul id="menu">
-  <li><a href="#"><span class="ui-icon ui-icon-disk"></span>Save</a></li>
-  <li><a href="#"><span class="ui-icon ui-icon-zoomin"></span>Zoom In</a></li>
-  <li><a href="#"><span class="ui-icon ui-icon-zoomout"></span>Zoom Out</a></li>
-  <li class="ui-state-disabled"><a href="#"><span class="ui-icon ui-icon-print"></span>Print...</a></li>
-  <li>
-    <a href="#">Playback</a>
-    <ul>
-      <li><a href="#"><span class="ui-icon ui-icon-seek-start"></span>Prev</a></li>
-      <li><a href="#"><span class="ui-icon ui-icon-stop"></span>Stop</a></li>
-      <li><a href="#"><span class="ui-icon ui-icon-play"></span>Play</a></li>
-      <li><a href="#"><span class="ui-icon ui-icon-seek-end"></span>Next</a></li>
-    </ul>
-  </li>
-</ul>
+
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
