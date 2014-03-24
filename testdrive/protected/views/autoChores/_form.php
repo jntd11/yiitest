@@ -41,7 +41,7 @@ foreach($dataProvider->getData() as $record) {
 <td id="<?php echo $record->auto_chores_id."_date"; ?>"><?php echo $record->date_asof; ?></td>
 <td id="<?php echo $record->auto_chores_id."_after"; ?>"><?php echo $record->days_after; ?></td>
 <td id="<?php echo $record->auto_chores_id."_farm"; ?>"><?php echo $record->farm_herd; ?></td>
-<td id="<?php echo $record->auto_chores_id."_disabled"; ?>"><?php echo ($record->disabled != 'Y')?"Disabled":""; ?></td>
+<td id="<?php echo $record->auto_chores_id."_disabled"; ?>"><?php echo ($record->disabled == 'Y')?"Disabled":""; ?></td>
 </tr>
 
 <?php

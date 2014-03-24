@@ -156,10 +156,11 @@ $(function(){
 		// Handle menu selection to implement a fake-clipboard
 		select: function(event, ui) {
 			var $target = ui.target;
+			var a = $(ui.target).parent();
 			switch(ui.cmd){
 			case "insert":
 				CLIPBOARD = $target.text();
-				var a = $(ui.target).parent();
+				
 				var insert = $("#insertrow").html();
 				$("#insertrow").remove();
 				$("#"+a[0].id).before('<tr class="odd" id="insertrow">'+insert+'</tr>');
@@ -181,11 +182,26 @@ $(function(){
 				break;
 			case "disabled":
 				CLIPBOARD = "";
-				$(document).contextmenu("setEntry", "disabled", {title: "Set to Enabled", cmd: "enabled", uiIcon: "ui-icon-scissors"})
+				$(document).contextmenu("setEntry", "disabled", {title: "Set to Enabled", cmd: "enabled", uiIcon: "ui-icon-scissors"});
+				$.ajax({
+					url: encodeURI('index.php?r=autoChores/ChangeStatus'),
+					type: "GET",
+					data: {s:1,id:a[0].id}
+				}).done(function(data){
+					window.location = 'index.php?r=autoChores/create';
+				});
+				
 				break;
 			case "enabled":
 				CLIPBOARD = "";
 				$(document).contextmenu("setEntry", "enabled", {title: "Set to Disabled", cmd: "disabled", uiIcon: "ui-icon-scissors"})
+				$.ajax({
+					url: encodeURI('index.php?r=autoChores/changeStatus'),
+					type: "GET",
+					data: {s:0,id:a[0].id}
+				}).done(function(data){
+					window.location = 'index.php?r=autoChores/create';
+				});
 				break;
 			}
 			//alert("select " + ui.cmd + " on " + $target.text());
@@ -205,6 +221,7 @@ $(function(){
 				.contextmenu("setEntry", "paste", "Paste" + (CLIPBOARD ? " '" + CLIPBOARD + "'" : ""))
 				.contextmenu("enableEntry", "paste", (CLIPBOARD !== ""));
 			var a = $(ui.target).parent();
+			
 			var newrowid = a[0].id;
 			if($("#"+newrowid+"_disabled").html() == "Disabled") 
 				$(document).contextmenu("setEntry", "disabled", {title: "Set to Enabled", cmd: "enabled", uiIcon: "ui-icon-scissors"});

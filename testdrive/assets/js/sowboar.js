@@ -67,7 +67,7 @@ function searchSireDam(txtObj,type){
 		$.ajax({
 			url: encodeURI('index.php?r=sowBoar/search'),
 			type: "GET",
-			data: {s:search1}
+			data: {s:1}
 		}).done(function(data){
 			if(data != "[]"){
 				var obj = $.parseJSON(data);
