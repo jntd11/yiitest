@@ -70,11 +70,26 @@ class SowGiltsController extends Controller
 
 		if(isset($_POST['SowGilts']))
 		{
+
+
 			$model->attributes=$_POST['SowGilts'];
+			$autoChoresModel = new AutoChores();
+			$choresModel = new Chores();
+			$farm = preg_match("/^[0-9][a-z]/i",$model->sow_ear_notch,$match);
+			  print_r($match);
+			echo $qtxt ="SELECT * FROM  auto_chores WHERE generated_by = 'B' AND (farm_herd = '".$match[0]."' OR farm_herd = 'A')";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$res =$command->queryAll();
+			print_r($res);
+			exit;
 			if($model->save()){
 				$query = "Update herd SET bred_date = '".date("Ymd",strtotime($model->date_bred)) ."' WHERE ear_notch = '".$model->sow_ear_notch."' AND bred_date < '".date("Ymd",strtotime($model->date_bred)) ."'";
 				$command =Yii::app()->db->createCommand($query);
 				$command->query();
+
+
+
+
 				if(!isset($_POST['savenew']))
 					$this->redirect(array('admin'));
 				else
@@ -289,7 +304,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['born']) && isset($_GET['earnotch'])) {
 			$qtxt ="SELECT date_bred FROM  breeding WHERE sow_ear_notch = '".$_GET['earnotch']."' ORDER by date_bred DESC Limit 1";
-			if($_GET['id'] > 0) {
+			if(isset($_GET['id']) && $_GET['id'] > 0) {
 				$qtxt ="SELECT date_bred FROM  breeding WHERE sow_ear_notch = '".$_GET['earnotch']."' and sow_gilts_id != ".$_GET['id']." ORDER by date_bred DESC Limit 1";
 			}
 			$command =Yii::app()->db->createCommand($qtxt);
