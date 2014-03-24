@@ -73,7 +73,7 @@ class AutoChoresController extends Controller
 		{
 			$model->attributes=$_POST['AutoChores'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->auto_chores_id));
+				$this->redirect(array('create'));
 		}
 
 		$this->render('create',array(

@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List AutoChores', 'url'=>array('index')),
-	array('label'=>'Manage AutoChores', 'url'=>array('admin')),
+	/* array('label'=>'List AutoChores', 'url'=>array('index')),
+	array('label'=>'Manage AutoChores', 'url'=>array('admin')), */
 );
 $cs=Yii::app()->clientScript;
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/jquery.yiigridview.js');

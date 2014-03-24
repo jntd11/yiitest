@@ -170,6 +170,7 @@ function dateReplace(event){
 }
 
 function validateDatePicker(fieldId){
+	
 	var val = $("#"+fieldId).val();
 	if(val == "" || (fieldId == 'bred_date' && val == 'BOAR'))
 		return true;

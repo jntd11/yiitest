@@ -14,6 +14,12 @@ $form=$this->beginWidget('CActiveForm', array(
 ));
 echo "COUNT".$count = $dataProvider->itemCount;
 $names = array();
+$farmHerd = Yii::app()->request->cookies['farm_herd'];
+$farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
+$herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
+if($herdmark != "")
+ $herdmark = $herdmark." ";
+echo $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
 ?>
 <div class="grid-view" id="container">
 <table class="items">
@@ -75,7 +81,28 @@ foreach($dataProvider->getData() as $record) {
 	</td>
 
 	<td  id="dateinsert">
-		<?php echo $form->textField($model,'date_asof',array('size'=>10,'maxlength'=>10)); ?>
+		<?php //echo $form->textField($model,'date_asof',array('size'=>10,'maxlength'=>10));
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+		  'model' => $model,
+		  'attribute' => 'date_asof',
+		  'options' =>array(
+		    //'dateFormat'=>'m-d-yy',
+		    'constrainInput'=> false,
+		    'showOn'=>'button',
+		    'defaultDate'=>''.$activitydate.'',
+		    'buttonImage'=>'img/calendar.gif',
+		  ),
+
+		  'htmlOptions' => array(
+		    'id'=>'date_asof',
+		    'size' => '20',         // textField size
+		    'maxlength' => '20',    // textField maxlength
+		    'onBlur'=>'validateDatePicker("date_asof")',
+		  ),
+		));
+
+		?>
+
 		<?php echo $form->error($model,'date_asof'); ?>
 	</td>
 
