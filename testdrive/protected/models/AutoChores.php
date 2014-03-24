@@ -48,6 +48,7 @@ class AutoChores extends CActiveRecord
 			array('description', 'length', 'max'=>25),
 			array('generated_by', 'length', 'max'=>20),
 			array('date_asof', 'length', 'max'=>10),
+		    array('farm_herd', 'validatefarm'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('auto_chores_id, description, times_occur, days_between, generated_by, date_asof, days_after, farm_herd, disabled, date_modified', 'safe', 'on'=>'search'),
@@ -109,5 +110,24 @@ class AutoChores extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	public function validatefarm($attribute,$params){
+	     if($this->$attribute == 'A')
+	        return ;
+     	 $patt2 = '/^([0-9][A-Z])/';
+     	 $pattern = '/^([0-9][A-Z]) *[a-z]+ *[0-9]+[ SFsf][0-9]+[-.][0-9]+$/i';
+     	 $herds = $this->getHerd();
+     	 $isTrue = preg_match($patt2, $this->$attribute,$matches2);
+     	 //$this->addError($attribute, implode(",",$herds));
+     	 if(!$isTrue || !in_array($matches2[1], $herds)){
+     	   $this->addError($attribute, 'This is not a valid Farm & Herd');
+     	 }
+
+	}
+	public function getHerd(){
+	 $qu = "select farm_herd from herd_setup";
+	 $cmd = YII::app()->db->createCommand($qu);
+	 return $res = $cmd->queryColumn();
 	}
 }
