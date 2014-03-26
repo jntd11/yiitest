@@ -81,15 +81,27 @@ class SowGiltsController extends Controller
 			$command =Yii::app()->db->createCommand($qtxt);
 			$res =$command->queryAll();
 			print_r($res);
+			echo "aa".$model->date_bred;
+			foreach ($res as $recCount=>$record) {
+ 			  for($i=1;$i <= $record['times_occur'];$i++) {
+ 			   $choresModel->description = $record['description'];
+ 			   $choresModel->farm_herd = $match[0];
+ 			   $choresModel->comments = $model->sow_ear_notch;
+ 			   $choresModel->date = date("d/m/Y",strtotime($model->date_bred)+($record['days_after'] * 24 * 3600));
+ 			   //$choresModel->date_modified = 'CURRENT_TIMESTAMP';
+ 			   print_r($choresModel->attributes);
+ 			   if(!$choresModel->save()) {
+ 			    print_r($choresModel->errors);
+ 			      echo "Error";
+ 			   }
+			  }
+
+			}
 			exit;
 			if($model->save()){
 				$query = "Update herd SET bred_date = '".date("Ymd",strtotime($model->date_bred)) ."' WHERE ear_notch = '".$model->sow_ear_notch."' AND bred_date < '".date("Ymd",strtotime($model->date_bred)) ."'";
 				$command =Yii::app()->db->createCommand($query);
 				$command->query();
-
-
-
-
 				if(!isset($_POST['savenew']))
 					$this->redirect(array('admin'));
 				else

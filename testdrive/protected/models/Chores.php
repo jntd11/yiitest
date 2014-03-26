@@ -39,7 +39,7 @@ class Chores extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('date, farm_herd, description, comments, date_modified', 'required'),
+			array('date, farm_herd, description, comments', 'required'),
 			array('date', 'length', 'max'=>10),
 			array('farm_herd', 'length', 'max'=>2),
 			array('description', 'length', 'max'=>25),

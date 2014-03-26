@@ -7278,3 +7278,36 @@ Stack trace:
 REQUEST_URI=/yii/yii/testdrive/index.php?r=sowGilts/create
 HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=sowGilts/create
 ---
+2014/03/26 07:34:32 [error] [php] strtotime() expects at least 1 parameter, 0 given (C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php:90)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): SowGiltsController->runAction()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): SowGiltsController->filterAccessControl()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): SowGiltsController->runActionWithFilters()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): SowGiltsController->run()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=sowGilts/create
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/03/26 07:35:54 [error] [php] Use of undefined constant CURRENT_TIMESTAMP - assumed 'CURRENT_TIMESTAMP' (C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php:90)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): SowGiltsController->runAction()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): SowGiltsController->filterAccessControl()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): SowGiltsController->runActionWithFilters()
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): SowGiltsController->run()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=sowGilts/create
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
