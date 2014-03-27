@@ -76,28 +76,32 @@ class SowGiltsController extends Controller
 			$autoChoresModel = new AutoChores();
 			$choresModel = new Chores();
 			$farm = preg_match("/^[0-9][a-z]/i",$model->sow_ear_notch,$match);
-			  print_r($match);
-			echo $qtxt ="SELECT * FROM  auto_chores WHERE generated_by = 'B' AND (farm_herd = '".$match[0]."' OR farm_herd = 'A')";
+			$qtxt ="SELECT * FROM  auto_chores WHERE generated_by = 'B' AND (farm_herd = '".$match[0]."' OR farm_herd = 'A') AND disabled = 'N'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$res =$command->queryAll();
-			print_r($res);
-			echo "aa".$model->date_bred;
+			//print_r($res);
 			foreach ($res as $recCount=>$record) {
- 			  for($i=1;$i <= $record['times_occur'];$i++) {
- 			   $choresModel->description = $record['description'];
- 			   $choresModel->farm_herd = $match[0];
- 			   $choresModel->comments = $model->sow_ear_notch;
- 			   $choresModel->date = date("d/m/Y",strtotime($model->date_bred)+($record['days_after'] * 24 * 3600));
- 			   //$choresModel->date_modified = 'CURRENT_TIMESTAMP';
+    			 $choresModel->description = $record['description'];
+    			 $choresModel->farm_herd = $match[0];
+    			 $choresModel->comments = $model->sow_ear_notch;
+    			 $choresModel->date = date("m/d/Y",strtotime($model->date_bred)+($record['days_after'] * 24 * 3600));
+    			 $currentdate = $choresModel->date;
+    			 //$choresModel->date_modified = 'CURRENT_TIMESTAMP';
+    			 if(!$choresModel->save()) {
+    			  print_r($choresModel->errors);
+    			  echo "Error";
+    			 }
+ 			  for($i=2;$i <= $record['times_occur'];$i++) {
  			   print_r($choresModel->attributes);
- 			   if(!$choresModel->save()) {
- 			    print_r($choresModel->errors);
- 			      echo "Error";
- 			   }
+ 			   $choresModel->setIsNewRecord(true);
+ 			   $choresModel->chores_id = NULL;
+ 			        $choresModel->date = date("m/d/Y",strtotime($choresModel->date)+($record['days_between'] * 24 * 3600));
+ 			        if(!$choresModel->save()) {
+ 			         print_r($choresModel->errors);
+ 			         echo "Error".$i;
+ 			        }
 			  }
-
 			}
-			exit;
 			if($model->save()){
 				$query = "Update herd SET bred_date = '".date("Ymd",strtotime($model->date_bred)) ."' WHERE ear_notch = '".$model->sow_ear_notch."' AND bred_date < '".date("Ymd",strtotime($model->date_bred)) ."'";
 				$command =Yii::app()->db->createCommand($query);
@@ -128,8 +132,13 @@ class SowGiltsController extends Controller
 
 		if(isset($_POST['SowGilts']))
 		{
+		    $orgDate = $model->date_bred;
 			$model->attributes=$_POST['SowGilts'];
 			if($model->save()) {
+			    //Auto chores
+			   $qtxt ="DELETE chores from chores JOIN auto_chores ON chores. WHERE date = '".$orgDate."' and comments ='".$model->sow_ear_notch."' ";
+			   $command =Yii::app()->db->createCommand($qtxt);
+			   $res =$command->query();
 				if(isset($_POST['savenew']))
 					$this->redirect(array('create'));
 				else
