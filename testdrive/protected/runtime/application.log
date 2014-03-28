@@ -7418,3 +7418,30 @@ Stack trace:
 REQUEST_URI=/yii/yii/testdrive/index.php?r=sowGilts/create
 HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=sowGilts/create
 ---
+2014/03/28 11:38:24 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (123)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/03/28 11:38:24 [error] [php] Undefined variable: orgDate (C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php:129)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): LittersController->runAction()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): LittersController->filterAccessControl()
+#6 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp\www\yii\yii\framework\web\CController.php(265): LittersController->runActionWithFilters()
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): LittersController->run()
+#10 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=litters/update&id=6841
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (129)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/03/28 11:39:24 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (125)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/03/28 11:39:32 [warning] [application] Failed to set unsafe attribute "litters_id" of "Litters".
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (125)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)

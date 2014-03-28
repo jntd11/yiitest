@@ -88,6 +88,7 @@ class LittersController extends Controller
 	public function actionUpdate($id)
 	{
         $oldid = $id;
+
 		//$model=$this->loadModel($id);
 		$modelSowgilts = SowGilts::model()->findByPk($id);
 		if($modelSowgilts===null)
@@ -120,8 +121,45 @@ class LittersController extends Controller
 
 		if(isset($_POST['Litters']))
 		{
+		    $orgDate = $model->farrowed_date;
 			$model->attributes = $_POST['Litters'];
+			$choresModel = new Chores();
 			if($model->save()) {
+
+			 // New CHores Insertion
+
+			 $farm = preg_match("/^[0-9][a-z]/i",$model->sow_ear_notch,$match);
+			 $qtxt ="DELETE chores from chores JOIN auto_chores ON (chores.description =auto_chores.description)
+			 WHERE date = '".$orgDate."' and comments ='".$model->sow_ear_notch."' and auto_chores.generated_by = 'F'";
+			 $command =Yii::app()->db->createCommand($qtxt);
+			 $res =$command->query();
+			 //New Chores Generation
+			 $qtxt ="SELECT * FROM  auto_chores WHERE generated_by = 'F' AND (farm_herd = '".$match[0]."' OR farm_herd = 'A') AND disabled = 'N'";
+			 $command =Yii::app()->db->createCommand($qtxt);
+			 $res =$command->queryAll();
+			 //print_r($res);
+			 foreach ($res as $recCount=>$record) {
+			  $choresModel->description = $record['description'];
+			  $choresModel->farm_herd = $match[0];
+			  $choresModel->comments = $model->sow_ear_notch;
+			  $choresModel->date = date("m/d/Y",strtotime($model->farrowed_date)+($record['days_after'] * 24 * 3600));
+			  $currentdate = $choresModel->date;
+			  //$choresModel->date_modified = 'CURRENT_TIMESTAMP';
+			  if(!$choresModel->save()) {
+			   print_r($choresModel->errors);
+			   echo "Error";
+			  }
+			  for($i=2;$i <= $record['times_occur'];$i++) {
+			   $choresModel->setIsNewRecord(true);
+			   $choresModel->chores_id = NULL;
+			   $choresModel->date = date("m/d/Y",strtotime($choresModel->date)+($record['days_between'] * 24 * 3600));
+			   if(!$choresModel->save()) {
+			    print_r($choresModel->errors);
+			    echo "Error".$i;
+			   }
+			  }
+			 }
+			 //End
 				$sql = "UPDATE breeding SET ";
 				$sql .= " farrowed = 'Y' ";
 				$sql .= " WHERE 1 = 1 ";
@@ -190,8 +228,44 @@ class LittersController extends Controller
 
 		if(isset($_POST['Litters']))
 		{
+		    $orgDate = $model->weaned_date;
+		    $choresModel = new Chores();
 			$model->attributes = $_POST['Litters'];
 			if($model->save()) {
+			 // New CHores Insertion
+
+			 $farm = preg_match("/^[0-9][a-z]/i",$model->sow_ear_notch,$match);
+			 $qtxt ="DELETE chores from chores JOIN auto_chores ON (chores.description =auto_chores.description)
+			 WHERE date = '".$orgDate."' and comments ='".$model->sow_ear_notch."' and auto_chores.generated_by = 'W'";
+			 $command =Yii::app()->db->createCommand($qtxt);
+			 $res =$command->query();
+			 //New Chores Generation
+			 $qtxt ="SELECT * FROM  auto_chores WHERE generated_by = 'W' AND (farm_herd = '".$match[0]."' OR farm_herd = 'A') AND disabled = 'N'";
+			 $command =Yii::app()->db->createCommand($qtxt);
+			 $res =$command->queryAll();
+			 //print_r($res);
+			 foreach ($res as $recCount=>$record) {
+			  $choresModel->description = $record['description'];
+			  $choresModel->farm_herd = $match[0];
+			  $choresModel->comments = $model->sow_ear_notch;
+			  $choresModel->date = date("m/d/Y",strtotime($model->weaned_date)+($record['days_after'] * 24 * 3600));
+			  $currentdate = $choresModel->date;
+			  //$choresModel->date_modified = 'CURRENT_TIMESTAMP';
+			  if(!$choresModel->save()) {
+			   print_r($choresModel->errors);
+			   echo "Error";
+			  }
+			  for($i=2;$i <= $record['times_occur'];$i++) {
+			   $choresModel->setIsNewRecord(true);
+			   $choresModel->chores_id = NULL;
+			   $choresModel->date = date("m/d/Y",strtotime($choresModel->date)+($record['days_between'] * 24 * 3600));
+			   if(!$choresModel->save()) {
+			    print_r($choresModel->errors);
+			    echo "Error".$i;
+			   }
+			  }
+			 }
+			 //End
 				$this->redirect(array('admin1'));
 			}
 		}
