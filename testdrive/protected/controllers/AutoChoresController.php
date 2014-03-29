@@ -28,11 +28,11 @@ class AutoChoresController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','changeStatus'),
+				'actions'=>array('index','view','changeStatus','report'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','changeStatus'),
+				'actions'=>array('create','update','changeStatus','report'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -56,6 +56,46 @@ class AutoChoresController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+	
+
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionReport()
+	{
+		$model = new AutoChores();
+		
+		if(isset($_POST['go'])){
+			if(empty($_POST['from_date'])){
+				$errors["from_date"] = "Invalid From Date";
+			}
+			if(empty($_POST['to_date'])){
+				$errors["to_date"] = "Invalid To Date";
+			}
+			if(empty($_POST['farm'])){
+				$errors["farm"] = "Invalid Farm & Herd";
+			}else {
+				$qtxt ="SELECT farm_herd FROM  herd_setup WHERE farm_herd = '".$_POST['farm']."' ";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryColumn();
+				if($_POST['farm'] != 'A' && $res[0] != $_POST['farm'])
+					$errors["farm"] = "Invalid Farm & Herd";
+			}
+			if(count($errors) == 0) {
+				$results = $this->dateRange($_POST['from_date'], $_POST['to_date']);
+			}else{
+				$model->addErrors($errors);
+			}
+		}
+		
+		
+		$this->render('report',array(
+				'model'=>$model,
+				'results'=>$results,
+				
+		));
+	}
 
 	/**
 	 * Creates a new model.
@@ -64,7 +104,6 @@ class AutoChoresController extends Controller
 	public function actionCreate()
 	{
 		$model=new AutoChores;
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 		$dataProvider = new CActiveDataProvider('AutoChores');
@@ -75,11 +114,28 @@ class AutoChoresController extends Controller
 			if($model->save())
 				$this->redirect(array('create'));
 		}
-
+		
+		
+	
 		$this->render('create',array(
 			'model'=>$model,
 		    'dataProvider'=>$dataProvider,
 		));
+	}
+	
+	public function dateRange($first, $last, $step = '+1 day', $format = 'd/m/Y' ) { 
+
+		    $dates = array();
+		    $current = strtotime($first);
+		    $last = strtotime($last);
+		
+		    while( $current <= $last ) { 
+		
+		        $dates[] = date($format, $current);
+		        $current = strtotime($step, $current);
+		    }
+		
+		    return $dates;
 	}
 
 	/**

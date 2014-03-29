@@ -92,7 +92,6 @@ class SowGiltsController extends Controller
     			  echo "Error";
     			 }
  			  for($i=2;$i <= $record['times_occur'];$i++) {
- 			   print_r($choresModel->attributes);
  			   $choresModel->setIsNewRecord(true);
  			   $choresModel->chores_id = NULL;
  			        $choresModel->date = date("m/d/Y",strtotime($choresModel->date)+($record['days_between'] * 24 * 3600));

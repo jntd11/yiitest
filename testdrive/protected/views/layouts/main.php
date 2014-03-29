@@ -82,7 +82,9 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 							array('label'=>'Sows/Boars', 'itemOptions'=>array('id'=>'sowboar'), 'linkOptions'=>array('accesskey'=>'s'), 'url'=>array('/sowBoar/admin')),
 
 					)),
-					array('label'=>'Chores', 'itemOptions'=>array('id'=>'reports'), 'url'=>array('/autoChores/create'), 'linkOptions'=>array(), 'items'=>array()),
+					array('label'=>'Chores', 'itemOptions'=>array('id'=>'reports'), 'url'=>array('/autoChores/create'), 'linkOptions'=>array(), 'items'=>array(
+						array('label'=>'Chores Report', 'url'=>array('/autoChores/report'))
+					)),
 					array('label'=>'Semen', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(					)),
 					array('label'=>'Others', 'itemOptions'=>array('id'=>'Others'), 'url'=>array(''), 'linkOptions'=>array('accesskey'=>'O'), 'items'=>array(
 							array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup/admin')),

@@ -12,7 +12,7 @@ $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'auto-chores-form',
 	'enableAjaxValidation'=>false,
 ));
-echo "COUNT".$count = $dataProvider->itemCount;
+$count = $dataProvider->itemCount;
 $names = array();
 $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
