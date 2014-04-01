@@ -74,13 +74,14 @@ class SowGiltsController extends Controller
 
 			$model->attributes=$_POST['SowGilts'];
 			$autoChoresModel = new AutoChores();
-			$choresModel = new Chores();
+
 			$farm = preg_match("/^[0-9][a-z]/i",$model->sow_ear_notch,$match);
 			$qtxt ="SELECT * FROM  auto_chores WHERE generated_by = 'B' AND (farm_herd = '".$match[0]."' OR farm_herd = 'A') AND disabled = 'N'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$res =$command->queryAll();
 			//print_r($res);
 			foreach ($res as $recCount=>$record) {
+			     $choresModel = new Chores();
     			 $choresModel->description = $record['description'];
     			 $choresModel->farm_herd = $match[0];
     			 $choresModel->comments = $model->sow_ear_notch;
