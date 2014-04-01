@@ -10,6 +10,12 @@ $this->menu=array(
 	array('label'=>'Create Chores', 'url'=>array('create')),
 
 );
+$cs=Yii::app()->clientScript;
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/jquery.yiigridview.js');
+$cs->registerCssFile(
+		Yii::app()->baseUrl.
+		'/css/styles.css'
+);
 ?>
 
 <h1>Chores Report</h1>

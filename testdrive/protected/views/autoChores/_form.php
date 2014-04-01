@@ -19,7 +19,7 @@ $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 if($herdmark != "")
  $herdmark = $herdmark." ";
-echo $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
+ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
 ?>
 <div class="grid-view" id="container">
 <table class="items">

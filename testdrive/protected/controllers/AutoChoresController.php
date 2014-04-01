@@ -83,7 +83,23 @@ class AutoChoresController extends Controller
 					$errors["farm"] = "Invalid Farm & Herd";
 			}
 			if(count($errors) == 0) {
-				$results = $this->dateRange($_POST['from_date'], $_POST['to_date']);
+				$results1 = $this->dateRange($_POST['from_date'], $_POST['to_date'],'+1 day','m/d/Y');
+				foreach ($results1 as $result) {
+					$qtxt = "SELECT * FROM  chores WHERE date = '".$result."' ";
+					if($_POST['farm'] != 'A')
+						$qtxt .= " AND farm_herd = '".$_POST['farm']."' ";
+					$command =Yii::app()->db->createCommand($qtxt);
+					$res =$command->queryAll();
+					//$results[$result] = $res;
+					
+					//D
+					$qtxt = "SELECT * FROM  auto_chores WHERE generated_by = 'D' AND disabled = 'N' ";
+					if($_POST['farm'] != 'A')
+						$qtxt .= " AND (farm_herd = '".$_POST['farm']."' OR generated_by = 'A') ";
+					$command =Yii::app()->db->createCommand($qtxt);
+					$res1 =$command->queryAll();
+					$results[$result] = array_merge($res,$res1);
+				}
 			}else{
 				$model->addErrors($errors);
 			}
@@ -210,8 +226,8 @@ class AutoChoresController extends Controller
 	      $model->disabled = "Y";
 	     else
 	      $model->disabled = "N";
-	     return (int) $model->save();
-
+	 
+	     echo (int) $model->save();
 	}
 
 	/**

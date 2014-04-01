@@ -87,11 +87,39 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:"";
 		echo "</div>";
 
 	}
-	print_r($results);
+	
 ?>
+
 		
 	</div>
-	<table>
+	<?php
+	 if(count($results) > 0) {
+	//print_r($results); ?>
+	<div class="grid-view" id="container">
+	<table  class="items">
+	     <tr>
+	     	<th width="30%" id="sow-gilts-grid_c0">Description</th>
+	     	<th  width="30%">Farm & Herd	</th>
+	     	<th  width="30%">Comments</th>
+	     </tr>
+	     <?php 
+	     	foreach($results as $key=>$result){
+		 ?>
+		 	<tr class="even hasmenu"><td colspan="3" align="center" style="text-align: center; border-bottom: 2px solid;"><?php echo $key." ".date("l",strtotime($key)); ?></td></tr>
+		 <?php 
+			foreach ($result as $keyrow=>$resultrow){
+		 ?>
+		 <tr class="odd hasmenu">
+	     	<td><?php echo $resultrow['description']; ?></td>
+	     	<td><?php echo $resultrow['farm_herd']; ?></td>
+	     	<td><?php echo $resultrow['comments']; ?></td>
+	     </tr>
+		 <?php 
+			 }
+			}
+	     ?>
 	</table>
+	<?php }?>
+	</div>
 
 </div><!-- form -->
