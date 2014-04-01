@@ -8,12 +8,12 @@ $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
 $from_date = (isset($_POST['from_date']))?$_POST['from_date']:$activitydate;
 $to_date = (isset($_POST['to_date']))?$_POST['to_date']:$activitydate;
-$farm = (isset($_POST['farm']))?$_POST['farm']:"";
+$farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 ?>
 
 <div class="form">
 
-<?php 
+<?php
 	$form=$this->beginWidget('CActiveForm', array(
 			'id'=>'autoChores_frm',
 			'enableAjaxValidation'=>false,
@@ -21,7 +21,7 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:"";
 ?>
 	<div class="row">
 		<?php echo "From Date"; ?>
-		<?php 
+		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 				'name' => 'from_date',
 				//'attribute' => 'fr',
@@ -32,7 +32,7 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:"";
 						'showOn'=>'button',
 						'defaultDate'=>''.$activitydate.'',
 						'buttonImage'=>'img/calendar.gif',
-						
+
 						),
 				'htmlOptions' => array(
 						'id'=>'from_date',
@@ -40,12 +40,12 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:"";
 						'maxlength' => '20',    // textField maxlength
 						'onBlur'=>'validateDatePicker("att_sale")',
 						'value'=>$from_date,
-						
+
 				),
 		));
 		?>
 		<?php echo "To Date"; ?>
-		<?php 
+		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 				'name' => 'to_date',
 				//'attribute' => 'fr',
@@ -56,25 +56,25 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:"";
 						'showOn'=>'button',
 						'defaultDate'=>''.$activitydate.'',
 						'buttonImage'=>'img/calendar.gif',
-						
+
 						),
 				'htmlOptions' => array(
 						'id'=>'to_date',
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
 						'onBlur'=>'validateDatePicker("att_sale")',
-						
-						
+
+
 				),
 		));
 		?>
 		<?php echo "Farm & Herd"; ?>
 		&nbsp;
-<?php 
+<?php
     echo CHtml::TextField('farm',$farm);
     ?>
     &nbsp;
-    <?php 
+    <?php
 	echo CHtml::submitButton('Go',array('onClick'=>'','name'=>'go'));
 	$this->endWidget();
 	if(count($model->errors) > 0){
@@ -87,10 +87,10 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:"";
 		echo "</div>";
 
 	}
-	
+
 ?>
 
-		
+
 	</div>
 	<?php
 	 if(count($results) > 0) {
@@ -102,11 +102,11 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:"";
 	     	<th  width="30%">Farm & Herd	</th>
 	     	<th  width="30%">Comments</th>
 	     </tr>
-	     <?php 
+	     <?php
 	     	foreach($results as $key=>$result){
 		 ?>
 		 	<tr class="even hasmenu"><td colspan="3" align="center" style="text-align: center; border-bottom: 2px solid;"><?php echo $key." ".date("l",strtotime($key)); ?></td></tr>
-		 <?php 
+		 <?php
 			foreach ($result as $keyrow=>$resultrow){
 		 ?>
 		 <tr class="odd hasmenu">
@@ -114,7 +114,7 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:"";
 	     	<td><?php echo $resultrow['farm_herd']; ?></td>
 	     	<td><?php echo $resultrow['comments']; ?></td>
 	     </tr>
-		 <?php 
+		 <?php
 			 }
 			}
 	     ?>

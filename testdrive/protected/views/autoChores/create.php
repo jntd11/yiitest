@@ -3,10 +3,10 @@
 /* @var $model AutoChores */
 
 $this->breadcrumbs=array(
-	'Auto Chores'=>array('index'),
-	'Create',
+	'Chores'=>array('index'),
+	'Setup',
 );
-
+$this->pageTitle='Chore Setup';
 $this->menu=array(
 	/* array('label'=>'List AutoChores', 'url'=>array('index')),
 	array('label'=>'Manage AutoChores', 'url'=>array('admin')), */

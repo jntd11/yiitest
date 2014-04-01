@@ -56,7 +56,7 @@ class AutoChoresController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-	
+
 
 	/**
 	 * Displays a particular model.
@@ -65,7 +65,8 @@ class AutoChoresController extends Controller
 	public function actionReport()
 	{
 		$model = new AutoChores();
-		
+		$results = array();
+		$errors = array();
 		if(isset($_POST['go'])){
 			if(empty($_POST['from_date'])){
 				$errors["from_date"] = "Invalid From Date";
@@ -88,14 +89,21 @@ class AutoChoresController extends Controller
 					$qtxt = "SELECT * FROM  chores WHERE date = '".$result."' ";
 					if($_POST['farm'] != 'A')
 						$qtxt .= " AND farm_herd = '".$_POST['farm']."' ";
+					echo $qtxt."<br>";
 					$command =Yii::app()->db->createCommand($qtxt);
 					$res =$command->queryAll();
 					//$results[$result] = $res;
-					
+
 					//D
 					$qtxt = "SELECT * FROM  auto_chores WHERE generated_by = 'D' AND disabled = 'N' ";
 					if($_POST['farm'] != 'A')
 						$qtxt .= " AND (farm_herd = '".$_POST['farm']."' OR generated_by = 'A') ";
+
+					$qtxt1 = " ADDDATE(date_asof, days_after) = '".$result."' ";
+					$qtxt2 = " ADDDATE(date_asof, (days_after+(times_occur*days_between))) = '".$result."' AND times_occur >= 2";
+					$qtxt .= " AND ((".$qtxt1.") OR (".$qtxt2.")) ";
+
+
 					$command =Yii::app()->db->createCommand($qtxt);
 					$res1 =$command->queryAll();
 					$results[$result] = array_merge($res,$res1);
@@ -104,12 +112,12 @@ class AutoChoresController extends Controller
 				$model->addErrors($errors);
 			}
 		}
-		
-		
+
+
 		$this->render('report',array(
 				'model'=>$model,
 				'results'=>$results,
-				
+
 		));
 	}
 
@@ -130,27 +138,27 @@ class AutoChoresController extends Controller
 			if($model->save())
 				$this->redirect(array('create'));
 		}
-		
-		
-	
+
+
+
 		$this->render('create',array(
 			'model'=>$model,
 		    'dataProvider'=>$dataProvider,
 		));
 	}
-	
-	public function dateRange($first, $last, $step = '+1 day', $format = 'd/m/Y' ) { 
+
+	public function dateRange($first, $last, $step = '+1 day', $format = 'd/m/Y' ) {
 
 		    $dates = array();
 		    $current = strtotime($first);
 		    $last = strtotime($last);
-		
-		    while( $current <= $last ) { 
-		
+
+		    while( $current <= $last ) {
+
 		        $dates[] = date($format, $current);
 		        $current = strtotime($step, $current);
 		    }
-		
+
 		    return $dates;
 	}
 
@@ -161,6 +169,7 @@ class AutoChoresController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -170,7 +179,7 @@ class AutoChoresController extends Controller
 		{
 			$model->attributes=$_POST['AutoChores'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->auto_chores_id));
+				$this->redirect(array('create'));
 		}
 
 		$this->render('update',array(
@@ -226,7 +235,7 @@ class AutoChoresController extends Controller
 	      $model->disabled = "Y";
 	     else
 	      $model->disabled = "N";
-	 
+
 	     echo (int) $model->save();
 	}
 

@@ -43,12 +43,13 @@ class AutoChores extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('description, times_occur, days_between, generated_by, date_asof, days_after, farm_herd', 'required'),
+			array('description, times_occur, days_between, generated_by,  days_after, farm_herd', 'required'),
 			array('times_occur, days_between, days_after', 'numerical', 'integerOnly'=>true),
 			array('description', 'length', 'max'=>25),
 			array('generated_by', 'length', 'max'=>20),
 			array('date_asof', 'length', 'max'=>10),
 		    array('farm_herd', 'validatefarm'),
+		    array('date_asof','validateDate'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('auto_chores_id, description, times_occur, days_between, generated_by, date_asof, days_after, farm_herd, disabled, date_modified', 'safe', 'on'=>'search'),
@@ -123,6 +124,12 @@ class AutoChores extends CActiveRecord
      	 if(!$isTrue || !in_array($matches2[1], $herds)){
      	   $this->addError($attribute, 'This is not a valid Farm & Herd');
      	 }
+
+	}
+	public function validateDate($attribute,$params){
+	 if($this->generated_by == 'D' && $this->$attribute == ""){
+	  	  $this->addError($attribute, 'As of Date is required');
+	 }
 
 	}
 	public function getHerd(){

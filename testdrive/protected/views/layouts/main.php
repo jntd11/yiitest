@@ -83,7 +83,8 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 					)),
 					array('label'=>'Chores', 'itemOptions'=>array('id'=>'reports'), 'url'=>array('/autoChores/create'), 'linkOptions'=>array(), 'items'=>array(
-						array('label'=>'Chores Report', 'url'=>array('/autoChores/report'))
+						array('label'=>'Chores Report', 'url'=>array('/autoChores/report')),
+						array('label'=>'Chores Setup', 'url'=>array('/autoChores/create')),
 					)),
 					array('label'=>'Semen', 'itemOptions'=>array('id'=>'reports'), 'url'=>array(''), 'linkOptions'=>array(), 'items'=>array(					)),
 					array('label'=>'Others', 'itemOptions'=>array('id'=>'Others'), 'url'=>array(''), 'linkOptions'=>array('accesskey'=>'O'), 'items'=>array(

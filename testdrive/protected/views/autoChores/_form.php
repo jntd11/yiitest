@@ -57,25 +57,25 @@ foreach($dataProvider->getData() as $record) {
 <tr class="odd" id="insertrow">
 	<?php echo $form->errorSummary($model); ?>
 
-	<td id="descinsert">
-		<?php echo $form->textField($model,'description',array('size'=>25,'maxlength'=>25)); ?>
+	<td id="descinsert" >
+		<?php echo $form->textField($model,'description',array('size'=>25,'maxlength'=>25,'tabindex'=>1)); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</td>
 
-	<td  id="timesinsert">
-		<?php echo $form->textField($model,'times_occur',array('size'=>2,'maxlength'=>2)); ?>
+	<td  id="timesinsert" >
+		<?php echo $form->textField($model,'times_occur',array('size'=>2,'maxlength'=>2,'tabindex'=>2)); ?>
 		<?php echo $form->error($model,'times_occur'); ?>
 	</td>
 
-	<td  id="daysinsert">
-		<?php echo $form->textField($model,'days_between'); ?>
-		<?php echo $form->error($model,'days_between',array('size'=>3,'maxlength'=>3)); ?>
+	<td  id="daysinsert" >
+		<?php echo $form->textField($model,'days_between',array('size'=>3,'maxlength'=>3,'tabindex'=>3, 'onBlur'=>'if(this.value=="") this.value = 0;')); ?>
+		<?php echo $form->error($model,'days_between'); ?>
 	</td>
 
 	<td  id="generatedinsert">
 		<?php //echo $form->textField($model,'generated_by',array('size'=>1,'maxlength'=>1)); ?>
 		<?php echo $form->dropDownList($model,'generated_by',array('B'=>'B','F'=>'F','W'=>'W','D'=>'D'),
-				array('size'=>0));
+				array('size'=>0,'tabindex'=>4));
 		?>
 		<?php echo $form->error($model,'generated_by'); ?>
 	</td>
@@ -95,9 +95,10 @@ foreach($dataProvider->getData() as $record) {
 
 		  'htmlOptions' => array(
 		    'id'=>'date_asof',
-		    'size' => '20',         // textField size
+		    'size' => '10',         // textField size
 		    'maxlength' => '20',    // textField maxlength
 		    'onBlur'=>'validateDatePicker("date_asof")',
+		    'tabIndex'=>5,
 		  ),
 		));
 
@@ -107,16 +108,16 @@ foreach($dataProvider->getData() as $record) {
 	</td>
 
 	<td  id="daysinsert">
-		<?php echo $form->textField($model,'days_after',array('size'=>3,'maxlength'=>3)); ?>
+		<?php echo $form->textField($model,'days_after',array('size'=>3,'maxlength'=>3,'tabIndex'=>6)); ?>
 		<?php echo $form->error($model,'days_after'); ?>
 	</td>
 
 	<td  id="farminsert">
-		<?php echo $form->textField($model,'farm_herd',array('size'=>2,'maxlength'=>2)); ?>
+		<?php echo $form->textField($model,'farm_herd',array('size'=>2,'maxlength'=>2,'tabindex'=>7,'value'=>$farmHerd,'onkeyup'=>'caps(this)')); ?>
 		<?php echo $form->error($model,'farm_herd'); ?>
 	</td>
 	<td>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('id'=>'savebutton','tabindex'=>8)); ?>
 	</td>
 </tr>
 </tbody>

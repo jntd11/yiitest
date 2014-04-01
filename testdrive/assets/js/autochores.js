@@ -152,6 +152,7 @@ $(function(){
 		    {title: "Insert", cmd: "insert", uiIcon: "ui-icon-copy"},
 			{title: "Duplicate", cmd: "duplicate", uiIcon: "ui-icon-clipboard"},
 			{title: "Set to Disabled", cmd: "disabled", uiIcon: "ui-icon-scissors"},
+			{title: "Edit", cmd: "edit", uiIcon: "ui-icon-scissors"},
 			],
 		// Handle menu selection to implement a fake-clipboard
 		select: function(event, ui) {
@@ -169,6 +170,8 @@ $(function(){
 				CLIPBOARD = $target.text();
 				var a = $(ui.target).parent();
 				var newrowid = a[0].id;
+				$("#dateinsert").html("");
+				$("#dateinsert").html('<input type="text" name="AutoChores[date_asof]" onblur="validateDatePicker(&quot;date_asof&quot;)" maxlength="20" size="20" id="date_asof" >')
 				var insert = $("#insertrow").html();
 				$("#insertrow").remove();
 				$("#"+a[0].id).after('<tr class="odd" id="insertrow">'+insert+'</tr>');
@@ -176,9 +179,41 @@ $(function(){
 				$("#AutoChores_times_occur").val($("#"+newrowid+"_times").html());
 				$("#AutoChores_days_between").val($("#"+newrowid+"_days").html());
 				$("#AutoChores_generated_by").val($("#"+newrowid+"_generated").html());
-				$("#AutoChores_date_asof").val($("#"+newrowid+"_date").html());
+				$("#date_asof").val($("#"+newrowid+"_date").html());
 				$("#AutoChores_days_after").val($("#"+newrowid+"_days").html());
 				$("#AutoChores_farm_herd").val($("#"+newrowid+"_farm").html());
+				$("#date_asof").datepicker({
+				      changeMonth: true,
+				      changeYear: true,
+				      showOn: 'button',
+				      buttonImage:'img/calendar.gif',
+				    });
+				break;
+			case "edit":
+				CLIPBOARD = $target.text();
+				var a = $(ui.target).parent();
+				var newrowid = a[0].id;
+				$("#dateinsert").html("");
+				$("#dateinsert").html('<input type="text" name="AutoChores[date_asof]" onblur="validateDatePicker(&quot;date_asof&quot;)" maxlength="20" size="20" id="date_asof" >')
+				var insert = $("#insertrow").html();
+				$("#insertrow").remove();
+				$("#"+a[0].id).after('<tr class="odd" id="insertrow">'+insert+'</tr>');
+				$("#AutoChores_description").val($("#"+newrowid+"_desc").html());
+				$("#AutoChores_times_occur").val($("#"+newrowid+"_times").html());
+				$("#AutoChores_days_between").val($("#"+newrowid+"_days").html());
+				$("#AutoChores_generated_by").val($("#"+newrowid+"_generated").html());
+				$("#date_asof").val($("#"+newrowid+"_date").html());
+				$("#AutoChores_days_after").val($("#"+newrowid+"_days").html());
+				$("#AutoChores_farm_herd").val($("#"+newrowid+"_farm").html());
+				$("#savebutton").val("Save");
+				$("#date_asof").datepicker({
+				      changeMonth: true,
+				      changeYear: true,
+				      showOn: 'button',
+				      buttonImage:'img/calendar.gif',
+				    });
+				$("#auto-chores-form").attr('action',$("#auto-chores-form").attr('action').replace("create","update/id/"+newrowid));
+				$("#"+a[0].id).remove();
 				break;
 			case "disabled":
 				CLIPBOARD = "";

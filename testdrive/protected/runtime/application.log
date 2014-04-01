@@ -7734,3 +7734,374 @@ Stack trace:
 #18 {main}
 REQUEST_URI=/yii/testdrive/index.php
 ---
+2014/04/01 09:04:19 [error] [php] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\wamp\www\yii\yii\framework\db\CDbConnection.php:423)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\wamp\www\yii\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive()
+#2 C:\wamp\www\yii\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(438): CWebApplication->getComponent()
+#4 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(623): CWebApplication->getDb()
+#5 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(2310): TblContent->getDbConnection()
+#6 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct()
+#7 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(402): model()
+#8 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(77): TblContent->getMetaData()
+#9 C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php(36): TblContent->__construct()
+#10 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\wamp\www\yii\yii\framework\web\CController.php(286): SiteController->runAction()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#14 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#15 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (36)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/04/01 09:38:06 [error] [php] Undefined variable: results (C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php:111)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): AutoChoresController->runAction()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): AutoChoresController->filterAccessControl()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): AutoChoresController->runActionWithFilters()
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): AutoChoresController->run()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/report
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php (111)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/04/01 09:38:15 [error] [php] Undefined variable: results (C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php:111)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): AutoChoresController->runAction()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): AutoChoresController->filterAccessControl()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): AutoChoresController->runActionWithFilters()
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): AutoChoresController->run()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/report
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php (111)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/04/01 09:38:34 [error] [php] Undefined variable: results (C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php:111)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): AutoChoresController->runAction()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): AutoChoresController->filterAccessControl()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): AutoChoresController->runActionWithFilters()
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): AutoChoresController->run()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/report
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php (111)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/04/01 09:38:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\wamp\www\yii\yii\framework\db\CDbConnection.php:381
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\wamp\www\yii\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\wamp\www\yii\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(2310): CActiveRecord->getDbConnection()
+#6 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(AutoChores))
+#7 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(402): CActiveRecord::model('AutoChores')
+#8 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(77): CActiveRecord->getMetaData()
+#9 C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php(67): CActiveRecord->__construct()
+#10 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): AutoChoresController->actionReport()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('report')
+#20 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/repo...')
+#21 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/report
+HTTP_REFERER=http://localhost/yii/yii/testdrive/
+---
+2014/04/01 09:38:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\wamp\www\yii\yii\framework\db\CDbConnection.php:381
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\wamp\www\yii\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\wamp\www\yii\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(2310): CActiveRecord->getDbConnection()
+#6 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(AutoChores))
+#7 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(402): CActiveRecord::model('AutoChores')
+#8 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(77): CActiveRecord->getMetaData()
+#9 C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php(67): CActiveRecord->__construct()
+#10 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): AutoChoresController->actionReport()
+#11 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('report')
+#20 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/repo...')
+#21 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/report
+HTTP_REFERER=http://localhost/yii/yii/testdrive/
+---
+2014/04/01 09:38:54 [error] [php] Undefined variable: results (C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php:111)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): AutoChoresController->runAction()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): AutoChoresController->filterAccessControl()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): AutoChoresController->runActionWithFilters()
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): AutoChoresController->run()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/report
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php (111)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/04/01 10:31:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "cerate".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('cerate')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('cerate')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/cera...')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/cerate
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=autoChores/create
+---
+2014/04/01 10:31:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "cerate".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('cerate')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('cerate')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/cera...')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/cerate
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=autoChores/create
+---
+2014/04/01 10:46:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "save".' in C:\wamp\www\yii\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(270): CController->missingAction('save')
+#1 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('save')
+#2 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/save')
+#3 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/save
+---
+2014/04/01 10:47:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\yii\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/upda...')
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/update
+---
+2014/04/01 10:47:26 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\yii\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/upda...')
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/update/10
+---
+2014/04/01 10:47:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\yii\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/upda...')
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/update/id.10
+---
+2014/04/01 10:48:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\yii\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/upda...')
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/update/id.10
+---
+2014/04/01 10:48:18 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\yii\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/upda...')
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/update/10
+---
+2014/04/01 10:48:19 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\yii\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/upda...')
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/update
+---
+2014/04/01 10:50:38 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\yii\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('autoChores/upda...')
+#10 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\yii\yii\testdrive\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/update/9
+HTTP_REFERER=http://localhost/yii/yii/testdrive/index.php?r=autoChores/create
+---
+2014/04/01 11:41:33 [error] [php] Missing argument 1 for CActiveRecord::getAttribute(), called in C:\wamp\www\yii\yii\framework\base\CComponent.php on line 111 and defined (C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php:680)
+Stack trace:
+#0 C:\wamp\www\yii\yii\testdrive\protected\models\AutoChores.php(130): AutoChores->__get()
+#1 C:\wamp\www\yii\yii\framework\validators\CInlineValidator.php(42): AutoChores->validateDate()
+#2 C:\wamp\www\yii\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#3 C:\wamp\www\yii\yii\framework\base\CModel.php(159): CInlineValidator->validate()
+#4 C:\wamp\www\yii\yii\framework\db\ar\CActiveRecord.php(794): AutoChores->validate()
+#5 C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php(137): AutoChores->save()
+#6 C:\wamp\www\yii\yii\framework\web\actions\CInlineAction.php(49): AutoChoresController->actionCreate()
+#7 C:\wamp\www\yii\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): AutoChoresController->runAction()
+#9 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): AutoChoresController->filterAccessControl()
+#12 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\wamp\www\yii\yii\framework\web\CController.php(265): AutoChoresController->runActionWithFilters()
+#15 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): AutoChoresController->run()
+#16 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/create
+in C:\wamp\www\yii\yii\testdrive\protected\models\AutoChores.php (130)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php (137)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/04/01 11:44:27 [error] [php] Undefined offset: 0 (C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php:82)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): AutoChoresController->runAction()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): AutoChoresController->filterAccessControl()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): AutoChoresController->runActionWithFilters()
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): AutoChoresController->run()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/report
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php (82)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/04/01 11:45:10 [error] [php] Undefined offset: 0 (C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php:82)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): AutoChoresController->runAction()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): AutoChoresController->filterAccessControl()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): AutoChoresController->runActionWithFilters()
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): AutoChoresController->run()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/report
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php (82)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/04/01 11:45:13 [error] [php] Undefined variable: errors (C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php:85)
+Stack trace:
+#0 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(133): AutoChoresController->runAction()
+#1 C:\wamp\www\yii\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp\www\yii\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp\www\yii\yii\framework\web\filters\CInlineFilter.php(58): AutoChoresController->filterAccessControl()
+#4 C:\wamp\www\yii\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp\www\yii\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp\www\yii\yii\framework\web\CController.php(265): AutoChoresController->runActionWithFilters()
+#7 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(282): AutoChoresController->run()
+#8 C:\wamp\www\yii\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\yii\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\yii\yii\testdrive\index.php(14): CWebApplication->run()
+REQUEST_URI=/yii/yii/testdrive/index.php?r=autoChores/report
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\AutoChoresController.php (85)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
