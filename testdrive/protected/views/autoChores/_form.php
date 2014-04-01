@@ -75,7 +75,7 @@ foreach($dataProvider->getData() as $record) {
 	<td  id="generatedinsert">
 		<?php //echo $form->textField($model,'generated_by',array('size'=>1,'maxlength'=>1)); ?>
 		<?php echo $form->dropDownList($model,'generated_by',array('B'=>'B','F'=>'F','W'=>'W','D'=>'D'),
-				array('size'=>0,'tabindex'=>4));
+				array('size'=>0,'tabindex'=>4,'onBlur'=>'if(this.value != "D") $("#AutoChores_days_after").focus();' ));
 		?>
 		<?php echo $form->error($model,'generated_by'); ?>
 	</td>

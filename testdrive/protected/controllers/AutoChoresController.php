@@ -130,7 +130,7 @@ class AutoChoresController extends Controller
 		$model=new AutoChores;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		$dataProvider = new CActiveDataProvider('AutoChores');
+		$dataProvider = new CActiveDataProvider('AutoChores',array('sort'=>array('defaultOrder'=>'description ASC, farm_herd asc')));
 		$dataProvider->setPagination(false);
 		if(isset($_POST['AutoChores']))
 		{
