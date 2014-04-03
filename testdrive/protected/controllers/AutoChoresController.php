@@ -69,7 +69,7 @@ class AutoChoresController extends Controller
 		$errors = array();
 		$isPrint = 0;
 		//exit;
-		if(isset($_REQUEST['go']) || isset($_REQUEST['farm'])){
+		if(isset($_REQUEST['go'])){
 		   if(!isset($_REQUEST['go']))
   		        $isPrint = 1;
 			if(empty($_REQUEST['from_date'])){

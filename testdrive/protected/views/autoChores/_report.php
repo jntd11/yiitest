@@ -99,11 +99,16 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 	//print_r($results); ?>
 	<div id="print">
 	<div class="grid-view" id="container">
-	<table  class="items" width="100%">
+	<table  class="items" style="width: 100%">
 	     <tr>
-	     	<th width="30%" id="sow-gilts-grid_c0">Description</th>
-	     	<th  width="30%">Farm & Herd</th>
-	     	<th  width="30%">Comments</th>
+	        <td><?php echo "From Date: <b> $from_date </b>"; ?></td>
+	        <td><?php echo "To Date: <b> $to_date </b>"; ?></td>
+	        <td><?php echo "Farm & Herd: <b> $farm </b>";  ?></td>
+	     </tr>
+	     <tr>
+	     	<th width="30%" style="text-align: left">Description</th>
+	     	<th  width="30%" style="text-align: left">Farm &amp; Herd</th>
+	     	<th  width="30%" style="text-align: left">Comments</th>
 	     </tr>
 	     <?php
 	     	foreach($results as $key=>$result){
@@ -123,31 +128,29 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 	     ?>
 	</table>
 	<?php }?>
+
 	</div>
+
 	</div>
-	<div class="grid-view" id="containerprint" style="display: none;">
-	<table  class="items">
-	     <tr>
-	     	<th width="30%" id="sow-gilts-grid_c0">Description</th>
-	     	<th  width="30%">Farm & Herd</th>
-	     	<th  width="30%">Comments</th>
-	     </tr>
-	     <?php
-	     	foreach($results as $key=>$result){
-		 ?>
-		 	<tr class="even hasmenu"><td colspan="3" align="center" style="text-align: center; border-bottom: 2px solid;"><?php echo $key." ".date("l",strtotime($key)); ?></td></tr>
-		 <?php
-			foreach ($result as $keyrow=>$resultrow){
-		 ?>
-		 <tr class="odd hasmenu">
-	     	<td><?php echo $resultrow['description']; ?></td>
-	     	<td><?php echo $resultrow['farm_herd']; ?></td>
-	     	<td><?php echo $resultrow['comments']; ?></td>
-	     </tr>
-		 <?php
-			 }
-			}
-	     ?>
-	</table>
-	</div>
+	<?php
+	if(count($results))
+$this->widget('ext.mPrint.mPrint', array(
+  'title' => 'Chores Report',          //the title of the document. Defaults to the HTML title
+  'tooltip' => 'Print',        //tooltip message of the print icon. Defaults to 'print'
+  'text' => 'Print Results',   //text which will appear beside the print icon. Defaults to NULL
+  'element' => '#print',        //the element to be printed.
+  'exceptions' => array(       //the element/s which will be ignored
+    '.summary',
+    '.search-form'
+  ),
+  //'cssFile'=>'styles.css',
+  'publishCss' => true,       //publish the CSS for the whole page?
+  'visible' => Yii::app()->user->checkAccess('print'),  //should this be visible to the current user?
+  'alt' => 'print',       //text which will appear if image can't be loaded
+  'debug' => false,            //enable the debugger to see what you will get
+  'id' => 'print-div1'         //id of the print link
+));
+?>
+
+
 </div><!-- form -->
