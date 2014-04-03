@@ -133,11 +133,11 @@ class LittersController extends Controller
 			 WHERE date = '".$orgDate."' and comments ='".$model->sow_ear_notch."' and auto_chores.generated_by = 'F'";
 			 $command =Yii::app()->db->createCommand($qtxt);
 			 $res =$command->query();
+
 			 //New Chores Generation
 			 $qtxt ="SELECT * FROM  auto_chores WHERE generated_by = 'F' AND (farm_herd = '".$match[0]."' OR farm_herd = 'A') AND disabled = 'N'";
 			 $command =Yii::app()->db->createCommand($qtxt);
-			 $res =$command->queryAll();
-			 //print_r($res);
+			 $res = $command->queryAll();
 			 foreach ($res as $recCount=>$record) {
 			  $choresModel = new Chores();
 			  $choresModel->description = $record['description'];
@@ -145,6 +145,7 @@ class LittersController extends Controller
 			  $choresModel->comments = $model->sow_ear_notch;
 			  $choresModel->date = date("m/d/Y",strtotime($model->farrowed_date)+($record['days_after'] * 24 * 3600));
 			  $currentdate = $choresModel->date;
+
 			  //$choresModel->date_modified = 'CURRENT_TIMESTAMP';
 			  if(!$choresModel->save()) {
 			   print_r($choresModel->errors);
@@ -230,7 +231,7 @@ class LittersController extends Controller
 		if(isset($_POST['Litters']))
 		{
 		    $orgDate = $model->weaned_date;
-		    $choresModel = new Chores();
+// 		    $choresModel = new Chores();
 			$model->attributes = $_POST['Litters'];
 			if($model->save()) {
 			 // New CHores Insertion
@@ -246,6 +247,7 @@ class LittersController extends Controller
 			 $res =$command->queryAll();
 			 //print_r($res);
 			 foreach ($res as $recCount=>$record) {
+			  $choresModel = new Chores();
 			  $choresModel->description = $record['description'];
 			  $choresModel->farm_herd = $match[0];
 			  $choresModel->comments = $model->sow_ear_notch;

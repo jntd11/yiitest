@@ -71,13 +71,13 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
     &nbsp;
     <?php
 	echo CHtml::submitButton('Go',array('onClick'=>'','name'=>'go'));
-	echo CHtml::ajaxSubmitButton("print","",
+	/* echo CHtml::ajaxSubmitButton("print","",
  	  array('success' => 'function(data) {
  	                  var myWindow = window.open("","MsgWindow","width=600,height=600");
                       myWindow.document.write(data);
  	                  myWindow.print();
               }')
-	  );
+	  ); */
 	$this->endWidget();
 	if(count($model->errors) > 0){
 		echo '<div class="errorSummary">';
@@ -91,16 +91,15 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 	}
 
 ?>
-<a href="index.php?r=autoChores/report/&to_date=<?php echo $to_date; ?>&from_date=<?php echo $from_date; ?>&farm=<?php echo $farm; ?>" onClick="window.print(); return false;">Tets</a>
-
 	</div>
 	<?php
 
 
 	 if(count($results) > 0) {
 	//print_r($results); ?>
+	<div id="print">
 	<div class="grid-view" id="container">
-	<table  class="items">
+	<table  class="items" width="100%">
 	     <tr>
 	     	<th width="30%" id="sow-gilts-grid_c0">Description</th>
 	     	<th  width="30%">Farm & Herd</th>
@@ -124,6 +123,7 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 	     ?>
 	</table>
 	<?php }?>
+	</div>
 	</div>
 	<div class="grid-view" id="containerprint" style="display: none;">
 	<table  class="items">
