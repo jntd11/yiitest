@@ -50,6 +50,7 @@ $(document).ready(function(){
 	    el.selectionStart = elemLen;
 	    el.selectionEnd = elemLen;
 	    el.focus();
+	    
 	window.onbeforeunload = iamexiting;
 	function iamexiting(e) {
 		if($("#sow-gilts-form").data("changed")) {
@@ -180,7 +181,7 @@ $(function(){
 				$("#AutoChores_days_between").val($("#"+newrowid+"_days").html());
 				$("#AutoChores_generated_by").val($("#"+newrowid+"_generated").html());
 				$("#date_asof").val($("#"+newrowid+"_date").html());
-				$("#AutoChores_days_after").val($("#"+newrowid+"_days").html());
+				$("#AutoChores_days_after").val($("#"+newrowid+"_after").html());
 				$("#AutoChores_farm_herd").val($("#"+newrowid+"_farm").html());
 				$("#date_asof").datepicker({
 				      changeMonth: true,
@@ -203,7 +204,7 @@ $(function(){
 				$("#AutoChores_days_between").val($("#"+newrowid+"_days").html());
 				$("#AutoChores_generated_by").val($("#"+newrowid+"_generated").html());
 				$("#date_asof").val($("#"+newrowid+"_date").html());
-				$("#AutoChores_days_after").val($("#"+newrowid+"_days").html());
+				$("#AutoChores_days_after").val($("#"+newrowid+"_after").html());
 				$("#AutoChores_farm_herd").val($("#"+newrowid+"_farm").html());
 				$("#savebutton").val("Save");
 				$("#date_asof").datepicker({
@@ -214,6 +215,7 @@ $(function(){
 				    });
 				$("#auto-chores-form").attr('action',$("#auto-chores-form").attr('action').replace("create","update/id/"+newrowid));
 				$("#"+a[0].id).remove();
+				$("#AutoChores_description").focus();
 				break;
 			case "disabled":
 				CLIPBOARD = "";
@@ -310,3 +312,22 @@ $(function(){
 		}, 2000);
 	});
 });
+function print(){
+	/*$("#containerprint").dialog({
+		autoOpen: true,
+		width: 800,
+		modal: true,
+		closeOnEscape: true,
+		buttons: [
+			{
+				text: "Print",
+				click: function() {
+					alert("Jai");
+					window.print();
+				}
+			}
+		]
+	});*/
+	var myWindow = window.open("index.php?r=autoChores/report","MsgWindow","width=600,height=800");
+	myWindow.print();
+}

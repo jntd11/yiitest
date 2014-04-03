@@ -67,37 +67,41 @@ class AutoChoresController extends Controller
 		$model = new AutoChores();
 		$results = array();
 		$errors = array();
-		if(isset($_POST['go'])){
-			if(empty($_POST['from_date'])){
+		$isPrint = 0;
+		//exit;
+		if(isset($_REQUEST['go']) || isset($_REQUEST['farm'])){
+		   if(!isset($_REQUEST['go']))
+  		        $isPrint = 1;
+			if(empty($_REQUEST['from_date'])){
 				$errors["from_date"] = "Invalid From Date";
 			}
-			if(empty($_POST['to_date'])){
+			if(empty($_REQUEST['to_date'])){
 				$errors["to_date"] = "Invalid To Date";
 			}
-			if(empty($_POST['farm'])){
+			if(empty($_REQUEST['farm'])){
 				$errors["farm"] = "Invalid Farm & Herd";
 			}else {
-				$qtxt ="SELECT farm_herd FROM  herd_setup WHERE farm_herd = '".$_POST['farm']."' ";
+				$qtxt ="SELECT farm_herd FROM  herd_setup WHERE farm_herd = '".$_REQUEST['farm']."' ";
 				$command =Yii::app()->db->createCommand($qtxt);
 				$res =$command->queryColumn();
-				if($_POST['farm'] != 'A' && $res[0] != $_POST['farm'])
+
+				if($_REQUEST['farm'] != 'A' && (!isset($res[0]) || $res[0] != $_REQUEST['farm']))
 					$errors["farm"] = "Invalid Farm & Herd";
 			}
 			if(count($errors) == 0) {
-				$results1 = $this->dateRange($_POST['from_date'], $_POST['to_date'],'+1 day','m/d/Y');
+				$results1 = $this->dateRange($_REQUEST['from_date'], $_REQUEST['to_date'],'+1 day','m/d/Y');
 				foreach ($results1 as $result) {
 					$qtxt = "SELECT * FROM  chores WHERE date = '".$result."' ";
-					if($_POST['farm'] != 'A')
-						$qtxt .= " AND farm_herd = '".$_POST['farm']."' ";
-					echo $qtxt."<br>";
+					if($_REQUEST['farm'] != 'A')
+						$qtxt .= " AND farm_herd = '".$_REQUEST['farm']."' ";
 					$command =Yii::app()->db->createCommand($qtxt);
 					$res =$command->queryAll();
 					//$results[$result] = $res;
 
 					//D
 					$qtxt = "SELECT * FROM  auto_chores WHERE generated_by = 'D' AND disabled = 'N' ";
-					if($_POST['farm'] != 'A')
-						$qtxt .= " AND (farm_herd = '".$_POST['farm']."' OR generated_by = 'A') ";
+					if($_REQUEST['farm'] != 'A')
+						$qtxt .= " AND (farm_herd = '".$_REQUEST['farm']."' OR generated_by = 'A') ";
 
 					$qtxt1 = " ADDDATE(date_asof, days_after) = '".$result."' ";
 					$qtxt2 = " ADDDATE(date_asof, (days_after+(times_occur*days_between))) = '".$result."' AND times_occur >= 2";
@@ -117,6 +121,7 @@ class AutoChoresController extends Controller
 		$this->render('report',array(
 				'model'=>$model,
 				'results'=>$results,
+		        'isPrint'=>$isPrint,
 
 		));
 	}

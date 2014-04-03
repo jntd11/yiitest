@@ -123,7 +123,7 @@ class LittersController extends Controller
 		{
 		    $orgDate = $model->farrowed_date;
 			$model->attributes = $_POST['Litters'];
-			$choresModel = new Chores();
+
 			if($model->save()) {
 
 			 // New CHores Insertion
@@ -139,6 +139,7 @@ class LittersController extends Controller
 			 $res =$command->queryAll();
 			 //print_r($res);
 			 foreach ($res as $recCount=>$record) {
+			  $choresModel = new Chores();
 			  $choresModel->description = $record['description'];
 			  $choresModel->farm_herd = $match[0];
 			  $choresModel->comments = $model->sow_ear_notch;

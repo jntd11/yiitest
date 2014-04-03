@@ -113,7 +113,7 @@ foreach($dataProvider->getData() as $record) {
 	</td>
 
 	<td  id="farminsert">
-		<?php echo $form->textField($model,'farm_herd',array('size'=>2,'maxlength'=>2,'tabindex'=>7,'value'=>$farmHerd,'onkeyup'=>'caps(this)')); ?>
+		<?php echo $form->textField($model,'farm_herd',array('size'=>3,'maxlength'=>2,'tabindex'=>7,'value'=>$farmHerd,'onkeyup'=>'if(event.which != 9) caps(this);')); ?>
 		<?php echo $form->error($model,'farm_herd'); ?>
 	</td>
 	<td>

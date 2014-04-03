@@ -38,7 +38,6 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 						'id'=>'from_date',
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
-						'onBlur'=>'validateDatePicker("att_sale")',
 						'value'=>$from_date,
 
 				),
@@ -56,26 +55,29 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 						'showOn'=>'button',
 						'defaultDate'=>''.$activitydate.'',
 						'buttonImage'=>'img/calendar.gif',
-
 						),
 				'htmlOptions' => array(
 						'id'=>'to_date',
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
-						'onBlur'=>'validateDatePicker("att_sale")',
-
-
 				),
 		));
-		?>
-		<?php echo "Farm & Herd"; ?>
+	  ?>
+	 <?php echo "Farm & Herd"; ?>
 		&nbsp;
-<?php
-    echo CHtml::TextField('farm',$farm);
+    <?php
+       echo CHtml::TextField('farm',$farm,array('onkeyup'=>'caps(this);'));
     ?>
     &nbsp;
     <?php
 	echo CHtml::submitButton('Go',array('onClick'=>'','name'=>'go'));
+	echo CHtml::ajaxSubmitButton("print","",
+ 	  array('success' => 'function(data) {
+ 	                  var myWindow = window.open("","MsgWindow","width=600,height=600");
+                      myWindow.document.write(data);
+ 	                  myWindow.print();
+              }')
+	  );
 	$this->endWidget();
 	if(count($model->errors) > 0){
 		echo '<div class="errorSummary">';
@@ -89,17 +91,19 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 	}
 
 ?>
-
+<a href="index.php?r=autoChores/report/&to_date=<?php echo $to_date; ?>&from_date=<?php echo $from_date; ?>&farm=<?php echo $farm; ?>" onClick="window.print(); return false;">Tets</a>
 
 	</div>
 	<?php
+
+
 	 if(count($results) > 0) {
 	//print_r($results); ?>
 	<div class="grid-view" id="container">
 	<table  class="items">
 	     <tr>
 	     	<th width="30%" id="sow-gilts-grid_c0">Description</th>
-	     	<th  width="30%">Farm & Herd	</th>
+	     	<th  width="30%">Farm & Herd</th>
 	     	<th  width="30%">Comments</th>
 	     </tr>
 	     <?php
@@ -121,5 +125,29 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 	</table>
 	<?php }?>
 	</div>
-
+	<div class="grid-view" id="containerprint" style="display: none;">
+	<table  class="items">
+	     <tr>
+	     	<th width="30%" id="sow-gilts-grid_c0">Description</th>
+	     	<th  width="30%">Farm & Herd</th>
+	     	<th  width="30%">Comments</th>
+	     </tr>
+	     <?php
+	     	foreach($results as $key=>$result){
+		 ?>
+		 	<tr class="even hasmenu"><td colspan="3" align="center" style="text-align: center; border-bottom: 2px solid;"><?php echo $key." ".date("l",strtotime($key)); ?></td></tr>
+		 <?php
+			foreach ($result as $keyrow=>$resultrow){
+		 ?>
+		 <tr class="odd hasmenu">
+	     	<td><?php echo $resultrow['description']; ?></td>
+	     	<td><?php echo $resultrow['farm_herd']; ?></td>
+	     	<td><?php echo $resultrow['comments']; ?></td>
+	     </tr>
+		 <?php
+			 }
+			}
+	     ?>
+	</table>
+	</div>
 </div><!-- form -->

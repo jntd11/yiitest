@@ -135,7 +135,7 @@ class SowGiltsController extends Controller
 		    $orgDate = $model->date_bred;
 			$model->attributes=$_POST['SowGilts'];
 			$autoChoresModel = new AutoChores();
-			$choresModel = new Chores();
+
 			$farm = preg_match("/^[0-9][a-z]/i",$model->sow_ear_notch,$match);
 			if($model->save()) {
 			    //Auto chores
@@ -150,6 +150,7 @@ class SowGiltsController extends Controller
           			   $res =$command->queryAll();
           			   //print_r($res);
           			   foreach ($res as $recCount=>$record) {
+          			    $choresModel = new Chores();
           			    $choresModel->description = $record['description'];
           			    $choresModel->farm_herd = $match[0];
           			    $choresModel->comments = $model->sow_ear_notch;
