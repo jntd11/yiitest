@@ -47,7 +47,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowgilts.js');
 
 <div style="float: left;"><a class="buttons" href="index.php?r=sowGilts/create"><input type="button" value="New"></a></div>
 <div style="float: left; margin-left: 50%">
-<?php 
+<?php
 $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'sow-gilts-form',
 		'enableAjaxValidation'=>false,
@@ -86,10 +86,10 @@ $this->endWidget();
 		'farrowed',
 		'date_modified',
 		*/
-			array(
+			/* array(
 					'class'=>'CButtonColumn',
 					'template' => '{update}',
-			),
+			), */
 	),
 )); ?>
 <a class="buttons" href="index.php?r=sowGilts/create"><input type="button" value="New"></a>

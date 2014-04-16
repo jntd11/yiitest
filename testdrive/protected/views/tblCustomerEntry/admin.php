@@ -49,7 +49,7 @@ Yii::app()->clientScript->registerScript('row_dblclick', "$('#Tbl-customer-entry
 ?>
 <div style="float: left;"><a class="buttons" href="index.php?r=tblCustomerEntry/create"><input type="button" value="New"></a></div>
 <div style="float: left; margin-left: 50%">
-<?php 
+<?php
 $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'tbl-customer-entry-grid',
 		'enableAjaxValidation'=>false,
@@ -66,7 +66,7 @@ $this->endWidget();
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
-	'selectionChanged'=>'function(id){ 
+	'selectionChanged'=>'function(id){
 		//location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
 	 }',
 	'columns'=>array(
@@ -125,12 +125,12 @@ $this->endWidget();
 		'notes4',
 		'modified_date',
 		*/
-		array(
+		/* array(
 			'class'=>'CButtonColumn',
 			'template' => '{update}',
-		),
+		), */
 	),
-)); 
+));
 
 ?>
 <a class="buttons" href="index.php?r=tblCustomerEntry/create"><input type="button" value="New"></a>

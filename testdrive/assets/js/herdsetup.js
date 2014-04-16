@@ -67,4 +67,16 @@ $(document).ready(function(){
 		var link = $(this).find('a.update').attr('href');
 		location.href = link;
 	});
+	
 });
+function setColor(val){
+	if(val != "") {
+		$.ajax({
+			url: encodeURI('index.php?r=tblHerdSetup/ColorChange'),
+			type: "GET",
+			data: {id:$("#TblHerdSetup_herd_id").val(),val:val}
+		}).done(function(data){
+			location.reload();
+		});
+	}
+}

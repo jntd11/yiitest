@@ -41,12 +41,12 @@ Yii::app()->clientScript->registerScript('row_dblclick', "$('#tbl-herd-setup-gri
 
 ?>
 <div style="float: left;">
-	<a class="buttons" href="index.php?r=tblHerdSetup/admin"><input type="button" value="List Farm & Herd"></a> 
+	<a class="buttons" href="index.php?r=tblHerdSetup/admin"><input type="button" value="List Farm & Herd"></a>
 	<a class="buttons" href="index.php?r=tblHerdSetup/create"><input type="button" value="New"></a>
 </div>
 <div style="float: left; margin-left: 40%">
 
-<?php 
+<?php
 $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'tbl-sold-hogs-form',
 		'enableAjaxValidation'=>false,
@@ -105,11 +105,11 @@ $this->endWidget();
 		*/
 		array(
 			'class'=>'CButtonColumn',
-				'template' => '{update}',
+			 'template' => '{update}',
 		),
 	),
 )); ?>
-<a class="buttons" href="index.php?r=tblHerdSetup/admin"><input type="button" value="List Farm & Herd"></a> 
+<a class="buttons" href="index.php?r=tblHerdSetup/admin"><input type="button" value="List Farm & Herd"></a>
 <a class="buttons" href="index.php?r=tblHerdSetup/create"><input type="button" value="New"></a>
 
 <p>

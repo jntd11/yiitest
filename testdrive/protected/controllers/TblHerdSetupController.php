@@ -28,7 +28,7 @@ class TblHerdSetupController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','ColorChange'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -75,15 +75,15 @@ class TblHerdSetupController extends Controller
 					$this->redirect(array('admin'));
 				else
 					$this->redirect(array('create'));
-				
+
 				$qu = "UPDATE users SET farm_herd = '".mysql_real_escape_string($model->getAttribute("farm_herd"))."', farm_herd_name = '".mysql_real_escape_string($model->getAttribute("farm_name"))."' WHERE id = ".Yii::app()->user->id;
 				$cmd = YII::app()->db->createCommand($qu);
 				$res = $cmd->query();
-				
+
 				Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$model->getAttribute("farm_herd"),array('expire'=>time()+(365*24*60*60)));
 				Yii::app()->request->cookies['farm_herd_name'] = new CHttpCookie('farm_herd_name',$model->getAttribute("farm_name"),array('expire'=>time()+(365*24*60*60)));
 				Yii::app()->request->cookies['breeder_herd_mark'] = new CHttpCookie('breeder_herd_mark',$model->getAttribute("breeder_herd_mark"),array('expire'=>time()+(365*24*60*60)));
-				
+
 				$this->redirect(array('view','id'=>$model->herd_id));
 			}
 		}
@@ -120,6 +120,16 @@ class TblHerdSetupController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
+	}
+
+	/*
+	 * Function to change the color of the herd
+	 */
+	public function actionColorChange($id){
+	    $model=$this->loadModel($id);
+	    $model->color = $_GET['val'];
+	    $model->save();
+	    Yii::app()->request->cookies['color'] = new CHttpCookie('color',$model->color,array('expire'=>time()+(365*24*60*60)));
 	}
 
 	/**

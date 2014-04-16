@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 <div class="form">
-	
+
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'tbl-herd-setup-form',
@@ -20,7 +20,8 @@
 	<?php echo $form->errorSummary($model); ?>
 	<table>
 <tr><td width="50%"><div class="row">
-		<?php echo $form->labelEx($model,'farm_herd'); ?>
+		<?php echo $form->hiddenField($model, 'herd_id');
+		      echo $form->labelEx($model,'farm_herd'); ?>
 		<?php echo $form->textField($model,'farm_herd',array('size'=>2,'id'=>'herd','maxlength'=>2,'onkeyup'=>'caps(this)','onBlur'=>'checkData(this,1)')); ?>
 		<?php echo $form->error($model,'farm_herd'); ?>
 		</div>
@@ -75,7 +76,7 @@
 		<?php echo $form->labelEx($model,'fax'); ?>
 		<?php echo $form->textField($model,'fax',array('size'=>15,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'fax'); ?>
-	</div></td><td>&nbsp;</td></tr>	
+	</div></td><td>&nbsp;</td></tr>
 <tr><td><div class="row">
 		<?php echo $form->labelEx($model,'breeder_number'); ?>
 		<?php echo $form->textField($model,'breeder_number',array('size'=>15,'maxlength'=>20,'tabindex'=>10)); ?>
@@ -200,9 +201,13 @@
 		<?php echo $form->labelEx($model,'take_boars_gilts'); ?>
 		<?php echo $form->dropDownList($model,'take_boars_gilts',array('Y'=>'Y','N'=>'N'),array('size'=>0,'tabindex'=>22,'maxlength'=>0,'title'=>'Y=Take # Boars & Gilts Born at farrowing N=Not Take #\'s')); ?>
 		<?php echo $form->error($model,'take_boars_gilts'); ?>
+		<?php if(!$model->isNewRecord)  { ?>
+		<input type='text' autocomplete='off' style='width:50px;text-size:12px;' value='<?php echo $model->color; ?>' class='iColorPicker' name='docColor' id='docColor' onClick="setColor(this.value);" />
+		<?php } ?>
 	</div></td><td>&nbsp;</td></tr>
+
 </table>
-	
+
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<div class="row buttons">

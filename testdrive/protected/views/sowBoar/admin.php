@@ -51,7 +51,7 @@ Yii::app()->clientScript->registerScript('row_dblclick', "$('#sow-boar-grid tbod
 
 <div style="float: left;"><a class="buttons" href="index.php?r=sowBoar/create"><input type="button" value="New"></a></div>
 <div style="float: left; margin-left: 50%">
-<?php 
+<?php
 $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'tbl-sold-hogs-form',
 		'enableAjaxValidation'=>false,
@@ -94,12 +94,12 @@ $this->endWidget();
 		'comments',
 		'date_modified',
 		*/
-		array(
+		/* array(
 			'class'=>'CButtonColumn',
 			'template' => '{update}',
-		),
+		), */
 	),
-)); 
+));
 
 ?>
 <a class="buttons" href="index.php?r=sowBoar/create"><input type="button" value="New"></a>

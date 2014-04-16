@@ -35,6 +35,7 @@ if((Yii::app()->user->id != "") && (Yii::app()->request->cookies['date'] == null
 $currdate = Yii::app()->request->cookies['date'];
 $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
+$color = Yii::app()->request->cookies['color'];
 $cs=Yii::app()->clientScript;
 $cs->registerCoreScript('jquery');
 //$cs->registerCoreScript('jquery-ui-1.10.2.custom');
@@ -47,7 +48,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 ?>
 </head>
 
-<body>
+<body <? echo ($color != "")?'style="background-color: '.$color.'"':'';?> >
 
 <div class="container" id="page">
 

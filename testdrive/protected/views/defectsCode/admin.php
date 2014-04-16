@@ -75,9 +75,7 @@ $(document).ready(function(){
 	'columns'=>array(
 		'code',
 		'description',
-		array(
-			'class'=>'CButtonColumn',
-		),
+
 	),
 )); ?>
 <div ><a class="buttons" href="index.php?r=DefectsCode/create"><input type="button" value="New"></a></div>

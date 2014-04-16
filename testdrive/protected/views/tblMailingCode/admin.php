@@ -36,7 +36,7 @@ Yii::app()->clientScript->registerScript('row_dblclick', "
 
 <div style="float: left;"><a class="buttons" href="index.php?r=tblMailingCode/create"><input type="button" value="New"></a></div>
 <div style="float: left; margin-left: 50%">
-<?php 
+<?php
 $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'tbl-sold-hogs-form',
 		'enableAjaxValidation'=>false,
@@ -59,10 +59,10 @@ $this->endWidget();
 	'columns'=>array(
 		'mailing_code_label',
 		'mailing_code_desc',
-		array(
+		/* array(
 			'class'=>'CButtonColumn',
 			'afterDelete'=>'function(link,success,data){ if(success) $("#statusMsg").html(data); }',
-		),
+		), */
 	),
 )); ?>
 <div id="statusMsg"></div>

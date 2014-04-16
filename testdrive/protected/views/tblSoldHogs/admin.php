@@ -48,7 +48,7 @@ Yii::app()->clientScript->registerScript('row_dblclick', "$('#tbl-sold-hogs-grid
 <div style="float: left;"><a class="buttons" href="index.php?r=tblSoldHogs/create"><input type="button" value="New"></a></div>
 <div style="float: left; margin-left: 50%">
 
-<?php 
+<?php
 $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'tbl-sold-hogs-form',
 		'enableAjaxValidation'=>false,
@@ -66,7 +66,7 @@ $this->endWidget();
 	'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
 	//'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'filter'=>$model,
-	
+
 	'columns'=>array(
 		'hog_ear_notch',
 		'customer_name',
@@ -79,10 +79,10 @@ $this->endWidget();
 		'reason_sold',
 		'date_modified',
 		*/
-		array(
+		/* array(
 			'class'=>'CButtonColumn',
 			'template' => '{update}',
-		),
+		), */
 	),
 )); ?>
 <a class="buttons" href="index.php?r=tblSoldHogs/create"><input type="button" value="New"></a>
