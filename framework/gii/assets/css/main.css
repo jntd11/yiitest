@@ -529,3 +529,7 @@ div.form.gii pre.results span.error
 .html {
 	z-index: 10px;
 }
+
+.button-column {
+	display: hidden;
+}

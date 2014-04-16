@@ -125,10 +125,12 @@ $this->endWidget();
 		'notes4',
 		'modified_date',
 		*/
-		/* array(
+		array(
 			'class'=>'CButtonColumn',
 			'template' => '{update}',
-		), */
+		  'htmlOptions' => array("style"=>'display: none'),
+		  'headerHtmlOptions'=> array("style"=>'display: none'),
+		),
 	),
 ));
 

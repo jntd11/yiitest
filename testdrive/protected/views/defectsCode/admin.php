@@ -75,6 +75,12 @@ $(document).ready(function(){
 	'columns'=>array(
 		'code',
 		'description',
+	  array(
+	    'class'=>'CButtonColumn',
+	    'htmlOptions' => array("style"=>'display: none'),
+	    'headerHtmlOptions'=> array("style"=>'display: none'),
+
+	  ),
 
 	),
 )); ?>

@@ -83,10 +83,12 @@ $this->endWidget();
 		'farrowed',
 		'date_modified',
 		*/
-			/* array(
+			array(
 					'class'=>'CButtonColumn',
 					'template' => '{update}',
-			), */
+			  'htmlOptions' => array("style"=>'display: none'),
+			  'headerHtmlOptions'=> array("style"=>'display: none'),
+			),
 	),
 )); ?>
 <a class="buttons" href="index.php?r=sowGilts/create"><input type="button" value="New"></a>

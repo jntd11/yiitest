@@ -59,10 +59,12 @@ $this->endWidget();
 	'columns'=>array(
 		'mailing_code_label',
 		'mailing_code_desc',
-		/* array(
+		array(
 			'class'=>'CButtonColumn',
 			'afterDelete'=>'function(link,success,data){ if(success) $("#statusMsg").html(data); }',
-		), */
+		  'htmlOptions' => array("style"=>'display: none'),
+		  'headerHtmlOptions'=> array("style"=>'display: none'),
+		),
 	),
 )); ?>
 <div id="statusMsg"></div>

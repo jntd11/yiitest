@@ -51,8 +51,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'description',
 		'comments',
 		'date_modified',
-		/* array(
+		array(
 			'class'=>'CButtonColumn',
-		), */
+		  'htmlOptions' => array("style"=>'display: none'),
+		  'headerHtmlOptions'=> array("style"=>'display: none'),
+
+		),
 	),
 )); ?>
