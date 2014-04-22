@@ -60,7 +60,7 @@ class Litters extends CActiveRecord
 			array('comments','length','max'=>10000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('litters_id, sow_ear_notch, date_bred, sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive, 
+			array('litters_id, sow_ear_notch, date_bred, sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive,
 					no_boars_alive, gilts_alive, birth_wgt, comments, date_modified, farrowed_date, weighted_date, weaned_date', 'safe', 'on'=>'search'),
 		);
 	}
@@ -137,6 +137,8 @@ class Litters extends CActiveRecord
 		$criteria->compare('farrowed_date',$this->farrowed_date,true);
 		$criteria->compare('weaned_date',$this->weaned_date,true);
 		$criteria->compare('weighted_date',$this->weighted_date,true);
+		$farmHerd = Yii::app()->request->cookies['farm_herd'];
+		$criteria->condition = " sow_ear_notch like '".$farmHerd."%'";
 
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 
@@ -174,6 +176,9 @@ class Litters extends CActiveRecord
 		$criteria->compare('settled',$this->settled,true);
 		$criteria->compare('farrowed',$this->farrowed,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
+		$farmHerd = Yii::app()->request->cookies['farm_herd'];
+		$criteria->condition = " sow_ear_notch like '".$farmHerd."%'";
+
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		$Litters_sort = isset($_REQUEST['Litters_sort'])?$_REQUEST['Litters_sort']:"";
 		return new CActiveDataProvider($this, array(

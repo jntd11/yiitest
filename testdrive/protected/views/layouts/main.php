@@ -143,7 +143,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 	<div id="footer">
 		<div id="dialog"><p>Date: <input type="text" id="datepicker" />&nbsp;</p></div>
-		<div><b>Activity Date:</b> <span id="currdate"><?php echo $currdate; ?></span> <b>Farm & Herd:</b> <span id="farmherd"><?php echo $farmHerd; ?> <?php echo " ".$farmHerdName; ?></span></div>
+		<div><b>Activity Date:</b> <span id="currdate"><?php echo $currdate; ?></span> <a href="" style="text-decoration: none;">&#8592;</a><b>Farm & Herd:</b> <span id="farmherd"><?php echo $farmHerd; ?> <?php echo " ".$farmHerdName; ?></span><a href="" style="text-decoration: none;">&#8594;</a></div>
 	</div><!-- footer -->
 
 </div><!-- page -->

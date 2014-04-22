@@ -67,7 +67,7 @@ class SowBoar extends CActiveRecord
 			array('ear_notch, sow_boar_name, sow_boar_id, registeration_no, born, no_pigs, weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, offspring_name, back_fat, loinneye, days, EBV, sire_initials, comments, date_modified', 'safe', 'on'=>'search'),
 		);
 	}
-	
+
 	public function validateEarNotch($attribute,$params)
 	{
 		//$farmHerd = Yii::app()->request->cookies['farm_herd']." ";
@@ -156,6 +156,9 @@ class SowBoar extends CActiveRecord
 		$criteria->compare('sire_initials',$this->sire_initials,true);
 		$criteria->compare('comments',$this->comments,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
+		$farmHerd = Yii::app()->request->cookies['farm_herd'];
+		$criteria->condition = " ear_notch like '".$farmHerd."%'";
+
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		$SowBoar_sort = isset($_REQUEST['SowBoar_sort'])?$_REQUEST['SowBoar_sort']:"";
 		return new CActiveDataProvider($this, array(
@@ -164,13 +167,13 @@ class SowBoar extends CActiveRecord
 			'sort'=>array('params'=>array('pages'=>$pages)),
 		));
 	}
-	
+
 	public function getHerd(){
 		$qu = "select farm_herd from herd_setup";
 		$cmd = YII::app()->db->createCommand($qu);
 		return $res = $cmd->queryColumn();
 	}
-	
+
 	public function pedigree(){
 		$criteria=new CDbCriteria;
 		//$criteria->compare('ear_notch','',true);
@@ -179,6 +182,6 @@ class SowBoar extends CActiveRecord
 				'criteria'=>$criteria,
 		));
 	}
-	
-	
+
+
 }

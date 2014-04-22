@@ -59,7 +59,7 @@ class TblSoldHogs extends CActiveRecord
 			array('tbl_sold_hogs_id, hog_ear_notch, customer_name, date_sold, sold_price, sale_type, invoice_number, app_xfer, comments, reason_sold, date_modified', 'safe', 'on'=>'search'),
 		);
 	}
-	
+
 	public function validateEarNotch($attribute,$params)
 	{
 		$patt1 = '/[-.]/';
@@ -74,7 +74,7 @@ class TblSoldHogs extends CActiveRecord
 			$this->addError($attribute, 'This is not a valid Farm & Herd');
 		}
 	}
-	
+
 
 	/**
 	 * @return array relational rules.
@@ -130,6 +130,9 @@ class TblSoldHogs extends CActiveRecord
 		$criteria->compare('comments',$this->comments,true);
 		$criteria->compare('reason_sold',$this->reason_sold,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
+		$farmHerd = Yii::app()->request->cookies['farm_herd'];
+		$criteria->condition = " hog_ear_notch like '".$farmHerd."%'";
+
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		$TblSoldHogs_sort = isset($_REQUEST['TblSoldHogs_sort'])?$_REQUEST['TblSoldHogs_sort']:"";
 		return new CActiveDataProvider($this, array(
@@ -142,7 +145,7 @@ class TblSoldHogs extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-	
+
 		$criteria=new CDbCriteria;
 		$start_date = '01-01-1900';
 		$end_date = date("Y-m-d", time() + (365 * 24 * 60 * 60));
@@ -156,7 +159,7 @@ class TblSoldHogs extends CActiveRecord
 			$datearr = explode("-", $end_date);
 			$end_date  = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
 		}
-		
+
 		$pages = 20;
 		if(isset($_GET['pages']))
 			$pages = $_GET['pages'];
@@ -176,7 +179,7 @@ class TblSoldHogs extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-	
+
 		$criteria=new CDbCriteria;
 		$criteria->compare('is_rebuild',0);
 		return $datap = new CActiveDataProvider($this, array(
@@ -189,7 +192,7 @@ class TblSoldHogs extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-	
+
 		$criteria=new CDbCriteria;
 		$criteria->compare('is_rebuild',0);
 		$criteria->distinct = true;
@@ -197,15 +200,15 @@ class TblSoldHogs extends CActiveRecord
 		return $datap = new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,
 		));
-	
-	}	
-	
+
+	}
+
 	public function getHerd(){
 		$qu = "select farm_herd from herd_setup";
 		$cmd = YII::app()->db->createCommand($qu);
 		return $res = $cmd->queryColumn();
 	}
-	
+
 	public static function sumPrice($provider){
 		$total=0;
 		foreach($provider->data as $item) {
