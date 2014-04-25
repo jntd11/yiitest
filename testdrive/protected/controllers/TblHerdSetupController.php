@@ -203,11 +203,11 @@ class TblHerdSetupController extends Controller
 				unset(Yii::app()->request->cookies['farm_herd']);
 				Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$res["farm_herd"],array('expire'=>time()+(365*24*60*60)));
 				Yii::app()->request->cookies['farm_herd_name'] = new CHttpCookie('farm_herd_name',$res["farm_name"],array('expire'=>time()+(365*24 *60*60)));
-				$qu = "UPDATE users SET farm_herd = '".$res["farm_herd"]."', farm_herd_name = '".$res["farm_name"]."' WHERE id = ".Yii::app()->user->id;
+				Yii::app()->request->cookies['date'] = new CHttpCookie('farm_herd_name',$res["activity_date"],array('expire'=>time()+(365*24 *60*60)));
+
+				$qu = "UPDATE users SET farm_herd = '".$res["farm_herd"]."', farm_herd_name = '".$res["farm_name"]."', activity_date = '".$res["activity_date"]."' WHERE id = ".Yii::app()->user->id;
 				$cmd = YII::app()->db->createCommand($qu);
 				$res = $cmd->query();
-print_r($_SERVER);
-
 				echo 1;
 				return;
 
@@ -221,8 +221,9 @@ print_r($_SERVER);
 				if(isset($res['herd_id'])) {
 					Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$res["farm_herd"],array('expire'=>time()+(365*24*60*60)));
 					Yii::app()->request->cookies['farm_herd_name'] = new CHttpCookie('farm_herd_name',$res["farm_name"],array('expire'=>time()+(365*24*60*60)));
+					Yii::app()->request->cookies['date'] = new CHttpCookie('farm_herd_name',$res["activity_date"],array('expire'=>time()+(365*24 *60*60)));
 
-					$qu = "UPDATE users SET farm_herd = '".$res["farm_herd"]."', farm_herd_name = '".$res["farm_name"]."' WHERE id = ".Yii::app()->user->id;
+					$qu = "UPDATE users SET farm_herd = '".$res["farm_herd"]."', farm_herd_name = '".$res["farm_name"]."', activity_date = '".$res["activity_date"]."' WHERE id = ".Yii::app()->user->id;
 					$cmd = YII::app()->db->createCommand($qu);
 					$res = $cmd->query();
 

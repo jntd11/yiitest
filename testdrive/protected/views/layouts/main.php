@@ -129,7 +129,11 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 		</div>
 
 	</div><!-- mainmenu -->
-	<div id="infobar"><span id="currdate"><?php echo $currdate; ?></span>
+	<div id="infobar">
+	<a href="javascript: void(0)" style="text-decoration: none;" onClick="prevDate()"><img src="img/cal-prev.gif"/></a>
+	<span id="currdate"><?php echo $currdate; ?></span>
+	<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextDate()"><img src="img/cal-next.gif"/></a>
+	&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(0)"><img src="img/cal-prev.gif"/></a>
 	<span id="farmherd"><?php echo $farmHerd; ?></span>
 	<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(1)"><img src="img/cal-next.gif"/></a>
@@ -147,7 +151,11 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 	<div id="footer">
 		<div id="dialog"><p>Date: <input type="text" id="datepicker" />&nbsp;</p></div>
-		<div><b>Activity Date:</b> <span id="currdate"><?php echo $currdate; ?></span>
+		<div>
+		<a href="javascript: void(0)" style="text-decoration: none;" onClick="prevDate()"><img src="img/cal-prev.gif"/></a>
+		<b>Activity Date:</b> <span id="currdate"><?php echo $currdate; ?></span>
+		<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextDate()"><img src="img/cal-next.gif"/></a>
+		&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(0,'<?php echo $_SERVER['QUERY_STRING'];?>')"><img src="img/cal-prev.gif"/></a>
 		<b>Farm & Herd:</b> <span id="farmherd"><?php echo $farmHerd; ?> <?php echo " ".$farmHerdName; ?></span>
 		<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(1,'<?php echo $_SERVER['QUERY_STRING'];?>')"><img src="img/cal-next.gif"/></a></div>

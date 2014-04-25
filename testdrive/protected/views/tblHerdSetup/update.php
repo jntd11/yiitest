@@ -15,7 +15,9 @@ $this->menu=array(
 	//array('label'=>'Manage Farm & Herd', 'url'=>array('admin')),
 );
 
-$qu = "UPDATE users SET farm_herd = '". addslashes($model->getAttribute("farm_herd"))."', farm_herd_name = '".addslashes($model->getAttribute("farm_name"))."' WHERE id = ".Yii::app()->user->id;
+$qu = "UPDATE users SET farm_herd = '". addslashes($model->getAttribute("farm_herd"))."',
+			farm_herd_name = '".addslashes($model->getAttribute("farm_name"))."',
+			activity_date = '".addslashes($model->getAttribute("activity_date"))."'	WHERE id = ".Yii::app()->user->id;
 $cmd = YII::app()->db->createCommand($qu);
 $res = $cmd->query();
 

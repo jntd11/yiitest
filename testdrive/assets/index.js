@@ -202,3 +202,22 @@ function nextHerd(isNext,url){
 		  }
 	});
 }
+function nextDate(){
+	$.ajax({
+		url: encodeURI('index.php?r=user/user/test'),
+		type: "GET",
+		data: {d:$("#currdate").html(),s:'N'}
+	}).done(function(data){
+		$("#currdate").html(data);
+	});
+}
+function prevDate(){
+	$.ajax({
+		url: encodeURI('index.php?r=user/user/test'),
+		type: "GET",
+		data: {d:$("#currdate").html(),s:'P'}
+	}).done(function(data){
+			$("#currdate").html(data);
+	});
+	
+}

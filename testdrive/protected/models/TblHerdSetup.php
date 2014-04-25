@@ -39,6 +39,7 @@
  * @property string $prev_herd_mark
  * @property string $fax
  * @property string $color
+ * @property string #activity_date
  * @property string $date_modified
  */
 class TblHerdSetup extends CActiveRecord
@@ -72,7 +73,7 @@ class TblHerdSetup extends CActiveRecord
 			array('farm_herd, breeder_name, farm_name, address1, city, state, zip, phone, breeder_number, breeder_herd_mark, home_country, breed, is_weight, breeder_no, weighted, is_hog_tag, hog_numbering, passover_days, due_days, take_boars_gilts, take_sow_scores, spring_start, spring_end, fall_start, fall_end, shift_year, take_weaned_date, take_deffects', 'required'),
 			array('zip, breeder_number, passover_days, due_days, spring_start, spring_end, fall_start, fall_end', 'numerical', 'integerOnly'=>true),
 			array('farm_herd', 'length', 'max'=>2),
-			array('breeder_name, farm_name, city, state', 'length', 'max'=>50),
+			array('breeder_name, farm_name, city, state, activity_date', 'length', 'max'=>50),
 			array('address1, address2, color', 'length', 'max'=>100),
 			array('phone', 'length', 'max'=>25),
 			array('breeder_herd_mark, prev_herd_mark', 'length', 'max'=>10),

@@ -24,7 +24,7 @@ class UserController extends Controller
 	 */
 	public function accessRules()
 	{
-		
+
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view','test','ActivityDate'),
@@ -34,7 +34,7 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),
 		);
-	}	
+	}
 
 	/**
 	 * Displays a particular model.
@@ -56,7 +56,7 @@ class UserController extends Controller
 			'criteria'=>array(
 		        'condition'=>'status>'.User::STATUS_BANNED,
 		    ),
-				
+
 			'pagination'=>array(
 				'pageSize'=>Yii::app()->controller->module->user_page_size,
 			),
@@ -100,7 +100,7 @@ class UserController extends Controller
 		}
 		return $this->_model;
 	}
-	
+
 	/**
 	 * Manages all models.
 	 */
@@ -122,7 +122,7 @@ class UserController extends Controller
 				$date = date("m/d/Y");
 				break;
 		}
-	
+
 		$session = new CHttpSession();
 		$session->open();
 		echo Yii::app()->request->cookies['date'] = new CHttpCookie('date',$date,array('expire'=>time()+(365*24*60*60)));
@@ -130,11 +130,16 @@ class UserController extends Controller
 			$qu = "UPDATE users SET activity_date = '".$date."' WHERE id = ".Yii::app()->user->id;
 			$cmd = YII::app()->db->createCommand($qu);
 			$res = $cmd->query();
+
+			$farmHerd = Yii::app()->request->cookies['farm_herd'];
+			$qu = "UPDATE herd_setup SET activity_date = '".$date."' WHERE farm_herd = '".$farmHerd."'";
+			$cmd = YII::app()->db->createCommand($qu);
+			$res = $cmd->query();
 		}
-	
+
 		//$session['date'] = $date;
 	}
-	
+
 	/**
 	 * Manages all models.
 	 */
