@@ -185,3 +185,20 @@ function validateDatePicker(fieldId){
 	}
 	return true;
 }
+function nextHerd(isNext,url){
+	$.ajax({
+		url: encodeURI('index.php?r=TblHerdSetup/next'),
+		type: "GET",
+		data: {isNext:isNext}
+	}).done(function(data){
+		  if(data) {
+			  patt1=new RegExp("litters\/update");
+			  if(patt1.test(url)) {
+				  url = url.replace(/update/,"admin");
+				  location.href= 'index.php?'+url;
+			  }else{
+				  location.reload();
+			  }
+		  }
+	});
+}

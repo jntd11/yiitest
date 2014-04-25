@@ -129,7 +129,11 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 		</div>
 
 	</div><!-- mainmenu -->
-	<div id="infobar"><span id="currdate"><?php echo $currdate; ?></span> <span id="farmherd"><?php echo $farmHerd; ?></span>&nbsp;&nbsp;</div>
+	<div id="infobar"><span id="currdate"><?php echo $currdate; ?></span>
+	<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(0)"><img src="img/cal-prev.gif"/></a>
+	<span id="farmherd"><?php echo $farmHerd; ?></span>
+	<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(1)"><img src="img/cal-next.gif"/></a>
+	&nbsp;&nbsp;</div>
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
@@ -143,7 +147,10 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 
 	<div id="footer">
 		<div id="dialog"><p>Date: <input type="text" id="datepicker" />&nbsp;</p></div>
-		<div><b>Activity Date:</b> <span id="currdate"><?php echo $currdate; ?></span> <a href="" style="text-decoration: none;">&#8592;</a><b>Farm & Herd:</b> <span id="farmherd"><?php echo $farmHerd; ?> <?php echo " ".$farmHerdName; ?></span><a href="" style="text-decoration: none;">&#8594;</a></div>
+		<div><b>Activity Date:</b> <span id="currdate"><?php echo $currdate; ?></span>
+		<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(0,'<?php echo $_SERVER['QUERY_STRING'];?>')"><img src="img/cal-prev.gif"/></a>
+		<b>Farm & Herd:</b> <span id="farmherd"><?php echo $farmHerd; ?> <?php echo " ".$farmHerdName; ?></span>
+		<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(1,'<?php echo $_SERVER['QUERY_STRING'];?>')"><img src="img/cal-next.gif"/></a></div>
 	</div><!-- footer -->
 
 </div><!-- page -->

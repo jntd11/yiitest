@@ -66,7 +66,7 @@ class TblCustomerEntryController extends Controller
 	public function actionCreate()
 	{
 		$model=new TblCustomerEntry;
-		
+
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -78,15 +78,15 @@ class TblCustomerEntryController extends Controller
 			if($model->save()) {
 				if(isset($_POST['savenew']))
 					$this->redirect(array('create'));
-				else 
+				else
 					$this->redirect(array('admin','id'=>$model->customer_entry_id));
 			}
 		}
-		
-		
+
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		
+
 		if(isset($_POST['tblMailingCode']))
 		{
 			$model=new tblMailingCode;
@@ -195,7 +195,7 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			 $qtxt ="SELECT first_name FROM customers WHERE first_name LIKE :username";
+			$qtxt ="SELECT first_name FROM customers WHERE first_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
@@ -231,10 +231,10 @@ class TblCustomerEntryController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT phone_home FROM customers WHERE phone_home LIKE :username 
-				UNION SELECT phone_business FROM customers WHERE phone_business LIKE :username 
+			$qtxt ="SELECT phone_home FROM customers WHERE phone_home LIKE :username
+				UNION SELECT phone_business FROM customers WHERE phone_business LIKE :username
 				UNION SELECT phone_cell FROM customers WHERE phone_cell LIKE :username
-				UNION SELECT phone_other1 FROM customers WHERE phone_other1 LIKE :username 
+				UNION SELECT phone_other1 FROM customers WHERE phone_other1 LIKE :username
 				UNION SELECT phone_other2 FROM customers WHERE phone_other2 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
@@ -242,7 +242,7 @@ class TblCustomerEntryController extends Controller
 		}
 		echo CJSON::encode($res);
 		Yii::app()->end();
-	}	
+	}
 	public function actionAutocompletePhoneBusiness() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -254,7 +254,7 @@ class TblCustomerEntryController extends Controller
 		}
 		echo CJSON::encode($res);
 		Yii::app()->end();
-	}		
+	}
 	public function actionAutocompletePhoneCell() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -278,7 +278,7 @@ class TblCustomerEntryController extends Controller
 		}
 		echo CJSON::encode($res);
 		Yii::app()->end();
-	}	
+	}
 	public function actionAutocompletePhoneOther2() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -307,7 +307,7 @@ class TblCustomerEntryController extends Controller
 		$res[] = "<New>";
 		echo CJSON::encode($res);
 		Yii::app()->end();
-		
+
 	}
 	public function getMailingCode($term=NULL) {
 		$res =array();
@@ -319,7 +319,7 @@ class TblCustomerEntryController extends Controller
 		}
 		if(count($res) > 0)
 			echo 1;
-		else 
+		else
 			echo 0;
 	}
 
@@ -343,7 +343,7 @@ class TblCustomerEntryController extends Controller
 		//$model->att_sale = date("d/m/Y",strtotime($model->att_sale));
 		//$model->entry_date = date("d/m/Y",strtotime($model->entry_date));
 		//$model->last_letter_sent = date("d/m/Y",strtotime($model->last_letter_sent));
-		
+
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

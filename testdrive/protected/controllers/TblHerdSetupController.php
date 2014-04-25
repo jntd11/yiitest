@@ -28,7 +28,7 @@ class TblHerdSetupController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','ColorChange'),
+				'actions'=>array('index','view','ColorChange','Next'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -185,6 +185,54 @@ class TblHerdSetupController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
+	}
+
+	public function actionNext(){
+		if(isset($_GET['isNext'])){
+			$farmHerd = Yii::app()->request->cookies['farm_herd'];
+			if($_GET['isNext'])
+				$qtxt ="SELECT * from herd_setup where herd_id > (SELECT herd_id FROM herd_setup WHERE farm_herd LIKE :username) order by herd_id asc limit 1 ";
+			else
+				$qtxt ="SELECT * from herd_setup where herd_id < (SELECT herd_id FROM herd_setup WHERE farm_herd LIKE :username) order by herd_id Desc limit 1 ";
+			//echo $qtxt;
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$farmHerd.'%', PDO::PARAM_STR);
+			$res =$command->queryRow();
+			//print_r($res);
+			if(isset($res['herd_id'])) {
+				unset(Yii::app()->request->cookies['farm_herd']);
+				Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$res["farm_herd"],array('expire'=>time()+(365*24*60*60)));
+				Yii::app()->request->cookies['farm_herd_name'] = new CHttpCookie('farm_herd_name',$res["farm_name"],array('expire'=>time()+(365*24 *60*60)));
+				$qu = "UPDATE users SET farm_herd = '".$res["farm_herd"]."', farm_herd_name = '".$res["farm_name"]."' WHERE id = ".Yii::app()->user->id;
+				$cmd = YII::app()->db->createCommand($qu);
+				$res = $cmd->query();
+print_r($_SERVER);
+
+				echo 1;
+				return;
+
+			}else{
+				if($_GET['isNext'])
+					$qtxt ="SELECT * from herd_setup order by herd_id asc limit 1";
+				else
+					$qtxt ="SELECT * from herd_setup order by herd_id desc limit 1";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryRow();
+				if(isset($res['herd_id'])) {
+					Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$res["farm_herd"],array('expire'=>time()+(365*24*60*60)));
+					Yii::app()->request->cookies['farm_herd_name'] = new CHttpCookie('farm_herd_name',$res["farm_name"],array('expire'=>time()+(365*24*60*60)));
+
+					$qu = "UPDATE users SET farm_herd = '".$res["farm_herd"]."', farm_herd_name = '".$res["farm_name"]."' WHERE id = ".Yii::app()->user->id;
+					$cmd = YII::app()->db->createCommand($qu);
+					$res = $cmd->query();
+
+					echo 1;
+					return;
+			    }
+			}
+		}
+
+		echo 0;
 	}
 
 	/**
