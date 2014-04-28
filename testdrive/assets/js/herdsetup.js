@@ -76,7 +76,7 @@ function setColor(val){
 			type: "GET",
 			data: {id:$("#TblHerdSetup_herd_id").val(),val:val}
 		}).done(function(data){
-			location.reload();
+				location.reload();
 		});
 	}
 }
