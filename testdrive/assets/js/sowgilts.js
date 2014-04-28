@@ -91,6 +91,8 @@ $(document).ready(function(){
 	if($("#farrowed_date").val() != "undefined") {
 		$("#farrowed_date").focus();
 	}
+	$("input[name='SowGilts[sow_ear_notch]']").live("keyup",function(event){dottodash(this);})
+	
 });
 
 function cancelSow(){

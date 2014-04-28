@@ -221,3 +221,6 @@ function prevDate(){
 	});
 	
 }
+function dottodash(element){
+	element.value = element.value.replace(".","-")
+}

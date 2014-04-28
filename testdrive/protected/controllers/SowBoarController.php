@@ -7,7 +7,7 @@ class SowBoarController extends RController
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column1';
-	
+
 	static $count = 0;
 
 	/**
@@ -21,11 +21,11 @@ class SowBoarController extends RController
 			'rights', // perform access control for CRUD operations
 		);
 	}
-	
+
 	public function allowedActions() {
 		return 'index, suggestedTags';
 	}
-	
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -79,7 +79,7 @@ class SowBoarController extends RController
 		//$sql = "select * from herd Limit 1";
 		//$dataProvider = $model->findAllBySql($sql);
 		//echo CHtml::openTag($this->itemsTagName,array('class'=>$this->itemsCssClass))."\n";
-		
+
 		//foreach ($data as $data1)
 			//print_r($data1);
 		/*if(($n=count($data))>0)
@@ -103,9 +103,9 @@ class SowBoarController extends RController
 		$this->render('pedigree',array(
 				'model'=> $model,
 		));
-		
+
 	}
-	
+
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -134,7 +134,7 @@ class SowBoarController extends RController
 			if($model->save())
 				if(!isset($_POST['savenew']))
 					$this->redirect(array('admin'));
-			    else 
+			    else
 			    	$this->redirect(array('create'));
 		}
 
@@ -154,17 +154,17 @@ class SowBoarController extends RController
 		if (isset($search) && $search != "") {
 			if($type == "")
 				$qtxt ="SELECT sow_boar_name FROM herd WHERE ear_notch LIKE :search";
-			else 
+			else
 				$qtxt ="SELECT sold_mmddyy, reason_sold, sow_boar_id FROM  herd WHERE ear_notch LIKE :search";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":search", $search, PDO::PARAM_STR);
 			if($type == "")
 				$res =$command->queryColumn();
-			else 
+			else
 				$res =$command->queryRow();
 		}else
 			$res ="";
-		
+
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
@@ -180,7 +180,7 @@ class SowBoarController extends RController
 		//$ear_notch_array[2] = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1", $ear_notch_array[2]);
 		//$model->ear_notch = implode(" ", $ear_notch_array);
 		$model->ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->ear_notch);
-		
+
 		$model->dam_notch = trim($model->dam_notch);
 		$model->ear_notch = trim($model->ear_notch);
 		$model->sire_notch = trim($model->sire_notch);
@@ -284,7 +284,7 @@ class SowBoarController extends RController
 			Yii::app()->end();
 		}
 	}
-	
+
 	public function actionSiredam($val){
 		$val = str_replace(".","-",$val);
 		$val = $this->calculateYear($val);
@@ -294,11 +294,11 @@ class SowBoarController extends RController
 			'model'=>$this->loadModel($data->sow_boar_id),
 		));*/
 	}
-	
+
 	public function calculateYear($date,$type=1){
-			
+
 			$ear_notch_array =  preg_split("/ /", $date);
-			
+
 			$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
 			$isPresent1 =  preg_match("/[0-9][0-9][0-9][0-9] /", $date);
 			if(!$isPresent){
@@ -325,11 +325,12 @@ class SowBoarController extends RController
 				//return $date;
 			}
 			if($type == 2){
-				if($year+10 >= $curr_year && $year < $curr_year){
-					$ear_notch_array[2] = $ear_notch_array[2] % 10; 
+				if($year+10 > $curr_year && $year <= $curr_year){
+					$ear_notch_array[2] = $ear_notch_array[2] % 10;
 				}else if($length < 2){
 					$ear_notch_array[2] = "0".$ear_notch_array[2];
 				}
+
 				//return implode($ear_notch_array, " ");
 				$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
 				return $date;
@@ -349,14 +350,14 @@ class SowBoarController extends RController
 			}else{
 				$ear_notch_array[2] = "19".$year;
 			}
-			
+
 			//echo implode($ear_notch_array, " ");			exit;
-		
+
 		$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
 		return $date;
 		//return implode($ear_notch_array, " ");
 	}
-	
+
 	public function actionAutocompleteEarNotch() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -423,7 +424,7 @@ class SowBoarController extends RController
 						"no"=>"",
 						"id"=>"",
 						//"data"=>$data1
-				);				
+				);
 			}
 		}
 		//echo "<pre>";
@@ -437,7 +438,7 @@ class SowBoarController extends RController
 		$data1 = $model->findAllBySql("select * from herd where sow_boar_id = ".$pk);
 		$data = $data1;
 		$level = 0;
-		if(!isset($data1[0])) 
+		if(!isset($data1[0]))
 			return array();
 		$group[$level] = array("notch"=>$data1[0]->ear_notch,
 							"name"=>$data1[0]->sow_boar_name,
@@ -484,19 +485,19 @@ class SowBoarController extends RController
 		/*self::$count = 0;
 		$subgroup = $this->findNotches($group[$level]);
 		$level++;
-		$group[$level] = $subgroup; 
+		$group[$level] = $subgroup;
 		self::$count = 0;
 		$subgroup = $this->findNotches($group[$level]);
 		$level++;
-		$group[$level] = $subgroup; 
+		$group[$level] = $subgroup;
 		self::$count = 0;
 		$subgroup = $this->findNotches($group[$level]);
 		$level++;
-		$group[$level] = $subgroup; 
+		$group[$level] = $subgroup;
 		self::$count = 0;
 		$subgroup = $this->findNotches($group[$level]);
 		$level++;
-		$group[$level] = $subgroup; 
+		$group[$level] = $subgroup;
 		*/
 		//echo "<pre>";
 		//print_r($group);
@@ -506,7 +507,7 @@ class SowBoarController extends RController
 		/*echo "<pre>";
 		echo count($data);
 		$count = 0;
-		foreach($data as $model1) { 
+		foreach($data as $model1) {
 			//print_r($model1->attributes);
 			$a[$count]['main'] = $model1->ear_notch;
 			$a[$count]['sire'] = $model1->sire_notch;
@@ -520,7 +521,7 @@ class SowBoarController extends RController
 		//$criteria=$model->getCommandBuilder()->createPkCriteria($model->getTableSchema(),$pk,$condition,$params,$prefix);
 		return $group;
 	}
-	
+
 	public function actionAutocompleteRegister() {
 		$res =array();
 		if (isset($_GET['term'])) {

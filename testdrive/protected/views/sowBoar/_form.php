@@ -31,13 +31,13 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 <table>
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'ear_notch'); ?>
-		<?php 
+		<?php
 			 if(count($model->errors)){
-			 	echo $form->textField($model,'ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1));
+			 	echo $form->textField($model,'ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
 			  }else if($model->isNewRecord) {
-				echo $form->textField($model,'ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$farmHerd." ".$herdmark,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1));
-			  }else{ 
-			  	echo $form->textField($model,'ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2)','id'=>'earnotch','tabindex'=>1));
+				echo $form->textField($model,'ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$farmHerd." ".$herdmark,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
+			  }else{
+			  	echo $form->textField($model,'ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2)','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
 			  }
 			  ?>
 		<?php echo $form->error($model,'ear_notch'); ?>
@@ -57,7 +57,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'born'); ?>
-		<?php //echo $form->textField($model,'born',array('tabindex'=>4)); 
+		<?php //echo $form->textField($model,'born',array('tabindex'=>4));
 			  $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			  		'model' => $model,
 			  		'attribute' => 'born',
@@ -68,7 +68,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 							'defaultDate'=>''.$activitydate.'',
 							'buttonImage'=>'img/calendar.gif',
 			  		),
-			  
+
 			  		'htmlOptions' => array(
 			  				'id'=>'born',
 			  				'size' => '20',         // textField size
@@ -115,7 +115,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'bred_date'); ?>
-		<?php //echo $form->textField($model,'bred_date',array('size'=>20,'maxlength'=>20,'tabindex'=>9)); 
+		<?php //echo $form->textField($model,'bred_date',array('size'=>20,'maxlength'=>20,'tabindex'=>9));
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 				'model' => $model,
 				'attribute' => 'bred_date',
@@ -126,7 +126,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 						'defaultDate'=>''.$activitydate.'',
 						'buttonImage'=>'img/calendar.gif',
 				),
-					
+
 				'htmlOptions' => array(
 						'id'=>'bred_date',
 						'size' => '20',         // textField size
@@ -155,7 +155,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'sold_mmddyy'); ?>
-		<?php 
+		<?php
 		//echo $form->textField($model,'sold_mmddyy',array('size'=>20,'maxlength'=>20,'tabindex'=>13));
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 				'model' => $model,
@@ -167,7 +167,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 						'defaultDate'=>''.$activitydate.'',
 						'buttonImage'=>'img/calendar.gif',
 				),
-					
+
 				'htmlOptions' => array(
 						'id'=>'sold_mmddyy',
 						'size' => '20',         // textField size

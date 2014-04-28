@@ -68,7 +68,8 @@ $this->endWidget();
 	'filter'=>$model,
 
 	'columns'=>array(
-		'hog_ear_notch',
+		array('name'=>'hog_ear_notch','value'=>'$this->grid->controller->calculateYear($data->hog_ear_notch,2)'),
+		//'hog_ear_notch',
 		'customer_name',
 		'date_sold',
 		'invoice_number',

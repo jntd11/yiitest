@@ -55,9 +55,9 @@ if($herdmark != "")
 
 		<?php
 		if(count($model->errors)){
-			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2); checkFarrow('.$modelsowgilts->sow_gilts_id.');','id'=>'sirenotch'));
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2); checkFarrow('.$modelsowgilts->sow_gilts_id.');','id'=>'sirenotch','onkeyup'=>'dottodash(this);'));
 		}else {
-			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$modelsowgilts->sire_ear_notch,'onBlur'=>'checkDate(this.value,2); checkFarrow('.$modelsowgilts->sow_gilts_id.');','id'=>'sirenotch'));
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$modelsowgilts->sire_ear_notch,'onBlur'=>'checkDate(this.value,2); checkFarrow('.$modelsowgilts->sow_gilts_id.');','id'=>'sirenotch','onkeyup'=>'dottodash(this);'));
 		}
 		?>
 		<label id="sirenotchwarning" style="color: red"></label>

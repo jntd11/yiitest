@@ -76,6 +76,10 @@ $(document).ready(function(){
 		$("#Litters_pigs_transfer").focus();
 	}
 	
+	$("input[name='SowGilts[sow_ear_notch]']").live("keyup",function(event){dottodash(this);})
+	$("input[name='Litters[sow_ear_notch]']").live("keyup",function(event){dottodash(this);})
+	
+	
 });
 
 function cancelSow(){

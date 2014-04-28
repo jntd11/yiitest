@@ -78,7 +78,7 @@ class TblSoldHogsController extends RController
 			$model->hog_ear_notch = trim($model->hog_ear_notch);
 			//$datearr = explode("/", $model->date_sold);
 			//$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
-			
+
 			if($model->save()) {
 				$modelSowBoars = SowBoar::model()->findByPk($model->ear_notch_id);
 				if($modelSowBoars != null) {
@@ -88,7 +88,7 @@ class TblSoldHogsController extends RController
 				}
 				if(!isset($_POST['savenew']))
 					$this->redirect(array('admin','id'=>$model->tbl_sold_hogs_id));
-				else 
+				else
 					$this->redirect(array('create'));
 			}
 		}
@@ -98,19 +98,19 @@ class TblSoldHogsController extends RController
 						'criteria'=>array(
 								'order'=>'date_modified DESC',
 								'limit'=>5
-								
+
 						),
 						'pagination'=>array('pagesize'=>5),
 				)
-		); 
-		
+		);
+
 		$this->render('create',array(
 			'model'=>$model,
 			'dataProvider'=>$dataProvider,
-		));	
+		));
 	}
 
-	
+
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -121,22 +121,22 @@ class TblSoldHogsController extends RController
 		$model=$this->loadModel($id);
 		$model->hog_ear_notch = trim($model->hog_ear_notch);
 		$model->hog_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->hog_ear_notch);
-		
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 		if(isset($_POST['TblSoldHogs']))
 		{
 			$model->attributes = $_POST['TblSoldHogs'];
-			
+
 			$model->comments	= $_POST['TblSoldHogs']['comments'];
 			$model->reason_sold	= $_POST['TblSoldHogs']['reason_sold'];
 			$model->cust_id	= $_POST['TblSoldHogs']['cust_id'];
 			$model->ear_notch_id = $_POST['TblSoldHogs']['ear_notch_id'];
 			$model->hog_ear_notch = trim($model->hog_ear_notch);
-			
+
 			//echo "jai".strtotime($model->date_sold);
 			//$datearr = explode("/", $model->date_sold);
-			
+
 			//$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
 			//echo $model->date_sold = date("Y-m-d",strtotime($model->date_sold));
 			//exit;
@@ -151,7 +151,7 @@ class TblSoldHogsController extends RController
 					$this->redirect(array('admin','id'=>$model->tbl_sold_hogs_id));
 				else
 					$this->redirect(array('create'));
-				
+
 				//$this->redirect(array('view','id'=>$model->tbl_sold_hogs_id));
 			}
 		}
@@ -191,7 +191,7 @@ class TblSoldHogsController extends RController
 	 */
 	public function actionSoldlist()
 	{
-		
+
 		$crit =  new CDbCriteria();
 		$model=new TblSoldHogs('getlist');
 		$model->unsetAttributes();  // clear any default values
@@ -200,20 +200,20 @@ class TblSoldHogsController extends RController
 			$model->cust_id =$_GET['id'];
 			$custmormodel = TblCustomerEntry::model()->findByPk($model->cust_id);
 		}
-		
-				
+
+
 		$this->render('soldlist',array(
 			'model'=>$model,
 			'custmormodel'=>$custmormodel,
 		));
 	}
-	
+
 	/**
 	 * Lists all models.
 	 */
 	public function actionRebuild()
 	{
-	
+
 		$crit =  new CDbCriteria();
 		$model = new TblSoldHogs('rebuild');
 		$custmormodel = new TblCustomerEntry();
@@ -222,7 +222,7 @@ class TblSoldHogsController extends RController
 				'model'=>$model,
 				'custmormodel'=>$custmormodel,
 		));
-		
+
 		/*$qu = "UPDATE sold_hogs SET is_rebuild = 0 ";
 		$cmd = YII::app()->db->createCommand($qu);
 		$res = $cmd->query();
@@ -242,7 +242,7 @@ class TblSoldHogsController extends RController
 				$datearr = explode("-", $model->date_sold);
 				$model->date_sold = date("Y-m-d",mktime(0,0,0,$datearr[0],$datearr[1],$datearr[2]));
 				$model->save();
-				$countSuccess++; 
+				$countSuccess++;
 			}else{
 				$countFailure++;
 			}
@@ -252,13 +252,13 @@ class TblSoldHogsController extends RController
 		echo '<script>$("#message").append("<br>'.$countFailure.' Customer Not Found. To update manually <a href=\"index.php?r=tblSoldHogs/rebuildManual\">click here</a>");</script>';
 		*/
 	}
-	
+
 	public function actionUpdateAjax($iscontinue = 0,$message="")
 	{
 		$crit =  new CDbCriteria();
 		$model = new TblSoldHogs('rebuild');
 		$custmormodel = new TblCustomerEntry();
-		
+
 		$data = array();
 		if($message != "")
 			$data["myValue"] = "<table class='detail-view'><tr class='odd'><td >".$message."</td></tr>";
@@ -290,7 +290,7 @@ class TblSoldHogsController extends RController
 			$customers = $custmormodel->findBySql($sql);
 			//echo "<br>".$items['tbl_sold_hogs_id'];
 			if(isset($customers->customer_entry_id)) {
-			
+
 				$model->cust_id = $customers->customer_entry_id;
 				$model->is_rebuild = 1;
 				//$datearr = explode("-", $model->date_sold);
@@ -307,7 +307,7 @@ class TblSoldHogsController extends RController
 				$countFailure++;
 				break;
 			}
-			
+
 		}
 		$this->renderPartial('_ajaxContent', $data, false, true);
 		if($isSuccess)
@@ -345,7 +345,7 @@ class TblSoldHogsController extends RController
 		$model = new TblSoldHogs();
 		if(isset($_GET['id']))
 			$model = $this->loadModel($_GET['id']);
-		
+
 		$qtxt ="SELECT concat_ws(' ',first_name, last_name) as label, customer_entry_id  as value FROM customers ";
 		$command =Yii::app()->db->createCommand($qtxt);
 		$res =$command->queryAll();
@@ -399,23 +399,23 @@ class TblSoldHogsController extends RController
 			Yii::app()->end();
 		}
 	}
-	
+
 	public function actionAutocompleteFirstName() {
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT concat_ws(' ',first_name, last_name) as label, customer_entry_id  as value FROM customers WHERE first_name LIKE :username  
-			OR  company_name LIKE :username 
+			$qtxt ="SELECT concat_ws(' ',first_name, last_name) as label, customer_entry_id  as value FROM customers WHERE first_name LIKE :username
+			OR  company_name LIKE :username
 			OR last_name LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryAll();
 		}
-		
+
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-	
+
 	public function actionAutocompleteEarNotch() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -428,7 +428,7 @@ class TblSoldHogsController extends RController
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-	
+
 	public function actionAutocompleteName() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -449,12 +449,12 @@ class TblSoldHogsController extends RController
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", $_GET['s'], PDO::PARAM_STR);
 			$res =$command->queryRow();
-			
+
 		}
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-	
+
 	public function actionAutocompleteDateSold() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -467,7 +467,7 @@ class TblSoldHogsController extends RController
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
-	
+
 	public function actionAutocompleteInvoice() {
 		$res =array();
 		if (isset($_GET['term'])) {
@@ -479,5 +479,67 @@ class TblSoldHogsController extends RController
 		}
 		echo CJSON::encode($res);
 		Yii::app()->end();
+	}
+	public function calculateYear($date,$type=1){
+
+		$ear_notch_array =  preg_split("/ /", $date);
+
+		$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
+		$isPresent1 =  preg_match("/[0-9][0-9][0-9][0-9] /", $date);
+		if(!$isPresent){
+			if(!$isPresent1){
+				return $date;
+			}
+			else {
+				$date = preg_replace("/([0-9][0-9][0-9][0-9] )/", " $1", $date);
+				$ear_notch_array =  preg_split("/ /", $date);
+				$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
+			}
+		} else {
+			$ear_notch_array[2] = $matches[1];
+		}
+		if(!isset($ear_notch_array[2]))
+			return $date;
+		$curr_year = date("y");
+		$year = $ear_notch_array[2];
+		$length = strlen($year);
+		if($length > 2){
+			$ear_notch_array[2] = preg_replace("/[0-9][0-9]([0-9][0-9])/", "$1", $ear_notch_array[2]);
+			$year = $ear_notch_array[2];
+			$length = strlen($year);
+			//return $date;
+		}
+		if($type == 2){
+			if($year+10 > $curr_year && $year <= $curr_year){
+				$ear_notch_array[2] = $ear_notch_array[2] % 10;
+			}else if($length < 2){
+				$ear_notch_array[2] = "0".$ear_notch_array[2];
+			}
+
+			//return implode($ear_notch_array, " ");
+			$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
+			return $date;
+		}
+		//echo "$year <= $curr_year";
+		if($year <= $curr_year){
+			$rem = $curr_year%10;
+			$quo = floor($curr_year/10);
+			if($length == 1){
+				if($rem < $year)
+					$ear_notch_array[2] = "20".($quo-1).$year;
+				else
+					$ear_notch_array[2] = "20".($quo).$year;
+			}else{
+				$ear_notch_array[2] = "20".$year;
+			}
+		}else{
+			$ear_notch_array[2] = "19".$year;
+		}
+
+		//echo implode($ear_notch_array, " ");			exit;
+
+		$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
+		return $date;
+		//return implode($ear_notch_array, " ");
 	}
 }

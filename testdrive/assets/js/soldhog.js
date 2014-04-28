@@ -54,6 +54,7 @@ $(document).ready(function(){
 		return;
 	}
 	$("#date_sold").datepicker('setDate','01/01/2013');
+	$("input[name='TblSoldHogs[hog_ear_notch]']").live("keyup",function(event){dottodash(this);})
 });
 
 function autoSuggestSearch(){

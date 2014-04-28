@@ -29,13 +29,13 @@ if($herdmark != "")
 	<div class="row">
 		<input type="hidden" id="sow_id" value="<?php echo $model->sow_gilts_id; ?>" />
 		<?php echo $form->labelEx($model,'sow_ear_notch'); ?>
-		<?php 
+		<?php
 		if(count($model->errors)){
-			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1));
+			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
 		}else if($model->isNewRecord) {
-			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$farmHerd." ".$herdmark,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1));
+			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$farmHerd." ".$herdmark,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
 		}else{
-			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2)','id'=>'earnotch','tabindex'=>1));
+			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2)','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
 		}
 		?>
 		<label id="earnotchwarning" style="color: red"></label>
@@ -44,7 +44,7 @@ if($herdmark != "")
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'date_bred'); ?>
-		<?php 
+		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 				'model' => $model,
 				'attribute' => 'date_bred',
@@ -64,16 +64,16 @@ if($herdmark != "")
 						'onChange'=>($model->isNewRecord)?'checkExist("'.$activitydate.'");':'checkExist("'.$activitydate.'",1);',
 						'tabindex'=>2,
 				),
-				
+
 		));
-		//echo $form->textField($model,'date_bred',array('size'=>10,'maxlength'=>10)); 
+		//echo $form->textField($model,'date_bred',array('size'=>10,'maxlength'=>10));
 		?>
 		<?php echo $form->error($model,'date_bred'); ?>
 	</div>
-	
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'sire_ear_notch'); ?>
-		<?php 
+		<?php
 		if(count($model->errors)){
 			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2)','id'=>'sirenotch','tabindex'=>3));
 		}else if($model->isNewRecord) {
@@ -85,8 +85,8 @@ if($herdmark != "")
 		<label id="sirenotchwarning" style="color: red"></label>
 		<?php echo $form->error($model,'sire_ear_notch'); ?>
 	</div>
-	
-	
+
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'service_type'); ?>
 		<?php echo $form->textField($model,'service_type',array('size'=>5,'maxlength'=>5,'tabindex'=>4)); ?>
@@ -129,7 +129,7 @@ if($herdmark != "")
 
 	<div class="row">
 		<?php //echo $form->labelEx($model,'farrowed'); ?>
-		<?php 
+		<?php
 			if($model->isNewRecord)  echo $form->hiddenField($model,'farrowed',array('size'=>1,'maxlength'=>1,'tabindex'=>10, 'value'=>'N'));
 		?>
 		<?php //echo $form->error($model,'farrowed'); ?>
@@ -142,7 +142,7 @@ if($herdmark != "")
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('onClick'=>'','id'=>'savenew','name'=>'savenew')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'cancelSow()')); ?>
 	</div>
-	
+
 <?php $this->endWidget(); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>

@@ -68,7 +68,9 @@ $this->endWidget();
 	'filter'=>$model,
 		'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
 	'columns'=>array(
-		array('name'=>'sow_ear_notch','value'=>'$data->sow_ear_notch','htmlOptions'=>array('width'=>110)),
+		array('name'=>'sow_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sow_ear_notch,2)',
+				'htmlOptions'=>array('width'=>110,'id'=>'sow_ear_notch'),
+				),
 		'date_bred',
 		array('name'=>'sire_ear_notch','value'=>'$data->sire_ear_notch','htmlOptions'=>array('width'=>110)),
 		'service_type',

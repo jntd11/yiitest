@@ -23,17 +23,17 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 
 
 
-	
+
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'hog_ear_notch'); ?>
 		<?php
-			if($model->isNewRecord) 
-				echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1)','value'=>$farmHerd." ".$herdmark,'id'=>'earnotch'));
-			else 
-				echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2)','id'=>'earnotch')); 
+			if($model->isNewRecord)
+				echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1)','value'=>$farmHerd." ".$herdmark,'id'=>'earnotch','onkeyup'=>'dottodash(this);'));
+			else
+				echo $form->textField($model,'hog_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2)','id'=>'earnotch','onkeyup'=>'dottodash(this);'));
 			?>
 		<?php echo $form->error($model,'hog_ear_notch'); ?>
 		<?php echo $form->hiddenField($model, 'ear_notch_id',array('id'=>'ear_notch_id')); ?>
@@ -57,13 +57,13 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 								'defaultDate'=>''.$activitydate.'',
 								'buttonImage'=>'img/calendar.gif',
 						),
-						
+
 						'htmlOptions' => array(
 								'id'=>'date_sold',
 								'size' => '20',         // textField size
 								'maxlength' => '20',    // textField maxlength
 								'onBlur'=>'validateDatePicker("date_sold")',
-								
+
 						),
 				));
 		?>
@@ -90,10 +90,10 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'app_xfer'); ?>
-		<?php 
+		<?php
 		//echo $form->textField($model,'app_xfer',array('size'=>1,'maxlength'=>1));
 		echo $form->dropDownList($model,'app_xfer',array('Y'=>'Y','N'=>'N'),
-				array('size'=>0,'tabindex'=>23,'maxlength'=>0)); 
+				array('size'=>0,'tabindex'=>23,'maxlength'=>0));
 		?>
 		<?php echo $form->error($model,'app_xfer'); ?>
 	</div>

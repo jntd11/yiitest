@@ -47,7 +47,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/litters.js');
 
 
 <div style="float: left; margin-left: 50%">
-<?php 
+<?php
 $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'sow-gilts-form',
 		'enableAjaxValidation'=>false,
@@ -68,7 +68,7 @@ $this->endWidget();
 	'filter'=>$model,
 		'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
 	'columns'=>array(
-		array('name'=>'sow_ear_notch','value'=>'$data->sow_ear_notch','htmlOptions'=>array('width'=>250)),
+		array('name'=>'sow_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sow_ear_notch,2)','htmlOptions'=>array('width'=>250)),
 		'sow_parity',
 		'herd_litter',
 		array('name'=>'farrowed_date','value'=>'$data->farrowed_date','htmlOptions'=>array('width'=>100)),
@@ -97,7 +97,7 @@ $this->endWidget();
 							)
 					),
 			),
-			
+
 	),
 )); ?>
 

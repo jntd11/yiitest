@@ -132,6 +132,7 @@ $(document).ready(function(){
 		searchSireDam($('#sire_notch').val(),'sirename');
 	if($("#dam_notch").val() != "" && $("#sire_notch").val() != undefined) 
 		searchSireDam($("#dam_notch").val(),'damname');
+	$("input[name='SowBoar[ear_notch]']").live("keyup",function(event){dottodash(this);})
 });
 
 function cancelSow(){
