@@ -70,7 +70,7 @@ $this->endWidget();
 	'columns'=>array(
 		array('name'=>'sow_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sow_ear_notch,2)','htmlOptions'=>array('width'=>200,'id'=>'sow_ear_notch')),
 		array('name'=>'date_bred','value'=>'$data->date_bred','htmlOptions'=>array('width'=>40)),
-		array('name'=>'sire_ear_notch','value'=>'$data->sire_ear_notch','htmlOptions'=>array('width'=>200)),
+		array('name'=>'sire_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sire_ear_notch,2)','htmlOptions'=>array('width'=>200)),
 		array('name'=>'service_type','value'=>'$data->service_type','htmlOptions'=>array('width'=>20)),
 		//'comments',
 		array('name'=>'misc','value'=>'$data->misc','htmlOptions'=>array('width'=>40)),

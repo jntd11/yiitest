@@ -94,8 +94,11 @@ $this->endWidget();
 					'buttons'  => array(
 							'update' => array(
 									'url' => 'Yii::app()->createUrl("/litters/updatelitter", array("id" => $data->litters_id))',
-							)
+							),
+					
 					),
+'htmlOptions' => array("style"=>'display: none'),
+'headerHtmlOptions'=> array("style"=>'display: none'),
 			),
 
 	),

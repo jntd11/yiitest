@@ -88,7 +88,7 @@ return array(
 					'appLayout'=>'application.views.layouts.main', // Application layout.
 											'cssFile'=>'/css/default.css', // Style sheet file to use for Rights.
 											'install'=>false,  // Whether to enable installer.
-					'debug'=>false,
+					'debug'=>true,
 			),
 
 	),
@@ -134,7 +134,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'root',
 			'charset' => 'utf8',
 		),
 

@@ -138,7 +138,8 @@ class Litters extends CActiveRecord
 		$criteria->compare('weaned_date',$this->weaned_date,true);
 		$criteria->compare('weighted_date',$this->weighted_date,true);
 		$farmHerd = Yii::app()->request->cookies['farm_herd'];
-		$criteria->condition = " sow_ear_notch like '".$farmHerd."%'";
+		$criteria->compare('sow_ear_notch',$farmHerd,true);
+		//$criteria->condition = " sow_ear_notch like '".$farmHerd."%'";
 
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 

@@ -33,3 +33,6 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/iColorPicker.js');
 <h1></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<script>
+ChangeColor('<?php echo $model->color; ?>');
+</script>

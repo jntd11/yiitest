@@ -27,52 +27,52 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-	
+
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'123456',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-			
+
 			'user'=>array(
 					'tableUsers' => 'users',
 					'tableProfiles' => 'profiles',
 					'tableProfileFields' => 'profiles_fields',
 					# encrypting method (php hash function)
 					'hash' => 'md5',
-			
+
 					# send activation email
 					'sendActivationMail' => true,
-			
+
 					# allow access for non-activated users
 					'loginNotActiv' => false,
-			
+
 					# activate user on registration (only sendActivationMail = false)
 					'activeAfterRegister' => false,
-			
+
 			# automatically login from registration
 							'autoLogin' => true,
-			
+
 							# registration path
 			'registrationUrl' => array('/user/registration'),
-			
+
 					# recovery password path
 					'recoveryUrl' => array('/user/recovery'),
-			
+
 			# login form path
 			'loginUrl' => array('/user/login'),
-			
+
 			# page after login
 							'returnUrl' => array('/user/profile'),
-			
+
 									# page after logout
 									'returnLogoutUrl' => array('/user/login'),
 									),
-			
+
 			//Modules Rights
 			'rights'=>array(
-			
+
 					'superuserName'=>'Admin', // Name of the role with super user privileges.
 					'authenticatedName'=>'Authenticated',  // Name of the authenticated user role.
 					'userIdColumn'=>'id', // Name of the user id column in the database.
@@ -82,18 +82,18 @@ return array(
 											'displayDescription'=>true,  // Whether to use item description instead of name.
 											'flashSuccessKey'=>'RightsSuccess', // Key to use for setting success flash messages.
 											'flashErrorKey'=>'RightsError', // Key to use for setting error flash messages.
-			
+
 					'baseUrl'=>'/rights', // Base URL for Rights. Change if module is nested.
 					'layout'=>'rights.views.layouts.main',  // Layout to use for displaying Rights.
 					'appLayout'=>'application.views.layouts.main', // Application layout.
 											'cssFile'=>'/css/default.css', // Style sheet file to use for Rights.
 											'install'=>false,  // Whether to enable installer.
-					'debug'=>false,
+					'debug'=>true,
 			),
-												
+
 	),
-	
-	
+
+
 	// application components
 	'components'=>array(
 		/*'user'=>array(
@@ -129,15 +129,15 @@ return array(
 		),
 		*/
 		// uncomment the following to use a MySQL database
-		
+
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'root',
+			'password' => '',
 			'charset' => 'utf8',
 		),
-		
+
 		/** server **/
 
 	/* 	'db'=>array(
@@ -148,7 +148,7 @@ return array(
 			'password' => '098765Po',
 			'charset' => 'utf8',
 		), */
-		
+
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',

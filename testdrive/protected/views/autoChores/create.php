@@ -3,7 +3,7 @@
 /* @var $model AutoChores */
 
 $this->breadcrumbs=array(
-	'Chores'=>array('index'),
+	'Chores'=>array('create'),
 	'Setup',
 );
 $this->pageTitle='Chore Setup';

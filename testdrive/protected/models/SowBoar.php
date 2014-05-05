@@ -157,7 +157,9 @@ class SowBoar extends CActiveRecord
 		$criteria->compare('comments',$this->comments,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
 		$farmHerd = Yii::app()->request->cookies['farm_herd'];
-		$criteria->condition = " ear_notch like '".$farmHerd."%'";
+		$criteria->compare('ear_notch',$farmHerd,true);
+		
+		//$criteria->condition = " ear_notch like '".$farmHerd."%'";
 
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		$SowBoar_sort = isset($_REQUEST['SowBoar_sort'])?$_REQUEST['SowBoar_sort']:"";

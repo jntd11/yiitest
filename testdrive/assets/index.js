@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 		  	    }
     });
-	if($("#currdate").html() == "" || $("#activitypage").val() == 1) {
+	if(($("#currdate").html() == "" && $("#islogged").val() != "1") || $("#activitypage").val() == 1) {
 		if($("#activitypage").val() == 1)
 			$("#datepicker").val($("#currdate").html());
 		$("#dialog").dialog({
@@ -197,7 +197,8 @@ function nextHerd(isNext,url){
 				  url = url.replace(/update/,"admin");
 				  location.href= 'index.php?'+url;
 			  }else{
-				  location.reload();
+				  location.href= 'index.php?'+url;
+				  //location.reload();
 			  }
 		  }
 	});

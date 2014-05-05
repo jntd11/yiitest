@@ -134,9 +134,9 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 	<span id="currdate"><?php echo $currdate; ?></span>
 	<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextDate()"><img src="img/cal-next.gif"/></a>
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(0)"><img src="img/cal-prev.gif"/></a>
+	<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(0,'<?php echo $_SERVER['QUERY_STRING'];?>')"><img src="img/cal-prev.gif"/></a>
 	<span id="farmherd"><?php echo $farmHerd; ?></span>
-	<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(1)"><img src="img/cal-next.gif"/></a>
+	<a href="javascript: void(0)" style="text-decoration: none;" onClick="nextHerd(1,'<?php echo $_SERVER['QUERY_STRING'];?>')"><img src="img/cal-next.gif"/></a>
 	&nbsp;&nbsp;</div>
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -150,6 +150,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 	<div class="clear"></div>
 
 	<div id="footer">
+	    <input id="islogged" type="hidden" value="<?php echo Yii::app()->user->isGuest; ?>" />
 		<div id="dialog"><p>Date: <input type="text" id="datepicker" />&nbsp;</p></div>
 		<div>
 		<a href="javascript: void(0)" style="text-decoration: none;" onClick="prevDate()"><img src="img/cal-prev.gif"/></a>

@@ -119,7 +119,9 @@ class SowGilts extends CActiveRecord
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		$SowGilts_sort = isset($_REQUEST['SowGilts_sort'])?$_REQUEST['SowGilts_sort']:"";
 		$farmHerd = Yii::app()->request->cookies['farm_herd'];
-		$criteria->condition = " sow_ear_notch like '".$farmHerd."%'";
+		$criteria->compare('sow_ear_notch',$farmHerd,true);
+		
+		//$criteria->condition = " sow_ear_notch like '".$farmHerd."%'";
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -126,10 +126,21 @@ class TblHerdSetupController extends Controller
 	 * Function to change the color of the herd
 	 */
 	public function actionColorChange($id){
-	    $model=$this->loadModel($id);
-	    $model->color = $_GET['val'];
-	    $model->save();
-	    Yii::app()->request->cookies['color'] = new CHttpCookie('color',$model->color,array('expire'=>time()+(365*24*60*60)));
+		if($id != 0) {
+		    $model=$this->loadModel($id);
+		    $model->color = $_GET['val'];
+		    $model->save();
+		    
+		    Yii::app()->request->cookies['color'] = new CHttpCookie('color',$model->color,array('expire'=>time()+(365*24*60*60)));
+		    echo Yii::app()->request->cookies['color'];
+		}else{
+			if($_GET['val'] != Yii::app()->request->cookies['color']){
+				Yii::app()->request->cookies['color'] = new CHttpCookie('color',$_GET['val'],array('expire'=>time()+(365*24*60*60)));
+				echo Yii::app()->request->cookies['color'];
+			} else {
+				echo 0;
+			}
+		}
 	}
 
 	/**
@@ -204,7 +215,8 @@ class TblHerdSetupController extends Controller
 				Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$res["farm_herd"],array('expire'=>time()+(365*24*60*60)));
 				Yii::app()->request->cookies['farm_herd_name'] = new CHttpCookie('farm_herd_name',$res["farm_name"],array('expire'=>time()+(365*24 *60*60)));
 				Yii::app()->request->cookies['date'] = new CHttpCookie('farm_herd_name',$res["activity_date"],array('expire'=>time()+(365*24 *60*60)));
-
+				Yii::app()->request->cookies['color'] = new CHttpCookie('color',$res['color'],array('expire'=>time()+(365*24*60*60)));
+				
 				$qu = "UPDATE users SET farm_herd = '".$res["farm_herd"]."', farm_herd_name = '".$res["farm_name"]."', activity_date = '".$res["activity_date"]."' WHERE id = ".Yii::app()->user->id;
 				$cmd = YII::app()->db->createCommand($qu);
 				$res = $cmd->query();
@@ -222,7 +234,8 @@ class TblHerdSetupController extends Controller
 					Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$res["farm_herd"],array('expire'=>time()+(365*24*60*60)));
 					Yii::app()->request->cookies['farm_herd_name'] = new CHttpCookie('farm_herd_name',$res["farm_name"],array('expire'=>time()+(365*24*60*60)));
 					Yii::app()->request->cookies['date'] = new CHttpCookie('farm_herd_name',$res["activity_date"],array('expire'=>time()+(365*24 *60*60)));
-
+					Yii::app()->request->cookies['color'] = new CHttpCookie('color',$res['color'],array('expire'=>time()+(365*24*60*60)));
+					
 					$qu = "UPDATE users SET farm_herd = '".$res["farm_herd"]."', farm_herd_name = '".$res["farm_name"]."', activity_date = '".$res["activity_date"]."' WHERE id = ".Yii::app()->user->id;
 					$cmd = YII::app()->db->createCommand($qu);
 					$res = $cmd->query();

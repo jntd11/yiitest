@@ -131,7 +131,9 @@ class TblSoldHogs extends CActiveRecord
 		$criteria->compare('reason_sold',$this->reason_sold,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
 		$farmHerd = Yii::app()->request->cookies['farm_herd'];
-		$criteria->condition = " hog_ear_notch like '".$farmHerd."%'";
+		$criteria->compare('hog_ear_notch',$farmHerd,true);
+		
+		//$criteria->condition = " hog_ear_notch like '".$farmHerd."%'";
 
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		$TblSoldHogs_sort = isset($_REQUEST['TblSoldHogs_sort'])?$_REQUEST['TblSoldHogs_sort']:"";

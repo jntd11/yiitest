@@ -184,6 +184,10 @@ class SowBoarController extends RController
 		$model->dam_notch = trim($model->dam_notch);
 		$model->ear_notch = trim($model->ear_notch);
 		$model->sire_notch = trim($model->sire_notch);
+		$model->dam_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->dam_notch);
+		$model->ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->ear_notch);
+		$model->sire_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sire_notch);
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -333,6 +337,7 @@ class SowBoarController extends RController
 
 				//return implode($ear_notch_array, " ");
 				$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
+				$date = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $date);
 				return $date;
 			}
 			//echo "$year <= $curr_year";

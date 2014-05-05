@@ -93,7 +93,7 @@ class LittersController extends Controller
 		$modelSowgilts = SowGilts::model()->findByPk($id);
 		if($modelSowgilts===null)
 			throw new CHttpException(404,'The requested page does not exist.');
-
+		$modelSowgilts->sire_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $modelSowgilts->sire_ear_notch);
 
 		$qtxt ="SELECT * FROM herd WHERE ear_notch = '".$modelSowgilts->sow_ear_notch."' AND bred_date = '".$modelSowgilts->date_bred."'";
 		$command =Yii::app()->db->createCommand($qtxt);
@@ -115,7 +115,9 @@ class LittersController extends Controller
 		if(!isset($model) || $model === null) {
 			$model = new Litters;
 		}
-
+		$model->sire_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->sire_ear_notch);
+		$modelSowgilts->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $modelSowgilts->sow_ear_notch);
+		$modelSowgilts->sire_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $modelSowgilts->sire_ear_notch);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -211,6 +213,7 @@ class LittersController extends Controller
 	public function actionUpdateLitter($id)
 	{
 		$model=$this->loadModel($id);
+		
         $desc = array();
 		if($model===null) {
 			$model=new Litters;
@@ -225,6 +228,7 @@ class LittersController extends Controller
      		 }
      		}
 		}
+		$model->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sow_ear_notch);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -509,6 +513,7 @@ class LittersController extends Controller
 
 			//return implode($ear_notch_array, " ");
 			$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
+			$date = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $date);
 			return $date;
 		}
 		//echo "$year <= $curr_year";

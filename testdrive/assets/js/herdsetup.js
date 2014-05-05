@@ -76,7 +76,21 @@ function setColor(val){
 			type: "GET",
 			data: {id:$("#TblHerdSetup_herd_id").val(),val:val}
 		}).done(function(data){
-				location.reload();
+			location.reload();
+			//$("body").style("background-color",data)
+		});
+	}
+}
+function ChangeColor(val){
+	if(val != "") {
+		$.ajax({
+			url: encodeURI('index.php?r=tblHerdSetup/ColorChange'),
+			type: "GET",
+			data: {id:0,val:val}
+		}).done(function(data){
+				if(data == "")
+					$("body").style("background-color",data)
+					//location.reload();
 		});
 	}
 }
