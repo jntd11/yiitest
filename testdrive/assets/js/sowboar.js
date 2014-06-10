@@ -55,6 +55,8 @@ function checkData(element,type,extra,extra1){
 		var val = element.value;
 		val = val.replace(".","-");
 	}
+	if($("#ishogtag").val() == "T")	
+		$("#eartag").focus();
 }
 function searchSireDam(txtObj,type){
 	var search1 = txtObj;
@@ -339,4 +341,7 @@ function validateDate(val){
 }
 function validateForm(){
 	return validateDate($("#born").val());
+}
+function checkeartag(){
+	
 }

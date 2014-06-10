@@ -5,9 +5,11 @@
 $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
+$hogtag = Yii::app()->request->cookies['hog_tag'];
 if($herdmark != "")
 	$herdmark = $herdmark." ";
 $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
+$herdmark = Yii::app()->request->cookies['hog_tag'];
 $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 ?>
 
@@ -30,6 +32,7 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 	<?php echo $form->errorSummary($model); ?>
 <table>
 	<tr><td><div class="row">
+		<input type="hidden" id="ishogtag" value="<?php echo $hogtag; ?>" />
 		<?php echo $form->labelEx($model,'ear_notch'); ?>
 		<?php
 			 if(count($model->errors)){
@@ -41,8 +44,19 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 			  }
 			  ?>
 		<?php echo $form->error($model,'ear_notch'); ?>
-	</div></td><td>&nbsp;</td></tr>
-
+	</div></td><td><div class="row">
+		<?php echo $form->labelEx($model,'ear_tag'); ?>
+		<?php
+			 if(count($model->errors)){
+			 	echo $form->textField($model,'ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this)','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  }else if($model->isNewRecord) {
+				echo $form->textField($model,'ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this)','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  }else{
+			  	echo $form->textField($model,'ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this)','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  }
+			  ?>
+		<?php echo $form->error($model,'ear_tag'); ?>
+	</div></td></tr>
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'sow_boar_name'); ?>
 		<?php echo $form->textField($model,'sow_boar_name',array('size'=>30,'maxlength'=>30,'tabindex'=>2)); ?>

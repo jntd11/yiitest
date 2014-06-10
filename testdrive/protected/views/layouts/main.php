@@ -29,8 +29,14 @@ if((Yii::app()->user->id != "") && (Yii::app()->request->cookies['date'] == null
 		Yii::app()->request->cookies['date'] = new CHttpCookie('date',$res['activity_date'],array('expire'=>time()+(365*24*60*60)));
 	if(isset($res['farm_herd_name']))
 		Yii::app()->request->cookies['farm_herd_name'] = new CHttpCookie('farm_herd_name',$res['farm_herd_name'],array('expire'=>time()+(365*24*60*60)));;
-	if(isset($res['farm_herd']))
+	if(isset($res['farm_herd'])) {
 		Yii::app()->request->cookies['farm_herd'] = new CHttpCookie('farm_herd',$res['farm_herd'],array('expire'=>time()+(365*24*60*60)));;
+		$qu = "select is_hog_tag from herd_setup where farm_herd  = '".Yii::app()->request->cookies['farm_herd']."'";
+		$cmd = YII::app()->db->createCommand($qu);
+		$resHerd = $cmd->queryRow();
+		if(isset($resHerd['is_hog_tag']))
+			Yii::app()->request->cookies['hog_tag'] = new CHttpCookie('hog_tag',$resHerd['is_hog_tag'],array('expire'=>time()+(365*24*60*60)));;
+	}
 }
 $currdate = Yii::app()->request->cookies['date'];
 $farmHerd = Yii::app()->request->cookies['farm_herd'];

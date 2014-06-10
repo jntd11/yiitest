@@ -57,7 +57,7 @@ class SowBoar extends CActiveRecord
 			array('ear_notch, sow_boar_name', 'required'),
 			array('no_pigs, weight_21, last_parity, days', 'numerical', 'integerOnly'=>true),
 			array('back_fat, loinneye, EBV', 'numerical'),
-			array('ear_notch, registeration_no, sire_notch, dam_notch, bred_date, sold_mmddyy, reason_sold, offspring_name', 'length', 'max'=>20),
+			array('ear_notch, ear_tag, registeration_no, sire_notch, dam_notch, bred_date, sold_mmddyy, reason_sold, offspring_name', 'length', 'max'=>20),
 			array('sow_boar_name', 'length', 'max'=>30),
 			array('sire_initials', 'length', 'max'=>2),
 			array('ear_notch','validateEarNotch'),
@@ -102,6 +102,7 @@ class SowBoar extends CActiveRecord
 	{
 		return array(
 			'ear_notch' => 'Sow/Boar Ear Notch',
+			'ear_tag'=>'Ear Tag',
 			'sow_boar_name' => 'Sow/Boar Name',
 			'sow_boar_id' => 'Sow Boar',
 			'registeration_no' => 'Registeration #',
@@ -158,7 +159,7 @@ class SowBoar extends CActiveRecord
 		$criteria->compare('date_modified',$this->date_modified,true);
 		$farmHerd = Yii::app()->request->cookies['farm_herd'];
 		$criteria->compare('ear_notch',$farmHerd,true);
-		
+
 		//$criteria->condition = " ear_notch like '".$farmHerd."%'";
 
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
