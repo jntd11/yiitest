@@ -343,5 +343,31 @@ function validateForm(){
 	return validateDate($("#born").val());
 }
 function checkeartag(){
-	
+	$("#alertdialog").dialog({
+		autoOpen: true,
+		width: 400,
+		modal: true,
+		closeOnEscape: false,
+		buttons: [
+			{
+				text: "Ok",
+				click: function() {
+					if($("#datepicker").val() == "") 
+						alert("Enter Valid Date");
+					else
+						$( this ).dialog( "close" );
+				}
+			},
+			{
+				text: "Ok",
+				click: function() {
+					if($("#datepicker").val() == "") 
+						alert("Enter Valid Date");
+					else
+						$( this ).dialog( "close" );
+				}
+			}
+		]
+	});
+	$("#SowBoar_sow_boar_name").focus();
 }

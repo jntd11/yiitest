@@ -233,5 +233,5 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 	</div>
 
 <?php $this->endWidget(); ?>
-
+<div id="alertdialog"></div>
 </div><!-- form -->
