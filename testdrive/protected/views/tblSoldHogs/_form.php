@@ -5,6 +5,8 @@
 $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
+$hogtag = Yii::app()->request->cookies['hog_tag'];
+
 if($herdmark != "")
 	$herdmark = $herdmark." ";
 $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");

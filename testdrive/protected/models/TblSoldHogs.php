@@ -11,6 +11,7 @@
  * @property string $date_sold
  * @property integer $sold_price
  * @property string $sale_type
+ * 
  * @property integer $invoice_number
  * @property string $app_xfer
  * @property string $comments
@@ -92,10 +93,11 @@ class TblSoldHogs extends CActiveRecord
 	 */
 	public function attributeLabels()
 	{
+		$hogtag = Yii::app()->request->cookies['hog_tag'];
 		return array(
 			'tbl_sold_hogs_id' => 'Tbl Sold Hogs',
 			'cust_id' => 'Customer id',
-			'hog_ear_notch' => 'Hog Ear Notch',
+			'hog_ear_notch' => ($hogtag == 'T')?'Hog Ear Tag':'Hog Ear Notch',
 			'customer_name' => 'Customer Name',
 			'date_sold' => 'Date Sold',
 			'sold_price' => 'Sold Price',

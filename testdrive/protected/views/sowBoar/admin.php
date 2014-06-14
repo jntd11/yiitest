@@ -21,7 +21,7 @@ $this->menu=array(
 	//array('label'=>'List Sows/Boars', 'url'=>array('index')),
 	//array('label'=>'Create Sows/Boars', 'url'=>array('create')),
 );
-
+$hogtag = Yii::app()->request->cookies['hog_tag'];
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -61,17 +61,7 @@ echo CHtml::dropDownList('pages',$pages, array('2'=>'2','5'=>'5','10'=>'10','20'
 echo " &nbsp;";
 echo CHtml::submitButton('Redisplay',array('onClick'=>''));
 $this->endWidget();
-?>
-</div>
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'sow-boar-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
-	 'selectionChanged'=>'function(id){
-		 //location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
-	 }',
-	'columns'=>array(
+$columns = array(
 		array('name'=>'ear_notch','value'=>'$this->grid->controller->calculateYear($data->ear_notch,2)'),
 		'sow_boar_name',
 		'registeration_no',
@@ -100,7 +90,52 @@ $this->endWidget();
 		  'htmlOptions' => array("style"=>'display: none'),
 		  'headerHtmlOptions'=> array("style"=>'display: none'),
 		),
-	),
+	);
+if(($hogtag == 'T')){
+		$columns = array(
+				array('name'=>'ear_notch','value'=>'$this->grid->controller->calculateYear($data->ear_notch,2)'),
+				'ear_tag',
+				'sow_boar_name',
+				'registeration_no',
+				'born',
+				'no_pigs',
+				/*
+				 'weight_21',
+		'sire_notch',
+		'dam_notch',
+		'bred_date',
+		'last_parity',
+		'sold_mmddyy',
+		'reason_sold',
+		'offspring_name',
+		'back_fat',
+		'loinneye',
+		'days',
+		'EBV',
+		'sire_initials',
+		'comments',
+		'date_modified',
+		*/
+				array(
+						'class'=>'CButtonColumn',
+						'template' => '{update}',
+				  'htmlOptions' => array("style"=>'display: none'),
+				  'headerHtmlOptions'=> array("style"=>'display: none'),
+				),
+		);
+}
+?>
+</div>
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'sow-boar-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
+	 'selectionChanged'=>'function(id){
+		 //location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
+	 }',
+		
+	'columns'=>$columns,
 ));
 
 ?>

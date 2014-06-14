@@ -74,9 +74,10 @@ class SowGilts extends CActiveRecord
 	 */
 	public function attributeLabels()
 	{
+		$hogtag = Yii::app()->request->cookies['hog_tag'];
 		return array(
 			'sow_gilts_id' => 'Sow Gilts',
-			'sow_ear_notch' => 'Sow Ear Notch',
+			'sow_ear_notch' => ($hogtag == 'T')?'Sow Ear Tag':'Sow Ear Notch',
 			'date_bred' => 'Date Bred',
 			'sire_ear_notch' => 'Sire Ear Notch',
 			'service_type' => 'Service Type',
