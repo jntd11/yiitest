@@ -115,7 +115,8 @@ $form=$this->beginWidget('CActiveForm', array(
 	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'dataProvider'=>$dataProvider,
 	'columns'=>array(
-		'hog_ear_notch',
+		//'hog_ear_notch',
+		array('name'=>'hog_ear_notch','value'=>'$this->grid->controller->calculateYear($data->hog_ear_notch,2)'),
 		'reason_sold',
 		'comments',	
 		array('name'=>'date_sold',

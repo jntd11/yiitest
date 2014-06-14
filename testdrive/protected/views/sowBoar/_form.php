@@ -6,6 +6,7 @@ $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 $hogtag = Yii::app()->request->cookies['hog_tag'];
+$id = isset($_GET['id'])?$_GET['id']:0;
 if($herdmark != "")
 	$herdmark = $herdmark." ";
 $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
@@ -48,11 +49,11 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 		<?php echo $form->labelEx($model,'ear_tag'); ?>
 		<?php
 			 if(count($model->errors)){
-			 	echo $form->textField($model,'ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this)','id'=>'eartag','onkeyup'=>'caps(this)'));
+			 	echo $form->textField($model,'ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
 			  }else if($model->isNewRecord) {
-				echo $form->textField($model,'ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this)','id'=>'eartag','onkeyup'=>'caps(this)'));
+				echo $form->textField($model,'ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
 			  }else{
-			  	echo $form->textField($model,'ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this)','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  	echo $form->textField($model,'ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
 			  }
 			  ?>
 		<?php echo $form->error($model,'ear_tag'); ?>
@@ -233,5 +234,5 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 	</div>
 
 <?php $this->endWidget(); ?>
-<div id="alertdialog"></div>
+<div id="alertdialog">Ear Tag already associated with other Hog. Do you Want to move the tag to this hog or Re enter new Tag</div>
 </div><!-- form -->

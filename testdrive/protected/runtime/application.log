@@ -9365,3 +9365,245 @@ in C:\wamp\www\yii\yii\testdrive\index.php (14)
 2014/06/10 10:43:44 [warning] [application] Failed to set unsafe attribute "herd_id" of "TblHerdSetup".
 in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblHerdSetupController.php (111)
 in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/14 12:01:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php:381
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(2310): CActiveRecord->getDbConnection()
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(TblContent))
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(402): CActiveRecord::model('TblContent')
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(77): CActiveRecord->getMetaData()
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SiteController.php(36): CActiveRecord->__construct()
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('')
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#16 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/yii/testdrive/index.php
+---
+2014/06/14 12:12:03 [error] [exception.CException] exception 'CException' with message 'Property "SowBoar.ear_tag" is not defined.' in C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\ar\CActiveRecord.php(143): CComponent->__get('ear_tag')
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('ear_tag')
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(SowBoar), 'ear_tag')
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(SowBoar), 'ear_tag', Array)
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(SowBoar), 'ear_tag', Array)
+#5 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\sowBoar\_form.php(55): CActiveForm->textField(Object(SowBoar), 'ear_tag', Array)
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\sowBoar\update.php(26): CController->renderPartial('_form', Array)
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#14 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SowBoarController.php(221): CController->render('update', Array)
+#15 [internal function]: SowBoarController->actionUpdate('10')
+#16 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SowBoarController), Array)
+#17 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SowBoarController), Object(ReflectionMethod), Array)
+#18 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php(38): CFilter->filter(Object(CFilterChain))
+#22 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#23 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#25 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#29 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('update')
+#31 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('sowBoar/update')
+#32 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#33 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#34 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=sowBoar/update&id=10
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=sowBoar/admin
+---
+2014/06/14 12:28:58 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SowBoarController.php (196)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2014/06/14 12:29:47 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SowBoarController.php (196)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2014/06/14 12:37:37 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php(38): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#5 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('checkEarTag')
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('sowBoar/checkEa...')
+#14 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=sowBoar/checkEarTag&tag=JAI
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=sowBoar/update&id=11
+---
+2014/06/14 12:38:10 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php(38): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#5 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('checkEarTag')
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('sowBoar/checkEa...')
+#14 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=sowBoar/checkEarTag&tag=JAI
+---
+2014/06/14 12:41:59 [error] [exception.CException] exception 'CException' with message 'Property "CHttpRequest.get" is not defined.' in C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\sowBoar\_form.php(9): CComponent->__get('get')
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#4 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\sowBoar\update.php(26): CController->renderPartial('_form', Array)
+#5 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(126): require('C:\Users\Jai\Do...')
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Jai\Do...', Array, true)
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Jai\Do...', Array, true)
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#9 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SowBoarController.php(221): CController->render('update', Array)
+#10 [internal function]: SowBoarController->actionUpdate('11')
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SowBoarController), Array)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SowBoarController), Object(ReflectionMethod), Array)
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php(38): CFilter->filter(Object(CFilterChain))
+#17 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#18 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('update')
+#26 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('sowBoar/update')
+#27 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#28 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#29 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=sowBoar/update&id=11
+---
+2014/06/14 12:44:30 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php(38): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): RController->filterRights(Object(CFilterChain))
+#5 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('checkEarTag')
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('sowBoar/checkEa...')
+#14 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=sowBoar/checkEarTag
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=sowBoar/update&id=11
+---
+2014/06/14 15:17:31 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SowBoarController.php (200)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2014/06/14 15:18:53 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SowBoarController.php (200)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2014/06/14 15:19:53 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SowBoarController.php (200)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2014/06/14 15:20:34 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SowBoarController.php (200)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2014/06/14 15:22:31 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SowBoarController.php (201)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2014/06/14 15:22:57 [warning] [application] Failed to set unsafe attribute "comments" of "SowBoar".
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SowBoarController.php (201)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2014/06/14 15:24:45 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's York Farm', activity_date = '05/03/2014' WHERE id = 1' at line 1. The SQL statement executed was: UPDATE users SET farm_herd = '1A', farm_herd_name = 'Jai's York Farm', activity_date = '05/03/2014' WHERE id = 1.
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\TblHerdSetupController.php (245)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2014/06/14 15:24:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's York Farm', activity_date = '05/03/2014' WHERE id = 1' at line 1. The SQL statement executed was: UPDATE users SET farm_herd = '1A', farm_herd_name = 'Jai's York Farm', activity_date = '05/03/2014' WHERE id = 1' in C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbCommand.php(376): CDbCommand->queryInternal('', 0, Array)
+#1 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\TblHerdSetupController.php(245): CDbCommand->query()
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): TblHerdSetupController->actionNext()
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('next')
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('TblHerdSetup/ne...')
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=TblHerdSetup/next&isNext=1
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=litters/admin
+---
+2014/06/14 15:24:50 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's York Farm', activity_date = '05/03/2014' WHERE id = 1' at line 1. The SQL statement executed was: UPDATE users SET farm_herd = '1A', farm_herd_name = 'Jai's York Farm', activity_date = '05/03/2014' WHERE id = 1.
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\TblHerdSetupController.php (245)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2014/06/14 15:24:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's York Farm', activity_date = '05/03/2014' WHERE id = 1' at line 1. The SQL statement executed was: UPDATE users SET farm_herd = '1A', farm_herd_name = 'Jai's York Farm', activity_date = '05/03/2014' WHERE id = 1' in C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\Users\Jai\Documents\GitHub\yiitest\framework\db\CDbCommand.php(376): CDbCommand->queryInternal('', 0, Array)
+#1 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\TblHerdSetupController.php(245): CDbCommand->query()
+#2 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\actions\CInlineAction.php(49): TblHerdSetupController->actionNext()
+#3 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(282): CController->run('next')
+#12 C:\Users\Jai\Documents\GitHub\yiitest\framework\web\CWebApplication.php(141): CWebApplication->runController('TblHerdSetup/ne...')
+#13 C:\Users\Jai\Documents\GitHub\yiitest\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/testdrive/index.php?r=TblHerdSetup/next&isNext=1
+HTTP_REFERER=http://localhost/yii/testdrive/index.php?r=litters/admin
+---

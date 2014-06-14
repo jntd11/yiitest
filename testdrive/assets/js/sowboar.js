@@ -342,32 +342,39 @@ function validateDate(val){
 function validateForm(){
 	return validateDate($("#born").val());
 }
-function checkeartag(){
-	$("#alertdialog").dialog({
-		autoOpen: true,
-		width: 400,
-		modal: true,
-		closeOnEscape: false,
-		buttons: [
-			{
-				text: "Ok",
-				click: function() {
-					if($("#datepicker").val() == "") 
-						alert("Enter Valid Date");
-					else
-						$( this ).dialog( "close" );
-				}
-			},
-			{
-				text: "Ok",
-				click: function() {
-					if($("#datepicker").val() == "") 
-						alert("Enter Valid Date");
-					else
-						$( this ).dialog( "close" );
-				}
-			}
-		]
+function checkeartag(val,id){
+	$.ajax({
+		url: encodeURI('index.php?r=sowBoar/checkEarTag'),
+		type: "GET",
+		data: {id:id,tag:val}
+	}).done(function(data){
+		if(data != 0 && data != $("#earnotch").val()) {
+			$("#alertdialog").dialog({
+				autoOpen: true,
+				width: 400,
+				modal: true,
+				closeOnEscape: false,
+				buttons: [
+					{
+						text: "Re-associate",
+						click: function() {
+							$( this ).dialog( "close" );
+						}
+					},
+					{
+						text: "New Tag",
+						click: function() {
+							$("#eartag").val("");
+							$( this ).dialog( "close" );
+							$("#eartag").focus();
+						}
+					}
+				]
+			});
+			
+		}
+		$("#SowBoar_sow_boar_name").focus();
 	});
-	$("#SowBoar_sow_boar_name").focus();
+	
+	
 }

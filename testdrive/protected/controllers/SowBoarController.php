@@ -35,7 +35,7 @@ class SowBoarController extends RController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','search','Siredam','AutocompleteEarNotch','AutocompleteName','AutocompleteRegister','AutocompleteBorn','AutocompletePigs','pedigree'),
+				'actions'=>array('index','view','search','Siredam','AutocompleteEarNotch','AutocompleteName','AutocompleteRegister','AutocompleteBorn','AutocompletePigs','pedigree','checkEarTag'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -130,6 +130,11 @@ class SowBoarController extends RController
 			$model->ear_notch = trim($model->ear_notch);
 			$model->sire_notch = trim($model->sire_notch);
 			$model->dam_notch = trim($model->dam_notch);
+			if($model->ear_tag != "" ) {
+				$sql = "Update herd SET ear_tag = '' WHERE ear_tag = ".$model->ear_tag;
+				$cmd = YII::app()->db->createCommand($sql);
+				$cmd->query();
+			}
 		 	$model->save();
 			if($model->save())
 				if(!isset($_POST['savenew']))
@@ -207,6 +212,13 @@ class SowBoarController extends RController
 		 		$model->sire_notch = $this->calculateYear($model->sire_notch);
 		 	if($model->dam_notch != "")
 		 		$model->dam_notch = $this->calculateYear($model->dam_notch);
+		 	
+		 	if($model->ear_tag != "" ) {
+		 		$sql = "Update herd SET ear_tag = '' WHERE ear_tag = '".$model->ear_tag."'";
+		 		$cmd = YII::app()->db->createCommand($sql);
+		 		$cmd->query();
+		 	}
+	
 			if($model->save()){
 				if(isset($_POST['savenew']))
 					$this->redirect(array('create'));
@@ -563,4 +575,20 @@ class SowBoarController extends RController
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
+	public function actioncheckEarTag($id){
+		$res =array();
+		if (isset($_GET['tag'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			 $qtxt ="SELECT ear_notch FROM  herd WHERE ear_tag LIKE :username and sow_boar_id <> ".$id;
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", ''.$_GET['tag'].'', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		if(count($res))
+			echo $search = $this->calculateYear($res[0]);
+		else
+			echo 0;
+		Yii::app()->end();
+	}
+	
 }
