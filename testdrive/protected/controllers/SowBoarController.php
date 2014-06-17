@@ -35,7 +35,7 @@ class SowBoarController extends RController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','search','Siredam','AutocompleteEarNotch','AutocompleteName','AutocompleteRegister','AutocompleteBorn','AutocompletePigs','pedigree','checkEarTag'),
+				'actions'=>array('index','view','search','Siredam','AutocompleteEarNotch','AutocompleteName','AutocompleteRegister','AutocompleteBorn','AutocompletePigs','pedigree','checkEarTag','Autocompleteeartag'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -568,6 +568,18 @@ class SowBoarController extends RController
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
 			 $qtxt ="SELECT no_pigs FROM  herd WHERE no_pigs LIKE :username";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompleteeartag() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT ear_tag FROM  herd WHERE ear_tag LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();

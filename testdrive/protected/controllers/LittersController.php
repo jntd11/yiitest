@@ -324,6 +324,16 @@ class LittersController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['SowGilts']))
 			$model->attributes=$_GET['SowGilts'];
+
+		if(strpos($model->sow_ear_notch,"+") !== false) {
+			 $model->sow_ear_notch = str_replace("+", "", $model->sow_ear_notch);
+			 $qtxt ="SELECT ear_notch FROM  herd WHERE ear_tag LIKE :ear_notch";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$command->bindValue(":ear_notch", '%'.$model->sow_ear_notch.'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+			if(isset($res[0]))
+				$model->sow_ear_notch = $res[0];
+		}
 		$sort = new CSort();
 		$sort->attributes  = array(
 				'desc'=>'due_date'

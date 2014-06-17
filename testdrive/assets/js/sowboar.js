@@ -195,6 +195,13 @@ function autoSuggestSearch(){
 	    	$('#sow-boar-grid').yiiGridView('update', {data: data});
 	    }
 	});
+	$("#sow-boar-grid [name='SowBoar[ear_tag]']").autocomplete({
+	    source: 'index.php?r=sowBoar/autocompleteeartag',
+	    select: function( event, ui ) {
+	    	var data = this.name+"="+ui.item.value;
+	    	$('#sow-boar-grid').yiiGridView('update', {data: data});
+	    }
+	});
 	$('#sow-boar-grid tbody > tr').on('click', function(id){
 		//$(this).click();
 		var link = $(this).find('a.update').attr('href');

@@ -149,6 +149,7 @@ class SowBoar extends CActiveRecord
 		$criteria->compare('last_parity',$this->last_parity);
 		$criteria->compare('sold_mmddyy',$this->sold_mmddyy,true);
 		$criteria->compare('reason_sold',$this->reason_sold,true);
+		$criteria->compare('ear_tag',$this->ear_tag,true);
 		$criteria->compare('offspring_name',$this->offspring_name,true);
 		$criteria->compare('back_fat',$this->back_fat);
 		$criteria->compare('loinneye',$this->loinneye);
@@ -170,7 +171,7 @@ class SowBoar extends CActiveRecord
 			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'SowBoar_sort'=>$SowBoar_sort)),
 			
 				'sort'=>array(
-						'defaultOrder'=>" $SowBoar_sort ASC" ,
+						'defaultOrder'=>" $SowBoar_sort DESC" ,
 						'params'=>array('pages'=>$pages)
 				),
 		));
