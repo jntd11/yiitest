@@ -128,7 +128,7 @@ class SowGiltsController extends Controller
 		$model=$this->loadModel($id);
 		$model->sow_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->sow_ear_notch);
 		$model->sire_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->sire_ear_notch);
-		
+
 		$model->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sow_ear_notch);
 		$model->sire_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sire_ear_notch);
 
@@ -223,6 +223,8 @@ class SowGiltsController extends Controller
 	public function actionAdmin()
 	{
 		$model=new SowGilts('search');
+		$model1 = $model->with('sow_ear_notch')->findAll();
+		//print_r($model1);
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['SowGilts']))
 			$model->attributes=$_GET['SowGilts'];

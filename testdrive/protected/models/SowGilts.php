@@ -38,6 +38,7 @@ class SowGilts extends CActiveRecord
 		return 'breeding';
 	}
 
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -66,6 +67,7 @@ class SowGilts extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'sow_ear_notch'=>array(self::HAS_ONE,'SowBoar','','on'=>('herd.ear_notch = sow_ear_notch'),'alias'=>'herd','select'=>'ear_notch,ear_tag')
 		);
 	}
 
@@ -77,7 +79,8 @@ class SowGilts extends CActiveRecord
 		$hogtag = Yii::app()->request->cookies['hog_tag'];
 		return array(
 			'sow_gilts_id' => 'Sow Gilts',
-			'sow_ear_notch' => ($hogtag == 'T')?'Sow Ear Tag':'Sow Ear Notch',
+			'sow_ear_notch' => 'Sow Ear Notch',
+			'sow_ear_tag'=>'Sow Ear Tag',
 			'date_bred' => 'Date Bred',
 			'sire_ear_notch' => 'Sire Ear Notch',
 			'service_type' => 'Service Type',
@@ -121,7 +124,7 @@ class SowGilts extends CActiveRecord
 		$SowGilts_sort = isset($_REQUEST['SowGilts_sort'])?$_REQUEST['SowGilts_sort']:"";
 		$farmHerd = Yii::app()->request->cookies['farm_herd'];
 		$criteria->compare('sow_ear_notch',$farmHerd,true);
-		
+
 		//$criteria->condition = " sow_ear_notch like '".$farmHerd."%'";
 
 		return new CActiveDataProvider($this, array(
