@@ -223,8 +223,9 @@ class SowGiltsController extends Controller
 	public function actionAdmin()
 	{
 		$model=new SowGilts('search');
-		$model1 = $model->with('sow_ear_notch')->findAll();
-		//print_r($model1);
+		$model1 = $model->with('SowBoar')->findAll();
+		//print_r($model);
+		//print_r($model1['sow_ear_notch']->ear_notch);
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['SowGilts']))
 			$model->attributes=$_GET['SowGilts'];

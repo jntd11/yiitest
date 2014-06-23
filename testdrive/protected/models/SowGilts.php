@@ -20,6 +20,8 @@
  */
 class SowGilts extends CActiveRecord
 {
+
+	public $ear_tag;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -55,7 +57,7 @@ class SowGilts extends CActiveRecord
 			array('comments', 'length', 'max'=>2000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('sow_gilts_id,  sow_ear_notch, date_bred, sire_ear_notch, service_type, misc, passover_date, due_date, days_between, comments, settled, farrowed, date_modified', 'safe', 'on'=>'search'),
+			array('sow_gilts_id,  sow_ear_notch, date_bred, sire_ear_notch, service_type, misc, passover_date, due_date, days_between, comments, settled, farrowed, date_modified, ear_tag', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,7 +69,8 @@ class SowGilts extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'sow_ear_notch'=>array(self::HAS_ONE,'SowBoar','','on'=>('herd.ear_notch = sow_ear_notch'),'alias'=>'herd','select'=>'ear_notch,ear_tag')
+			'SowBoar'=>array(self::HAS_ONE,'SowBoar','','on'=>('herd.ear_notch = sow_ear_notch'),'alias'=>'herd',
+					'select'=>array('ear_notch','ear_tag'),'joinType'=>' INNER JOIN ')
 		);
 	}
 
@@ -106,7 +109,8 @@ class SowGilts extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$criteria->with = array('SowBoar');
+		$criteria->compare('ear_tag', $this->ear_tag, true );
 		$criteria->compare('sow_gilts_id',$this->sow_gilts_id);
 		$criteria->compare('date_bred',$this->date_bred,true);
 		$criteria->compare('sow_ear_notch',$this->sow_ear_notch,true);
@@ -132,7 +136,14 @@ class SowGilts extends CActiveRecord
 				'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'SowGilts_sort'=>$SowGilts_sort)),
 				'sort'=>array(
 						'defaultOrder'=>"STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC" ,
-						'params'=>array('pages'=>$pages)
+						'params'=>array('pages'=>$pages),
+						'attributes'=>array(
+								'ear_tag'=>array(
+										'asc'=>'ear_tag',
+										'desc'=>'ear_tag DESC',
+								),
+								'*',
+						),
 				),
 		));
 	}
