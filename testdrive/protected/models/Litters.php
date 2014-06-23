@@ -20,6 +20,7 @@
  */
 class Litters extends CActiveRecord
 {
+	public $ear_tag;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -73,6 +74,8 @@ class Litters extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+				'SowBoar'=>array(self::HAS_ONE,'SowBoar','','on'=>('herd.ear_notch = sow_ear_notch'),'alias'=>'herd',
+						'select'=>array('ear_notch','ear_tag'),'joinType'=>' INNER JOIN ')
 		);
 	}
 
@@ -84,6 +87,7 @@ class Litters extends CActiveRecord
 		return array(
 			'litters_id' => 'Litters',
 			'sow_ear_notch' => 'Sow Ear Notchs',
+			'sow_ear_tag'=>'Sow Ear Tag',
 			'date_bred' => 'Date Breds',
 			'due_date' => 'Due Date',
 			'sire_ear_notch' => 'Sire Ear Notch',
