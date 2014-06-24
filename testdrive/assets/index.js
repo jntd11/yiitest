@@ -225,3 +225,25 @@ function prevDate(){
 function dottodash(element){
 	element.value = element.value.replace(".","-")
 }
+
+function getEarnotch(obj,id,next){
+	val = obj.value;
+	if(val != "") {
+		$.ajax({
+			url: encodeURI('index.php?r=sowBoar/getEarNotch'),
+			type: "GET",
+			data: {val:val}
+		}).done(function(data){
+			if(data != 0) {
+				$("#"+id).val(data);
+				if(next != ''){
+					$("#"+next).focus();
+				}
+			}else{
+				$("#"+id).focus();
+			}
+			
+		});
+	}
+	$("#"+next).focus();
+}

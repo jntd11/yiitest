@@ -39,6 +39,8 @@ function checkData(element,type,extra,extra1){
 		var val = element.value;
 		val = val.replace(".","-");
 	}
+	if($("#hogtag").val() == 'T') 
+		$("#sow_ear_tag").focus();
 	checkDate(val,1);
 }
 
@@ -233,7 +235,7 @@ function validateForm(){
 function validateLitterForm(){
 	return validateDate($("#farrowed_date").val());
 }
-function checkDate(val,type){
+function checkDate(val,type,next){
 	if(val != "") {
 		$.ajax({
 			url: encodeURI('index.php?r=sowGilts/Checksolddate'),
@@ -255,6 +257,8 @@ function checkDate(val,type){
 			}
 		});
 	}
+	if($("#hogtag").val() == 'T') 
+		$("#"+next).focus();
 	return;
 }
 function checkFarrow(id){

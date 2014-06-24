@@ -6,7 +6,7 @@ $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
-
+$hogtag = Yii::app()->request->cookies['hog_tag'];
 if($herdmark != "")
 	$herdmark = $herdmark." ";
 ?>
@@ -28,18 +28,24 @@ if($herdmark != "")
 	<div>&nbsp;</div>
 	<div class="row">
 		<input type="hidden" id="sow_id" value="<?php echo $model->sow_gilts_id; ?>" />
+		<input type="hidden" id="hogtag" value="<?php echo $hogtag; ?>" />
+
 		<?php echo $form->labelEx($model,'sow_ear_notch'); ?>
 		<?php
 		if(count($model->errors)){
-			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
+			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\',\'sow_ear_tag\')','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
 		}else if($model->isNewRecord) {
-			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$farmHerd." ".$herdmark,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\')','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
+			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$farmHerd." ".$herdmark,'onBlur'=>'checkData(this,1,\''.$farmHerd.'\',\''.$herdmark.'\',\'sow_ear_tag\')','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
 		}else{
-			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2)','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
+			echo $form->textField($model,'sow_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkData(this,2,\'sow_ear_tag\')','id'=>'earnotch','tabindex'=>1,'onkeyup'=>'dottodash(this);'));
 		}
 		?>
 		<label id="earnotchwarning" style="color: red"></label>
 		<?php echo $form->error($model,'sire_ear_notch'); ?>
+		<?php if($hogtag == 'T') {?>
+		<label>Sow Ear Tag </label>
+		<input type="text" name="sow_ear_tag" id="sow_ear_tag" onBlur="getEarnotch(this,'earnotch','born');">
+		<?php } ?>
 	</div>
 
 	<div class="row">
@@ -75,15 +81,19 @@ if($herdmark != "")
 		<?php echo $form->labelEx($model,'sire_ear_notch'); ?>
 		<?php
 		if(count($model->errors)){
-			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2)','id'=>'sirenotch','tabindex'=>3));
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2,"sire_ear_tag")','id'=>'sirenotch','tabindex'=>3));
 		}else if($model->isNewRecord) {
-			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$farmHerd." ".$herdmark,'onBlur'=>'checkDate(this.value,2)','id'=>'sirenotch','tabindex'=>3));
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'value'=>$farmHerd." ".$herdmark,'onBlur'=>'checkDate(this.value,2,"sire_ear_tag")','id'=>'sirenotch','tabindex'=>3));
 		}else{
-			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2)','id'=>'sirenotch','tabindex'=>3));
+			echo $form->textField($model,'sire_ear_notch',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkDate(this.value,2,"sire_ear_tag")','id'=>'sirenotch','tabindex'=>3));
 		}
 		?>
 		<label id="sirenotchwarning" style="color: red"></label>
 		<?php echo $form->error($model,'sire_ear_notch'); ?>
+		<?php if($hogtag == 'T') {?>
+		<label>Sire Ear Tag </label>
+		<input type="text" name="sire_ear_tag" id="sire_ear_tag" onBlur="getEarnotch(this,'sirenotch','SowGilts_service_type');">
+		<?php } ?>
 	</div>
 
 
