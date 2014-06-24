@@ -5367,3 +5367,689 @@ in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController
 in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (103)
 in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
 in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (273)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.web.filters.CFilterChain] Running filter LittersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (55)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.db.ar.CActiveRecord] SowGilts.count()
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.db.ar.CActiveRecord] SowGilts.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.db.CDbCommand] Querying SQL: SELECT *, (select ear_tag from herd where ear_notch = sow_ear_notch) as sow_ear_tag,
+			(select ear_tag from herd where ear_notch = sire_ear_notch) as sire_ear_tag  FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0 ORDER BY STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC LIMIT 20
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:31 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (103)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.web.filters.CFilterChain] Running filter SowGiltsController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (55)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.db.ar.CActiveRecord] SowGilts.count()
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (128)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (128)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.db.ar.CActiveRecord] SowGilts.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (128)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT *, (select ear_tag from herd where ear_notch = sow_ear_notch) as sow_ear_tag,
+			(select ear_tag from herd where ear_notch = sire_ear_notch) as sire_ear_tag  FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0 ORDER BY STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC LIMIT 20
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (128)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (128)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (128)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:16:43 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (103)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+2014/06/24 12:17:28 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:28 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.web.filters.CFilterChain] Running filter SowGiltsController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (55)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.db.ar.CActiveRecord] SowGilts.count()
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (129)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (129)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.db.ar.CActiveRecord] SowGilts.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (129)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.db.CDbCommand] Querying SQL: SELECT *, (select ear_tag from herd where ear_notch = sow_ear_notch) as sow_ear_tag,
+			(select ear_tag from herd where ear_notch = sire_ear_notch) as sire_ear_tag  FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0 ORDER BY STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC LIMIT 20
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (129)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (129)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (129)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:29 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (103)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.web.filters.CFilterChain] Running filter SowGiltsController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (225)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (55)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.db.ar.CActiveRecord] SowGilts.count()
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (130)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (130)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.db.ar.CActiveRecord] SowGilts.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (130)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT *, (select ear_tag from herd where ear_notch = sow_ear_notch) as sow_ear_tag,
+			(select ear_tag from herd where ear_notch = sire_ear_notch) as sire_ear_tag  FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0 ORDER BY STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC LIMIT 20
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (130)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (130)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowGilts\admin.php (130)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:47 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (103)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowGiltsController.php (239)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.web.filters.CFilterChain] Running filter LittersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (55)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.db.ar.CActiveRecord] SowGilts.count()
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.db.ar.CActiveRecord] SowGilts.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT *, (select ear_tag from herd where ear_notch = sow_ear_notch) as sow_ear_tag,
+			(select ear_tag from herd where ear_notch = sire_ear_notch) as sire_ear_tag  FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0 ORDER BY STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC LIMIT 20
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:17:52 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (103)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.web.filters.CFilterChain] Running filter LittersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (55)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.db.ar.CActiveRecord] SowGilts.count()
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.db.ar.CActiveRecord] SowGilts.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.db.CDbCommand] Querying SQL: SELECT *, (select ear_tag from herd where ear_notch = sow_ear_notch) as sow_ear_tag,
+			(select ear_tag from herd where ear_notch = sire_ear_notch) as sire_ear_tag  FROM `breeding` `t` WHERE sow_ear_notch LIKE :ycp0 ORDER BY STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC LIMIT 20
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:13 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (103)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+2014/06/24 12:19:16 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:16 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:16 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:16 [trace] [system.base.CModule] Loading "user" module
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:16 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:16 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:16 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:16 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\UserController.php (131)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:16 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\UserController.php (131)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:16 [trace] [system.db.CDbCommand] Querying SQL: UPDATE users SET activity_date = '06/24/2014' WHERE id = 1
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\UserController.php (132)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:16 [trace] [system.db.CDbCommand] Querying SQL: UPDATE herd_setup SET activity_date = '06/24/2014' WHERE farm_herd = '1D'
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\UserController.php (137)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.web.filters.CFilterChain] Running filter LittersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `breeding`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (323)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (55)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.db.ar.CActiveRecord] SowGilts.count()
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `breeding` `t` WHERE (sow_ear_notch in (select ear_notch from herd where ear_tag like "%tes%")) AND (sow_ear_notch LIKE :ycp0)
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.db.ar.CActiveRecord] SowGilts.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT *, (select ear_tag from herd where ear_notch = sow_ear_notch) as sow_ear_tag,
+			(select ear_tag from herd where ear_notch = sire_ear_notch) as sire_ear_tag  FROM `breeding` `t` WHERE (sow_ear_notch in (select ear_notch from herd where ear_tag like "%tes%")) AND (sow_ear_notch LIKE :ycp0) ORDER BY STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC LIMIT 20
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin.php (124)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:19:19 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (103)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (344)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.web.filters.CFilterChain] Running filter LittersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (353)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (353)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `litters`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (353)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `litters`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (353)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin-wean.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (364)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin-wean.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (364)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin-wean.php (55)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (364)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.db.ar.CActiveRecord] Litters.count()
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin-wean.php (141)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (364)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `litters` `t` WHERE sow_ear_notch LIKE :ycp0
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin-wean.php (141)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (364)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.db.ar.CActiveRecord] Litters.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin-wean.php (141)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (364)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT *, (select ear_tag from herd where ear_notch = sow_ear_notch) as sow_ear_tag,
+		(select ear_tag from herd where ear_notch = sire_ear_notch) as sire_ear_tag  FROM `litters` `t` WHERE sow_ear_notch LIKE :ycp0 ORDER BY STR_TO_DATE( farrowed_date, '%m/%d/%Y' ) DESC LIMIT 20
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin-wean.php (141)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (364)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin-wean.php (141)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (364)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\litters\admin-wean.php (141)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (364)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:02 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (103)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\LittersController.php (364)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:08 [trace] [system.web.filters.CFilterChain] Running filter TblSoldHogsController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:08 [trace] [system.web.filters.CFilterChain] Running filter TblSoldHogsController.filterrights()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (366)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:08 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (366)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `sold_hogs`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (366)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `sold_hogs`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (366)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\admin.php (5)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (373)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\admin.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (373)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:08 [trace] [system.db.ar.CActiveRecord] TblSoldHogs.count()
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\admin.php (114)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (373)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `sold_hogs` `t` WHERE hog_ear_notch LIKE :ycp0
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\admin.php (114)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (373)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:08 [trace] [system.db.ar.CActiveRecord] TblSoldHogs.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\admin.php (114)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (373)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT *, (select ear_tag from herd where ear_notch = hog_ear_notch) as hog_ear_tag  FROM `sold_hogs` `t` WHERE hog_ear_notch LIKE :ycp0 LIMIT 20
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\admin.php (114)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (373)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\admin.php (114)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (373)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\admin.php (114)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (373)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\tblSoldHogs\admin.php (114)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (373)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:08 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (103)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\TblSoldHogsController.php (373)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:12 [trace] [system.web.filters.CFilterChain] Running filter SowBoarController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:12 [trace] [system.web.filters.CFilterChain] Running filter SowBoarController.filterrights()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (266)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:12 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (266)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (266)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (266)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowBoar\admin.php (10)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (273)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowBoar\admin.php (14)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (273)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowBoar\admin.php (58)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (273)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:12 [trace] [system.db.ar.CActiveRecord] SowBoar.count()
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowBoar\admin.php (139)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (273)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `herd` `t` WHERE ear_notch LIKE :ycp0
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowBoar\admin.php (139)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (273)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:12 [trace] [system.db.ar.CActiveRecord] SowBoar.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowBoar\admin.php (139)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (273)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `herd` `t` WHERE ear_notch LIKE :ycp0 ORDER BY  ear_tag  LIMIT 20
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowBoar\admin.php (139)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (273)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowBoar\admin.php (139)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (273)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\sowBoar\admin.php (139)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (273)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RController.php (38)
+2014/06/24 12:20:12 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (103)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SowBoarController.php (273)
