@@ -43,6 +43,7 @@ $cs->registerCoreScript('jquery-ui-1.10.2.custom');
  		'/jui/css/base/jquery-ui-1.10.2.custom.css'
  );
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/litters.js');
+$hogtag = Yii::app()->request->cookies['hog_tag'];
 ?>
 
 
@@ -67,7 +68,42 @@ $this->endWidget();
 	}',
 	'filter'=>$model,
 		'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
-	'columns'=>array(
+	'columns'=>($hogtag == 'T')?array(
+		array('name'=>'sow_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sow_ear_notch,2)','htmlOptions'=>array('width'=>250)),
+		'sow_ear_tag',
+		'sow_parity',
+		'herd_litter',
+		array('name'=>'farrowed_date','value'=>'$data->farrowed_date','htmlOptions'=>array('width'=>100)),
+		array('name'=>'weighted_date','value'=>'$data->weighted_date','htmlOptions'=>array('width'=>100)),
+		array('name'=>'weaned_date','value'=>'$data->weaned_date','htmlOptions'=>array('width'=>100)),
+		//'comments',
+		/* array('name'=>'misc','value'=>'$data->misc','htmlOptions'=>array('width'=>40)),
+		'passover_date',
+		array('name'=>'due_date','value'=>'$data->due_date','htmlOptions'=>array('width'=>40)),
+		array('name'=>'farrowed','value'=>'$data->farrowed','htmlOptions'=>array('width'=>20)), */
+		//'',
+		//'',
+		/*
+		'due_date',
+		'days_between',
+		'settled',
+		'farrowed',
+		'date_modified',
+		*/
+			array(
+					'class'=>'CButtonColumn',
+					'template' => '{update}',
+					'buttons'  => array(
+							'update' => array(
+									'url' => 'Yii::app()->createUrl("/litters/updatelitter", array("id" => $data->litters_id))',
+							),
+
+					),
+'htmlOptions' => array("style"=>'display: none'),
+'headerHtmlOptions'=> array("style"=>'display: none'),
+			),
+
+	):array(
 		array('name'=>'sow_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sow_ear_notch,2)','htmlOptions'=>array('width'=>250)),
 		'sow_parity',
 		'herd_litter',
@@ -95,7 +131,7 @@ $this->endWidget();
 							'update' => array(
 									'url' => 'Yii::app()->createUrl("/litters/updatelitter", array("id" => $data->litters_id))',
 							),
-					
+
 					),
 'htmlOptions' => array("style"=>'display: none'),
 'headerHtmlOptions'=> array("style"=>'display: none'),

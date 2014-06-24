@@ -43,6 +43,7 @@ $cs->registerCoreScript('jquery-ui-1.10.2.custom');
  		'/jui/css/base/jquery-ui-1.10.2.custom.css'
  );
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowgilts.js');
+$hogtag = Yii::app()->request->cookies['hog_tag'];
 ?>
 
 <div style="float: left;"><a class="buttons" href="index.php?r=sowGilts/create"><input type="button" value="New"></a></div>
@@ -67,7 +68,7 @@ $this->endWidget();
 	}',
 	'filter'=>$model,
 		'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
-	'columns'=>array(
+	'columns'=>($hogtag == 'T')?array(
 		array('name'=>'sow_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sow_ear_notch,2)',
 				'htmlOptions'=>array('width'=>110,'id'=>'sow_ear_notch'),
 				),
@@ -76,6 +77,33 @@ $this->endWidget();
 		'date_bred',
 		array('name'=>'sire_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sire_ear_notch,2)','htmlOptions'=>array('width'=>110)),
 		array( 'name'=>'sire_ear_tag', 'value'=>'$data->sire_ear_tag ? $data->sire_ear_tag : ""' ),
+		/* array('name'=>'sire_ear_tag', 'value'=>'$data->SowBoar ? $data->SowBoar->ear_tag : ""'), */
+		'service_type',
+		'comments',
+		'passover_date',
+		'due_date',
+		'days_between',
+
+		/*
+		'due_date',
+		'days_between',
+		'settled',
+		'farrowed',
+		'date_modified',
+		*/
+		array(
+				'class'=>'CButtonColumn',
+				'template' => '{update}',
+		 		'htmlOptions' => array("style"=>'display: none'),
+		  		'headerHtmlOptions'=> array("style"=>'display: none'),
+		),
+	):array(
+		array('name'=>'sow_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sow_ear_notch,2)',
+				'htmlOptions'=>array('width'=>110,'id'=>'sow_ear_notch'),
+				),
+
+		'date_bred',
+		array('name'=>'sire_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sire_ear_notch,2)','htmlOptions'=>array('width'=>110)),
 		/* array('name'=>'sire_ear_tag', 'value'=>'$data->SowBoar ? $data->SowBoar->ear_tag : ""'), */
 		'service_type',
 		'comments',

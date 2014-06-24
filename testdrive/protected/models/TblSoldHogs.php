@@ -11,7 +11,7 @@
  * @property string $date_sold
  * @property integer $sold_price
  * @property string $sale_type
- * 
+ *
  * @property integer $invoice_number
  * @property string $app_xfer
  * @property string $comments
@@ -21,6 +21,7 @@
  */
 class TblSoldHogs extends CActiveRecord
 {
+	public $hog_ear_tag;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -57,7 +58,7 @@ class TblSoldHogs extends CActiveRecord
 			array('date_sold', 'date', 'format'=>array('m/d/y','mm/dd/yy','mm/dd/yyyy','m/dd/yy','mm/d/yy','m/d/yyyy','yyyy/dd/mm')),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('tbl_sold_hogs_id, hog_ear_notch, customer_name, date_sold, sold_price, sale_type, invoice_number, app_xfer, comments, reason_sold, date_modified', 'safe', 'on'=>'search'),
+			array('tbl_sold_hogs_id, hog_ear_notch, customer_name, date_sold, sold_price, sale_type, invoice_number, app_xfer, comments, reason_sold, date_modified,hog_ear_tag', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -97,8 +98,9 @@ class TblSoldHogs extends CActiveRecord
 		return array(
 			'tbl_sold_hogs_id' => 'Tbl Sold Hogs',
 			'cust_id' => 'Customer id',
-			'hog_ear_notch' => ($hogtag == 'T')?'Hog Ear Tag':'Hog Ear Notch',
+			'hog_ear_notch' => 'Hog Ear Notch',
 			'customer_name' => 'Customer Name',
+			'hog_ear_tag'=>'Hog Ear Tag',
 			'date_sold' => 'Date Sold',
 			'sold_price' => 'Sold Price',
 			'sale_type' => 'Sale Type',
@@ -120,6 +122,11 @@ class TblSoldHogs extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+		$criteria->select = "*, (select ear_tag from herd where ear_notch = hog_ear_notch) as hog_ear_tag ";
+
+		if(!empty($this->hog_ear_tag)){
+			$criteria->addCondition('hog_ear_notch in (select ear_notch from herd where ear_tag like "%'.$this->hog_ear_tag.'%")');
+		}
 
 		$criteria->compare('tbl_sold_hogs_id',$this->tbl_sold_hogs_id);
 		$criteria->compare('hog_ear_notch',$this->hog_ear_notch,true);
@@ -134,7 +141,7 @@ class TblSoldHogs extends CActiveRecord
 		$criteria->compare('date_modified',$this->date_modified,true);
 		$farmHerd = Yii::app()->request->cookies['farm_herd'];
 		$criteria->compare('hog_ear_notch',$farmHerd,true);
-		
+
 		//$criteria->condition = " hog_ear_notch like '".$farmHerd."%'";
 
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
@@ -142,7 +149,16 @@ class TblSoldHogs extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'TblSoldHogs_sort'=>$TblSoldHogs_sort)),
-			'sort'=>array('params'=>array('pages'=>$pages)),
+			'sort'=>array('params'=>array('pages'=>$pages),
+					'attributes'=>array(
+							'hog_ear_tag'=>array(
+									'asc'=>'hog_ear_tag',
+									'desc'=>'hog_ear_tag DESC',
+							),
+							'*',
+					),
+					),
+
 		));
 	}
 	public function getlist($pagecount=0)
