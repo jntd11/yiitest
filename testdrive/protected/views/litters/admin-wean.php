@@ -71,8 +71,8 @@ $this->endWidget();
 	'columns'=>($hogtag == 'T')?array(
 		array('name'=>'sow_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sow_ear_notch,2)','htmlOptions'=>array('width'=>250)),
 		'sow_ear_tag',
-		'sow_parity',
-		'herd_litter',
+		array('name'=>'sow_parity','value'=>'$data->sow_parity','header'=>'Sow Par'),
+		array('name'=>'herd_litter','value'=>'$data->herd_litter','header'=>'Herd Lit #'),
 		array('name'=>'farrowed_date','value'=>'$data->farrowed_date','htmlOptions'=>array('width'=>100)),
 		array('name'=>'weighted_date','value'=>'$data->weighted_date','htmlOptions'=>array('width'=>100)),
 		array('name'=>'weaned_date','value'=>'$data->weaned_date','htmlOptions'=>array('width'=>100)),

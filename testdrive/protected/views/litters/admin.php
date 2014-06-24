@@ -77,9 +77,9 @@ $this->endWidget();
 		array('name'=>'service_type','value'=>'$data->service_type','htmlOptions'=>array('width'=>20)),
 		//'comments',
 		array('name'=>'misc','value'=>'$data->misc','htmlOptions'=>array('width'=>40)),
-		'passover_date',
+		array('name'=>'passover_date','value'=>'$data->passover_date','header'=>'Pass Date'),
 		array('name'=>'due_date','value'=>'$data->due_date','htmlOptions'=>array('width'=>40)),
-		array('name'=>'farrowed','value'=>'$data->farrowed','htmlOptions'=>array('width'=>20)),
+		array('name'=>'farrowed','value'=>'$data->farrowed','htmlOptions'=>array('width'=>20),'header'=>'Far\'d'),
 		//'',
 		//'',
 		/*
