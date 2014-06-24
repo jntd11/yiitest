@@ -71,9 +71,12 @@ $this->endWidget();
 		array('name'=>'sow_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sow_ear_notch,2)',
 				'htmlOptions'=>array('width'=>110,'id'=>'sow_ear_notch'),
 				),
-		array( 'name'=>'ear_tag', 'value'=>'$data->SowBoar ? $data->SowBoar->ear_tag : ""' ),
+		array( 'name'=>'sow_ear_tag', 'value'=>'$data->sow_ear_tag ? $data->sow_ear_tag : ""' ),
+
 		'date_bred',
 		array('name'=>'sire_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sire_ear_notch,2)','htmlOptions'=>array('width'=>110)),
+		array( 'name'=>'sire_ear_tag', 'value'=>'$data->sire_ear_tag ? $data->sire_ear_tag : ""' ),
+		/* array('name'=>'sire_ear_tag', 'value'=>'$data->SowBoar ? $data->SowBoar->ear_tag : ""'), */
 		'service_type',
 		'comments',
 		'passover_date',
