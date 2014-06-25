@@ -224,6 +224,15 @@ class TblHerdSetupController extends Controller
 				$qu = "UPDATE users SET farm_herd = '".$res["farm_herd"]."', farm_herd_name = '".$res["farm_name"]."', activity_date = '".$res["activity_date"]."' WHERE id = ".Yii::app()->user->id;
 				$cmd = YII::app()->db->createCommand($qu);
 				$res = $cmd->query();
+				if(isset($_GET['url'])){
+					$url = $_GET['url'];
+					if(preg_match("/litters\/update/i", $url)) {
+						$url = preg_replace("/update/i","admin",$url);
+						header("Location: index.php?".$url);
+					}else{
+						header("Location: index.php?".$url);
+					}
+				}
 				echo 1;
 				return;
 
@@ -243,7 +252,15 @@ class TblHerdSetupController extends Controller
 					$qu = "UPDATE users SET farm_herd = '".$res["farm_herd"]."', farm_herd_name = '".$res["farm_name"]."', activity_date = '".$res["activity_date"]."' WHERE id = ".Yii::app()->user->id;
 					$cmd = YII::app()->db->createCommand($qu);
 					$res = $cmd->query();
-
+					if(isset($_GET['url'])){
+						$url = $_GET['url'];
+						if(preg_match("/litters\/update/i", $url)) {
+							$url = preg_replace("/update/i","admin",$url);
+							header("Location: index.php?".$url);
+						}else{
+							header("Location: index.php?".$url);
+						}
+					}
 					echo 1;
 					return;
 			    }

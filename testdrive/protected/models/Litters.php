@@ -89,7 +89,7 @@ class Litters extends CActiveRecord
 	{
 		return array(
 			'litters_id' => 'Litters',
-			'sow_ear_notch' => 'Sow Ear Notchs',
+			'sow_ear_notch' => 'Sow Ear Notch',
 			'sow_ear_tag'=>'Sow Ear Tag',
 			'date_bred' => 'Date Breds',
 			'due_date' => 'Due Date',

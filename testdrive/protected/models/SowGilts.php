@@ -102,7 +102,6 @@ class SowGilts extends CActiveRecord
 			'due_date' => 'Due Date',
 			'days_between' => 'Days Btwn',
 			'settled' => 'Settled',
-			'sow_ear_tag'=>'sow ear tag',
 			'farrowed' => 'Farrowed',
 			'date_modified' => 'Date Modified',
 		);
@@ -133,7 +132,7 @@ class SowGilts extends CActiveRecord
 		if(!empty($this->sire_ear_tag)){
 			$criteria->addCondition('sire_ear_notch in (select ear_notch from herd where ear_tag like "%'.$this->sire_ear_tag.'%")');
 		}
-
+		$hogtag = Yii::app()->request->cookies['hog_tag'];
 		$criteria->compare('sow_gilts_id',$this->sow_gilts_id);
 		$criteria->compare('date_bred',$this->date_bred,true);
 		$criteria->compare('sow_ear_notch',$this->sow_ear_notch,true);
@@ -148,17 +147,16 @@ class SowGilts extends CActiveRecord
 		$criteria->compare('farrowed',$this->farrowed,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
-		$SowGilts_sort = isset($_REQUEST['SowGilts_sort'])?$_REQUEST['SowGilts_sort']:"";
+		$SowGilts_sort = isset($_REQUEST['SowGilts_sort'])?$_REQUEST['SowGilts_sort']:($hogtag == 'T')?'sow_ear_tag desc':" STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC ";
 		$farmHerd = Yii::app()->request->cookies['farm_herd'];
 		$criteria->compare('sow_ear_notch',$farmHerd,true);
 
 		//$criteria->condition = " sow_ear_notch like '".$farmHerd."%'";
-
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 				'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'SowGilts_sort'=>$SowGilts_sort)),
 				'sort'=>array(
-						'defaultOrder'=>"STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC" ,
+						'defaultOrder'=>$SowGilts_sort ,
 						'params'=>array('pages'=>$pages),
 						'attributes'=>array(
 								'sow_ear_tag'=>array(

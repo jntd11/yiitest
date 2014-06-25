@@ -189,7 +189,7 @@ function nextHerd(isNext,url){
 	$.ajax({
 		url: encodeURI('index.php?r=TblHerdSetup/next'),
 		type: "GET",
-		data: {isNext:isNext}
+		data: {isNext:isNext,url:url}
 	}).done(function(data){
 		  if(data) {
 			  patt1=new RegExp("litters\/update");
@@ -197,8 +197,11 @@ function nextHerd(isNext,url){
 				  url = url.replace(/update/,"admin");
 				  location.href= 'index.php?'+url;
 			  }else{
-				  location.href= 'index.php?'+url;
-				  //location.reload();
+				  var x = location.origin;
+				  var path = location.pathname;
+				  
+				  window.location.href= x+path+'?'+url;
+				  $("#redisplay").click();
 			  }
 		  }
 	});
