@@ -93,7 +93,12 @@ class LittersController extends Controller
 		$modelSowgilts = SowGilts::model()->findByPk($id);
 		if($modelSowgilts===null)
 			throw new CHttpException(404,'The requested page does not exist.');
+		$sql = "select * from herd where replace(ear_notch,' ','') = '".str_replace(" ","",$this->calculateYear($modelSowgilts->sire_ear_notch)."'");
+		$sireeartag = SowBoar::model()->findBySql($sql);
+
 		$modelSowgilts->sire_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $modelSowgilts->sire_ear_notch);
+
+
 
 		$qtxt ="SELECT * FROM herd WHERE ear_notch = '".$modelSowgilts->sow_ear_notch."' AND bred_date = '".$modelSowgilts->date_bred."'";
 		$command =Yii::app()->db->createCommand($qtxt);
@@ -101,6 +106,7 @@ class LittersController extends Controller
 		$desc = array();
 		if(isset($res['last_parity']) &&  $modelSowgilts->farrowed == 'Y') {
 			$model = Litters::model()->findByAttributes(array('sow_ear_notch'=>$modelSowgilts->sow_ear_notch,'sow_parity'=>$res['last_parity']));
+
             for($i=1;$i<=10;$i++){
                  $code = $model->{'defect_code'.$i};
                  if($code != "") {
@@ -116,6 +122,10 @@ class LittersController extends Controller
 			$model = new Litters;
 		}
 		$model->sire_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->sire_ear_notch);
+
+		if($sireeartag)
+			$model->sire_ear_tag = $sireeartag->ear_tag;
+
 		$modelSowgilts->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $modelSowgilts->sow_ear_notch);
 		$modelSowgilts->sire_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $modelSowgilts->sire_ear_notch);
 		// Uncomment the following line if AJAX validation is needed
@@ -128,6 +138,11 @@ class LittersController extends Controller
 
 			if($model->save()) {
 
+				if(isset($_POST['sire_ear_tag']) && !empty($_POST['sire_ear_tag'])) {
+					$sql = "UPDATE herd SET ear_tag = '".$_POST['sire_ear_tag']."' WHERE replace(ear_notch,' ','') = '".str_replace(" ", "", $this->calculateYear($model->sire_ear_notch))."'";
+					$cmd = Yii::app()->db->createCommand($sql);
+					$cmd->query();
+				}
 			 // New CHores Insertion
 
 			 $farm = preg_match("/^[0-9][a-z]/i",$model->sow_ear_notch,$match);
@@ -168,7 +183,7 @@ class LittersController extends Controller
 				$sql .= " farrowed = 'Y' ";
 				$sql .= " WHERE 1 = 1 ";
 				if($_POST['sire_ear_notch_org'] != $model->sire_ear_notch)
-					$sql .= " sire_ear_notch = '".$model->sire_ear_notch."' ";
+					$sql .= " AND sire_ear_notch = '".$model->sire_ear_notch."' ";
 				$sql .= " AND sow_gilts_id = ".$id;
 				$command = Yii::app()->db->createCommand($sql);
 				$command->execute();

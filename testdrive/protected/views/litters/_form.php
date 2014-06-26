@@ -6,6 +6,7 @@ $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
+$hogtag = Yii::app()->request->cookies['hog_tag'];
 
 if($model->farrowed_date != "")
 	$farrowed_date = $model->farrowed_date;
@@ -62,6 +63,10 @@ if($herdmark != "")
 		?>
 		<label id="sirenotchwarning" style="color: red"></label>
 		<?php echo $form->error($model,'sire_ear_notch'); ?>
+		<?php if($hogtag == 'T') {?>
+		<label>Sire Ear Tag </label>
+		<input type="text" name="sire_ear_tag" id="sire_ear_tag" onChange="getEarnotch(this,'sirenotch','sow_parity');" onBlur="$('#sow_parity').focus();" value="<?php echo $model->sire_ear_tag; ?>">
+		<?php } ?>
 	</div>
 
 	<div class="row">
