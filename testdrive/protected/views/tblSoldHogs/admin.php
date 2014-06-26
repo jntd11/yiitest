@@ -40,6 +40,7 @@ Yii::app()->clientScript->registerScript('row_dblclick', "$('#tbl-sold-hogs-grid
 		location.href = link;
 });"
 );
+$hogtag = Yii::app()->request->cookies['hog_tag'];
 ?>
 
 <h1></h1>
@@ -67,8 +68,31 @@ $this->endWidget();
 	//'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);}',
 	'filter'=>$model,
 
-	'columns'=>array(
-		array('name'=>'hog_ear_notch','value'=>'$this->grid->controller->calculateYear($data->hog_ear_notch,2)'),
+	'columns'=>
+		($hogtag == 'T')?array(
+			array('name'=>'hog_ear_notch','value'=>'$this->grid->controller->calculateYear($data->hog_ear_notch,2)'),
+		'hog_ear_tag',
+		'customer_name',
+		//'hog_ear_notch',
+		'customer_name',
+		'date_sold',
+		'invoice_number',
+		/*
+		'invoice_number',
+		'app_xfer',
+		'comments',
+		'reason_sold',
+		'date_modified',
+		*/
+		array(
+			'class'=>'CButtonColumn',
+			'template' => '{update}',
+		  'htmlOptions' => array("style"=>'display: none'),
+		  'headerHtmlOptions'=> array("style"=>'display: none'),
+		),
+	):array(
+			array('name'=>'hog_ear_notch','value'=>'$this->grid->controller->calculateYear($data->hog_ear_notch,2)'),
+		'customer_name',
 		//'hog_ear_notch',
 		'customer_name',
 		'date_sold',

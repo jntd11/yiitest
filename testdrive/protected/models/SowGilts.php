@@ -22,6 +22,10 @@ class SowGilts extends CActiveRecord
 {
 
 	public $ear_tag;
+	public $sire_ear_tag;
+	public $sow_ear_tag;
+	public $ear_notch;
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -57,7 +61,7 @@ class SowGilts extends CActiveRecord
 			array('comments', 'length', 'max'=>2000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('sow_gilts_id,  sow_ear_notch, date_bred, sire_ear_notch, service_type, misc, passover_date, due_date, days_between, comments, settled, farrowed, date_modified, ear_tag', 'safe', 'on'=>'search'),
+			array('sow_gilts_id,  sow_ear_notch, date_bred, sire_ear_notch, service_type, misc, passover_date, due_date, days_between, comments, settled, farrowed, date_modified, ear_tag, ear_notch, sire_ear_tag,sow_ear_tag', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,9 +73,13 @@ class SowGilts extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'SowBoar'=>array(self::HAS_ONE,'SowBoar','','on'=>('herd.ear_notch = sow_ear_notch'),'alias'=>'herd',
-					'select'=>array('ear_notch','ear_tag'),'joinType'=>' INNER JOIN ')
-		);
+		  /*  'SowBoar'=>array(self::BELONGS_TO,'SowBoar','','on'=>('herd.ear_notch = sow_ear_notch OR herd.ear_notch = sire_ear_notch'),'alias'=>'herd',
+					'select'=>array('ear_notch','ear_tag','ear_tag as sire_ear_tag')), */
+/* 			'sireeartag'=>array(self::HAS_ONE,'SowBoar','','on'=>('herd.ear_notch = sire_ear_notch'),'alias'=>'herd',
+					'select'=>array('ear_notch','ear_tag','ear_tag as sire_ear_tag')),
+			'soweartag'=>array(self::HAS_ONE,'SowBoar','','on'=>('herd.ear_notch = sow_ear_notch'),'alias'=>'herd',
+						'select'=>array('ear_notch','ear_tag','ear_tag as sow_ear_notch')),
+ */		);
 	}
 
 	/**
@@ -84,16 +92,16 @@ class SowGilts extends CActiveRecord
 			'sow_gilts_id' => 'Sow Gilts',
 			'sow_ear_notch' => 'Sow Ear Notch',
 			'sow_ear_tag'=>'Sow Ear Tag',
+			'sire_ear_tag' => 'Sire Ear Tag',
 			'date_bred' => 'Date Bred',
 			'sire_ear_notch' => 'Sire Ear Notch',
-			'service_type' => 'Service Type',
+			'service_type' => 'Svc Type',
 			'misc' => 'Misc',
 			'comments' => 'Comments',
-			'passover_date' => 'Passover Date',
+			'passover_date' => 'Pass Date',
 			'due_date' => 'Due Date',
-			'days_between' => 'Days Between',
+			'days_between' => 'Days Btwn',
 			'settled' => 'Settled',
-
 			'farrowed' => 'Farrowed',
 			'date_modified' => 'Date Modified',
 		);
@@ -109,8 +117,22 @@ class SowGilts extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-		$criteria->with = array('SowBoar');
-		$criteria->compare('ear_tag', $this->ear_tag, true );
+		/* $criteria->with = array('SowBoar');
+		if(!empty($this->sire_ear_tag)){
+			$criteria->compare('ear_tag', $this->sire_ear_tag, true );
+		}elseif(!empty($this->sow_ear_tag)){
+			$criteria->compare('ear_tag', $this->sow_ear_tag, true );
+		} */
+		$criteria->select = "*, (select ear_tag from herd where ear_notch = sow_ear_notch) as sow_ear_tag,
+			(select ear_tag from herd where ear_notch = sire_ear_notch) as sire_ear_tag ";
+
+		if(!empty($this->sow_ear_tag)){
+			$criteria->addCondition('sow_ear_notch in (select ear_notch from herd where ear_tag like "%'.$this->sow_ear_tag.'%")');
+		}
+		if(!empty($this->sire_ear_tag)){
+			$criteria->addCondition('sire_ear_notch in (select ear_notch from herd where ear_tag like "%'.$this->sire_ear_tag.'%")');
+		}
+		$hogtag = Yii::app()->request->cookies['hog_tag'];
 		$criteria->compare('sow_gilts_id',$this->sow_gilts_id);
 		$criteria->compare('date_bred',$this->date_bred,true);
 		$criteria->compare('sow_ear_notch',$this->sow_ear_notch,true);
@@ -125,22 +147,25 @@ class SowGilts extends CActiveRecord
 		$criteria->compare('farrowed',$this->farrowed,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
-		$SowGilts_sort = isset($_REQUEST['SowGilts_sort'])?$_REQUEST['SowGilts_sort']:"";
+		$SowGilts_sort = isset($_REQUEST['SowGilts_sort'])?$_REQUEST['SowGilts_sort']:($hogtag == 'T')?'sow_ear_tag desc':" STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC ";
 		$farmHerd = Yii::app()->request->cookies['farm_herd'];
 		$criteria->compare('sow_ear_notch',$farmHerd,true);
 
 		//$criteria->condition = " sow_ear_notch like '".$farmHerd."%'";
-
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 				'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'SowGilts_sort'=>$SowGilts_sort)),
 				'sort'=>array(
-						'defaultOrder'=>"STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC" ,
+						'defaultOrder'=>$SowGilts_sort ,
 						'params'=>array('pages'=>$pages),
 						'attributes'=>array(
-								'ear_tag'=>array(
-										'asc'=>'ear_tag',
-										'desc'=>'ear_tag DESC',
+								'sow_ear_tag'=>array(
+										'asc'=>'sow_ear_tag',
+										'desc'=>'sow_ear_tag DESC',
+								),
+								'sire_ear_tag'=>array(
+										'asc'=>'sire_ear_tag',
+										'desc'=>'sire_ear_tag DESC',
 								),
 								'*',
 						),

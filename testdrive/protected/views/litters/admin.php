@@ -43,6 +43,7 @@ $cs->registerCoreScript('jquery-ui-1.10.2.custom');
  		'/jui/css/base/jquery-ui-1.10.2.custom.css'
  );
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/sowgilts.js');
+$hogtag = Yii::app()->request->cookies['hog_tag'];
 ?>
 
 <div style="float: left;"><a class="buttons" href="index.php?r=sowGilts/create"><input type="button" value="New"></a></div>
@@ -67,9 +68,35 @@ $this->endWidget();
 	}',
 	'filter'=>$model,
 		'afterAjaxUpdate'=>'function(id, data){autoSuggestSearch();}',
-	'columns'=>array(
+	'columns'=>($hogtag == 'T')?array(
 		array('name'=>'sow_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sow_ear_notch,2)','htmlOptions'=>array('width'=>200,'id'=>'sow_ear_notch')),
-		array( 'name'=>'ear_tag', 'value'=>'$data->sow_ear_notch->ear_tag' ),
+		array('name'=>'sow_ear_tag','value'=>'$data->sow_ear_tag','htmlOptions'=>array('width'=>200,'id'=>'sow_ear_tag')),
+		array('name'=>'date_bred','value'=>'$data->date_bred','htmlOptions'=>array('width'=>40)),
+		array('name'=>'sire_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sire_ear_notch,2)','htmlOptions'=>array('width'=>200)),
+		array('name'=>'sire_ear_tag','value'=>'$data->sire_ear_tag','htmlOptions'=>array('width'=>200,'id'=>'sire_ear_tag')),
+		array('name'=>'service_type','value'=>'$data->service_type','htmlOptions'=>array('width'=>20)),
+		//'comments',
+		array('name'=>'misc','value'=>'$data->misc','htmlOptions'=>array('width'=>40)),
+		array('name'=>'passover_date','value'=>'$data->passover_date','header'=>'Pass Date'),
+		array('name'=>'due_date','value'=>'$data->due_date','htmlOptions'=>array('width'=>40)),
+		array('name'=>'farrowed','value'=>'$data->farrowed','htmlOptions'=>array('width'=>20),'header'=>'Far\'d'),
+		//'',
+		//'',
+		/*
+		'due_date',
+		'days_between',
+		'settled',
+		'farrowed',
+		'date_modified',
+		*/
+			array(
+					'class'=>'CButtonColumn',
+					'template' => '{update}',
+			  'htmlOptions' => array("style"=>'display: none'),
+			  'headerHtmlOptions'=> array("style"=>'display: none'),
+			),
+	):array(
+		array('name'=>'sow_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sow_ear_notch,2)','htmlOptions'=>array('width'=>200,'id'=>'sow_ear_notch')),
 		array('name'=>'date_bred','value'=>'$data->date_bred','htmlOptions'=>array('width'=>40)),
 		array('name'=>'sire_ear_notch','value'=>'$this->grid->controller->calculateYear($data->sire_ear_notch,2)','htmlOptions'=>array('width'=>200)),
 		array('name'=>'service_type','value'=>'$data->service_type','htmlOptions'=>array('width'=>20)),

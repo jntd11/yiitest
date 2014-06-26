@@ -28,6 +28,7 @@
  */
 class SowBoar extends CActiveRecord
 {
+	public $sire_ear_tag;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -64,7 +65,7 @@ class SowBoar extends CActiveRecord
 			array('born', 'date', 'format'=>array('m/d/y','mm/dd/yy','mm/dd/yyyy','m/dd/yy','mm/d/yy','m/d/yyyy','yyyy/dd/mm')),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ear_notch, sow_boar_name, sow_boar_id, registeration_no, born, no_pigs, weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, offspring_name, back_fat, loinneye, days, EBV, sire_initials, comments, date_modified', 'safe', 'on'=>'search'),
+			array('ear_notch, sow_boar_name, sow_boar_id, registeration_no, born, no_pigs, weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, offspring_name, back_fat, loinneye, days, EBV, sire_initials, comments, date_modified, sire_ear_tag', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -165,7 +166,7 @@ class SowBoar extends CActiveRecord
 		$hogtag = Yii::app()->request->cookies['hog_tag'];
 
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
-		$SowBoar_sort = isset($_REQUEST['SowBoar_sort'])?$_REQUEST['SowBoar_sort']:($hogtag == 'T')?'ear_tag':'ear_notch';
+		$SowBoar_sort = isset($_REQUEST['SowBoar_sort'])?$_REQUEST['SowBoar_sort']:($hogtag == 'T')?'ear_tag desc':'ear_notch';
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'SowBoar_sort'=>$SowBoar_sort)),

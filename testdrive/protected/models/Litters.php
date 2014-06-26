@@ -21,6 +21,9 @@
 class Litters extends CActiveRecord
 {
 	public $ear_tag;
+	public $sire_ear_tag;
+	public $sow_ear_tag;
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -62,7 +65,7 @@ class Litters extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('litters_id, sow_ear_notch, date_bred, sire_ear_notch, sow_parity, times_settle, herd_litter, no_pigs, no_born_alive,
-					no_boars_alive, gilts_alive, birth_wgt, comments, date_modified, farrowed_date, weighted_date, weaned_date', 'safe', 'on'=>'search'),
+					no_boars_alive, gilts_alive, birth_wgt, comments, date_modified, farrowed_date, weighted_date, weaned_date, sow_ear_tag,sire_ear_tag ', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,8 +77,8 @@ class Litters extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-				'SowBoar'=>array(self::HAS_ONE,'SowBoar','','on'=>('herd.ear_notch = sow_ear_notch'),'alias'=>'herd',
-						'select'=>array('ear_notch','ear_tag'),'joinType'=>' INNER JOIN ')
+				/* 'SowBoar'=>array(self::HAS_ONE,'SowBoar','','on'=>('herd.ear_notch = sow_ear_notch'),'alias'=>'herd',
+						'select'=>array('ear_notch','ear_tag'),'joinType'=>' INNER JOIN ') */
 		);
 	}
 
@@ -86,10 +89,12 @@ class Litters extends CActiveRecord
 	{
 		return array(
 			'litters_id' => 'Litters',
-			'sow_ear_notch' => 'Sow Ear Notchs',
+			'sow_ear_notch' => 'Sow Ear Notch',
 			'sow_ear_tag'=>'Sow Ear Tag',
 			'date_bred' => 'Date Breds',
 			'due_date' => 'Due Date',
+			'sow_ear_tag'=>'Sow Ear Tag',
+			'sire_ear_tag' => 'Sire Ear Tag',
 			'sire_ear_notch' => 'Sire Ear Notch',
 			'sow_parity' => 'Sow Parity',
 			'farrowed_date'=> 'Farrowed Date',
@@ -125,6 +130,15 @@ class Litters extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+
+		$criteria->select = "*, (select ear_tag from herd where ear_notch = sow_ear_notch) as sow_ear_tag,
+		(select ear_tag from herd where ear_notch = sire_ear_notch) as sire_ear_tag ";
+		if(!empty($this->sow_ear_tag)){
+			$criteria->addCondition('sow_ear_notch in (select ear_notch from herd where ear_tag like "%'.$this->sow_ear_tag.'%")');
+		}
+		if(!empty($this->sire_ear_tag)){
+			$criteria->addCondition('sire_ear_notch in (select ear_notch from herd where ear_tag like "%'.$this->sire_ear_tag.'%")');
+		}
 		$criteria->compare('litters_id',$this->litters_id);
 		$criteria->compare('sire_ear_notch',$this->sire_ear_notch,true);
 		$criteria->compare('sow_ear_notch',$this->sow_ear_notch,true);
@@ -153,7 +167,14 @@ class Litters extends CActiveRecord
 			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'Litters_sort'=>$Litters_sort)),
 			'sort'=>array(
 						'defaultOrder'=>"STR_TO_DATE( farrowed_date, '%m/%d/%Y' ) DESC" ,
-						'params'=>array('pages'=>$pages)
+						'params'=>array('pages'=>$pages),
+						'attributes'=>array(
+							'sow_ear_tag'=>array(
+									'asc'=>'sow_ear_tag',
+									'desc'=>'sow_ear_tag DESC',
+							),
+							'*',
+						),
 			),
 		));
 	}
@@ -167,6 +188,16 @@ class Litters extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+
+		$criteria->select = "*, (select ear_tag from herd where ear_notch = sow_ear_notch) as sow_ear_tag,
+		(select ear_tag from herd where ear_notch = sire_ear_notch) as sire_ear_tag ";
+
+		if(!empty($this->sow_ear_tag)){
+			$criteria->addCondition('sow_ear_notch in (select ear_notch from herd where ear_tag like "%'.$this->sow_ear_tag.'%")');
+		}
+		if(!empty($this->sire_ear_tag)){
+			$criteria->addCondition('sire_ear_notch in (select ear_notch from herd where ear_tag like "%'.$this->sire_ear_tag.'%")');
+		}
 
 		$criteria->compare('sow_gilts_id',$this->sow_gilts_id);
 		$criteria->compare('date_bred',$this->date_bred,true);
