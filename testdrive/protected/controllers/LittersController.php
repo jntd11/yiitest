@@ -213,7 +213,7 @@ class LittersController extends Controller
 	public function actionUpdateLitter($id)
 	{
 		$model=$this->loadModel($id);
-		
+
         $desc = array();
 		if($model===null) {
 			$model=new Litters;
@@ -336,7 +336,7 @@ class LittersController extends Controller
 		}
 		$sort = new CSort();
 		$sort->attributes  = array(
-				'desc'=>'due_date'
+				'desc'=>'STR_TO_DATE( due_date, "%m/%d/%Y")'
 		);
 		$this->render('admin',array(
 				'model'=>$model,
@@ -356,7 +356,7 @@ class LittersController extends Controller
 			$model->attributes=$_GET['Litters'];
 		$sort = new CSort();
 		$sort->attributes  = array(
-				'desc'=>'due_date'
+				'desc'=>'STR_TO_DATE( farrowed_date, "%m/%d/%Y")'
 		);
 		$this->render('admin-wean',array(
 				'model'=>$model,

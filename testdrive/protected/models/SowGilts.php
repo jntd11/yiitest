@@ -147,7 +147,8 @@ class SowGilts extends CActiveRecord
 		$criteria->compare('farrowed',$this->farrowed,true);
 		$criteria->compare('date_modified',$this->date_modified,true);
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
-		$SowGilts_sort = isset($_REQUEST['SowGilts_sort'])?$_REQUEST['SowGilts_sort']:($hogtag == 'T')?'sow_ear_tag desc':" STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC ";
+		$SowGilts_sort = isset($_REQUEST['SowGilts_sort'])?$_REQUEST['SowGilts_sort']:"STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC ";
+
 		$farmHerd = Yii::app()->request->cookies['farm_herd'];
 		$criteria->compare('sow_ear_notch',$farmHerd,true);
 
@@ -166,6 +167,10 @@ class SowGilts extends CActiveRecord
 								'sire_ear_tag'=>array(
 										'asc'=>'sire_ear_tag',
 										'desc'=>'sire_ear_tag DESC',
+								),
+								'due_date'=>array(
+										'asc'=>"STR_TO_DATE( due_date, '%m/%d/%Y')",
+										'desc'=>"STR_TO_DATE( due_date, '%m/%d/%Y') DESC",
 								),
 								'*',
 						),

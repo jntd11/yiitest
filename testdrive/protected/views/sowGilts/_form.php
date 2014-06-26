@@ -44,7 +44,7 @@ if($herdmark != "")
 		<?php echo $form->error($model,'sire_ear_notch'); ?>
 		<?php if($hogtag == 'T') {?>
 		<label>Sow Ear Tag </label>
-		<input type="text" name="sow_ear_tag" id="sow_ear_tag" onBlur="getEarnotch(this,'earnotch','born');">
+		<input type="text" name="sow_ear_tag" id="sow_ear_tag" onChange="getEarnotch(this,'earnotch','born');" onBlur="$('#born').focus();" value="<?php echo $model->sow_ear_tag; ?>">
 		<?php } ?>
 	</div>
 
@@ -92,7 +92,7 @@ if($herdmark != "")
 		<?php echo $form->error($model,'sire_ear_notch'); ?>
 		<?php if($hogtag == 'T') {?>
 		<label>Sire Ear Tag </label>
-		<input type="text" name="sire_ear_tag" id="sire_ear_tag" onBlur="getEarnotch(this,'sirenotch','SowGilts_service_type');">
+		<input type="text" name="sire_ear_tag" id="sire_ear_tag" onChange="getEarnotch(this,'sirenotch','SowGilts_service_type');" onBlur="$('#SowGilts_service_type').focus();" value="<?php echo $model->sire_ear_tag; ?>">
 		<?php } ?>
 	</div>
 

@@ -173,6 +173,14 @@ class Litters extends CActiveRecord
 									'asc'=>'sow_ear_tag',
 									'desc'=>'sow_ear_tag DESC',
 							),
+							'farrowed_date'=>array(
+										'asc'=>"STR_TO_DATE( farrowed_date, '%m/%d/%Y')",
+										'desc'=>"STR_TO_DATE( farrowed_date, '%m/%d/%Y') DESC",
+							),
+								'due_date'=>array(
+										'asc'=>"STR_TO_DATE( due_date, '%m/%d/%Y')",
+										'desc'=>"STR_TO_DATE( due_date, '%m/%d/%Y') DESC",
+								),
 							'*',
 						),
 			),

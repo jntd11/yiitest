@@ -199,8 +199,8 @@ function nextHerd(isNext,url){
 			  }else{
 				  var x = location.origin;
 				  var path = location.pathname;
-				  
-				  window.location.href= x+path+'?'+url;
+				  //window.location.href= x+path+'?'+url;
+				  window.location.href= 'index.php?'+url;
 				  $("#redisplay").click();
 			  }
 		  }
