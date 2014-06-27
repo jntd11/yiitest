@@ -58,7 +58,7 @@ class SowBoar extends CActiveRecord
 			array('ear_notch, sow_boar_name', 'required'),
 			array('no_pigs, weight_21, last_parity, days', 'numerical', 'integerOnly'=>true),
 			array('back_fat, loinneye, EBV', 'numerical'),
-			array('ear_notch, ear_tag, registeration_no, sire_notch, dam_notch, bred_date, sold_mmddyy, reason_sold, offspring_name', 'length', 'max'=>20),
+			array('ear_notch, ear_tag, registeration_no, sire_notch, dam_notch, bred_date, sold_mmddyy, reason_sold, offspring_name', 'length', 'max'=>25),
 			array('sow_boar_name', 'length', 'max'=>30),
 			array('sire_initials', 'length', 'max'=>2),
 			array('ear_notch','validateEarNotch'),
@@ -74,7 +74,7 @@ class SowBoar extends CActiveRecord
 		//$farmHerd = Yii::app()->request->cookies['farm_herd']." ";
 		$patt1 = '/[-.]/';
 		$patt2 = '/^([0-9][A-Z])/';
-	    $pattern = '/^([0-9][A-Z]) *[a-z]+ *[0-9]+[ SFsf][0-9]+[-.][0-9]+$/i';
+	    $pattern = '/^([0-9][A-Z]) *[a-z]+ *[0-9]+[ SFsf][0-9 ]+[-.][0-9 ]+$/i';
 	    $herds = $this->getHerd();
 	    if(preg_match($patt1, $this->$attribute) && !preg_match($pattern, $this->$attribute,$matches)){
 	       $this->addError($attribute, 'Sow/Boar Ear Notch is not in correct format!'.$this->$attribute);

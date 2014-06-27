@@ -55,7 +55,7 @@ class SowGilts extends CActiveRecord
 		return array(
 			array('sow_ear_notch, date_bred, sire_ear_notch, passover_date, due_date, days_between, settled, farrowed', 'required'),
 			array('date_bred, passover_date, due_date, days_between', 'length', 'max'=>10),
-			array('sire_ear_notch, sow_ear_notch', 'length', 'max'=>20),
+			array('sire_ear_notch, sow_ear_notch', 'length', 'max'=>25),
 			array('service_type, misc', 'length', 'max'=>5),
 			array('settled, farrowed', 'length', 'max'=>1),
 			array('comments', 'length', 'max'=>2000),

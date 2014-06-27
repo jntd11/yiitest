@@ -39,6 +39,10 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 			?>
 		<?php echo $form->error($model,'hog_ear_notch'); ?>
 		<?php echo $form->hiddenField($model, 'ear_notch_id',array('id'=>'ear_notch_id')); ?>
+		<?php if($hogtag == 'T') {?>
+		<label>Hog Ear Tag </label>
+		<input type="text" name="hog_ear_tag" id="hog_ear_tag" onChange="getEarnotch(this,'earnotch','TblSoldHogs_customer_name');" onBlur="$('#TblSoldHogs_customer_name').focus();" value="<?php echo $model->hog_ear_tag; ?>">
+		<?php } ?>
 	</div>
 	<div class="row">
 	<?php echo $form->labelEx($model,'customer_name'); ?>

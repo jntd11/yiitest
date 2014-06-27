@@ -93,7 +93,7 @@ class LittersController extends Controller
 		$modelSowgilts = SowGilts::model()->findByPk($id);
 		if($modelSowgilts===null)
 			throw new CHttpException(404,'The requested page does not exist.');
-		$sql = "select * from herd where replace(ear_notch,' ','') = '".str_replace(" ","",$this->calculateYear($modelSowgilts->sire_ear_notch)."'");
+		$sql = "select * from herd where ear_notch = '".$this->calculateYear($modelSowgilts->sire_ear_notch)."'";
 		$sireeartag = SowBoar::model()->findBySql($sql);
 
 		$modelSowgilts->sire_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $modelSowgilts->sire_ear_notch);
@@ -126,8 +126,8 @@ class LittersController extends Controller
 		if($sireeartag)
 			$model->sire_ear_tag = $sireeartag->ear_tag;
 
-		$modelSowgilts->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $modelSowgilts->sow_ear_notch);
-		$modelSowgilts->sire_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $modelSowgilts->sire_ear_notch);
+		//$modelSowgilts->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $modelSowgilts->sow_ear_notch);
+		//$modelSowgilts->sire_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $modelSowgilts->sire_ear_notch);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -139,7 +139,7 @@ class LittersController extends Controller
 			if($model->save()) {
 
 				if(isset($_POST['sire_ear_tag']) && !empty($_POST['sire_ear_tag'])) {
-					$sql = "UPDATE herd SET ear_tag = '".$_POST['sire_ear_tag']."' WHERE replace(ear_notch,' ','') = '".str_replace(" ", "", $this->calculateYear($model->sire_ear_notch))."'";
+					$sql = "UPDATE herd SET ear_tag = '".$_POST['sire_ear_tag']."' WHERE ear_notch = '".$this->calculateYear($model->sire_ear_notch)."'";
 					$cmd = Yii::app()->db->createCommand($sql);
 					$cmd->query();
 				}
@@ -243,7 +243,13 @@ class LittersController extends Controller
      		 }
      		}
 		}
-		$model->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sow_ear_notch);
+		$sql = "select * from herd where ear_notch = '".$this->calculateYear($model->sow_ear_notch)."'";
+		$sireeartag = SowBoar::model()->findBySql($sql);
+		if($sireeartag)
+			$model->sire_ear_tag = $sireeartag->ear_tag;
+
+		$model->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1$2", $model->sow_ear_notch);
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

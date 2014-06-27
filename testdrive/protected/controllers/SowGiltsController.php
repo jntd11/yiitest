@@ -81,13 +81,13 @@ class SowGiltsController extends Controller
 			$res =$command->queryAll();
 
 			if(isset($_POST['sire_ear_tag']) && !empty($_POST['sire_ear_tag'])) {
-				$sql = "UPDATE herd SET ear_tag = '".$_POST['sire_ear_tag']."' WHERE replace(ear_notch,' ','') = '".str_replace(" ", "", $this->calculateYear($model->sire_ear_notch))."'";
+				$sql = "UPDATE herd SET ear_tag = '".$_POST['sire_ear_tag']."' WHERE ear_notch = '".$this->calculateYear($model->sire_ear_notch)."'";
 				$cmd = Yii::app()->db->createCommand($sql);
 				$cmd->query();
 			}
 
 			if(isset($_POST['sow_ear_tag']) && !empty($_POST['sow_ear_tag'])) {
-				$sql = "UPDATE herd SET ear_tag = '".$_POST['sow_ear_tag']."' WHERE replace(ear_notch,' ','') =  '".str_replace(" ", "", $this->calculateYear($model->sow_ear_notch))."'";
+				$sql = "UPDATE herd SET ear_tag = '".$_POST['sow_ear_tag']."' WHERE ear_notch=  '".$this->calculateYear($model->sow_ear_notch)."'";
 				$cmd = Yii::app()->db->createCommand($sql);
 				$cmd->query();
 			}
@@ -140,15 +140,15 @@ class SowGiltsController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		$soweartag = SowBoar::model()->findBySql("select * from herd where replace(ear_notch,' ','') = '".str_replace(" ","",$this->calculateYear($model->sow_ear_notch)."'"));
-		$sireeartag = SowBoar::model()->findBySql("select * from herd where replace(ear_notch,' ','') = '".str_replace(" ","",$this->calculateYear($model->sire_ear_notch)."'"));
+		$soweartag = SowBoar::model()->findBySql("select * from herd where ear_notch = '".$this->calculateYear($model->sow_ear_notch)."'");
+		$sireeartag = SowBoar::model()->findBySql("select * from herd where ear_notch = '".$this->calculateYear($model->sire_ear_notch)."'");
 
 
 		$model->sow_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->sow_ear_notch);
 		$model->sire_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->sire_ear_notch);
 
-		$model->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sow_ear_notch);
-		$model->sire_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sire_ear_notch);
+		//$model->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sow_ear_notch);
+		//$model->sire_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sire_ear_notch);
 		if($soweartag)
 			$model->sow_ear_tag = $soweartag->ear_tag;
 		if($sireeartag)
@@ -164,13 +164,13 @@ class SowGiltsController extends Controller
 			$model->attributes=$_POST['SowGilts'];
 			$autoChoresModel = new AutoChores();
 			if(isset($_POST['sire_ear_tag']) && !empty($_POST['sire_ear_tag'])) {
-				$sql = "UPDATE herd SET ear_tag = '".$_POST['sire_ear_tag']."' WHERE replace(ear_notch,' ','') = '".str_replace(" ", "", $this->calculateYear($model->sire_ear_notch))."'";
+				$sql = "UPDATE herd SET ear_tag = '".$_POST['sire_ear_tag']."' WHERE ear_notch = '".$this->calculateYear($model->sire_ear_notch)."'";
 				$cmd = Yii::app()->db->createCommand($sql);
 				$cmd->query();
 			}
 
 			if(isset($_POST['sow_ear_tag']) && !empty($_POST['sow_ear_tag'])) {
-				$sql = "UPDATE herd SET ear_tag = '".$_POST['sow_ear_tag']."' WHERE replace(ear_notch,' ','') =  '".str_replace(" ", "", $this->calculateYear($model->sow_ear_notch))."'";
+				$sql = "UPDATE herd SET ear_tag = '".$_POST['sow_ear_tag']."' WHERE ear_notch =  '".$this->calculateYear($model->sow_ear_notch)."'";
 				$cmd = Yii::app()->db->createCommand($sql);
 				$cmd->query();
 			}

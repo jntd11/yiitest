@@ -6,6 +6,7 @@ $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
+$hogtag = Yii::app()->request->cookies['hog_tag'];
 if($model->weaned_date == "")
 	if($model->weighted_date != "")
 		$weaned_date = $model->weighted_date;
@@ -37,6 +38,10 @@ if($herdmark != "")
 		echo $form->hiddenField($model,'sow_ear_notch',array('value'=>$model->sow_ear_notch));
 		 ?>
 		<?php echo $model->sow_ear_notch; ?>
+		<?php if($hogtag == 'T') {?>
+		<label>Sire Ear Tag </label>
+		<?php echo $model->sow_ear_tag; ?>
+		<?php } ?>
 	</div>
 
 

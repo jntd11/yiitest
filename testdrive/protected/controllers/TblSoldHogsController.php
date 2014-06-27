@@ -120,8 +120,12 @@ class TblSoldHogsController extends RController
 	{
 		$model=$this->loadModel($id);
 		$model->hog_ear_notch = trim($model->hog_ear_notch);
+		$sql = "select * from herd where ear_notch = '".$this->calculateYear($model->hog_ear_notch)."'";
+		$sireeartag = SowBoar::model()->findBySql($sql);
+		if($sireeartag)
+			$model->hog_ear_tag = $sireeartag->ear_tag;
 		$model->hog_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->hog_ear_notch);
-		$model->hog_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->hog_ear_notch);
+		//$model->hog_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->hog_ear_notch);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -142,6 +146,11 @@ class TblSoldHogsController extends RController
 			//echo $model->date_sold = date("Y-m-d",strtotime($model->date_sold));
 			//exit;
 			if($model->save()) {
+				if(isset($_POST['hog_ear_tag']) && !empty($_POST['hog_ear_tag'])) {
+					$sql = "UPDATE herd SET ear_tag = '".$_POST['hog_ear_tag']."' WHERE ear_notch = '".$this->calculateYear($model->hog_ear_notch)."'";
+					$cmd = Yii::app()->db->createCommand($sql);
+					$cmd->query();
+				}
 				$modelSowBoars = SowBoar::model()->findByPk($model->ear_notch_id);
 				if($modelSowBoars != null) {
 					$modelSowBoars->reason_sold = $model->reason_sold;

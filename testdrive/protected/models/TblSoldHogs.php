@@ -22,6 +22,7 @@
 class TblSoldHogs extends CActiveRecord
 {
 	public $hog_ear_tag;
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -50,7 +51,7 @@ class TblSoldHogs extends CActiveRecord
 		return array(
 			array('hog_ear_notch, customer_name, date_sold, sold_price, app_xfer', 'required'),
 			array('sold_price, invoice_number', 'numerical', 'integerOnly'=>true),
-			array('hog_ear_notch, date_sold', 'length', 'max'=>20),
+			array('hog_ear_notch, date_sold', 'length', 'max'=>25),
 			array('customer_name', 'length', 'max'=>50),
 			array('sale_type, app_xfer', 'length', 'max'=>1),
 			array('invoice_number', 'length', 'max'=>6),
@@ -66,7 +67,7 @@ class TblSoldHogs extends CActiveRecord
 	{
 		$patt1 = '/[-.]/';
 		$patt2 = '/^([0-9][A-Z])/';
-		$pattern = '/^([0-9][A-Z]) *[a-z]+ *[0-9]+[ SFsf][0-9]+[-.][0-9]+$/i';
+		$pattern = '/^([0-9][A-Z]) *[a-z]+ *[0-9]+[ SFsf]+[0-9 ]+[-.][0-9 ]+$/i';
 		$herds = $this->getHerd();
 		if(preg_match($patt1, $this->$attribute) && !preg_match($pattern, $this->$attribute,$matches)){
 			$this->addError($attribute, 'Sow/Boar Ear Notch is not in correct format!'.$this->$attribute);
