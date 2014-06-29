@@ -28,7 +28,10 @@
  */
 class SowBoar extends CActiveRecord
 {
+	public $dam_ear_tag;
 	public $sire_ear_tag;
+	public $ear_notch;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -58,14 +61,18 @@ class SowBoar extends CActiveRecord
 			array('ear_notch, sow_boar_name', 'required'),
 			array('no_pigs, weight_21, last_parity, days', 'numerical', 'integerOnly'=>true),
 			array('back_fat, loinneye, EBV', 'numerical'),
-			array('ear_notch, ear_tag, registeration_no, sire_notch, dam_notch, bred_date, sold_mmddyy, reason_sold, offspring_name', 'length', 'max'=>25),
+			array('ear_notch, ear_tag, registeration_no, sire_notch, dam_notch, bred_date,
+					 sold_mmddyy, reason_sold, offspring_name', 'length', 'max'=>25),
 			array('sow_boar_name', 'length', 'max'=>30),
 			array('sire_initials', 'length', 'max'=>2),
 			array('ear_notch','validateEarNotch'),
 			array('born', 'date', 'format'=>array('m/d/y','mm/dd/yy','mm/dd/yyyy','m/dd/yy','mm/d/yy','m/d/yyyy','yyyy/dd/mm')),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ear_notch, sow_boar_name, sow_boar_id, registeration_no, born, no_pigs, weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, offspring_name, back_fat, loinneye, days, EBV, sire_initials, comments, date_modified, sire_ear_tag', 'safe', 'on'=>'search'),
+			array('ear_notch, sow_boar_name, sow_boar_id, registeration_no, born, no_pigs, 
+					weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, 
+					offspring_name, back_fat, loinneye, days, EBV, sire_initials, comments, date_modified,
+					 sire_ear_tag, dam_ear_tag', 'safe', 'on'=>'search'),
 		);
 	}
 

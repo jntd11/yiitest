@@ -116,7 +116,19 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 		      	echo $form->textField($model,'sire_notch',array('size'=>20,'onFocus'=>'setDefault("'.$farmHerd.' '.$herdmark.'",this);','maxlength'=>20,'onBlur'=>'searchSireDam(this.value,\'sirename\')','id'=>'sire_notch','tabindex'=>7));
 		?>
 		<?php echo $form->error($model,'sire_notch'); ?>
-	</div></td><td id="sirename" style="color: red; "></td></tr>
+	</div><span id="sirename" style="color: red; "></span></td><td><div class="row">
+		<?php echo $form->labelEx($model,'sire_ear_tag'); ?>
+		<?php
+			 if(count($model->errors)){
+			 	echo $form->textField($model,'sire_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  }else if($model->isNewRecord) {
+				echo $form->textField($model,'sire_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  }else{
+			  	echo $form->textField($model,'sire_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  }
+			  ?>
+		<?php echo $form->error($model,'sire_ear_tag'); ?>
+	</div></td></tr>
 
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'dam_notch'); ?>
@@ -126,7 +138,19 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 			  	echo $form->textField($model,'dam_notch',array('size'=>20,'onFocus'=>'setDefault("'.$farmHerd.' '.$herdmark.'",this);','maxlength'=>20,'onBlur'=>'searchSireDam(this.value,\'damname\')','id'=>'dam_notch','tabindex'=>8));
 		?>
 		<?php echo $form->error($model,'dam_notch'); ?>
-	</div></td><td id="damname" style="color: red; "></td></tr>
+	</div><span id="damname" style="color: red; "></span></td><td><div class="row">
+		<?php echo $form->labelEx($model,'dam_ear_tag'); ?>
+		<?php
+			 if(count($model->errors)){
+			 	echo $form->textField($model,'dam_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  }else if($model->isNewRecord) {
+				echo $form->textField($model,'dam_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  }else{
+			  	echo $form->textField($model,'dam_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  }
+			  ?>
+		<?php echo $form->error($model,'dam_ear_tag'); ?>
+	</div></td></tr>
 
 	<tr><td><div class="row">
 		<?php echo $form->labelEx($model,'bred_date'); ?>

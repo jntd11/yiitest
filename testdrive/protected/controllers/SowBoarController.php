@@ -181,10 +181,22 @@ class SowBoarController extends RController
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		
+		$sql = "select * from herd where ear_notch = '".$this->calculateYear($model->sire_notch,3)."'";
+		$sireeartag = SowBoar::model()->findBySql($sql);
+	
+		$sql = "select * from herd where ear_notch = '".$this->calculateYear($model->dam_notch,3)."'";
+		$dameartag = SowBoar::model()->findBySql($sql);
+		
+		$model->ear_notch = $this->ChangeNotch($model->ear_notch);
+		$model->dam_notch = $this->ChangeNotch($model->dam_notch);
+		$model->sire_notch = $this->ChangeNotch($model->sire_notch);
+		
 		//$ear_notch_array =  preg_split("/ /", $model->ear_notch);
 		//$ear_notch_array[2] = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1", $ear_notch_array[2]);
 		//$model->ear_notch = implode(" ", $ear_notch_array);
 		$model->ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->ear_notch);
+		
 
 		$model->dam_notch = trim($model->dam_notch);
 		$model->ear_notch = trim($model->ear_notch);
@@ -192,7 +204,13 @@ class SowBoarController extends RController
 		$model->dam_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->dam_notch);
 		$model->ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->ear_notch);
 		$model->sire_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sire_notch);
+		if($dameartag)
+			$model->dam_ear_tag = $dameartag->ear_tag;
+		if($sireeartag)
+			$model->sire_ear_tag = $sireeartag->ear_tag;
 
+		
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -312,7 +330,10 @@ class SowBoarController extends RController
 	}
 
 	public function calculateYear($date,$type=1){
-
+			if($type != 3) {
+				$date = preg_replace("/[ ]+/", " ", $date);
+				$date = preg_replace("/\- /", "-", $date);
+			}
 			$ear_notch_array =  preg_split("/ /", $date);
 
 			$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
@@ -379,9 +400,10 @@ class SowBoarController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
+			$term = preg_replace("/^([0-9][A-Z])([ ])/i", "$1",$_GET['term']);
 			 $qtxt ="SELECT ear_notch FROM  herd WHERE ear_notch LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
-			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 		}
 		echo CJSON::encode($res);
@@ -589,7 +611,7 @@ class SowBoarController extends RController
 	}
 	public function actioncheckEarTag($id){
 		$res =array();
-		if (isset($_GET['tag'])) {
+		if (isset($_GET['tag']) && !empty($_GET['tag'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
 			$qtxt ="SELECT ear_notch FROM  herd WHERE ear_tag LIKE :username and sow_boar_id <> ".$id;
 			$command =Yii::app()->db->createCommand($qtxt);
@@ -615,6 +637,16 @@ class SowBoarController extends RController
 		else
 			echo 0;
 		Yii::app()->end();
+	}
+	
+	/*
+	 * Common function to format Notch fields
+	 */
+	static public function ChangeNotch($notch) {
+		$notch = preg_replace("/[ ]+/", " ", $notch);
+		$notch = preg_replace("/\- /", "-", $notch);
+		return $notch;
+		
 	}
 
 }
