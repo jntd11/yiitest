@@ -429,9 +429,9 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT sow_ear_notch FROM  breeding WHERE sow_ear_notch LIKE :username";
+			$qtxt ="SELECT sow_ear_notch FROM  breeding WHERE replace(sow_ear_notch, ' ','') LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
-			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$command->bindValue(":username", '%'.str_replace(" ","",$_GET['term']).'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 		}
 		echo CJSON::encode($res);
@@ -455,9 +455,9 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT sire_ear_notch	 FROM  breeding WHERE sire_ear_notch	 LIKE :username";
+			$qtxt ="SELECT sire_ear_notch	 FROM  breeding WHERE replace(sire_ear_notch,' ','')	 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
-			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$command->bindValue(":username", '%'.str_replace(" ", "", $_GET['term']).'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 		}
 		echo CJSON::encode($res);

@@ -182,10 +182,10 @@ class SowBoarController extends RController
 	{
 		$model=$this->loadModel($id);
 
-		$sql = "select * from herd where ear_notch = '".$this->calculateYear($model->sire_notch,3)."'";
+		$sql = "select *,ear_tag as test from herd where replace(ear_notch,' ','') = '".str_replace(" ","",$this->calculateYear($model->sire_notch))."'";
 		$sireeartag = SowBoar::model()->findBySql($sql);
 
-		$sql = "select * from herd where ear_notch = '".$this->calculateYear($model->dam_notch,3)."'";
+		$sql = "select * from herd where ear_notch = '".$this->calculateYear($model->dam_notch)."'";
 		$dameartag = SowBoar::model()->findBySql($sql);
 
 		$model->ear_notch = $this->ChangeNotch($model->ear_notch);
@@ -208,8 +208,6 @@ class SowBoarController extends RController
 			$model->dam_ear_tag = $dameartag->ear_tag;
 		if($sireeartag)
 			$model->sire_ear_tag = $sireeartag->ear_tag;
-
-
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -330,7 +328,6 @@ class SowBoarController extends RController
 	}
 
 	public function calculateYear($date,$type=1){
-		return $date;
 			$ear_notch_array =  preg_split("/ /", $date);
 
 			$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
