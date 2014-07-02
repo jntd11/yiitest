@@ -396,7 +396,7 @@ class SowBoarController extends RController
 			// http://www.yiiframework.com/doc/guide/database.dao
 			//$term = preg_replace("/^([0-9][A-Z])([ ])/i", "$1",$_GET['term']);
 			$term = $_GET['term'];
-			$qtxt ="SELECT ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username";
+			$qtxt ="SELECT ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username AND ear_notch like '".Yii::app()->request->cookies['farm_herd']."%'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", '%'.str_replace(" ","",$term).'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();

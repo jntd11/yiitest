@@ -130,6 +130,8 @@ class LittersController extends Controller
 		//$modelSowgilts->sire_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $modelSowgilts->sire_ear_notch);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		$modelSowgilts->sire_ear_notch = $this->ChangeNotch($modelSowgilts->sire_ear_notch);
+
 
 		if(isset($_POST['Litters']))
 		{
@@ -249,6 +251,7 @@ class LittersController extends Controller
 			$model->sire_ear_tag = $sireeartag->ear_tag;
 
 		$model->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1$2", $model->sow_ear_notch);
+		$model->sire_ear_notch = $this->ChangeNotch($model->sire_ear_notch);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -346,15 +349,6 @@ class LittersController extends Controller
 		if(isset($_GET['SowGilts']))
 			$model->attributes=$_GET['SowGilts'];
 
-		if(strpos($model->sow_ear_notch,"+") !== false) {
-			 $model->sow_ear_notch = str_replace("+", "", $model->sow_ear_notch);
-			 $qtxt ="SELECT ear_notch FROM  herd WHERE ear_tag LIKE :ear_notch";
-			$command =Yii::app()->db->createCommand($qtxt);
-			$command->bindValue(":ear_notch", '%'.$model->sow_ear_notch.'%', PDO::PARAM_STR);
-			$res =$command->queryColumn();
-			if(isset($res[0]))
-				$model->sow_ear_notch = $res[0];
-		}
 		$sort = new CSort();
 		$sort->attributes  = array(
 				'desc'=>'STR_TO_DATE( due_date, "%m/%d/%Y")'
@@ -417,9 +411,9 @@ class LittersController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT distinct sow_ear_notch FROM  litters WHERE sow_ear_notch LIKE :username";
+			$qtxt ="SELECT distinct sow_ear_notch FROM  litters WHERE replace(sow_ear_notch,' ','') LIKE :username AND sow_ear_notch like '".Yii::app()->request->cookies['farm_herd']."%'";
 			$command =Yii::app()->db->createCommand($qtxt);
-			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$command->bindValue(":username", '%'.str_replace(" ","",$_GET['term']).'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 		}
 		echo CJSON::encode($res);
@@ -570,5 +564,10 @@ class LittersController extends Controller
 		//return implode($ear_notch_array, " ");
 	}
 
+	public function ChangeNotch($notch) {
+		$notch = preg_replace("/[ ]+/", " ", $notch);
+		$notch = preg_replace("/\- /", "-", $notch);
+		return $notch;
 
+	}
 }
