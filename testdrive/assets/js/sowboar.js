@@ -349,11 +349,11 @@ function validateDate(val){
 function validateForm(){
 	return validateDate($("#born").val());
 }
-function checkeartag(val,id){
+function checkeartag(val,id,type){
 	$.ajax({
 		url: encodeURI('index.php?r=sowBoar/checkEarTag'),
 		type: "GET",
-		data: {id:id,tag:val}
+		data: {id:id,tag:val,type:type}
 	}).done(function(data){
 		if(data != 0 && data != $("#earnotch").val()) {
 			$("#alertdialog").dialog({

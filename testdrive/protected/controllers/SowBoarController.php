@@ -217,26 +217,38 @@ class SowBoarController extends RController
 		if(isset($_POST['SowBoar']))
 		{
 			$model->attributes=$_POST['SowBoar'];
-			$model->dam_notch = trim($model->dam_notch);
+			echo $model->dam_notch = trim($model->dam_notch);
 			$model->ear_notch = trim($model->ear_notch);
 			$model->sire_notch = trim($model->sire_notch);
+			
 			$model->born = $_POST['SowBoar']['born'];
 			$model->comments = $_POST['SowBoar']['comments'];
 			if($model->ear_notch != "")
 		 		$model->ear_notch = $this->calculateYear($model->ear_notch);
 		 	$model->sire_notch = str_replace(".", "-", $model->sire_notch);
 		 	$model->dam_notch = str_replace(".", "-", $model->dam_notch);
+		 	if(isset($_POST['SowBoar']['sire_ear_tag']) && !empty($_POST['SowBoar']['sire_ear_tag'])) {
+		 		$sql = "UPDATE herd SET ear_tag = '".$_POST['SowBoar']['sire_ear_tag']."' WHERE ear_notch = '".$this->calculateYear($model->sire_notch,3)."'";
+		 		$cmd = Yii::app()->db->createCommand($sql);
+		 		$cmd->query();
+		 	}
+		 	
+		 	if(isset($_POST['SowBoar']['dam_ear_tag']) && !empty($_POST['SowBoar']['dam_ear_tag'])) {
+		 		echo $sql = "UPDATE herd SET ear_tag = '".$_POST['SowBoar']['dam_ear_tag']."' WHERE ear_notch =  '".$this->calculateYear($model->dam_notch,3)."'";
+		 		$cmd = Yii::app()->db->createCommand($sql);
+		 		$cmd->query();
+		 	}
 		 	if($model->sire_notch != "")
 		 		$model->sire_notch = $this->calculateYear($model->sire_notch);
 		 	if($model->dam_notch != "")
 		 		$model->dam_notch = $this->calculateYear($model->dam_notch);
-
+		 	
 		 	if($model->ear_tag != "" ) {
-		 		$sql = "Update herd SET ear_tag = '' WHERE ear_tag = '".$model->ear_tag."'";
+		 		 $sql = "Update herd SET ear_tag = '' WHERE ear_tag = '".$model->ear_tag."'";
 		 		$cmd = YII::app()->db->createCommand($sql);
 		 		$cmd->query();
 		 	}
-
+exit;
 			if($model->save()){
 				if(isset($_POST['savenew']))
 					$this->redirect(array('create'));
@@ -614,6 +626,9 @@ class SowBoarController extends RController
 		if (isset($_GET['tag']) && !empty($_GET['tag'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
 			$qtxt ="SELECT ear_notch FROM  herd WHERE ear_tag LIKE :username and sow_boar_id <> ".$id;
+			if(isset($_GET['type']) && $_GET['type'] == 2)
+				$qtxt ="SELECT ear_notch FROM  herd WHERE ear_tag LIKE :username ";
+			
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", ''.$_GET['tag'].'', PDO::PARAM_STR);
 			$res =$command->queryColumn();

@@ -120,11 +120,11 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 		<?php echo $form->labelEx($model,'sire_ear_tag'); ?>
 		<?php
 			 if(count($model->errors)){
-			 	echo $form->textField($model,'sire_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+			 	echo $form->textField($model,'sire_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.',2)','id'=>'eartag','onkeyup'=>'caps(this)'));
 			  }else if($model->isNewRecord) {
-				echo $form->textField($model,'sire_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+				echo $form->textField($model,'sire_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.',2)','id'=>'eartag','onkeyup'=>'caps(this)'));
 			  }else{
-			  	echo $form->textField($model,'sire_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  	echo $form->textField($model,'sire_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.',2)','id'=>'eartag','onkeyup'=>'caps(this)'));
 			  }
 			  ?>
 		<?php echo $form->error($model,'sire_ear_tag'); ?>
@@ -142,11 +142,11 @@ $model->ear_notch = $this->calculateYear($model->ear_notch,2);
 		<?php echo $form->labelEx($model,'dam_ear_tag'); ?>
 		<?php
 			 if(count($model->errors)){
-			 	echo $form->textField($model,'dam_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+			 	echo $form->textField($model,'dam_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.',2)','id'=>'eartag','onkeyup'=>'caps(this)'));
 			  }else if($model->isNewRecord) {
-				echo $form->textField($model,'dam_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+				echo $form->textField($model,'dam_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.',2)','id'=>'eartag','onkeyup'=>'caps(this)'));
 			  }else{
-			  	echo $form->textField($model,'dam_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.')','id'=>'eartag','onkeyup'=>'caps(this)'));
+			  	echo $form->textField($model,'dam_ear_tag',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkeartag(this.value,'.$id.',2)','id'=>'eartag','onkeyup'=>'caps(this)'));
 			  }
 			  ?>
 		<?php echo $form->error($model,'dam_ear_tag'); ?>
