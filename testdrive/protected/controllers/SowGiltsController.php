@@ -167,14 +167,14 @@ class SowGiltsController extends Controller
 		    $orgDate = $model->date_bred;
 			$model->attributes=$_POST['SowGilts'];
 			$autoChoresModel = new AutoChores();
-			if(isset($_POST['sire_ear_tag']) && !empty($_POST['sire_ear_tag'])) {
-				$sql = "UPDATE herd SET ear_tag = '".$_POST['sire_ear_tag']."' WHERE ear_notch = '".$this->calculateYear($model->sire_ear_notch)."'";
+			if(isset($_POST['SowGilts']['sire_ear_tag']) && !empty($_POST['SowGilts']['sire_ear_tag'])) {
+				$sql = "UPDATE herd SET ear_tag = '".$_POST['SowGilts']['sire_ear_tag']."' WHERE ear_notch = '".$this->calculateYear($model->sire_ear_notch)."'";
 				$cmd = Yii::app()->db->createCommand($sql);
 				$cmd->query();
 			}
 
-			if(isset($_POST['sow_ear_tag']) && !empty($_POST['sow_ear_tag'])) {
-				$sql = "UPDATE herd SET ear_tag = '".$_POST['sow_ear_tag']."' WHERE ear_notch =  '".$this->calculateYear($model->sow_ear_notch)."'";
+			if(isset($_POST['SowGilts']['sow_ear_tag']) && !empty($_POST['SowGilts']['sow_ear_tag'])) {
+				$sql = "UPDATE herd SET ear_tag = '".$_POST['SowGilts']['sow_ear_tag']."' WHERE ear_notch =  '".$this->calculateYear($model->sow_ear_notch)."'";
 				$cmd = Yii::app()->db->createCommand($sql);
 				$cmd->query();
 			}
