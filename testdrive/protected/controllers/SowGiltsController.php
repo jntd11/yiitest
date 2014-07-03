@@ -147,6 +147,9 @@ class SowGiltsController extends Controller
 		$model->sow_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->sow_ear_notch);
 		$model->sire_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->sire_ear_notch);
 
+		$model->sow_ear_notch = $this->calculateYear($model->sow_ear_notch);
+		$model->sire_ear_notch = $this->calculateYear($model->sire_ear_notch);
+
 		//$model->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sow_ear_notch);
 		//$model->sire_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->sire_ear_notch);
 		if($soweartag)
@@ -566,6 +569,7 @@ class SowGiltsController extends Controller
 			$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
 			//Added for space if not present
 			$date = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $date);
+			$date = preg_replace("/\-[ ]+/i", "-", $date);
 			return $date;
 		}
 		//echo "$year <= $curr_year";

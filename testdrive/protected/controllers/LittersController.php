@@ -98,6 +98,9 @@ class LittersController extends Controller
 
 		$modelSowgilts->sire_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $modelSowgilts->sire_ear_notch);
 
+		$modelSowgilts->sire_ear_notch = $this->calculateYear($modelSowgilts->sire_ear_notch,2);
+		$modelSowgilts->sow_ear_notch = $this->calculateYear($modelSowgilts->sow_ear_notch,2);
+
 
 
 		$qtxt ="SELECT * FROM herd WHERE ear_notch = '".$modelSowgilts->sow_ear_notch."' AND bred_date = '".$modelSowgilts->date_bred."'";
@@ -539,6 +542,7 @@ class LittersController extends Controller
 			//return implode($ear_notch_array, " ");
 			$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
 			$date = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $date);
+			$date = preg_replace("/\-[ ]+/i", "-", $date);
 			return $date;
 		}
 		//echo "$year <= $curr_year";

@@ -192,10 +192,17 @@ class SowBoarController extends RController
 		$model->dam_notch = $this->ChangeNotch($model->dam_notch);
 		$model->sire_notch = $this->ChangeNotch($model->sire_notch);
 
+		$model->ear_notch = $this->calculateYear($model->ear_notch,2);
+		$model->dam_notch = $this->calculateYear($model->dam_notch,2);
+		$model->sire_notch = $this->calculateYear($model->sire_notch,2);
+
+
 		//$ear_notch_array =  preg_split("/ /", $model->ear_notch);
 		//$ear_notch_array[2] = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1", $ear_notch_array[2]);
 		//$model->ear_notch = implode(" ", $ear_notch_array);
 		$model->ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->ear_notch);
+		$model->dam_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->dam_notch);
+		$model->sire_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->sire_notch);
 
 
 		$model->dam_notch = trim($model->dam_notch);
@@ -365,6 +372,7 @@ class SowBoarController extends RController
 				//return implode($ear_notch_array, " ");
 				$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
 				$date = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $date);
+				$date = preg_replace("/\-[ ]+/i", "-", $date);
 				return $date;
 			}
 			//echo "$year <= $curr_year";

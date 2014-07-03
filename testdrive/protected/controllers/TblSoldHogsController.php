@@ -126,6 +126,7 @@ class TblSoldHogsController extends RController
 			$model->hog_ear_tag = $sireeartag->ear_tag;
 		$model->hog_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->hog_ear_notch);
 		$model->hog_ear_notch = $this->ChangeNotch($model->hog_ear_notch);
+		$model->hog_ear_notch = $this->calculateYear($model->hog_ear_notch,2);
 		//$model->hog_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->hog_ear_notch);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -530,6 +531,7 @@ class TblSoldHogsController extends RController
 			//return implode($ear_notch_array, " ");
 			$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
 			$date = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $date);
+			$date = preg_replace("/\-[ ]+/i", "-", $date);
 			return $date;
 		}
 		//echo "$year <= $curr_year";

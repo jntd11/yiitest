@@ -173,7 +173,7 @@ class SowBoar extends CActiveRecord
 		$hogtag = Yii::app()->request->cookies['hog_tag'];
 
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
-		$SowBoar_sort = isset($_REQUEST['SowBoar_sort'])?$_REQUEST['SowBoar_sort']:'ear_notch';
+		$SowBoar_sort = isset($_REQUEST['SowBoar_sort'])?$_REQUEST['SowBoar_sort']:'';
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'SowBoar_sort'=>$SowBoar_sort)),
