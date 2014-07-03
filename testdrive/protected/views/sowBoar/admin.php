@@ -62,7 +62,8 @@ echo " &nbsp;";
 echo CHtml::submitButton('Redisplay',array('onClick'=>''));
 $this->endWidget();
 $columns = array(
-		array('name'=>'ear_notch','value'=>'$this->grid->controller->calculateYear($data->ear_notch,2)'),
+		 array('name'=>'ear_notch','value'=>'$this->grid->controller->calculateYear($data->ear_notch,2)'),
+		//'ear_notch',
 		'sow_boar_name',
 		'registeration_no',
 		'born',
@@ -134,7 +135,7 @@ if(($hogtag == 'T')){
 	 'selectionChanged'=>'function(id){
 		 //location.href = "'.$this->createUrl('update').'/id/"+$.fn.yiiGridView.getSelection(id);
 	 }',
-		
+
 	'columns'=>$columns,
 ));
 

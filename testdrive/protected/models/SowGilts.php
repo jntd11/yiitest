@@ -132,11 +132,12 @@ class SowGilts extends CActiveRecord
 		if(!empty($this->sire_ear_tag)){
 			$criteria->addCondition('sire_ear_notch in (select ear_notch from herd where ear_tag like "%'.$this->sire_ear_tag.'%")');
 		}
+		echo $this->sow_ear_notch;
 		$hogtag = Yii::app()->request->cookies['hog_tag'];
 		$criteria->compare('sow_gilts_id',$this->sow_gilts_id);
 		$criteria->compare('date_bred',$this->date_bred,true);
-		$criteria->compare('sow_ear_notch',$this->sow_ear_notch,true);
-		$criteria->compare('sire_ear_notch',$this->sire_ear_notch,true);
+		$criteria->compare('replace(sow_ear_notch," ","")',str_replace(" ", "", $this->sow_ear_notch),true);
+		$criteria->compare('replace(sire_ear_notch," ","")',str_replace(" ", "",$this->sire_ear_notch),true);
 		$criteria->compare('service_type',$this->service_type,true);
 		$criteria->compare('misc',$this->misc,true);
 		$criteria->compare('comments',$this->comments,true);
@@ -148,7 +149,6 @@ class SowGilts extends CActiveRecord
 		$criteria->compare('date_modified',$this->date_modified,true);
 		$pages = (isset($_REQUEST['pages']))?$_REQUEST['pages']:20;
 		$SowGilts_sort = isset($_REQUEST['SowGilts_sort'])?$_REQUEST['SowGilts_sort']:"STR_TO_DATE( due_date, '%m/%d/%Y' ) DESC ";
-
 		$farmHerd = Yii::app()->request->cookies['farm_herd'];
 		$criteria->compare('sow_ear_notch',$farmHerd,true);
 

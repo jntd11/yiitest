@@ -130,7 +130,7 @@ class TblSoldHogs extends CActiveRecord
 		}
 
 		$criteria->compare('tbl_sold_hogs_id',$this->tbl_sold_hogs_id);
-		$criteria->compare('hog_ear_notch',$this->hog_ear_notch,true);
+		$criteria->compare('replace(hog_ear_notch, " ","")',str_replace(" "," ",$this->hog_ear_notch),true);
 		$criteria->compare('customer_name',$this->customer_name,true);
 		$criteria->compare('date_sold',$this->date_sold,true);
 		$criteria->compare('sold_price',$this->sold_price);
@@ -237,4 +237,11 @@ class TblSoldHogs extends CActiveRecord
 		}
 		return $total;
 	}
+	public function ChangeNotch($notch) {
+		$notch = preg_replace("/[ ]+/", " ", $notch);
+		$notch = preg_replace("/\- /", "-", $notch);
+		return $notch;
+
+	}
+
 }

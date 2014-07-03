@@ -31,7 +31,7 @@ class SowBoar extends CActiveRecord
 	public $dam_ear_tag;
 	public $sire_ear_tag;
 	public $ear_notch;
-	
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -69,10 +69,10 @@ class SowBoar extends CActiveRecord
 			array('born', 'date', 'format'=>array('m/d/y','mm/dd/yy','mm/dd/yyyy','m/dd/yy','mm/d/yy','m/d/yyyy','yyyy/dd/mm')),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ear_notch, sow_boar_name, sow_boar_id, registeration_no, born, no_pigs, 
-					weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold, 
+			array('ear_notch, sow_boar_name, sow_boar_id, registeration_no, born, no_pigs,
+					weight_21, sire_notch, dam_notch, bred_date, last_parity, sold_mmddyy, reason_sold,
 					offspring_name, back_fat, loinneye, days, EBV, sire_initials, comments, date_modified,
-					 sire_ear_tag, dam_ear_tag', 'safe', 'on'=>'search'),
+					 sire_ear_tag, dam_ear_tag,ear_tag', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -81,7 +81,7 @@ class SowBoar extends CActiveRecord
 		//$farmHerd = Yii::app()->request->cookies['farm_herd']." ";
 		$patt1 = '/[-.]/';
 		$patt2 = '/^([0-9][A-Z])/';
-	    $pattern = '/^([0-9][A-Z]) *[a-z]+ *[0-9]+[ SFsf][0-9 ]+[-.][0-9 ]+$/i';
+	    $pattern = '/^([0-9][A-Z]) *[0-9a-z]+[ ]+[0-9]+[ SFsf][0-9 ]+[-.][0-9 ]+$/i';
 	    $herds = $this->getHerd();
 	    if(preg_match($patt1, $this->$attribute) && !preg_match($pattern, $this->$attribute,$matches)){
 	       $this->addError($attribute, 'Sow/Boar Ear Notch is not in correct format!'.$this->$attribute);

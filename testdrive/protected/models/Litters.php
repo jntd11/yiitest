@@ -141,7 +141,7 @@ class Litters extends CActiveRecord
 		}
 		$criteria->compare('litters_id',$this->litters_id);
 		$criteria->compare('sire_ear_notch',$this->sire_ear_notch,true);
-		$criteria->compare('sow_ear_notch',$this->sow_ear_notch,true);
+		$criteria->compare('replace(sow_ear_notch," ","")',str_replace(" ", "", $this->sow_ear_notch),true);
 		$criteria->compare('sow_parity',$this->sow_parity);
 		$criteria->compare('times_settle',$this->times_settle);
 		$criteria->compare('herd_litter',$this->herd_litter);

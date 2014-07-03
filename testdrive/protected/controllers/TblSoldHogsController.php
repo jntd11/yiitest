@@ -125,6 +125,7 @@ class TblSoldHogsController extends RController
 		if($sireeartag)
 			$model->hog_ear_tag = $sireeartag->ear_tag;
 		$model->hog_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->hog_ear_notch);
+		$model->hog_ear_notch = $this->ChangeNotch($model->hog_ear_notch);
 		//$model->hog_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $model->hog_ear_notch);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -430,9 +431,9 @@ class TblSoldHogsController extends RController
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT hog_ear_notch FROM   sold_hogs WHERE hog_ear_notch LIKE :username";
+			$qtxt ="SELECT hog_ear_notch FROM   sold_hogs WHERE replace(hog_ear_notch,' ','') LIKE :username AND hog_ear_notch like '".Yii::app()->request->cookies['farm_herd']."%'";
 			$command =Yii::app()->db->createCommand($qtxt);
-			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$command->bindValue(":username", '%'.str_replace(" ","",$_GET['term']).'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 		}
 		echo CJSON::encode($res);
@@ -553,4 +554,11 @@ class TblSoldHogsController extends RController
 		return $date;
 		//return implode($ear_notch_array, " ");
 	}
+	public function ChangeNotch($notch) {
+		$notch = preg_replace("/[ ]+/", " ", $notch);
+		$notch = preg_replace("/\- /", "-", $notch);
+		return $notch;
+
+	}
+
 }

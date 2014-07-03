@@ -153,7 +153,8 @@ class SowGiltsController extends Controller
 			$model->sow_ear_tag = $soweartag->ear_tag;
 		if($sireeartag)
 			$model->sire_ear_tag = $sireeartag->ear_tag;
-
+		$model->sow_ear_notch = $this->ChangeNotch($model->sow_ear_notch);
+		$model->sire_ear_notch = $this->ChangeNotch($model->sire_ear_notch);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -304,7 +305,7 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date != 'BOAR'";
+			$qtxt ="SELECT ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date != 'BOAR'" ;
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
@@ -429,9 +430,9 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT sow_ear_notch FROM  breeding WHERE sow_ear_notch LIKE :username";
+			$qtxt ="SELECT sow_ear_notch FROM  breeding WHERE replace(sow_ear_notch, ' ','') LIKE :username AND sow_ear_notch like '".Yii::app()->request->cookies['farm_herd']."%'";
 			$command =Yii::app()->db->createCommand($qtxt);
-			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$command->bindValue(":username", '%'.str_replace(" ","",$_GET['term']).'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 		}
 		echo CJSON::encode($res);
@@ -455,9 +456,9 @@ class SowGiltsController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT sire_ear_notch	 FROM  breeding WHERE sire_ear_notch	 LIKE :username";
+			$qtxt ="SELECT sire_ear_notch	 FROM  breeding WHERE replace(sire_ear_notch,' ','')	 LIKE :username";
 			$command =Yii::app()->db->createCommand($qtxt);
-			$command->bindValue(":username", '%'.$_GET['term'].'%', PDO::PARAM_STR);
+			$command->bindValue(":username", '%'.str_replace(" ", "", $_GET['term']).'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
 		}
 		echo CJSON::encode($res);
@@ -588,6 +589,16 @@ class SowGiltsController extends Controller
 		$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
 		return $date;
 		//return implode($ear_notch_array, " ");
+	}
+
+	/*
+	 * Common function to format Notch fields
+	*/
+	public function ChangeNotch($notch) {
+		$notch = preg_replace("/[ ]+/", " ", $notch);
+		$notch = preg_replace("/\- /", "-", $notch);
+		return $notch;
+
 	}
 
 }
