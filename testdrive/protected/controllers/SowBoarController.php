@@ -253,7 +253,6 @@ class SowBoarController extends RController
 		 		$cmd = YII::app()->db->createCommand($sql);
 		 		$cmd->query();
 		 	}
-exit;
 			if($model->save()){
 				if(isset($_POST['savenew']))
 					$this->redirect(array('create'));
@@ -359,6 +358,7 @@ exit;
 					$date = preg_replace("/([0-9][0-9][0-9][0-9] )/", " $1", $date);
 					$ear_notch_array =  preg_split("/ /", $date);
 					$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
+					$ear_notch_array[2] = $matches[1];
 				}
 			} else {
 				$ear_notch_array[2] = $matches[1];

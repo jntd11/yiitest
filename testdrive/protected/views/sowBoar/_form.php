@@ -11,7 +11,7 @@ if($herdmark != "")
 	$herdmark = $herdmark." ";
 $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
 $herdmark = Yii::app()->request->cookies['hog_tag'];
-$model->ear_notch = $this->calculateYear($model->ear_notch,2);
+//$model->ear_notch = $this->calculateYear($model->ear_notch,2);
 ?>
 
 <div class="form">

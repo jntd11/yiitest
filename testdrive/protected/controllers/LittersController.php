@@ -255,7 +255,8 @@ class LittersController extends Controller
 
 		$model->sow_ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1$2", $model->sow_ear_notch);
 		$model->sire_ear_notch = $this->ChangeNotch($model->sire_ear_notch);
-
+		
+		$model->sow_ear_notch =  $this->calculateYear($model->sow_ear_notch,2);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
