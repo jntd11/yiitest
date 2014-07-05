@@ -6,8 +6,10 @@ if (isset($_GET['l']))
 	$levelshow = $_GET['l'];
 //print_r($model);
 $notch = "";
+
 if(isset($model[0]))
 	$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$model[0]['name']." $1 ".$model[0]['no'],$model[0]['notch']);
+echo $notch = $this->calculateYear($notch,2);
 ?>
 <input type="hidden" name="level0" id="level0" value="<?php echo (isset($model[0]))?$model[0]['id']:0; ?>" />
 <input type="hidden" name="sire" id="sire" value="<?php echo (isset($model[1]))?$model[1][1]['id']:0; ?>" />
@@ -64,6 +66,7 @@ if(isset($model[0]))
     $level[2] .= '</table>';
 if(isset($model[1]))
 	foreach ($model[1] as $key => $val) {
+print_r($val);
 		$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$val['name']." $1 ".$val['no'],$val['notch']);
 		$level[2] = str_replace("$".$key,$notch,$level[2]);
 	}

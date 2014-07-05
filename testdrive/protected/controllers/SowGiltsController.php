@@ -143,8 +143,8 @@ class SowGiltsController extends Controller
 		$soweartag = SowBoar::model()->findBySql("select * from herd where ear_notch = '".$this->calculateYear($model->sow_ear_notch)."'");
 		$sireeartag = SowBoar::model()->findBySql("select * from herd where ear_notch = '".$this->calculateYear($model->sire_ear_notch)."'");
 
-		$model->sow_ear_notch = $this->calculateYear($model->sow_ear_notch);
-		$model->sire_ear_notch = $this->calculateYear($model->sire_ear_notch);
+		$model->sow_ear_notch = $this->calculateYear($model->sow_ear_notch,2);
+		$model->sire_ear_notch = $this->calculateYear($model->sire_ear_notch,2);
 
 		$model->sow_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->sow_ear_notch);
 		$model->sire_ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $model->sire_ear_notch);

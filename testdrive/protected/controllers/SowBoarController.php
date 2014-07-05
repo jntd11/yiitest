@@ -347,7 +347,6 @@ class SowBoarController extends RController
 
 	public function calculateYear($date,$type=1){
 			$ear_notch_array =  preg_split("/ /", $date);
-
 			$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
 			$isPresent1 =  preg_match("/[0-9][0-9][0-9][0-9] /", $date);
 			if(!$isPresent){
@@ -374,6 +373,8 @@ class SowBoarController extends RController
 				$length = strlen($year);
 				//return $date;
 			}
+			if($length == 1) 
+				return $date;
 			if($type == 2){
 				if($year+10 > $curr_year && $year <= $curr_year){
 					$ear_notch_array[2] = $ear_notch_array[2] % 10;
@@ -494,6 +495,17 @@ class SowBoarController extends RController
 		$level = 0;
 		if(!isset($data1[0]))
 			return array();
+		
+		$data1[0]->ear_notch = $this->ChangeNotch($data1[0]->ear_notch);
+
+		$data1[0]->ear_notch = $this->calculateYear($data1[0]->ear_notch,2);
+	
+		$data1[0]->ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $data1[0]->ear_notch);
+
+		$data1[0]->ear_notch = trim($model->ear_notch);
+
+		$data1[0]->ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->ear_notch);
+		
 		$group[$level] = array("notch"=>$data1[0]->ear_notch,
 							"name"=>$data1[0]->sow_boar_name,
 							"no"=>$data1[0]->registeration_no,

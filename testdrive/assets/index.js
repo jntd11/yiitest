@@ -192,8 +192,9 @@ function nextHerd(isNext,url){
 		data: {isNext:isNext,url:url}
 	}).done(function(data){
 		  if(data) {
-			  patt1=new RegExp("litters\/update");
+			  patt1=new RegExp("[a-zA-Z]+\/update");
 			  if(patt1.test(url)) {
+				  url = url.replace(/updatelitter/,"admin1");
 				  url = url.replace(/update/,"admin");
 				  location.href= 'index.php?'+url;
 			  }else{

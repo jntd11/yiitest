@@ -227,6 +227,7 @@ class TblHerdSetupController extends Controller
 				if(isset($_GET['url'])){
 					$url = $_GET['url'];
 					if(preg_match("/litters\/update/i", $url)) {
+						$url = preg_replace("/updatelitter/i","admin1",$url);
 						$url = preg_replace("/update/i","admin",$url);
 						header("Location: index.php?".$url);
 					}else{

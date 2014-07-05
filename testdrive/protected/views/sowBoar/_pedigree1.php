@@ -1,5 +1,6 @@
 <?php
 //echo "<pre>";
+
 //print_r($model[4]);
 $levelshow = 4;
 if (isset($_GET['l']))
