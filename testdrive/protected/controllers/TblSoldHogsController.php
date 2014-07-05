@@ -521,6 +521,8 @@ class TblSoldHogsController extends RController
 			$length = strlen($year);
 			//return $date;
 		}
+		if($length == 1)
+			return $date;
 		if($type == 2){
 			if($year+10 > $curr_year && $year <= $curr_year){
 				$ear_notch_array[2] = $ear_notch_array[2] % 10;

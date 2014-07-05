@@ -143,6 +143,7 @@ class SowBoar extends CActiveRecord
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
 
+
 		$criteria=new CDbCriteria;
 		$criteria->compare('ear_notch',$this->ear_notch,true);
 		$criteria->compare('sow_boar_name',$this->sow_boar_name,true);
@@ -178,7 +179,7 @@ class SowBoar extends CActiveRecord
 			'criteria'=>$criteria,
 			'pagination'=>array('pagesize'=>$pages,'params'=>array('pages'=>$pages,'SowBoar_sort'=>$SowBoar_sort)),
 				'sort'=>array(
-						'defaultOrder'=>($hogtag == 'T')?"ear_tag desc":" $SowBoar_sort",
+						'defaultOrder'=>($hogtag == 'T')?"ear_tag desc":" ear_notch",
 						'params'=>array('pages'=>$pages,'SowBoar_sort'=>$SowBoar_sort),
 						'attributes'=>array(
 								'ear_tag'=>array(
