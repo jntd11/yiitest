@@ -441,15 +441,27 @@ class SowBoarController extends RController
 		$model = new SowBoar();
 		foreach ($group as $key => $member) {
 			//echo "COUNT".self::$count;
+			
 			self::$count++;
-			$sql="select sow_boar_id, sire_notch, dam_notch from herd where ear_notch =  '".$group[$key]['notch']."'";
+			 $sql="select sow_boar_id, sire_notch, dam_notch from herd where ear_notch =  '".$group[$key]['notch_org']."'";
 			$data1 = $model->findAllBySql($sql);
+		
 			if(isset($data1[0])) {
 				$sql="select sow_boar_id, sow_boar_name, registeration_no from herd where ear_notch =  '".$data1[0]->sire_notch."'";
 				//echo "---"."<br>".$sql;
 				$name = $model->findBySql($sql);
 				//echo "COUNT".self::$count;
-				$subgroup[self::$count] = array("notch"=>$data1[0]->sire_notch,
+				
+				$ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->ear_notch);
+				$ear_notch = $this->calculateYear($ear_notch,2);
+				$dam_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->dam_notch);
+				$dam_notch = $this->calculateYear($dam_notch,2);
+				
+				$sire_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->sire_notch);
+				$sire_notch = $this->calculateYear($sire_notch,2);
+				
+				$subgroup[self::$count] = array("notch"=>$sire_notch,
+							 "notch_org"=>$data1[0]->sire_notch,
 						     "name"=>isset($name->sow_boar_name)?$name->sow_boar_name:"",
 						     "no"=>isset($name->registeration_no)?$name->registeration_no:"",
 							 "id"=>isset($name->sow_boar_id)?$name->sow_boar_id:"",
@@ -460,7 +472,8 @@ class SowBoarController extends RController
 				$name = $model->findBySql($sql);
 				self::$count++;
 				//echo "COUNT".self::$count;
-				$subgroup[self::$count] = array("notch"=>$data1[0]->dam_notch,
+				$subgroup[self::$count] = array("notch"=>$dam_notch,
+						"notch_org"=>$data1[0]->dam_notch,
 						"name"=>(isset($name))?$name->sow_boar_name:"",
 					     "no"=>(isset($name))?$name->registeration_no:"",
 						 "id"=>(isset($name))?$name->sow_boar_id:"",
@@ -469,12 +482,14 @@ class SowBoarController extends RController
 			}else{
 				$subgroup[self::$count] = array("notch"=>"",
 						"name"=>"",
+						"notch_org"=>"",
 						"no"=>"",
 						"id"=>"",
 						//"data"=>$data1
 				);
 				self::$count++;
 				$subgroup[self::$count] = array("notch"=>"",
+						"notch_org"=>"",
 						"name"=>"",
 						"no"=>"",
 						"id"=>"",
@@ -495,18 +510,19 @@ class SowBoarController extends RController
 		$level = 0;
 		if(!isset($data1[0]))
 			return array();
-		
-		$data1[0]->ear_notch = $this->ChangeNotch($data1[0]->ear_notch);
-
-		$data1[0]->ear_notch = $this->calculateYear($data1[0]->ear_notch,2);
-	
-		$data1[0]->ear_notch = preg_replace("/[0-9][0-9]([0-9][0-9]) /", "$1 ", $data1[0]->ear_notch);
 
 		$data1[0]->ear_notch = trim($model->ear_notch);
-
-		$data1[0]->ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->ear_notch);
+		$ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->ear_notch);
+		$ear_notch = $this->calculateYear($ear_notch,2);
+		$dam_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->dam_notch);
+		$dam_notch = $this->calculateYear($dam_notch,2);
 		
-		$group[$level] = array("notch"=>$data1[0]->ear_notch,
+		$sire_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->sire_notch);
+		$sire_notch = $this->calculateYear($sire_notch,2);
+		
+		
+		$group[$level] = array("notch"=>$ear_notch,
+							"notch_org"=>$data1[0]->ear_notch,
 							"name"=>$data1[0]->sow_boar_name,
 							"no"=>$data1[0]->registeration_no,
 							"id"=>$data1[0]->sow_boar_id,
@@ -516,7 +532,8 @@ class SowBoarController extends RController
 		self::$count++;
 		$sql="select sow_boar_id, sow_boar_name, registeration_no from herd where ear_notch =  '".$data1[0]->sire_notch."'";
 		$name = $model->findBySql($sql);
-		$group[$level][self::$count] = array("notch"=>$data1[0]->sire_notch,
+		$group[$level][self::$count] = array("notch"=>$sire_notch,
+				        "notch_org"=>$data1[0]->sire_notch,
 						"name"=>$name->sow_boar_name,
 						"no"=>$name->registeration_no,
 						"id"=>$name->sow_boar_id,
@@ -528,17 +545,19 @@ class SowBoarController extends RController
 		//echo "<pre>";
 		//print_r($name);
 		self::$count++;
-		$group[$level][self::$count] = array("notch"=>$data1[0]->dam_notch,
+		$group[$level][self::$count] = array("notch"=>$dam_notch,
+				        "notch_org"=>$data1[0]->dam_notch,
 						"name"=>$name->sow_boar_name,
 						"no"=>$name->registeration_no,
 						"id"=>$name->sow_boar_id,
 				//,"data"=>$data1
 						);
-		//echo "<pre>";
-		//print_r($group);
-		//exit;
+/* 		echo "<pre>";
+		print_r($group); */
+		
 		for($i=1;$i<=5;$i++) {
 			self::$count = 0;
+			
 			//print_r($group[$level]);
 			$subgroup = $this->findNotches($group[$level]);
 			$level++;

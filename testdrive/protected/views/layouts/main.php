@@ -54,7 +54,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 ?>
 </head>
 
-<body <? echo ($color != "")?'style="background-color: '.$color.'"':'';?> >
+<body <?php echo ($color != "")?'style="background-color: '.$color.'"':'';?> >
 
 <div class="container" id="page">
 

@@ -66,7 +66,6 @@ echo $notch = $this->calculateYear($notch,2);
     $level[2] .= '</table>';
 if(isset($model[1]))
 	foreach ($model[1] as $key => $val) {
-print_r($val);
 		$notch = preg_replace("/([0-9]+\-[0-9])$/"," ".$val['name']." $1 ".$val['no'],$val['notch']);
 		$level[2] = str_replace("$".$key,$notch,$level[2]);
 	}
