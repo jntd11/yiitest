@@ -127,11 +127,12 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 			}
 	     ?>
 	</table>
+
+
+	</div>
+
+	</div>
 	<?php }?>
-
-	</div>
-
-	</div>
 	<?php
 	if(count($results))
 $this->widget('ext.mPrint.mPrint', array(
