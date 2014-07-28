@@ -3,10 +3,10 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Chores'=>array('create'),
-	'Report',
+	'Semen'=>array('create'),
+	'Orders',
 );
-$this->pageTitle = "Chores Report";
+$this->pageTitle = "Semen Report";
 $this->menu=array(
 	//array('label'=>'Create Chores', 'url'=>array('create')),
 
@@ -17,7 +17,9 @@ $cs->registerCssFile(
 		Yii::app()->baseUrl.
 		'/css/styles.css'
 );
-$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/autochores.js');
+$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/jquery.ui-contextmenu.js');
+$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/semen.js');
 ?>
 <?php
 if(count($results))
