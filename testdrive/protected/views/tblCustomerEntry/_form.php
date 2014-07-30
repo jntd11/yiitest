@@ -20,7 +20,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('id'=>'savenew','name'=>'savenew')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=tblCustomerEntry/admin"')); ?>
 		<?php if(!$model->isNewRecord) echo CHtml::Button('Sold Hogs', array('onClick'=>"window.location='index.php?r=tblSoldHogs/soldlist&id=".$model->getPrimaryKey()."'")); ?>
-	</div>	
+	</div>
 	<div>&nbsp;</div>
 	<table>
 	<tr >
@@ -99,7 +99,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
     </tr>
     <tr>
     <td>
-		
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'contact'); ?>
 		<?php echo $form->textField($model,'contact',array('size'=>20,'maxlength'=>50)); ?>
@@ -107,7 +107,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 	</div>
 		</td>
 	<td>
-	
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'phone_home'); ?>
 		<?php echo $form->textField($model,'phone_home',array('size'=>20,'maxlength'=>50)); ?>
@@ -166,7 +166,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 		<a href="#" class="splitmenubutton" data-showmenu="dropmenu1" data-splitmenu="false">Code</a>
 		<?php echo $form->error($model,'mailing_code'); ?>
 	</div>
-	
+
     </td>
     </tr>
     <tr>
@@ -182,8 +182,8 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 
 	    	<div class="row">
 		<?php echo $form->labelEx($model,'att_sale'); ?>
-		<?php 
-		//echo $form->textField($model,'att_sale'); 
+		<?php
+		//echo $form->textField($model,'att_sale');
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 				'model' => $model,
 				'attribute' => 'att_sale',
@@ -193,14 +193,14 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 						'showOn'=>'button',
 						'defaultDate'=>''.$activitydate.'',
 						'buttonImage'=>'img/calendar.gif',
-						
+
 						),
 				'htmlOptions' => array(
 						'id'=>'att_sale',
 						'size' => '20',         // textField size
 						'maxlength' => '20',    // textField maxlength
 						'onBlur'=>'validateDatePicker("att_sale")',
-						
+
 				),
 		));
 		?>
@@ -214,7 +214,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'last_letter_sent'); ?>
-		<?php //echo $form->textField($model,'last_letter_sent'); 
+		<?php //echo $form->textField($model,'last_letter_sent');
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 				'model' => $model,
 				'attribute' => 'last_letter_sent',
@@ -225,7 +225,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 						'defaultDate'=>''.$activitydate.'',
 						'buttonImage'=>'img/calendar.gif',
 				),
-				
+
 				'htmlOptions' => array(
 						'id'=>'last_letter_sent',
 						'size' => '10',         // textField size
@@ -241,7 +241,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'entry_date'); ?>
-		<?php //echo $form->textField($model,'entry_date'); 
+		<?php //echo $form->textField($model,'entry_date');
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 				'model' => $model,
 				'attribute' => 'entry_date',
@@ -265,7 +265,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
     </td>
     </tr>
     <tr>
-    <td colspan="2">	
+    <td colspan="2">
 	<div >
 		<?php echo $form->labelEx($model,'notes', array('id'=>'label_TblCustomerEntry_notes')); ?>
 		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>65, )); ?>
@@ -392,7 +392,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 		</div>
 		</td>
 	<td>
-	
+
 		<div class="row">
 			<?php echo $form->labelEx($model,'cc_number'); ?>
 			<?php echo $form->textField($model,'cc_number'); ?>
@@ -418,7 +418,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
     </tr>
     <tr><td colspan="2"><?php echo CHtml::button('Shipping Information - same as above',array('id'=>"shipbutton")); ?></td></tr>
     <tr>
-    <td>	
+    <td>
 		<div class="row">
 			<?php echo $form->labelEx($model,'ship_company_name'); ?>
 			<?php echo $form->textField($model,'ship_company_name',array('size'=>20,'maxlength'=>50)); ?>
@@ -426,7 +426,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 		</div>
 	</td>
 	<td>
-	
+
 		<div class="row">
 			<?php echo $form->labelEx($model,'ship_name'); ?>
 			<?php echo $form->textField($model,'ship_name',array('size'=>20,'maxlength'=>50)); ?>
@@ -443,7 +443,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 		</div>
 	</td>
 	<td>
-	
+
 		<div class="row">
 			<?php echo $form->labelEx($model,'ship_address2'); ?>
 			<?php echo $form->textField($model,'ship_address2',array('size'=>20,'maxlength'=>100)); ?>
@@ -453,7 +453,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
     </tr>
     <tr>
     <td>
-	
+
 		<div class="row">
 			<?php echo $form->labelEx($model,'ship_city'); ?>
 			<?php echo $form->textField($model,'ship_city',array('size'=>20,'maxlength'=>50)); ?>
@@ -461,7 +461,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 		</div>
 	</td>
 	<td>
-	
+
 		<div class="row">
 			<?php echo $form->labelEx($model,'ship_state'); ?>
 			<?php echo $form->textField($model,'ship_state',array('size'=>10,'maxlength'=>10)); ?>
@@ -503,7 +503,7 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
     </tr>
     <tr>
     <td colspan="2">
-	
+
 		<div class="row">
 			<?php echo $form->labelEx($model,'ship_area'); ?>
 			<?php echo $form->textField($model,'ship_area',array('size'=>20,'maxlength'=>50)); ?>

@@ -61,7 +61,7 @@ div.form label
 	min-width: 130px;
 }
 form#tbl-herd-setup-form label, form#tbl-customer-entry-form label, form#sow-boar-form label, 
-form#tbl-sold-hogs-form label, form#litters-form label, form#litters-form label{
+form#tbl-sold-hogs-form label, form#litters-form label, form#litters-form label, form#semen-orders-form label{
 	font-weight: bold;
 	font-size: 0.9em;
 	display: inline-block;
@@ -81,7 +81,7 @@ div.form .row
 	margin: 5px 0;
 }
 form#tbl-customer-entry-form .row, form#tbl-herd-setup-form .row, form#sow-boar-form  .row, form#tbl-sold-hogs-form .row, 
-form#sow-gilts-form .row, form#litters-form .row 
+form#sow-gilts-form .row, form#litters-form .row , form#semen-orders-form .row, form#semen-orders-form .row
 {
 	margin: -8px 0;
 }

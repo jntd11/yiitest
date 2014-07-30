@@ -123,6 +123,7 @@ class SemenOrdersController extends Controller
 	public function actionCreate()
 	{
 		$model=new SemenOrders;
+		$modelCustomer=new TblCustomerEntry;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -136,7 +137,15 @@ class SemenOrdersController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'modelCustomer'=>$modelCustomer,
 		));
+	}
+	public function getMailingCodes($term=NULL) {
+		$res =array();
+		$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc";
+		$command =Yii::app()->db->createCommand($qtxt);
+		$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+		return $res = $command->queryColumn();
 	}
 
 	/**
