@@ -225,7 +225,7 @@ class SowBoarController extends RController
 			echo $model->dam_notch = trim($model->dam_notch);
 			$model->ear_notch = trim($model->ear_notch);
 			$model->sire_notch = trim($model->sire_notch);
-			
+
 			$model->born = $_POST['SowBoar']['born'];
 			$model->comments = $_POST['SowBoar']['comments'];
 			if($model->ear_notch != "")
@@ -237,7 +237,7 @@ class SowBoarController extends RController
 		 		$cmd = Yii::app()->db->createCommand($sql);
 		 		$cmd->query();
 		 	}
-		 	
+
 		 	if(isset($_POST['SowBoar']['dam_ear_tag']) && !empty($_POST['SowBoar']['dam_ear_tag'])) {
 		 		echo $sql = "UPDATE herd SET ear_tag = '".$_POST['SowBoar']['dam_ear_tag']."' WHERE ear_notch =  '".$this->calculateYear($model->dam_notch,3)."'";
 		 		$cmd = Yii::app()->db->createCommand($sql);
@@ -247,7 +247,7 @@ class SowBoarController extends RController
 		 		$model->sire_notch = $this->calculateYear($model->sire_notch);
 		 	if($model->dam_notch != "")
 		 		$model->dam_notch = $this->calculateYear($model->dam_notch);
-		 	
+
 		 	if($model->ear_tag != "" ) {
 		 		 $sql = "Update herd SET ear_tag = '' WHERE ear_tag = '".$model->ear_tag."'";
 		 		$cmd = YII::app()->db->createCommand($sql);
@@ -373,7 +373,7 @@ class SowBoarController extends RController
 				$length = strlen($year);
 				//return $date;
 			}
-			if($length == 1) 
+			if($length == 1)
 				return $date;
 			if($type == 2){
 				if($year+10 > $curr_year && $year <= $curr_year){
@@ -441,25 +441,25 @@ class SowBoarController extends RController
 		$model = new SowBoar();
 		foreach ($group as $key => $member) {
 			//echo "COUNT".self::$count;
-			
+
 			self::$count++;
 			 $sql="select sow_boar_id, sire_notch, dam_notch from herd where ear_notch =  '".$group[$key]['notch_org']."'";
 			$data1 = $model->findAllBySql($sql);
-		
+
 			if(isset($data1[0])) {
 				$sql="select sow_boar_id, sow_boar_name, registeration_no from herd where ear_notch =  '".$data1[0]->sire_notch."'";
 				//echo "---"."<br>".$sql;
 				$name = $model->findBySql($sql);
 				//echo "COUNT".self::$count;
-				
+
 				$ear_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->ear_notch);
 				$ear_notch = $this->calculateYear($ear_notch,2);
 				$dam_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->dam_notch);
 				$dam_notch = $this->calculateYear($dam_notch,2);
-				
+
 				$sire_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->sire_notch);
 				$sire_notch = $this->calculateYear($sire_notch,2);
-				
+
 				$subgroup[self::$count] = array("notch"=>$sire_notch,
 							 "notch_org"=>$data1[0]->sire_notch,
 						     "name"=>isset($name->sow_boar_name)?$name->sow_boar_name:"",
@@ -516,11 +516,11 @@ class SowBoarController extends RController
 		$ear_notch = $this->calculateYear($ear_notch,2);
 		$dam_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->dam_notch);
 		$dam_notch = $this->calculateYear($dam_notch,2);
-		
+
 		$sire_notch = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $data1[0]->sire_notch);
 		$sire_notch = $this->calculateYear($sire_notch,2);
-		
-		
+
+
 		$group[$level] = array("notch"=>$ear_notch,
 							"notch_org"=>$data1[0]->ear_notch,
 							"name"=>$data1[0]->sow_boar_name,
@@ -554,10 +554,10 @@ class SowBoarController extends RController
 						);
 /* 		echo "<pre>";
 		print_r($group); */
-		
+
 		for($i=1;$i<=5;$i++) {
 			self::$count = 0;
-			
+
 			//print_r($group[$level]);
 			$subgroup = $this->findNotches($group[$level]);
 			$level++;
@@ -655,6 +655,7 @@ class SowBoarController extends RController
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
+
 	public function actioncheckEarTag($id){
 		$res =array();
 		if (isset($_GET['tag']) && !empty($_GET['tag'])) {
@@ -662,7 +663,7 @@ class SowBoarController extends RController
 			$qtxt ="SELECT ear_notch FROM  herd WHERE ear_tag LIKE :username and sow_boar_id <> ".$id;
 			if(isset($_GET['type']) && $_GET['type'] == 2)
 				$qtxt ="SELECT ear_notch FROM  herd WHERE ear_tag LIKE :username ";
-			
+
 			$command =Yii::app()->db->createCommand($qtxt);
 			$command->bindValue(":username", ''.$_GET['tag'].'', PDO::PARAM_STR);
 			$res =$command->queryColumn();

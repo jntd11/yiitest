@@ -2,6 +2,7 @@
 /* @var $this SemenOrdersController */
 /* @var $model SemenOrders */
 /* @var $form CActiveForm */
+$hogtag = Yii::app()->request->cookies['hog_tag'];
 ?>
 
 <div class="form">
@@ -11,9 +12,18 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+
 
 	<?php echo $form->errorSummary($model); ?>
+	<div class="row">
+		<?php echo CHtml::Button('List Orders',array('onClick'=>'window.location="index.php?r=semenorders/report"')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('id'=>'savenew','name'=>'savenew')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & Duplicate' : 'Save & Duplicate',array('id'=>'savenew','name'=>'savedup')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=semenorders/report"')); ?>
+	</div>
+	<div>&nbsp;</div>
+
 	<table>
 	<tr >
 	<td colspan="2">
@@ -289,6 +299,24 @@
 		</div>
     </td>
     </tr>
+
+   <tr>
+    <td>
+	<div class="row">
+		<?php echo $form->labelEx($model,'payment_type'); ?>
+		<?php echo $form->dropDownList($model,'payment_type',array(''=>'select','COD'=>'COD', 'CC'=>'CC', 'CHK'=>'CHK', 'N10'=>'N10', 'N30'=>'N30'),array('onChange'=>'checkOption(this)')); ?>
+		<?php echo $form->error($model,'payment_type'); ?>
+	</div>
+</td>
+</tr>
+       <tr>
+    <td>
+	<div class="row">
+		<?php echo $form->labelEx($model,'cod_charges'); ?>
+		<?php echo $form->textField($model,'cod_charges',array()); ?>
+		<?php echo $form->error($model,'cod_charges'); ?>
+	</div>
+	</td></tr>
     <tr>
     <td>
 
@@ -300,8 +328,27 @@
 		<?php echo $form->hiddenField($model,'sow_boar_id'); ?>
 		<?php echo $form->error($model,'sow_boar_id'); ?>
 			<?php echo $form->labelEx($model,'ordered_date'); ?>
-		<?php echo $form->textField($model,'ordered_date'); ?>
+		<?php //echo $form->textField($model,'ordered_date');
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			  		'model' => $model,
+			  		'attribute' => 'ordered_date',
+			  		'options' =>array(
+			  				'dateFormat'=>'m/d/yy DD',
+							'constrainInput'=> false,
+							'showOn'=>'button',
+							'defaultDate'=>''.date("Y-m-d").'',
+							'buttonImage'=>'img/calendar.gif',
+			  		),
+
+			  		'htmlOptions' => array(
+			  				'id'=>'ordered_date',
+			  				'size' => '20',         // textField size
+			  				'maxlength' => '20',    // textField maxlength
+			  		),
+			  ));
+		?>
 		<?php echo $form->error($model,'ordered_date'); ?>
+		<span id="day"></span>
 	</div>
 </td>
 </tr>
@@ -310,7 +357,24 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ship_date'); ?>
-		<?php echo $form->textField($model,'ship_date'); ?>
+		<?php //echo $form->textField($model,'ship_date');
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+			  		'model' => $model,
+			  		'attribute' => 'ship_date',
+			  		'options' =>array(
+			  				'dateFormat'=>'m/d/yy DD',
+							'constrainInput'=> false,
+							'showOn'=>'button',
+							'defaultDate'=>''.date("Y-m-d").'',
+							'buttonImage'=>'img/calendar.gif',
+			  		),
+
+			  		'htmlOptions' => array(
+			  				'id'=>'ship_date',
+			  				'size' => '20',         // textField size
+			  				'maxlength' => '20',    // textField maxlength
+			  		),
+			  ));?>
 		<?php echo $form->error($model,'ship_date'); ?>
 	</div>
 	</td>
@@ -319,8 +383,15 @@
     <td>
 
 	<div class="row">
-		<label><?php echo "Boar Ear Tag"; ?></label>
-		<input type="text" >
+		<?php if($hogtag == 'T') {?>
+		<label>Sow Ear Tag </label>
+			<input type="text" name="ear_tag" id="ear_tag">
+		<?php }else{ ?>
+		<label>Sow Ear Notch</label>
+			<input type="text" name="ear_notch" id="ear_notch">
+		<?php }?>
+		<span id="sow_boar_name"></span>
+		<span id="sow_boar_reg"></span>
 	</div>
 </td>
 </tr>
@@ -345,8 +416,9 @@
 	</td>
 	<td>	<div class="row">
 		<?php echo $form->labelEx($model,'semen_type'); ?>
-		<?php echo $form->textField($model,'semen_type',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->textField($model,'semen_type',array('size'=>20,'maxlength'=>20,'onBlur'=>'checkSemenType(this.value);')); ?>
 		<?php echo $form->error($model,'semen_type'); ?>
+		<input name="semen_id" id="semen_id" value="" type="hidden" />
 	</div>
 	</td>
 	</tr>
@@ -395,28 +467,16 @@
 		<?php echo $form->error($model,'invoice'); ?>
 	</div>
 </td></tr>
-   <tr>
-    <td>
-	<div class="row">
-		<?php echo $form->labelEx($model,'cod_charges'); ?>
-		<?php echo $form->textField($model,'cod_charges'); ?>
-		<?php echo $form->error($model,'cod_charges'); ?>
-	</div>
-	</td></tr>
-   <tr>
-    <td>
-	<div class="row">
-		<?php echo $form->labelEx($model,'payment_type'); ?>
-		<?php echo $form->textField($model,'payment_type',array('size'=>3,'maxlength'=>3)); ?>
-		<?php echo $form->error($model,'payment_type'); ?>
-	</div>
-</td>
-</tr>
+
   </table>
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
+  <div class="row buttons">
+		<?php echo CHtml::Button('List Orders',array('onClick'=>'window.location="index.php?r=semenorders/report"')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('id'=>'savenew','name'=>'savenew')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & Duplicate' : 'Save & Duplicate',array('id'=>'savenew','name'=>'savedup')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=semenorders/report"')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
-
 </div><!-- form -->

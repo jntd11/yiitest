@@ -95,28 +95,43 @@ function autoSuggestSearch(){
 				data: {isall:1,term:valArray[0]}
 			}).done(function(data){
 				var Obj = JSON.parse(data);
-				
 				if(typeof Obj.customer_entry_id != "undefined") {
 					$("#TblCustomerEntry_company_name").val(Obj.company_name);
-					$("#TblCustomerEntry_company_name").val(Obj.first_name);
-					$("#TblCustomerEntry_company_name").val(Obj.last_nam);
-					$("#TblCustomerEntry_company_name").val(Obj.address1);
-					$("#TblCustomerEntry_company_name").val(Obj.address2);
-					$("#TblCustomerEntry_company_name").val(Obj.city);
-					$("#TblCustomerEntry_company_name").val(Obj.zip);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_home);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_business);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_cell);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_other1);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
-					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
+					$("#TblCustomerEntry_first_name").val(Obj.first_name);
+					$("#TblCustomerEntry_last_name").val(Obj.last_nam);
+					$("#TblCustomerEntry_address1").val(Obj.address1);
+					$("#TblCustomerEntry_address2").val(Obj.address2);
+					$("#TblCustomerEntry_city").val(Obj.city);
+					$("#TblCustomerEntry_zip").val(Obj.zip);
+					$("#TblCustomerEntry_phone_home").val(Obj.phone_home);
+					$("#TblCustomerEntry_phone_business").val(Obj.phone_business);
+					$("#TblCustomerEntry_phone_cell").val(Obj.phone_cell);
+					$("#TblCustomerEntry_phone_other1").val(Obj.phone_other1);
+					$("#TblCustomerEntry_phone_other2").val(Obj.phone_other2);
+					$("#TblCustomerEntry_state").val(Obj.state);
+					$("#TblCustomerEntry_country").val(Obj.country);
+					$("#TblCustomerEntry_contact").val(Obj.contact);
+					$("#TblCustomerEntry_county").val(Obj.county);
+					$("#TblCustomerEntry_mailing_code").val(Obj.mailing_code);
 					
+					$("#TblCustomerEntry_ship_company_name").val(Obj.ship_company_name);
+					$("#TblCustomerEntry_ship_name").val(Obj.ship_name);
+					$("#TblCustomerEntry_ship_address1").val(Obj.ship_address1);
+					$("#TblCustomerEntry_ship_address2").val(Obj.ship_address2);
+					$("#TblCustomerEntry_ship_city").val(Obj.ship_city);
+					$("#TblCustomerEntry_ship_state").val(Obj.ship_state);
+					$("#TblCustomerEntry_ship_zip").val(Obj.ship_zip);
+					$("#TblCustomerEntry_ship_country").val(Obj.ship_country);
+					$("#TblCustomerEntry_ship_contact").val(Obj.ship_contact);
+					$("#TblCustomerEntry_ship_phone").val(Obj.ship_phone);
+					$("#TblCustomerEntry_ship_area").val(Obj.ship_area);
+					
+					
+					$("#TblCustomerEntry_cc_brand").val(Obj.cc_brand);
+					$("#TblCustomerEntry_cc_number").val(Obj.cc_number);
+					$("#TblCustomerEntry_cc_expiration").val(Obj.cc_expiration);
+					$("#TblCustomerEntry_cc_name").val(Obj.cc_name);
+					$("#SemenOrders_payment_type").focus();
 				}
 			});
 	    	//var data = this.name+"="+ui.item.value;
@@ -124,7 +139,243 @@ function autoSuggestSearch(){
 	    }
 	});
 
+	$("#semen-orders-form [name='TblCustomerEntry[first_name]']").autocomplete({
+	    source: 'index.php?r=semenOrders/autocompleteFirstName&isall=0',
+	    select: function( event, ui ) {
+	    	var valArray = ui.item.value.split("-");
+	    	ui.item.value = valArray[1];
+	    	$("#SemenOrders_customer_id").val(valArray[0]);
+	    	$.ajax({
+				url: encodeURI('index.php?r=semenOrders/autocompleteFirstName'),
+				type: "GET",
+				data: {isall:1,term:valArray[0]}
+			}).done(function(data){
+				var Obj = JSON.parse(data);
+				if(typeof Obj.customer_entry_id != "undefined") {
+					$("#TblCustomerEntry_company_name").val(Obj.company_name);
+					$("#TblCustomerEntry_first_name").val(Obj.first_name);
+					$("#TblCustomerEntry_last_name").val(Obj.last_nam);
+					$("#TblCustomerEntry_address1").val(Obj.address1);
+					$("#TblCustomerEntry_address2").val(Obj.address2);
+					$("#TblCustomerEntry_city").val(Obj.city);
+					$("#TblCustomerEntry_zip").val(Obj.zip);
+					$("#TblCustomerEntry_phone_home").val(Obj.phone_home);
+					$("#TblCustomerEntry_phone_business").val(Obj.phone_business);
+					$("#TblCustomerEntry_phone_cell").val(Obj.phone_cell);
+					$("#TblCustomerEntry_phone_other1").val(Obj.phone_other1);
+					$("#TblCustomerEntry_phone_other2").val(Obj.phone_other2);
+					$("#TblCustomerEntry_state").val(Obj.state);
+					$("#TblCustomerEntry_country").val(Obj.country);
+					$("#TblCustomerEntry_contact").val(Obj.contact);
+					$("#TblCustomerEntry_county").val(Obj.county);
+					$("#TblCustomerEntry_mailing_code").val(Obj.mailing_code);
+					
+					$("#TblCustomerEntry_ship_company_name").val(Obj.ship_company_name);
+					$("#TblCustomerEntry_ship_name").val(Obj.ship_name);
+					$("#TblCustomerEntry_ship_address1").val(Obj.ship_address1);
+					$("#TblCustomerEntry_ship_address2").val(Obj.ship_address2);
+					$("#TblCustomerEntry_ship_city").val(Obj.ship_city);
+					$("#TblCustomerEntry_ship_state").val(Obj.ship_state);
+					$("#TblCustomerEntry_ship_zip").val(Obj.ship_zip);
+					$("#TblCustomerEntry_ship_country").val(Obj.ship_country);
+					$("#TblCustomerEntry_ship_contact").val(Obj.ship_contact);
+					$("#TblCustomerEntry_ship_phone").val(Obj.ship_phone);
+					$("#TblCustomerEntry_ship_area").val(Obj.ship_area);
+					
+					
+					$("#TblCustomerEntry_cc_brand").val(Obj.cc_brand);
+					$("#TblCustomerEntry_cc_number").val(Obj.cc_number);
+					$("#TblCustomerEntry_cc_expiration").val(Obj.cc_expiration);
+					$("#TblCustomerEntry_cc_name").val(Obj.cc_name);
+					$("#SemenOrders_payment_type").focus();
+				}
+			});
+	    	//var data = this.name+"="+ui.item.value;
+	    	
+	    }
+	});
+	$("#semen-orders-form [name='TblCustomerEntry[company_name]']").autocomplete({
+	    source: 'index.php?r=semenOrders/autocompleteCompanyName&isall=0',
+	    select: function( event, ui ) {
+	    	var valArray = ui.item.value.split("-");
+	    	ui.item.value = valArray[1];
+	    	$("#SemenOrders_customer_id").val(valArray[0]);
+	    	$.ajax({
+				url: encodeURI('index.php?r=semenOrders/autocompleteCompanyName'),
+				type: "GET",
+				data: {isall:1,term:valArray[0]}
+			}).done(function(data){
+				var Obj = JSON.parse(data);
+				if(typeof Obj.customer_entry_id != "undefined") {
+					$("#TblCustomerEntry_company_name").val(Obj.company_name);
+					$("#TblCustomerEntry_first_name").val(Obj.first_name);
+					$("#TblCustomerEntry_last_name").val(Obj.last_nam);
+					$("#TblCustomerEntry_address1").val(Obj.address1);
+					$("#TblCustomerEntry_address2").val(Obj.address2);
+					$("#TblCustomerEntry_city").val(Obj.city);
+					$("#TblCustomerEntry_zip").val(Obj.zip);
+					$("#TblCustomerEntry_phone_home").val(Obj.phone_home);
+					$("#TblCustomerEntry_phone_business").val(Obj.phone_business);
+					$("#TblCustomerEntry_phone_cell").val(Obj.phone_cell);
+					$("#TblCustomerEntry_phone_other1").val(Obj.phone_other1);
+					$("#TblCustomerEntry_phone_other2").val(Obj.phone_other2);
+					$("#TblCustomerEntry_state").val(Obj.state);
+					$("#TblCustomerEntry_country").val(Obj.country);
+					$("#TblCustomerEntry_contact").val(Obj.contact);
+					$("#TblCustomerEntry_county").val(Obj.county);
+					$("#TblCustomerEntry_mailing_code").val(Obj.mailing_code);
+					
+					$("#TblCustomerEntry_ship_company_name").val(Obj.ship_company_name);
+					$("#TblCustomerEntry_ship_name").val(Obj.ship_name);
+					$("#TblCustomerEntry_ship_address1").val(Obj.ship_address1);
+					$("#TblCustomerEntry_ship_address2").val(Obj.ship_address2);
+					$("#TblCustomerEntry_ship_city").val(Obj.ship_city);
+					$("#TblCustomerEntry_ship_state").val(Obj.ship_state);
+					$("#TblCustomerEntry_ship_zip").val(Obj.ship_zip);
+					$("#TblCustomerEntry_ship_country").val(Obj.ship_country);
+					$("#TblCustomerEntry_ship_contact").val(Obj.ship_contact);
+					$("#TblCustomerEntry_ship_phone").val(Obj.ship_phone);
+					$("#TblCustomerEntry_ship_area").val(Obj.ship_area);
+					
+					
+					$("#TblCustomerEntry_cc_brand").val(Obj.cc_brand);
+					$("#TblCustomerEntry_cc_number").val(Obj.cc_number);
+					$("#TblCustomerEntry_cc_expiration").val(Obj.cc_expiration);
+					$("#TblCustomerEntry_cc_name").val(Obj.cc_name);
+					$("#SemenOrders_payment_type").focus();
+				}
+			});
+	    	//var data = this.name+"="+ui.item.value;
+	    	
+	    }
+	});
+	$("#semen-orders-form [name='TblCustomerEntry[last_name]']").autocomplete({
+	    source: 'index.php?r=semenOrders/autocompleteLastName&isall=0',
+	    select: function( event, ui ) {
+	    	var valArray = ui.item.value.split("-");
+	    	ui.item.value = valArray[1];
+	    	$("#SemenOrders_customer_id").val(valArray[0]);
+	    	$.ajax({
+				url: encodeURI('index.php?r=semenOrders/autocompleteLastName'),
+				type: "GET",
+				data: {isall:1,term:valArray[0]}
+			}).done(function(data){
+				var Obj = JSON.parse(data);
+				if(typeof Obj.customer_entry_id != "undefined") {
+					$("#TblCustomerEntry_company_name").val(Obj.company_name);
+					$("#TblCustomerEntry_first_name").val(Obj.first_name);
+					$("#TblCustomerEntry_last_name").val(Obj.last_nam);
+					$("#TblCustomerEntry_address1").val(Obj.address1);
+					$("#TblCustomerEntry_address2").val(Obj.address2);
+					$("#TblCustomerEntry_city").val(Obj.city);
+					$("#TblCustomerEntry_zip").val(Obj.zip);
+					$("#TblCustomerEntry_phone_home").val(Obj.phone_home);
+					$("#TblCustomerEntry_phone_business").val(Obj.phone_business);
+					$("#TblCustomerEntry_phone_cell").val(Obj.phone_cell);
+					$("#TblCustomerEntry_phone_other1").val(Obj.phone_other1);
+					$("#TblCustomerEntry_phone_other2").val(Obj.phone_other2);
+					$("#TblCustomerEntry_state").val(Obj.state);
+					$("#TblCustomerEntry_country").val(Obj.country);
+					$("#TblCustomerEntry_contact").val(Obj.contact);
+					$("#TblCustomerEntry_county").val(Obj.county);
+					$("#TblCustomerEntry_mailing_code").val(Obj.mailing_code);
+					
+					$("#TblCustomerEntry_ship_company_name").val(Obj.ship_company_name);
+					$("#TblCustomerEntry_ship_name").val(Obj.ship_name);
+					$("#TblCustomerEntry_ship_address1").val(Obj.ship_address1);
+					$("#TblCustomerEntry_ship_address2").val(Obj.ship_address2);
+					$("#TblCustomerEntry_ship_city").val(Obj.ship_city);
+					$("#TblCustomerEntry_ship_state").val(Obj.ship_state);
+					$("#TblCustomerEntry_ship_zip").val(Obj.ship_zip);
+					$("#TblCustomerEntry_ship_country").val(Obj.ship_country);
+					$("#TblCustomerEntry_ship_contact").val(Obj.ship_contact);
+					$("#TblCustomerEntry_ship_phone").val(Obj.ship_phone);
+					$("#TblCustomerEntry_ship_area").val(Obj.ship_area);
+					
+					
+					$("#TblCustomerEntry_cc_brand").val(Obj.cc_brand);
+					$("#TblCustomerEntry_cc_number").val(Obj.cc_number);
+					$("#TblCustomerEntry_cc_expiration").val(Obj.cc_expiration);
+					$("#TblCustomerEntry_cc_name").val(Obj.cc_name);
+					$("#SemenOrders_payment_type").focus();
+				}
+			});
+	    	//var data = this.name+"="+ui.item.value;
+	    	
+	    }
+	});
+	$("#semen-orders-form [name='ear_tag']").autocomplete({
+	    source: 'index.php?r=semenOrders/AutocompleteEarTag',
+	    select: function( event, ui ) {
+	    	var valArray = ui.item.value.split("-");
+	    	ui.item.value = valArray[1];
+	    	$.ajax({
+				url: encodeURI('index.php?r=semenOrders/GetEarNotch'),
+				type: "GET",
+				data: {id:valArray[0]}
+			}).done(function(data){
+				var Obj = JSON.parse(data);
+				if(typeof Obj.sow_boar_id != "undefined") {
+					$("#SemenOrders_sow_boar_id").val(Obj.sow_boar_id);
+					$("#sow_boar_name").html(Obj.sow_boar_name);
+					$("#sow_boar_reg").html(Obj.registeration_no);
+				}
+			});
+	    	
+	    }
+	});
+	$("#semen-orders-form [name='ear_notch']").autocomplete({
+	    source: 'index.php?r=semenOrders/AutocompleteEarNotch',
+	    select: function( event, ui ) {
+	    	var valArray = ui.item.value.split("-");
+	    	ui.item.value = valArray[1];
+	    	$.ajax({
+				url: encodeURI('index.php?r=semenOrders/GetEarNotch'),
+				type: "GET",
+				data: {id:valArray[0]}
+			}).done(function(data){
+				var Obj = JSON.parse(data);
+				if(typeof Obj.sow_boar_id != "undefined") {
+					$("#SemenOrders_sow_boar_id").val(Obj.sow_boar_id);
+					$("#sow_boar_name").html(Obj.sow_boar_name);
+					$("#sow_boar_reg").html(Obj.registeration_no);
+				}
+			});
+	    }
+	});
+	$("#semen-orders-form [name='SemenOrders[semen_type]']").autocomplete({
+	    source: 'index.php?r=semenOrders/AutocompleteSemenType',
+	    select: function( event, ui ) {
+	    	var valArray = ui.item.value.split("-");
+	    	ui.item.value = valArray[1];
+	    	$("#semen_id").val(valArray[0]);
+	    }
+	});
 	
+}
+function checkSemenType(val){
+	if($("#semen_id").val() == ""){
+		if(confirm("Do you want to add this new Semen Type?")) {
+			$.ajax({
+				url: encodeURI('index.php?r=semenOrders/insertSemenType'),
+				type: "GET",
+				data: {code:val}
+			}).done(function(data){
+				alert("Inserted");
+			});
+		}else{
+			$("#SemenOrders_semen_type").val("");
+		}
+	}
+	
+}
+function checkOption(obj){
+	if(obj.value == 'COD'){
+		$("#SemenOrders_cod_charges").removeAttr("disabled");
+		$("#SemenOrders_cod_charges").focus();
+	}else{
+		$("#SemenOrders_cod_charges").attr("disabled","disabled");
+	}
 }
 $(function() { 
 	 $(':text').focus(function() { 

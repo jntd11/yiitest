@@ -6,7 +6,7 @@ class SemenOrdersController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -32,7 +32,8 @@ class SemenOrdersController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','report','AutocompleteFirstName'),
+				'actions'=>array('create','update','report','AutocompleteFirstName',
+						'AutocompleteCompanyName','AutocompleteLastName','AutocompleteEarNotch','AutocompleteEarTag','GetEarNotch','AutocompleteSemenType','insertSemenType'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -147,13 +148,49 @@ class SemenOrdersController extends Controller
 				$qtxt ="SELECT concat_ws('-',customer_entry_id,first_name)  FROM customers WHERE first_name LIKE '%".$_GET['term']."%'";
 				$command =Yii::app()->db->createCommand($qtxt);
 				$res =$command->queryColumn();
-				
+
 			}else if (isset($_GET['isall']) && $_GET['isall'] == 1) {
 				$qtxt ="SELECT * FROM customers WHERE customer_entry_id = ".$_GET['term'];
 				$command =Yii::app()->db->createCommand($qtxt);
 				$res =$command->queryRow();
 			}
-			
+
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompleteCompanyName() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			if (isset($_GET['isall']) && $_GET['isall'] == 0) {
+				$qtxt ="SELECT concat_ws('-',customer_entry_id,company_name)  FROM customers WHERE company_name LIKE '%".$_GET['term']."%'";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryColumn();
+
+			}else if (isset($_GET['isall']) && $_GET['isall'] == 1) {
+				$qtxt ="SELECT * FROM customers WHERE customer_entry_id = ".$_GET['term'];
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryRow();
+			}
+
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompleteLastName() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			if (isset($_GET['isall']) && $_GET['isall'] == 0) {
+				$qtxt ="SELECT concat_ws('-',customer_entry_id,last_name)  FROM customers WHERE last_name LIKE '%".$_GET['term']."%'";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryColumn();
+
+			}else if (isset($_GET['isall']) && $_GET['isall'] == 1) {
+				$qtxt ="SELECT * FROM customers WHERE customer_entry_id = ".$_GET['term'];
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryRow();
+			}
+
 		}
 		echo CJSON::encode($res);
 		Yii::app()->end();
@@ -270,5 +307,61 @@ class SemenOrdersController extends Controller
 		}
 
 		return $dates;
+	}
+	public function actionAutocompleteEarNotch() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT concat_ws('-',sow_boar_id,ear_notch) FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'" ;
+			$command =Yii::app()->db->createCommand($qtxt);
+			$term = str_replace(" ", "", $_GET['term']);
+			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompleteSemenType() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT concat_ws('-',semen_id,code) FROM  semen_type WHERE code LIKE :username " ;
+			$command =Yii::app()->db->createCommand($qtxt);
+			$term = str_replace(" ", "", $_GET['term']);
+			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionGetEarNotch() {
+		$res =array();
+		if (isset($_GET['id'])) {
+			$qtxt ="SELECT * FROM  herd WHERE sow_boar_id = ".$_GET['id'];
+			$command =Yii::app()->db->createCommand($qtxt);
+			$res =$command->queryRow();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actioninsertSemenType(){
+		if (isset($_GET['code'])) {
+			$qtxt = " INSERT INTO semen_type (code) values ('".$_GET['code']."') " ;
+			$command =Yii::app()->db->createCommand($qtxt);
+			$res =$command->query();
+		}
+	}
+	public function actionAutocompleteEarTag() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			// http://www.yiiframework.com/doc/guide/database.dao
+			$qtxt ="SELECT concat_ws('-',sow_boar_id,ear_tag)FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR'" ;
+			$command =Yii::app()->db->createCommand($qtxt);
+			$term = str_replace(" ", "", $_GET['term']);
+			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+			$res =$command->queryColumn();
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
 	}
 }

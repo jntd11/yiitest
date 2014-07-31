@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 	'Create',
 );
 $this->menu=array(
-	array('label'=>'List Semen Orders', 'url'=>array('index')),
-	array('label'=>'Manage Semen Orders', 'url'=>array('admin')),
+	/* array('label'=>'List Semen Orders', 'url'=>array('index')),
+	array('label'=>'Manage Semen Orders', 'url'=>array('admin')), */
 );
 $cs=Yii::app()->clientScript;
 $cs->registerCssFile(
@@ -16,7 +16,7 @@ $cs->registerCssFile(
 		'/css/splitmenubuttons.css'
 );
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/splitmenubuttons.js');
-$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+//$cs->registerCoreScript('jquery-ui-1.10.2.custom');
 $cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/jquery.ui-contextmenu.js');
 $cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/semen.js');
 ?>

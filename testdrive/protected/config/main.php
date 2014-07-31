@@ -134,7 +134,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=512368_pigs',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'root',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 
@@ -170,7 +170,7 @@ return array(
 		),
 		'session' => array(
 				'cookieParams' => array(
-						'lifetime' => 300,
+						'lifetime' => 30000,
 				),
 		),
 	),
