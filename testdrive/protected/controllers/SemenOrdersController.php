@@ -121,19 +121,37 @@ class SemenOrdersController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($id=null)
 	{
+
 		$model=new SemenOrders;
 		$modelCustomer=new TblCustomerEntry;
+		if(isset($id) && $id != null){
+			$model=$this->loadModel($id);
+			$modelCustomer=new TblCustomerEntry;
+			$modelCustomer=TblCustomerEntry::model()->findByPk($model->customer_id);
+		}
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['SemenOrders']))
 		{
+			$model=new SemenOrders;
 			$model->attributes=$_POST['SemenOrders'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->semen_orders_id));
+			$model->ship_date = date("m/d/Y",strtotime($model->ship_date));
+			$model->ordered_date = date("m/d/Y",strtotime($model->ordered_date));
+			$modelCustomer->attributes = $_POST['TblCustomerEntry'];
+			if($model->save()) {
+				if(isset($_POST['savedup'])){
+					$this->redirect(array('create','id'=>$model->semen_orders_id));
+				}elseif(isset($_POST['savenew']))
+					$this->redirect(array('create'));
+				else
+					$this->redirect(array('report','id'=>$model->semen_orders_id));
+
+			}
+
 		}
 
 		$this->render('create',array(
@@ -141,67 +159,7 @@ class SemenOrdersController extends Controller
 			'modelCustomer'=>$modelCustomer,
 		));
 	}
-	public function actionAutocompleteFirstName() {
-		$res =array();
-		if (isset($_GET['term'])) {
-			if (isset($_GET['isall']) && $_GET['isall'] == 0) {
-				$qtxt ="SELECT concat_ws('-',customer_entry_id,first_name)  FROM customers WHERE first_name LIKE '%".$_GET['term']."%'";
-				$command =Yii::app()->db->createCommand($qtxt);
-				$res =$command->queryColumn();
 
-			}else if (isset($_GET['isall']) && $_GET['isall'] == 1) {
-				$qtxt ="SELECT * FROM customers WHERE customer_entry_id = ".$_GET['term'];
-				$command =Yii::app()->db->createCommand($qtxt);
-				$res =$command->queryRow();
-			}
-
-		}
-		echo CJSON::encode($res);
-		Yii::app()->end();
-	}
-	public function actionAutocompleteCompanyName() {
-		$res =array();
-		if (isset($_GET['term'])) {
-			if (isset($_GET['isall']) && $_GET['isall'] == 0) {
-				$qtxt ="SELECT concat_ws('-',customer_entry_id,company_name)  FROM customers WHERE company_name LIKE '%".$_GET['term']."%'";
-				$command =Yii::app()->db->createCommand($qtxt);
-				$res =$command->queryColumn();
-
-			}else if (isset($_GET['isall']) && $_GET['isall'] == 1) {
-				$qtxt ="SELECT * FROM customers WHERE customer_entry_id = ".$_GET['term'];
-				$command =Yii::app()->db->createCommand($qtxt);
-				$res =$command->queryRow();
-			}
-
-		}
-		echo CJSON::encode($res);
-		Yii::app()->end();
-	}
-	public function actionAutocompleteLastName() {
-		$res =array();
-		if (isset($_GET['term'])) {
-			if (isset($_GET['isall']) && $_GET['isall'] == 0) {
-				$qtxt ="SELECT concat_ws('-',customer_entry_id,last_name)  FROM customers WHERE last_name LIKE '%".$_GET['term']."%'";
-				$command =Yii::app()->db->createCommand($qtxt);
-				$res =$command->queryColumn();
-
-			}else if (isset($_GET['isall']) && $_GET['isall'] == 1) {
-				$qtxt ="SELECT * FROM customers WHERE customer_entry_id = ".$_GET['term'];
-				$command =Yii::app()->db->createCommand($qtxt);
-				$res =$command->queryRow();
-			}
-
-		}
-		echo CJSON::encode($res);
-		Yii::app()->end();
-	}
-	public function getMailingCodes($term=NULL) {
-		$res =array();
-		$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc";
-		$command =Yii::app()->db->createCommand($qtxt);
-		$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
-		return $res = $command->queryColumn();
-	}
 
 	/**
 	 * Updates a particular model.
@@ -211,6 +169,8 @@ class SemenOrdersController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$modelCustomer=new TblCustomerEntry;
+		$modelCustomer=TblCustomerEntry::model()->findByPk($model->customer_id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -218,12 +178,21 @@ class SemenOrdersController extends Controller
 		if(isset($_POST['SemenOrders']))
 		{
 			$model->attributes=$_POST['SemenOrders'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->semen_orders_id));
+			$model->ship_date = date("m/d/Y",strtotime($model->ship_date));
+			$model->ordered_date = date("m/d/Y",strtotime($model->ordered_date));
+			$modelCustomer->attributes = $_POST['TblCustomerEntry'];
+			if($model->save()) {
+				if(!isset($_POST['savenew']))
+					$this->redirect(array('update','id'=>$model->semen_orders_id));
+				else
+					$this->redirect(array('create'));
+			}
+
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'modelCustomer'=>$modelCustomer,
 		));
 	}
 
@@ -293,6 +262,67 @@ class SemenOrdersController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	public function actionAutocompleteFirstName() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			if (isset($_GET['isall']) && $_GET['isall'] == 0) {
+				$qtxt ="SELECT concat_ws('-',customer_entry_id,first_name)  FROM customers WHERE first_name LIKE '%".$_GET['term']."%'";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryColumn();
+
+			}else if (isset($_GET['isall']) && $_GET['isall'] == 1) {
+				$qtxt ="SELECT * FROM customers WHERE customer_entry_id = ".$_GET['term'];
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryRow();
+			}
+
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompleteCompanyName() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			if (isset($_GET['isall']) && $_GET['isall'] == 0) {
+				$qtxt ="SELECT concat_ws('-',customer_entry_id,company_name)  FROM customers WHERE company_name LIKE '%".$_GET['term']."%'";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryColumn();
+
+			}else if (isset($_GET['isall']) && $_GET['isall'] == 1) {
+				$qtxt ="SELECT * FROM customers WHERE customer_entry_id = ".$_GET['term'];
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryRow();
+			}
+
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function actionAutocompleteLastName() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			if (isset($_GET['isall']) && $_GET['isall'] == 0) {
+				$qtxt ="SELECT concat_ws('-',customer_entry_id,last_name)  FROM customers WHERE last_name LIKE '%".$_GET['term']."%'";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryColumn();
+
+			}else if (isset($_GET['isall']) && $_GET['isall'] == 1) {
+				$qtxt ="SELECT * FROM customers WHERE customer_entry_id = ".$_GET['term'];
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryRow();
+			}
+
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
+	}
+	public function getMailingCodes($term=NULL) {
+		$res =array();
+		$qtxt ="SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc";
+		$command =Yii::app()->db->createCommand($qtxt);
+		$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+		return $res = $command->queryColumn();
 	}
 	public function dateRange($first, $last, $step = '+1 day', $format = 'd/m/Y' ) {
 

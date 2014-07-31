@@ -49,7 +49,7 @@ class SemenOrders extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('customer_id, sow_boar_id, ordered_date, ship_date, doses, price_dose, shipping_cost, misc, comments, onstandby, invoice, semen_type, cod_charges, payment_type, modified_date', 'required'),
+			array('customer_id, sow_boar_id, ordered_date, ship_date, doses, price_dose, shipping_cost, invoice, semen_type,  payment_type', 'required'),
 			array('customer_id, sow_boar_id, doses, invoice', 'numerical', 'integerOnly'=>true),
 			array('price_dose, shipping_cost, misc, cod_charges', 'numerical'),
 			array('comments', 'length', 'max'=>40),

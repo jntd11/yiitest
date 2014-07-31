@@ -336,7 +336,7 @@ $hogtag = Yii::app()->request->cookies['hog_tag'];
 			  				'dateFormat'=>'m/d/yy DD',
 							'constrainInput'=> false,
 							'showOn'=>'button',
-							'defaultDate'=>''.date("Y-m-d").'',
+							//'defaultDate'=>''.date("Y-m-d").'',
 							'buttonImage'=>'img/calendar.gif',
 			  		),
 
@@ -365,7 +365,7 @@ $hogtag = Yii::app()->request->cookies['hog_tag'];
 			  				'dateFormat'=>'m/d/yy DD',
 							'constrainInput'=> false,
 							'showOn'=>'button',
-							'defaultDate'=>''.date("Y-m-d").'',
+							//'defaultDate'=>''.date("Y-m-d").'',
 							'buttonImage'=>'img/calendar.gif',
 			  		),
 
