@@ -59,13 +59,11 @@ $(document).ready(function(){
 		}
 		return;
 	}
-	if($("#sire_notch").val() != "" && $("#sire_notch").val() != undefined) 
-		searchSireDam($('#sire_notch').val(),'sirename');
-	if($("#dam_notch").val() != "" && $("#sire_notch").val() != undefined) 
-		searchSireDam($("#dam_notch").val(),'damname');
-	if($("#farrowed_date").val() != "undefined") {
-		$("#farrowed_date").focus();
-	}
+	
+	$("#TblCustomerEntry_first_name").focus();
+	autoSuggestSearch();
+	
+	
 });
 
 function setDefault(val,obj){
@@ -85,12 +83,45 @@ function setDefault(val,obj){
 	
 }
 function autoSuggestSearch(){
-	$("#sow-gilts-grid [name='SowGilts[sow_ear_notch]']").autocomplete({
-		    source: 'index.php?r=sowGilts/autocompleteSow',
-		    select: function( event, ui ) {
-		    	var data = this.name+"="+ui.item.value;
-		    	$('#sow-gilts-grid').yiiGridView('update', {data: data});
-		    }
+	$("#semen-orders-form [name='TblCustomerEntry[first_name]']").autocomplete({
+	    source: 'index.php?r=semenOrders/autocompleteFirstName&isall=0',
+	    select: function( event, ui ) {
+	    	var valArray = ui.item.value.split("-");
+	    	ui.item.value = valArray[1];
+	    	$("#SemenOrders_customer_id").val(valArray[0]);
+	    	$.ajax({
+				url: encodeURI('index.php?r=semenOrders/autocompleteFirstName'),
+				type: "GET",
+				data: {isall:1,term:valArray[0]}
+			}).done(function(data){
+				var Obj = JSON.parse(data);
+				
+				if(typeof Obj.customer_entry_id != "undefined") {
+					$("#TblCustomerEntry_company_name").val(Obj.company_name);
+					$("#TblCustomerEntry_company_name").val(Obj.first_name);
+					$("#TblCustomerEntry_company_name").val(Obj.last_nam);
+					$("#TblCustomerEntry_company_name").val(Obj.address1);
+					$("#TblCustomerEntry_company_name").val(Obj.address2);
+					$("#TblCustomerEntry_company_name").val(Obj.city);
+					$("#TblCustomerEntry_company_name").val(Obj.zip);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_home);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_business);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_cell);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_other1);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
+					$("#TblCustomerEntry_company_name").val(Obj.phone_other2);
+					
+				}
+			});
+	    	//var data = this.name+"="+ui.item.value;
+	    	
+	    }
 	});
 
 	

@@ -32,7 +32,7 @@ class SemenOrdersController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','report'),
+				'actions'=>array('create','update','report','AutocompleteFirstName'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -139,6 +139,24 @@ class SemenOrdersController extends Controller
 			'model'=>$model,
 			'modelCustomer'=>$modelCustomer,
 		));
+	}
+	public function actionAutocompleteFirstName() {
+		$res =array();
+		if (isset($_GET['term'])) {
+			if (isset($_GET['isall']) && $_GET['isall'] == 0) {
+				$qtxt ="SELECT concat_ws('-',customer_entry_id,first_name)  FROM customers WHERE first_name LIKE '%".$_GET['term']."%'";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryColumn();
+				
+			}else if (isset($_GET['isall']) && $_GET['isall'] == 1) {
+				$qtxt ="SELECT * FROM customers WHERE customer_entry_id = ".$_GET['term'];
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryRow();
+			}
+			
+		}
+		echo CJSON::encode($res);
+		Yii::app()->end();
 	}
 	public function getMailingCodes($term=NULL) {
 		$res =array();

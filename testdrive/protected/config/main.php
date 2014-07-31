@@ -134,7 +134,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=512368_pigs',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'root',
 			'charset' => 'utf8',
 		),
 
