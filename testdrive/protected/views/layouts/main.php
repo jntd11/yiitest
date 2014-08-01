@@ -93,7 +93,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 						array('label'=>'Chores Report', 'url'=>array('/autoChores/report')),
 						array('label'=>'Chores Setup', 'url'=>array('/autoChores/create')),
 					)),
-					array('label'=>'Semen', 'itemOptions'=>array('id'=>'reports'), 'url'=>array('/SemenOrders/create'), 'linkOptions'=>array(), 'items'=>array(					)),
+					array('label'=>'Semen', 'itemOptions'=>array('id'=>'reports'), 'url'=>array('/SemenOrders/report'), 'linkOptions'=>array(), 'items'=>array(					)),
 					array('label'=>'Others', 'itemOptions'=>array('id'=>'Others'), 'url'=>array(''), 'linkOptions'=>array('accesskey'=>'O'), 'items'=>array(
 							array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup/admin')),
 							array('label'=>'Defects Codes', 'url'=>array('/DefectsCode/admin')),

@@ -432,93 +432,65 @@ $(function(){
 		ignoreParentSelect: false,
 		taphold: true,
 		menu: [
-		    {title: "Insert", cmd: "insert", uiIcon: "ui-icon-copy"},
+		    {title: "New", cmd: "new", uiIcon: "ui-icon-copy"},
 			{title: "Duplicate", cmd: "duplicate", uiIcon: "ui-icon-clipboard"},
-			{title: "Set to Disabled", cmd: "disabled", uiIcon: "ui-icon-scissors"},
-			{title: "Edit", cmd: "edit", uiIcon: "ui-icon-scissors"},
+			{title: "Update", cmd: "update", uiIcon: "ui-icon-scissors"},
+			{title: "Standby", cmd: "standby", uiIcon: "ui-icon-scissors"},
 			],
 		// Handle menu selection to implement a fake-clipboard
 		select: function(event, ui) {
 			var $target = ui.target;
 			var a = $(ui.target).parent();
 			switch(ui.cmd){
-			case "insert":
+			case "new":
 				CLIPBOARD = $target.text();
-				var insert = $("#insertrow").html();
-				$("#insertrow").remove();
-				$("#"+a[0].id).before('<tr class="odd" id="insertrow">'+insert+'</tr>');
+				var a = $(ui.target).parent();
+				var newrowid = a[0].id;
+				var val = $("#"+newrowid+"_date").val();
+				window.location = 'index.php?r=SemenOrders/create&d='+val;
 				break;
 			case "duplicate":
 				CLIPBOARD = $target.text();
 				var a = $(ui.target).parent();
 				var newrowid = a[0].id;
-				$("#dateinsert").html("");
-				$("#dateinsert").html('<input type="text" name="AutoChores[date_asof]" onblur="validateDatePicker(&quot;date_asof&quot;)" maxlength="20" size="20" id="date_asof" >')
-				var insert = $("#insertrow").html();
-				$("#insertrow").remove();
-				$("#"+a[0].id).after('<tr class="odd" id="insertrow">'+insert+'</tr>');
-				$("#AutoChores_description").val($("#"+newrowid+"_desc").html());
-				$("#AutoChores_times_occur").val($("#"+newrowid+"_times").html());
-				$("#AutoChores_days_between").val($("#"+newrowid+"_days").html());
-				$("#AutoChores_generated_by").val($("#"+newrowid+"_generated").html());
-				$("#date_asof").val($("#"+newrowid+"_date").html());
-				$("#AutoChores_days_after").val($("#"+newrowid+"_after").html());
-				$("#AutoChores_farm_herd").val($("#"+newrowid+"_farm").html());
-				$("#date_asof").datepicker({
-				      changeMonth: true,
-				      changeYear: true,
-				      showOn: 'button',
-				      buttonImage:'img/calendar.gif',
-				    });
+				var val = $("#"+newrowid+"_id").val();
+				window.location = 'index.php?r=SemenOrders/create&id='+val;
+				
 				break;
-			case "edit":
+			case "update":
 				CLIPBOARD = $target.text();
 				var a = $(ui.target).parent();
 				var newrowid = a[0].id;
-				$("#dateinsert").html("");
-				$("#dateinsert").html('<input type="text" name="AutoChores[date_asof]" onblur="validateDatePicker(&quot;date_asof&quot;)" maxlength="20" size="20" id="date_asof" >')
-				var insert = $("#insertrow").html();
-				$("#insertrow").remove();
-				$("#"+a[0].id).after('<tr class="odd" id="insertrow">'+insert+'</tr>');
-				$("#AutoChores_description").val($("#"+newrowid+"_desc").html());
-				$("#AutoChores_times_occur").val($("#"+newrowid+"_times").html());
-				$("#AutoChores_days_between").val($("#"+newrowid+"_days").html());
-				$("#AutoChores_generated_by").val($("#"+newrowid+"_generated").html());
-				$("#date_asof").val($("#"+newrowid+"_date").html());
-				$("#AutoChores_days_after").val($("#"+newrowid+"_after").html());
-				$("#AutoChores_farm_herd").val($("#"+newrowid+"_farm").html());
-				$("#savebutton").val("Save");
-				$("#date_asof").datepicker({
-				      changeMonth: true,
-				      changeYear: true,
-				      showOn: 'button',
-				      buttonImage:'img/calendar.gif',
-				    });
-				$("#auto-chores-form").attr('action',$("#auto-chores-form").attr('action').replace("create","update/id/"+newrowid));
-				$("#"+a[0].id).remove();
-				$("#AutoChores_description").focus();
+				var val = $("#"+newrowid+"_id").val();
+				window.location = 'index.php?r=SemenOrders/update&id='+val;
 				break;
-			case "disabled":
+			case "standby":
 				CLIPBOARD = "";
-				$(document).contextmenu("setEntry", "disabled", {title: "Set to Enabled", cmd: "enabled", uiIcon: "ui-icon-scissors"});
+				$(document).contextmenu("setEntry", "standby", {title: "Remove Standby", cmd: "remove", uiIcon: "ui-icon-scissors"});
+				var newrowid = a[0].id;
+				var val = $("#"+newrowid+"_id").val();
 				$.ajax({
-					url: encodeURI('index.php?r=autoChores/ChangeStatus'),
+					url: encodeURI('index.php?r=semenorders/ChangeStatus'),
 					type: "GET",
-					data: {s:1,id:a[0].id}
+					data: {s:1,id:val}
 				}).done(function(data){
-					window.location = 'index.php?r=autoChores/create';
+					location.reload();
+					//window.location = 'index.php?r=semenorders/report';
 				});
 				
 				break;
-			case "enabled":
+			case "remove":
 				CLIPBOARD = "";
-				$(document).contextmenu("setEntry", "enabled", {title: "Set to Disabled", cmd: "disabled", uiIcon: "ui-icon-scissors"})
+				$(document).contextmenu("setEntry", "remove", {title: "Standby", cmd: "standby", uiIcon: "ui-icon-scissors"})
+				var newrowid = a[0].id;
+				var val = $("#"+newrowid+"_id").val();
 				$.ajax({
-					url: encodeURI('index.php?r=autoChores/changeStatus'),
+					url: encodeURI('index.php?r=semenorders/ChangeStatus'),
 					type: "GET",
-					data: {s:0,id:a[0].id}
+					data: {s:0,id:val}
 				}).done(function(data){
-					window.location = 'index.php?r=autoChores/create';
+					location.reload();
+					//window.location = 'index.php?r=semenorders/report';
 				});
 				break;
 			}
@@ -541,10 +513,22 @@ $(function(){
 			var a = $(ui.target).parent();
 			
 			var newrowid = a[0].id;
-			if($("#"+newrowid+"_disabled").html() == "Disabled") 
-				$(document).contextmenu("setEntry", "disabled", {title: "Set to Enabled", cmd: "enabled", uiIcon: "ui-icon-scissors"});
+			
+			if($("#"+newrowid+"_header").val() == 1) {
+				$(document).contextmenu("setEntry", "standby",{title: "Standby", cmd: "standby",disabled: true,  uiIcon: "ui-icon-scissors"});
+				$(document).contextmenu("setEntry", "new",{title: "New", cmd: "new",disabled: false,  uiIcon: "ui-icon-copy"});
+				$(document).contextmenu("setEntry", "duplicate",{title: "Duplicate", cmd: "duplicate",disabled: true,  uiIcon: "ui-icon-scissors"});
+				$(document).contextmenu("setEntry", "update",{title: "Update", cmd: "update",disabled: true,  uiIcon: "ui-icon-scissors"});
+
+			}else{
+				$(document).contextmenu("setEntry", "new",{title: "New", cmd: "new",disabled: false,  uiIcon: "ui-icon-copy"});
+				$(document).contextmenu("setEntry", "duplicate",{title: "Duplicate", cmd: "duplicate",disabled: false,  uiIcon: "ui-icon-scissors"});
+				$(document).contextmenu("setEntry", "update",{title: "Update", cmd: "update",disabled: false,  uiIcon: "ui-icon-scissors"});
+			}
+			if($("#"+newrowid+"_standby").html() == "Y") 
+				$(document).contextmenu("setEntry", "standby", {title: "Remove Standby", cmd: "remove", uiIcon: "ui-icon-scissors"});
 			else
-				$(document).contextmenu("setEntry", "enabled", {title: "Set to Disabled", cmd: "disabled", uiIcon: "ui-icon-scissors"});
+				$(document).contextmenu("setEntry", "remove", {title: "Standby", cmd: "standby", uiIcon: "ui-icon-scissors"});
 			// Optionally return false, to prevent opening the menu now
 		}
 	});

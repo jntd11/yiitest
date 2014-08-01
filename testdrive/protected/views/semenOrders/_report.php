@@ -6,9 +6,9 @@ $farmHerd = Yii::app()->request->cookies['farm_herd'];
 $farmHerdName = Yii::app()->request->cookies['farm_herd_name'];
 $herdmark = Yii::app()->request->cookies['breeder_herd_mark'];
 $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request->cookies['date']:date("m/d/Y");
-$from_date = (isset($_POST['from_date']))?$_POST['from_date']:date("m/d/Y");
-$to_date = (isset($_POST['to_date']))?$_POST['to_date']:date("m/d/Y",strtotime("+1 day"));
-$farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
+$from_date = (isset($_GET['from_date']))?$_GET['from_date']:date("m/d/Y");
+$to_date = (isset($_GET['to_date']))?$_GET['to_date']:date("m/d/Y",strtotime("+1 day"));
+$standby = (isset($_GET['standby']))?$_GET['standby']:"N";
 ?>
 
 <div class="form">
@@ -17,6 +17,7 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 	$form=$this->beginWidget('CActiveForm', array(
 			'id'=>'autoChores_frm',
 			'enableAjaxValidation'=>false,
+			'method'=>'get'
 	));
 ?>
 	<div class="row">
@@ -63,7 +64,7 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 				),
 		));
 	  ?>
-	 <?php echo "Farm & Herd"; ?>
+	 <?php echo "Standby Only"; ?>
 		&nbsp;
     <?php
        echo CHtml::checkBox('standby',false,array('value' => 'Y'));
@@ -103,7 +104,7 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 	     <tr>
 	        <td colspan="5"><?php echo "From Date: <b> $from_date </b>"; ?></td>
 	        <td colspan="5"><?php echo "To Date: <b> $to_date </b>"; ?></td>
-	        <td colspan="4"><?php echo "Farm & Herd: <b> $farm </b>";  ?></td>
+	        <td colspan="4"><?php echo "Standby Only: <b> $standby </b>";  ?></td>
 	     </tr>
 	     <tr>
 	     	<th  style="text-align: left">Customer Id</th>
@@ -126,14 +127,20 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 	     	foreach($results as $key=>$result){
 	     		$count++;
 		 ?>
-		 	<tr class="even hasmenu" id="<?php echo $count ?>"><td colspan="14" align="center" style="text-align: center; border-bottom: 2px solid;" >
-		 	<input id="<?php echo $count; ?>_date" value="<?php echo $key;?>" />
+		 	<tr class="even hasmenu" id="<?php echo "head_".$count ?>" onClick="window.location='index.php?r=SemenOrders/create'">
+		 	<td colspan="14" align="center" style="text-align: center; border-bottom: 2px solid;" >
+		 	<input id="<?php echo "head_".$count; ?>_date" value="<?php echo $key;?>" type="hidden" />
+		 	<input id="<?php echo "head_".$count; ?>_header" value="1" type="hidden"/>
 		 	<?php echo $key." ".date("l",strtotime($key)); ?></td></tr>
 		 <?php
 			foreach ($result as $keyrow=>$resultrow){
 		 ?>
-		 <tr class="odd hasmenu" id="<?php echo $count ?>">
-	     	<td><?php echo $resultrow['customer_id']; ?></td>
+		 <tr class="odd hasmenu" id="<?php echo $resultrow['semen_orders_id'] ?>" onClick="window.location='index.php?r=SemenOrders/update&id=<?php echo $resultrow['semen_orders_id'] ?>'">
+	     	<td>
+	     	<input id="<?php echo $resultrow['semen_orders_id']; ?>_id" value="<?php echo $resultrow['semen_orders_id'];?>" type="hidden"/>
+	     	<input id="<?php echo $resultrow['semen_orders_id']; ?>_date" value="<?php echo $key;?>" type="hidden"/>
+	     	<input id="<?php echo $resultrow['semen_orders_id']; ?>_header" value="0" type="hidden"/>
+	     	<?php echo $resultrow['customer_id']; ?></td>
 	     	<td><?php echo $resultrow['sow_boar_id']; ?></td>
 	     	<td><?php echo $resultrow['ordered_date']; ?></td>
 	     	<td><?php echo $resultrow['ship_date']; ?></td>
@@ -142,7 +149,7 @@ $farm = (isset($_POST['farm']))?$_POST['farm']:$farmHerd;
 	     	<td><?php echo $resultrow['shipping_cost']; ?></td>
 	     	<td><?php echo $resultrow['misc']; ?></td>
 	     	<td><?php echo $resultrow['comments']; ?></td>
-	     	<td><?php echo $resultrow['onstandby']; ?></td>
+	     	<td id="<?php echo $resultrow['semen_orders_id']; ?>_standby"><?php echo $resultrow['onstandby']; ?></td>
 	     	<td><?php echo $resultrow['invoice']; ?></td>
 	     	<td><?php echo $resultrow['semen_type']; ?></td>
 	     	<td><?php echo $resultrow['cod_charges']; ?></td>

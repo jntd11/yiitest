@@ -3,6 +3,7 @@
 /* @var $model SemenOrders */
 /* @var $form CActiveForm */
 $hogtag = Yii::app()->request->cookies['hog_tag'];
+$datedefault = (isset($_GET['d']))?$_GET['d']:"";
 ?>
 
 <div class="form">
@@ -336,7 +337,7 @@ $hogtag = Yii::app()->request->cookies['hog_tag'];
 			  				'dateFormat'=>'m/d/yy DD',
 							'constrainInput'=> false,
 							'showOn'=>'button',
-							//'defaultDate'=>''.date("Y-m-d").'',
+							'defaultDate'=>''.$datedefault.'',
 							'buttonImage'=>'img/calendar.gif',
 			  		),
 
@@ -344,6 +345,8 @@ $hogtag = Yii::app()->request->cookies['hog_tag'];
 			  				'id'=>'ordered_date',
 			  				'size' => '20',         // textField size
 			  				'maxlength' => '20',    // textField maxlength
+							'value'=>$datedefault,
+						
 			  		),
 			  ));
 		?>
@@ -365,7 +368,7 @@ $hogtag = Yii::app()->request->cookies['hog_tag'];
 			  				'dateFormat'=>'m/d/yy DD',
 							'constrainInput'=> false,
 							'showOn'=>'button',
-							//'defaultDate'=>''.date("Y-m-d").'',
+							'defaultDate'=>''.$datedefault.'',
 							'buttonImage'=>'img/calendar.gif',
 			  		),
 
@@ -373,6 +376,7 @@ $hogtag = Yii::app()->request->cookies['hog_tag'];
 			  				'id'=>'ship_date',
 			  				'size' => '20',         // textField size
 			  				'maxlength' => '20',    // textField maxlength
+							'value'=>$datedefault,
 			  		),
 			  ));?>
 		<?php echo $form->error($model,'ship_date'); ?>
