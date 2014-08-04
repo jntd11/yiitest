@@ -80,8 +80,8 @@ class SemenOrders extends CActiveRecord
 	{
 		return array(
 			'semen_orders_id' => 'Semen Orders',
-			'customer_id' => 'Customer',
-			'sow_boar_id' => 'Sow Boar',
+			'customer_id' => 'Customer Name',
+			'sow_boar_id' => 'Sow Boar Tag',
 			'ordered_date' => 'Order Date',
 			'ship_date' => 'Shipping Date',
 			'doses' => '# Doses',

@@ -326,8 +326,7 @@ $datedefault = (isset($_GET['d']))?$_GET['d']:"";
 		<?php echo $form->hiddenField($model,'customer_id'); ?>
 		<?php echo $form->error($model,'customer_id'); ?>
 			<?php //echo $form->labelEx($model,'sow_boar_id'); ?>
-		<?php echo $form->hiddenField($model,'sow_boar_id'); ?>
-		<?php echo $form->error($model,'sow_boar_id'); ?>
+
 			<?php echo $form->labelEx($model,'ordered_date'); ?>
 		<?php //echo $form->textField($model,'ordered_date');
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
@@ -346,7 +345,7 @@ $datedefault = (isset($_GET['d']))?$_GET['d']:"";
 			  				'size' => '20',         // textField size
 			  				'maxlength' => '20',    // textField maxlength
 							'value'=>$datedefault,
-						
+
 			  		),
 			  ));
 		?>
@@ -387,6 +386,8 @@ $datedefault = (isset($_GET['d']))?$_GET['d']:"";
     <td>
 
 	<div class="row">
+		<?php echo $form->hiddenField($model,'sow_boar_id'); ?>
+		<?php echo $form->error($model,'sow_boar_id'); ?>
 		<?php if($hogtag == 'T') {?>
 		<label>Sow Ear Tag </label>
 			<input type="text" name="ear_tag" id="ear_tag">

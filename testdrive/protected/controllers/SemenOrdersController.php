@@ -142,8 +142,10 @@ class SemenOrdersController extends Controller
 			$model->attributes=$_POST['SemenOrders'];
 			$model->ship_date = date("m/d/Y",strtotime($model->ship_date));
 			$model->ordered_date = date("m/d/Y",strtotime($model->ordered_date));
+			$modelCustomer=TblCustomerEntry::model()->findByPk($model->customer_id);
 			$modelCustomer->attributes = $_POST['TblCustomerEntry'];
 			if($model->save()) {
+				$modelCustomer->save();
 				if(isset($_POST['savedup'])){
 					$this->redirect(array('create','id'=>$model->semen_orders_id));
 				}elseif(isset($_POST['savenew']))
@@ -183,6 +185,7 @@ class SemenOrdersController extends Controller
 			$model->ordered_date = date("m/d/Y",strtotime($model->ordered_date));
 			$modelCustomer->attributes = $_POST['TblCustomerEntry'];
 			if($model->save()) {
+				$modelCustomer->save();
 				if(!isset($_POST['savenew']))
 					$this->redirect(array('update','id'=>$model->semen_orders_id));
 				else
@@ -403,7 +406,7 @@ class SemenOrdersController extends Controller
 			$model->onstandby = "Y";
 		else
 			$model->onstandby = "N";
-	
+
 		echo (int) $model->save();
 	}
 }
