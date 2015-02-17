@@ -17,11 +17,11 @@ $datedefault = (isset($_GET['d']))?$_GET['d']:"";
 
 	<?php echo $form->errorSummary($model); ?>
 	<div class="row">
-		<?php echo CHtml::Button('List Orders',array('onClick'=>'window.location="index.php?r=semenorders/report"')); ?>
+		<?php echo CHtml::Button('List Orders',array('onClick'=>'window.location="index.php?r=SemenOrders/report"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save'); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('id'=>'savenew','name'=>'savenew')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & Duplicate' : 'Save & Duplicate',array('id'=>'savenew','name'=>'savedup')); ?>
-		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=semenorders/report"')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=SemenOrders/report"')); ?>
 	</div>
 	<div>&nbsp;</div>
 
@@ -333,10 +333,10 @@ $datedefault = (isset($_GET['d']))?$_GET['d']:"";
 			  		'model' => $model,
 			  		'attribute' => 'ordered_date',
 			  		'options' =>array(
-			  				'dateFormat'=>'m/d/yy DD',
+			  				'dateFormat'=>'m/d/yy',
 							'constrainInput'=> false,
 							'showOn'=>'button',
-							'defaultDate'=>''.$datedefault.'',
+							//'defaultDate'=>''.$datedefault.'',
 							'buttonImage'=>'img/calendar.gif',
 			  		),
 
@@ -364,10 +364,10 @@ $datedefault = (isset($_GET['d']))?$_GET['d']:"";
 			  		'model' => $model,
 			  		'attribute' => 'ship_date',
 			  		'options' =>array(
-			  				'dateFormat'=>'m/d/yy DD',
+			  				'dateFormat'=>'m/d/yy',
 							'constrainInput'=> false,
 							'showOn'=>'button',
-							'defaultDate'=>''.$datedefault.'',
+							//'defaultDate'=>''.$datedefault.'',
 							'buttonImage'=>'img/calendar.gif',
 			  		),
 
@@ -476,11 +476,11 @@ $datedefault = (isset($_GET['d']))?$_GET['d']:"";
   </table>
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
   <div class="row buttons">
-		<?php echo CHtml::Button('List Orders',array('onClick'=>'window.location="index.php?r=semenorders/report"')); ?>
+		<?php echo CHtml::Button('List Orders',array('onClick'=>'window.location="index.php?r=SemenOrders/report"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save'); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('id'=>'savenew','name'=>'savenew')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & Duplicate' : 'Save & Duplicate',array('id'=>'savenew','name'=>'savedup')); ?>
-		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=semenorders/report"')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=SemenOrders/report"')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

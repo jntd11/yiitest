@@ -98,7 +98,7 @@ function autoSuggestSearch(){
 				if(typeof Obj.customer_entry_id != "undefined") {
 					$("#TblCustomerEntry_company_name").val(Obj.company_name);
 					$("#TblCustomerEntry_first_name").val(Obj.first_name);
-					$("#TblCustomerEntry_last_name").val(Obj.last_nam);
+					$("#TblCustomerEntry_last_name").val(Obj.last_name);
 					$("#TblCustomerEntry_address1").val(Obj.address1);
 					$("#TblCustomerEntry_address2").val(Obj.address2);
 					$("#TblCustomerEntry_city").val(Obj.city);
@@ -154,7 +154,7 @@ function autoSuggestSearch(){
 				if(typeof Obj.customer_entry_id != "undefined") {
 					$("#TblCustomerEntry_company_name").val(Obj.company_name);
 					$("#TblCustomerEntry_first_name").val(Obj.first_name);
-					$("#TblCustomerEntry_last_name").val(Obj.last_nam);
+					$("#TblCustomerEntry_last_name").val(Obj.last_name);
 					$("#TblCustomerEntry_address1").val(Obj.address1);
 					$("#TblCustomerEntry_address2").val(Obj.address2);
 					$("#TblCustomerEntry_city").val(Obj.city);
@@ -209,7 +209,7 @@ function autoSuggestSearch(){
 				if(typeof Obj.customer_entry_id != "undefined") {
 					$("#TblCustomerEntry_company_name").val(Obj.company_name);
 					$("#TblCustomerEntry_first_name").val(Obj.first_name);
-					$("#TblCustomerEntry_last_name").val(Obj.last_nam);
+					$("#TblCustomerEntry_last_name").val(Obj.last_name);
 					$("#TblCustomerEntry_address1").val(Obj.address1);
 					$("#TblCustomerEntry_address2").val(Obj.address2);
 					$("#TblCustomerEntry_city").val(Obj.city);
@@ -264,7 +264,7 @@ function autoSuggestSearch(){
 				if(typeof Obj.customer_entry_id != "undefined") {
 					$("#TblCustomerEntry_company_name").val(Obj.company_name);
 					$("#TblCustomerEntry_first_name").val(Obj.first_name);
-					$("#TblCustomerEntry_last_name").val(Obj.last_nam);
+					$("#TblCustomerEntry_last_name").val(Obj.last_name);
 					$("#TblCustomerEntry_address1").val(Obj.address1);
 					$("#TblCustomerEntry_address2").val(Obj.address2);
 					$("#TblCustomerEntry_city").val(Obj.city);
@@ -595,4 +595,12 @@ function print(){
 	});*/
 	var myWindow = window.open("index.php?r=autoChores/report","MsgWindow","width=600,height=800");
 	myWindow.print();
+}
+function fillCode(val){
+	if(val == '&lt;New&gt;'){ 
+		openDialogMailing();
+	}else {
+		var valArray = val.split("-");
+		$("#semen-orders-form [name='TblCustomerEntry[mailing_code]']").val($("#semen-orders-form [name='TblCustomerEntry[mailing_code]']").val()+valArray[0]);
+	}
 }

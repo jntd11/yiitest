@@ -17,7 +17,7 @@ $cs->registerCssFile(
 );
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/splitmenubuttons.js');
 //$cs->registerCoreScript('jquery-ui-1.10.2.custom');
-$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/jquery.ui-contextmenu.js');
+//$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/jquery.ui-contextmenu.js');
 $cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/semen.js');
 ?>
 <script>
@@ -28,9 +28,10 @@ jQuery(function(){ // on document load
 
 </script>
 <?php echo $this->renderPartial('_form', array('model'=>$model,'modelCustomer'=>$modelCustomer)); ?>
-<?php $model=new tblMailingCode;
+<?php
+$model=new tblMailingCode;
 $mc = $this->getMailingCodes();
-
+print_R($mc);
 ?>
 
 <div class="form" id="mailingcodedialog" style="display: none">
@@ -64,6 +65,7 @@ $mc = $this->getMailingCodes();
 	</div>
 
 <?php $this->endWidget(); ?>
+
 <?php
 echo '<ul id="dropmenu1" class="splitdropdown">';
 foreach($mc as $key=>$val){

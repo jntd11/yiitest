@@ -187,7 +187,7 @@ class SemenOrdersController extends Controller
 			if($model->save()) {
 				$modelCustomer->save();
 				if(!isset($_POST['savenew']))
-					$this->redirect(array('update','id'=>$model->semen_orders_id));
+					$this->redirect(array('report','id'=>$model->semen_orders_id));
 				else
 					$this->redirect(array('create'));
 			}
@@ -271,7 +271,7 @@ class SemenOrdersController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			if (isset($_GET['isall']) && $_GET['isall'] == 0) {
-				$qtxt ="SELECT concat_ws('-',customer_entry_id,first_name)  FROM customers WHERE first_name LIKE '%".$_GET['term']."%'";
+				$qtxt ="SELECT concat_ws('-',customer_entry_id,first_name,last_name)  FROM customers WHERE first_name LIKE '%".$_GET['term']."%'";
 				$command =Yii::app()->db->createCommand($qtxt);
 				$res =$command->queryColumn();
 
@@ -307,7 +307,7 @@ class SemenOrdersController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			if (isset($_GET['isall']) && $_GET['isall'] == 0) {
-				$qtxt ="SELECT concat_ws('-',customer_entry_id,last_name)  FROM customers WHERE last_name LIKE '%".$_GET['term']."%'";
+				$qtxt ="SELECT concat_ws('-',customer_entry_id,first_name,last_name)  FROM customers WHERE last_name LIKE '%".$_GET['term']."%'";
 				$command =Yii::app()->db->createCommand($qtxt);
 				$res =$command->queryColumn();
 

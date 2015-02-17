@@ -19,18 +19,24 @@ $cs->registerCssFile(
 		Yii::app()->baseUrl.
 		'/css/splitmenubuttons.css'
 );
-$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/splitmenubuttons.js');
-$cs->registerCoreScript('jquery-ui-1.10.2.custom');
-$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/jquery.ui-contextmenu.js');
+
+//$cs->registerCoreScript('jquery-ui-1.10.2.custom');
+//$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/jquery.ui-contextmenu.js');
 $cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/semen.js');
+$cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/splitmenubuttons.js');
 ?>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model,'modelCustomer'=>$modelCustomer)); ?>
 <?php $model=new tblMailingCode;
 $mc = $this->getMailingCodes();
-
 ?>
+<script>
 
+jQuery(function(){ // on document load
+	$('a[data-showmenu]').splitmenubuttonMenu() // Add split button menu to links with "data-showmenu" attr
+})
+
+</script>
 <div class="form" id="mailingcodedialog" style="display: none">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
