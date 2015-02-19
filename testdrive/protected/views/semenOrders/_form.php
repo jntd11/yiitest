@@ -3,7 +3,7 @@
 /* @var $model SemenOrders */
 /* @var $form CActiveForm */
 $hogtag = Yii::app()->request->cookies['hog_tag'];
-$datedefault = (isset($_GET['d']))?$_GET['d']:"";
+echo $datedefault = (isset($model->ordered_date))?$model->ordered_date:(isset($_GET['d']))?$_GET['d']:"";
 ?>
 
 <div class="form">
@@ -17,11 +17,11 @@ $datedefault = (isset($_GET['d']))?$_GET['d']:"";
 
 	<?php echo $form->errorSummary($model); ?>
 	<div class="row">
-		<?php echo CHtml::Button('List Orders',array('onClick'=>'window.location="index.php?r=SemenOrders/report"')); ?>
+		<?php echo CHtml::Button('List Orders',array('onClick'=>'window.location="index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save'); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('id'=>'savenew','name'=>'savenew')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & Duplicate' : 'Save & Duplicate',array('id'=>'savenew','name'=>'savedup')); ?>
-		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=SemenOrders/report"')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go"')); ?>
 	</div>
 	<div>&nbsp;</div>
 
@@ -336,7 +336,7 @@ $datedefault = (isset($_GET['d']))?$_GET['d']:"";
 			  				'dateFormat'=>'m/d/yy',
 							'constrainInput'=> false,
 							'showOn'=>'button',
-							//'defaultDate'=>''.$datedefault.'',
+							'defaultDate'=>''.$datedefault.'',
 							'buttonImage'=>'img/calendar.gif',
 			  		),
 
@@ -476,11 +476,11 @@ $datedefault = (isset($_GET['d']))?$_GET['d']:"";
   </table>
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
   <div class="row buttons">
-		<?php echo CHtml::Button('List Orders',array('onClick'=>'window.location="index.php?r=SemenOrders/report"')); ?>
+		<?php echo CHtml::Button('List Orders',array('onClick'=>'window.location="index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save'); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('id'=>'savenew','name'=>'savenew')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & Duplicate' : 'Save & Duplicate',array('id'=>'savenew','name'=>'savedup')); ?>
-		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=SemenOrders/report"')); ?>
+		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go"')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

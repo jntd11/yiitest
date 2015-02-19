@@ -3,8 +3,8 @@
 /* @var $model SemenOrders */
 
 $this->breadcrumbs=array(
-	'Semen Orders'=>array('index'),
-	$model->semen_orders_id=>array('view','id'=>$model->semen_orders_id),
+	'Semen Orders'=>array('report'),
+	$model->semen_orders_id=>array('update','id'=>$model->semen_orders_id),
 	'Update',
 );
 

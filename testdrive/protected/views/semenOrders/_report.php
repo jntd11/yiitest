@@ -9,6 +9,9 @@ $activitydate = isset(Yii::app()->request->cookies['date'])?Yii::app()->request-
 $from_date = (isset($_GET['from_date']))?$_GET['from_date']:date("m/d/Y");
 $to_date = (isset($_GET['to_date']))?$_GET['to_date']:date("m/d/Y",strtotime("+1 day"));
 $standby = (isset($_GET['standby']))?$_GET['standby']:"N";
+Yii::app()->request->cookies['from_date'] = new CHttpCookie('from_date',$from_date,array('expire'=>time()+(365*24*60*60)));
+Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,array('expire'=>time()+(365*24*60*60)));
+
 ?>
 
 <div class="form">
@@ -71,7 +74,7 @@ $standby = (isset($_GET['standby']))?$_GET['standby']:"N";
     ?>
     &nbsp;
     <?php
-	echo CHtml::submitButton('Go',array('onClick'=>'','name'=>'go'));
+	echo CHtml::submitButton('Go',array('onClick'=>'','name'=>'go','id'=>'go'));
 	/* echo CHtml::ajaxSubmitButton("print","",
  	  array('success' => 'function(data) {
  	                  var myWindow = window.open("","MsgWindow","width=600,height=600");

@@ -3,7 +3,7 @@
 /* @var $model SemenOrders */
 
 $this->breadcrumbs=array(
-	'Semen Orders'=>array('index'),
+	'Semen Orders'=>array('report'),
 	'Create',
 );
 $this->menu=array(
@@ -31,7 +31,6 @@ jQuery(function(){ // on document load
 <?php
 $model=new tblMailingCode;
 $mc = $this->getMailingCodes();
-print_R($mc);
 ?>
 
 <div class="form" id="mailingcodedialog" style="display: none">
