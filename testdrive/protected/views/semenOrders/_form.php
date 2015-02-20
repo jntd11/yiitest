@@ -2,6 +2,8 @@
 /* @var $this SemenOrdersController */
 /* @var $model SemenOrders */
 /* @var $form CActiveForm */
+$cs=Yii::app()->clientScript;
+$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/semen.js');
 $hogtag = Yii::app()->request->cookies['hog_tag'];
 echo $datedefault = (isset($model->ordered_date))?$model->ordered_date:(isset($_GET['d']))?$_GET['d']:"";
 ?>

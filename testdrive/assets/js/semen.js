@@ -1,11 +1,11 @@
-$(function() {
+/*$(function() {
 	var obj = $("table").last().attr('style');
 	if(obj != null && obj != "") {
 		var res = obj.match(/top:[\- ]+([0-9]+)px/g);
 		//alert(res);
 		$("#bottommenu").attr("style","position: relative;"+res);
 	}
-});
+});*/
 var oldval;
 function checkData(element,type,extra,extra1){
 	if(type == 1){
@@ -51,19 +51,16 @@ $(document).ready(function(){
 	    el.selectionEnd = elemLen;
 	    el.focus();
 	    
-	window.onbeforeunload = iamexiting;
+	/*window.onbeforeunload = iamexiting;
 	function iamexiting(e) {
-		if($("#sow-gilts-form").data("changed")) {
+		if($("#semen-orders-form").data("changed")) {
 			   return 'You have unsaved changes. Do you want to continue';
 			   // submit the form
 		}
 		return;
-	}
-	
+	}*/
 	$("#TblCustomerEntry_first_name").focus();
 	autoSuggestSearch();
-	
-	
 });
 
 function setDefault(val,obj){
@@ -384,12 +381,22 @@ function checkOption(obj){
 	}
 }
 $(function() { 
+	 window.onbeforeunload = iamexiting;
+		function iamexiting(e) {
+			if($("#semen-orders-form").data("changed")) {
+				   return 'You have unsaved changes. Do you want to continue';
+				   // submit the form
+			}
+			return;
+		}
 	 $(':text').focus(function() { 
 	  if (this.setSelectionRange) /* DOM */ 
 	  { 
-	   setTimeout(function(t) { /* hack for select delay */ 
-	    t.setSelectionRange(t.value.length,t.value.length); 
-	   },0,this); 
+		  /*setTimeout(function(t) {  hack for select delay 
+			  console.log(t.value.length);
+			  t.setSelectionRange(t.value.length,t.value.length,"backward"); 
+		  },0,this); */
+		  this.setSelectionRange(this.value.length,this.value.length);
 	  } 
 	  else if (this.createTextRange) /* IE */ 
 	  { 
@@ -397,7 +404,8 @@ $(function() {
 	   r.collapse(false); 
 	   r.select(); 
 	  } 
-	 }); 
+	 });
+	
 }); 
 
 var t = null;
