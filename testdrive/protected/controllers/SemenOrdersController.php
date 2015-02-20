@@ -171,10 +171,10 @@ class SemenOrdersController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		
 		$model=$this->loadModel($id);
 		$modelCustomer=new TblCustomerEntry;
 		$modelCustomer=TblCustomerEntry::model()->findByPk($model->customer_id);
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

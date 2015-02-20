@@ -24,6 +24,7 @@ $cs->registerCssFile(
 //$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/jquery.ui-contextmenu.js');
 
 $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/js/splitmenubuttons.js');
+$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/semen.js');
 ?>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model,'modelCustomer'=>$modelCustomer)); ?>

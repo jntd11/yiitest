@@ -59,6 +59,13 @@ $(document).ready(function(){
 		}
 		return;
 	}*/
+	    $("#semen-orders-form  :input[type!='submit']").change(function() {
+			   $("#semen-orders-form ").data("changed",true);
+		});
+
+		$("#semen-orders-form  :input[type=submit]").click(function() {
+			   $("#semen-orders-form ").data("changed",false);
+		});
 	$("#TblCustomerEntry_first_name").focus();
 	autoSuggestSearch();
 });
