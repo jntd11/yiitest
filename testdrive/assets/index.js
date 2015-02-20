@@ -49,6 +49,7 @@ $(document).ready(function(){
 	$(document).keydown(function(event) {
 		  var activeId = this.activeElement.id;
 		  if($.inArray(activeId,arr) > -1){
+			  alert(event.which);
 			switch(event.which) {
 				case 187:
 				case 61:

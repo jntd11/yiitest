@@ -354,18 +354,24 @@ function autoSuggestSearch(){
 	
 }
 function checkSemenType(val){
-	if($("#semen_id").val() == ""){
-		if(confirm("Do you want to add this new Semen Type?")) {
-			$.ajax({
-				url: encodeURI('index.php?r=semenOrders/insertSemenType'),
-				type: "GET",
-				data: {code:val}
-			}).done(function(data){
-				alert("Inserted");
-			});
-		}else{
-			$("#SemenOrders_semen_type").val("");
-		}
+	if($("#semen_id").val() == "" && $("#SemenOrders_semen_type").val() != ""){
+		$.get(encodeURI('index.php?r=semenOrders/AutocompleteSemenType'), {term:$("#SemenOrders_semen_type").val()}, function(data){
+			obj = $.parseJSON(data);
+			if(obj == "") {
+				if(confirm("Do you want to add this new Semen Type?")) {
+					$.ajax({
+						url: encodeURI('index.php?r=semenOrders/insertSemenType'),
+						type: "GET",
+						data: {code:val}
+					}).done(function(data){
+						alert("Inserted");
+					});
+				}else{
+					$("#SemenOrders_semen_type").val("");
+				}
+			}
+		});
+		
 	}
 	
 }
