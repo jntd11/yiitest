@@ -9092,3 +9092,2007 @@ in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php
 in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (153)
 in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
 in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 17:51:37 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:37 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:37 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:37 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:37 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:37 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:37 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:38 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:38 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:38 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:38 [trace] [system.base.CModule] Loading "user" module
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:38 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:38 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:38 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\UserModule.php (154)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\views\user\login.php (2)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (28)
+2015/02/23 17:51:38 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\views\user\login.php (6)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:38 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\views\user\login.php (9)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:40 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (3)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:41 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (28)
+2015/02/23 17:51:57 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:57 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:57 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:57 [trace] [system.base.CModule] Loading "user" module
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:57 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:57 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:51:57 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\User.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/02/23 17:51:57 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\User.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/02/23 17:51:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `users`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\User.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/02/23 17:51:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\User.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/02/23 17:51:59 [trace] [system.db.ar.CActiveRecord] User.findByAttributes()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/02/23 17:51:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `profiles`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/02/23 17:52:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `profiles`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/02/23 17:52:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`activkey` AS `t0_c4`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:yp0)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/02/23 17:52:00 [trace] [system.base.CModule] Loading "rights" module
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\Rights.php (271)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\Rights.php (254)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\Rights.php (287)
+2015/02/23 17:52:00 [trace] [system.CModule] Loading "authorizer" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\RightsModule.php (192)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\Rights.php (287)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RWebUser.php (21)
+2015/02/23 17:52:00 [trace] [system.CModule] Loading "authManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RAuthorizer.php (27)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\RightsModule.php (192)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\Rights.php (287)
+2015/02/23 17:52:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT *
+FROM `authassignment`
+WHERE userid=:userid
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RAuthorizer.php (341)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\rights\components\RWebUser.php (21)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\UserLogin.php (57)
+2015/02/23 17:52:00 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (34)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`activkey` AS `t0_c4`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (34)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:00 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\UserModule.php (239)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\UserModule.php (194)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\User.php (51)
+2015/02/23 17:52:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\UserModule.php (239)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\UserModule.php (194)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\User.php (51)
+2015/02/23 17:52:00 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\UserModule.php (154)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\models\User.php (52)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (36)
+2015/02/23 17:52:00 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:ycp0) LIMIT 2
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:00 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`email`=:ycp1) LIMIT 2
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:00 [trace] [system.db.ar.CActiveRecord] User.update()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:00 [trace] [system.db.ar.CActiveRecord] User.updateByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:00 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `users` SET `id`=:yp0, `username`=:yp1, `email`=:yp2, `create_at`=:yp3, `lastvisit_at`=:yp4, `superuser`=:yp5, `status`=:yp6, `password`=:yp7, `activkey`=:yp8 WHERE `users`.`id`=1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:01 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:01 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:01 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:01 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:01 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:01 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:01 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\models\SemenOrders.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (252)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (175)
+2015/02/23 17:52:01 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\models\SemenOrders.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (252)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (175)
+2015/02/23 17:52:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\models\SemenOrders.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (252)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (175)
+2015/02/23 17:52:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\models\SemenOrders.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (252)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (175)
+2015/02/23 17:52:01 [trace] [system.db.ar.CActiveRecord] SemenOrders.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (252)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (175)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `semen_orders` `t` WHERE `t`.`semen_orders_id`=4 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (252)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (175)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (176)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (176)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:02 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (177)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=2 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (177)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:02 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\update.php (17)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (200)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:02 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (20)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\update.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (200)
+2015/02/23 17:52:02 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (356)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\update.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (200)
+2015/02/23 17:52:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\update.php (31)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (200)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\update.php (31)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (200)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (329)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\update.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (200)
+2015/02/23 17:52:02 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (200)
+2015/02/23 17:52:02 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (200)
+2015/02/23 17:52:24 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/20/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/21/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (14)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 17:52:24 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\extensions\mPrint\mPrint.php (205)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 17:52:24 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 17:52:24 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:10:29 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:29 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:29 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:30 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:30 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:30 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:30 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:30 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:31 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (13)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:31 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+2015/02/23 18:10:31 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+2015/02/23 18:10:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (333)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+2015/02/23 18:10:32 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+2015/02/23 18:10:32 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+2015/02/23 18:10:35 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:35 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:35 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:35 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:35 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:35 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:35 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (279)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:35 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (279)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',customer_entry_id,first_name,last_name)  FROM customers WHERE first_name LIKE '%a%'
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (280)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:38 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:38 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:38 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:38 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:38 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:38 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:38 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (284)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:38 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (284)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM customers WHERE customer_entry_id = 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (285)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:45 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:45 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:45 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:45 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:45 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:45 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:45 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (397)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:45 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (397)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',sow_boar_id,ear_tag)FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR'
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:47 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:47 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:47 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:47 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:47 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:47 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:47 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (379)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:47 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (379)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE sow_boar_id = 135
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (380)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:56 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:56 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:56 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:56 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:56 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:56 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:56 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:56 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:10:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',semen_id,code) FROM  semen_type WHERE code LIKE :username 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (370)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (145)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=1 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (145)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.db.ar.CActiveRecord] SemenOrders.insert()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (147)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:01 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `semen_orders` (`payment_type`, `cod_charges`, `customer_id`, `ordered_date`, `ship_date`, `sow_boar_id`, `doses`, `price_dose`, `semen_type`, `shipping_cost`, `misc`, `comments`, `onstandby`, `invoice`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (147)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:02 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.update()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:02 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.updateByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:02 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `customers` SET `customer_entry_id`=:yp0, `company_name`=:yp1, `first_name`=:yp2, `last_name`=:yp3, `address1`=:yp4, `address2`=:yp5, `city`=:yp6, `zip`=:yp7, `phone_home`=:yp8, `phone_business`=:yp9, `phone_cell`=:yp10, `phone_other1`=:yp11, `phone_other2`=:yp12, `state`=:yp13, `country`=:yp14, `contact`=:yp15, `county`=:yp16, `notes`=:yp17, `cc_brand`=:yp18, `cc_number`=:yp19, `cc_expiration`=:yp20, `cc_name`=:yp21, `ship_company_name`=:yp22, `ship_name`=:yp23, `ship_address1`=:yp24, `ship_address2`=:yp25, `ship_city`=:yp26, `ship_state`=:yp27, `ship_country`=:yp28, `ship_zip`=:yp29, `ship_contact`=:yp30, `ship_area`=:yp31, `ship_phone`=:yp32, `att_sale`=:yp33, `mailing_code`=:yp34, `last_invoice`=:yp35, `last_letter_sent`=:yp36, `entry_date`=:yp37, `herdmark`=:yp38, `total_sows`=:yp39, `total_boars`=:yp40, `facility`=:yp41, `sows`=:yp42, `boars`=:yp43, `frequency`=:yp44, `system`=:yp45, `feeder`=:yp46, `finish`=:yp47, `rep_glits`=:yp48, `notes1`=:yp49, `notes2`=:yp50, `notes3`=:yp51, `notes4`=:yp52, `modified_date`=:yp53 WHERE `customers`.`customer_entry_id`=1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/20/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/21/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (14)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:11:22 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\extensions\mPrint\mPrint.php (205)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:11:22 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:11:22 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:12:43 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (13)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+2015/02/23 18:12:43 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+2015/02/23 18:12:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (333)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+2015/02/23 18:12:43 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+2015/02/23 18:12:43 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (165)
+2015/02/23 18:12:51 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:51 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:51 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:51 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:51 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:51 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:51 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (279)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:51 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (279)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',customer_entry_id,first_name,last_name)  FROM customers WHERE first_name LIKE '%a%'
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (280)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:53 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:53 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:53 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:53 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:53 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:53 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:53 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (284)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:53 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (284)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:12:53 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM customers WHERE customer_entry_id = 2
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (285)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:01 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:01 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:01 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:01 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:01 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:01 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:01 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (397)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:01 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (397)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',sow_boar_id,ear_tag)FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR'
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:02 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:02 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:02 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:02 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:02 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:02 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:02 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (379)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:02 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (379)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:13:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE sow_boar_id = 371
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (380)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:09 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:09 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:09 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:09 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:09 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:09 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:09 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:09 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',semen_id,code) FROM  semen_type WHERE code LIKE :username 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (370)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:12 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:12 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:12 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:12 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:12 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:12 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:12 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:12 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',semen_id,code) FROM  semen_type WHERE code LIKE :username 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (370)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',semen_id,code) FROM  semen_type WHERE code LIKE :username 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (370)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',semen_id,code) FROM  semen_type WHERE code LIKE :username 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (370)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:23 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:23 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:23 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:23 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:23 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:23 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:23 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:23 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:23 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',semen_id,code) FROM  semen_type WHERE code LIKE :username 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (370)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:25 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:25 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:25 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:25 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:25 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:25 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:25 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (388)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:25 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (388)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:14:25 [trace] [system.db.CDbCommand] Querying SQL:  INSERT INTO semen_type (code) values ('111') 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (389)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:22 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:22 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:22 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:22 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:22 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:23 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:23 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:23 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:21:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:13 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:13 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:13 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=2 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (151)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (13)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:23:15 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:23:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (337)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:23:15 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:23:24 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:24 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:24 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:24 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:24 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:24 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=2 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.ar.CActiveRecord] SemenOrders.insert()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (151)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `semen_orders` (`payment_type`, `cod_charges`, `customer_id`, `ordered_date`, `ship_date`, `sow_boar_id`, `doses`, `price_dose`, `semen_type`, `shipping_cost`, `misc`, `comments`, `onstandby`, `invoice`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (151)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.update()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.updateByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `customers` SET `customer_entry_id`=:yp0, `company_name`=:yp1, `first_name`=:yp2, `last_name`=:yp3, `address1`=:yp4, `address2`=:yp5, `city`=:yp6, `zip`=:yp7, `phone_home`=:yp8, `phone_business`=:yp9, `phone_cell`=:yp10, `phone_other1`=:yp11, `phone_other2`=:yp12, `state`=:yp13, `country`=:yp14, `contact`=:yp15, `county`=:yp16, `notes`=:yp17, `cc_brand`=:yp18, `cc_number`=:yp19, `cc_expiration`=:yp20, `cc_name`=:yp21, `ship_company_name`=:yp22, `ship_name`=:yp23, `ship_address1`=:yp24, `ship_address2`=:yp25, `ship_city`=:yp26, `ship_state`=:yp27, `ship_country`=:yp28, `ship_zip`=:yp29, `ship_contact`=:yp30, `ship_area`=:yp31, `ship_phone`=:yp32, `att_sale`=:yp33, `mailing_code`=:yp34, `last_invoice`=:yp35, `last_letter_sent`=:yp36, `entry_date`=:yp37, `herdmark`=:yp38, `total_sows`=:yp39, `total_boars`=:yp40, `facility`=:yp41, `sows`=:yp42, `boars`=:yp43, `frequency`=:yp44, `system`=:yp45, `feeder`=:yp46, `finish`=:yp47, `rep_glits`=:yp48, `notes1`=:yp49, `notes2`=:yp50, `notes3`=:yp51, `notes4`=:yp52, `modified_date`=:yp53 WHERE `customers`.`customer_entry_id`=2
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.ar.CActiveRecord] SemenOrders.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (260)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (133)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `semen_orders` `t` WHERE `t`.`semen_orders_id`=6 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (260)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (133)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (135)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=2 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (135)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (13)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:25 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (337)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:23:25 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:23:36 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:36 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:36 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:36 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:36 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:36 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:36 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:36 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:36 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (14)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:36 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_report.php (24)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (45)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:23:36 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_report.php (48)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (45)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:23:36 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:23:36 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:23:41 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/23/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/24/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (14)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:23:41 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\extensions\mPrint\mPrint.php (205)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:23:41 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:23:41 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=2 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.ar.CActiveRecord] SemenOrders.insert()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (151)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `semen_orders` (`payment_type`, `cod_charges`, `customer_id`, `ordered_date`, `ship_date`, `sow_boar_id`, `doses`, `price_dose`, `semen_type`, `shipping_cost`, `misc`, `comments`, `onstandby`, `invoice`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (151)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.update()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.updateByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `customers` SET `customer_entry_id`=:yp0, `company_name`=:yp1, `first_name`=:yp2, `last_name`=:yp3, `address1`=:yp4, `address2`=:yp5, `city`=:yp6, `zip`=:yp7, `phone_home`=:yp8, `phone_business`=:yp9, `phone_cell`=:yp10, `phone_other1`=:yp11, `phone_other2`=:yp12, `state`=:yp13, `country`=:yp14, `contact`=:yp15, `county`=:yp16, `notes`=:yp17, `cc_brand`=:yp18, `cc_number`=:yp19, `cc_expiration`=:yp20, `cc_name`=:yp21, `ship_company_name`=:yp22, `ship_name`=:yp23, `ship_address1`=:yp24, `ship_address2`=:yp25, `ship_city`=:yp26, `ship_state`=:yp27, `ship_country`=:yp28, `ship_zip`=:yp29, `ship_contact`=:yp30, `ship_area`=:yp31, `ship_phone`=:yp32, `att_sale`=:yp33, `mailing_code`=:yp34, `last_invoice`=:yp35, `last_letter_sent`=:yp36, `entry_date`=:yp37, `herdmark`=:yp38, `total_sows`=:yp39, `total_boars`=:yp40, `facility`=:yp41, `sows`=:yp42, `boars`=:yp43, `frequency`=:yp44, `system`=:yp45, `feeder`=:yp46, `finish`=:yp47, `rep_glits`=:yp48, `notes1`=:yp49, `notes2`=:yp50, `notes3`=:yp51, `notes4`=:yp52, `modified_date`=:yp53 WHERE `customers`.`customer_entry_id`=2
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.ar.CActiveRecord] SemenOrders.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (260)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (133)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `semen_orders` `t` WHERE `t`.`semen_orders_id`=7 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (260)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (133)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (135)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=2 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (135)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (13)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (337)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:25:37 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:25:44 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/23/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/24/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (14)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:44 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\extensions\mPrint\mPrint.php (205)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:25:44 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:25:44 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:25:51 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/23/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/24/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (14)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:51 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\extensions\mPrint\mPrint.php (205)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:25:51 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:25:51 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:25:56 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/21/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/22/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/23/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/24/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (14)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:25:56 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\extensions\mPrint\mPrint.php (205)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:25:56 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:25:56 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:26:04 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:04 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:04 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:04 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:04 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:04 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:04 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:04 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:06 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (13)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:06 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:26:06 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:26:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (337)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:26:06 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:26:06 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:26:09 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:09 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:09 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:09 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:09 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:09 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:09 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (283)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:09 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (283)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',customer_entry_id,first_name,last_name)  FROM customers WHERE first_name LIKE '%a%'
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (284)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:12 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:12 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:12 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:12 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:12 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:12 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:12 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (288)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:12 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (288)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM customers WHERE customer_entry_id = 46
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (289)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:26 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:26 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:26 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:26 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:26 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:26 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:26 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:26 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:26 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',sow_boar_id,ear_tag)FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR'
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (404)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:27 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:27 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:27 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:27 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:27 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:27 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:27 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (383)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:27 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (383)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE sow_boar_id = 236
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (384)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:35 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:35 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:35 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:35 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:35 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:35 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:35 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (371)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:35 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (371)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',semen_id,code) FROM  semen_type WHERE code LIKE :username 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (374)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:38 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:38 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:38 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:38 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:38 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:38 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:38 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (371)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:38 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (371)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',semen_id,code) FROM  semen_type WHERE code LIKE :username 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (374)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:39 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:39 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:39 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:39 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:39 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:39 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:39 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (392)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:39 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (392)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:39 [trace] [system.db.CDbCommand] Querying SQL:  INSERT INTO semen_type (code) values ('55') 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (393)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=46 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.ar.CActiveRecord] SemenOrders.insert()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (151)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `semen_orders` (`payment_type`, `customer_id`, `ordered_date`, `ship_date`, `sow_boar_id`, `doses`, `price_dose`, `semen_type`, `shipping_cost`, `misc`, `comments`, `onstandby`, `invoice`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (151)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.update()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.updateByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `customers` SET `customer_entry_id`=:yp0, `company_name`=:yp1, `first_name`=:yp2, `last_name`=:yp3, `address1`=:yp4, `address2`=:yp5, `city`=:yp6, `zip`=:yp7, `phone_home`=:yp8, `phone_business`=:yp9, `phone_cell`=:yp10, `phone_other1`=:yp11, `phone_other2`=:yp12, `state`=:yp13, `country`=:yp14, `contact`=:yp15, `county`=:yp16, `notes`=:yp17, `cc_brand`=:yp18, `cc_number`=:yp19, `cc_expiration`=:yp20, `cc_name`=:yp21, `ship_company_name`=:yp22, `ship_name`=:yp23, `ship_address1`=:yp24, `ship_address2`=:yp25, `ship_city`=:yp26, `ship_state`=:yp27, `ship_country`=:yp28, `ship_zip`=:yp29, `ship_contact`=:yp30, `ship_area`=:yp31, `ship_phone`=:yp32, `att_sale`=:yp33, `mailing_code`=:yp34, `last_invoice`=:yp35, `last_letter_sent`=:yp36, `entry_date`=:yp37, `herdmark`=:yp38, `total_sows`=:yp39, `total_boars`=:yp40, `facility`=:yp41, `sows`=:yp42, `boars`=:yp43, `frequency`=:yp44, `system`=:yp45, `feeder`=:yp46, `finish`=:yp47, `rep_glits`=:yp48, `notes1`=:yp49, `notes2`=:yp50, `notes3`=:yp51, `notes4`=:yp52, `modified_date`=:yp53 WHERE `customers`.`customer_entry_id`=46
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:53 [trace] [system.db.ar.CActiveRecord] SemenOrders.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (260)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (133)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:53 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `semen_orders` `t` WHERE `t`.`semen_orders_id`=8 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (260)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (133)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:53 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (135)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:53 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=46 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (135)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:53 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (13)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:53 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:26:53 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (30)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:26:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (32)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:53 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (337)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\create.php (33)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:26:53 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:26:53 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (169)
+2015/02/23 18:26:58 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:58 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:58 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:58 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:58 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:58 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:58 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:58 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:58 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (14)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:26:58 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_report.php (24)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (45)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:26:58 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\_report.php (48)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (45)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:26:58 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:26:58 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:27:05 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/23/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/24/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/25/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/26/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (14)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:05 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\extensions\mPrint\mPrint.php (205)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:27:05 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:27:05 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:27:19 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:19 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:19 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:19 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:20 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:20 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:20 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:20 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (128)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (129)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=46 LIMIT 1
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (148)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.ar.CActiveRecord] SemenOrders.insert()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (151)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `semen_orders` (`payment_type`, `cod_charges`, `customer_id`, `ordered_date`, `ship_date`, `sow_boar_id`, `doses`, `price_dose`, `semen_type`, `shipping_cost`, `misc`, `comments`, `onstandby`, `invoice`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (151)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.update()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.updateByPk()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `customers` SET `customer_entry_id`=:yp0, `company_name`=:yp1, `first_name`=:yp2, `last_name`=:yp3, `address1`=:yp4, `address2`=:yp5, `city`=:yp6, `zip`=:yp7, `phone_home`=:yp8, `phone_business`=:yp9, `phone_cell`=:yp10, `phone_other1`=:yp11, `phone_other2`=:yp12, `state`=:yp13, `country`=:yp14, `contact`=:yp15, `county`=:yp16, `notes`=:yp17, `cc_brand`=:yp18, `cc_number`=:yp19, `cc_expiration`=:yp20, `cc_name`=:yp21, `ship_company_name`=:yp22, `ship_name`=:yp23, `ship_address1`=:yp24, `ship_address2`=:yp25, `ship_city`=:yp26, `ship_state`=:yp27, `ship_country`=:yp28, `ship_zip`=:yp29, `ship_contact`=:yp30, `ship_area`=:yp31, `ship_phone`=:yp32, `att_sale`=:yp33, `mailing_code`=:yp34, `last_invoice`=:yp35, `last_letter_sent`=:yp36, `entry_date`=:yp37, `herdmark`=:yp38, `total_sows`=:yp39, `total_boars`=:yp40, `facility`=:yp41, `sows`=:yp42, `boars`=:yp43, `frequency`=:yp44, `system`=:yp45, `feeder`=:yp46, `finish`=:yp47, `rep_glits`=:yp48, `notes1`=:yp49, `notes2`=:yp50, `notes3`=:yp51, `notes4`=:yp52, `modified_date`=:yp53 WHERE `customers`.`customer_entry_id`=46
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (152)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.CModule] Loading "log" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.CModule] Loading "request" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.CModule] Loading "urlManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.CModule] Loading "user" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.CModule] Loading "session" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.CModule] Loading "db" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/23/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/24/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/25/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/26/2015' 
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (89)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.CModule] Loading "clientScript" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (14)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/02/23 18:27:22 [trace] [system.CModule] Loading "assetManager" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\extensions\mPrint\mPrint.php (205)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\semenOrders\report.php (41)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:27:22 [trace] [system.CModule] Loading "messages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (106)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)
+2015/02/23 18:27:22 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\main.php (153)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\views\layouts\column1.php (56)
+in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (119)

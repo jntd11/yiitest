@@ -368,10 +368,11 @@ function checkSemenType(val){
 						type: "GET",
 						data: {code:val}
 					}).done(function(data){
-						alert("Inserted");
+						//alert("Inserted");
 					});
 				}else{
-					$("#SemenOrders_semen_type").val("");
+					//$("#SemenOrders_semen_type").val("");
+					$("#SemenOrders_semen_type").focus();
 				}
 			}
 		});

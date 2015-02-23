@@ -127,10 +127,13 @@ class SemenOrdersController extends Controller
 
 		$model=new SemenOrders;
 		$modelCustomer=new TblCustomerEntry;
-		if(isset($id) && $id != null){
+		
+
+		if(isset($id) && $id != null && !isset($_POST['SemenOrders'])){
 			$model=$this->loadModel($id);
 			$modelCustomer=new TblCustomerEntry;
 			$modelCustomer=TblCustomerEntry::model()->findByPk($model->customer_id);
+
 		}
 
 		// Uncomment the following line if AJAX validation is needed
@@ -144,14 +147,17 @@ class SemenOrdersController extends Controller
 			$model->ordered_date = date("m/d/Y",strtotime($model->ordered_date));
 			$modelCustomer=TblCustomerEntry::model()->findByPk($model->customer_id);
 			$modelCustomer->attributes = $_POST['TblCustomerEntry'];
+			
 			if($model->save()) {
 				$modelCustomer->save();
+				$url = 'index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go';
+							
 				if(isset($_POST['savedup'])){
 					$this->redirect(array('create','id'=>$model->semen_orders_id));
 				}elseif(isset($_POST['savenew']))
 					$this->redirect(array('create'));
 				else
-					$this->redirect(array('report','id'=>$model->semen_orders_id));
+					$this->redirect($url);
 
 			}
 
@@ -186,8 +192,10 @@ class SemenOrdersController extends Controller
 			$modelCustomer->attributes = $_POST['TblCustomerEntry'];
 			if($model->save()) {
 				$modelCustomer->save();
+				$url = 'index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go';
+				
 				if(!isset($_POST['savenew']))
-					$this->redirect(array('report','id'=>$model->semen_orders_id));
+					$this->redirect($url);
 				else
 					$this->redirect(array('create'));
 			}

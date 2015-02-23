@@ -6,8 +6,12 @@
 
 $hogtag = Yii::app()->request->cookies['hog_tag'];
 $datedefault = (isset($model->ordered_date))?$model->ordered_date:"";
+$dateShip = (isset($model->ship_date))?$model->ship_date:"";
 if($datedefault == "" && (isset($_GET['d']))) {
 	$datedefault = $_GET['d'];
+}
+if($dateShip == "" && (isset($_GET['d']))) {
+	$dateShip = $_GET['d'];
 }
 
 ?>
@@ -381,7 +385,7 @@ if($datedefault == "" && (isset($_GET['d']))) {
 			  				'id'=>'ship_date',
 			  				'size' => '20',         // textField size
 			  				'maxlength' => '20',    // textField maxlength
-							'value'=>$datedefault,
+							'value'=>$dateShip,
 			  		),
 			  ));?>
 		<?php echo $form->error($model,'ship_date'); ?>
