@@ -350,9 +350,7 @@ function autoSuggestSearch(){
 	$("#semen-orders-form [name='SemenOrders[semen_type]']").autocomplete({
 	    source: 'index.php?r=semenOrders/AutocompleteSemenType',
 	    select: function( event, ui ) {
-	    	var valArray = ui.item.value.split("-");
-	    	ui.item.value = valArray[1];
-	    	$("#semen_id").val(valArray[0]);
+	    	$("#semen_id").val(ui.item.id);
 	    }
 	});
 	

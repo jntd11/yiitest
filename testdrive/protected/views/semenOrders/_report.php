@@ -20,7 +20,8 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	$form=$this->beginWidget('CActiveForm', array(
 			'id'=>'autoChores_frm',
 			'enableAjaxValidation'=>false,
-			'method'=>'get'
+			'method'=>'get',
+			'action'=>'index.php?r=SemenOrders/report',
 	));
 ?>
 	<div class="row">

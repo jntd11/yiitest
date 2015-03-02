@@ -153,7 +153,8 @@ class SemenOrdersController extends Controller
 				$url = 'index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go';
 							
 				if(isset($_POST['savedup'])){
-					$this->redirect(array('create','id'=>$model->semen_orders_id));
+					$modelCustomer->save();
+					$this->redirect(array('update','id'=>$model->semen_orders_id));
 				}elseif(isset($_POST['savenew']))
 					$this->redirect(array('create'));
 				else
@@ -194,10 +195,14 @@ class SemenOrdersController extends Controller
 				$modelCustomer->save();
 				$url = 'index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go';
 				
-				if(!isset($_POST['savenew']))
-					$this->redirect($url);
-				else
+				if(isset($_POST['savedup'])){
+					$modelCustomer->save();
+					$this->redirect(array('update','id'=>$model->semen_orders_id));
+				}elseif(isset($_POST['savenew']))
 					$this->redirect(array('create'));
+				else
+					$this->redirect($url);
+				
 			}
 
 		}
@@ -367,13 +372,16 @@ class SemenOrdersController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT concat_ws('-',semen_id,code) FROM  semen_type WHERE code LIKE :username " ;
+			$qtxt ="SELECT semen_id,code FROM  semen_type WHERE code LIKE :username " ;
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
-			$res =$command->queryColumn();
+			$res = $command->queryall(false);
 		}
-		echo CJSON::encode($res);
+		foreach($res as $val) {
+			$out[] = array("id"=>$val[0],"value"=>$val[1]);
+		}
+		echo CJSON::encode($out);
 		Yii::app()->end();
 	}
 	public function actionGetEarNotch() {

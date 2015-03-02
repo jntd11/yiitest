@@ -3,7 +3,7 @@
 /* @var $model SemenOrders */
 
 $this->breadcrumbs=array(
-	'Semen Orders'=>array('report'),
+	'Semen Orders'=>array('SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go"'),
 	$model->semen_orders_id=>array('update','id'=>$model->semen_orders_id),
 	'Update',
 );
