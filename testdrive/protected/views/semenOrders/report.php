@@ -38,6 +38,7 @@ $this->widget('ext.mPrint.mPrint', array(
   'debug' => false,            //enable the debugger to see what you will get
   'id' => 'print-div'         //id of the print link
 ));
+
 if($isPrint)
  echo $this->renderPartial('_reportprint', array('model'=>$model,'results'=>$results));
 else

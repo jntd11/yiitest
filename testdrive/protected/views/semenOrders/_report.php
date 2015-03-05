@@ -12,6 +12,7 @@ $standby = (isset($_GET['standby']))?$_GET['standby']:"N";
 Yii::app()->request->cookies['from_date'] = new CHttpCookie('from_date',$from_date,array('expire'=>time()+(365*24*60*60)));
 Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,array('expire'=>time()+(365*24*60*60)));
 
+
 ?>
 
 <div class="form">
@@ -106,25 +107,21 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	<div class="grid-view" id="container">
 	<table  class="items" style="width: 100%">
 	     <tr>
-	        <td colspan="5"><?php echo "From Date: <b> $from_date </b>"; ?></td>
-	        <td colspan="5"><?php echo "To Date: <b> $to_date </b>"; ?></td>
-	        <td colspan="4"><?php echo "Standby Only: <b> $standby </b>";  ?></td>
+	        <td colspan="4"><?php echo "From Date: <b> $from_date </b>"; ?></td>
+	        <td colspan="4"><?php echo "To Date: <b> $to_date </b>"; ?></td>
+	        <td colspan="2"><?php echo "Standby Only: <b> $standby </b>";  ?></td>
 	     </tr>
 	     <tr>
-	     	<th  style="text-align: left">Customer Id</th>
-	     	<th   style="text-align: left">Sow Boar Id</th>
-	     	<th   style="text-align: left">Ordered Date</th>
-	     	<th   style="text-align: left">Ship Date</th>
+	     	<th  style="text-align: left">Customer</th>
+	     	<th   style="text-align: left">Boar</th>
+	     	<th   style="text-align: left">Tag</th>
 	     	<th   style="text-align: left">Doses</th>
-	     	<th   style="text-align: left">Price per Dose</th>
-	     	<th   style="text-align: left">Shipping Cost</th>
-	     	<th   style="text-align: left">Misc charges</th>
-	     	<th   style="text-align: left">Comments</th>
-	     	<th   style="text-align: left">On Standby</th>
-	     	<th   style="text-align: left">Invoice #</th>
-	     	<th   style="text-align: left">Semen type</th>
-	     	<th   style="text-align: left">COD charges</th>
-	     	<th   style="text-align: left">Payment type</th>
+	     	<th   style="text-align: left">Ordered</th>
+	     	<th   style="text-align: left">Ship </th>
+	     	<th   style="text-align: left">$/Dose</th>
+	     	<th   style="text-align: left">SH</th>
+	     	<th   style="text-align: left">Misc $</th>
+	     	<th   style="text-align: left">Standby</th>
 	     	</tr>
 	     <?php
 	     	$count = 0;
@@ -132,32 +129,30 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	     		$count++;
 		 ?>
 		 	<tr class="even hasmenu" id="<?php echo "head_".$count ?>" onClick="window.location='index.php?r=SemenOrders/create'">
-		 	<td colspan="14" align="center" style="text-align: center; border-bottom: 2px solid;" >
+		 	<td colspan="10" align="center" style="text-align: center; border-bottom: 2px solid;" >
 		 	<input id="<?php echo "head_".$count; ?>_date" value="<?php echo $key;?>" type="hidden" />
 		 	<input id="<?php echo "head_".$count; ?>_header" value="1" type="hidden"/>
 		 	<?php echo $key." ".date("l",strtotime($key)); ?></td></tr>
 		 <?php
 			foreach ($result as $keyrow=>$resultrow){
+				$modelCustomer=TblCustomerEntry::model()->findByPk($resultrow['customer_id']);
+				$modelSowBoar=SowBoar::model()->findByPk($resultrow['sow_boar_id']);
 		 ?>
 		 <tr class="odd hasmenu" id="<?php echo $resultrow['semen_orders_id'] ?>" onClick="window.location='index.php?r=SemenOrders/update&id=<?php echo $resultrow['semen_orders_id'] ?>'">
 	     	<td>
 	     	<input id="<?php echo $resultrow['semen_orders_id']; ?>_id" value="<?php echo $resultrow['semen_orders_id'];?>" type="hidden"/>
 	     	<input id="<?php echo $resultrow['semen_orders_id']; ?>_date" value="<?php echo $key;?>" type="hidden"/>
 	     	<input id="<?php echo $resultrow['semen_orders_id']; ?>_header" value="0" type="hidden"/>
-	     	<?php echo $resultrow['customer_id']; ?></td>
-	     	<td><?php echo $resultrow['sow_boar_id']; ?></td>
+	     	<?php echo $modelCustomer->first_name." ".$modelCustomer->last_name; ?></td>
+	     	<td><?php echo $modelSowBoar->ear_notch; ?></td>
+	     	<td><?php echo $modelSowBoar->ear_tag; ?></td>
+			<td><?php echo $resultrow['doses']; ?></td>
 	     	<td><?php echo $resultrow['ordered_date']; ?></td>
 	     	<td><?php echo $resultrow['ship_date']; ?></td>
-	     	<td><?php echo $resultrow['doses']; ?></td>
 	     	<td><?php echo $resultrow['price_dose']; ?></td>
 	     	<td><?php echo $resultrow['shipping_cost']; ?></td>
 	     	<td><?php echo $resultrow['misc']; ?></td>
-	     	<td><?php echo $resultrow['comments']; ?></td>
 	     	<td id="<?php echo $resultrow['semen_orders_id']; ?>_standby"><?php echo $resultrow['onstandby']; ?></td>
-	     	<td><?php echo $resultrow['invoice']; ?></td>
-	     	<td><?php echo $resultrow['semen_type']; ?></td>
-	     	<td><?php echo $resultrow['cod_charges']; ?></td>
-	     	<td><?php echo $resultrow['payment_type']; ?></td>
 	     </tr>
 		 <?php
 			 }
