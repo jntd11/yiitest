@@ -1,7 +1,6 @@
 <?php
 /* @var $this ChoresController */
 /* @var $dataProvider CActiveDataProvider */
-
 $this->breadcrumbs=array(
 	'Semen'=>array('create'),
 	'Orders',

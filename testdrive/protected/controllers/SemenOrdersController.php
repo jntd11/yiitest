@@ -69,21 +69,22 @@ class SemenOrdersController extends Controller
 		$results = array();
 		$errors = array();
 		$isPrint = 0;
-		//exit;
-		if(isset($_REQUEST['go'])){
-			if(!isset($_REQUEST['go']))
+		
+		if(isset($_GET['go'])){
+			if(!isset($_GET['go']))
 				$isPrint = 1;
-			if(empty($_REQUEST['from_date'])){
+			if(empty($_GET['from_date'])){
 				$errors["from_date"] = "Invalid From Date";
 			}
-			if(empty($_REQUEST['to_date'])){
+			if(empty($_GET['to_date'])){
 				$errors["to_date"] = "Invalid To Date";
 			}
+			
 			if(count($errors) == 0) {
-				$results1 = $this->dateRange($_REQUEST['from_date'], $_REQUEST['to_date'],'+1 day','m/d/Y');
+				$results1 = $this->dateRange($_GET['from_date'], $_GET['to_date'],'+1 day','m/d/Y');
 				foreach ($results1 as $result) {
 					$qtxt = "SELECT * FROM semen_orders WHERE ship_date = '".$result."' ";
-					if(isset($_REQUEST['standby']) && $_REQUEST['standby'] != 'Y')
+					if(isset($_GET['standby']) && $_GET['standby'] != 'Y')
 						$qtxt .= " AND onstandby = 'Y' ";
 					$command =Yii::app()->db->createCommand($qtxt);
 					$res =$command->queryAll();
@@ -109,6 +110,7 @@ class SemenOrdersController extends Controller
 				$model->addErrors($errors);
 			}
 		}
+		
 
 
 		$this->render('report',array(
@@ -153,8 +155,7 @@ class SemenOrdersController extends Controller
 				$url = 'index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go';
 							
 				if(isset($_POST['savedup'])){
-					$modelCustomer->save();
-					$this->redirect(array('update','id'=>$model->semen_orders_id));
+					$this->redirect(array('create','id'=>$model->semen_orders_id));
 				}elseif(isset($_POST['savenew']))
 					$this->redirect(array('create'));
 				else
@@ -196,8 +197,7 @@ class SemenOrdersController extends Controller
 				$url = 'index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go';
 				
 				if(isset($_POST['savedup'])){
-					$modelCustomer->save();
-					$this->redirect(array('update','id'=>$model->semen_orders_id));
+					$this->redirect(array('create','id'=>$model->semen_orders_id));
 				}elseif(isset($_POST['savenew']))
 					$this->redirect(array('create'));
 				else
