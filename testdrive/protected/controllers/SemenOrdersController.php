@@ -359,13 +359,17 @@ class SemenOrdersController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT concat_ws('-',sow_boar_id,ear_notch) FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'" ;
+			$qtxt ="SELECT sow_boar_id,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'" ;
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
-			$res =$command->queryColumn();
+			//$res =$command->queryColumn();
+			$res = $command->queryall(false);
 		}
-		echo CJSON::encode($res);
+		foreach($res as $val) {
+			$out[] = array("id"=>$val[0],"value"=>$val[1]);
+		}
+		echo CJSON::encode($out);
 		Yii::app()->end();
 	}
 	public function actionAutocompleteSemenType() {
@@ -405,13 +409,17 @@ class SemenOrdersController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT concat_ws('-',sow_boar_id,ear_tag)FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR'" ;
+			$qtxt ="SELECT sow_boar_id,ear_tag FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR'" ;
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
 			$res =$command->queryColumn();
+			$res = $command->queryall(false);
 		}
-		echo CJSON::encode($res);
+		foreach($res as $val) {
+			$out[] = array("id"=>$val[0],"value"=>$val[1]);
+		}
+		echo CJSON::encode($out);
 		Yii::app()->end();
 	}
 	public function actionChangeStatus($id)

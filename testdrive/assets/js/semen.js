@@ -311,18 +311,20 @@ function autoSuggestSearch(){
 	$("#semen-orders-form [name='ear_tag']").autocomplete({
 	    source: 'index.php?r=semenOrders/AutocompleteEarTag',
 	    select: function( event, ui ) {
-	    	var valArray = ui.item.value.split("-");
-	    	ui.item.value = valArray[1];
+	    	/*var valArray = ui.item.value.split("-");
+	    	ui.item.value = valArray[1];*/
+	    	var id = ui.item.id;
 	    	$.ajax({
 				url: encodeURI('index.php?r=semenOrders/GetEarNotch'),
 				type: "GET",
-				data: {id:valArray[0]}
+				data: {id:id}
 			}).done(function(data){
 				var Obj = JSON.parse(data);
 				if(typeof Obj.sow_boar_id != "undefined") {
 					$("#SemenOrders_sow_boar_id").val(Obj.sow_boar_id);
 					$("#sow_boar_name").html(Obj.sow_boar_name);
 					$("#sow_boar_reg").html(Obj.registeration_no);
+					$("#ear_notch").val(Obj.ear_notch);
 				}
 			});
 	    	
@@ -331,18 +333,20 @@ function autoSuggestSearch(){
 	$("#semen-orders-form [name='ear_notch']").autocomplete({
 	    source: 'index.php?r=semenOrders/AutocompleteEarNotch',
 	    select: function( event, ui ) {
-	    	var valArray = ui.item.value.split("-");
-	    	ui.item.value = valArray[1];
+	    	/*var valArray = ui.item.value.split("-");
+	    	ui.item.value = valArray[1];*/
+	    	var id = ui.item.id;
 	    	$.ajax({
 				url: encodeURI('index.php?r=semenOrders/GetEarNotch'),
 				type: "GET",
-				data: {id:valArray[0]}
+				data: {id:id}
 			}).done(function(data){
 				var Obj = JSON.parse(data);
 				if(typeof Obj.sow_boar_id != "undefined") {
 					$("#SemenOrders_sow_boar_id").val(Obj.sow_boar_id);
 					$("#sow_boar_name").html(Obj.sow_boar_name);
 					$("#sow_boar_reg").html(Obj.registeration_no);
+					$("#ear_tag").val(Obj.ear_tag);
 				}
 			});
 	    }
