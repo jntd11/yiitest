@@ -359,7 +359,7 @@ class SemenOrdersController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT sow_boar_id,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'" ;
+			$qtxt ="SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'" ;
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
@@ -367,7 +367,7 @@ class SemenOrdersController extends Controller
 			$res = $command->queryall(false);
 		}
 		foreach($res as $val) {
-			$out[] = array("id"=>$val[0],"value"=>$val[1]);
+			$out[] = array("id"=>$val[0],"value"=>$val[1]."_".$this->calculateYear($val[2],2));
 		}
 		echo CJSON::encode($out);
 		Yii::app()->end();
@@ -394,6 +394,11 @@ class SemenOrdersController extends Controller
 			$qtxt ="SELECT * FROM  herd WHERE sow_boar_id = ".$_GET['id'];
 			$command =Yii::app()->db->createCommand($qtxt);
 			$res =$command->queryRow();
+		}elseif(isset($_GET['name']) && $_GET['name'] != "") {
+			
+			$qtxt ="SELECT * FROM  herd WHERE ear_tag = '".$_GET['name']."' and bred_date = 'BOAR'";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$res =$command->queryRow();
 		}
 		echo CJSON::encode($res);
 		Yii::app()->end();
@@ -409,7 +414,7 @@ class SemenOrdersController extends Controller
 		$res =array();
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			$qtxt ="SELECT sow_boar_id,ear_tag FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR'" ;
+			$qtxt ="SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc" ;
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
 			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
@@ -417,7 +422,7 @@ class SemenOrdersController extends Controller
 			$res = $command->queryall(false);
 		}
 		foreach($res as $val) {
-			$out[] = array("id"=>$val[0],"value"=>$val[1]);
+			$out[] = array("id"=>$val[0],"value"=>$val[1]."_".$this->calculateYear($val[2],2));
 		}
 		echo CJSON::encode($out);
 		Yii::app()->end();
@@ -432,5 +437,69 @@ class SemenOrdersController extends Controller
 			$model->onstandby = "N";
 
 		echo (int) $model->save();
+	}
+	public function calculateYear($date,$type=1){
+	
+		$ear_notch_array =  preg_split("/ /", $date);
+	
+		$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
+		$isPresent1 =  preg_match("/[0-9][0-9][0-9][0-9] /", $date);
+		if(!$isPresent){
+			if(!$isPresent1){
+				return $date;
+			}
+			else {
+				$date = preg_replace("/([0-9][0-9][0-9][0-9] )/", " $1", $date);
+				$ear_notch_array =  preg_split("/ /", $date);
+				$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
+			}
+		} else {
+			$ear_notch_array[2] = $matches[1];
+		}
+		if(!isset($ear_notch_array[2]))
+			return $date;
+		$curr_year = date("y");
+		$year = $ear_notch_array[2];
+		$length = strlen($year);
+		if($length > 2){
+			$ear_notch_array[2] = preg_replace("/[0-9][0-9]([0-9][0-9])/", "$1", $ear_notch_array[2]);
+			$year = $ear_notch_array[2];
+			$length = strlen($year);
+			//return $date;
+		}
+		if($type == 2){
+			if($year+10 > $curr_year && $year <= $curr_year){
+				$ear_notch_array[2] = $ear_notch_array[2] % 10;
+			}else if($length < 2){
+				$ear_notch_array[2] = "0".$ear_notch_array[2];
+			}
+	
+			//return implode($ear_notch_array, " ");
+			$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
+			$date = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $date);
+			$date = preg_replace("/\-[ ]+/i", "-", $date);
+			return $date;
+		}
+		//echo "$year <= $curr_year";
+		if($year <= $curr_year){
+			$rem = $curr_year%10;
+			$quo = floor($curr_year/10);
+			if($length == 1){
+				if($rem < $year)
+					$ear_notch_array[2] = "20".($quo-1).$year;
+				else
+					$ear_notch_array[2] = "20".($quo).$year;
+			}else{
+				$ear_notch_array[2] = "20".$year;
+			}
+		}else{
+			$ear_notch_array[2] = "19".$year;
+		}
+	
+		//echo implode($ear_notch_array, " ");			exit;
+	
+		$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
+		return $date;
+		//return implode($ear_notch_array, " ");
 	}
 }

@@ -14,8 +14,6 @@ if($dateShip == "" && (isset($_GET['d']))) {
 	$dateShip = $_GET['d'];
 }
 $modelSowBoar=SowBoar::model()->findByPk($model->sow_boar_id);
-print_R($modelSowBoar->attributes);
-
 ?>
 
 <div class="form">
@@ -395,7 +393,7 @@ print_R($modelSowBoar->attributes);
 	</td>
 	</tr>
 	    <tr>
-    <td>
+    <td colspan="2">
 
 	<div class="row">
 		<?php echo $form->hiddenField($model,'sow_boar_id'); ?>
