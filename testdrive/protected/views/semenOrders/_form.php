@@ -401,10 +401,10 @@ $modelSowBoar=SowBoar::model()->findByPk($model->sow_boar_id);
 		<?php if($hogtag == 'T') {?>
 		<label>Boar Ear Tag </label>
 			<input type="text" name="ear_tag" id="ear_tag" value="<?php echo isset($modelSowBoar->ear_tag)?$modelSowBoar->ear_tag:""; ?>">
-			<input type="text" name="ear_notch" id="ear_notch"  value="<?php echo isset($modelSowBoar->ear_notch)?$modelSowBoar->ear_notch:""; ?>">
+			<input type="text" size="20" name="ear_notch" id="ear_notch"  value="<?php echo isset($modelSowBoar->ear_notch)?$modelSowBoar->ear_notch:""; ?>">
 		<?php }else{ ?>
 		<label>Boar Ear Notch</label>
-			<input type="text" name="ear_notch" id="ear_notch"  value="<?php echo isset($modelSowBoar->ear_notch)?$modelSowBoar->ear_notch:""; ?>">
+			<input type="text" size="20" name="ear_notch" id="ear_notch"  value="<?php echo isset($modelSowBoar->ear_notch)?$modelSowBoar->ear_notch:""; ?>">
 			<input type="text" name="ear_tag" id="ear_tag" value="<?php echo isset($modelSowBoar->ear_tag)?$modelSowBoar->ear_tag:""; ?>">
 		<?php }?>
 		<span id="sow_boar_name"></span>

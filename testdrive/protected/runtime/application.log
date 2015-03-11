@@ -2526,3 +2526,2506 @@ in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
 2015/03/09 19:35:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '11111' and bred_date = 'BOAR'
 in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\protected\controllers\SemenOrdersController.php (401)
 in C:\Users\Jai\Documents\GitHub\yiitest\testdrive\index.php (14)
+2015/03/11 14:42:13 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:13 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:13 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:13 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:13 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:13 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:14 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:15 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:15 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:15 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:15 [trace] [system.base.CModule] Loading "user" module
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:16 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:16 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:16 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\UserModule.php (154)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\views\user\login.php (2)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+2015/03/11 14:42:16 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\views\user\login.php (6)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:16 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\views\user\login.php (9)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:17 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (3)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:17 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (153)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+2015/03/11 14:42:22 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:22 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:22 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:22 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (36)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:22 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (36)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_content`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (36)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:29 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_content`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (36)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:29 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  tbl_content where page = 'index'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (39)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:29 [trace] [system.db.ar.CActiveRecord] TblContent.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (41)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:29 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_content` `t` WHERE `t`.`content_id`=24 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (41)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:29 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\site\index.php (5)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (55)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:29 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\site\index.php (19)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (55)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:30 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\site\index.php (19)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (55)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:30 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (3)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (55)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:42:30 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (49)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (55)
+2015/03/11 14:42:30 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (106)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SiteController.php (55)
+2015/03/11 14:43:34 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:34 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:34 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:34 [trace] [system.base.CModule] Loading "user" module
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:34 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:34 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:34 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\UserModule.php (154)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\views\user\login.php (2)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+2015/03/11 14:43:34 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\views\user\login.php (6)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:34 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\views\user\login.php (9)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:34 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (3)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:34 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (153)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+2015/03/11 14:43:41 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:41 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:41 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:41 [trace] [system.base.CModule] Loading "user" module
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:41 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:41 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:42 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\User.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/03/11 14:43:42 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\User.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/03/11 14:43:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `users`
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\User.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/03/11 14:43:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\User.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/03/11 14:43:42 [trace] [system.db.ar.CActiveRecord] User.findByAttributes()
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/03/11 14:43:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `profiles`
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/03/11 14:43:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `profiles`
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/03/11 14:43:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`activkey` AS `t0_c4`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:yp0)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/03/11 14:43:42 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\UserModule.php (154)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (72)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/03/11 14:43:42 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\views\user\login.php (6)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:42 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\views\user\login.php (9)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:42 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\views\user\login.php (28)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:42 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (3)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (28)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.base.CModule] Loading "user" module
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (12)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\User.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/03/11 14:43:49 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\User.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/03/11 14:43:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `users`
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\User.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/03/11 14:43:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\User.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+2015/03/11 14:43:49 [trace] [system.db.ar.CActiveRecord] User.findByAttributes()
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/03/11 14:43:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `profiles`
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/03/11 14:43:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `profiles`
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/03/11 14:43:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`activkey` AS `t0_c4`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:yp0)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\components\UserIdentity.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (52)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (19)
+2015/03/11 14:43:49 [trace] [system.base.CModule] Loading "rights" module
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\Rights.php (271)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\Rights.php (254)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\Rights.php (287)
+2015/03/11 14:43:49 [trace] [system.CModule] Loading "authorizer" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\RightsModule.php (192)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\Rights.php (287)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RWebUser.php (21)
+2015/03/11 14:43:49 [trace] [system.CModule] Loading "authManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RAuthorizer.php (27)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\RightsModule.php (192)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\Rights.php (287)
+2015/03/11 14:43:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT *
+FROM `authassignment`
+WHERE userid=:userid
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RAuthorizer.php (341)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\rights\components\RWebUser.php (21)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\UserLogin.php (57)
+2015/03/11 14:43:49 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (34)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`activkey` AS `t0_c4`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (34)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\UserModule.php (239)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\UserModule.php (194)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\User.php (51)
+2015/03/11 14:43:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\UserModule.php (239)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\UserModule.php (194)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\User.php (51)
+2015/03/11 14:43:49 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\UserModule.php (154)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\models\User.php (52)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (36)
+2015/03/11 14:43:49 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:ycp0) LIMIT 2
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`email`=:ycp1) LIMIT 2
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.db.ar.CActiveRecord] User.update()
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.db.ar.CActiveRecord] User.updateByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:49 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `users` SET `id`=:yp0, `username`=:yp1, `email`=:yp2, `create_at`=:yp3, `lastvisit_at`=:yp4, `superuser`=:yp5, `status`=:yp6, `password`=:yp7, `activkey`=:yp8 WHERE `users`.`id`=1
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (36)
+in C:\wamp\www\yii\yii\testdrive\protected\modules\user\controllers\LoginController.php (20)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (13)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:43:50 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_report.php (26)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (45)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:43:50 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_report.php (50)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (45)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:43:50 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (106)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:43:50 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (153)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:44:00 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/11/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/12/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (13)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (40)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:44:00 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\extensions\mPrint\mPrint.php (205)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (40)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:44:00 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (106)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:44:00 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (153)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:49:36 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `auto_chores`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `auto_chores`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (68)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/21/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/22/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/23/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/24/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/25/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/26/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/27/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '02/28/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/01/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/02/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/03/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/04/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/05/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/06/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/07/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/08/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/09/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/10/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/11/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM semen_orders WHERE ship_date = '03/12/2015' 
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (90)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (13)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (40)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:36 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\extensions\mPrint\mPrint.php (205)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (40)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\models\tblCustomerEntry.php (71)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_report.php (138)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (45)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\models\tblCustomerEntry.php (71)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_report.php (138)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (45)
+2015/03/11 14:49:36 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_report.php (138)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (45)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=219 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_report.php (138)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (45)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:49:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_report.php (139)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (45)
+2015/03/11 14:49:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_report.php (139)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (45)
+2015/03/11 14:49:37 [trace] [system.db.ar.CActiveRecord] SowBoar.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_report.php (139)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (45)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:49:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `herd` `t` WHERE `t`.`sow_boar_id`=371 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_report.php (139)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\report.php (45)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:49:37 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (106)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:49:37 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (153)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (121)
+2015/03/11 14:49:55 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:49:55 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:49:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:49:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:49:55 [trace] [system.db.ar.CActiveRecord] SemenOrders.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `semen_orders` `t` WHERE `t`.`semen_orders_id`=4 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (184)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (184)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (185)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=219 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (185)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (17)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+2015/03/11 14:49:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+2015/03/11 14:49:55 [trace] [system.db.ar.CActiveRecord] SowBoar.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:49:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `herd` `t` WHERE `t`.`sow_boar_id`=371 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:49:55 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:49:56 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:49:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (31)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (31)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:49:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (342)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (32)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:49:56 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (106)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:49:56 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (153)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:50:07 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:07 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:07 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:07 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:07 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:07 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:07 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:07 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (421)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (422)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:09 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:09 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:09 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:09 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:09 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:09 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:09 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (395)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:09 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (395)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE sow_boar_id = 1102
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (396)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:11 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:11 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:11 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:11 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:11 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:11 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:11 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:11 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '22' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (421)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (422)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (421)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (422)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:18 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:19 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:19 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:19 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:50:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '33' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:51:30 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:51:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:51:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:51:30 [trace] [system.db.ar.CActiveRecord] SemenOrders.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `semen_orders` `t` WHERE `t`.`semen_orders_id`=4 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (184)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (184)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (185)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=219 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (185)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (17)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+2015/03/11 14:51:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+2015/03/11 14:51:30 [trace] [system.db.ar.CActiveRecord] SowBoar.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:51:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `herd` `t` WHERE `t`.`sow_boar_id`=371 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:51:30 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:51:31 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:51:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (31)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (31)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:51:31 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (342)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (32)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:51:31 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (106)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:51:31 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (153)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:59:42 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:59:42 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:59:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:59:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 14:59:42 [trace] [system.db.ar.CActiveRecord] SemenOrders.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `semen_orders` `t` WHERE `t`.`semen_orders_id`=4 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (184)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (184)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (185)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=219 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (185)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (17)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+2015/03/11 14:59:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+2015/03/11 14:59:42 [trace] [system.db.ar.CActiveRecord] SowBoar.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:59:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `herd` `t` WHERE `t`.`sow_boar_id`=371 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:59:42 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:59:43 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:59:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (31)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (31)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (342)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (32)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:59:43 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (106)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:59:43 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (153)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 14:59:43 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:43 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:43 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:43 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:43 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:43 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:43 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (288)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:43 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (288)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 14:59:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',customer_entry_id,first_name,last_name)  FROM customers WHERE first_name LIKE '%Aaron%'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (289)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 15:00:42 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 15:00:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 15:00:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 15:00:42 [trace] [system.db.ar.CActiveRecord] SemenOrders.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `semen_orders` `t` WHERE `t`.`semen_orders_id`=4 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (184)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (184)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (185)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=219 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (185)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (17)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+2015/03/11 15:00:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+2015/03/11 15:00:42 [trace] [system.db.ar.CActiveRecord] SowBoar.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:00:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `herd` `t` WHERE `t`.`sow_boar_id`=371 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:00:42 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:00:43 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:00:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (31)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (31)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (342)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (32)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:00:43 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (106)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:00:43 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (153)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:00:43 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:43 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:43 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:43 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:43 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:43 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:43 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:43 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:00:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:55 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:55 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:55 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:55 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:55 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:55 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:57 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:57 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:57 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:57 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:57 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:57 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:57 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:57 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:08:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:03 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:04 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:04 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:04 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:04 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:04 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:04 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:04 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:04 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:08 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:08 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:08 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:08 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:08 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:08 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:08 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:08 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:09 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:09 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:09 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:09 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:09 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:09 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:09 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:09 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:09:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:26 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:26 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:26 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:26 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:26 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:26 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:26 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:26 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:26 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:28 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:28 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:28 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:28 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:28 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:28 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:28 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:28 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:32 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:32 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:32 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:32 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:32 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:32 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:32 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:32 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:35 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:35 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:35 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:35 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:35 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:35 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:35 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:35 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:36 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:36 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:36 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:36 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:36 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:36 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:36 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:36 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:38 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:38 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:38 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:38 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:38 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:38 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:38 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:38 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:39 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:39 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:39 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:39 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:39 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:39 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:39 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:39 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:55 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:55 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:55 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:55 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:55 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:55 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:55 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:55 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:56 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:56 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:56 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:56 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:56 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:56 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:56 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:56 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:57 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:57 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:57 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:57 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:57 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:57 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:57 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:57 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:13:58 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:21 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:21 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:21 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:21 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:21 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:21 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:21 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:21 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (421)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (422)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:22 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:22 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:22 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:22 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:22 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:22 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:22 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:22 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (421)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (422)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:24 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:24 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:24 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:24 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:24 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:24 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:24 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:24 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:24 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '22' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:31 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:31 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:31 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:31 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:31 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:31 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:31 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:31 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:31 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (421)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:31 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (422)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (421)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (422)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (395)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (395)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE sow_boar_id = 1102
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (396)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:37 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:37 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:37 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:37 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:37 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:37 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:37 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:37 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '22' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:39 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:39 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:39 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:39 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:39 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:39 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:39 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:39 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '22' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:58 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:58 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:58 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:58 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:58 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:58 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:58 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:58 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:28:58 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '22' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:02 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:02 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:02 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:02 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:02 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:02 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:02 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:02 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '22' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:07 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:07 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:07 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:07 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:07 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:07 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:07 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:07 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '22' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:10 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:10 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:10 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:10 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:10 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:10 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:10 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:10 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:29:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '22' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '22' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:21 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 15:30:21 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 15:30:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `semen_orders`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 15:30:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `semen_orders`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SemenOrders.php (33)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+2015/03/11 15:30:22 [trace] [system.db.ar.CActiveRecord] SemenOrders.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `semen_orders` `t` WHERE `t`.`semen_orders_id`=4 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (265)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (183)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (184)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `customers`
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (184)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:22 [trace] [system.db.ar.CActiveRecord] TblCustomerEntry.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (185)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `customers` `t` WHERE `t`.`customer_entry_id`=219 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (185)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:22 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (17)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+2015/03/11 15:30:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `herd`
+in C:\wamp\www\yii\yii\testdrive\protected\models\SowBoar.php (42)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+2015/03/11 15:30:22 [trace] [system.db.ar.CActiveRecord] SowBoar.findByPk()
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:30:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `herd` `t` WHERE `t`.`sow_boar_id`=371 LIMIT 1
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (16)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:30:22 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (24)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:30:22 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\_form.php (360)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (30)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:30:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `mailing_codes`
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (31)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `mailing_codes`
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (31)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT concat_ws('-',mailing_code_label,mailing_code_desc)  FROM mailing_codes order by mailing_code_label asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (342)
+in C:\wamp\www\yii\yii\testdrive\protected\views\semenOrders\update.php (32)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:30:22 [trace] [system.CModule] Loading "messages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (106)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:30:22 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\main.php (153)
+in C:\wamp\www\yii\yii\testdrive\protected\views\layouts\column1.php (56)
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (213)
+2015/03/11 15:30:22 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:22 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:22 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:23 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:23 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:23 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:23 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:23 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:23 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '22' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:38 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:38 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:38 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:38 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:38 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:38 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:38 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:38 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (421)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (422)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:39 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:39 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:39 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:39 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:39 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:39 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:39 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:39 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '22' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:42 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:42 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:42 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:42 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:42 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:42 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:42 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:42 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (421)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (422)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:44 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:44 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:44 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:44 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:44 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:44 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:44 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:44 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (421)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (422)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:45 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:45 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:45 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:45 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:45 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:45 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:45 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:45 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '33333' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:47 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:47 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:47 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:47 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:47 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:47 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:47 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:47 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '33333' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:49 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:49 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:49 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:49 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:49 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:49 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:49 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:49 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '33333' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:51 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:51 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:51 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:51 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:51 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:51 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:51 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:51 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '33333' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (418)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (421)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE ear_tag LIKE :username and bred_date = 'BOAR' order by cast(ear_tag as UNSIGNED ) asc
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (422)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (400)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE ear_tag = '11' and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (401)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (363)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (367)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:58 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:58 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:58 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:58 [trace] [system.web.filters.CFilterChain] Running filter SemenOrdersController.filteraccessControl()
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:58 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:58 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:59 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (395)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:59 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (395)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)
+2015/03/11 15:30:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM  herd WHERE sow_boar_id = 3066
+in C:\wamp\www\yii\yii\testdrive\protected\controllers\SemenOrdersController.php (396)
+in C:\wamp\www\yii\yii\testdrive\index.php (14)

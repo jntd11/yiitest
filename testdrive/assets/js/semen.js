@@ -347,6 +347,7 @@ function autoSuggestSearch(){
 						$("#sow_boar_name").html(Obj.sow_boar_name);
 						$("#sow_boar_reg").html(Obj.registeration_no);
 						$("#ear_notch").val(Obj.ear_notch);
+						$("#SemenOrders_doses").focus();
 					}
 				}
 			});
@@ -369,6 +370,7 @@ function autoSuggestSearch(){
 					$("#sow_boar_name").html(Obj.sow_boar_name);
 					$("#sow_boar_reg").html(Obj.registeration_no);
 					$("#ear_tag").val(Obj.ear_tag);
+					$("#SemenOrders_doses").focus();
 				}
 			});
 	    }
