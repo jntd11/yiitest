@@ -357,8 +357,12 @@ class SemenOrdersController extends Controller
 	}
 	public function actionAutocompleteEarNotch() {
 		$res =array();
+		
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
+			
+			if(strlen($_GET['term']) > 4)
+				$_GET['term'] = $this->calculateFullYear($_GET['term']);
 			$qtxt ="SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'" ;
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
@@ -366,11 +370,20 @@ class SemenOrdersController extends Controller
 			//$res =$command->queryColumn();
 			$res = $command->queryall(false);
 		}
-		foreach($res as $val) {
-			$out[] = array("id"=>$val[0],"value"=>$val[1]."_".$this->calculateYear($val[2],2));
+		$out = array();
+		if(count($res)) {
+			foreach($res as $val) {
+				$out[] = array("id"=>$val[0],"value"=>$val[1]."_".$this->calculateYear($val[2],2));
+			}
 		}
 		echo CJSON::encode($out);
 		Yii::app()->end();
+	}
+	public function test($val,$key){
+		if($key == 2) {
+			echo $val."==".$key."<br>";
+			echo $this->calculateYear($val,2)."<br>";
+		}
 	}
 	public function actionAutocompleteSemenType() {
 		$res =array();
@@ -438,8 +451,45 @@ class SemenOrdersController extends Controller
 
 		echo (int) $model->save();
 	}
-	public function calculateYear($date,$type=1){
+	public function calculateFullYear($date){
+		$ear_notch_array =  preg_split("/ /", $date);
 	
+		$isPresent =  preg_match("/[A-Z] *(([0-9]{1,2}$)|([0-9]{1,2} ))/i", $date,$matches);
+		if(!$isPresent){
+			return $date;
+		}
+		
+		//print_r($matches);
+		if(!isset($matches[1]))
+			return $date;
+		$curr_year = date("y");
+		$year = trim($matches[1]);
+		$length = strlen($year);
+		if($length > 2){
+			return $date;
+		}
+		//echo "$year <= $curr_year";
+		if($year <= $curr_year){
+			$rem = $curr_year%10;
+			$quo = floor($curr_year/10);
+			if($length == 1){
+				//echo $rem." < ". $year;
+				if($rem < $year)
+					$ear_notch_array[2] = "20".($quo-1).$year;
+				else
+					$ear_notch_array[2] = "20".($quo).$year;
+			}else{
+				$ear_notch_array[2] = "20".$year;
+			}
+		}else{
+			$ear_notch_array[2] = "19".$year;
+		}
+	
+		$date= str_replace($matches[1], $ear_notch_array[2], $date,$count);
+		return $date;
+		//return implode($ear_notch_array, " ");
+	}
+	public function calculateYear($date,$type=1){
 		$ear_notch_array =  preg_split("/ /", $date);
 	
 		$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
