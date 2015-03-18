@@ -407,11 +407,13 @@ class SemenOrdersController extends Controller
 			$qtxt ="SELECT * FROM  herd WHERE sow_boar_id = ".$_GET['id'];
 			$command =Yii::app()->db->createCommand($qtxt);
 			$res =$command->queryRow();
+			$res["ear_notch"] = $this->calculateYear($res["ear_notch"],2);
 		}elseif(isset($_GET['name']) && $_GET['name'] != "") {
 			
 			$qtxt ="SELECT * FROM  herd WHERE ear_tag = '".$_GET['name']."' and bred_date = 'BOAR'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$res =$command->queryRow();
+			$res["ear_notch"] = $this->calculateYear($res["ear_notch"],2);
 		}
 		echo CJSON::encode($res);
 		Yii::app()->end();
@@ -490,6 +492,7 @@ class SemenOrdersController extends Controller
 		//return implode($ear_notch_array, " ");
 	}
 	public function calculateYear($date,$type=1){
+		//echo $date;
 		$ear_notch_array =  preg_split("/ /", $date);
 	
 		$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
@@ -518,8 +521,10 @@ class SemenOrdersController extends Controller
 			//return $date;
 		}
 		if($type == 2){
+			//echo $year+10 . ">". $curr_year;
 			if($year+10 > $curr_year && $year <= $curr_year){
-				$ear_notch_array[2] = $ear_notch_array[2] % 10;
+				    if($ear_notch_array[2] != 10)
+							$ear_notch_array[2] = $ear_notch_array[2] % 10;
 			}else if($length < 2){
 				$ear_notch_array[2] = "0".$ear_notch_array[2];
 			}

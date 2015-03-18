@@ -137,6 +137,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 			foreach ($result as $keyrow=>$resultrow){
 				$modelCustomer=TblCustomerEntry::model()->findByPk($resultrow['customer_id']);
 				$modelSowBoar=SowBoar::model()->findByPk($resultrow['sow_boar_id']);
+				$modelSowBoar->ear_notch = SemenOrdersController::calculateYear($modelSowBoar->ear_notch,2);
 		 ?>
 		 <tr class="odd hasmenu" id="<?php echo $resultrow['semen_orders_id'] ?>" onClick="window.location='index.php?r=SemenOrders/update&id=<?php echo $resultrow['semen_orders_id'] ?>'">
 	     	<td>
