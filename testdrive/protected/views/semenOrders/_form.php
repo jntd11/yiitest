@@ -14,7 +14,8 @@ if($dateShip == "" && (isset($_GET['d']))) {
 	$dateShip = $_GET['d'];
 }
 $modelSowBoar=SowBoar::model()->findByPk($model->sow_boar_id);
-$modelSowBoar->ear_notch = SemenOrdersController::calculateYear($modelSowBoar->ear_notch,2);
+if(isset($modelSowBoar->ear_notch))
+	$modelSowBoar->ear_notch = SemenOrdersController::calculateYear($modelSowBoar->ear_notch,2);
 ?>
 
 <div class="form">

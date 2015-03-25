@@ -72,7 +72,10 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	 <?php echo "Standby Only"; ?>
 		&nbsp;
     <?php
-       echo CHtml::checkBox('standby',false,array('value' => 'Y'));
+       $cheched = "";
+       if($standby == "Y")
+       		$cheched = "checked";
+       echo CHtml::checkBox('standby',false,array('value' => 'on','checked'=>"checked"));
     ?>
     &nbsp;
     <?php
@@ -109,7 +112,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	     <tr>
 	        <td colspan="4"><?php echo "From Date: <b> $from_date </b>"; ?></td>
 	        <td colspan="4"><?php echo "To Date: <b> $to_date </b>"; ?></td>
-	        <td colspan="2"><?php echo "Standby Only: <b> $standby </b>";  ?></td>
+	        <td colspan="3"><?php echo "Standby Only: <b> $standby </b>";  ?></td>
 	     </tr>
 	     <tr>
 	     	<th  style="text-align: left">Customer</th>
@@ -121,6 +124,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	     	<th   style="text-align: left">$/Dose</th>
 	     	<th   style="text-align: left">SH</th>
 	     	<th   style="text-align: left">Misc $</th>
+	     	<th   style="text-align: left">COD $</th>
 	     	<th   style="text-align: left">Standby</th>
 	     	</tr>
 	     <?php
@@ -129,7 +133,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	     		$count++;
 		 ?>
 		 	<tr class="even hasmenu" id="<?php echo "head_".$count ?>" onClick="window.location='index.php?r=SemenOrders/create'">
-		 	<td colspan="10" align="center" style="text-align: center; border-bottom: 2px solid;" >
+		 	<td colspan="11" align="center" style="text-align: center; border-bottom: 2px solid;" >
 		 	<input id="<?php echo "head_".$count; ?>_date" value="<?php echo $key;?>" type="hidden" />
 		 	<input id="<?php echo "head_".$count; ?>_header" value="1" type="hidden"/>
 		 	<?php echo $key." ".date("l",strtotime($key)); ?></td></tr>
@@ -153,6 +157,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	     	<td><?php echo $resultrow['price_dose']; ?></td>
 	     	<td><?php echo $resultrow['shipping_cost']; ?></td>
 	     	<td><?php echo $resultrow['misc']; ?></td>
+	     	<td><?php echo $resultrow['cod_charges']; ?></td>
 	     	<td id="<?php echo $resultrow['semen_orders_id']; ?>_standby"><?php echo $resultrow['onstandby']; ?></td>
 	     </tr>
 		 <?php

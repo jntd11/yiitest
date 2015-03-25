@@ -56,10 +56,19 @@ class SemenOrders extends CActiveRecord
 			array('onstandby', 'length', 'max'=>1),
 			array('semen_type', 'length', 'max'=>20),
 			array('payment_type', 'length', 'max'=>3),
+			//array('onstandby','in','range'=>array('Y'),'allowEmpty'=>true,'Should be Y or empty'),
+			array('onstandby','validateStandby'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('semen_orders_id, customer_id, sow_boar_id, ordered_date, ship_date, doses, price_dose, shipping_cost, misc, comments, onstandby, invoice, semen_type, cod_charges, payment_type, modified_date', 'safe', 'on'=>'search'),
 		);
+	}
+
+	public function validateStandby($attribute,$params)
+	{
+		if($this->$attribute != "Y" && $this->$attribute != "y" && $this->$attribute != ""){
+			$this->addError($attribute, 'Stand by should be Y or empty'.$this->$attribute);
+		}
 	}
 
 	/**
@@ -82,8 +91,8 @@ class SemenOrders extends CActiveRecord
 			'semen_orders_id' => 'Semen Orders',
 			'customer_id' => 'Customer Name',
 			'sow_boar_id' => 'Sow Boar Tag',
-			'ordered_date' => 'Order Date',
-			'ship_date' => 'Shipping Date',
+			'ordered_date' => 'Ordered Date',
+			'ship_date' => 'Ship Date',
 			'doses' => '# Doses',
 			'price_dose' => 'Price Per Dose',
 			'shipping_cost' => 'Shipping Cost',
@@ -92,7 +101,7 @@ class SemenOrders extends CActiveRecord
 			'onstandby' => 'On Standby',
 			'invoice' => 'Invoice',
 			'semen_type' => 'Semen Type',
-			'cod_charges' => 'Cod Charges',
+			'cod_charges' => 'COD $',
 			'payment_type' => 'Payment Type',
 			'modified_date' => 'Modified Date',
 		);

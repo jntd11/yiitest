@@ -69,7 +69,7 @@ class SemenOrdersController extends Controller
 		$results = array();
 		$errors = array();
 		$isPrint = 0;
-		
+
 		if(isset($_GET['go'])){
 			if(!isset($_GET['go']))
 				$isPrint = 1;
@@ -79,12 +79,12 @@ class SemenOrdersController extends Controller
 			if(empty($_GET['to_date'])){
 				$errors["to_date"] = "Invalid To Date";
 			}
-			
+
 			if(count($errors) == 0) {
 				$results1 = $this->dateRange($_GET['from_date'], $_GET['to_date'],'+1 day','m/d/Y');
 				foreach ($results1 as $result) {
 					$qtxt = "SELECT * FROM semen_orders WHERE ship_date = '".$result."' ";
-					if(isset($_GET['standby']) && $_GET['standby'] != 'Y')
+					if(isset($_GET['standby']) && $_GET['standby'] == 'Y')
 						$qtxt .= " AND onstandby = 'Y' ";
 					$command =Yii::app()->db->createCommand($qtxt);
 					$res =$command->queryAll();
@@ -110,7 +110,7 @@ class SemenOrdersController extends Controller
 				$model->addErrors($errors);
 			}
 		}
-		
+
 
 
 		$this->render('report',array(
@@ -129,7 +129,7 @@ class SemenOrdersController extends Controller
 
 		$model=new SemenOrders;
 		$modelCustomer=new TblCustomerEntry;
-		
+
 
 		if(isset($id) && $id != null && !isset($_POST['SemenOrders'])){
 			$model=$this->loadModel($id);
@@ -149,11 +149,11 @@ class SemenOrdersController extends Controller
 			$model->ordered_date = date("m/d/Y",strtotime($model->ordered_date));
 			$modelCustomer=TblCustomerEntry::model()->findByPk($model->customer_id);
 			$modelCustomer->attributes = $_POST['TblCustomerEntry'];
-			
+
 			if($model->save()) {
 				$modelCustomer->save();
 				$url = 'index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go';
-							
+
 				if(isset($_POST['savedup'])){
 					$this->redirect(array('create','id'=>$model->semen_orders_id));
 				}elseif(isset($_POST['savenew']))
@@ -179,7 +179,7 @@ class SemenOrdersController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		
+
 		$model=$this->loadModel($id);
 		$modelCustomer=new TblCustomerEntry;
 		$modelCustomer=TblCustomerEntry::model()->findByPk($model->customer_id);
@@ -195,14 +195,14 @@ class SemenOrdersController extends Controller
 			if($model->save()) {
 				$modelCustomer->save();
 				$url = 'index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go';
-				
+
 				if(isset($_POST['savedup'])){
 					$this->redirect(array('create','id'=>$model->semen_orders_id));
 				}elseif(isset($_POST['savenew']))
 					$this->redirect(array('create'));
 				else
 					$this->redirect($url);
-				
+
 			}
 
 		}
@@ -357,10 +357,10 @@ class SemenOrdersController extends Controller
 	}
 	public function actionAutocompleteEarNotch() {
 		$res =array();
-		
+
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
-			
+
 			if(strlen($_GET['term']) > 4)
 				$_GET['term'] = $this->calculateFullYear($_GET['term']);
 			$qtxt ="SELECT sow_boar_id,ear_tag,ear_notch FROM  herd WHERE replace(ear_notch,' ','') LIKE :username and bred_date = 'BOAR'" ;
@@ -409,7 +409,7 @@ class SemenOrdersController extends Controller
 			$res =$command->queryRow();
 			$res["ear_notch"] = $this->calculateYear($res["ear_notch"],2);
 		}elseif(isset($_GET['name']) && $_GET['name'] != "") {
-			
+
 			$qtxt ="SELECT * FROM  herd WHERE ear_tag = '".$_GET['name']."' and bred_date = 'BOAR'";
 			$command =Yii::app()->db->createCommand($qtxt);
 			$res =$command->queryRow();
@@ -455,12 +455,12 @@ class SemenOrdersController extends Controller
 	}
 	public function calculateFullYear($date){
 		$ear_notch_array =  preg_split("/ /", $date);
-	
+
 		$isPresent =  preg_match("/[A-Z] *(([0-9]{1,2}$)|([0-9]{1,2} ))/i", $date,$matches);
 		if(!$isPresent){
 			return $date;
 		}
-		
+
 		//print_r($matches);
 		if(!isset($matches[1]))
 			return $date;
@@ -486,7 +486,7 @@ class SemenOrdersController extends Controller
 		}else{
 			$ear_notch_array[2] = "19".$year;
 		}
-	
+
 		$date= str_replace($matches[1], $ear_notch_array[2], $date,$count);
 		return $date;
 		//return implode($ear_notch_array, " ");
@@ -494,7 +494,7 @@ class SemenOrdersController extends Controller
 	public function calculateYear($date,$type=1){
 		//echo $date;
 		$ear_notch_array =  preg_split("/ /", $date);
-	
+
 		$isPresent =  preg_match("/ ([0-9]+) /", $date,$matches);
 		$isPresent1 =  preg_match("/[0-9][0-9][0-9][0-9] /", $date);
 		if(!$isPresent){
@@ -528,7 +528,7 @@ class SemenOrdersController extends Controller
 			}else if($length < 2){
 				$ear_notch_array[2] = "0".$ear_notch_array[2];
 			}
-	
+
 			//return implode($ear_notch_array, " ");
 			$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
 			$date = preg_replace("/^([0-9][A-Z])([^ ])/i", "$1 $2", $date);
@@ -550,9 +550,9 @@ class SemenOrdersController extends Controller
 		}else{
 			$ear_notch_array[2] = "19".$year;
 		}
-	
+
 		//echo implode($ear_notch_array, " ");			exit;
-	
+
 		$date= str_replace(" ".$matches[1]." ", " ".$ear_notch_array[2]." ", $date,$count);
 		return $date;
 		//return implode($ear_notch_array, " ");
