@@ -75,7 +75,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
        $cheched = "";
        if($standby == "Y")
        		$cheched = "checked";
-       echo CHtml::checkBox('standby',false,array('value' => 'on','checked'=>"checked"));
+       echo CHtml::checkBox('standby',false,array());
     ?>
     &nbsp;
     <?php
@@ -149,11 +149,11 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	     	<input id="<?php echo $resultrow['semen_orders_id']; ?>_date" value="<?php echo $key;?>" type="hidden"/>
 	     	<input id="<?php echo $resultrow['semen_orders_id']; ?>_header" value="0" type="hidden"/>
 	     	<?php echo $modelCustomer->first_name." ".$modelCustomer->last_name; ?></td>
-	     	<td><?php echo $modelSowBoar->ear_notch; ?></td>
-	     	<td><?php echo $modelSowBoar->ear_tag; ?></td>
-			<td><?php echo $resultrow['doses']; ?></td>
-	     	<td><?php echo $resultrow['ordered_date']; ?></td>
-	     	<td><?php echo $resultrow['ship_date']; ?></td>
+	     	<td class="print"><?php echo $modelSowBoar->ear_notch; ?></td>
+	     	<td class="print"><?php echo $modelSowBoar->ear_tag; ?></td>
+			<td class="print"><?php echo $resultrow['doses']; ?></td>
+	     	<td class="print"><?php echo $resultrow['ordered_date']; ?></td>
+	     	<td class="print"><?php echo $resultrow['ship_date']; ?></td>
 	     	<td><?php echo $resultrow['price_dose']; ?></td>
 	     	<td><?php echo $resultrow['shipping_cost']; ?></td>
 	     	<td><?php echo $resultrow['misc']; ?></td>

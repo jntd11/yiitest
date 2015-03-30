@@ -84,7 +84,7 @@ class SemenOrdersController extends Controller
 				$results1 = $this->dateRange($_GET['from_date'], $_GET['to_date'],'+1 day','m/d/Y');
 				foreach ($results1 as $result) {
 					$qtxt = "SELECT * FROM semen_orders WHERE ship_date = '".$result."' ";
-					if(isset($_GET['standby']) && $_GET['standby'] == 'Y')
+					if(isset($_GET['standby']) && $_GET['standby'] == 1)
 						$qtxt .= " AND onstandby = 'Y' ";
 					$command =Yii::app()->db->createCommand($qtxt);
 					$res =$command->queryAll();
