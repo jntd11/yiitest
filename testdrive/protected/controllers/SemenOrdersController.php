@@ -446,12 +446,12 @@ class SemenOrdersController extends Controller
 	{
 		$model=$this->loadModel($id);
 		$status = isset($_GET['s'])?$_GET['s']:0;
-		if($status)
-			$model->onstandby = "Y";
+		if($status == 1)
+			$query = "UPDATE semen_orders SET onstandby = 'Y' WHERE semen_orders_id = ".$id;
 		else
-			$model->onstandby = "N";
-
-		echo (int) $model->save();
+			$query = "UPDATE semen_orders SET onstandby = 'N' WHERE semen_orders_id  = ".$id;
+		$command =Yii::app()->db->createCommand($query);
+		echo $command->execute();
 	}
 	public function calculateFullYear($date){
 		$ear_notch_array =  preg_split("/ /", $date);

@@ -572,6 +572,8 @@ $(function(){
 				$(document).contextmenu("setEntry", "new",{title: "New", cmd: "new",disabled: false,  uiIcon: "ui-icon-copy"});
 				$(document).contextmenu("setEntry", "duplicate",{title: "Duplicate", cmd: "duplicate",disabled: false,  uiIcon: "ui-icon-scissors"});
 				$(document).contextmenu("setEntry", "update",{title: "Update", cmd: "update",disabled: false,  uiIcon: "ui-icon-scissors"});
+				$(document).contextmenu("enableEntry", "duplicate", true);
+				 $(document).contextmenu("enableEntry", "update", true);
 			}
 			if($("#"+newrowid+"_standby").html() == "Y") 
 				$(document).contextmenu("setEntry", "standby", {title: "Remove Standby", cmd: "remove", uiIcon: "ui-icon-scissors"});

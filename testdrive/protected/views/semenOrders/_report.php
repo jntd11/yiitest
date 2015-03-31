@@ -75,7 +75,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
        $cheched = "";
        if($standby == "Y")
        		$cheched = "checked";
-       echo CHtml::checkBox('standby',false,array());
+       echo '<input name="standby" type="checkbox" '.$cheched .'/ value="Y">';
     ?>
     &nbsp;
     <?php
