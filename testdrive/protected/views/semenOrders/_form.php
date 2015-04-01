@@ -25,9 +25,12 @@ if(isset($modelSowBoar->ear_notch))
 	'enableAjaxValidation'=>false,
 )); ?>
 
-
-
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model);
+		if($model->isNewRecord)
+  			echo '<input id="isnew" value="1" name="isnew" type="hidden"/>';
+		else 
+			echo '<input id="isnew" value="0" name="isnew" type="hidden"/>';
+	?>
 	<div class="row">
 		<?php echo CHtml::Button('List Orders',array('onClick'=>'window.location="index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go"')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save' : 'Save'); ?>

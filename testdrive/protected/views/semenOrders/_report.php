@@ -132,7 +132,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	     	foreach($results as $key=>$result){
 	     		$count++;
 		 ?>
-		 	<tr class="even hasmenu" id="<?php echo "head_".$count ?>" onClick="window.location='index.php?r=SemenOrders/create'">
+		 	<tr class="even hasmenu" id="<?php echo "head_".$count ?>" onClick="window.location='index.php?r=SemenOrders/create&d=<?php echo $key;?>'">
 		 	<td colspan="11" align="center" style="text-align: center; border-bottom: 2px solid;" >
 		 	<input id="<?php echo "head_".$count; ?>_date" value="<?php echo $key;?>" type="hidden" />
 		 	<input id="<?php echo "head_".$count; ?>_header" value="1" type="hidden"/>

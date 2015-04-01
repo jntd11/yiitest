@@ -66,8 +66,12 @@ $(document).ready(function(){
 		$("#semen-orders-form  :input[type=submit]").click(function() {
 			   $("#semen-orders-form ").data("changed",false);
 		});
-	$("#TblCustomerEntry_first_name").focus();
-	autoSuggestSearch();
+		$("#TblCustomerEntry_first_name").focus();
+		autoSuggestSearch();
+		if($("#isnew").val() == "0") {
+			$("#SemenOrders_doses").focus();
+			window.scrollBy(100,100);
+		}
 });
 
 function setDefault(val,obj){
@@ -384,7 +388,7 @@ function autoSuggestSearch(){
 	
 }
 function checkSemenType(val){
-	if($("#semen_id").val() == "" && $("#SemenOrders_semen_type").val() != ""){
+	if($("#SemenOrders_semen_type").val() != ""){
 		$.get(encodeURI('index.php?r=semenOrders/AutocompleteSemenType'), {term:$("#SemenOrders_semen_type").val()}, function(data){
 			obj = $.parseJSON(data);
 			if(obj == "") {

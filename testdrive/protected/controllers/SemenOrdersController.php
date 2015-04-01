@@ -390,14 +390,20 @@ class SemenOrdersController extends Controller
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
 			$qtxt ="SELECT semen_id,code FROM  semen_type WHERE code LIKE :username " ;
+			
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
-			$command->bindValue(":username", '%'.$term.'%', PDO::PARAM_STR);
+			$command->bindValue(":username", '%'.$term.'%');
 			$res = $command->queryall(false);
+			
 		}
-		foreach($res as $val) {
-			$out[] = array("id"=>$val[0],"value"=>$val[1]);
+		$out = array();
+		if(isset($res )) {
+			foreach($res as $val) {
+				$out[] = array("id"=>$val[0],"value"=>$val[1]);
+			}
 		}
+		
 		echo CJSON::encode($out);
 		Yii::app()->end();
 	}

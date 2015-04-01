@@ -121,6 +121,7 @@ $(document).ready(function(){
 	$("#submitactivitydate").bind('click',function(){
 		location.reload();
 	});
+	$("#UserLogin_username").focus();
 	
 });
 
