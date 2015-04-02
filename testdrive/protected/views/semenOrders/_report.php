@@ -108,24 +108,24 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	//print_r($results); ?>
 	<div id="print">
 	<div class="grid-view" id="container">
-	<table  class="items" style="width: 100%">
+	<table  class="items">
 	     <tr>
 	        <td colspan="4"><?php echo "From Date: <b> $from_date </b>"; ?></td>
 	        <td colspan="4"><?php echo "To Date: <b> $to_date </b>"; ?></td>
 	        <td colspan="3"><?php echo "Standby Only: <b> $standby </b>";  ?></td>
 	     </tr>
 	     <tr>
-	     	<th  style="text-align: left">Customer</th>
-	     	<th   style="text-align: left">Boar</th>
-	     	<th   style="text-align: left">Tag</th>
-	     	<th   style="text-align: left">Doses</th>
-	     	<th   style="text-align: left">Ordered</th>
-	     	<th   style="text-align: left">Ship </th>
-	     	<th   style="text-align: left">$/Dose</th>
-	     	<th   style="text-align: left">SH</th>
-	     	<th   style="text-align: left">Misc $</th>
-	     	<th   style="text-align: left">COD $</th>
-	     	<th   style="text-align: left">Standby</th>
+	     	<th  style="text-align: left" width="25%">Customer</th>
+	     	<th   style="text-align: left" width="35%">Boar</th>
+	     	<th   style="text-align: left" width="5%">Tag</th>
+	     	<th   style="text-align: left" width="5%">Doses</th>
+	     	<th   style="text-align: left" width="5%">Ordered</th>
+	     	<th   style="text-align: left" width="5%">Ship </th>
+	     	<th   style="text-align: left" width="5%">Dose</th>
+	     	<th   style="text-align: left" width="5%">SH</th>
+	     	<th   style="text-align: left" width="5%">Misc $</th>
+	     	<th   style="text-align: left" width="5%">COD $</th>
+	     	<th   style="text-align: left" width="5%">S</th>
 	     	</tr>
 	     <?php
 	     	$count = 0;
@@ -154,10 +154,10 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 			<td class="print"><?php echo $resultrow['doses']; ?></td>
 	     	<td class="print"><?php echo $resultrow['ordered_date']; ?></td>
 	     	<td class="print"><?php echo $resultrow['ship_date']; ?></td>
-	     	<td><?php echo $resultrow['price_dose']; ?></td>
-	     	<td><?php echo $resultrow['shipping_cost']; ?></td>
-	     	<td><?php echo $resultrow['misc']; ?></td>
-	     	<td><?php echo $resultrow['cod_charges']; ?></td>
+	     	<td><?php echo round($resultrow['price_dose'],2); ?></td>
+	     	<td><?php echo round($resultrow['shipping_cost'],2); ?></td>
+	     	<td><?php echo round($resultrow['misc'],2); ?></td>
+	     	<td><?php echo round($resultrow['cod_charges'],2); ?></td>
 	     	<td id="<?php echo $resultrow['semen_orders_id']; ?>_standby"><?php echo $resultrow['onstandby']; ?></td>
 	     </tr>
 		 <?php
