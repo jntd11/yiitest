@@ -58,7 +58,8 @@ class SemenOrders extends CActiveRecord
 			array('payment_type', 'length', 'max'=>3),
 			//array('onstandby','in','range'=>array('Y'),'allowEmpty'=>true,'Should be Y or empty'),
 			array('onstandby','validateStandby'),
-			array('price_dose,shipping_cost,misc, cod_charges','validateDecimals'),
+			array('price_dose,shipping_cost,cod_charges','validateDecimals'),
+			array('misc','validateDecimalsNegative'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('semen_orders_id, customer_id, sow_boar_id, ordered_date, ship_date, doses, price_dose, shipping_cost, misc, comments, onstandby, invoice, semen_type, cod_charges, payment_type, modified_date', 'safe', 'on'=>'search'),
@@ -76,6 +77,13 @@ class SemenOrders extends CActiveRecord
 	{
 
 		if(!preg_match("/^(([0-9]+\.([0-9]){1,2})|([0-9]+))$/",$this->$attribute)){
+			$this->addError($attribute, 'Should be Numberical value with max 2 decimal digits.');
+		}
+	}
+	public function validateDecimalsNegative($attribute,$params)
+	{
+	
+		if(!preg_match("/^(\-)*(([0-9]+\.([0-9]){1,2})|([0-9]+))$/",$this->$attribute)){
 			$this->addError($attribute, 'Should be Numberical value with max 2 decimal digits.');
 		}
 	}

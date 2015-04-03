@@ -329,7 +329,7 @@ if(isset($modelSowBoar->ear_notch))
     <td>
 	<div class="row">
 		<?php echo $form->labelEx($model,'cod_charges'); ?>
-		<?php echo $form->textField($model,'cod_charges',array()); ?>
+		<?php echo $form->textField($model,'cod_charges',array('onblur'=>'checkDecimal("SemenOrders_cod_charges")')); ?>
 		<?php echo $form->error($model,'cod_charges'); ?>
 	</div>
 	</td></tr>
@@ -424,6 +424,7 @@ if(isset($modelSowBoar->ear_notch))
 	<div class="row">
 		<?php echo $form->labelEx($model,'doses'); ?>
 		<?php echo $form->textField($model,'doses'); ?>
+		
 		<?php echo $form->error($model,'doses'); ?>
 	</div>
 </td>
@@ -433,7 +434,7 @@ if(isset($modelSowBoar->ear_notch))
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'price_dose'); ?>
-		<?php echo $form->textField($model,'price_dose'); ?>
+		<?php echo $form->textField($model,'price_dose',array('onblur'=>'checkDecimal("SemenOrders_price_dose")')); ?>
 		<?php echo $form->error($model,'price_dose'); ?>
 	</div>
 	</td>
@@ -450,13 +451,13 @@ if(isset($modelSowBoar->ear_notch))
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'shipping_cost'); ?>
-		<?php echo $form->textField($model,'shipping_cost'); ?>
+		<?php echo $form->textField($model,'shipping_cost',array('onblur'=>'checkDecimal("SemenOrders_shipping_cost")')); ?>
 		<?php echo $form->error($model,'shipping_cost'); ?>
 	</div>
 </td>
 <td><div class="row">
 		<?php echo $form->labelEx($model,'misc'); ?>
-		<?php echo $form->textField($model,'misc'); ?>
+		<?php echo $form->textField($model,'misc',array('onblur'=>'checkDecimal("SemenOrders_misc")')); ?>
 		<?php echo $form->error($model,'misc'); ?>
 	</div></td>
 </tr>

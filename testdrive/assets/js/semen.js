@@ -635,3 +635,8 @@ function fillCode(val){
 		$("#semen-orders-form [name='TblCustomerEntry[mailing_code]']").val($("#semen-orders-form [name='TblCustomerEntry[mailing_code]']").val()+valArray[0]);
 	}
 }
+function checkDecimal(id){
+	var val = $("#"+id).val();
+	val = val.replace(/\.([0-9][0-9])[0-9]+/,".$1");
+	$("#"+id).val(val);
+}

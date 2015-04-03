@@ -158,7 +158,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	     	<td><?php echo round($resultrow['shipping_cost'],2); ?></td>
 	     	<td><?php echo round($resultrow['misc'],2); ?></td>
 	     	<td><?php echo round($resultrow['cod_charges'],2); ?></td>
-	     	<td id="<?php echo $resultrow['semen_orders_id']; ?>_standby"><?php echo $resultrow['onstandby']; ?></td>
+	     	<td id="<?php echo $resultrow['semen_orders_id']; ?>_standby"><?php echo ($resultrow['onstandby'] == "Y")?$resultrow['onstandby']:""; ?></td>
 	     </tr>
 		 <?php
 			 }
