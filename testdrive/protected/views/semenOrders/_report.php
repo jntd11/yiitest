@@ -111,21 +111,21 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	<table  class="items">
 	     <tr>
 	        <td colspan="4"><?php echo "From Date: <b> $from_date </b>"; ?></td>
-	        <td colspan="4"><?php echo "To Date: <b> $to_date </b>"; ?></td>
-	        <td colspan="3"><?php echo "Standby Only: <b> $standby </b>";  ?></td>
+	        <td colspan="3"><?php echo "To Date: <b> $to_date </b>"; ?></td>
+	        <td colspan="4"><?php echo "Standby Only: <b> $standby </b>";  ?></td>
 	     </tr>
 	     <tr>
 	     	<th  style="text-align: left" width="25%">Customer</th>
-	     	<th   style="text-align: left" width="35%">Boar</th>
+	     	<th   style="text-align: left" width="20%">Boar</th>
 	     	<th   style="text-align: left" width="5%">Tag</th>
 	     	<th   style="text-align: left" width="5%">Doses</th>
 	     	<th   style="text-align: left" width="5%">Ordered</th>
 	     	<th   style="text-align: left" width="5%">Ship </th>
-	     	<th   style="text-align: left" width="5%">Dose</th>
+	     	<th   style="text-align: left" width="5%">$/Dose</th>
 	     	<th   style="text-align: left" width="5%">SH</th>
 	     	<th   style="text-align: left" width="5%">Misc $</th>
-	     	<th   style="text-align: left" width="5%">COD $</th>
-	     	<th   style="text-align: left" width="5%">S</th>
+	     	<th   style="text-align: left" width="10%">COD $</th>
+	     	<th   style="text-align: left" width="10%">StandBy</th>
 	     	</tr>
 	     <?php
 	     	$count = 0;
@@ -149,7 +149,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	     	<input id="<?php echo $resultrow['semen_orders_id']; ?>_date" value="<?php echo $key;?>" type="hidden"/>
 	     	<input id="<?php echo $resultrow['semen_orders_id']; ?>_header" value="0" type="hidden"/>
 	     	<?php echo $modelCustomer->first_name." ".$modelCustomer->last_name; ?></td>
-	     	<td class="print"><?php echo $modelSowBoar->ear_notch; ?></td>
+	     	<td ><span class="print"><?php echo $modelSowBoar->ear_notch; ?></span></td>
 	     	<td class="print"><?php echo $modelSowBoar->ear_tag; ?></td>
 			<td class="print"><?php echo $resultrow['doses']; ?></td>
 	     	<td class="print"><?php echo $resultrow['ordered_date']; ?></td>
@@ -182,7 +182,8 @@ $this->widget('ext.mPrint.mPrint', array(
     '.summary',
     '.search-form'
   ),
-  //'cssFile'=>'styles.css',
+  'publishCss' => true,
+  'cssFile'=>'styles.css',
   'publishCss' => true,       //publish the CSS for the whole page?
   'visible' => Yii::app()->user->checkAccess('print'),  //should this be visible to the current user?
   'alt' => 'print',       //text which will appear if image can't be loaded

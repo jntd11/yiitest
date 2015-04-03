@@ -84,7 +84,7 @@ class SemenOrdersController extends Controller
 				$results1 = $this->dateRange($_GET['from_date'], $_GET['to_date'],'+1 day','m/d/Y');
 				foreach ($results1 as $result) {
 					$qtxt = "SELECT * FROM semen_orders WHERE ship_date = '".$result."' ";
-					if(isset($_GET['standby']) && $_GET['standby'] == 1)
+					if(isset($_GET['standby']) && $_GET['standby'] == 'Y')
 						$qtxt .= " AND onstandby = 'Y' ";
 					$command =Yii::app()->db->createCommand($qtxt);
 					$res =$command->queryAll();
@@ -390,12 +390,15 @@ class SemenOrdersController extends Controller
 		if (isset($_GET['term'])) {
 			// http://www.yiiframework.com/doc/guide/database.dao
 			$qtxt ="SELECT semen_id,code FROM  semen_type WHERE code LIKE :username " ;
-			
+
 			$command =Yii::app()->db->createCommand($qtxt);
 			$term = str_replace(" ", "", $_GET['term']);
-			$command->bindValue(":username", '%'.$term.'%');
+			if(isset($_GET['isType']) && $_GET['isType'] == 1)
+				$command->bindValue(":username", $term);
+			else
+				$command->bindValue(":username", '%'.$term.'%');
 			$res = $command->queryall(false);
-			
+
 		}
 		$out = array();
 		if(isset($res )) {
@@ -403,7 +406,7 @@ class SemenOrdersController extends Controller
 				$out[] = array("id"=>$val[0],"value"=>$val[1]);
 			}
 		}
-		
+
 		echo CJSON::encode($out);
 		Yii::app()->end();
 	}

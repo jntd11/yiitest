@@ -92,13 +92,13 @@ function setDefault(val,obj){
 }
 function autoSuggestSearch(){
 	$("#semen-orders-form [name='TblCustomerEntry[first_name]']").autocomplete({
-	    source: 'index.php?r=semenOrders/autocompleteFirstName&isall=0',
+	    source: 'index.php?r=SemenOrders/autocompleteFirstName&isall=0',
 	    select: function( event, ui ) {
 	    	var valArray = ui.item.value.split("-");
 	    	ui.item.value = valArray[1];
 	    	$("#SemenOrders_customer_id").val(valArray[0]);
 	    	$.ajax({
-				url: encodeURI('index.php?r=semenOrders/autocompleteFirstName'),
+				url: encodeURI('index.php?r=SemenOrders/autocompleteFirstName'),
 				type: "GET",
 				data: {isall:1,term:valArray[0]}
 			}).done(function(data){
@@ -383,13 +383,14 @@ function autoSuggestSearch(){
 	    source: 'index.php?r=semenOrders/AutocompleteSemenType',
 	    select: function( event, ui ) {
 	    	$("#semen_id").val(ui.item.id);
+	    	$("#SemenOrders_shipping_cost").focus();
 	    }
 	});
 	
 }
 function checkSemenType(val){
 	if($("#SemenOrders_semen_type").val() != ""){
-		$.get(encodeURI('index.php?r=semenOrders/AutocompleteSemenType'), {term:$("#SemenOrders_semen_type").val()}, function(data){
+		$.get(encodeURI('index.php?r=semenOrders/AutocompleteSemenType'), {term:$("#SemenOrders_semen_type").val(),isType:1}, function(data){
 			obj = $.parseJSON(data);
 			if(obj == "") {
 				if(confirm("Do you want to add this new Semen Type?")) {
@@ -479,10 +480,10 @@ $(function(){
 
 	$(document).contextmenu({
 		delegate: ".hasmenu",
-		preventContextMenuForPopup: true,
-		preventSelect: true,
+		preventContextMenuForPopup: false,
+		preventSelect: false,
 		ignoreParentSelect: false,
-		taphold: true,
+		taphold: false,
 		menu: [
 		    {title: "New", cmd: "new", uiIcon: "ui-icon-copy"},
 			{title: "Duplicate", cmd: "duplicate", uiIcon: "ui-icon-clipboard"},
@@ -522,7 +523,7 @@ $(function(){
 				var newrowid = a[0].id;
 				var val = $("#"+newrowid+"_id").val();
 				$.ajax({
-					url: encodeURI('index.php?r=semenorders/ChangeStatus'),
+					url: encodeURI('index.php?r=semenOrders/ChangeStatus'),
 					type: "GET",
 					data: {s:1,id:val}
 				}).done(function(data){
@@ -537,7 +538,7 @@ $(function(){
 				var newrowid = a[0].id;
 				var val = $("#"+newrowid+"_id").val();
 				$.ajax({
-					url: encodeURI('index.php?r=semenorders/ChangeStatus'),
+					url: encodeURI('index.php?r=semenOrders/ChangeStatus'),
 					type: "GET",
 					data: {s:0,id:val}
 				}).done(function(data){
@@ -548,6 +549,11 @@ $(function(){
 			}
 			//alert("select " + ui.cmd + " on " + $target.text());
 			// Optionally return false, to prevent closing the menu now
+		},
+		focus: function(event, ui) {
+			var menuId = ui.item.find(">a").attr("href");
+			$("#info").text("focus " + menuId);
+			console.log("focus", ui.item);
 		},
 		// Implement the beforeOpen callback to dynamically change the entries
 		beforeOpen: function(event, ui) {
@@ -578,6 +584,7 @@ $(function(){
 				$(document).contextmenu("setEntry", "update",{title: "Update", cmd: "update",disabled: false,  uiIcon: "ui-icon-scissors"});
 				$(document).contextmenu("enableEntry", "duplicate", true);
 				 $(document).contextmenu("enableEntry", "update", true);
+				 $(document).contextmenu("enableEntry", "standby",true);
 			}
 			if($("#"+newrowid+"_standby").html() == "Y") 
 				$(document).contextmenu("setEntry", "standby", {title: "Remove Standby", cmd: "remove", uiIcon: "ui-icon-scissors"});
@@ -589,37 +596,7 @@ $(function(){
 
 	/* Menu 2: init menu by passing an <ul> element. */
 
-	$("#container").contextmenu({
-		delegate: ".hasmenu2",
-		menu: "#options",
-//        position: {my: "left top", at: "left bottom"},
-		position: function(event, ui){
-			return {my: "left top", at: "left bottom", of: ui.target};
-		},
-		preventSelect: true,
-		taphold: true,
-		show: { effect: "fold", duration: "slow"},
-		hide: { effect: "explode", duration: "slow" },
-		focus: function(event, ui) {
-			var menuId = ui.item.find(">a").attr("href");
-			$("#info").text("focus " + menuId);
-			console.log("focus", ui.item);
-		},
-		blur: function(event, ui) {
-			$("#info").text("");
-			console.log("blur", ui.item);
-		},
-		beforeOpen: function(event, ui) {
-//			$("#container").contextmenu("replaceMenu", "#options2");
-//			$("#container").contextmenu("replaceMenu", [{title: "aaa"}, {title: "bbb"}]);
-		},
-		open: function(event, ui) {
-//          alert("open on " + ui.target.text());
-		},
-		select: function(event, ui) {
-			alert("select " + ui.cmd + " on " + ui.target.text());
-		}
-	});
+	
 
 	/* Open and close an existing menu without programatically. */
 
