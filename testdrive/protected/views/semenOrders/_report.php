@@ -123,7 +123,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	     	<th   style="text-align: left" width="5%">Ship </th>
 	     	<th   style="text-align: left" width="5%">$/Dose</th>
 	     	<th   style="text-align: left" width="5%">SH</th>
-	     	<th   style="text-align: left" width="5%">Misc $</th>
+	     	<th   style="text-align: left" width="10%">Misc $</th>
 	     	<th   style="text-align: left" width="10%">COD $</th>
 	     	<th   style="text-align: left" width="10%">StandBy</th>
 	     	</tr>
@@ -151,13 +151,13 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	     	<?php echo $modelCustomer->first_name." ".$modelCustomer->last_name; ?></td>
 	     	<td ><span class="print"><?php echo $modelSowBoar->ear_notch; ?></span></td>
 	     	<td class="print"><?php echo $modelSowBoar->ear_tag; ?></td>
-			<td class="print"><?php echo $resultrow['doses']; ?></td>
+			<td class="rightElement"><?php echo $resultrow['doses']; ?></td>
 	     	<td class="print"><?php echo $resultrow['ordered_date']; ?></td>
 	     	<td class="print"><?php echo $resultrow['ship_date']; ?></td>
-	     	<td><?php echo round($resultrow['price_dose'],2); ?></td>
-	     	<td><?php echo round($resultrow['shipping_cost'],2); ?></td>
-	     	<td><?php echo round($resultrow['misc'],2); ?></td>
-	     	<td><?php echo round($resultrow['cod_charges'],2); ?></td>
+	     	<td class="rightElement"><?php echo round($resultrow['price_dose'],2); ?></td>
+	     	<td class="rightElement"> <?php echo round($resultrow['shipping_cost'],2); ?></td>
+	     	<td class="rightElement"><?php echo round($resultrow['misc'],2); ?></td>
+	     	<td class="rightElement"><?php echo round($resultrow['cod_charges'],2); ?></td>
 	     	<td id="<?php echo $resultrow['semen_orders_id']; ?>_standby"><?php echo ($resultrow['onstandby'] == "Y")?$resultrow['onstandby']:""; ?></td>
 	     </tr>
 		 <?php

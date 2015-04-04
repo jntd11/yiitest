@@ -45,8 +45,9 @@
 
 .grid-view table.items th
 {
-    color: white;
-    background: url("bg.gif") repeat-x scroll left top white;
+    /* color: white; */
+    background: blue;
+    /* background:  repeat-x scroll left top white */
     text-align: center;
 }
 

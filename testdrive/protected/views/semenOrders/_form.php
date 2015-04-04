@@ -16,6 +16,8 @@ if($dateShip == "" && (isset($_GET['d']))) {
 $modelSowBoar=SowBoar::model()->findByPk($model->sow_boar_id);
 if(isset($modelSowBoar->ear_notch))
 	$modelSowBoar->ear_notch = SemenOrdersController::calculateYear($modelSowBoar->ear_notch,2);
+if($model->onstandby == "N") 
+	$model->onstandby = "";
 ?>
 
 <div class="form">
