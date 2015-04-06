@@ -573,23 +573,29 @@ $(function(){
 			var newrowid = a[0].id;
 			
 			if($("#"+newrowid+"_header").val() == 1) {
-				$(document).contextmenu("setEntry", "standby",{title: "Standby", cmd: "standby",disabled: true,  uiIcon: "ui-icon-scissors"});
+				$(document).contextmenu("setEntry", "standby", {title: "Remove Standby", disabled: true,cmd: "remove", uiIcon: "ui-icon-scissors"});
+				$(document).contextmenu("setEntry", "remove", {title: "Standby", disabled: true,cmd: "standby", uiIcon: "ui-icon-scissors"});
 				$(document).contextmenu("setEntry", "new",{title: "New", cmd: "new",disabled: false,  uiIcon: "ui-icon-copy"});
 				$(document).contextmenu("setEntry", "duplicate",{title: "Duplicate", cmd: "duplicate",disabled: true,  uiIcon: "ui-icon-scissors"});
 				$(document).contextmenu("setEntry", "update",{title: "Update", cmd: "update",disabled: true,  uiIcon: "ui-icon-scissors"});
-
+				//$(document).contextmenu("setEntry", "remove",{title: "Remove Standby",disabled: true, cmd: "remove", uiIcon: "ui-icon-scissors"});
 			}else{
 				$(document).contextmenu("setEntry", "new",{title: "New", cmd: "new",disabled: false,  uiIcon: "ui-icon-copy"});
 				$(document).contextmenu("setEntry", "duplicate",{title: "Duplicate", cmd: "duplicate",disabled: false,  uiIcon: "ui-icon-scissors"});
 				$(document).contextmenu("setEntry", "update",{title: "Update", cmd: "update",disabled: false,  uiIcon: "ui-icon-scissors"});
 				$(document).contextmenu("enableEntry", "duplicate", true);
-				 $(document).contextmenu("enableEntry", "update", true);
-				 $(document).contextmenu("enableEntry", "standby",true);
+				$(document).contextmenu("enableEntry", "update", true);
+				$(document).contextmenu("enableEntry", "standby",true);
+				//$(document).contextmenu("enableEntry", "remove",true);
 			}
-			if($("#"+newrowid+"_standby").html() == "Y") 
-				$(document).contextmenu("setEntry", "standby", {title: "Remove Standby", cmd: "remove", uiIcon: "ui-icon-scissors"});
-			else
-				$(document).contextmenu("setEntry", "remove", {title: "Standby", cmd: "standby", uiIcon: "ui-icon-scissors"});
+			 if($("#"+newrowid+"_standby").html() == "Y") {
+					$(document).contextmenu("setEntry", "standby", {title: "Remove Standby", cmd: "remove", uiIcon: "ui-icon-scissors"});
+					$(document).contextmenu("enableEntry", "standby",true);
+			 }else{
+					$(document).contextmenu("setEntry", "remove", {title: "Standby", cmd: "standby", uiIcon: "ui-icon-scissors"});
+					$(document).contextmenu("enableEntry", "remove",true);
+			 }
+			
 			// Optionally return false, to prevent opening the menu now
 		}
 	});

@@ -115,7 +115,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	        <td colspan="4"><?php echo "Standby Only: <b> $standby </b>";  ?></td>
 	     </tr>
 	     <tr>
-	     	<th  style="text-align: left" width="25%">Customer</th>
+	     	<th  style="text-align: left" width="20%">Customer</th>
 	     	<th   style="text-align: left" width="20%">Boar</th>
 	     	<th   style="text-align: left" width="5%">Tag</th>
 	     	<th   style="text-align: left" width="5%">Doses</th>
