@@ -166,3 +166,6 @@
     background-image: url(application_firefox.gif);
     background-position: 0 0;
 }
+.rightElement{
+    text-align: right;
+}
