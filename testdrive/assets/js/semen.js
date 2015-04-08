@@ -44,6 +44,26 @@ function checkData(element,type,extra,extra1){
 
 
 $(document).ready(function(){
+	  if(typeof($("#from_date")) != "undefined") {
+			$("#from_date").datepicker({
+		      changeMonth: true,
+		      changeYear: true,
+		      showOn: 'button',
+		      defaultDate: '<?php echo date("m/d/Y"); ?>',
+		      constrainInput:false,
+		      buttonImage:'img/calendar.gif',
+		    });
+	  }
+	  if(typeof($("#to_date")) != "undefined") {
+		$("#to_date").datepicker({
+	      changeMonth: true,
+	      changeYear: true,
+	      showOn: 'button',
+	      defaultDate: '<?php echo date("m/d/Y"); ?>',
+	      constrainInput:false,
+	      buttonImage:'img/calendar.gif',
+	    });
+	  }
 	   var el = $("input:text").get(0);
 	    var elemLen = el.value.length;
 

@@ -28,6 +28,7 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	<div class="row">
 		<?php echo "From Date"; ?>
 		<input type="text" id="from_date" name="from_date" value="<?php echo $from_date; ?>" size="20" maxlength="20"/>
+		<input type="text" id="to_date" name="to_date" value="<?php echo $to_date; ?>" size="20" maxlength="20"/>
 		<?php
 
 		/* $this->widget('zii.widgets.jui.CJuiDatePicker', array(
