@@ -197,5 +197,3 @@ $this->widget('ext.mPrint.mPrint', array(
 
 
 </div><!-- form -->
-
-<div class="hasmenu">TEST</div>
