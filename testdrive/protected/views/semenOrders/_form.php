@@ -16,7 +16,7 @@ if($dateShip == "" && (isset($_GET['d']))) {
 $modelSowBoar=SowBoar::model()->findByPk($model->sow_boar_id);
 if(isset($modelSowBoar->ear_notch))
 	$modelSowBoar->ear_notch = SemenOrdersController::calculateYear($modelSowBoar->ear_notch,2);
-if($model->onstandby == "N") 
+if($model->onstandby == "N")
 	$model->onstandby = "";
 ?>
 
@@ -30,7 +30,7 @@ if($model->onstandby == "N")
 	<?php echo $form->errorSummary($model);
 		if($model->isNewRecord)
   			echo '<input id="isnew" value="1" name="isnew" type="hidden"/>';
-		else 
+		else
 			echo '<input id="isnew" value="0" name="isnew" type="hidden"/>';
 	?>
 	<div class="row">
@@ -370,6 +370,13 @@ if($model->onstandby == "N")
 		<span id="day"></span>
 	</div>
 </td>
+<td>
+		<div class="row">
+			<?php echo $form->labelEx($model,'committed'); ?>
+			<?php echo $form->textField($model,'committed',array('size'=>3,'maxlength'=>3)); ?>
+			<?php echo $form->error($model,'committed'); ?>
+		</div>
+    </td>
 </tr>
     <tr>
     <td>
@@ -398,6 +405,13 @@ if($model->onstandby == "N")
 		<?php echo $form->error($model,'ship_date'); ?>
 	</div>
 	</td>
+	<td>
+		<div class="row">
+			<?php echo $form->labelEx($model,'standby'); ?>
+			<?php echo $form->textField($model,'standby',array('size'=>3,'maxlength'=>3)); ?>
+			<?php echo $form->error($model,'standby'); ?>
+		</div>
+    </td>
 	</tr>
 	    <tr>
     <td colspan="2">
@@ -426,7 +440,7 @@ if($model->onstandby == "N")
 	<div class="row">
 		<?php echo $form->labelEx($model,'doses'); ?>
 		<?php echo $form->textField($model,'doses'); ?>
-		
+
 		<?php echo $form->error($model,'doses'); ?>
 	</div>
 </td>

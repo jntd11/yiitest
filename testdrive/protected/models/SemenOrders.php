@@ -50,7 +50,7 @@ class SemenOrders extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('customer_id, sow_boar_id, ordered_date, ship_date, doses, price_dose, shipping_cost, invoice, semen_type,  payment_type', 'required'),
-			array('customer_id, sow_boar_id, doses, invoice', 'numerical', 'integerOnly'=>true),
+			array('customer_id, sow_boar_id, doses, invoice, committed, standby', 'numerical', 'integerOnly'=>true),
 			array('price_dose, shipping_cost, misc, cod_charges', 'numerical'),
 			array('comments', 'length', 'max'=>40),
 			array('onstandby', 'length', 'max'=>1),
@@ -82,7 +82,7 @@ class SemenOrders extends CActiveRecord
 	}
 	public function validateDecimalsNegative($attribute,$params)
 	{
-	
+
 		if(!preg_match("/^(\-)*(([0-9]+\.([0-9]){1,2})|([0-9]+))$/",$this->$attribute)){
 			$this->addError($attribute, 'Should be Numberical value with max 2 decimal digits.');
 		}
@@ -120,6 +120,8 @@ class SemenOrders extends CActiveRecord
 			'semen_type' => 'Semen Type',
 			'cod_charges' => 'COD $',
 			'payment_type' => 'Payment Type',
+			'committed'=>'Committed #',
+			'standby'=>'Standby #',
 			'modified_date' => 'Modified Date',
 		);
 	}

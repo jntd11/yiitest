@@ -1,0 +1,1 @@
+ALTER TABLE `semen_orders` ADD `committed` INT NOT NULL AFTER `payment_type`, ADD `standby` INT NOT NULL AFTER `committed`;

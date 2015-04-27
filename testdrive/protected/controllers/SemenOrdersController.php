@@ -34,7 +34,7 @@ class SemenOrdersController extends Controller
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update','report','AutocompleteFirstName',
 						'AutocompleteCompanyName','AutocompleteLastName','AutocompleteEarNotch','AutocompleteEarTag',
-						'GetEarNotch','AutocompleteSemenType','insertSemenType','ChangeStatus'),
+						'GetEarNotch','AutocompleteSemenType','insertSemenType','ChangeStatus','GetComitStandbyDoses'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -427,6 +427,23 @@ class SemenOrdersController extends Controller
 		echo CJSON::encode($res);
 		Yii::app()->end();
 	}
+	public function actionGetComitStandbyDoses() {
+		$res = $dos = array();
+		if (isset($_GET['id']) && isset($_GET['dt']) && $_GET['dt'] != "") {
+			$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$_GET['id'].
+					" AND onstandby != 'Y' AND ship_date = '".$_GET['dt']."'";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$res =$command->queryColumn();
+			$dos['commited'] = $res[0];
+			$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$_GET['id'].
+			" AND onstandby = 'Y' AND ship_date = '".$_GET['dt']."'";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$res =$command->queryColumn();
+			$dos['standby'] = $res[0];
+		}
+		echo CJSON::encode($dos);
+		Yii::app()->end();
+	}
 	public function actioninsertSemenType(){
 		if (isset($_GET['code'])) {
 			$qtxt = " INSERT INTO semen_type (code) values ('".$_GET['code']."') " ;
@@ -566,4 +583,5 @@ class SemenOrdersController extends Controller
 		return $date;
 		//return implode($ear_notch_array, " ");
 	}
+
 }
