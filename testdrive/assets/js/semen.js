@@ -373,11 +373,17 @@ function autoSuggestSearch(){
 						$("#sow_boar_reg").html(Obj.registeration_no);
 						$("#ear_notch").val(Obj.ear_notch);
 						$("#SemenOrders_doses").focus();
-						getComitStandbyDoses(name,Obj.sow_boar_id);
+						getComitStandbyDoses(Obj.sow_boar_id);
 					}
 				}
 			});
 			
+		}
+	});
+	
+	$("#ear_notch").bind('blur',function(){
+		if($("#SemenOrders_sow_boar_id").val() != "") {
+			getComitStandbyDoses($("#SemenOrders_sow_boar_id").val());
 		}
 	});
 	$("#semen-orders-form [name='ear_notch']").autocomplete({
@@ -398,6 +404,7 @@ function autoSuggestSearch(){
 					$("#sow_boar_reg").html(Obj.registeration_no);
 					$("#ear_tag").val(Obj.ear_tag);
 					$("#SemenOrders_doses").focus();
+					getComitStandbyDoses(Obj.sow_boar_id);
 				}
 			});
 	    }
@@ -669,7 +676,7 @@ function checkDecimal(id){
 	val = val.replace(/\.([0-9][0-9])[0-9]+/,".$1");
 	$("#"+id).val(val);
 }
-function getComitStandbyDoses(boar,id){
+function getComitStandbyDoses(id){
 	$.ajax({
 		url: encodeURI('index.php?r=semenOrders/GetComitStandbyDoses'),
 		type: "GET",

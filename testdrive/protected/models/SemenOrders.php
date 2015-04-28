@@ -120,8 +120,8 @@ class SemenOrders extends CActiveRecord
 			'semen_type' => 'Semen Type',
 			'cod_charges' => 'COD $',
 			'payment_type' => 'Payment Type',
-			'committed'=>'Committed #',
-			'standby'=>'Standby #',
+			'committed'=>'Committed Doses ',
+			'standby'=>'Standby Doses ',
 			'modified_date' => 'Modified Date',
 		);
 	}
