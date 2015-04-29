@@ -524,7 +524,7 @@ for($i=1;$i<=10;$i++)
 	</div>
 
 <?php $this->endWidget(); ?>
+
 </div><!-- form -->
 <div id="div_committed" class="grid-view">
-
 </div>

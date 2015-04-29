@@ -19,6 +19,10 @@ $cs->registerCssFile(
 		Yii::app()->baseUrl.
 		'/css/splitmenubuttons.css'
 );
+$cs->registerCssFile(
+		Yii::app()->baseUrl.
+		'/css/styles.css'
+);
 
 //$cs->registerCoreScript('jquery-ui-1.10.2.custom');
 //$cs->registerScriptFile(Yii::app()->baseUrl . '/assets/js/jquery.ui-contextmenu.js');

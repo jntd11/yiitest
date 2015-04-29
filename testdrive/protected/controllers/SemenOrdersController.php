@@ -592,13 +592,13 @@ class SemenOrdersController extends Controller
 		 $date = new DateTime('2015-01-01');
 		 $dateMax = new DateTime();
 		 $dateMax->add(DateInterval::createFromDateString($days.' days'));
-	     echo $sql = "select * from semen_orders WHERE ship_date between '".$date->format("m/d/Y")."' AND '".$dateMax->format("m/d/Y")."'";
+	     $sql = "select * from semen_orders WHERE ship_date between '".$date->format("m/d/Y")."' AND '".$dateMax->format("m/d/Y")."'";
 	     $command = Yii::app()->db->createCommand($sql);
 	     $rows = $command->queryAll();
-		 //print_r($rows);
+		 print_r($rows);
 		 echo '<table class="items">
-		 		<thead><tr><td>Boar Ear Notch</td></tr></thead>
-		 		<tbody><tr><td>aa</td></tr></tbody>
+		 		<thead><tr><th>Boar Ear Notch</th></tr></thead>
+		 		<tbody><tr class="odd"><td>aa</td></tr></tbody>
 		 	</table>';
 	}
 
