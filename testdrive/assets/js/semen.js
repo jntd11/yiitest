@@ -92,6 +92,19 @@ $(document).ready(function(){
 			$("#SemenOrders_doses").focus();
 			window.scrollBy(100,100);
 		}
+		
+	$("#button_committed").bind("click",function(){
+		$.ajax({
+			url: encodeURI('index.php?r=SemenOrders/getListBydays'),
+			data: {days:$("#days").val()},
+			type: "GET",
+		}).done(function(data){
+			alert(data);
+			$("#div_committed").html(data);
+			semenPopup();
+		});
+		
+	});
 });
 
 function setDefault(val,obj){
@@ -686,4 +699,28 @@ function getComitStandbyDoses(id){
 		$("#SemenOrders_committed").val(Obj.commited);
 		$("#SemenOrders_standby").val(Obj.standby);
 	});	
+}
+function semenPopup(){
+	$("#div_committed").dialog({
+		autoOpen: true,
+		width: 400,
+		modal: true,
+		closeOnEscape: false,
+		buttons: [
+			{
+				text: "Save",
+				click: function() {
+					$( this ).dialog( "close" );
+				}
+			},
+			{
+				text: "Cancel",
+				click: function() {
+					$("#eartag").val("");
+					$( this ).dialog( "close" );
+					$("#eartag").focus();
+				}
+			}
+		]
+	});
 }

@@ -18,6 +18,8 @@ if(isset($modelSowBoar->ear_notch))
 	$modelSowBoar->ear_notch = SemenOrdersController::calculateYear($modelSowBoar->ear_notch,2);
 if($model->onstandby == "N")
 	$model->onstandby = "";
+for($i=1;$i<=10;$i++)
+	$days[$i] = $i." Days";
 ?>
 
 <div class="form">
@@ -39,6 +41,9 @@ if($model->onstandby == "N")
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & New' : 'Save & New',array('id'=>'savenew','name'=>'savenew')); ?>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Save & Duplicate' : 'Save & Duplicate',array('id'=>'savenew','name'=>'savedup')); ?>
 		<?php echo CHtml::Button('Cancel',array('onClick'=>'window.location="index.php?r=SemenOrders/report&to_date='.Yii::app()->request->cookies["to_date"].'&from_date='.Yii::app()->request->cookies["from_date"].'&go=Go"')); ?>
+		<?php echo CHtml::dropDownList('days',1,$days,array('size'=>0,'id'=>'days')); ?>
+		<?php echo CHtml::Button('Boars Committed',array('id'=>'button_committed')); ?>
+
 	</div>
 	<div>&nbsp;</div>
 
@@ -520,3 +525,6 @@ if($model->onstandby == "N")
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
+<div id="div_committed" class="grid-view">
+
+</div>
