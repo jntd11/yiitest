@@ -526,5 +526,25 @@ for($i=1;$i<=10;$i++)
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-<div id="div_committed" class="grid-view">
+<div id="div_committed" >
+<?php
+$this->widget('ext.mPrint.mPrint', array(
+		'title' => 'Boars Committed',          //the title of the document. Defaults to the HTML title
+		'tooltip' => 'Print',        //tooltip message of the print icon. Defaults to 'print'
+		'text' => 'Print Results',   //text which will appear beside the print icon. Defaults to NULL
+		'element' => '#div_committed_results',        //the element to be printed.
+		'exceptions' => array(       //the element/s which will be ignored
+		),
+		'publishCss' => true,
+		'cssFile'=>'styles.css',
+		'publishCss' => true,       //publish the CSS for the whole page?
+		'visible' => true,  //should this be visible to the current user?
+		'alt' => 'print',       //text which will appear if image can't be loaded
+		'debug' => true,            //enable the debugger to see what you will get
+		'id' => 'print-div1'         //id of the print link
+));
+?>
+<div id="div_committed_results" class="grid-view">
+aaa
+</div>
 </div>

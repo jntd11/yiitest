@@ -613,15 +613,17 @@ class SemenOrdersController extends Controller
 		$days=1;
 		if(isset($_GET['days']))
 			$days= $_GET['days'];
-		 $date = new DateTime('2015-01-01');
+
+		 //$date = new DateTime('2015-01-01');
+		 $date = new DateTime();
 		 $dateMax = new DateTime();
-		 $dateMax->add(DateInterval::createFromDateString($days.' days'));
-	     $sql = "select semen_orders_id, sow_boar_id,ship_date from semen_orders WHERE
+		 $dateMax->add(DateInterval::createFromDateString(($days-1).' days'));
+	     echo $sql = "select semen_orders_id, sow_boar_id,ship_date from semen_orders WHERE
 	     	ship_date between '".$date->format("m/d/Y")."' AND '".$dateMax->format("m/d/Y")."'
-	     	GROUP BY sow_boar_id, ship_date";
+	     	GROUP BY sow_boar_id, ship_date ORDER BY ship_date";
 	     $command = Yii::app()->db->createCommand($sql);
 	     $rows = $command->queryAll();
-	     echo '<table class="items">
+	     echo '<div id="committed_results">aa<table class="items" >
 	     <thead><tr>
 	     <th>Boar Ear Notch</th>
 		 <th>Ear Tag</th>
@@ -630,6 +632,7 @@ class SemenOrdersController extends Controller
 		 <th>Ship Date</th>
 	     </tr></thead>';
 	     echo '<tbody>';
+
 	     foreach($rows as $key=>$row) {
 	     	$modelSowBoar=SowBoar::model()->findByPk($row['sow_boar_id']);
 	     	if(isset($modelSowBoar->ear_notch))
@@ -647,7 +650,8 @@ class SemenOrdersController extends Controller
 	     	</tr>';
 	     }
 	     print_R($rows);
-		 echo '</tbody></table>';
+		 echo '</tbody></table></div>';
+
 	}
 
 }

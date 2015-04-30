@@ -38,21 +38,21 @@
 
 .grid-view table.items th, .grid-view table.items td
 {
-    font-size: 0.7em;
+    font-size: 0.9em;
     border: 1px white solid;
     padding: 0.3em;
 }
 
 .grid-view table.items th
 {
-/*      color: white; */
-    background: repeat-x scroll left top white;
+    color: white;
+    background: url("bg.gif") repeat-x scroll left top white;
     text-align: center;
 }
 
 .grid-view table.items th a
 {
-    /* color: #EEE; */
+    color: #EEE;
     font-weight: bold;
     text-decoration: none;
 }
@@ -165,7 +165,4 @@
 .ui-icon.custom-icon-firefox {
     background-image: url(application_firefox.gif);
     background-position: 0 0;
-}
-.rightElement{
-    text-align: right;
 }

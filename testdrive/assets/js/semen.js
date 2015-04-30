@@ -100,7 +100,7 @@ $(document).ready(function(){
 			type: "GET",
 		}).done(function(data){
 			alert(data);
-			$("#div_committed").html(data);
+			$("#div_committed_results").html(data);
 			semenPopup();
 		});
 		

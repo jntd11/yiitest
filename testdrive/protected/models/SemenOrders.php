@@ -76,14 +76,14 @@ class SemenOrders extends CActiveRecord
 	public function validateDecimals($attribute,$params)
 	{
 
-		if(!preg_match("/^(([0-9]+\.([0-9]){1,2})|([0-9]+))$/",$this->$attribute)){
+		if($this->$attribute != "" && !preg_match("/^(([0-9]+\.([0-9]){1,2})|([0-9]+))$/",$this->$attribute)){
 			$this->addError($attribute, 'Should be Numberical value with max 2 decimal digits.');
 		}
 	}
 	public function validateDecimalsNegative($attribute,$params)
 	{
 
-		if(!preg_match("/^(\-)*(([0-9]+\.([0-9]){1,2})|([0-9]+))$/",$this->$attribute)){
+		if($this->$attribute != "" &&  !preg_match("/^(\-)*(([0-9]+\.([0-9]){1,2})|([0-9]+))$/",$this->$attribute)){
 			$this->addError($attribute, 'Should be Numberical value with max 2 decimal digits.');
 		}
 	}

@@ -190,7 +190,7 @@ $this->widget('ext.mPrint.mPrint', array(
   'publishCss' => true,       //publish the CSS for the whole page?
   'visible' => Yii::app()->user->checkAccess('print'),  //should this be visible to the current user?
   'alt' => 'print',       //text which will appear if image can't be loaded
-  'debug' => false,            //enable the debugger to see what you will get
+  'debug' => true,            //enable the debugger to see what you will get
   'id' => 'print-div1'         //id of the print link
 ));
 ?>
