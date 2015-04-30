@@ -378,7 +378,7 @@ for($i=1;$i<=10;$i++)
 <td>
 		<div class="row">
 			<?php echo $form->labelEx($model,'committed'); ?>
-			<?php echo $form->textField($model,'committed',array('size'=>3,'maxlength'=>3)); ?>
+			<?php echo $form->textField($model,'committed',array('size'=>3,'maxlength'=>3,'readonly'=>'readonly','disabled'=>'disabled')); ?>
 			<?php echo $form->error($model,'committed'); ?>
 		</div>
     </td>
@@ -413,7 +413,7 @@ for($i=1;$i<=10;$i++)
 	<td>
 		<div class="row">
 			<?php echo $form->labelEx($model,'standby'); ?>
-			<?php echo $form->textField($model,'standby',array('size'=>3,'maxlength'=>3)); ?>
+			<?php echo $form->textField($model,'standby',array('size'=>3,'maxlength'=>3,'readonly'=>'readonly','disabled'=>'disabled')); ?>
 			<?php echo $form->error($model,'standby'); ?>
 		</div>
     </td>

@@ -207,6 +207,9 @@ class SemenOrdersController extends Controller
 
 		}
 
+		$Out = $this->GetComitStandby($model->sow_boar_id,$model->ship_date);
+		$model->committed= $Out['commited'];
+		$model->standby= $Out['standby'];
 		$this->render('update',array(
 			'model'=>$model,
 			'modelCustomer'=>$modelCustomer,
@@ -445,6 +448,27 @@ class SemenOrdersController extends Controller
 		echo CJSON::encode($dos);
 		Yii::app()->end();
 	}
+
+	public function GetComitStandby($id=null,$dt=NULL){
+		$res = $dos = array();
+
+		if (isset($id) && isset($dt) && $dt != "") {
+
+			$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$id.
+			" AND onstandby != 'Y' AND ship_date = '".$dt."'";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$res =$command->queryColumn();
+			$dos['commited'] = $res[0];
+
+			$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$id.
+			" AND onstandby = 'Y' AND ship_date = '".$dt."'";
+			$command =Yii::app()->db->createCommand($qtxt);
+			$res =$command->queryColumn();
+			$dos['standby'] = $res[0];
+		}
+		return $dos;
+	}
+
 	public function actioninsertSemenType(){
 		if (isset($_GET['code'])) {
 			$qtxt = " INSERT INTO semen_type (code) values ('".$_GET['code']."') " ;
@@ -592,14 +616,38 @@ class SemenOrdersController extends Controller
 		 $date = new DateTime('2015-01-01');
 		 $dateMax = new DateTime();
 		 $dateMax->add(DateInterval::createFromDateString($days.' days'));
-	     $sql = "select * from semen_orders WHERE ship_date between '".$date->format("m/d/Y")."' AND '".$dateMax->format("m/d/Y")."'";
+	     $sql = "select semen_orders_id, sow_boar_id,ship_date from semen_orders WHERE
+	     	ship_date between '".$date->format("m/d/Y")."' AND '".$dateMax->format("m/d/Y")."'
+	     	GROUP BY sow_boar_id, ship_date";
 	     $command = Yii::app()->db->createCommand($sql);
 	     $rows = $command->queryAll();
-		 print_r($rows);
-		 echo '<table class="items">
-		 		<thead><tr><th>Boar Ear Notch</th></tr></thead>
-		 		<tbody><tr class="odd"><td>aa</td></tr></tbody>
-		 	</table>';
+	     echo '<table class="items">
+	     <thead><tr>
+	     <th>Boar Ear Notch</th>
+		 <th>Ear Tag</th>
+		 <th>Committed</th>
+		 <th>Stand By</th>
+		 <th>Ship Date</th>
+	     </tr></thead>';
+	     echo '<tbody>';
+	     foreach($rows as $key=>$row) {
+	     	$modelSowBoar=SowBoar::model()->findByPk($row['sow_boar_id']);
+	     	if(isset($modelSowBoar->ear_notch))
+	     		$modelSowBoar->ear_notch = SemenOrdersController::calculateYear($modelSowBoar->ear_notch,2);
+	     	$rows[$key]['ear_notch']=$modelSowBoar->ear_notch;
+	     	$rows[$key]['ear_tag']=$modelSowBoar->ear_tag;
+	     	$ret=$this->GetComitStandby($row['sow_boar_id'],$row['ship_date']);
+	     	$rows[$key]['standby']=$ret['standby'];
+	     	$rows[$key]['commited']=$ret['commited'];
+	     	echo '<tr class="odd"><td>'.$rows[$key]['ear_notch'].'</td>
+	     		<td>'.$rows[$key]['ear_tag'].'</td>
+	     		<td>'.$rows[$key]['standby'].'</td>
+	     		<td>'.$rows[$key]['commited'].'</td>
+	     		<td>'.$rows[$key]['ship_date'].'</td>
+	     	</tr>';
+	     }
+	     print_R($rows);
+		 echo '</tbody></table>';
 	}
 
 }
