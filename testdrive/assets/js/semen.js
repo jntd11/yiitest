@@ -99,7 +99,6 @@ $(document).ready(function(){
 			data: {days:$("#days").val()},
 			type: "GET",
 		}).done(function(data){
-			alert(data);
 			$("#div_committed_results").html(data);
 			semenPopup();
 		});

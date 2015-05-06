@@ -28,7 +28,7 @@ class SemenOrdersController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','getListBydays'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -618,12 +618,12 @@ class SemenOrdersController extends Controller
 		 $date = new DateTime();
 		 $dateMax = new DateTime();
 		 $dateMax->add(DateInterval::createFromDateString(($days-1).' days'));
-	     echo $sql = "select semen_orders_id, sow_boar_id,ship_date from semen_orders WHERE
+	     $sql = "select semen_orders_id, sow_boar_id,ship_date from semen_orders WHERE
 	     	ship_date between '".$date->format("m/d/Y")."' AND '".$dateMax->format("m/d/Y")."'
 	     	GROUP BY sow_boar_id, ship_date ORDER BY ship_date";
 	     $command = Yii::app()->db->createCommand($sql);
 	     $rows = $command->queryAll();
-	     echo '<div id="committed_results">aa<table class="items" >
+	     echo '<div id="committed_results"><table class="items" >
 	     <thead><tr>
 	     <th>Boar Ear Notch</th>
 		 <th>Ear Tag</th>
@@ -649,9 +649,7 @@ class SemenOrdersController extends Controller
 	     		<td>'.$rows[$key]['ship_date'].'</td>
 	     	</tr>';
 	     }
-	     print_R($rows);
 		 echo '</tbody></table></div>';
-
 	}
 
 }

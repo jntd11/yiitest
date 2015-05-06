@@ -176,23 +176,23 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 	<?php }?>
 	<?php
 	if(count($results))
-$this->widget('ext.mPrint.mPrint', array(
-  'title' => 'Chores Report',          //the title of the document. Defaults to the HTML title
-  'tooltip' => 'Print',        //tooltip message of the print icon. Defaults to 'print'
-  'text' => 'Print Results',   //text which will appear beside the print icon. Defaults to NULL
-  'element' => '#print',        //the element to be printed.
-  'exceptions' => array(       //the element/s which will be ignored
-    '.summary',
-    '.search-form'
-  ),
-  'publishCss' => true,
-  'cssFile'=>'styles.css',
-  'publishCss' => true,       //publish the CSS for the whole page?
-  'visible' => Yii::app()->user->checkAccess('print'),  //should this be visible to the current user?
-  'alt' => 'print',       //text which will appear if image can't be loaded
-  'debug' => true,            //enable the debugger to see what you will get
-  'id' => 'print-div1'         //id of the print link
-));
+		$this->widget('ext.mPrint.mPrint', array(
+		  'title' => 'Chores Report',          //the title of the document. Defaults to the HTML title
+		  'tooltip' => 'Print',        //tooltip message of the print icon. Defaults to 'print'
+		  'text' => 'Print Results',   //text which will appear beside the print icon. Defaults to NULL
+		  'element' => '#print',        //the element to be printed.
+		  'exceptions' => array(       //the element/s which will be ignored
+		    '.summary',
+		    '.search-form'
+		  ),
+		  'publishCss' => true,
+		  'cssFile'=>'styles.css',
+		  'publishCss' => true,       //publish the CSS for the whole page?
+		  'visible' => Yii::app()->user->checkAccess('print'),  //should this be visible to the current user?
+		  'alt' => 'print',       //text which will appear if image can't be loaded
+		  'debug' => true,            //enable the debugger to see what you will get
+		  'id' => 'print-div1'         //id of the print link
+		));
 ?>
 
 
