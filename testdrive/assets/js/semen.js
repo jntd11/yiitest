@@ -393,11 +393,12 @@ function autoSuggestSearch(){
 		}
 	});
 	
-	$("#ear_notch").bind('blur',function(){
+	$("#ear_notch, #ship_date").bind('blur',function(){
 		if($("#SemenOrders_sow_boar_id").val() != "") {
 			getComitStandbyDoses($("#SemenOrders_sow_boar_id").val());
 		}
 	});
+	
 	$("#semen-orders-form [name='ear_notch']").autocomplete({
 	    source: 'index.php?r=semenOrders/AutocompleteEarNotch',
 	    select: function( event, ui ) {

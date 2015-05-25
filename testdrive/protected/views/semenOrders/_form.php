@@ -393,11 +393,12 @@ for($i=1;$i<=10;$i++)
 			  		'model' => $model,
 			  		'attribute' => 'ship_date',
 			  		'options' =>array(
-			  				'dateFormat'=>'m/d/yy',
+			  				'dateFormat'=>'mm/dd/yy',
 							'constrainInput'=> false,
 							'showOn'=>'button',
 							//'defaultDate'=>''.$datedefault.'',
 							'buttonImage'=>'img/calendar.gif',
+			  				'onSelect'=>'js:getComitStandbyDoses($("#SemenOrders_sow_boar_id").val())',
 			  		),
 
 			  		'htmlOptions' => array(
