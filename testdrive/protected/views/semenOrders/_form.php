@@ -398,7 +398,9 @@ for($i=1;$i<=10;$i++)
 							'showOn'=>'button',
 							//'defaultDate'=>''.$datedefault.'',
 							'buttonImage'=>'img/calendar.gif',
-			  				'onSelect'=>'js:getComitStandbyDoses($("#SemenOrders_sow_boar_id").val())',
+			  				'onSelect'=>'js:function(dateText,dateObj){
+			  					getComitStandbyDoses($("#SemenOrders_sow_boar_id").val())
+			  				}',
 			  		),
 
 			  		'htmlOptions' => array(
