@@ -452,19 +452,33 @@ class SemenOrdersController extends Controller
 	public function GetComitStandby($id=null,$dt=NULL){
 		$res = $dos = array();
 
-		if (isset($id) && isset($dt) && $dt != "") {
+		if (isset($id)) {
+			if(isset($dt) && $dt != "") {
 
-			$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$id.
-			" AND onstandby != 'Y' AND ship_date = '".$dt."'";
-			$command =Yii::app()->db->createCommand($qtxt);
-			$res =$command->queryColumn();
-			$dos['commited'] = $res[0];
+				$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$id.
+				" AND onstandby != 'Y' AND ship_date = '".$dt."'";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryColumn();
+				$dos['commited'] = $res[0];
 
-			$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$id.
-			" AND onstandby = 'Y' AND ship_date = '".$dt."'";
-			$command =Yii::app()->db->createCommand($qtxt);
-			$res =$command->queryColumn();
-			$dos['standby'] = $res[0];
+				$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$id.
+				" AND onstandby = 'Y' AND ship_date = '".$dt."'";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryColumn();
+				$dos['standby'] = $res[0];
+			}else{
+				$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$id.
+				" AND onstandby != 'Y' AND ship_date = '".$dt."'";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryColumn();
+				$dos['commited'] = $res[0];
+
+				$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$id.
+				" AND onstandby = 'Y' AND ship_date = '".$dt."'";
+				$command =Yii::app()->db->createCommand($qtxt);
+				$res =$command->queryColumn();
+				$dos['standby'] = $res[0];
+			}
 		}
 		return $dos;
 	}
@@ -615,21 +629,24 @@ class SemenOrdersController extends Controller
 			$days= $_GET['days'];
 
 		 //$date = new DateTime('2015-01-01');
-		 $date = new DateTime();
-		 $dateMax = new DateTime();
+		 $date = new DateTime(Yii::app()->request->cookies['date']);
+		 $dateMax = new DateTime(Yii::app()->request->cookies['date']);
 		 $dateMax->add(DateInterval::createFromDateString(($days-1).' days'));
-	     $sql = "select semen_orders_id, sow_boar_id,ship_date from semen_orders WHERE
+	     $sql = "select semen_orders_id, sow_boar_id from semen_orders WHERE
 	     	ship_date between '".$date->format("m/d/Y")."' AND '".$dateMax->format("m/d/Y")."'
-	     	GROUP BY sow_boar_id, ship_date ORDER BY ship_date";
+	     	GROUP BY sow_boar_id ORDER BY ship_date";
 	     $command = Yii::app()->db->createCommand($sql);
 	     $rows = $command->queryAll();
-	     echo '<div id="committed_results"><table class="items" >
+
+
+	     echo '<div id="committed_results">
+	     <p>Committed for '.$days .' days thru '.date("l F d, Y",strtotime(yii::app()->request->cookies['date'])).'</p>
+	     <table class="items" >
 	     <thead><tr>
 	     <th>Boar Ear Notch</th>
 		 <th>Ear Tag</th>
-		 <th>Committed</th>
+		 <th>Doses</th>
 		 <th>Stand By</th>
-		 <th>Ship Date</th>
 	     </tr></thead>';
 	     echo '<tbody>';
 
@@ -639,14 +656,27 @@ class SemenOrdersController extends Controller
 	     		$modelSowBoar->ear_notch = SemenOrdersController::calculateYear($modelSowBoar->ear_notch,2);
 	     	$rows[$key]['ear_notch']=$modelSowBoar->ear_notch;
 	     	$rows[$key]['ear_tag']=$modelSowBoar->ear_tag;
-	     	$ret=$this->GetComitStandby($row['sow_boar_id'],$row['ship_date']);
+
+	     	//$ret=$this->GetComitStandby($row['sow_boar_id'],$row['ship_date']);
+
+	     	$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$row['sow_boar_id'].
+	     	" AND onstandby != 'Y' AND ship_date between '".$date->format("m/d/Y")."' AND '".$dateMax->format("m/d/Y")."'";
+	     	$command =Yii::app()->db->createCommand($qtxt);
+	     	$res =$command->queryColumn();
+	     	$ret['commited'] = $res[0];
+
+	     	$qtxt ="SELECT ifnull(sum(doses),0) as totaldoses FROM  semen_orders WHERE sow_boar_id = ".$row['sow_boar_id'].
+	     	" AND onstandby = 'Y'  AND ship_date between '".$date->format("m/d/Y")."' AND '".$dateMax->format("m/d/Y")."'";
+	     	$command =Yii::app()->db->createCommand($qtxt);
+	     	$res =$command->queryColumn();
+	     	$ret['standby'] = $res[0];
+
 	     	$rows[$key]['standby']=$ret['standby'];
 	     	$rows[$key]['commited']=$ret['commited'];
 	     	echo '<tr class="odd"><td>'.$rows[$key]['ear_notch'].'</td>
 	     		<td>'.$rows[$key]['ear_tag'].'</td>
-	     		<td>'.$rows[$key]['standby'].'</td>
 	     		<td>'.$rows[$key]['commited'].'</td>
-	     		<td>'.$rows[$key]['ship_date'].'</td>
+	     		<td>'.$rows[$key]['standby'].'</td>
 	     	</tr>';
 	     }
 		 echo '</tbody></table></div>';

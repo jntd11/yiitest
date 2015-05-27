@@ -708,12 +708,6 @@ function semenPopup(){
 		closeOnEscape: false,
 		buttons: [
 			{
-				text: "Save",
-				click: function() {
-					$( this ).dialog( "close" );
-				}
-			},
-			{
 				text: "Cancel",
 				click: function() {
 					$("#eartag").val("");
