@@ -34,7 +34,7 @@ class SemenOrdersController extends Controller
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update','report','AutocompleteFirstName',
 						'AutocompleteCompanyName','AutocompleteLastName','AutocompleteEarNotch','AutocompleteEarTag',
-						'GetEarNotch','AutocompleteSemenType','insertSemenType','ChangeStatus','GetComitStandbyDoses','getListBydays'),
+						'GetEarNotch','AutocompleteSemenType','insertSemenType','ChangeStatus','GetComitStandbyDoses','getListBydays','getDetailById'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -623,6 +623,13 @@ class SemenOrdersController extends Controller
 		//return implode($ear_notch_array, " ");
 	}
 
+	public function actiongetDetailById(){
+		if(isset($_GET['id']))
+			$id= $_GET['id'];
+		 $model = SemenOrders::model()->findByPk($id);
+		 print_R($model->attributes);
+	}
+
 	public function actiongetListBydays(){
 		$days=1;
 		if(isset($_GET['days']))
@@ -673,13 +680,14 @@ class SemenOrdersController extends Controller
 
 	     	$rows[$key]['standby']=$ret['standby'];
 	     	$rows[$key]['commited']=$ret['commited'];
-	     	echo '<tr class="odd"><td>'.$rows[$key]['ear_notch'].'</td>
+	     	echo '<tr class="odd" onclick="semenSubPopup('.$row['sow_boar_id'].');"><td>'.$rows[$key]['ear_notch'].'</td>
 	     		<td>'.$rows[$key]['ear_tag'].'</td>
 	     		<td>'.$rows[$key]['commited'].'</td>
 	     		<td>'.$rows[$key]['standby'].'</td>
 	     	</tr>';
 	     }
 		 echo '</tbody></table></div>';
+		 echo '<div id="div_committed_detail"></div>';
 	}
 
 }

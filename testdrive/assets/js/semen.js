@@ -718,3 +718,28 @@ function semenPopup(){
 		]
 	});
 }
+function semenSubPopup(id){
+	$.ajax({
+		url: encodeURI('index.php?r=SemenOrders/getDetailById'),
+		data: {id:id},
+		type: "GET",
+	}).done(function(data){
+		$("#div_committed_detail").html(data);
+		$("#div_committed_detail").dialog({
+			autoOpen: true,
+			width: 400,
+			modal: true,
+			closeOnEscape: false,
+			buttons: [
+				{
+					text: "Cancel",
+					click: function() {
+						$( this ).dialog( "close" );
+					}
+				}
+			]
+		});
+	});
+	
+	
+}
