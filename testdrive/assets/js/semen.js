@@ -366,6 +366,52 @@ function autoSuggestSearch(){
 	    	
 	    }
 	});
+	if($("#SemenOrders_committed").val() != "") {
+		const oldcommited = parseInt($("#SemenOrders_committed").val());
+	}else{
+		const oldcommited = 0;
+	}
+	if($("#SemenOrders_standby").val() != "") {
+		const oldstandby = parseInt($("#SemenOrders_standby").val());
+	}else{
+		const oldstandby = 0;
+	}
+	if($("#doses_org").val() != "") {
+		const olddoses = parseInt($("#doses_org").val());
+	}else{
+		const olddoses = 0;
+	}
+	
+		const oldonstandby = $("#SemenOrders_onstandby").val();
+	
+	
+	
+	
+	$("#SemenOrders_doses, #SemenOrders_onstandby").bind("change",function(){
+		if($("#SemenOrders_doses").val() != ""){
+			var doses = parseInt($("#SemenOrders_doses").val());
+			var onstandby = $("#SemenOrders_onstandby").val();
+			//getComitStandbyDoses($("#SemenOrders_sow_boar_id").val());
+			if($("#SemenOrders_onstandby").val().toLowerCase() == "y"){
+				if(oldonstandby == onstandby) 
+					var standby = oldstandby + (doses - olddoses);
+				else {
+					var standby = oldstandby + doses;
+					$("#SemenOrders_committed").val(oldcommited-olddoses);
+				}
+				$("#SemenOrders_standby").val(standby);
+			}else{
+				if(oldonstandby == onstandby) 
+					var commited = oldcommited + (doses - olddoses);
+				else{ 
+					var commited = oldcommited + doses ;
+					$("#SemenOrders_standby").val(oldstandby-olddoses);
+				}
+				$("#SemenOrders_committed").val(commited);
+			}
+
+		}
+	});
 	$("#semen-orders-form [name='ear_tag']").bind('blur',function(){
 		if($(this).val() != "") {
 			var name = $(this).val();

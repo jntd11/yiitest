@@ -448,7 +448,7 @@ for($i=1;$i<=10;$i++)
 	<div class="row">
 		<?php echo $form->labelEx($model,'doses'); ?>
 		<?php echo $form->textField($model,'doses'); ?>
-
+		<input type="hidden" name="doses_org" value="<?php echo $model->doses; ?>" id="doses_org">
 		<?php echo $form->error($model,'doses'); ?>
 	</div>
 </td>
