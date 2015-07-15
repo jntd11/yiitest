@@ -21,7 +21,20 @@ if($model->onstandby == "N")
 for($i=1;$i<=10;$i++)
 	$days[$i] = $i." Days";
 ?>
-
+<style>
+select:active, select:hover {
+  outline-color: red
+}
+select option:checked:after {
+    content: attr(title);
+    background: #666;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    border: none;
+}
+</style>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -367,6 +380,7 @@ for($i=1;$i<=10;$i++)
 			  				'size' => '20',         // textField size
 			  				'maxlength' => '20',    // textField maxlength
 							'value'=>$datedefault,
+							'onBlur'=>'$("#ship_date").focus();',
 
 			  		),
 			  ));
@@ -408,6 +422,7 @@ for($i=1;$i<=10;$i++)
 			  				'size' => '20',         // textField size
 			  				'maxlength' => '20',    // textField maxlength
 							'value'=>$dateShip,
+							'onBlur'=>'$("#ear_tag").focus();',
 			  		),
 			  ));?>
 		<?php echo $form->error($model,'ship_date'); ?>
@@ -501,7 +516,9 @@ for($i=1;$i<=10;$i++)
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'onstandby'); ?>
-		<?php echo $form->textField($model,'onstandby',array('size'=>1,'maxlength'=>1)); ?>
+		<?php
+		echo  $form->dropDownList($model,'onstandby',array(''=>'','Y'=>'Y')); ?>
+		<?php //echo $form->textField($model,'onstandby',array('size'=>1,'maxlength'=>1)); ?>
 		<?php echo $form->error($model,'onstandby'); ?>
 	</div>
 	</td>

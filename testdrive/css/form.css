@@ -45,6 +45,11 @@ div.form select
 	margin: 0.2em 0 0.5em 0;
 }
 
+div.form select:active, 
+div.form select:hover {
+  outline-color: red;
+}
+
 div.form fieldset
 {
 	border: 1px solid #DDD;
@@ -237,3 +242,6 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 }
 #picker { width: 50px; height: 80px }
 #slide { width: 100px; height: 100px }
+
+.focus{border: 2px solid #37b44a;outline: none;}
+.blur{border: 1px solid #CCCCCC;outline: none;}

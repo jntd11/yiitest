@@ -104,6 +104,15 @@ $(document).ready(function(){
 		});
 		
 	});
+	$("input[type=text], input[type=password], select").each(function () {
+        $(this).addClass("blur");
+        $(this).focus(function () {
+            $(this).removeClass("blur").addClass("focus");
+        });
+        $(this).blur(function () {
+            $(this).removeClass("focus").addClass("blur");
+        });
+    });
 });
 
 function setDefault(val,obj){
@@ -366,23 +375,26 @@ function autoSuggestSearch(){
 	    	
 	    }
 	});
+	var oldcommited;
 	if($("#SemenOrders_committed").val() != "") {
-		const oldcommited = parseInt($("#SemenOrders_committed").val());
+		oldcommited = parseInt($("#SemenOrders_committed").val());
 	}else{
-		const oldcommited = 0;
+		oldcommited = 0;
 	}
+	var oldstandby;
 	if($("#SemenOrders_standby").val() != "") {
-		const oldstandby = parseInt($("#SemenOrders_standby").val());
+		oldstandby = parseInt($("#SemenOrders_standby").val());
 	}else{
-		const oldstandby = 0;
+		oldstandby = 0;
 	}
+	var olddoses;
 	if($("#doses_org").val() != "") {
-		const olddoses = parseInt($("#doses_org").val());
+		olddoses = parseInt($("#doses_org").val());
 	}else{
-		const olddoses = 0;
+		olddoses = 0;
 	}
 	
-		const oldonstandby = $("#SemenOrders_onstandby").val();
+	var oldonstandby = $("#SemenOrders_onstandby").val();
 	
 	
 	
