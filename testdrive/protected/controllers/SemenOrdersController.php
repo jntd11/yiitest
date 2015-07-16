@@ -157,7 +157,7 @@ class SemenOrdersController extends Controller
 				if(isset($_POST['savedup'])){
 					$this->redirect(array('create','id'=>$model->semen_orders_id));
 				}elseif(isset($_POST['savenew']))
-					$this->redirect(array('create'));
+					$this->redirect(array('create','d'=>$_GET['d']));
 				else
 					$this->redirect($url);
 

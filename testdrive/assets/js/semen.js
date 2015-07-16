@@ -7,6 +7,11 @@
 	}
 });*/
 var oldval;
+var oldcommited;
+var olddoses;
+var oldstandby;
+
+
 function checkData(element,type,extra,extra1){
 	if(type == 1){
 		var val = element.value;
@@ -375,26 +380,24 @@ function autoSuggestSearch(){
 	    	
 	    }
 	});
-	var oldcommited;
+	
 	if($("#SemenOrders_committed").val() != "") {
 		oldcommited = parseInt($("#SemenOrders_committed").val());
 	}else{
 		oldcommited = 0;
 	}
-	var oldstandby;
+	
 	if($("#SemenOrders_standby").val() != "") {
 		oldstandby = parseInt($("#SemenOrders_standby").val());
 	}else{
 		oldstandby = 0;
 	}
-	var olddoses;
 	if($("#doses_org").val() != "") {
 		olddoses = parseInt($("#doses_org").val());
 	}else{
 		olddoses = 0;
 	}
-	
-	var oldonstandby = $("#SemenOrders_onstandby").val();
+	oldonstandby = $("#SemenOrders_onstandby").val();
 	
 	
 	
@@ -403,6 +406,7 @@ function autoSuggestSearch(){
 		if($("#SemenOrders_doses").val() != ""){
 			var doses = parseInt($("#SemenOrders_doses").val());
 			var onstandby = $("#SemenOrders_onstandby").val();
+			
 			//getComitStandbyDoses($("#SemenOrders_sow_boar_id").val());
 			if($("#SemenOrders_onstandby").val().toLowerCase() == "y"){
 				if(oldonstandby == onstandby) 
@@ -415,6 +419,9 @@ function autoSuggestSearch(){
 			}else{
 				if(oldonstandby == onstandby) 
 					var commited = oldcommited + (doses - olddoses);
+					//added on 16/07 to fix for new orders
+					if($("#new") == 1) 
+						$("#SemenOrders_standby").val(oldstandby-olddoses);
 				else{ 
 					var commited = oldcommited + doses ;
 					$("#SemenOrders_standby").val(oldstandby-olddoses);
@@ -756,6 +763,11 @@ function getComitStandbyDoses(id){
 		var Obj = JSON.parse(data);
 		$("#SemenOrders_committed").val(Obj.commited);
 		$("#SemenOrders_standby").val(Obj.standby);
+		if($("#isnew").val() == 1){
+			oldcommited = parseInt(Obj.commited);
+			oldstandby = parseInt(Obj.standby);
+			olddoses = 0;
+		}
 	});	
 }
 function semenPopup(){
