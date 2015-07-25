@@ -95,7 +95,7 @@ $cs->registerScriptFile(Yii::app()->baseUrl.'/assets/index.js');
 					)),
 					array('label'=>'Semen', 'itemOptions'=>array('id'=>'reports'), 'url'=>array('/SemenOrders/report'), 'linkOptions'=>array(), 'items'=>array(
 								array('label'=>'Orders', 'itemOptions'=>array('id'=>'semen-orders'), 'linkOptions'=>array(), 'url'=>array('/SemenOrders/report')),
-								array('label'=>'update', 'itemOptions'=>array('id'=>'semen-update'), 'linkOptions'=>array(), 'url'=>array('/SemenOrders/update')),
+								array('label'=>'Setup', 'itemOptions'=>array('id'=>'semen-update'), 'linkOptions'=>array(), 'url'=>array('/bOSSetupController/update&id=1')),
 							)),
 					array('label'=>'Others', 'itemOptions'=>array('id'=>'Others'), 'url'=>array(''), 'linkOptions'=>array('accesskey'=>'O'), 'items'=>array(
 							array('label'=>'Herd Setup', 'itemOptions'=>array('id'=>'entry'), 'linkOptions'=>array('accesskey'=>'c'), 'url'=>array('/tblHerdSetup/admin')),
