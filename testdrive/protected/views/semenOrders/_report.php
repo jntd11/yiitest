@@ -195,6 +195,4 @@ Yii::app()->request->cookies['to_date'] =  new CHttpCookie('to_date',$to_date,ar
 		  'id' => 'print-div1'         //id of the print link
 		));
 ?>
-
-
 </div><!-- form -->

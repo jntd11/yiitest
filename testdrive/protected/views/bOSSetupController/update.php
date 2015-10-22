@@ -28,8 +28,14 @@ function iamexiting(e) {
 $("#bossetup-form :input[type!='submit']").change(function() {
 	   $("#bossetup-form").data("changed",true);
 });
+$("#bossetup-form :input[type!='reset']").change(function() {
+	   $("#bossetup-form").data("changed",true);
+});
 $("#bossetup-form :input[type=submit]").click(function() {
 	   $("#bossetup-form").data("changed",false);
 });
+/*$("#bossetup-form :input[type=reset]").click(function() {
+	   $("#bossetup-form").data("changed",false);
+});*/
 });
 </script>

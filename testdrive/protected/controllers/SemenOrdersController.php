@@ -34,7 +34,7 @@ class SemenOrdersController extends Controller
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update','report','AutocompleteFirstName',
 						'AutocompleteCompanyName','AutocompleteLastName','AutocompleteEarNotch','AutocompleteEarTag',
-						'GetEarNotch','AutocompleteSemenType','insertSemenType','ChangeStatus','GetComitStandbyDoses','getListBydays','getDetailById'),
+						'GetEarNotch','AutocompleteSemenType','insertSemenType','ChangeStatus','GetComitStandbyDoses','getListBydays','getDetailById','bill'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -57,7 +57,62 @@ class SemenOrdersController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-
+	
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionBill($id,$d)
+	{
+		 
+		$model=$this->loadModel($id);
+		$modelCustomer=new TblCustomerEntry;
+		$modelCustomer=TblCustomerEntry::model()->findByPk($model->customer_id);
+		$modelBos = Bossetup::model()->findByPk(1);
+		
+		if(isset($_POST['Bill'])){
+			
+			$sql = " DELETE from bill WHERE customer_id = ".$model->customer_id ." and date_ship = '$d' ";
+			$command =Yii::app()->db->createCommand($sql);
+			$res =$command->query();
+			
+			foreach ($_POST['Bill'] as $key => $bill) {
+				$modelBill[$key] =new Bill;
+				$modelBill[$key]->attributes = $bill;
+				$modelBill[$key]->save(); 
+			}
+		}else{
+			$modelBillALL = Bill::model()->findAll("customer_id = ".$model->customer_id ." and date_ship = '$d'");
+			if(count($modelBillALL)) {
+				foreach($modelBillALL as $i=>$modelBills){
+					$modelBill[$i+1] = $modelBills;
+				}
+			}else {
+				for($i=1;$i <= 5; $i++) {
+					$modelBill[$i] = new Bill;
+				}
+			}
+		}
+			
+		$results = array();
+		if(isset($_GET['d'])){
+			$qtxt = "SELECT * FROM semen_orders WHERE ship_date = '".$_GET['d']."' ";
+			/* if(isset($_GET['standby']) && $_GET['standby'] == 'Y')
+				$qtxt .= " AND onstandby = 'Y' "; */
+			$command =Yii::app()->db->createCommand($qtxt);
+			$res =$command->queryAll();
+		}
+		
+		
+		$this->render('bill',array(
+				'model'=>$model,
+				'modelCustomer'=>$modelCustomer,
+				'results'=>$res,
+				'modelBill'=>$modelBill,
+				'modelBos'=>$modelBos,
+		));
+	}
+	
 
 	/**
 	 * Displays a particular model.
@@ -218,7 +273,7 @@ class SemenOrdersController extends Controller
 
 	/**
 	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
+	 * If deletion is successful, the browser will be redirected to the admin page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	public function actionDelete($id)

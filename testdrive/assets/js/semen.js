@@ -409,20 +409,26 @@ function autoSuggestSearch(){
 			
 			//getComitStandbyDoses($("#SemenOrders_sow_boar_id").val());
 			if($("#SemenOrders_onstandby").val().toLowerCase() == "y"){
-				if(oldonstandby == onstandby) 
+				if(oldonstandby == onstandby) {
 					var standby = oldstandby + (doses - olddoses);
-				else {
+					if($("#new") == 1) 
+						$("#SemenOrders_committed").val(oldcommited-olddoses);
+					else
+						$("#SemenOrders_committed").val(oldcommited);
+				}else {
 					var standby = oldstandby + doses;
 					$("#SemenOrders_committed").val(oldcommited-olddoses);
 				}
 				$("#SemenOrders_standby").val(standby);
-			}else{
-				if(oldonstandby == onstandby) 
+			} else{
+				if(oldonstandby == onstandby){ 
 					var commited = oldcommited + (doses - olddoses);
 					//added on 16/07 to fix for new orders
 					if($("#new") == 1) 
 						$("#SemenOrders_standby").val(oldstandby-olddoses);
-				else{ 
+					else
+						$("#SemenOrders_standby").val(oldstandby);
+				}else{ 
 					var commited = oldcommited + doses ;
 					$("#SemenOrders_standby").val(oldstandby-olddoses);
 				}
@@ -583,7 +589,7 @@ function validateDate(val){
 }
 
 var CLIPBOARD = "";
-$(function(){
+$(document).ready(function(){
 	/* Menu 1: init by passing an array of entries. */
 
 	$(document).contextmenu({
@@ -597,6 +603,7 @@ $(function(){
 			{title: "Duplicate", cmd: "duplicate", uiIcon: "ui-icon-clipboard"},
 			{title: "Update", cmd: "update", uiIcon: "ui-icon-scissors"},
 			{title: "Standby", cmd: "standby", uiIcon: "ui-icon-scissors"},
+			{title: "Bill Of Sale", cmd: "bill", uiIcon: "ui-icon-copy"},
 			],
 		// Handle menu selection to implement a fake-clipboard
 		select: function(event, ui) {
@@ -654,6 +661,16 @@ $(function(){
 					//window.location = 'index.php?r=semenorders/report';
 				});
 				break;
+			case "bill":
+				CLIPBOARD = $target.text();
+				var a = $(ui.target).parent();
+				var newrowid = a[0].id;
+				var val = $("#"+newrowid+"_date").val();
+				if(val != "undefined" && newrowid != "")
+					window.location = 'index.php?r=SemenOrders/bill&d='+val+'&id='+newrowid;
+				else 
+					alert("Click on row correctly");
+				break;
 			}
 			//alert("select " + ui.cmd + " on " + $target.text());
 			// Optionally return false, to prevent closing the menu now
@@ -691,6 +708,7 @@ $(function(){
 				$(document).contextmenu("setEntry", "new",{title: "New", cmd: "new",disabled: false,  uiIcon: "ui-icon-copy"});
 				$(document).contextmenu("setEntry", "duplicate",{title: "Duplicate", cmd: "duplicate",disabled: false,  uiIcon: "ui-icon-scissors"});
 				$(document).contextmenu("setEntry", "update",{title: "Update", cmd: "update",disabled: false,  uiIcon: "ui-icon-scissors"});
+				$(document).contextmenu("setEntry", "bill",{title: "Bill of Sale", cmd: "bill",disabled: false,  uiIcon: "ui-icon-scissors"});
 				$(document).contextmenu("enableEntry", "duplicate", true);
 				$(document).contextmenu("enableEntry", "update", true);
 				$(document).contextmenu("enableEntry", "standby",true);
@@ -812,4 +830,8 @@ function semenSubPopup(id){
 	});
 	
 	
+}
+
+function fill(id){
+	$("#total_"+id).val(parseFloat($("#price_"+id).val()) * parseFloat($("#quantity_"+id).val()));
 }

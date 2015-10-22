@@ -125,6 +125,7 @@ class TblCustomerEntryController extends Controller
 			$model->attributes=$_POST['TblCustomerEntry'];
 			$model->attributes=$_POST['TblCustomerEntry'];
 			$model->notes = $_POST['TblCustomerEntry']['notes'];
+			$model->cc_number = $_POST['TblCustomerEntry']['cc_number'];
 			$model->notes1 = $_POST['TblCustomerEntry']['notes1'];
 			if($model->save()){
 				if(isset($_POST['savenew']))

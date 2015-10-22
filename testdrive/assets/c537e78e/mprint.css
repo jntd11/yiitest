@@ -170,3 +170,6 @@
 .rightElement{
     text-align: right;
 }
+.borderbottom{
+	border-bottom: solid 2px black;
+}
